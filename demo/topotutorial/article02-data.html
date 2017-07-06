@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="TopoJSON Simplify Example | 水戸地図" />
+    <meta property="og:url" content="http://map310.com/demo/topotutorial/article01-simplify.html" />
+    <meta property="og:image" content="http://map310.com/img/ogpogp.png" />
+    <meta property="og:site_name" content="水戸地図" />
+    <meta property="og:description" content="TopoJSON v2 チュートリアルその1のデモページです。" />
+    <meta name="description" content="TopoJSON v2 チュートリアルその1のデモページです。">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <style>
+        .chartcontainer {
+            width: 100%;
+        }
+
+        .chartcontainer svg{
+          margin: auto;
+        }
+
+        .bg-text {
+          text-anchor: start;
+          dominant-baseline: text-before-edge;
+          font-family: 'Hiragino Sans', sans-serif;
+          font-weight: 100;
+        }
+
+    </style>
+    <title>TopoJSON Simplify Example | 水戸地図</title>
+    <script src="../../js/jquery-2.1.4.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/d3.v4.min.js"></script>
+    <script src="https://d3js.org/topojson.v2.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-74683419-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1>TopoJSON Simplify Example</h1>
+          </div>
+          <figure>
+            <div class="col-sm-12">
+              <h2>ibaraki_h28_simplified.topojson</h2>
+              <p>GeoJSONをTopoJSONに変換し、簡略化をおこなった例</p>
+              <div class="chartcontainer" id="chartA"></div>
+            </div>
+          </figure>
+          <div class="col-sm-12">
+            <article>
+              <h3>ibaraki_h28_simplified.topojson</h3>
+              <pre><code>$ geo2topo -q 1e6 ibaraki=./dist/ibaraki_h28.geojson | toposimplify -P 0.05 -f > ./dist/ibaraki_h28_simplified.topojson</code></pre>
+              <p><code>toposimplify</code>で745kBあったTopoJSONファイルを61kBまで削減しました。</p>
+              <p>使用したデータ</p>
+              <ul>
+                <li><a href="http://nlftp.mlit.go.jp/ksj/">国土数値情報</a> 行政区域データ（茨城県平成28年）</li>
+              </ul>
+            </article>
+            <footer>
+              <p><a href="http://qiita.com/cieloazul310/items/9d0e3f67f60d791726dc">TopoJSON v2 チュートリアルその1</a>のデモページです。</p>
+            </footer>
+          </div>
+        </div>
+    </div>
+    <script>
+
+  d3.json("./data/multiple.topojson", function(error, data){
+        if (error) throw error;
+
+        var objectKey = "-";
+        var neighbors = topojson.neighbors(data.objects[objectKey].geometries);
+        var pi = Math.PI;
+        var tau = 2 * pi;
+        var view = {original: 9, center: [140, 36.4]};
+        var size = {width: $(".chartcontainer").width(), height: 480};
+
+        var zoom = d3.zoom()
+            .scaleExtent([1 << (8 + 8), 1 << (8 + 12)])
+            .on("zoom", zoomed);
+
+        var projection = d3.geoOrthographic()
+                            .scale(1 / tau)
+                            .translate([0,0])
+                            .rotate(view.center.map(function(d){return -d;}))
+                            .precision(0.1);
+
+        var center = projection(view.center);
+
+        var path = d3.geoPath()
+                    .projection(projection);
+
+        var map = d3.selectAll(".chartcontainer").append("svg")
+                    .datum(data)
+                    .attr("class", function(d,i){return "chart-" + i;})
+                    .attr("width", size.width)
+                    .attr("height", size.height)
+                    .style("border", "1px solid gray");
+
+        var fill_key = "inc_rate";
+
+        var createDomain = function(array){
+                      var max = Math.max(Math.abs(d3.min(array)), Math.abs(d3.max(array)));
+                      return [max, -max];
+                    };
+
+        var color = d3.scaleSequential(d3.interpolateRdBu)
+                      .domain(createDomain(topojson.feature(data, data.objects[objectKey]).features.map(function(d){return +d.properties[fill_key];})));
+
+        var layer1 = map.append("g");
+        var layer2 = map.append("g");
+
+        var text = layer2.append("text")
+                          .attr("class", "bg-text")
+                          .attr("x", 0)
+                          .attr("y", 0)
+                          .attr("dx", ".2em")
+                          .attr("dy", ".2em")
+                          .attr("font-size", "40px")
+                          .style("display", "none");
+
+        var subtext = layer2.append("text")
+                          .attr("class", "bg-text")
+                          .attr("x", 0)
+                          .attr("y", 60)
+                          .attr("dx", ".2em")
+                          .attr("dy", ".2em")
+                          .attr("font-size", "22px")
+                          .style("display", "none");
+
+        layer1.selectAll(".lands")
+            .data(function(d){return topojson.feature(d, d.objects[objectKey]).features;})
+            .enter()
+            .append("path")
+            .attr("class", function(v,i){return "lands land-" + i;})
+            .attr("fill", "gray"/*function(v){return color(+v.properties[fill_key]);}*/)
+            .on("mouseover", function(v,i){
+
+              d3.select(this).attr("fill", "#cdd");
+
+              var sayonara = [];
+              neighbors[i].forEach(function(n){
+                d3.selectAll(".land-" + n)
+                  .attr("fill", "silver");
+                sayonara.push(topojson.feature(data, data.objects[objectKey]).features[n].properties.N03_004);
+              });
+
+              text.text(v.properties.N03_004 + " " + neighbors[i].length + "neighbors")
+                  .style("display", "inline");
+              subtext.text(sayonara.join(","))
+                  .style("display", "inline");
+            })
+            .on("mouseout", function(v,i){
+              layer1.selectAll(".lands").attr("fill", "gray"/*function(v){return color(+v.properties[fill_key]);}*/)
+              map.selectAll(".bg-text").style("display", "none");
+            });
+
+        layer1.append("path")
+            .datum(function(d){return topojson.mesh(d, d.objects[objectKey], function(a,b){return a.properties.N03_001 !== b.properties.N03_001;});})
+            .attr("class", "boundary")
+            .attr("fill", "none")
+            .attr("stroke", "white")
+            .attr("stroke-dasharray", "2,2");
+
+        map
+            .call(zoom)
+            .call(zoom.transform, d3.zoomIdentity
+                                    .translate(size.width / 2, size.height / 2)
+                                    .scale(1 << (8 + view.original))
+                                    .translate(-center[0], -center[1]));
+
+
+        function zoomed() {
+            var transform = d3.event.transform;
+
+            projection
+                      .scale(transform.k / tau)
+                      .translate([transform.x, transform.y]);
+
+            map.selectAll("path").attr("d", path);
+
+        }
+
+
+});
+
+    </script>
+</body>
+
+</html>

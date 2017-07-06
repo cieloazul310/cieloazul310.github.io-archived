@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="TopoJSON Basic Example | 水戸地図" />
+    <meta property="og:url" content="http://map310.com/demo/topotutorial/article01-basic.html" />
+    <meta property="og:image" content="http://map310.com/img/ogpogp.png" />
+    <meta property="og:site_name" content="水戸地図" />
+    <meta property="og:description" content="TopoJSON v2 チュートリアルその1のデモページです。" />
+    <meta name="description" content="TopoJSON v2 チュートリアルその1のデモページです。">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <style>
+        .chartcontainer {
+            width: 100%;
+            background-color: white;
+        }
+
+        .chartcontainer svg{
+          margin: auto;
+        }
+
+        .bg-text {
+          text-anchor: start;
+          dominant-baseline: text-before-edge;
+          fill: white;
+          font-size: 40px;
+          font-family: 'Hiragino Sans', sans-serif;
+          font-weight: 100;
+        }
+
+        .axis line{
+          stroke: silver;
+        }
+
+        .cols {
+          color: silver;
+        }
+
+        .cols.active{
+          color: black;
+        }
+
+        #info {
+        	position: absolute;
+        	background: #fff;
+        	font-size: 12pt;
+        	padding: 3pt;
+        	-webkit-border-radius: 6px;
+        	-moz-border-radius: 6px;
+        	border: thin solid #aaa;
+        	border-radius: 6px;
+        	-webkit-box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+        	-moz-box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+        	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+    </style>
+    <title>TopoJSON Basic Example | 水戸地図</title>
+    <script src="../../js/jquery-2.1.4.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/d3.v4.min.js"></script>
+    <script src="https://d3js.org/topojson.v2.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-74683419-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1>Japan Population Growth 2010-2015</h1>
+            <div class="menucontainer">
+              <div class="text-center" id="menubutton">MENU</div>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <figure id="figure">
+              <div class="chartcontainer" id="chartA">
+                <svg id="chart"></svg>
+                <div id="info"></div>
+              </div>
+            </figure>
+          </div>
+          <div class="col-sm-12">
+            <article>
+              <h3>ibaraki_h28.topojson</h3>
+              <pre><code>$ geo2topo -q 1e6 ibaraki=./dist/ibaraki_h28.geojson > ./dist/ibaraki_h28.topojson</code></pre>
+              <p><code>geo2topo</code>でGeoJSONファイルをTopoJSONに変換した例。</p>
+              <p>使用したデータ</p>
+              <ul>
+                <li><a href="http://nlftp.mlit.go.jp/ksj/">国土数値情報</a> 行政区域データ（茨城県平成28年）</li>
+              </ul>
+            </article>
+            <footer>
+              <p><a href="http://qiita.com/cieloazul310/items/9d0e3f67f60d791726dc">TopoJSON v2 チュートリアルその1</a>のデモページです。</p>
+            </footer>
+          </div>
+        </div>
+    </div>
+    <script>
+
+  var q = d3.queue()
+            .defer(d3.csv, "./data/population.csv")
+            .defer(d3.csv, "./data/pref_code.csv");
+
+  var size = {width: $(".chartcontainer").width(), aspect: 16/9};
+  size.height = Math.max(size.width / size.aspect, 480);
+
+  var margin = {left: 60, top: 10, right: 30, bottom: 10};
+
+  var svg = d3.select("#chart")
+              .attr("width", size.width)
+              .attr("height", size.height);
+
+  var xScale = d3.scaleLinear()
+                  .range([margin.left, size.width-margin.right]);
+  var yScale = d3.scaleLinear()
+                  .range([size.height-margin.bottom, margin.top]);
+
+  var selected = null;
+
+  var color = d3.scaleOrdinal()
+                .domain(["0","2","3"])
+                .range(["rgba(255, 0, 84, 0.6)", "rgba(0, 255, 56, 0.6)", "rgba(0, 209, 255, 0.6)"]);
+
+  var colors = {circle:{minus: "blue", plus: "orange", inactive: "rgba(221, 221, 221, 0.6)"}, line:{minus: "navy", plus:"red"}, func:function(d){return +d.inc_rate < 0 ? d3.rgb(color(d.class)).darker() : color(d.class); }};
+
+  q.await(function(error, csv, pref_code){
+    if(error) throw error;
+
+    var data = csv.filter(function(d){return d.class !== "1";});
+
+    var codes = pref_code.map(function(d){return d.code;});
+
+    for (var x of data){
+      x.pref_code = x.id.slice(0,2);
+      x.pref = pref_code[codes.indexOf(x.pref_code)].name;
+    }
+
+    var xDomain = data.map(function(d){return +d.h27;});
+    var yDomain = data.map(function(d){return +d.inc;});
+    var miles = function(arr){
+      var davis = Math.abs(Math.max(d3.min(arr), d3.max(arr)));
+      return [-davis, davis];
+    }
+
+    xScale.domain([0, d3.max(xDomain)]).nice();
+    yScale.domain(miles(yDomain)).nice();
+
+    var xAxis = d3.axisTop(xScale);
+    var yAxis = d3.axisLeft(yScale)
+                  .tickSize([-(size.width-margin.left-margin.right)]);
+
+    var info = d3.select("#info");
+
+    var underLayer = svg.append("g");
+    var baseLayer = svg.append("g");
+    var axisLayer = svg.append("g")
+                        .attr("class", "axis");
+    var guideLayer = svg.append("g");
+    var overlayer = svg.append("g");
+
+    var incline = underLayer.selectAll(".incline")
+                            .data([-0.2, -0.1, -0.05, -0.025, 0.025, 0.05, 0.1, 0.2])
+                            .enter()
+                            .append("g")
+                            .attr("class", "incline");
+
+// x2 = 40000 / d + 40000
+//      40000 ( 1 / d + 1 )
+// x2 = y ( 1 / d + 1 )
+// y = x2 / ( 1 / d + 1 )
+//   = d * x2 / ( d + 1 )
+//   = ( d / ( d + 1 ) ) * x2
+
+// d = 0.2
+// y = 0.2 / 1.2 * x2
+//   = 1 / 6 * x2
+
+
+    incline.append("line")
+            .attr("x1", margin.left)
+            .attr("x2", function(d){return xScale.domain()[1] * Math.abs(d / (1 + d)) < yScale.domain()[1] ? (size.width - margin.right) : d > 0 ? xScale(yScale.domain()[1] / d + yScale.domain()[1]) : xScale(-yScale.domain()[1] / d - yScale.domain()[1]);})
+            .attr("y1", yScale(0))
+            .attr("y2", function(d){return xScale.domain()[1] * Math.abs(d / (1 + d)) < yScale.domain()[1] ? yScale(xScale.domain()[1] * (d / (d + 1))) : d > 0 ? margin.top : size.height - margin.bottom;})
+            .attr("stroke", "yellow");
+
+    incline.append("text")
+            .attr("x", function(d){return xScale.domain()[1] * Math.abs(d / (1 + d)) < yScale.domain()[1] ? (size.width - margin.right) : d > 0 ? xScale(yScale.domain()[1] / d + yScale.domain()[1]) : xScale(-yScale.domain()[1] / d - yScale.domain()[1]);})
+            .attr("y", function(d){return xScale.domain()[1] * Math.abs(d / (1 + d)) < yScale.domain()[1] ? yScale(xScale.domain()[1] * d) : d > 0 ? margin.top : size.height - margin.bottom;})
+            .attr("dx", "-1em")
+            .attr("dy", function(d){return d > 0 ? ".7em" : "-.7em";})
+            .attr("dominant-baseline", "middle")
+            .style("fill", "black")
+            .text(function(d){return d3.format("+.01%")(d);});
+
+    axisLayer.append("g")
+        .attr("transform", "translate(0," + size.height / 2 + ")")
+        .call(xAxis);
+
+    axisLayer.append("g")
+        .attr("transform", "translate(" + margin.left + ", 0)")
+        .call(yAxis);
+
+    baseLayer.selectAll("circle")
+        .data(data)
+        .enter()
+        .append("circle")
+        .attr("class", function(d){return "pref" + d.pref_code;})
+        .attr("r", 3)
+        .attr("fill", /*function(d){return +d.inc_rate < 0 ? colors.circle.minus : colors.circle.plus;}*/colors.func)
+        .attr("cx", function(d){return xScale(+d.h27);})
+        .attr("cy", function(d){return yScale(+d.inc);})
+        .on("mouseover", function(d){
+          if(selected === null){
+            guideLayer.append("line")
+                .attr("x1", xScale(+d.h27))
+                .attr("x2", xScale(+d.h22))
+                .attr("y1", yScale(+d.inc))
+                .attr("y2", yScale(0))
+                .style("stroke", +d.inc_rate < 0 ? colors.line.minus : colors.line.plus)
+                .style("stroke-width", 2);
+
+            info.html("<small>" + d.pref + "</small><br><strong>" + d.name + "</strong><br>" + d3.format(",")(+d.h27) + "人<br><small>" + d3.format("+,")(+d.inc) + "</small>");
+            var mouse = d3.mouse(document.getElementById("figure"));
+            info.style("display", "inline")
+                .style("left", mouse[0] + 30 + "px")
+                .style("top", mouse[1] + 20 + "px");
+          }
+        })
+        .on("mouseout", function(d){
+          if(selected === null){
+            info.style("display", "none");
+            guideLayer.selectAll("line")
+                      .remove();
+            }
+        });
+
+        var menu = d3.select(".menucontainer")
+                      .append("div")
+                      .attr("class", "row")
+                      .attr("id", "menubody");
+
+        menu.selectAll(".cols")
+            .data(pref_code)
+            .enter()
+            .append("div")
+            .attr("class", "col-xs-6 col-sm-3 col-md-2 cols text-center")
+            .classed("active", true)
+            .style("cursor", "pointer")
+            .on("click", function(d){
+              if(selected === d){
+                d3.selectAll(".cols").classed("active", true);
+                overlayer.selectAll("circle").remove();
+                baseLayer.selectAll("circle")
+                          .attr("fill", /*function(v){return +v.inc_rate < 0 ? colors.circle.minus : colors.circle.plus;}*/colors.func);
+                selected = null;
+              } else {
+                selected = d;
+                d3.selectAll(".cols").classed("active", false);
+                d3.select(this).classed("active", true);
+
+                baseLayer.selectAll("circle")
+                          .attr("fill", colors.circle.inactive);
+
+                var overcircle = overlayer.selectAll("circle")
+                                        .data(d3.selectAll(".pref" + d.code).data());
+
+                overcircle.exit().remove();
+
+                overcircle.enter()
+                          .append("circle")
+                          .merge(overcircle)
+                          .attr("r", 4)
+                          .attr("fill", /*function(d){return +d.inc_rate < 0 ? colors.circle.minus : colors.circle.plus;}*/colors.func)
+                          .attr("cx", function(d){return xScale(+d.h27);})
+                          .attr("cy", function(d){return yScale(+d.inc);})
+                          .on("mouseover", function(d){
+                            if(selected !== null){
+                              guideLayer.append("line")
+                                  .attr("x1", xScale(+d.h27))
+                                  .attr("x2", xScale(+d.h22))
+                                  .attr("y1", yScale(+d.inc))
+                                  .attr("y2", yScale(0))
+                                  .style("stroke", +d.inc_rate < 0 ? colors.line.minus : colors.line.plus)
+                                  .style("stroke-width", 2);
+
+                              info.html("<small>" + d.pref + "</small><br><strong>" + d.name + "</strong><br>" + d3.format(",")(+d.h27) + "人<br><small>" + d3.format("+,")(+d.inc) + "</small>");
+                              var mouse = d3.mouse(document.getElementById("figure"));
+                              info.style("display", "inline")
+                                  .style("left", mouse[0] + 30 + "px")
+                                  .style("top", mouse[1] + 20 + "px");
+                            }
+                          })
+                          .on("mouseout", function(d){
+                            if(selected !== null){
+                              info.style("display", "none");
+                              guideLayer.selectAll("line")
+                                        .remove();
+                            }
+                          });
+              }
+
+            })
+            .text(function(d){return d.name;});
+
+
+
+  });
+
+
+    </script>
+</body>
+
+</html>

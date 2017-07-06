@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="d3.js + jsdomで国土地理院のベクトルタイルからSVGを生成 デモページ | 水戸地図" />
+    <meta property="og:url" content="http://map310.com/demo/d3vectortile.html" />
+    <meta property="og:image" content="http://map310.com/img/ogpogp.png" />
+    <meta property="og:site_name" content="水戸地図" />
+    <meta property="og:description" content="「d3.js + jsdomで国土地理院のベクトルタイルからSVGを生成」で作成した地図のデモページ" />
+    <meta name="description" content="「d3.js + jsdomで国土地理院のベクトルタイルからSVGを生成」で作成した地図のデモページ">
+    <title>d3.js + jsdomで国土地理院のベクトルタイルからSVGを生成 デモページ | 水戸地図</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!--
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.20.0/css/ol.css">
+  -->
+    <style>
+        body {
+          font-size: 16px;
+          font-family: 'メイリオ', 'Meiryo UI', sans-serif;
+        }
+        #chartcontainer{
+          position: relative;
+        }
+        .labels{
+          position: absolute;
+          transform: translate(-50%, -50%);
+          font-size: 14px;
+          font-weight: 600;
+          font-family: 游ゴシック, "Yu Gothic", "Yu Gothic Medium", "Helvetica Neue", sans-serif;
+          text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+        }
+
+        .labels.river{
+          font-weight: 300;
+          color: #349fa6;
+        }
+
+        .labels.landmark{
+          font-weight: 300;
+          font-size: 12px;
+        }
+
+        .labels .glyphicon:hover{
+          color: red;
+        }
+
+        @media(max-width: 480px) {
+          .labels {
+            font-size: 11px;
+          }
+        }
+    </style>
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/d3.v4.min.js"></script>
+    <!--
+    <script src="http://openlayers.org/en/v3.20.0/build/ol.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-tile.v0.0.min.js"></script>
+  -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-74683419-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+  <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content"><!--
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Modal title</h4>
+        </div>-->
+        <div class="modal-body">
+          <img src="./data/IMG_7358.jpg" id="modal-img" class="img-responsive">
+          <p id="description">One fine body&hellip;</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="page-header">
+          <h1>SVG地図使用例</h1>
+        </div>
+        <div id="chartcontainer">
+        </div>
+      </div>
+      <div class="col-sm-12">
+          <p><a href="http://qiita.com/cieloazul310/items/a8e776bbe8a70262df99">「d3.js + jsdomで国土地理院のベクトルタイルからSVGを生成」</a>で作成したタイル地図のデモページです。<br> 使用しているデータは以下の通り。
+          </p>
+          <ul>
+              <li>道路中心線 <small>国土地理院ベクトルタイル提供実験</small></li>
+              <li>鉄道中心線 <small>国土地理院ベクトルタイル提供実験 </small></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+  var q = d3.queue();
+  var image = "./data/sapporo.svg";
+  var points = "./data/sapporo.geojson";
+  q.defer(d3.xml, image)
+    .defer(d3.json, points)
+    .await(function(error, xml, json){
+      "use strict";
+      if(error) throw error;
+
+      var chartcontainer = d3.select("#chartcontainer");
+      chartcontainer.append("img")
+                    .attr("src", image)
+                    .style("width", "100%")
+                    .style("margin", 0);
+
+      var x = xml.documentElement;
+      var size = {original:{width: parseInt(x.getAttribute("width")), height: parseInt(x.getAttribute("height"))}};
+      var scale = {original: parseFloat(x.getAttribute("scale"))};
+      var extent = [[parseFloat(x.getAttribute("xmin")),parseFloat(x.getAttribute("ymin"))],[parseFloat(x.getAttribute("xmax")),parseFloat(x.getAttribute("ymax"))]];
+      console.log(extent);
+      var xScale = d3.scaleLinear()
+                      .domain([extent[0][0], extent[1][0]])
+                      .range([0,100]);
+      var yScale = d3.scaleLinear()
+                      .domain([extent[1][1], extent[0][1]])
+                      .range([0,100]);
+
+      chartcontainer.selectAll(".geometries")
+              .data(json.features)
+              .enter()
+              .append("div")
+              .attr("class", function(d){return "labels geometries " + d.properties.type;})
+              .style("top", function(d){return yScale(d.geometry.coordinates[1]) + "%";})
+              .style("left", function(d){return xScale(d.geometry.coordinates[0]) + "%";})
+              .append("p")
+              .text(function(d){return d.properties.name;});
+
+      var data = [];
+      for (var i = 0; i < 20; i++){
+        var neu = {x: Math.random()*100, y: Math.random()*100, title: "IMG_" + d3.format("03d")(i) + ".jpg", description: "札幌の地図を表示していますが、札幌はもう10年以上行ってませんし、写真の暗渠は東京で撮ったものです。"};
+        data.push(neu);
+      }
+
+      chartcontainer.selectAll(".cameras")
+                    .data(data)
+                    .enter()
+                    .append("div")
+                    .attr("class","labels cameras")
+                    .style("top", function(d){return d.y + "%"})
+                    .style("left", function(d){return d.x + "%"})
+                    .append("span")
+                    .attr("class","glyphicon glyphicon-camera")
+                    .on("mouseover", function(d){
+                      $(this).tooltip({
+                        title: d.title
+                      });
+                      $(this).tooltip('show');
+                    })
+                    .on("mouseout", function(d){
+                      $(this).tooltip('destroy');
+                    })
+                    .on("click", function(d){
+                      var modalContent = '<img src="./data/IMG_7358.jpg" class="img-responsive" alt="' + d.title + '">' + '<p>' + d.description + '</p>';
+                      $(".modal-body").html(modalContent);/*
+                      d3.request("./data/IMG_7358.jpg",function(error, img){
+                        if(error) throw error;
+                        d3.select("#modal-img").attr("src", img);
+                        d3.select("#description").text(d.description);
+                      })*/
+                      $(".modal").modal("show");
+                    });
+
+    });
+
+  </script>
+</body>
+
+</html>

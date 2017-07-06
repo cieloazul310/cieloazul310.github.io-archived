@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="QGIS手抜きタイルデモページ | 水戸地図" />
+    <meta property="og:url" content="http://map310.com/demo/yamizo.html" />
+    <meta property="og:image" content="http://map310.com/img/ogpogp.png" />
+    <meta property="og:site_name" content="水戸地図" />
+    <meta property="og:description" content="「QGISでタイル地図を手抜きで作る方法」で作成したタイル地図のデモページ" />
+    <meta name="description" content="「QGISでタイル地図を手抜きで作る方法」で作成したタイル地図のデモページ">
+    <title>QGIS手抜きタイルデモページ | 水戸地図</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.20.0/css/ol.css">
+    <style>
+        body {
+          font-size: 16px;
+          font-family: 'メイリオ', 'Meiryo UI', sans-serif;
+        }
+
+
+        .map {
+            width: 100%;
+            height: 480px;
+            margin: 1em auto;
+        }
+    </style>
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="http://openlayers.org/en/v3.20.0/build/ol.js"></script>
+    <script src="https://d3js.org/d3-selection.v1.min.js"></script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-74683419-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <nav>
+                    <h1>QGIS手抜きタイルデモページ</h1></nav>
+            </div>
+            <div class="col-sm-push-10 col-sm-2 col-xs-12">
+                <div id="mapmenu"></div>
+            </div>
+            <div class="col-sm-pull-2 col-sm-10 col-xs-12">
+                <div class="map" id="map"></div>
+            </div>
+            <div class="col-sm-12">
+                <p><a href="http://qiita.com/cieloazul310/items/f3c7839fb98d8371cc41">「QGISでタイル地図を手抜きで作る方法」</a>で作成したタイル地図のデモページです。<br> 使用しているタイルは以下の通り。
+                </p>
+                <ul>
+                    <li>八溝山タイル</li>
+                    <li>地理院地図（乗算合成）</li>
+                    <li>色別標高図</li>
+                    <li>国土地理院ベクトルタイル（道路中心線）</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        var view = new ol.View({
+            zoom: 12,
+            center: ol.proj.fromLonLat([140.284081, 36.932330])
+        });
+        var relief = new ol.layer.Tile({
+            source: new ol.source.XYZ({
+                attributions: [new ol.Attribution({
+                    html: '<a href="http://maps.gsi.go.jp/development/ichiran.html">地理院タイル</a>'
+                })],
+                url: "http://cyberjapandata.gsi.go.jp/xyz/relief/" + "{z}/{x}/{y}.png"
+            }),
+            title: "色別標高図",
+            visible: false
+        });
+        var yamizo = new ol.layer.Tile({
+            source: new ol.source.XYZ({
+                attributions: [new ol.Attribution({
+                    html: '基盤地図情報10mDEM'
+                })],
+                url: "../tile/yamizo/" + "{z}/{x}/{-y}.png"
+            }),
+            extent: [15604242.586, 4413779.701, 15629442.586, 4438979.701],
+            title: "八溝山タイル"
+        });
+        var cjstd = new ol.layer.Tile({
+            source: new ol.source.XYZ({
+                attributions: [new ol.Attribution({
+                    html: '<a href="http://maps.gsi.go.jp/development/ichiran.html">地理院タイル</a>'
+                })],
+                url: "http://cyberjapandata.gsi.go.jp/xyz/std/" + "{z}/{x}/{y}.png"
+            }),
+            title: "地理院地図",
+            visible: false
+        });
+        cjstd.on("precompose", function(evt) {
+            evt.context.globalCompositeOperation = 'multiply';
+        });
+        cjstd.on("postcompose", function(evt) {
+            evt.context.globalCompositeOperation = "source-over";
+        });
+
+        var roads = new ol.layer.VectorTile({
+            source: new ol.source.VectorTile({
+                attributions: [new ol.Attribution({
+                    html: '<a href="https://github.com/gsi-cyberjapan/vector-tile-experiment">ベクトルタイル提供実験</a>'
+                })],
+                url: "http://cyberjapandata.gsi.go.jp/xyz/experimental_rdcl/" + "{z}/{x}/{y}.geojson",
+                format: new ol.format.GeoJSON(),
+                tileGrid: new ol.tilegrid.createXYZ({
+                    minZoom: 16,
+                    maxZoom: 16
+                })
+            }),
+            style: function(feature) {
+                return [new ol.style.Style({
+                        stroke: new ol.style.Stroke({
+                            width: roadWidth(feature.get("rnkWidth")) * 2,
+                            color: "gray",
+                            lineCap: "butt"
+                        })
+                    }),
+                    new ol.style.Style({
+                        stroke: new ol.style.Stroke({
+                            width: roadWidth(feature.get("rnkWidth")),
+                            color: roadColor(feature.get("rdCtg")),
+                            lineDash: roadDash(feature.get("type"))
+                        })
+                    })
+                ]
+            },
+            maxResolution: 10,
+            opacity: 0.5,
+            visible: false,
+            title: "道路中心線"
+        });
+
+        var map = new ol.Map({
+            target: "map",
+            view: view,
+            layers: [relief, yamizo, cjstd, roads]
+        });
+
+        function roadDash(prop) {
+            return prop == "庭園路" ? [4, 6] :
+                prop == "徒歩道" ? [4, 6] : undefined;
+        }
+
+        function roadWidth(prop) {
+            return prop == "19.5m以上" ? 10 :
+                prop == "13m-19.5m未満" ? 8 :
+                prop == "5.5m-13m未満" ? 5 :
+                prop == "3m-5.5m未満" ? 3 : 1;
+        }
+
+        function roadColor(prop) {
+            return prop == "国道" ? "orange" :
+                prop == "都道府県道" ? "yellow" :
+                prop == "高速自動車国道等" ? "yellowgreen" : "white";
+        }
+
+        function createMenu(target, map) {
+            var group = d3.select(target)
+                .append("div")
+                .attr("class", "list-group");
+            group.selectAll("button")
+                .data(map.getLayers().getArray())
+                .enter()
+                .append("button")
+                .attr("class", "list-group-item")
+                .classed("active", function(d) {
+                    return d.getVisible();
+                })
+                .text(function(d) {
+                    return d.get("title");
+                })
+                .on("click", function(d) {
+                    d.setVisible(!d.getVisible());
+                    d3.select(this).classed("active", d.getVisible());
+                });
+        }
+        createMenu("#mapmenu", map);
+    </script>
+</body>
+
+</html>
