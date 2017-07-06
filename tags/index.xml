@@ -2,75 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 水戸地図</title>
-    <link>cieloazul310.github.io/tags/</link>
+    <link>//cieloazul310.github.io/tags/</link>
     <description>Recent content in Tags on 水戸地図</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 03 Sep 2112 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="cieloazul310.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//cieloazul310.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Disqus</title>
-      <link>cieloazul310.github.io/tags/disqus/</link>
+      <link>//cieloazul310.github.io/tags/disqus/</link>
       <pubDate>Sat, 03 Sep 2112 00:00:00 +0000</pubDate>
       
-      <guid>cieloazul310.github.io/tags/disqus/</guid>
+      <guid>//cieloazul310.github.io/tags/disqus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Google Analytics</title>
-      <link>cieloazul310.github.io/tags/google-analytics/</link>
+      <link>//cieloazul310.github.io/tags/google-analytics/</link>
       <pubDate>Sat, 03 Sep 2112 00:00:00 +0000</pubDate>
       
-      <guid>cieloazul310.github.io/tags/google-analytics/</guid>
+      <guid>//cieloazul310.github.io/tags/google-analytics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gravatar</title>
-      <link>cieloazul310.github.io/tags/gravatar/</link>
+      <link>//cieloazul310.github.io/tags/gravatar/</link>
       <pubDate>Sat, 03 Sep 2112 00:00:00 +0000</pubDate>
       
-      <guid>cieloazul310.github.io/tags/gravatar/</guid>
+      <guid>//cieloazul310.github.io/tags/gravatar/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hexo Theme</title>
-      <link>cieloazul310.github.io/tags/hexo-theme/</link>
+      <link>//cieloazul310.github.io/tags/hexo-theme/</link>
       <pubDate>Sat, 03 Sep 2112 00:00:00 +0000</pubDate>
       
-      <guid>cieloazul310.github.io/tags/hexo-theme/</guid>
+      <guid>//cieloazul310.github.io/tags/hexo-theme/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Responsive</title>
-      <link>cieloazul310.github.io/tags/responsive/</link>
+      <link>//cieloazul310.github.io/tags/responsive/</link>
       <pubDate>Sat, 03 Sep 2112 00:00:00 +0000</pubDate>
       
-      <guid>cieloazul310.github.io/tags/responsive/</guid>
+      <guid>//cieloazul310.github.io/tags/responsive/</guid>
       <description></description>
     </item>
     
     <item>
       <title>スピッツ</title>
-      <link>cieloazul310.github.io/tags/%E3%82%B9%E3%83%94%E3%83%83%E3%83%84/</link>
+      <link>//cieloazul310.github.io/tags/%E3%82%B9%E3%83%94%E3%83%83%E3%83%84/</link>
       <pubDate>Fri, 30 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>cieloazul310.github.io/tags/%E3%82%B9%E3%83%94%E3%83%83%E3%83%84/</guid>
+      <guid>//cieloazul310.github.io/tags/%E3%82%B9%E3%83%94%E3%83%83%E3%83%84/</guid>
       <description></description>
     </item>
     
     <item>
       <title>邦楽ロック</title>
-      <link>cieloazul310.github.io/tags/%E9%82%A6%E6%A5%BD%E3%83%AD%E3%83%83%E3%82%AF/</link>
+      <link>//cieloazul310.github.io/tags/%E9%82%A6%E6%A5%BD%E3%83%AD%E3%83%83%E3%82%AF/</link>
       <pubDate>Fri, 30 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>cieloazul310.github.io/tags/%E9%82%A6%E6%A5%BD%E3%83%AD%E3%83%83%E3%82%AF/</guid>
+      <guid>//cieloazul310.github.io/tags/%E9%82%A6%E6%A5%BD%E3%83%AD%E3%83%83%E3%82%AF/</guid>
       <description></description>
     </item>
     
