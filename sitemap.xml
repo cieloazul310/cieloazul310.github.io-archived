@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://cieloazul310.github.io/2017/07/pizzicato/</loc>
+    <lastmod>2017-07-05T14:29:37+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cieloazul310.github.io/2017/06/1987/</loc>
     <lastmod>2017-06-30T00:00:00+00:00</lastmod>
   </url>
@@ -19,6 +24,12 @@
   
   <url>
     <loc>https://cieloazul310.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cieloazul310.github.io/categories/data-visualization/</loc>
+    <lastmod>2017-07-05T14:29:37+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -47,6 +58,12 @@
   </url>
   
   <url>
+    <loc>https://cieloazul310.github.io/categories/j.league/</loc>
+    <lastmod>2017-07-05T14:29:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cieloazul310.github.io/post/</loc>
     <lastmod>2112-09-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -61,6 +78,18 @@
   <url>
     <loc>https://cieloazul310.github.io/tags/responsive/</loc>
     <lastmod>2112-09-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cieloazul310.github.io/tags/tag1/</loc>
+    <lastmod>2017-07-05T14:29:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cieloazul310.github.io/tags/tag2/</loc>
+    <lastmod>2017-07-05T14:29:37+09:00</lastmod>
     <priority>0</priority>
   </url>
   
