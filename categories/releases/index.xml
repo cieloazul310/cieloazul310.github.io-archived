@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>水戸地図</title>
+      <title>水戸地図について</title>
       <link>https://cieloazul310.github.io/2112/09/about/</link>
       <pubDate>Sat, 03 Sep 2112 00:00:00 +0000</pubDate>
       
       <guid>https://cieloazul310.github.io/2112/09/about/</guid>
-      <description>&lt;p&gt;Tranquilpeak is a gorgeous responsive theme for Hugo blog framework. It has many features and integrated services to improve user experience.
+      <description>&lt;p&gt;水戸地図はD3.jsやOpenLayersなどJavaScriptのライブラリを使ってデータビジュアライゼーションを試みる実験室です。
 &lt;/p&gt;</description>
     </item>
     
