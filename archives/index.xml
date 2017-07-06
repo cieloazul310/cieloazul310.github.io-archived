@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Archives on 水戸地図</title>
-    <link>map310.com/archives/</link>
+    <link>cieloazul310.github.io/archives/</link>
     <description>Recent content in Archives on 水戸地図</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     
-	<atom:link href="map310.com/archives/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="cieloazul310.github.io/archives/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
