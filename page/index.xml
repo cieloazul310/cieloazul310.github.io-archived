@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tag2 on 水戸地図</title>
-    <link>https://cieloazul310.github.io/tags/tag2/</link>
-    <description>Recent content in Tag2 on 水戸地図</description>
+    <title>Pages on 水戸地図</title>
+    <link>https://cieloazul310.github.io/page/</link>
+    <description>Recent content in Pages on 水戸地図</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 07 Jul 2017 16:12:11 +0900</lastBuildDate>
     
-	<atom:link href="https://cieloazul310.github.io/tags/tag2/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cieloazul310.github.io/page/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,16 +18,6 @@
       
       <guid>https://cieloazul310.github.io/page/page-sample/</guid>
       <description>ああああああああああ</description>
-    </item>
-    
-    <item>
-      <title>iframe D3.js Example</title>
-      <link>https://cieloazul310.github.io/2017/07/pizzicato/</link>
-      <pubDate>Wed, 05 Jul 2017 14:29:37 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2017/07/pizzicato/</guid>
-      <description>&lt;p&gt;J1チャートよ。
-&lt;/p&gt;</description>
     </item>
     
   </channel>
