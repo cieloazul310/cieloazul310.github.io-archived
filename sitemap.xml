@@ -13,11 +13,6 @@
   </url>
   
   <url>
-    <loc>https://cieloazul310.github.io/2017/06/1987/</loc>
-    <lastmod>2017-06-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://cieloazul310.github.io/archives/</loc>
     <priority>0</priority>
   </url>
@@ -30,30 +25,6 @@
   <url>
     <loc>https://cieloazul310.github.io/categories/data-visualization/</loc>
     <lastmod>2017-07-05T14:29:37+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cieloazul310.github.io/tags/disqus/</loc>
-    <lastmod>2112-09-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cieloazul310.github.io/tags/google-analytics/</loc>
-    <lastmod>2112-09-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cieloazul310.github.io/tags/gravatar/</loc>
-    <lastmod>2112-09-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cieloazul310.github.io/tags/hexo-theme/</loc>
-    <lastmod>2112-09-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -76,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://cieloazul310.github.io/tags/responsive/</loc>
+    <loc>https://cieloazul310.github.io/categories/site/</loc>
     <lastmod>2112-09-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -95,31 +66,13 @@
   
   <url>
     <loc>https://cieloazul310.github.io/tags/</loc>
-    <lastmod>2112-09-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cieloazul310.github.io/categories/tranquilpeak/</loc>
-    <lastmod>2112-09-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cieloazul310.github.io/tags/%E3%82%B9%E3%83%94%E3%83%83%E3%83%84/</loc>
-    <lastmod>2017-06-30T00:00:00+00:00</lastmod>
+    <lastmod>2017-07-05T14:29:37+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cieloazul310.github.io/</loc>
     <lastmod>2112-09-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cieloazul310.github.io/tags/%E9%82%A6%E6%A5%BD%E3%83%AD%E3%83%83%E3%82%AF/</loc>
-    <lastmod>2017-06-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
