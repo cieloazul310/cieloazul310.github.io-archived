@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <style>
     .chart-container {
-      width: 100%;
-      height: 540px;
+      width: 100%;/*
+      height: 540px;*/
       max-width: 1000px;
       margin: 0 auto;
     }
@@ -259,8 +259,8 @@ d3.csv("./j1revenue2015.csv", function(err, data){
   g.append("g")
     .attr("class", "axis yaxis");
 
-  svg.call(resize)
-      .call(createLegend);
+  svg.call(createLegend)
+      .call(resize);
 
   win.on("resize", resize);
 
@@ -297,8 +297,10 @@ d3.csv("./j1revenue2015.csv", function(err, data){
   }
 
   function resize(){
-    size.width = parseFloat(svg.style("width").slice(0,-2));
-    size.height = parseFloat(svg.style("height").slice(0,-2));
+    const colorHeight = parseFloat(d3.select(".color-controler").style("height").slice(0,-2));
+    size.width = parseFloat(svg.style("width").slice(0,-2));/*
+    size.height = parseFloat(svg.style("height").slice(0,-2));*/
+    size.height = window.innerHeight - colorHeight;
 
     svg.attr("width", size.width)
         .attr("height", size.height);
