@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .map {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+  </style>
+  <link rel="stylesheet" href="http://openlayers.org/en/v4.2.0/css/ol.css">
+  <script src="http://openlayers.org/en/v4.2.0/build/ol.js"></script>
+</head>
+<body>
+  <div class="map" id="map"></div>
+  <script>
+
+    const relief = new ol.layer.Tile({
+      source: new ol.source.XYZ({
+        url: "//cyberjapandata.gsi.go.jp/xyz/relief/" + "{z}/{x}/{y}.png",
+        attributions: [
+          new ol.Attribution({html: "<a href='http://maps.gsi.go.jp/development/ichiran.html' target='_blank'>国土地理院</a>"})
+        ]
+      }),
+      opacity: 0.6
+    });
+
+    const slope = new ol.layer.Tile({
+      source: new ol.source.XYZ({
+        url: "//cyberjapandata.gsi.go.jp/xyz/slopemap/" + "{z}/{x}/{y}.png",
+        attributions: [
+          new ol.Attribution({html: "<a href='http://maps.gsi.go.jp/development/ichiran.html' target='_blank'>国土地理院</a>"})
+        ]
+      }),
+      opacity: 0.8
+    });
+
+    slope.on("precompose", function(evt){
+      evt.context.globalCompositeOperation = 'multiply';
+    });
+    slope.on("postcompose", function(evt){
+      evt.context.globalCompositeOperation = "source-over";
+    });
+
+
+    const map = new ol.Map({
+      view: new ol.View({
+        center: ol.proj.fromLonLat([140,38]),
+        zoom: 10
+      }),
+      layers: [relief, slope],
+      target: "map"
+    });
+  </script>
+</body>
+</html>

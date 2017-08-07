@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    .chart-container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    #chart {
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+    }
+
+    .color-controler ul{
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .color-controler li{
+      display: inline-block;
+      margin: auto 0.4em;
+    }
+
+    .axis text{
+      font-family: 'Trebuchet MS', Arial, sans-serif;
+    }
+
+    .axis .tick line {
+      stroke: silver;
+    }
+
+    .arrows.arrows-plus{
+      fill: blue;
+    }
+
+    .arrows.arrows-minus{
+      fill: red;
+    }
+
+    .arrows.arrows-cross{
+      fill: gray;
+    }
+
+    #info {
+        position: absolute;
+        display: none;
+        background: rgba(0,0,40,0.8);
+        font-size: 12px;
+        color: white;
+        padding: .6em;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        min-width: 40px;
+        max-width: 33%;/*
+        border: thin solid #aaa;
+        -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);*/
+    }
+
+    #info h3, #info p {
+      margin: auto;
+    }
+
+    #info h3 {
+      text-align: center;
+      border-bottom: 1px gray solid;
+    }
+
+  </style>
+  <title>Document</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="color-controler"></div>
+    <div class="chart-container" id="container">
+      <svg id="chart"></svg>
+      <div id="info">
+        <h3>infoTitle</h3>
+        <div class="desc"></div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+
+d3.csv("./spec.csv", function(d, i, columns){
+  if (isNaN(parseInt(d["入場料収入"]))) return;
+  for (j = 0; j < columns.length; j++) d[columns[j]] = parseFloat(d[columns[j]]);
+  return d;
+}, function(err, data){
+
+  if (err) throw err;
+
+  const size = {};
+  const margin = {top: 20, right: 10, bottom: 10, left: 20};
+
+  const svg = d3.select("#chart");
+  const container = d3.select("#container");
+  const win = d3.select(window);
+
+  const xScale = d3.scaleLinear();
+  const yScale = d3.scaleLinear();
+
+  const xAxis = d3.axisTop(xScale);
+  const yAxis = d3.axisLeft(yScale);
+
+  const axisKeys = {x: "年間増加率", y: "客単価増加率"};
+
+  const domains = carcLargerDomain(data, axisKeys.x, axisKeys.y);
+
+  xScale.domain(domains).nice();
+  yScale.domain(domains).nice();
+
+  console.log(data);
+  console.log(xScale.domain());
+  console.log(yScale.domain());
+
+  const info = d3.select("#info");
+  let infoMargin;
+
+  const g = svg.append("g").attr("class", "axis");
+
+  const arrows = svg.append("g");
+
+  svg.append("g")
+      .attr("class", "hovered");
+
+  arrows.selectAll(".arrows")
+      .data(data.slice(1))
+      .enter()
+      .append("circle")
+      .attr("class", function(d){
+        return d[axisKeys.x] > 0 && d[axisKeys.y] > 0 ? "arrows arrows-plus" :
+                d[axisKeys.x] < 0 && d[axisKeys.y] < 0 ? "arrows arrows-minus" :
+                "arrows arrows-cross";
+      })/*
+      .on("click", function(v){
+        info.style("display", "none");
+        svg.select(".hovered").selectAll("rect")
+            .transition().duration(primer ? 0 : 500)
+            .attr("x", margin.left + 1)
+            .transition().delay(primer ? 0 : 250).duration(500)
+            .attr("y", yScale(v.name))
+            .transition().delay(500).duration(1000)
+            .remove();
+      })*/
+      .on("mouseover touchstart", function(d){
+        info.style("display", "inline");
+
+        const desc = [(axisKeys.x + ": " + d3.format(".2%")(d[axisKeys.x])),
+                      (axisKeys.y + ": " + d3.format(".2%")(d[axisKeys.y]))];
+
+        createInfo(info, (+d["年"] - 1) + "→" + d["年"], desc[0], desc[1]);
+
+        svg.select(".hovered")
+            .append("circle")
+            .datum(d)
+            .attr("fill", "none")
+            .attr("stroke", "yellow")
+            .attr("stroke-width", 3)
+            .attr("cx", xScale(d[axisKeys.x]))
+            .attr("cy", yScale(d[axisKeys.y]))
+            .attr("r", 8);
+      })
+      .on("mousemove", function(){
+        var mouse = d3.mouse(document.getElementById("chart"));
+        info.style("display", "inline")
+            .style("left", (mouse[0] + 45 + infoMargin[1]) + "px")
+            .style("top", ((mouse[1] - 40) + infoMargin[0]) + "px");
+      })
+      .on("mouseout touchend", function(v){
+        info.style("display", "none");
+        svg.select(".hovered").selectAll("circle")
+            .remove();
+      });
+
+  g.append("g")
+    .attr("class", "axis xaxis");
+  g.append("g")
+    .attr("class", "axis yaxis");
+
+  svg.call(resize);
+
+  win.on("resize", resize);
+
+  function resize(){
+    size.common = Math.min(parseFloat(svg.style("width").slice(0,-2)), window.innerHeight);
+    size.width = size.common;
+    size.height = size.common;
+
+    svg.attr("width", size.width)
+        .attr("height", size.height);
+
+    xScale.range([margin.left, size.width - margin.right]);
+    yScale.range([size.height - margin.bottom, margin.top]);
+
+    arrows.selectAll(".arrows")
+          .attr("r", 4)
+          .attr("cx", d => xScale(d[axisKeys.x]))
+          .attr("cy", d => yScale(d[axisKeys.y]));
+
+    moveAxis();
+
+    infoMargin = calcMargin(container);
+
+    }
+
+    function moveAxis(duration = 0, delay = 0){
+      xAxis.tickSize(-(size.height-margin.top-margin.bottom));
+      yAxis.tickSize(-(size.width-margin.left-margin.right));
+
+      svg.select(".xaxis")
+        .transition().duration(duration).delay(delay)
+        .attr("transform", "translate(0," + margin.top + ")")
+        .call(xAxis);
+
+      svg.select(".yaxis")
+        .transition().duration(duration).delay(delay)
+        .attr("transform", "translate(" + margin.left + ",0)")
+        .call(yAxis);
+    }
+/*
+    function moveBars(duration = 0, delay = 0){
+
+      rows.transition().duration(duration).delay(delay)
+          .attr("transform", d => "translate(0," + yScale(d.name) + ")");
+
+      rows.selectAll(".base").selectAll("rect")
+          .transition().duration(duration).delay(delay)
+          .attr("x", margin.left + 1)
+          .attr("width", d => xScale(d.sum) - margin.left - 1)
+          .attr("height", yScale.bandwidth());
+
+      rows.selectAll(".base").selectAll("text")
+          .transition().duration(duration).delay(delay)
+          .attr("x", size.width)
+          .attr("y", yScale.bandwidth() / 2);
+
+      rows.selectAll(".parts").selectAll("rect")
+          .transition().duration(duration).delay(delay)
+          .attr("x", v => xScale(v.left) + 1)
+          .attr("y", "0")
+          .attr("width", v => Math.max((xScale(v.value) - margin.left - 1), 0))
+          .attr("height", yScale.bandwidth());
+
+      rows.selectAll(".parts").selectAll("text")
+          .transition().duration(duration).delay(delay)
+          .attr("transform", v => "translate(" + (xScale(v.left)) + ",0)")
+          .attr("x", 0)
+          .attr("y", yScale.bandwidth())
+          .attr("display", v => xScale(v.value) - margin.left < 20 ? "none" : "inline");
+      }
+
+    function sortParts(key){
+      const prime = types[0];
+      sortX(key, prime);
+      sortY(key, prime);
+    }
+
+    function sortX(key, prime){
+      if(key !== prime){
+        types.splice(types.indexOf(key), 1)
+        types.splice(0, 0, key);
+
+        for (let x of data){
+          x.values.sort(function(a, b){return types.indexOf(a.type) - types.indexOf(b.type);});
+          calcLeft(x);
+        }
+
+        rows.data(data);
+        moveBars(500);
+      }
+    }
+
+    function calcLeft(datum){
+      let sum = 0;
+      for (let n of datum.values){
+        n.left = sum;
+        sum += n.value;
+      }
+    }
+
+    function sortY(key, prime){
+      const jake = key === prime;
+      const delay = jake ? 0 : 750;
+      moveBars(500, delay);
+      moveAxis(500, delay);
+
+    }
+*/
+    function createInfo(element, title, ...args){
+      element.select("h3").text(title);
+      const paraphs = element.select(".desc").selectAll("p").data(args);
+      paraphs.exit().remove();
+      paraphs.enter().append("p").merge(paraphs)
+              .text(d => d);
+    };
+
+    function calcMargin(parent){
+      const marginArr = parent.style("margin").split(" ");
+      return marginArr.length === 1 ? [0, 0] : marginArr.map(d => parseFloat(d.slice(0,-2)));
+    }
+
+    function carcLargerDomain(array, key1, key2){
+      const hoge = Math.max(d3.max(array, d => Math.abs(d[key1])), d3.max(array, d => Math.abs(d[key2])));
+      return [-hoge, hoge];
+    }
+
+});
+
+</script>
+</html>
