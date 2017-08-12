@@ -32,10 +32,8 @@
 
     
     <meta name="description" content="最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。
-
 ">
     <meta property="og:description" content="最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。
-
 ">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="バイナリベクトルタイルを作ってみた">
@@ -44,7 +42,6 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="水戸地図">
     <meta name="twitter:description" content="最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。
-
 ">
     
       <meta name="twitter:creator" content="@cieloazul310">
@@ -265,12 +262,13 @@ ga('send', 'pageview');
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。</p>
-
-<p></p>
+              <p>最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。
+</p>
 
 <p>この記事は、<a href="https://shimz.me/blog/leaflet-js/5354">バイナリベクトルタイルの作り方(GUNMA GIS GEEK)</a>という記事にある作り方をそのままそっくりやってみたという内容の記事です。クックパッドで言うところの「つくれぽ」ですね。
-なので、バイナリベクトルタイルや途中で出てくるMBTilesなどの仕様や仕組みについては大して理解していません。ご了承ください。</p>
+なので、バイナリベクトルタイルや途中で出てくるMBTilesなどの仕様や仕組みについてはあまり理解していません。ご了承ください。</p>
+
+<p><a href="https://cieloazul310.github.io/mvt-tiles">Leafletで表示例</a></p>
 
 <h3 id="1-データをダウンロード">1.データをダウンロード</h3>
 
@@ -291,11 +289,13 @@ ga('send', 'pageview');
 
 <h3 id="3-geojsonからmbtilesを作成">3.GeoJSONからMBTilesを作成</h3>
 
-<p><a href="https://github.com/mapbox/tippecanoe">tippecanoe</a>を手に入れます。macなのでhomebrewを使いました。お手軽。
-レートは「作り方」の例に従って、数値ではなく<code>-rg</code>オプションにしました。実用的なものを作る場合は適切なレートを設定した方がいいと思います。</p>
+<p><a href="https://www.mapbox.com/help/define-mbtiles/">MBTiles</a>はSQLiteベースで作られたタイルセットを格納するためのファイル形式です。GeoJSONからMBTilesを作るために<a href="https://github.com/mapbox/tippecanoe">tippecanoe</a>を手に入れます。macなのでhomebrewを使いました。</p>
 
-<p>入力が先述の<a href="http://ndjson.org/">ndjson</a>形式の場合は<code>-P</code>オプションをつけます。
-下記のように、複数のデータをレイヤーとして一つのmbtilesファイルにまとめることもできます。</p>
+<p>tippecanoeのオプションですが、基本的には「作り方」の例に従っています。<code>-r</code>オプションで設定するレートも、数値ではなく<code>-rg</code>オプションにしました。実用的なものを作る場合は適切なレートを設定した方がいいと思います。要検証。</p>
+
+<p>入力が先述の<a href="http://ndjson.org/">ndjson</a>形式の場合は<code>-P</code>オプションをつけます。</p>
+
+<p>下記のように、<code>-L</code>オプションを使うことで複数のデータをレイヤーとして一つのmbtilesファイルにまとめることもできます。</p>
 
 <pre><code class="language-Shell">  $ tippecanoe -L hoge:./data/hoge.json -L fuga:./data/fuga.json -o output.mbtiles
 </code></pre>
@@ -304,14 +304,13 @@ ga('send', 'pageview');
 
 <h3 id="4-mbutilを使ってpbfファイルへ展開">4.mbutilを使ってpbfファイルへ展開</h3>
 
-<p>mbutilはMBTilesとタイルを構成するディレクトリの相互変換を行うツールです。「作り方」ではeasy_installでしたがpipを使ってインストールしました。
+<p><a href="https://github.com/mapbox/mbutil">mbutil</a>は<a href="https://www.mapbox.com/help/define-mbtiles/">MBTiles</a>とタイルを構成するディレクトリの相互変換を行うツールです。「作り方」ではeasy_installでしたがpipを使ってインストールしました。
 拡張子は「作り方」でも言及されていたように、.pbfではなく<strong>.mvt</strong>としました。</p>
 
 <pre><code class="language-Shell">  $ find . -type f -exec mv -v '{}' '{}'.mvt \;
 </code></pre>
 
-<p>正直この辺りの手順は何をやっているのかほとんど理解していません。
-ここで</p>
+<p>これで、mbutilで指定したディレクトリにmvtという拡張子がついたファイルが入ったフォルダが出来ているはずです。</p>
 
 <h3 id="5-表示してみる">5.表示してみる</h3>
 
@@ -319,7 +318,7 @@ ga('send', 'pageview');
 
 <p>「作り方」の記事に則って<a href="http://leafletjs.com">Leaflet</a>を使用して表示します。
 ここで注意点が一つ。バイナリベクトルタイルの表示に使用する<a href="https://github.com/SpatialServer/Leaflet.MapboxVectorTile/">Leaflet.MapboxVectorTileプラグイン</a>はLeaflet v1.0.0以降のバージョンでは動きません。ガーン。
-また、上記のデモでも実証されるように、地物の数が多すぎるタイルは読み込んでくれませんでした（決してタイルの欠損があるわけではない）。この辺の閾値なども調べていきたいです。</p>
+また、上記のデモでも実証されるように、地物の数が多すぎるタイルは読み込んでくれませんでした（タイルの欠損があるわけではないはず）。この辺の閾値なども調べていきたいです。</p>
 
 <pre><code class="language-JavaScript">  const schools = new L.TileLayer.MVTSource({
     url: &quot;./tile/schools/&quot; + &quot;{z}/{x}/{y}.mvt&quot;,
@@ -330,7 +329,7 @@ ga('send', 'pageview');
     getIDForLayerFeature: function(feature){
       return feature.properties.P29_001 + feature.properties.P29_005;
     },
-    onClick: hoveronFeature,
+    onClick: hoveronFeature, //別途設定した関数
     style: function(feature){
       let color = feature.properties.P29_004 === &quot;16001&quot; ? &quot;yellow&quot; :
                   feature.properties.P29_004 === &quot;16002&quot; ? &quot;gold&quot; :
@@ -349,9 +348,11 @@ ga('send', 'pageview');
 
 <h4 id="その他のライブラリ">その他のライブラリ</h4>
 
+<p><a href="https://cieloazul310.github.io/mvt-tiles/openlayers.html">OpenLayersでの表示例</a></p>
+
 <p><a href="http://openlayers.org">OpenLayers</a>ではバイナリベクトルタイルを読み込む<code>ol.source.MVTSource()</code>が存在しているのですが、なぜか上手く動作してくれません。もしかしたら<a href="http://openlayers.org/en/latest/examples/mapbox-vector-tiles.html">Mapboxが配信しているタイル</a>に特化しているかもしれません。</p>
 
-<p>ちゃんと調べてないのでアレなんですが、<a href="https://www.mapbox.com/mapbox-gl-js/api/">Mapbox GL JS</a>が一番良いみたいですね。後々試してみます。</p>
+<p>ちゃんと調べてないのでアレなんですが、WEBGLベースの<a href="https://www.mapbox.com/mapbox-gl-js/api/">Mapbox GL JS</a>が一番良いみたいですね。後々試してみます。</p>
 
 <h3 id="6-github-pagesでホストしてみる">6.GitHub Pagesでホストしてみる</h3>
 
@@ -360,15 +361,16 @@ ga('send', 'pageview');
 
 <ul>
 <li>レポジトリ: <a href="https://github.com/cieloazul310/mvt-tiles/">https://github.com/cieloazul310/mvt-tiles</a></li>
+<li>ホストしたタイル:  <a href="https://cieloazul310.github.io/mvt-tiles/tile/schools/{z}/{x}/{y}.mvt">https://cieloazul310.github.io/mvt-tiles/tile/schools/{z}/{x}/{y}.mvt</a></li>
 <li>ホストしたページ: <a href="https://cieloazul310.github.io/mvt-tiles">https://cieloazul310.github.io/mvt-tiles</a></li>
 </ul>
 
 <h3 id="課題">課題</h3>
 
 <ul>
-<li>クリックイベントやイベントによる地物のon/offの設定などを試していきたい。</li>
-<li>LeafletのMapboxVectorTileプラグインは最終更新が2015年9月で、Leafletの最新バージョンに対応する可能性はなさそう。それでもLeafletを使うべきか。</li>
 <li>tippecanoeの機能をもっと試していきたい。</li>
+<li>Leafletでのクリックイベントや複雑なスタイリングなどを試していきたい。</li>
+<li>LeafletのMapboxVectorTileプラグインは最終更新が2015年9月で、Leafletの最新バージョンに対応する可能性はなさそう。それでもLeafletを使うべきか悩みどころ。</li>
 </ul>
 
 <h3 id="感想">感想</h3>
@@ -632,9 +634,8 @@ ga('send', 'pageview');
                   Aug 8, 2017
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather"><p>最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。</p>
-
-<p></p></div>
+              <div class="media-content hide-xs font-merryweather"><p>最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。
+</p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
