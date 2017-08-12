@@ -1,0 +1,736 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.21">
+    <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
+    <title>バイナリベクトルタイルを作ってみた</title>
+    <meta name="author" content="cieloazul310">
+    <meta name="keywords" content="JavaScript, 地図, ベクトルタイル, バイナリベクトルタイル">
+
+    <link rel="icon" href="https://cieloazul310.github.io/favicon.ico">
+    
+
+    
+    <meta name="description" content="最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。
+
+">
+    <meta property="og:description" content="最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。
+
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="バイナリベクトルタイルを作ってみた">
+    <meta property="og:url" content="/2017/08/cook-binary-vector-tiles/">
+    <meta property="og:site_name" content="水戸地図">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="水戸地図">
+    <meta name="twitter:description" content="最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。
+
+">
+    
+      <meta name="twitter:creator" content="@cieloazul310">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/b1034548bf520b5046582562c07c4ee2?s=640">
+    
+
+    
+      <meta property="og:image" content="https://cieloazul310.github.io/img/cover.jpg">
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
+    
+    
+    <link rel="stylesheet" href="https://cieloazul310.github.io/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
+    
+    
+
+    
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-74683419-3', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://cieloazul310.github.io/">水戸地図</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://cieloazul310.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/b1034548bf520b5046582562c07c4ee2?s=90" alt="著者の絵" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://cieloazul310.github.io/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/b1034548bf520b5046582562c07c4ee2?s=110" alt="著者の絵" />
+        </a>
+        <h4 class="sidebar-profile-name">cieloazul310</h4>
+        
+          <h5 class="sidebar-profile-bio">Mito Football Fanatic</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://cieloazul310.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">カテゴリー</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://cieloazul310.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">タグ</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://cieloazul310.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">アーカイブ</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://cieloazul310.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">プロフィール</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://cieloazul310.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">ホーム</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//twitter.com/cieloazul310">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+      
+      <span class="sidebar-button-desc">Twitter</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//github.com/cieloazul310">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://cieloazul310.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      バイナリベクトルタイルを作ってみた
+    </h1>
+  
+  <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-08-12T13:00:00&#43;09:00">
+      
+  
+  
+  
+  
+    2017年 8月12日
+  
+
+    </time>
+  
+  
+  
+  
+    <span>カテゴリー</span>
+    
+      <a class="category-link" href="https://cieloazul310.github.io/categories/javascript">JavaScript</a>, 
+    
+      <a class="category-link" href="https://cieloazul310.github.io/categories/leaflet">Leaflet</a>
+    
+  
+
+
+</div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。</p>
+
+<p></p>
+
+<p>この記事は、<a href="https://shimz.me/blog/leaflet-js/5354">バイナリベクトルタイルの作り方(GUNMA GIS GEEK)</a>という記事にある作り方をそのままそっくりやってみたという内容の記事です。クックパッドで言うところの「つくれぽ」ですね。
+なので、バイナリベクトルタイルや途中で出てくるMBTilesなどの仕様や仕組みについては大して理解していません。ご了承ください。</p>
+
+<h3 id="1-データをダウンロード">1.データをダウンロード</h3>
+
+<p>データは何でも良いのですが、とりあえず<a href="http://nlftp.mlit.go.jp/ksj/">国土数値情報</a>を使ってみます。
+今回は点データである「学校」のデータを利用しました。zipファイルをダウンロードし、解凍するとシェープファイルが手に入ります。
+フォルダごと作業ディレクトリのどこかに放り込んでおきましょう。</p>
+
+<h3 id="2-シェープファイルをgeojsonに変換">2.シェープファイルをGeoJSONに変換</h3>
+
+<p>一般的にはGDALの<a href="http://www.gdal.org/ogr2ogr.html">ogr2ogr</a>を使う場面だと思いますが、より楽な<a href="https://github.com/mbostock/shapefile#command-line-reference">shp2json</a>を使いました。npmでサクッとインストールできるので、D3.js、特にTopoJSON関連を使うなら導入して損はないと思います。</p>
+
+<pre><code class="language-Shell">  $ shp2json --encoding Shift-JIS source.shp &gt; output.geojson
+</code></pre>
+
+<p>国土数値情報はShift-JISで提供されているので、<code>--encoding Shift-JIS</code>を忘れずに。</p>
+
+<p>次の手順で使う<a href="https://github.com/mapbox/tippecanoe">tippecanoe</a>では<a href="http://ndjson.org/">ndjson</a>形式を扱うことができるので、<code>shp2json</code>で<code>-n</code>オプションをつけて、ndjsonで出力してもいいです。tippecanoeのドキュメントによると、ndjsonだとちょっとだけ早くなるとのこと。</p>
+
+<h3 id="3-geojsonからmbtilesを作成">3.GeoJSONからMBTilesを作成</h3>
+
+<p><a href="https://github.com/mapbox/tippecanoe">tippecanoe</a>を手に入れます。macなのでhomebrewを使いました。お手軽。
+レートは「作り方」の例に従って、数値ではなく<code>-rg</code>オプションにしました。実用的なものを作る場合は適切なレートを設定した方がいいと思います。</p>
+
+<p>入力が先述の<a href="http://ndjson.org/">ndjson</a>形式の場合は<code>-P</code>オプションをつけます。
+下記のように、複数のデータをレイヤーとして一つのmbtilesファイルにまとめることもできます。</p>
+
+<pre><code class="language-Shell">  $ tippecanoe -L hoge:./data/hoge.json -L fuga:./data/fuga.json -o output.mbtiles
+</code></pre>
+
+<p><code>tippecanoe</code>の公式ドキュメントはもう少しちゃんと読んでおきたいです。</p>
+
+<h3 id="4-mbutilを使ってpbfファイルへ展開">4.mbutilを使ってpbfファイルへ展開</h3>
+
+<p>mbutilはMBTilesとタイルを構成するディレクトリの相互変換を行うツールです。「作り方」ではeasy_installでしたがpipを使ってインストールしました。
+拡張子は「作り方」でも言及されていたように、.pbfではなく<strong>.mvt</strong>としました。</p>
+
+<pre><code class="language-Shell">  $ find . -type f -exec mv -v '{}' '{}'.mvt \;
+</code></pre>
+
+<p>正直この辺りの手順は何をやっているのかほとんど理解していません。
+ここで</p>
+
+<h3 id="5-表示してみる">5.表示してみる</h3>
+
+<p><a href="https://cieloazul310.github.io/mvt-tiles">Leafletでの表示例</a></p>
+
+<p>「作り方」の記事に則って<a href="http://leafletjs.com">Leaflet</a>を使用して表示します。
+ここで注意点が一つ。バイナリベクトルタイルの表示に使用する<a href="https://github.com/SpatialServer/Leaflet.MapboxVectorTile/">Leaflet.MapboxVectorTileプラグイン</a>はLeaflet v1.0.0以降のバージョンでは動きません。ガーン。
+また、上記のデモでも実証されるように、地物の数が多すぎるタイルは読み込んでくれませんでした（決してタイルの欠損があるわけではない）。この辺の閾値なども調べていきたいです。</p>
+
+<pre><code class="language-JavaScript">  const schools = new L.TileLayer.MVTSource({
+    url: &quot;./tile/schools/&quot; + &quot;{z}/{x}/{y}.mvt&quot;,
+    maxZoom: 18,
+    maxNativeZoom: 15,
+    attribution: '&lt;a href=&quot;http://nlftp.mlit.go.jp/ksj/&quot; target=&quot;_blank&quot;&gt;国土数値情報（学校）&lt;/a&gt;',
+    mutexToggle: true,
+    getIDForLayerFeature: function(feature){
+      return feature.properties.P29_001 + feature.properties.P29_005;
+    },
+    onClick: hoveronFeature,
+    style: function(feature){
+      let color = feature.properties.P29_004 === &quot;16001&quot; ? &quot;yellow&quot; :
+                  feature.properties.P29_004 === &quot;16002&quot; ? &quot;gold&quot; :
+                  feature.properties.P29_004 === &quot;16003&quot; ? &quot;#aca777&quot; :
+                  feature.properties.P29_004 === &quot;16004&quot; ? &quot;#ff963e&quot; :
+                  feature.properties.P29_004 === &quot;16005&quot; ? &quot;#ac815c&quot; :
+                  feature.properties.P29_004 === &quot;16006&quot; ? &quot;#78109d&quot; :
+                  feature.properties.P29_004 === &quot;16007&quot; ? &quot;#d90096&quot; : &quot;#3f9386&quot;;
+
+      return {color: color, radius: 6, selected: {color: &quot;red&quot;, radius: 10}};
+    }
+  });
+</code></pre>
+
+<p>LeafletのMVTレイヤ設定の例です。<a href="https://github.com/SpatialServer/Leaflet.MapboxVectorTile/blob/master/docs/configuration.md">プラグインのドキュメント</a>によると、必須となるオプションは<code>url</code>、<code>getIDForLayerFeature</code>、<code>filter</code>のようです（ただしfilterオプションはなくても動く）。重要なのが<code>getIDForLayerFeature</code>で、これを設定しないと地物のスタイリングやクリックイベント時に正しい挙動をしてくれません。地物のプロパティに固有のidがある場合はそれを設定すればいいのですが、国土数値情報の学校データには存在しないので、行政区域コード（P29_001）に名称（P29_005）を繋げたものを設定しました。</p>
+
+<h4 id="その他のライブラリ">その他のライブラリ</h4>
+
+<p><a href="http://openlayers.org">OpenLayers</a>ではバイナリベクトルタイルを読み込む<code>ol.source.MVTSource()</code>が存在しているのですが、なぜか上手く動作してくれません。もしかしたら<a href="http://openlayers.org/en/latest/examples/mapbox-vector-tiles.html">Mapboxが配信しているタイル</a>に特化しているかもしれません。</p>
+
+<p>ちゃんと調べてないのでアレなんですが、<a href="https://www.mapbox.com/mapbox-gl-js/api/">Mapbox GL JS</a>が一番良いみたいですね。後々試してみます。</p>
+
+<h3 id="6-github-pagesでホストしてみる">6.GitHub Pagesでホストしてみる</h3>
+
+<p>作成したバイナリベクトルタイルをGitHub Pagesを使ってホストしてみます。
+2016年からの新機能でmasterブランチのdocsフォルダの中身をホストできるようなので(参考:<a href="http://qiita.com/tonkotsuboy_com/items/f98667b89228b98bc096">2016年新機能! GitHubのmasterブランチをWebページとして公開する手順</a>)、それに則ってやってみました。</p>
+
+<ul>
+<li>レポジトリ: <a href="https://github.com/cieloazul310/mvt-tiles/">https://github.com/cieloazul310/mvt-tiles</a></li>
+<li>ホストしたページ: <a href="https://cieloazul310.github.io/mvt-tiles">https://cieloazul310.github.io/mvt-tiles</a></li>
+</ul>
+
+<h3 id="課題">課題</h3>
+
+<ul>
+<li>クリックイベントやイベントによる地物のon/offの設定などを試していきたい。</li>
+<li>LeafletのMapboxVectorTileプラグインは最終更新が2015年9月で、Leafletの最新バージョンに対応する可能性はなさそう。それでもLeafletを使うべきか。</li>
+<li>tippecanoeの機能をもっと試していきたい。</li>
+</ul>
+
+<h3 id="感想">感想</h3>
+
+<p>難易度が高い印象があったバイナリベクトルタイルが意外なほどあっさり作れてしまって驚きました。
+レシピを公開してくれた<a href="https://shimz.me/blog/">GUNMA GIS GEEK</a>の清水正行氏には感謝申し上げたいです。</p>
+
+<h3 id="参考リンク">参考リンク</h3>
+
+<ul>
+<li><a href="https://www.mapbox.com/vector-tiles/specification/">VectorTilesSpecification</a> -mapbox</li>
+<li><a href="https://www.mapbox.com/help/define-mbtiles/">MbTiles</a> -mapbox</li>
+<li><a href="https://shimz.me/blog/leaflet-js/5354">バイナリベクトルタイルの作り方</a> -GUNMA GIS GEEK</li>
+<li><a href="http://qiita.com/hfu/items/e3fab485fa90b4b89da5">anyone can host vector tiles</a> -hfu&rsquo;s Qiita</li>
+<li><a href="http://qiita.com/hfu/items/c7040662af1fe21a9f56">Vector Tiles to start in Japan</a> -hfu&rsquo;s Qiita</li>
+<li><a href="http://ccpn.gsi.go.jp/meeting_partners/data/20170608/GSI_3.html">地球地図バイナリベクトルタイルの整備</a> -国土地理院</li>
+</ul>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">タグ</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://cieloazul310.github.io/tags/javascript/">JavaScript</a>
+
+  <a class="tag tag--primary tag--small" href="https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/">地図</a>
+
+  <a class="tag tag--primary tag--small" href="https://cieloazul310.github.io/tags/%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%AB/">ベクトルタイル</a>
+
+  <a class="tag tag--primary tag--small" href="https://cieloazul310.github.io/tags/%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%AB/">バイナリベクトルタイル</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://cieloazul310.github.io/2112/09/about/" data-tooltip="水戸地図について">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">次</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://cieloazul310.github.io/2017/07/pizzicato/" data-tooltip="iframe D3.js Example">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">前</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fcieloazul310.github.io%2f2017%2f08%2fcook-binary-vector-tiles%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcieloazul310.github.io%2f2017%2f08%2fcook-binary-vector-tiles%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcieloazul310.github.io%2f2017%2f08%2fcook-binary-vector-tiles%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2017 cieloazul310. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://cieloazul310.github.io/2112/09/about/" data-tooltip="水戸地図について">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">次</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://cieloazul310.github.io/2017/07/pizzicato/" data-tooltip="iframe D3.js Example">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">前</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fcieloazul310.github.io%2f2017%2f08%2fcook-binary-vector-tiles%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcieloazul310.github.io%2f2017%2f08%2fcook-binary-vector-tiles%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcieloazul310.github.io%2f2017%2f08%2fcook-binary-vector-tiles%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <ul class="share-options">
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fcieloazul310.github.io%2f2017%2f08%2fcook-binary-vector-tiles%2f">
+        <i class="fa fa-google-plus"></i><span>Google Plusで共有</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcieloazul310.github.io%2f2017%2f08%2fcook-binary-vector-tiles%2f">
+        <i class="fa fa-facebook-official"></i><span>Facebookで共有</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcieloazul310.github.io%2f2017%2f08%2fcook-binary-vector-tiles%2f">
+        <i class="fa fa-twitter"></i><span>Twitterで共有</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/b1034548bf520b5046582562c07c4ee2?s=110" alt="著者の絵" />
+    
+    <h4 id="about-card-name">cieloazul310</h4>
+    
+      <div id="about-card-bio">Mito Football Fanatic</div>
+    
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Japan
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="検索" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center"></div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://cieloazul310.github.io/2112/09/about/">
+                <h3 class="media-heading">水戸地図について</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2112
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>水戸地図はD3.jsやOpenLayersなどJavaScriptのライブラリを使ってデータビジュアライゼーションを試みる実験室です。
+</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/">
+                <h3 class="media-heading">バイナリベクトルタイルを作ってみた</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://cieloazul310.github.io/2017/07/pizzicato/">
+                <h3 class="media-heading">iframe D3.js Example</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jul 7, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>J1チャートテスト。
+</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://cieloazul310.github.io/post/">
+                <h3 class="media-heading">Posts</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2112
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero=""
+         data-message-one=""
+         data-message-other="">
+         4 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://cieloazul310.github.io/img/cover.jpg');"></div>
+  
+
+
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
+
+
+<script src="https://cieloazul310.github.io/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight').each(function(i, block) {
+    var code = "";
+    hljs.highlightAuto(block.innerText).value.split(/\r\n|\r|\n/).forEach(function(line) {
+      code += "<span class=\"line\">" + line + "</span><br>";
+    });
+    if (code.length > 0) {
+      block.innerHTML = code;  
+    }
+  });
+  $('pre > code').each(function(i, block) {
+    $(this).addClass('codeblock');
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+  
+    
+  
+
+
+
+
+
+    
+  </body>
+</html>
+
