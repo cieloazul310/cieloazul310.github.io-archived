@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="茨城県知事選2017の得票データを可視化した地図です。">
+<meta property="og:description" content="茨城県知事選2017の得票データを可視化した地図です。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="茨城県知事選2017 | 水戸地図<">
+<meta property="og:url" content="https://cieloazul310.github.io/figure/ibaraki_election2017/">
+<meta property="og:site_name" content="水戸地図">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="茨城県知事選2017 | 水戸地図<">
+<meta name="twitter:description" content="茨城県知事選2017の得票データを可視化した地図です。">
+<meta property="og:image" content="https://cieloazul310.github.io/figure/ibaraki_election2017/thumb.png">
 <style>
   @font-face{
     font-family: "Original Yu Gothic";
@@ -59,7 +69,6 @@
     margin: 0 auto;
     padding: 0;
     width: 100%;
-    height: 500px;
     max-width: 600px;
   }
 
@@ -305,7 +314,7 @@
 
     const size = {
       width: parseInt(svg.style("width")),
-      height: parseInt(d3.select(".chart-container").style("height").slice(0, -2)) - parseInt(d3.select("h1").style("height").slice(0,-2)) - (h1margin * 2)
+      height: /*parseInt(d3.select(".chart-container").style("height").slice(0, -2))*/window.innerHeight - parseInt(d3.select("h1").style("height").slice(0,-2)) - (h1margin * 2)
     };
     const padding = {
       top: 4,
