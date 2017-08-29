@@ -6,7 +6,7 @@
     <description>Recent content in Tags on 水戸地図</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 05 Jul 2017 14:29:37 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 29 Aug 2017 23:30:00 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,16 +14,25 @@
     <item>
       <title>D3.Js</title>
       <link>https://cieloazul310.github.io/tags/d3.js/</link>
-      <pubDate>Wed, 05 Jul 2017 14:29:37 +0900</pubDate>
+      <pubDate>Tue, 29 Aug 2017 23:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/tags/d3.js/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Es2016</title>
+      <link>https://cieloazul310.github.io/tags/es2016/</link>
+      <pubDate>Tue, 29 Aug 2017 23:30:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/tags/es2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Javascript</title>
       <link>https://cieloazul310.github.io/tags/javascript/</link>
-      <pubDate>Sat, 12 Aug 2017 13:00:00 +0900</pubDate>
+      <pubDate>Tue, 29 Aug 2017 23:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/tags/javascript/</guid>
       <description></description>

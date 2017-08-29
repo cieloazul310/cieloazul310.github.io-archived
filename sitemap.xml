@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://cieloazul310.github.io/2017/08/d3-arrow-function/</loc>
+    <lastmod>2017-08-29T23:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/</loc>
     <lastmod>2017-08-12T13:00:00+09:00</lastmod>
   </url>
@@ -40,13 +45,25 @@
   
   <url>
     <loc>https://cieloazul310.github.io/tags/d3.js/</loc>
-    <lastmod>2017-07-05T14:29:37+09:00</lastmod>
+    <lastmod>2017-08-29T23:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cieloazul310.github.io/categories/d3.js/</loc>
+    <lastmod>2017-08-29T23:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cieloazul310.github.io/categories/data-visualization/</loc>
-    <lastmod>2017-07-05T14:29:37+09:00</lastmod>
+    <lastmod>2017-08-29T23:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cieloazul310.github.io/tags/es2016/</loc>
+    <lastmod>2017-08-29T23:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -58,7 +75,7 @@
   
   <url>
     <loc>https://cieloazul310.github.io/tags/javascript/</loc>
-    <lastmod>2017-08-12T13:00:00+09:00</lastmod>
+    <lastmod>2017-08-29T23:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -124,7 +141,7 @@
   
   <url>
     <loc>https://cieloazul310.github.io/tags/</loc>
-    <lastmod>2017-07-05T14:29:37+09:00</lastmod>
+    <lastmod>2017-08-29T23:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

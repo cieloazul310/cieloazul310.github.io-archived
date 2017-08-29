@@ -1,6 +1,8 @@
 
 
   
+    
+  
 
 
   
@@ -21,23 +23,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.21">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
-    <title>New Page</title>
+    <title>D3.jsでアロー関数を使う時の注意点</title>
     <meta name="author" content="cieloazul310">
-    <meta name="keywords" content="tech">
+    <meta name="keywords" content="D3.js, JavaScript, ES2016, アロー関数">
 
     <link rel="icon" href="https://cieloazul310.github.io/favicon.ico">
     
 
     
-    <meta name="description" content="ああああああああああ">
-    <meta property="og:description" content="ああああああああああ">
+    <meta name="description" content="既存のD3.jsのコードをアロー関数で置き換える際に変な動作を起こしてしまったのでメモしておきます。
+">
+    <meta property="og:description" content="既存のD3.jsのコードをアロー関数で置き換える際に変な動作を起こしてしまったのでメモしておきます。
+">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="New Page">
-    <meta property="og:url" content="/page/page-sample/">
+    <meta property="og:title" content="D3.jsでアロー関数を使う時の注意点">
+    <meta property="og:url" content="/2017/08/d3-arrow-function/">
     <meta property="og:site_name" content="水戸地図">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="水戸地図">
-    <meta name="twitter:description" content="ああああああああああ">
+    <meta name="twitter:description" content="既存のD3.jsのコードをアロー関数で置き換える際に変な動作を起こしてしまったのでメモしておきます。
+">
     
       <meta name="twitter:creator" content="@cieloazul310">
     
@@ -50,6 +55,8 @@
       <meta property="og:image" content="//www.gravatar.com/avatar/b1034548bf520b5046582562c07c4ee2?s=640">
     
 
+    
+      <meta property="og:image" content="https://cieloazul310.github.io/img/cover.jpg">
     
     
     
@@ -84,7 +91,7 @@ ga('send', 'pageview');
 
   <body>
     <div id="blog">
-      <header id="header" data-behavior="2">
+      <header id="header" data-behavior="5">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
     <a class="header-title-link" href="https://cieloazul310.github.io/">水戸地図</a>
@@ -104,7 +111,7 @@ ga('send', 'pageview');
   
 </header>
 
-      <nav id="sidebar" data-behavior="2">
+      <nav id="sidebar" data-behavior="5">
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
@@ -211,29 +218,40 @@ ga('send', 'pageview');
 
       
 
-      <div id="main" data-behavior="2"
+      <div id="main" data-behavior="5"
         class="
                hasCoverMetaIn
                ">
         <article class="post" itemscope itemType="http://schema.org/BlogPosting">
           
           
-            <div class="post-header main-content-wrap text-left">
+            <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      New Page
+      D3.jsでアロー関数を使う時の注意点
     </h1>
   
   <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-08-29T23:30:00&#43;09:00">
+      
+  
+  
+  
+  
+    2017年 8月29日
+  
+
+    </time>
   
   
   
   
     <span>カテゴリー</span>
     
-      <a class="category-link" href="https://cieloazul310.github.io/categories/category">category</a>, 
+      <a class="category-link" href="https://cieloazul310.github.io/categories/data-visualization">Data-Visualization</a>, 
     
-      <a class="category-link" href="https://cieloazul310.github.io/categories/subcategory">subcategory</a>
+      <a class="category-link" href="https://cieloazul310.github.io/categories/d3.js">D3.js</a>
     
   
 
@@ -244,20 +262,151 @@ ga('send', 'pageview');
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>ああああああああああ</p>
+              <p>既存のD3.jsのコードを<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/arrow_functions">アロー関数</a>で置き換える際に変な動作を起こしてしまったのでメモしておきます。
+</p>
 
+<p>D3.jsでは、DOMにイベントを与える<a href="https://github.com/d3/d3-selection#selection_on"><code>selection.on(typenames, listener)</code></a>で、イベントリスナ内でそのDOMを選択したいときに<code>this</code>を使うことが多いです。</p>
+
+<p>例えば、以下のようなコードがよく使われます。</p>
+
+<pre><code class="language-JavaScript">  d3.selectAll(&quot;rect&quot;)
+    .data(data)
+    .enter()
+    .append(&quot;rect&quot;)
+    .attr(&quot;x&quot;, function(d) {return xScale(0);})
+    .attr(&quot;y&quot;, function(d) {return yScale(d.name);})
+    .attr(&quot;width&quot;, function(d) {return xScale(d.value) - xScale(0);})
+    .attr(&quot;height&quot;, yScale.bandwidth())
+    .attr(&quot;fill&quot;, &quot;white&quot;)
+    .on(&quot;mouseover&quot;, function() {
+      d3.select(this)
+        .transition().duration(500)
+        .attr(&quot;fill&quot;, &quot;orange&quot;);
+    })
+    .on(&quot;mouseout&quot;, function() {
+      d3.select(this)
+        .transition().duration(500)
+        .attr(&quot;fill&quot;, &quot;white&quot;);
+    });
+</code></pre>
+
+<p>このコードに使われている関数を<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/arrow_functions">アロー関数</a>で置き換えると、最後の二つ<code>.on(&quot;mouseover&quot;, listener)</code>と<code>.on(&quot;mouseout&quot;, listener)</code>で設定されたイベントリスナーは正常に動作しません。これはアロー関数の<strong>thisを束縛しない</strong>という性質によるものです。</p>
+
+<p>アロー関数に置き換えつつ、今まで通りの動作を与えるには、以下のようにlistenerの引数に<code>d, i, nodes</code>を取り、<code>this</code>と書いていたところを<code>nodes[i]</code>と書くことで解決します。</p>
+
+<pre><code class="language-JavaScript">  d3.selectAll(&quot;rect&quot;)
+    .data(data)
+    .enter()
+    .append(&quot;rect&quot;)
+    .attr(&quot;x&quot;, d =&gt; xScale(0))
+    .attr(&quot;y&quot;, d =&gt; yScale(d.name))
+    .attr(&quot;width&quot;, d =&gt; xScale(d.value) - xScale(0))
+    .attr(&quot;height&quot;, yScale.bandwidth())
+    .attr(&quot;fill&quot;, &quot;white&quot;)
+    .on(&quot;mouseover&quot;, (d, i, nodes) =&gt; {
+      d3.select(nodes[i])
+        .transition().duration(500)
+        .attr(&quot;fill&quot;, &quot;orange&quot;);
+    })
+    .on(&quot;mouseout&quot;, (d, i, nodes) =&gt; {
+      d3.select(nodes[i])
+        .transition().duration(500)
+        .attr(&quot;fill&quot;, &quot;white&quot;);
+    });
+</code></pre>
+
+<p><a href="https://github.com/d3/d3-selection#selection_on"><code>selection.on(typenames, listener)</code></a>ではイベントリスナーの引数に、<code>datum(d)、index(i)、nodes</code>が渡されます。</p>
+
+<ul>
+<li><code>datum (d)</code>: 要素にバインドされているデータ（datumはdataの単数形）</li>
+<li><code>index (i)</code>: セレクションの中の順番</li>
+<li><code>nodes</code>: NodeList（要素の集合）</li>
+</ul>
+
+<pre><code class="language-JavaScript">  d3.selectAll(&quot;rect&quot;)
+    .on(&quot;click&quot;, (d, i, nodes) =&gt; {
+      console.log(d)
+      //=&gt; datum (= data[i])
+
+      console.log(i);
+      //=&gt; index (0, 1, 2, ...)
+
+      console.log(nodes);
+      //=&gt; NodeList [rect, rect, rect, ...]
+      // d3.selectAll(&quot;rect&quot;).nodes()で得られるものと同じ
+
+      console.log(nodes[i]);
+      //=&gt; rect
+    });
+</code></pre>
+
+<p>既存のコードを無理にアロー関数に置き換える必要はありませんが、置き換えたときにこういうことが起きる可能性はあると思うので、備忘録として残しておきます。</p>
               
             </div>
           </div>
           <div id="post-footer" class="post-footer main-content-wrap">
             
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">タグ</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://cieloazul310.github.io/tags/d3.js/">D3.js</a>
+
+  <a class="tag tag--primary tag--small" href="https://cieloazul310.github.io/tags/javascript/">JavaScript</a>
+
+  <a class="tag tag--primary tag--small" href="https://cieloazul310.github.io/tags/es2016/">ES2016</a>
+
+                  </div>
+                
+              
+            
             <div class="post-actions-wrap">
   <nav>
     <ul class="post-actions post-action-nav">
       
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://cieloazul310.github.io/2112/09/about/" data-tooltip="水戸地図について">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">次</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/" data-tooltip="バイナリベクトルタイルを作ってみた">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">前</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
     </ul>
   </nav>
   <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fcieloazul310.github.io%2f2017%2f08%2fd3-arrow-function%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcieloazul310.github.io%2f2017%2f08%2fd3-arrow-function%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcieloazul310.github.io%2f2017%2f08%2fd3-arrow-function%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
     
     
     <li class="post-action">
@@ -271,6 +420,8 @@ ga('send', 'pageview');
 </div>
 
 
+            
+              
             
           </div>
         </article>
@@ -281,14 +432,52 @@ ga('send', 'pageview');
 </footer>
 
       </div>
-      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
         <div class="post-actions-wrap">
   <nav>
     <ul class="post-actions post-action-nav">
       
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://cieloazul310.github.io/2112/09/about/" data-tooltip="水戸地図について">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">次</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/" data-tooltip="バイナリベクトルタイルを作ってみた">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">前</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
     </ul>
   </nav>
   <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fcieloazul310.github.io%2f2017%2f08%2fd3-arrow-function%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcieloazul310.github.io%2f2017%2f08%2fd3-arrow-function%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcieloazul310.github.io%2f2017%2f08%2fd3-arrow-function%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
     
     
     <li class="post-action">
@@ -303,20 +492,20 @@ ga('send', 'pageview');
 
 
       </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fcieloazul310.github.io%2fpage%2fpage-sample%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fcieloazul310.github.io%2f2017%2f08%2fd3-arrow-function%2f">
         <i class="fa fa-google-plus"></i><span>Google Plusで共有</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcieloazul310.github.io%2fpage%2fpage-sample%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcieloazul310.github.io%2f2017%2f08%2fd3-arrow-function%2f">
         <i class="fa fa-facebook-official"></i><span>Facebookで共有</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcieloazul310.github.io%2fpage%2fpage-sample%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcieloazul310.github.io%2f2017%2f08%2fd3-arrow-function%2f">
         <i class="fa fa-twitter"></i><span>Twitterで共有</span>
       </a>
     </li>
@@ -503,6 +692,8 @@ $(document).ready(function() {
 });
 </script>
 
+  
+    
   
 
 
