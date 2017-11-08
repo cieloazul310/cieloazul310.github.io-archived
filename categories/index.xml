@@ -2,92 +2,84 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 水戸地図</title>
-    <link>https://cieloazul310.github.io/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on 水戸地図</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
+    <copyright>cieloazul310</copyright>
     
-	<atom:link href="https://cieloazul310.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Category</title>
-      <link>https://cieloazul310.github.io/categories/category/</link>
+      <link>http://localhost:1313/categories/category/</link>
       <pubDate>Fri, 07 Jul 2017 16:12:11 +0900</pubDate>
       
-      <guid>https://cieloazul310.github.io/categories/category/</guid>
+      <guid>http://localhost:1313/categories/category/</guid>
       <description></description>
     </item>
     
     <item>
       <title>D3.js</title>
-      <link>https://cieloazul310.github.io/categories/d3.js/</link>
+      <link>http://localhost:1313/categories/d3.js/</link>
       <pubDate>Tue, 29 Aug 2017 23:30:00 +0900</pubDate>
       
-      <guid>https://cieloazul310.github.io/categories/d3.js/</guid>
+      <guid>http://localhost:1313/categories/d3.js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data Visualization</title>
-      <link>https://cieloazul310.github.io/categories/data-visualization/</link>
+      <link>http://localhost:1313/categories/data-visualization/</link>
       <pubDate>Tue, 29 Aug 2017 23:30:00 +0900</pubDate>
       
-      <guid>https://cieloazul310.github.io/categories/data-visualization/</guid>
+      <guid>http://localhost:1313/categories/data-visualization/</guid>
       <description></description>
     </item>
     
     <item>
       <title>J.league</title>
-      <link>https://cieloazul310.github.io/categories/j.league/</link>
+      <link>http://localhost:1313/categories/j.league/</link>
       <pubDate>Wed, 05 Jul 2017 14:29:37 +0900</pubDate>
       
-      <guid>https://cieloazul310.github.io/categories/j.league/</guid>
+      <guid>http://localhost:1313/categories/j.league/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Javascript</title>
-      <link>https://cieloazul310.github.io/categories/javascript/</link>
+      <link>http://localhost:1313/categories/javascript/</link>
       <pubDate>Sat, 12 Aug 2017 13:00:00 +0900</pubDate>
       
-      <guid>https://cieloazul310.github.io/categories/javascript/</guid>
+      <guid>http://localhost:1313/categories/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Leaflet</title>
-      <link>https://cieloazul310.github.io/categories/leaflet/</link>
+      <link>http://localhost:1313/categories/leaflet/</link>
       <pubDate>Sat, 12 Aug 2017 13:00:00 +0900</pubDate>
       
-      <guid>https://cieloazul310.github.io/categories/leaflet/</guid>
+      <guid>http://localhost:1313/categories/leaflet/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Releases</title>
-      <link>https://cieloazul310.github.io/categories/releases/</link>
-      <pubDate>Sat, 03 Sep 2112 00:00:00 +0000</pubDate>
+      <link>http://localhost:1313/categories/releases/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cieloazul310.github.io/categories/releases/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Site</title>
-      <link>https://cieloazul310.github.io/categories/site/</link>
-      <pubDate>Sat, 03 Sep 2112 00:00:00 +0000</pubDate>
-      
-      <guid>https://cieloazul310.github.io/categories/site/</guid>
+      <guid>http://localhost:1313/categories/releases/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Subcategory</title>
-      <link>https://cieloazul310.github.io/categories/subcategory/</link>
+      <link>http://localhost:1313/categories/subcategory/</link>
       <pubDate>Fri, 07 Jul 2017 16:12:11 +0900</pubDate>
       
-      <guid>https://cieloazul310.github.io/categories/subcategory/</guid>
+      <guid>http://localhost:1313/categories/subcategory/</guid>
       <description></description>
     </item>
     

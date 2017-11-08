@@ -2,21 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Es2016 on 水戸地図</title>
-    <link>https://cieloazul310.github.io/tags/es2016/</link>
+    <link>http://localhost:1313/tags/es2016/</link>
     <description>Recent content in Es2016 on 水戸地図</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
+    <copyright>cieloazul310</copyright>
     <lastBuildDate>Tue, 29 Aug 2017 23:30:00 +0900</lastBuildDate>
     
-	<atom:link href="https://cieloazul310.github.io/tags/es2016/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/es2016/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>D3.jsでアロー関数を使う時の注意点</title>
-      <link>https://cieloazul310.github.io/2017/08/d3-arrow-function/</link>
+      <link>http://localhost:1313/2017/08/d3-arrow-function/</link>
       <pubDate>Tue, 29 Aug 2017 23:30:00 +0900</pubDate>
       
-      <guid>https://cieloazul310.github.io/2017/08/d3-arrow-function/</guid>
+      <guid>http://localhost:1313/2017/08/d3-arrow-function/</guid>
       <description>&lt;p&gt;既存のD3.jsのコードを&lt;a href=&#34;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/arrow_functions&#34;&gt;アロー関数&lt;/a&gt;で置き換える際に変な動作を起こしてしまったのでメモしておきます。
 &lt;/p&gt;</description>
     </item>
