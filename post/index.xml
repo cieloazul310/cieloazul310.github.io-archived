@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Tue, 29 Aug 2017 23:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 09 Nov 2017 22:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>日本鉄道時系列地図</title>
+      <link>https://cieloazul310.github.io/2017/11/railroad-timeline-map/</link>
+      <pubDate>Thu, 09 Nov 2017 22:00:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2017/11/railroad-timeline-map/</guid>
+      <description>&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました。
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>D3.jsでアロー関数を使う時の注意点</title>
@@ -29,16 +41,6 @@
       
       <guid>https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/</guid>
       <description>&lt;p&gt;最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>iframe D3.js Example</title>
-      <link>https://cieloazul310.github.io/2017/07/pizzicato/</link>
-      <pubDate>Wed, 05 Jul 2017 14:29:37 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2017/07/pizzicato/</guid>
-      <description>&lt;p&gt;J1チャートテスト。
 &lt;/p&gt;</description>
     </item>
     

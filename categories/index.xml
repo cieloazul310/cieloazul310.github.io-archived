@@ -21,24 +21,6 @@
     </item>
     
     <item>
-      <title>D3.js</title>
-      <link>https://cieloazul310.github.io/categories/d3.js/</link>
-      <pubDate>Tue, 29 Aug 2017 23:30:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/categories/d3.js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data Visualization</title>
-      <link>https://cieloazul310.github.io/categories/data-visualization/</link>
-      <pubDate>Tue, 29 Aug 2017 23:30:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/categories/data-visualization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Gis</title>
       <link>https://cieloazul310.github.io/categories/gis/</link>
       <pubDate>Sat, 12 Aug 2017 13:00:00 +0900</pubDate>
@@ -48,11 +30,11 @@
     </item>
     
     <item>
-      <title>J.league</title>
-      <link>https://cieloazul310.github.io/categories/j.league/</link>
-      <pubDate>Wed, 05 Jul 2017 14:29:37 +0900</pubDate>
+      <title>Javascript</title>
+      <link>https://cieloazul310.github.io/categories/javascript/</link>
+      <pubDate>Tue, 29 Aug 2017 23:30:00 +0900</pubDate>
       
-      <guid>https://cieloazul310.github.io/categories/j.league/</guid>
+      <guid>https://cieloazul310.github.io/categories/javascript/</guid>
       <description></description>
     </item>
     
@@ -71,6 +53,15 @@
       <pubDate>Fri, 07 Jul 2017 16:12:11 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/categories/subcategory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Works</title>
+      <link>https://cieloazul310.github.io/categories/works/</link>
+      <pubDate>Thu, 09 Nov 2017 22:00:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/categories/works/</guid>
       <description></description>
     </item>
     

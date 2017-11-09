@@ -16,9 +16,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="cieloazul310" />
-  <meta name="description" content="既存のD3.jsのコードをアロー関数で置き換える際に変な動作を起こしてしまったのでメモしておきます。 " />
-<meta name="keywords" content="D3.js, JavaScript, ES2016, アロー関数" />
+<meta name="author" content="cieloazul310" /><meta name="description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました" />
+<meta name="keywords" content="D3.js, JavaScript, アロー関数&#34;" />
 
 
 
@@ -45,8 +44,7 @@
 <link href="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
 <meta property="og:title" content="D3.jsでアロー関数を使う時の注意点" />
-<meta property="og:description" content="既存のD3.jsのコードをアロー関数で置き換える際に変な動作を起こしてしまったのでメモしておきます。
-" />
+<meta property="og:description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cieloazul310.github.io/2017/08/d3-arrow-function/" />
 
@@ -66,8 +64,7 @@
 
 
 <meta itemprop="name" content="D3.jsでアロー関数を使う時の注意点">
-<meta itemprop="description" content="既存のD3.jsのコードをアロー関数で置き換える際に変な動作を起こしてしまったのでメモしておきます。
-">
+<meta itemprop="description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました">
 
 
 <meta itemprop="dateModified" content="2017-08-29T23:30:00&#43;09:00" />
@@ -75,10 +72,9 @@
 
 
 
-<meta itemprop="keywords" content="D3.js,JavaScript,ES2016," />
+<meta itemprop="keywords" content="D3.js,JavaScript," />
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="D3.jsでアロー関数を使う時の注意点"/>
-<meta name="twitter:description" content="既存のD3.jsのコードをアロー関数で置き換える際に変な動作を起こしてしまったのでメモしておきます。
-"/>
+<meta name="twitter:description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -150,7 +146,7 @@
       <div class="post-meta">
         <span class="post-time"> 2017-08-29 </span>
         <div class="post-category">
-            <a href="https://cieloazul310.github.io/categories/data-visualization/">Data-Visualization</a><a href="https://cieloazul310.github.io/categories/d3.js/">D3.js</a>
+            <a href="https://cieloazul310.github.io/categories/javascript/">JavaScript</a>
           </div>
         
       </div>
@@ -158,12 +154,6 @@
 
     
     
-<div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content">
-      
-  </div>
-</div>
 
     
     <div class="post-content">
@@ -276,13 +266,16 @@
           
           <a href="https://cieloazul310.github.io/tags/javascript/">JavaScript</a>
           
-          <a href="https://cieloazul310.github.io/tags/es2016/">ES2016</a>
-          
         </div>
 
       
       <nav class="post-nav">
         
+          <a class="prev" href="https://cieloazul310.github.io/2017/11/railroad-timeline-map/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">日本鉄道時系列地図</span>
+            <span class="prev-text nav-mobile">Newer</span>
+          </a>
         
           <a class="next" href="https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/">
             <span class="next-text nav-default">バイナリベクトルタイルを作ってみた</span>
@@ -338,13 +331,6 @@
   <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 <script type="text/javascript" src="https://cieloazul310.github.io/dist/even.min.js?v=2.6.5"></script>
-  <script type="text/javascript">
-    window.MathJax = {
-      showProcessingMessages: false,
-      messageStyle: 'none'
-    };
-  </script>
-  <script async src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 
 
 <script>

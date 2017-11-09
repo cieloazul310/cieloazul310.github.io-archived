@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>日本鉄道時系列地図 - 水戸地図</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="cieloazul310" /><meta name="description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました" />
+<meta name="keywords" content="鉄道, 廃線, OpenLayers, 地図" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.26" />
+
+
+<link rel="canonical" href="https://cieloazul310.github.io/2017/11/railroad-timeline-map/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://cieloazul310.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cieloazul310.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cieloazul310.github.io/favicon-16x16.png">
+<link rel="icon" href="https://cieloazul310.github.io/favicon.ico" />
+<link rel="manifest" href="https://cieloazul310.github.io/manifest.json">
+<link rel="mask-icon" href="https://cieloazul310.github.io/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="https://cieloazul310.github.io/dist/even.min.css?v=2.6.5" rel="stylesheet">
+<link href="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="日本鉄道時系列地図" />
+<meta property="og:description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cieloazul310.github.io/2017/11/railroad-timeline-map/" />
+
+
+
+<meta property="article:published_time" content="2017-11-09T22:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2017-11-09T22:00:00&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="日本鉄道時系列地図">
+<meta itemprop="description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました">
+
+
+<meta itemprop="dateModified" content="2017-11-09T22:00:00&#43;09:00" />
+<meta itemprop="wordCount" content="1278">
+
+
+
+<meta itemprop="keywords" content="地図,JavaScript,OpenLayers,鉄道," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="日本鉄道時系列地図"/>
+<meta name="twitter:description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="https://cieloazul310.github.io/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="https://cieloazul310.github.io/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="https://cieloazul310.github.io/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cieloazul310.github.io/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="https://cieloazul310.github.io/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">日本鉄道時系列地図</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-11-09 </span>
+        <div class="post-category">
+            <a href="https://cieloazul310.github.io/categories/works/">Works</a>
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      <!-- Lead Paragraph -->
+
+<p>1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました。
+</p>
+
+<h2 id="日本鉄道時系列地図"><a href="//cieloazul310.github.io/railroad-timeline-map/">日本鉄道時系列地図</a></h2>
+
+<p><img src="../../../img/tokyo.gif" alt="日本鉄道時系列地図で東京を表示したもの" title="日本鉄道時系列地図で東京を表示したもの" /></p>
+
+<p>URL: <a href="//cieloazul310.github.io/railroad-timeline-map/">https://cieloazul310.github.io/railroad-timeline-map</a></p>
+
+<p>日本鉄道時系列地図は、国土交通省が提供する地図データ（国土数値情報・鉄道時系列）を表示した地図です。1950年から2017年までに存在した日本全国の鉄道路線を表示しています。</p>
+
+<h3 id="機能">機能</h3>
+
+<ul>
+<li>画面下のスライダーを操作することで、指定した年代のデータを表示することができます。</li>
+<li>画面内の路線をクリックすると、路線を選択することができます。</li>
+<li>メニュー画面から表示する地図データを選択することができます。</li>
+<li>メニュー画面内の「現在地を表示」をクリックすると、地図内に現在地が表示されます。</li>
+</ul>
+
+<h3 id="データ">データ</h3>
+
+<p><a href="http://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-v1_3.html">国土数値情報 鉄道時系列データ</a>をバイナリベクトルタイルに変換したもの</p>
+
+<div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      
+      <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="5892967151"
+         data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+
+<h2 id="作ったきっかけ">作ったきっかけ</h2>
+
+<p>最近WEB地図界隈で注目を浴びているバイナルベクトルタイルの作成・表示を試行していたところ、面白い感じになったので公開できる形にしてみました。</p>
+
+<h2 id="技術的側面">技術的側面</h2>
+
+<h3 id="バイナリベクトルタイル">バイナリベクトルタイル</h3>
+
+<p>今話題になっている<a href="//github.com/madefor/vector-tile-spec/blob/master/2.1/README.md">バイナリベクトルタイル</a>という方式を使っています。
+従来のベクトルタイルがGeoJSONで提供されているのに対し、バイナリベクトルタイルはより効率的なバイナリによるデータ形式で提供する方法です。読み込み、描写速度はGeoJSONタイルと比べ物にならないほど早いです。またGeoJSONタイルは広範囲を描写しようとするとどうしても重くなってしまいます。</p>
+
+<p>正直バイナリベクトルタイルの仕組みは全然理解できていません。Google Protocol Buffers？シリアル化？全然わかりません。</p>
+
+<p>ただ仕組みを理解せずとも作ることはできました。<br />
+→<a href="//cieloazul310.github.io/2017/08/cook-binary-vector-tiles/">バイナリベクトルタイルを作ってみた</a></p>
+
+<p>バイナリベクトルタイルの作成方法は以下のサイトを参考にしました。というかここに書かれている通りに手を動かしただけです。<br />
+→<a href="//shimz.me/blog/leaflet-js/5354">バイナリベクトルタイルの作り方</a> GUNMA GIS GEEK</p>
+
+<p>表示するのも簡単です。OpenLayersやLeafletでの表示は従来のGeoJSONタイルと大きな違いはありません。</p>
+
+<h3 id="openlayers-4-3">OpenLayers 4.3</h3>
+
+<p>WEB上で地図を表示するJavaScriptライブラリには、大きく二分すると自由に使えるものと、使用に制限のあるもの（アクセストークンが必要なもの）があります。
+前者の主要なものには<a href="//openlayers.org">OpenLayers</a>、<a href="//leafletjs.com">Leaflet.js</a>、後者には<a href="https://developers.google.com/maps/?hl=ja">Google Maps API</a>、<a href="https://www.mapbox.com/mapbox-gl-js/api/">Mapbox GL JS</a>があります。</p>
+
+<p>ここ数年はLeafletが強い印象がありましたが、最近はLeafletからMapbox GL JSに移行する人が多くなっている印象があります。</p>
+
+<p>ややレガシー化している印象のあるOpenLayersですが、2017年8月にリリースされたv4.3ではバイナリベクトルタイルの表示が快適になりました（現時点での最新バージョンはv4.4.2）。
+バイナルベクトルタイルへの適応によってOpenLayersの復権もあるかもしれません。</p>
+
+<h3 id="その他">その他</h3>
+
+<p>実は今回この地図を作る過程で、初めて<a href="//webpack.js.org">webpack</a>や<a href="https://babeljs.io/">Babel</a>を導入しました。</p>
+
+<p>何かを作ったら下手なものでもいいから形にして公開することは大切だなと思いました。</p>
+
+<!-- Music -->
+
+
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/BAqh6Gya7kY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0"></iframe>
+ </div>
+
+
+<p><div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="6120305662"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+<!-- References --></p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">cieloazul310</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">Update</span>
+    <span class="item-content">2017-11-09</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/">地図</a>
+          
+          <a href="https://cieloazul310.github.io/tags/javascript/">JavaScript</a>
+          
+          <a href="https://cieloazul310.github.io/tags/openlayers/">OpenLayers</a>
+          
+          <a href="https://cieloazul310.github.io/tags/%E9%89%84%E9%81%93/">鉄道</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="https://cieloazul310.github.io/2017/08/d3-arrow-function/">
+            <span class="next-text nav-default">D3.jsでアロー関数を使う時の注意点</span>
+            <span class="prev-text nav-mobile">Older</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="//twitter.com/cieloazul310" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="//github.com/cieloazul310" class="iconfont icon-github" title="github"></a>
+  <a href="https://cieloazul310.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">cieloazul310</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cieloazul310.github.io/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="https://cieloazul310.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="https://cieloazul310.github.io/dist/even.min.js?v=2.6.5"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74683419-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>
