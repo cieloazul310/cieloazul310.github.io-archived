@@ -16,8 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="cieloazul310" />
-  <meta name="description" content="最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。 " />
+<meta name="author" content="cieloazul310" /><meta name="description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました" />
 <meta name="keywords" content="JavaScript, 地図, ベクトルタイル, バイナリベクトルタイル" />
 
 
@@ -45,15 +44,14 @@
 <link href="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
 <meta property="og:title" content="バイナリベクトルタイルを作ってみた" />
-<meta property="og:description" content="最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。
-" />
+<meta property="og:description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/" />
 
 
 
 <meta property="article:published_time" content="2017-08-12T13:00:00&#43;09:00"/>
-<meta property="article:modified_time" content="2017-08-12T13:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2017-11-09T22:00:00&#43;09:00"/>
 
 
 
@@ -66,19 +64,17 @@
 
 
 <meta itemprop="name" content="バイナリベクトルタイルを作ってみた">
-<meta itemprop="description" content="最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。
-">
+<meta itemprop="description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました">
 
 
 <meta itemprop="dateModified" content="2017-08-12T13:00:00&#43;09:00" />
-<meta itemprop="wordCount" content="2632">
+<meta itemprop="wordCount" content="2701">
 
 
 
-<meta itemprop="keywords" content="JavaScript,地図,ベクトルタイル,バイナリベクトルタイル," />
+<meta itemprop="keywords" content="JavaScript,地図,ベクトルタイル,バイナリベクトルタイル,Leaflet,OpenLayers," />
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="バイナリベクトルタイルを作ってみた"/>
-<meta name="twitter:description" content="最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。
-"/>
+<meta name="twitter:description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -150,7 +146,7 @@
       <div class="post-meta">
         <span class="post-time"> 2017-08-12 </span>
         <div class="post-category">
-            <a href="https://cieloazul310.github.io/categories/javascript/">JavaScript</a><a href="https://cieloazul310.github.io/categories/leaflet/">Leaflet</a>
+            <a href="https://cieloazul310.github.io/categories/gis/">GIS</a>
           </div>
         
       </div>
@@ -158,33 +154,6 @@
 
     
     
-<div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content">
-      <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1-データをダウンロード">1.データをダウンロード</a></li>
-<li><a href="#2-シェープファイルをgeojsonに変換">2.シェープファイルをGeoJSONに変換</a></li>
-<li><a href="#3-geojsonからmbtilesを作成">3.GeoJSONからMBTilesを作成</a></li>
-<li><a href="#4-mbutilを使ってpbfファイルへ展開">4.mbutilを使ってpbfファイルへ展開</a></li>
-<li><a href="#5-表示してみる">5.表示してみる</a>
-<ul>
-<li><a href="#その他のライブラリ">その他のライブラリ</a></li>
-</ul></li>
-<li><a href="#6-github-pagesでホストしてみる">6.GitHub Pagesでホストしてみる</a></li>
-<li><a href="#課題">課題</a></li>
-<li><a href="#感想">感想</a></li>
-<li><a href="#参考リンク">参考リンク</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-  </div>
-</div>
 
     
     <div class="post-content">
@@ -276,7 +245,10 @@
 
 <p><a href="https://cieloazul310.github.io/mvt-tiles/openlayers.html">OpenLayersでの表示例</a></p>
 
-<p><a href="http://openlayers.org">OpenLayers</a>ではバイナリベクトルタイルを読み込む<code>ol.source.MVTSource()</code>が存在しているのですが、なぜか上手く動作してくれません。もしかしたら<a href="http://openlayers.org/en/latest/examples/mapbox-vector-tiles.html">Mapboxが配信しているタイル</a>に特化しているかもしれません。（あるいはラスタタイルとの併用を前提としていないか）</p>
+<p><a href="http://openlayers.org">OpenLayers</a>ではバイナリベクトルタイルを読み込む<code>ol.source.MVTSource()</code>が存在しているのですが、<del>なぜか上手く動作してくれません。もしかしたら<a href="http://openlayers.org/en/latest/examples/mapbox-vector-tiles.html">Mapboxが配信しているタイル</a>に特化しているかもしれません。（あるいはラスタタイルとの併用を前提としていないか）</del></p>
+
+<p>※追記
+2017/08/13にリリースされたOpenLayers v4.3.0ではMVTソースの動作はめちゃくちゃ良くなってます。</p>
 
 <p>ちゃんと調べてないのでアレなんですが、WEBGLベースの<a href="https://www.mapbox.com/mapbox-gl-js/api/">Mapbox GL JS</a>が一番良いみたいですね。後々試してみます。</p>
 
@@ -307,13 +279,31 @@
 <h3 id="参考リンク">参考リンク</h3>
 
 <ul>
-<li><a href="https://www.mapbox.com/vector-tiles/specification/">VectorTilesSpecification</a> -mapbox</li>
-<li><a href="https://www.mapbox.com/help/define-mbtiles/">MbTiles</a> -mapbox</li>
-<li><a href="https://shimz.me/blog/leaflet-js/5354">バイナリベクトルタイルの作り方</a> -GUNMA GIS GEEK</li>
-<li><a href="http://qiita.com/hfu/items/e3fab485fa90b4b89da5">anyone can host vector tiles</a> -hfu&rsquo;s Qiita</li>
-<li><a href="http://qiita.com/hfu/items/c7040662af1fe21a9f56">Vector Tiles to start in Japan</a> -hfu&rsquo;s Qiita</li>
-<li><a href="http://ccpn.gsi.go.jp/meeting_partners/data/20170608/GSI_3.html">地球地図バイナリベクトルタイルの整備</a> -国土地理院</li>
+<li><a href="https://www.mapbox.com/vector-tiles/specification/">VectorTilesSpecification</a> mapbox</li>
+<li><a href="https://www.mapbox.com/help/define-mbtiles/">MbTiles</a> mapbox</li>
+<li><a href="https://shimz.me/blog/leaflet-js/5354">バイナリベクトルタイルの作り方</a> GUNMA GIS GEEK</li>
+<li><a href="http://qiita.com/hfu/items/e3fab485fa90b4b89da5">anyone can host vector tiles</a> hfu&rsquo;s Qiita</li>
+<li><a href="http://qiita.com/hfu/items/c7040662af1fe21a9f56">Vector Tiles to start in Japan</a> hfu&rsquo;s Qiita</li>
+<li><a href="http://ccpn.gsi.go.jp/meeting_partners/data/20170608/GSI_3.html">地球地図バイナリベクトルタイルの整備</a> 国土地理院</li>
 </ul>
+
+<div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="6120305662"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
     </div>
 
     
@@ -325,7 +315,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">Update</span>
-    <span class="item-content">2017-08-12</span>
+    <span class="item-content">2017-11-09</span>
   </p>
   
   <p class="copyright-item">
@@ -347,6 +337,10 @@
           <a href="https://cieloazul310.github.io/tags/%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%AB/">ベクトルタイル</a>
           
           <a href="https://cieloazul310.github.io/tags/%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%AB/">バイナリベクトルタイル</a>
+          
+          <a href="https://cieloazul310.github.io/tags/leaflet/">Leaflet</a>
+          
+          <a href="https://cieloazul310.github.io/tags/openlayers/">OpenLayers</a>
           
         </div>
 
@@ -413,13 +407,6 @@
   <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 <script type="text/javascript" src="https://cieloazul310.github.io/dist/even.min.js?v=2.6.5"></script>
-  <script type="text/javascript">
-    window.MathJax = {
-      showProcessingMessages: false,
-      messageStyle: 'none'
-    };
-  </script>
-  <script async src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 
 
 <script>
