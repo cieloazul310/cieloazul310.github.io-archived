@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Tue, 29 Aug 2017 23:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 25 Nov 2017 16:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,16 +15,25 @@
     <item>
       <title>D3.js</title>
       <link>https://cieloazul310.github.io/tags/d3.js/</link>
-      <pubDate>Tue, 29 Aug 2017 23:30:00 +0900</pubDate>
+      <pubDate>Sat, 25 Nov 2017 16:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/tags/d3.js/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Data Visualization</title>
+      <link>https://cieloazul310.github.io/tags/data-visualization/</link>
+      <pubDate>Sat, 25 Nov 2017 16:00:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/tags/data-visualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Javascript</title>
       <link>https://cieloazul310.github.io/tags/javascript/</link>
-      <pubDate>Thu, 09 Nov 2017 22:00:00 +0900</pubDate>
+      <pubDate>Sat, 25 Nov 2017 16:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/tags/javascript/</guid>
       <description></description>

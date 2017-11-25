@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Thu, 09 Nov 2017 22:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 25 Nov 2017 16:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,6 +19,18 @@
       
       <guid>https://cieloazul310.github.io/about/</guid>
       <description>&lt;p&gt;水戸地図はD3.jsやOpenLayersなどJavaScriptのライブラリを使ってデータビジュアライゼーションを試みる実験室です。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>D3.jsで&lt;g&gt;要素を活用する</title>
+      <link>https://cieloazul310.github.io/2017/11/d3-grouping-elements/</link>
+      <pubDate>Sat, 25 Nov 2017 16:00:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2017/11/d3-grouping-elements/</guid>
+      <description>&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;D3.jsでSVGを描写するときは&lt;code&gt;&amp;lt;g&amp;gt;&lt;/code&gt;要素を使って要素をグループ化すると便利です。
 &lt;/p&gt;</description>
     </item>
     
