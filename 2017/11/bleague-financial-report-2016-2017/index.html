@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>B.LEAGUE クラブ決算情報をCSV化 - 水戸地図</title>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-74683419-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-74683419-3');
+</script><meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="cieloazul310" /><meta name="description" content="B.LEAGUEが公開した決算情報をCSV化しました。" />
+<meta name="keywords" content="B.LEAGUE, Bリーグ, スポーツビジネス, gist, バスケットボール, D3.js" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.26" />
+
+
+<link rel="canonical" href="https://cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://cieloazul310.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cieloazul310.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cieloazul310.github.io/favicon-16x16.png">
+<link rel="icon" href="https://cieloazul310.github.io/favicon.ico" />
+<link rel="manifest" href="https://cieloazul310.github.io/manifest.json">
+<link rel="mask-icon" href="https://cieloazul310.github.io/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="https://cieloazul310.github.io/dist/even.min.css?v=2.6.5" rel="stylesheet">
+<link href="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="B.LEAGUE クラブ決算情報をCSV化" />
+<meta property="og:description" content="B.LEAGUEが公開した決算情報をCSV化しました。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/" />
+
+
+
+<meta property="article:published_time" content="2017-11-30T22:26:35&#43;09:00"/>
+<meta property="article:modified_time" content="2017-11-30T22:26:35&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="B.LEAGUE クラブ決算情報をCSV化">
+<meta itemprop="description" content="B.LEAGUEが公開した決算情報をCSV化しました。">
+
+
+<meta itemprop="dateModified" content="2017-11-30T22:26:35&#43;09:00" />
+<meta itemprop="wordCount" content="4839">
+
+
+
+<meta itemprop="keywords" content="B.LEAGUE,Bリーグ,スポーツビジネス,gist,バスケットボール,D3.js," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="B.LEAGUE クラブ決算情報をCSV化"/>
+<meta name="twitter:description" content="B.LEAGUEが公開した決算情報をCSV化しました。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="https://cieloazul310.github.io/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="https://cieloazul310.github.io/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="https://cieloazul310.github.io/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cieloazul310.github.io/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="https://cieloazul310.github.io/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">B.LEAGUE クラブ決算情報をCSV化</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-11-30 </span>
+        <div class="post-category">
+            <a href="https://cieloazul310.github.io/categories/column/">Column</a>
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      <!-- Lead Paragraph -->
+
+<p><a href="//www.bleague.jp/news/36544.html">B.LEAGUEが公開した各クラブの決算情報</a>をCSV化して<a href="//gist.github.com/cieloazul310/ae2da35266de8f0832ed3ebc431d807f">gistで公開</a>しました。
+</p>
+
+<h2 id="公開資料">公開資料</h2>
+
+<p><a href="//www.bleague.jp/news/36544.html">2017年11月29日、BリーグはB1、B2に所属する全36クラブの経営情報を公開しました。</a><br />
+公開しているのは損益計算表(PL)と貸借対照表(BS)で、損益計算表は「入場料収入」、「トップチーム人件費」といったプロスポーツクラブ特有の項目ごとの数値が発表されています。</p>
+
+<p>これは2005年から継続的に所属クラブの経営情報を発表しているJリーグに倣ったもので、この資料も多くのサッカーファンには見慣れたフォーマットになっています。</p>
+
+<p>さて、<a href="//www.jleague.jp/aboutj/management/club-h28kaiji.html">Jリーグ</a>もBリーグも発表は<a href="//www.bleague.jp/news/pdf/financial_settlement_2016.pdf">PDFファイル</a>なので、このデータを使ってあれこれ遊ぶには少し手間がかかります。ということで、CSVに変換したので、ついでに<a href="//gist.github.com/cieloazul310/ae2da35266de8f0832ed3ebc431d807f">gist</a>で公開しました。<br />
+データの出典（「出典: B.LEAGUE　2016-17シーズン（2016年度）クラブ決算概要」、「データ: Bリーグ」など）を明示した上で、自由にご使用ください。</p>
+
+<script src="//gist.github.com/cieloazul310/ae2da35266de8f0832ed3ebc431d807f.js?file=finance20162017.csv"></script>
+
+<p>さて、ここからは損益計算表に載っているプロスポーツクラブ特有の各項目の説明をします。</p>
+
+<div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      
+      <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="5892967151"
+         data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+
+<h2 id="損益計算表の各項目の説明">損益計算表の各項目の説明</h2>
+
+<p>Bリーグの発表した資料には各項目の解説はありません。Jクラブの決算情報と同じフォーマットです。
+プロスポーツクラブ経営の構造はバスケもサッカーも基本的には同じなので、Jリーグの経営情報をベースに解説します。</p>
+
+<h3 id="損益計算書-pl">損益計算書(PL)</h3>
+
+<h4 id="収入">収入</h4>
+
+<ul>
+<li><strong>営業収入</strong>: クラブの営業による売上</li>
+<li><strong>営業外収益</strong>: 受取利息、寄付金収入、補助金収入、リーグ支援金収入、その他</li>
+<li><strong>特別利益</strong>: 寄付金収入など</li>
+</ul>
+
+<h4 id="費用">費用</h4>
+
+<ul>
+<li><strong>営業費用</strong>: クラブの営業による費用</li>
+<li><strong>営業外費用</strong>: 支払利息、株式交付費、為替差損、その他</li>
+<li><strong>特別損失</strong>: 契約金償却損、固定資産除却損、監督の契約解除金など</li>
+</ul>
+
+<p>収入の合計から費用の合計と法人税および住民税等を引いたものが<strong>当期純利益</strong>で、一般的には当期純利益のプラスマイナスをもって黒字、赤字と言います。</p>
+
+<h3 id="営業収入">営業収入</h3>
+
+<p>一般的にプロスポーツクラブの収入源は、「入場料収入」、「広告料収入」、「放映権料（リーグ配分金）」が三本柱と言われています。</p>
+
+<ul>
+<li><strong>入場料収入</strong>: ホームゲームの入場料収入</li>
+<li><strong>スポンサー収入</strong>: スポンサーからの収入</li>
+<li><strong>物販収入</strong>: グッズ売上</li>
+<li><strong>ユース・スクール関連収入</strong>: スクール事業による収入など</li>
+<li><strong>リーグ配分金</strong>: リーグから支給される収入（元手は主に放映権料）</li>
+<li><strong>その他収入</strong>: 選手移籍関連収入、賞金、出場料、出演料など</li>
+</ul>
+
+<h4 id="入場料収入">入場料収入</h4>
+
+<p>入場料収入はクラブ主催のホームゲームで我々が払うチケット代です。<br />
+単純化すると入場料収入は（<strong>チケット単価</strong>）×（<strong>観客数</strong>）で表されるため、クラブが入場料収入が増やすには観客数を増やすか客単価を大きくする必要があります。</p>
+
+<p>作成したCSVファイルに入場者数のデータも入れたかったのですが、Bリーグが公式で提供している観客数のデータが見つけられなかったので今回は断念しました。</p>
+
+<h4 id="スポンサー収入">スポンサー収入</h4>
+
+<p>スポンサー料です。スポンサーの種類は多々ありますが、クラブの大きな収入源となっているのはやはりユニフォームスポンサーだと思われます。</p>
+
+<h4 id="放映権料-配分金">放映権料（配分金）</h4>
+
+<p>リーグから支給される配分金は、一般的には元手はリーグが一括で管理する放映権料です。</p>
+
+<p>ただし、<a href="https://www.bleague.jp/about/pdf/m-2016.pdf">Bリーグ2016年度決算報告書</a>によると放映権料収益は19億4483万円で、B1B2全クラブの配分金の合計が10億4311万円なので、放映権の半分程度はBリーグの別の事業に使われているようです。
+クラブ毎の配分金の額は、B1平均が4166万円、B2平均が1629万円なので、大きな収入とはなっていません。</p>
+
+<p>欧州サッカーやアメスポでは放映権料が高騰していて、英プレミアリーグでは20クラブ全てに最低でも約5400万英ポンド（約87億円）が配分されています（ちなみにその半分以上は海外からの放映権料です）。<br />
+Jリーグの放映権料は2016年度までは年間約50億円程度でしたが、2017年度から英パフォーム社の配信事業DAZNと10年2100億円の大型の放映権契約をおこないました。それでも欧州との放映権料の差は歴然で、この欧州の放映権バブルが欧州主要リーグとその他のリーグの経営格差を生み出しています。</p>
+
+<h3 id="営業費用">営業費用</h3>
+
+<p>クラブの運営に関わる費用で、Bリーグの決算情報では「トップチーム人件費」、「試合関連経費」、「トップチーム運営経費」、「アカデミー運営経費」、「女子チーム運営経費」、「販売費及び一般管理費」と分類されています。<br />
+一般の企業では費用によって収入を得るというモデルですが、プロスポーツクラブはその逆で<strong>収入の見通しから費用、特にトップチーム人件費を決める</strong>というモデルであると言えます。
+良い選手は</p>
+
+<ul>
+<li><strong>試合関連経費</strong>: アリーナ使用料、警備費、運営設営費など</li>
+<li><strong>トップチーム人件費</strong>: 選手と指導者の報酬の総額、移籍金など</li>
+<li><strong>トップチーム運営経費</strong>: 移動関連費、施設関連費、寮関連費、代理人手数料など</li>
+<li><strong>グッズ販売原価</strong>: グッズの原価</li>
+<li><strong>ユース・スクール関連経費</strong>: アカデミーの移動関連費、施設関連費など</li>
+<li><strong>その他費用</strong>: 上記に当てはまらない売上原価</li>
+<li><strong>販売費および一般管理費</strong>: クラブの運営する上で売上に関係なくかかる費用</li>
+</ul>
+
+<p>各所の資料を見るとJリーグの「チーム人件費」には指導者やスクールスタッフの報酬も含まれているようですが、Bリーグの「トップチーム人件費」がこれらを含んでいるかどうかは不明です。</p>
+
+<h4 id="販売費および一般管理費">販売費および一般管理費</h4>
+
+<p>販売費および一般管理費は、一般用語として売上と関係なく掛かる費用とされています。営業費用を「販売費および一般管理費」とそれ以外の「売上原価」に分類できるようです。</p>
+
+<ul>
+<li><strong>一般管理費</strong>: 労務費、各種賃借料、業務委託費、Bリーグ年会費ほか</li>
+<li><strong>試合関連経費以外のアリーナ運営関係費</strong>: チケット手数料、広告宣伝費、バスケ協会納付金、イベント費ほか</li>
+<li><strong>広告料関係費</strong>: バーター取引相当分、広告代理店手数料、業務委託費ほか</li>
+<li><strong>ホームタウン関係費用</strong>: ホームタウン活動費など</li>
+</ul>
+
+<h3 id="貸借対照表-bs">貸借対照表(BS)</h3>
+
+<p>貸借対照表は企業の財政状況を表す情報です。<br />
+資産の部、負債の部、資本の部の内訳はBリーグの資料では公開されていませんが（Jリーグの資料では公開されています）、以下のような構成をしています。</p>
+
+<p>貸借対照表については正確に説明できる自信がないので、詳しく知りたい方は自分で調べてください。</p>
+
+<ul>
+<li><strong>資産の部</strong>(A)
+
+<ul>
+<li>流動資産</li>
+<li>固定資産</li>
+</ul></li>
+<li><strong>負債の部</strong>(B)
+
+<ul>
+<li>流動負債</li>
+<li>固定負債</li>
+</ul></li>
+<li><strong>純資産（資本の部）</strong>(A - B)
+
+<ul>
+<li>資本金</li>
+<li>資本剰余金</li>
+<li>利益剰余金</li>
+</ul></li>
+</ul>
+
+<p>純資産がマイナスである状態を<strong>債務超過</strong>と言います。
+クラブライセンス制度によってBクラブの債務超過は猶予付きの禁止事項となっています。B1ライセンス取得には今年度中の債務超過解消、B2ライセンス取得には2020年度中の解消が必須となります。</p>
+
+<blockquote>
+<h2 id="bリーグクラブライセンス交付規則-平成29年7月12日改訂版">Bリーグクラブライセンス交付規則（平成29年7月12日改訂版）</h2>
+
+<h3 id="第10章-財務基準-第23条-財務基準">第10章 財務基準 第23条 (財務基準)</h3>
+
+<h4 id="基準番号-f-02-純資産基準">基準番号 F.02 純資産基準</h4>
+
+<p>本基準は、B1ライセンスにおいてはA基準とし、B2ライセンスにおいてはB基準とする。なお、2020年の申請より、B2ライセンスにおいてもA基準に引き上げる予定である。</p>
+
+<p>(1) 基準<br />
+ライセンス申請者は、債務超過であってはならない。<br />
+ライセンス申請者の計算書類において、申請期日の属する事業年度の前年度末日現在、純資産の金額がマイナスである（債務超過である）場合は、本基準は充足しないものとする。<br />
+本基準は、2017年7月に導入されるものとする。したがって、6月決算の場合、2018年6月期が最初の判定対象となる。</p>
+
+<p>引用元: <a href="https://www.bleague.jp/about/pdf/r-35_2017.pdf">Bリーグクラブライセンス交付規則</a></p>
+</blockquote>
+
+<p>2016年度決算で債務超過で、現在B1に所属しているクラブは北海道、新潟、滋賀、島根です。これらのクラブは2017年度中の債務超過解消が見込めないと2018-19シーズンのB1ライセンスは交付されず、強制的にB2に降格となります。</p>
+
+<p>債務超過解消の方法は、</p>
+
+<ol>
+<li>増資をおこなう（資本金を増やす）</li>
+<li>利益を出す（利益剰余金を増やす）</li>
+</ol>
+
+<p>なのですが、これも正確に説明する自信がないので興味のある方は自力で調べてください。</p>
+
+<div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="6120305662"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+
+<h2 id="プロスポーツクラブ経営の論理">プロスポーツクラブ経営の論理</h2>
+
+<p>公開された決算数値をどのように評価すればいいでしょうか。</p>
+
+<p>経営情報が開示されると新聞記事では「何チームが赤字！」というような見出しの記事が出てきますが、<strong>プロスポーツクラブの経営状況を単年度の赤字黒字で判断するのは全く意味がありません</strong>。<br />
+今後Bリーグも同じような見出しで記事が出てくる可能性がありますが、こういう意味のないセンセーショナルな見出しに踊らされないようにしましょう。</p>
+
+<p>さて、単年度の赤字黒字で判断するのは全く意味がない、ということを理解するためには、プロスポーツクラブの経営がどのような論理で行われているか知る必要があります。</p>
+
+<p>ファジアーノ岡山は毎年丁寧な経営情報のプレスリリースを行なっています。
+ファジアーノ岡山の2013年度経営情報についての報告から、プロスポーツクラブの経営論理を端的に説明している箇所を引用します。</p>
+
+<blockquote>
+<p>株式会社という名において、一般企業とプロクラブの存在は似ていますが、明確に違う点として、前者は利益を出すことが目的であるのに対し、後者はスポンサー、入場料、募金等で頂戴した運営費を余すことなくチーム強化に使うことが目的の一つだと我々は考えています。移籍金が発生するのが決算期末直前であること、変動収入の比率が高いことを考えると、収支を均衡させることは難しい年度があり、単年度の黒字赤字にはこだわらず、債務超過にならぬよう資本の枠内で繰越欠損金を調整することで、皆様から頂いている貴重な運営資金を余すことなく使いたいと考えております。単年度の収支に執着するよりも長期的な視点に基づく安定経営に主眼を置く方針です。また、多額の資本は将来の減資を招く可能性があるため、できるだけ少ない資本での経営に努めています。</p>
+
+<p>クラブとしましては、アカデミーも含めたチーム強化費に拘るという意味で、単年度の収支より、営業収入金額に重きを置いてきました。その意味で、Ｊリーグ昇格直後に大目標として掲げた年間収入１０億円を達成できたことに、心よりの感謝をしております。</p>
+
+<p>引用元: <a href="//www.fagiano-okayama.com/news/p1398334491.html">ファジアーノ岡山 2013年度　経営状況についてのご報告</a></p>
+</blockquote>
+
+<p>一般企業と違って、スポーツクラブは<strong>利益を出すことを目的としない</strong>。ファジアーノ岡山木村社長はこう述べています。
+言い換えれば、利益を出すことが必ずしも善とは言えない、ということです。</p>
+
+<p>一つ例を挙げます。あるプロバスケットボールクラブは年間で1億円の黒字が出ました。しかし、チームはB2に降格してしまいました。これはどう評価すればよいでしょうか？</p>
+
+<p>1億円を浮いたままならチームの残留を目指して補強に使うべきである、というのが一般的なプロスポーツクラブの論理です。
+またスポンサー企業からは、スポンサードしているのにそんなに貯め込んでどうするのか、という声が出てもおかしくはありません。</p>
+
+<p>債務超過の解消や将来的な設備投資の原資とする場合など<strong>目的のある黒字</strong>を出すなら話は別ですが、プロスポーツクラブは利益を出すのが目的ではなく、<strong>収支が均衡するように、収入を余すことなく強化に使うような経営計画を立てます</strong>。</p>
+
+<p>つまり単年度の数百から一、二千万の損益を持って、「黒字だ素晴らしい」「赤字だ駄目だ」「赤字が何チームある」と言うのは全く意味がないということです。</p>
+
+<p>単年度の赤字黒字は問題ではありませんが、経営努力しても構造上黒字を出すことが難しい慢性的な<strong>赤字体質</strong>は問題です。これはクラブライセンス制度・財務基準F.01「利益基準」の<strong>3期連続赤字の禁止</strong>で予防しているため、このような放漫経営を行うクラブはこれから出てくることはないと思います。</p>
+
+<h2 id="参考にしたページ">参考にしたページ</h2>
+
+<ul>
+<li><a href="//www.urawa-reds.co.jp/club/managdata.html">浦和レッズ 経営情報</a></li>
+<li><a href="//www.consadole-sapporo.jp/club/settlement/">コンサドーレ札幌 決算情報</a></li>
+<li><a href="//www.fagiano-okayama.com/news/p1398334491.html">ファジアーノ岡山 2013年度　経営状況についてのご報告</a></li>
+<li><a href="//www.fagiano-okayama.com/news/p1429706533.html">ファジアーノ岡山 2014年度　経営状況についてのご報告</a></li>
+<li><a href="//www.f-marinos.com/news/detail/2014-05-08/120000/113119">横浜F・マリノス 2013年度決算について</a></li>
+</ul>
+
+<!-- Music -->
+
+
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/lQlhv7r1udc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0"></iframe>
+ </div>
+
+
+<!-- References -->
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="https://cieloazul310.github.io/tags/b.league/">B.LEAGUE</a>
+          
+          <a href="https://cieloazul310.github.io/tags/b%E3%83%AA%E3%83%BC%E3%82%B0/">Bリーグ</a>
+          
+          <a href="https://cieloazul310.github.io/tags/%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9/">スポーツビジネス</a>
+          
+          <a href="https://cieloazul310.github.io/tags/gist/">gist</a>
+          
+          <a href="https://cieloazul310.github.io/tags/%E3%83%90%E3%82%B9%E3%82%B1%E3%83%83%E3%83%88%E3%83%9C%E3%83%BC%E3%83%AB/">バスケットボール</a>
+          
+          <a href="https://cieloazul310.github.io/tags/d3.js/">D3.js</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="https://cieloazul310.github.io/2017/11/d3-grouping-elements/">
+            <span class="next-text nav-default">D3.jsで&lt;g&gt;要素を活用する</span>
+            <span class="prev-text nav-mobile">Older</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="//twitter.com/cieloazul310" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="//github.com/cieloazul310" class="iconfont icon-github" title="github"></a>
+  <a href="https://cieloazul310.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">cieloazul310</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cieloazul310.github.io/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="https://cieloazul310.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="https://cieloazul310.github.io/dist/even.min.js?v=2.6.5"></script>
+
+
+
+
+
+</body>
+</html>

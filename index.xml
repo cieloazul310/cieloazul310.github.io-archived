@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Sat, 25 Nov 2017 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 30 Nov 2017 22:26:35 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,6 +19,18 @@
       
       <guid>https://cieloazul310.github.io/about/</guid>
       <description>&lt;p&gt;水戸地図はD3.jsやOpenLayersなどJavaScriptのライブラリを使ってデータビジュアライゼーションを試みる実験室です。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>B.LEAGUE クラブ決算情報をCSV化</title>
+      <link>https://cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/</link>
+      <pubDate>Thu, 30 Nov 2017 22:26:35 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/</guid>
+      <description>&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;&lt;a href=&#34;//www.bleague.jp/news/36544.html&#34;&gt;B.LEAGUEが公開した各クラブの決算情報&lt;/a&gt;をCSV化して&lt;a href=&#34;//gist.github.com/cieloazul310/ae2da35266de8f0832ed3ebc431d807f&#34;&gt;gistで公開&lt;/a&gt;しました。
 &lt;/p&gt;</description>
     </item>
     
