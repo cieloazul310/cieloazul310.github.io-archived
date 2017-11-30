@@ -4,7 +4,15 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>D3.jsで&lt;g&gt;要素を活用する - 水戸地図</title>
-  <meta name="renderer" content="webkit" />
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-74683419-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-74683419-3');
+</script><meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -235,14 +243,16 @@
 
 
 <div>
-  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="480" style="width:100%;" src="../../../figure/playground/d3-grouping-01.html" class="iframe-chart" id="932586714">
+  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="480" style="width:100%;" src="../../../figure/playground/d3-grouping-01.html" class="iframe-chart" id="971635284">
   </iframe>
   <small><a href="../../../figure/playground/d3-grouping-01.html" target="_blank">Open in a New Tab</a></small>
 </div>
+
 <script>
-  var tg = document.getElementById("932586714");
+  var tg = document.getElementById("971635284");
   tg.setAttribute("height", window.innerHeight - 50);
 </script>
+
 
 <p><code>&lt;text&gt;</code>要素に、一度使用したデータ<code>data</code>を新たにバインドしました。これでもいいのですが、<code>&lt;rect&gt;</code>と<code>&lt;text&gt;</code>の両方に<code>.data(data).enter()</code>や<code>.attr('y', d =&gt; yScale(d.name))</code>が出てくるのは少し無駄に感じられます。</p>
 
@@ -346,14 +356,16 @@ rows.append('text')
 
 
 <div>
-  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="480" style="width:100%;" src="../../../figure/playground/d3-grouping-02.html" class="iframe-chart" id="384269517">
+  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="480" style="width:100%;" src="../../../figure/playground/d3-grouping-02.html" class="iframe-chart" id="783416259">
   </iframe>
   <small><a href="../../../figure/playground/d3-grouping-02.html" target="_blank">Open in a New Tab</a></small>
 </div>
+
 <script>
-  var tg = document.getElementById("384269517");
+  var tg = document.getElementById("783416259");
   tg.setAttribute("height", window.innerHeight - 50);
 </script>
+
 
 <p>余談ですが<code>&lt;g&gt;</code>要素はレイヤーとして使うこともできます。レイヤーとして扱うことで各要素の重ね順がわかりやすくなります。大変便利です。</p>
 
@@ -478,12 +490,6 @@ rows.append('text')
 <script type="text/javascript" src="https://cieloazul310.github.io/dist/even.min.js?v=2.6.5"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-74683419-3', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
 
 
 
