@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>D3.jsでアロー関数を使う時の注意点 - 水戸地図</title>
+  <title>Bリーグ クラブ別営業収入グラフ - 水戸地図</title>
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74683419-3"></script>
 <script>
@@ -24,8 +24,9 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="cieloazul310" /><meta name="description" content="D3.jsでアロー関数を使うと変な動作を起こすことがあります。注意点と解決法をまとめています。" />
-<meta name="keywords" content="D3.js, JavaScript, アロー関数&#34;" />
+<meta name="author" content="cieloazul310" />
+  <meta name="description" content="前回作成したBリーグ決算情報のCSVデータを使って、D3.jsでシンプルな棒グラフを作成しました。 " />
+<meta name="keywords" content="D3.js, Data Visualization, B.LEAGUE, Bリーグ, スポーツビジネス, バスケットボール" />
 
 
 
@@ -36,7 +37,7 @@
 <meta name="generator" content="Hugo 0.26" />
 
 
-<link rel="canonical" href="https://cieloazul310.github.io/2017/08/d3-arrow-function/" />
+<link rel="canonical" href="https://cieloazul310.github.io/2017/12/bleague-revenue/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://cieloazul310.github.io/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://cieloazul310.github.io/favicon-32x32.png">
@@ -51,19 +52,18 @@
 <link href="https://cieloazul310.github.io/dist/even.min.css?v=2.6.5" rel="stylesheet">
 <link href="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
-<meta property="og:title" content="D3.jsでアロー関数を使う時の注意点" />
-<meta property="og:description" content="D3.jsでアロー関数を使うと変な動作を起こすことがあります。注意点と解決法をまとめています。" />
+<meta property="og:title" content="Bリーグ クラブ別営業収入グラフ" />
+<meta property="og:description" content="
+
+前回作成したBリーグ決算情報のCSVデータを使って、D3.jsでシンプルな棒グラフを作成しました。
+" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cieloazul310.github.io/2017/08/d3-arrow-function/" />
+<meta property="og:url" content="https://cieloazul310.github.io/2017/12/bleague-revenue/" />
 
 
 
-<meta property="article:published_time" content="2017-08-29T23:30:00&#43;09:00"/>
-<meta property="article:modified_time" content="2017-08-29T23:30:00&#43;09:00"/>
-
-
-
-
+<meta property="article:published_time" content="2017-12-01T01:00:30&#43;09:00"/>
+<meta property="article:modified_time" content="2017-12-01T01:00:30&#43;09:00"/>
 
 
 
@@ -71,18 +71,28 @@
 
 
 
-<meta itemprop="name" content="D3.jsでアロー関数を使う時の注意点">
-<meta itemprop="description" content="D3.jsでアロー関数を使うと変な動作を起こすことがあります。注意点と解決法をまとめています。">
-
-
-<meta itemprop="dateModified" content="2017-08-29T23:30:00&#43;09:00" />
-<meta itemprop="wordCount" content="776">
 
 
 
-<meta itemprop="keywords" content="D3.js,JavaScript," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="D3.jsでアロー関数を使う時の注意点"/>
-<meta name="twitter:description" content="D3.jsでアロー関数を使うと変な動作を起こすことがあります。注意点と解決法をまとめています。"/>
+
+<meta itemprop="name" content="Bリーグ クラブ別営業収入グラフ">
+<meta itemprop="description" content="
+
+前回作成したBリーグ決算情報のCSVデータを使って、D3.jsでシンプルな棒グラフを作成しました。
+">
+
+
+<meta itemprop="dateModified" content="2017-12-01T01:00:30&#43;09:00" />
+<meta itemprop="wordCount" content="410">
+
+
+
+<meta itemprop="keywords" content="D3.js,Data Visualization,B.LEAGUE,Bリーグ,スポーツビジネス,バスケットボール," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Bリーグ クラブ別営業収入グラフ"/>
+<meta name="twitter:description" content="
+
+前回作成したBリーグ決算情報のCSVデータを使って、D3.jsでシンプルな棒グラフを作成しました。
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -149,12 +159,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">D3.jsでアロー関数を使う時の注意点</h1>
+      <h1 class="post-title">Bリーグ クラブ別営業収入グラフ</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2017-08-29 </span>
+        <span class="post-time"> 2017-12-01 </span>
         <div class="post-category">
-            <a href="https://cieloazul310.github.io/categories/javascript/">JavaScript</a>
+            <a href="https://cieloazul310.github.io/categories/works/">Works</a>
           </div>
         
       </div>
@@ -165,87 +175,67 @@
 
     
     <div class="post-content">
-      <p>既存のD3.jsのコードを<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/arrow_functions">アロー関数</a>で置き換える際に変な動作を起こしてしまったのでメモしておきます。
+      <!-- Lead Paragraph -->
+
+<p><a href="//cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/">前回作成したBリーグ決算情報のCSVデータ</a>を使って、D3.jsでシンプルな棒グラフを作成しました。
 </p>
 
-<p>D3.jsでは、DOMにイベントを与える<a href="https://github.com/d3/d3-selection#selection_on"><code>selection.on(typenames, listener)</code></a>で、イベントリスナ内でそのDOMを選択したいときに<code>this</code>を使うことが多いです。</p>
+<h2 id="グラフ">グラフ</h2>
 
-<p>例えば、以下のようなコードがよく使われます。</p>
 
-<pre><code class="language-JavaScript">  d3.selectAll(&quot;rect&quot;)
-    .data(data)
-    .enter()
-    .append(&quot;rect&quot;)
-    .attr(&quot;x&quot;, function(d) {return xScale(0);})
-    .attr(&quot;y&quot;, function(d) {return yScale(d.name);})
-    .attr(&quot;width&quot;, function(d) {return xScale(d.value) - xScale(0);})
-    .attr(&quot;height&quot;, yScale.bandwidth())
-    .attr(&quot;fill&quot;, &quot;white&quot;)
-    .on(&quot;mouseover&quot;, function() {
-      d3.select(this)
-        .transition().duration(500)
-        .attr(&quot;fill&quot;, &quot;orange&quot;);
-    })
-    .on(&quot;mouseout&quot;, function() {
-      d3.select(this)
-        .transition().duration(500)
-        .attr(&quot;fill&quot;, &quot;white&quot;);
-    });
-</code></pre>
+<div>
+  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="870" style="width:100%;" src="../../../figure/bleague-revenue/" class="iframe-chart" id="846729531">
+  </iframe>
+  <small><a href="../../../figure/bleague-revenue/" target="_blank">Open in a New Tab</a></small>
+</div>
 
-<p>このコードに使われている関数を<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/arrow_functions">アロー関数</a>で置き換えると、最後の二つ<code>.on(&quot;mouseover&quot;, listener)</code>と<code>.on(&quot;mouseout&quot;, listener)</code>で設定されたイベントリスナーは正常に動作しません。これはアロー関数の<strong>thisを束縛しない</strong>という性質によるものです。</p>
 
-<p>アロー関数に置き換えつつ、今まで通りの動作を与えるには、以下のようにlistenerの引数に<code>d, i, nodes</code>を取り、<code>this</code>と書いていたところを<code>nodes[i]</code>と書くことで解決します。</p>
 
-<pre><code class="language-JavaScript">  d3.selectAll(&quot;rect&quot;)
-    .data(data)
-    .enter()
-    .append(&quot;rect&quot;)
-    .attr(&quot;x&quot;, d =&gt; xScale(0))
-    .attr(&quot;y&quot;, d =&gt; yScale(d.name))
-    .attr(&quot;width&quot;, d =&gt; xScale(d.value) - xScale(0))
-    .attr(&quot;height&quot;, yScale.bandwidth())
-    .attr(&quot;fill&quot;, &quot;white&quot;)
-    .on(&quot;mouseover&quot;, (d, i, nodes) =&gt; {
-      d3.select(nodes[i])
-        .transition().duration(500)
-        .attr(&quot;fill&quot;, &quot;orange&quot;);
-    })
-    .on(&quot;mouseout&quot;, (d, i, nodes) =&gt; {
-      d3.select(nodes[i])
-        .transition().duration(500)
-        .attr(&quot;fill&quot;, &quot;white&quot;);
-    });
-</code></pre>
-
-<p><a href="https://github.com/d3/d3-selection#selection_on"><code>selection.on(typenames, listener)</code></a>ではイベントリスナーの引数に、<code>datum(d)、index(i)、nodes</code>が渡されます。</p>
+<h3 id="機能">機能</h3>
 
 <ul>
-<li><code>datum (d)</code>: 要素にバインドされているデータ（datumはdataの単数形）</li>
-<li><code>index (i)</code>: セレクションの中の順番</li>
-<li><code>nodes</code>: NodeList（要素の集合）</li>
+<li>棒グラフにカーソルを載せたり、クリックしたりすると右上に情報が出てきます。</li>
+<li>凡例をクリックすると、凡例に当てはまる棒が強調されます。</li>
+<li>凡例のタイトルにクリックできるものがあります。クリックすると、棒グラフの色が変わります。</li>
 </ul>
 
-<pre><code class="language-JavaScript">  d3.selectAll(&quot;rect&quot;)
-    .on(&quot;click&quot;, (d, i, nodes) =&gt; {
-      console.log(d)
-      //=&gt; datum (= data[i])
-
-      console.log(i);
-      //=&gt; index (0, 1, 2, ...)
-
-      console.log(nodes);
-      //=&gt; NodeList [rect, rect, rect, ...]
-      // d3.selectAll(&quot;rect&quot;).nodes()で得られるものと同じ
-
-      console.log(nodes[i]);
-      //=&gt; rect
-    });
-</code></pre>
-
-<p>既存のコードを無理にアロー関数に置き換える必要はありませんが、置き換えたときにこういうことが起きる可能性はあると思うので、備忘録として残しておきます。</p>
-
 <div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      
+      <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="5892967151"
+         data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+
+<h2 id="感想">感想</h2>
+
+<ul>
+<li>営業収入最大が大阪エヴェッサだったのは本当に意外でした。</li>
+<li>ここまできっちりとB1とB2が上下に分かれるとは思いませんでした。JリーグではJ2のクラブがJ1のクラブより収入が大きいということがよくあります。</li>
+<li>旧NBLと旧bjクラブの差がこんなに小さいとは思いませんでした。もっと歴然とした差があるものだと思っていたのですが、旧bjクラブがかなり頑張ったと見ていいと思います。</li>
+</ul>
+
+<p>単純に営業収入の大小のみをグラフにしましたが、収入の内訳を示したグラフも作成中です。</p>
+
+<!-- Music -->
+
+
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/SCJ_tY2724I" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0"></iframe>
+ </div>
+
+
+<p><div class="ad" style="width:100%;">
   
     <small>広告</small>
     
@@ -262,6 +252,7 @@
     
   
 </div>
+<!-- References --></p>
     </div>
 
     
@@ -273,12 +264,12 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">Update</span>
-    <span class="item-content">2017-08-29</span>
+    <span class="item-content">2017-12-01</span>
   </p>
   
   <p class="copyright-item">
     <span class="item-title">License</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+    <span class="item-content">true</span>
   </p>
 </div>
 
@@ -290,21 +281,24 @@
           
           <a href="https://cieloazul310.github.io/tags/d3.js/">D3.js</a>
           
-          <a href="https://cieloazul310.github.io/tags/javascript/">JavaScript</a>
+          <a href="https://cieloazul310.github.io/tags/data-visualization/">Data Visualization</a>
+          
+          <a href="https://cieloazul310.github.io/tags/b.league/">B.LEAGUE</a>
+          
+          <a href="https://cieloazul310.github.io/tags/b%E3%83%AA%E3%83%BC%E3%82%B0/">Bリーグ</a>
+          
+          <a href="https://cieloazul310.github.io/tags/%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9/">スポーツビジネス</a>
+          
+          <a href="https://cieloazul310.github.io/tags/%E3%83%90%E3%82%B9%E3%82%B1%E3%83%83%E3%83%88%E3%83%9C%E3%83%BC%E3%83%AB/">バスケットボール</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="https://cieloazul310.github.io/2017/11/railroad-timeline-map/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">日本鉄道時系列地図</span>
-            <span class="prev-text nav-mobile">Newer</span>
-          </a>
         
-          <a class="next" href="https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/">
-            <span class="next-text nav-default">バイナリベクトルタイルを作ってみた</span>
+          <a class="next" href="https://cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/">
+            <span class="next-text nav-default">B.LEAGUE クラブ決算情報をCSV化</span>
             <span class="prev-text nav-mobile">Older</span>
             <i class="iconfont icon-right"></i>
           </a>

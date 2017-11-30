@@ -7,20 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Thu, 30 Nov 2017 22:26:35 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 01 Dec 2017 01:00:30 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/tags/d3.js/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>B.LEAGUE クラブ決算情報をCSV化</title>
-      <link>https://cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/</link>
-      <pubDate>Thu, 30 Nov 2017 22:26:35 +0900</pubDate>
+      <title>Bリーグ クラブ別営業収入グラフ</title>
+      <link>https://cieloazul310.github.io/2017/12/bleague-revenue/</link>
+      <pubDate>Fri, 01 Dec 2017 01:00:30 +0900</pubDate>
       
-      <guid>https://cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/</guid>
+      <guid>https://cieloazul310.github.io/2017/12/bleague-revenue/</guid>
       <description>&lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;&lt;a href=&#34;//www.bleague.jp/news/36544.html&#34;&gt;B.LEAGUEが公開した各クラブの決算情報&lt;/a&gt;をCSV化して&lt;a href=&#34;//gist.github.com/cieloazul310/ae2da35266de8f0832ed3ebc431d807f&#34;&gt;gistで公開&lt;/a&gt;しました。
+&lt;p&gt;&lt;a href=&#34;//cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/&#34;&gt;前回作成したBリーグ決算情報のCSVデータ&lt;/a&gt;を使って、D3.jsでシンプルな棒グラフを作成しました。
 &lt;/p&gt;</description>
     </item>
     

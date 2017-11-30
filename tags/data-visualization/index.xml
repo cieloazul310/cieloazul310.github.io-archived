@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Sat, 25 Nov 2017 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 01 Dec 2017 01:00:30 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/tags/data-visualization/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bリーグ クラブ別営業収入グラフ</title>
+      <link>https://cieloazul310.github.io/2017/12/bleague-revenue/</link>
+      <pubDate>Fri, 01 Dec 2017 01:00:30 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2017/12/bleague-revenue/</guid>
+      <description>&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;&lt;a href=&#34;//cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/&#34;&gt;前回作成したBリーグ決算情報のCSVデータ&lt;/a&gt;を使って、D3.jsでシンプルな棒グラフを作成しました。
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>D3.jsで&lt;g&gt;要素を活用する</title>
