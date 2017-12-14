@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="playground.css">
+  <style>
+    .els {
+      cursor: pointer;
+    }  
+    .circle {
+      fill: rgba(61, 212, 161, 0.4);
+      mix-blend-mode: multiply;
+    }
+    .active .circle{
+      fill: #ff0045;
+    }
+    .selected .circle {
+      fill: #ff0045;
+    }
+    .line line {
+      stroke: #ff0045;
+      stroke-width: 4;
+    }
+    .line text {
+      fill: black;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+    .tick line {
+      stroke: #ccc;
+    }
+    .axis-x {
+      stroke-dasharray: 4,6;
+    }
+  </style>
+  <title>Document</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+<svg id="chart"></svg>
+</body>
+<script>
+
+const nameFormat = d3.format('02d');
+const data = d3.range(0, 18).map(function(d, i) {
+  const values = d3.range(0, 36).map(function(v) {
+    const ran = Math.random();
+    return ran < 0.5 ? Math.round(ran * 180) : null;
+  }).filter(function(v) {
+    return v !== null;
+  });
+  values.sum = d3.sum(values);
+  values.mean = d3.mean(values);
+  return {
+    name: 'name-' + nameFormat(d),
+    values
+  };
+});
+
+data.sort(function(a, b) {
+  return b.values.sum - a.values.sum;
+});
+
+const size = {
+  width: window.innerWidth, 
+  height: window.innerHeight
+};
+const margin = {top: 60, right: 20, bottom: 20, left: 60};
+const svg = d3.select('#chart')
+              .attr('width', size.width)
+              .attr('height', size.height);
+
+const xScale = d3.scaleLinear()
+                  .domain([0, 90])
+                  .range([margin.left, size.width - margin.right]);
+const yScale = d3.scalePoint()
+                  .domain(data.map(function(d) {
+                    return d.name;
+                  }))
+                  .range([margin.top, size.height - margin.bottom])
+                  .padding(0.5);
+
+const xAxis = d3.axisTop(xScale)
+                  .tickSize(-(size.height - margin.bottom - margin.top));
+const yAxis = d3.axisLeft(yScale)
+                  .tickSize(-(size.width - margin.right - margin.left));
+
+svg.append('g')
+    .attr('class', 'axis axis-x')
+    .attr('transform', 'translate(0, ' + margin.top + ')')
+    .call(xAxis);
+
+svg.append('g')
+    .attr('class', 'axis axis-y')
+    .attr('transform', 'translate(' + xScale(0) + ', 0)')
+    .call(yAxis);
+
+const rows = svg.selectAll('.rows')
+                .data(data)
+                .enter()
+                .append('g')
+                .attr('class', 'rows')
+                .attr('transform', function(d) {
+                  return 'translate(0, ' + yScale(d.name) + ')';
+                });
+
+const els = rows.selectAll(".els")
+                .data(function(d) {
+                  return d.values;
+                })
+                .enter()
+                  .append('g')
+                  .attr('class', 'els')
+                  .attr('transform', 'translate(' + margin.left + ', 0)');
+els.transition()
+    .delay(function(v, i) {
+      return 500 + i * 250;
+    })
+    .duration(500)
+    .attr('transform', function(v) {
+      return 'translate(' + xScale(v) + ', 0)';
+    });
+
+els.append('circle')
+    .attr('class', 'circle')
+    .attr('cx', 0)
+    .attr('cy', 0)
+    .attr('r', 6);
+
+const guide = svg.append('text')
+      .attr('class', 'guide')
+      .attr('x', size.width - margin.right)
+      .attr('y', 0)
+      .attr('dy', '.5em')
+      .attr('text-anchor', 'end')
+      .attr('dominant-baseline', 'text-before-edge');
+
+
+els.on('click', function(v, i, nodes) {
+  const el = d3.select(nodes[i]);
+  const isSelected = el.classed('selected');
+  const hasSelected = !d3.selectAll('.selected').empty();
+  
+  el.classed('selected', !isSelected);
+  d3.selectAll('.active').classed('active', false);
+  
+  if (isSelected) {
+    //el.classed('selected', false);
+    d3.selectAll('.line').remove();
+    
+  } else if (!isSelected && hasSelected) {
+    d3.selectAll('.selected').classed('selected', false);
+    d3.selectAll('.line').remove();
+
+    // append new line
+    createLine(v, i, nodes);
+    createGuide(v, i, nodes);
+    
+  } 
+  
+  el.classed('selected', !isSelected);
+  
+}).on('mouseover touchstart', function(v, i, nodes) {
+  
+  if (d3.selectAll('.selected').empty()) {
+    
+    createLine(v, i, nodes);
+    createGuide(v, i, nodes);
+
+  }
+  d3.select(nodes[i]).classed('active', true);
+        
+}).on('mouseout touchend', function(v, i, nodes) {
+  const isSelected = d3.select(nodes[i]).classed('selected');
+  
+  d3.select(nodes[i]).classed('active', false);
+  
+  if (d3.selectAll('.selected').empty()) {
+      
+    d3.selectAll('.line').remove();
+    
+    guide.style('display', 'none');
+    
+  }
+});
+
+function createLine(d, i, nodes) {
+  const line = d3.select(nodes[i].parentNode)
+                  .append('g')
+                  .attr('class', 'line');
+  
+  line.append('line')
+      .attr('x1', margin.left)
+      .attr('x2', margin.left)
+        .transition()
+        .delay(250)
+        .duration(250)
+        .attr('x2', xScale(d) - 6);
+
+  line.append('text')
+      .attr('x', xScale(d) - 6)
+      .attr('dx', '-.2em')
+      .attr('dy', '-.2em')
+      .attr('text-anchor', 'end')
+      .text(d);
+}
+
+function createGuide(d, i, nodes) {
+  const text = d3.select(nodes[i].parentNode).datum().name + ' ' + d + 'min.';
+  
+  guide.style('display', 'inline')
+        .text(text);
+}
+
+</script>
+</html>

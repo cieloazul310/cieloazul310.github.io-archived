@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>散布図 on 水戸地図</title>
+    <link>https://cieloazul310.github.io/tags/%E6%95%A3%E5%B8%83%E5%9B%B3/</link>
+    <description>Recent content in 散布図 on 水戸地図</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>cieloazul310</copyright>
+    <lastBuildDate>Thu, 14 Dec 2017 23:32:15 +0900</lastBuildDate>
+    
+	<atom:link href="https://cieloazul310.github.io/tags/%E6%95%A3%E5%B8%83%E5%9B%B3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>D3.jsで子要素のDOMから親要素のデータを取得</title>
+      <link>https://cieloazul310.github.io/2017/12/d3-get-parent-node/</link>
+      <pubDate>Thu, 14 Dec 2017 23:32:15 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2017/12/d3-get-parent-node/</guid>
+      <description>&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;D3.jsで階層構造のDOMの子要素から親要素のデータを取得する方法です。
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

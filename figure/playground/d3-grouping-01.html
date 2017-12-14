@@ -25,9 +25,9 @@
 <script>
 
 const nameFormat = d3.format('02d');
-const data = d3.shuffle(d3.range(0, 20)).map((d, i) => {
+const data = d3.shuffle(d3.range(0, 20)).map(function(d, i) {
   return {
-    name: `name-${nameFormat(d)}`,
+    name: 'name-' + nameFormat(d),
     value: Math.round(Math.random() * 100),
   };
 });
@@ -44,7 +44,9 @@ const xScale = d3.scaleLinear()
                   .domain([0, 100])
                   .range([margin.left, size.width - margin.right]);
 const yScale = d3.scaleBand()
-                  .domain(data.map(d => d.name))
+                  .domain(data.map(function(d) {
+                    return d.name;
+                  }))
                   .range([margin.top, size.height - margin.bottom])
                   .padding(0.2);
 const fillScale = d3.scaleLinear()
@@ -59,8 +61,12 @@ const bars = svg.selectAll('.bars')
                 .append('rect')
                 .attr('class', 'bars')
                 .attr('x', xScale(0))
-                .attr('y', d => yScale(d.name))
-                .attr('width', d => xScale(d.value) - xScale(0))
+                .attr('y', function(d){
+                  return yScale(d.name);  
+                })
+                .attr('width', function(d) {
+                  return xScale(d.value) - xScale(0);
+                })
                 .attr('height', yScale.bandwidth());
 
 const texts = svg.selectAll('.texts')
@@ -69,12 +75,16 @@ const texts = svg.selectAll('.texts')
                   .append('text')
                   .attr('class', 'texts')
                   .attr('x', xScale(0))
-                  .attr('y', d => yScale(d.name) + yScale.bandwidth() / 2)
+                  .attr('y', function(d) {
+                    return yScale(d.name) + yScale.bandwidth() / 2;
+                  })
                   .attr('dx', '.5em')
                   .attr('dy', 1)
                   .attr('text-anchor', 'start')
                   .attr('dominant-baseline', 'middle')
-                  .text(d => d.value);
+                  .text(function(d){
+                    return d.value;
+                  });
                   
 const guide = svg.append('text')
       .attr('class', 'guide')
@@ -87,27 +97,33 @@ const guide = svg.append('text')
 
 svg.append('g')
     .attr('class', 'axis-y')
-    .attr('transform', `translate(${xScale(0)}, 0)`)
+    .attr('transform', 'translate(' + xScale(0) + ', 0)')
     .call(yAxis);
 
-bars.on('click', () => {
+bars.on('click', function() {
   yScale.domain(d3.shuffle(yScale.domain()));
   d3.select('.axis-y')
     .transition().duration(500)
     .call(yAxis);
   bars.transition()
       .duration(500)
-      .attr('y', d => yScale(d.name));
+      .attr('y', function(d) {
+        return yScale(d.name);
+      });
   texts.transition()
       .duration(500)
-      .attr('y', d => yScale(d.name) + yScale.bandwidth() / 2);
-}).on('mouseover', (d, i, nodes) => {
+      .attr('y', function(d) {
+        return yScale(d.name) + yScale.bandwidth() / 2;
+      });
+}).on('mouseover', function(d, i, nodes) {
   d3.select(nodes[i])
     .transition().duration(500)
-    .style('fill', d => fillScale(d.value));
+    .style('fill', function(d) {
+      return fillScale(d.value);
+    });
   guide.style('display', 'inline')
         .text(d.name);
-}).on('mouseout', (d, i, nodes) => {
+}).on('mouseout', function(d, i, nodes) {
   d3.select(nodes[i])
     .transition().duration(500)
     .style('fill', 'skyblue');
