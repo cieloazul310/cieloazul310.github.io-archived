@@ -43,11 +43,11 @@
 </body>
 <script>
 
-let initialRoad = false;
-const nameFormat = d3.format('02d');
-const data = d3.range(0, 18).map(function(d, i) {
-  const values = d3.range(0, 36).map(function(v) {
-    const ran = Math.random();
+var initialRoad = false;
+var nameFormat = d3.format('02d');
+var data = d3.range(0, 18).map(function(d, i) {
+  var values = d3.range(0, 36).map(function(v) {
+    var ran = Math.random();
     return ran < 0.5 ? Math.round(ran * 180) : null;
   }).filter(function(v) {
     return v !== null;
@@ -64,28 +64,28 @@ data.sort(function(a, b) {
   return b.values.sum - a.values.sum;
 });
 
-const size = {
+var size = {
   width: window.innerWidth, 
   height: window.innerHeight
 };
-const margin = {top: 60, right: 20, bottom: 20, left: 60};
-const svg = d3.select('#chart')
+var margin = {top: 60, right: 20, bottom: 20, left: 60};
+var svg = d3.select('#chart')
               .attr('width', size.width)
               .attr('height', size.height);
 
-const xScale = d3.scaleLinear()
+var xScale = d3.scaleLinear()
                   .domain([0, 90])
                   .range([margin.left, size.width - margin.right]);
-const yScale = d3.scalePoint()
+var yScale = d3.scalePoint()
                   .domain(data.map(function(d) {
                     return d.name;
                   }))
                   .range([margin.top, size.height - margin.bottom])
                   .padding(0.5);
 
-const xAxis = d3.axisTop(xScale)
+var xAxis = d3.axisTop(xScale)
                   .tickSize(-(size.height - margin.bottom - margin.top));
-const yAxis = d3.axisLeft(yScale)
+var yAxis = d3.axisLeft(yScale)
                   .tickSize(-(size.width - margin.right - margin.left));
 
 svg.append('g')
@@ -98,7 +98,7 @@ svg.append('g')
     .attr('transform', 'translate(' + xScale(0) + ', 0)')
     .call(yAxis);
 
-const rows = svg.selectAll('.rows')
+var rows = svg.selectAll('.rows')
                 .data(data)
                 .enter()
                 .append('g')
@@ -107,7 +107,7 @@ const rows = svg.selectAll('.rows')
                   return 'translate(0, ' + yScale(d.name) + ')';
                 });
 
-const els = rows.selectAll(".els")
+var els = rows.selectAll(".els")
                 .data(function(d) {
                   return d.values;
                 })
@@ -140,7 +140,7 @@ els.append('circle')
     .attr('cy', 0)
     .attr('r', 6);
 
-const guide = svg.append('text')
+var guide = svg.append('text')
       .attr('class', 'guide')
       .attr('x', size.width - margin.right)
       .attr('y', 0)
@@ -150,9 +150,9 @@ const guide = svg.append('text')
 
 
 els.on('click', function(v, i, nodes) {
-  const el = d3.select(nodes[i]);
-  const isSelected = el.classed('selected');
-  const hasSelected = !d3.selectAll('.selected').empty();
+  var el = d3.select(nodes[i]);
+  var isSelected = el.classed('selected');
+  var hasSelected = !d3.selectAll('.selected').empty();
   
   el.classed('selected', !isSelected);
   d3.selectAll('.active').classed('active', false);
@@ -184,7 +184,7 @@ els.on('click', function(v, i, nodes) {
   d3.select(nodes[i]).classed('active', true);
         
 }).on('mouseout touchend', function(v, i, nodes) {
-  const isSelected = d3.select(nodes[i]).classed('selected');
+  var isSelected = d3.select(nodes[i]).classed('selected');
   
   d3.select(nodes[i]).classed('active', false);
   
@@ -198,7 +198,7 @@ els.on('click', function(v, i, nodes) {
 });
 
 function createLine(d, i, nodes) {
-  const line = d3.select(nodes[i].parentNode)
+  var line = d3.select(nodes[i].parentNode)
                   .append('g')
                   .attr('class', 'line');
   
@@ -219,7 +219,7 @@ function createLine(d, i, nodes) {
 }
 
 function createGuide(d, i, nodes) {
-  const text = d3.select(nodes[i].parentNode).datum().name + ': ' + d + 'min.';
+  var text = d3.select(nodes[i].parentNode).datum().name + ': ' + d + 'min.';
   
   guide.style('display', 'inline')
         .text(text);
