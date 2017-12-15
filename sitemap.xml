@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>https://cieloazul310.github.io/gallery/visualize-jleague-attendance2017/</loc>
+    <lastmod>2017-12-15T20:35:47+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://cieloazul310.github.io/2017/12/d3-get-parent-node/</loc>
     <lastmod>2017-12-14T23:32:15+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -100,14 +107,21 @@
   
   <url>
     <loc>https://cieloazul310.github.io/tags/d3.js/</loc>
-    <lastmod>2017-12-14T23:32:15+09:00</lastmod>
+    <lastmod>2017-12-15T20:35:47+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cieloazul310.github.io/tags/data-visualization/</loc>
-    <lastmod>2017-12-14T23:32:15+09:00</lastmod>
+    <lastmod>2017-12-15T20:35:47+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cieloazul310.github.io/gallery/</loc>
+    <lastmod>2017-12-15T20:35:47+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -136,6 +150,13 @@
   <url>
     <loc>https://cieloazul310.github.io/categories/javascript/</loc>
     <lastmod>2017-12-14T23:32:15+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cieloazul310.github.io/tags/j%E3%83%AA%E3%83%BC%E3%82%B0/</loc>
+    <lastmod>2017-12-15T20:35:47+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -204,7 +225,14 @@
   
   <url>
     <loc>https://cieloazul310.github.io/categories/works/</loc>
-    <lastmod>2017-12-01T01:00:30+09:00</lastmod>
+    <lastmod>2017-12-15T20:35:47+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cieloazul310.github.io/tags/%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC/</loc>
+    <lastmod>2017-12-15T20:35:47+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -253,7 +281,7 @@
   
   <url>
     <loc>https://cieloazul310.github.io/</loc>
-    <lastmod>2017-12-14T23:32:15+09:00</lastmod>
+    <lastmod>2017-12-15T20:35:47+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

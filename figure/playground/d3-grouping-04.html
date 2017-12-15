@@ -6,24 +6,34 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="playground.css">
   <style>
+    body {
+      background-color: #363b44;
+      color: white;
+    }
+    #chart text {
+      fill: white;
+    }
     .els {
       cursor: pointer;
     }  
     .circle {
       fill: rgba(61, 212, 161, 0.4);
-      mix-blend-mode: multiply;
+      mix-blend-mode: lighten;
+      opacity: 0.8;
     }
     .active .circle{
-      fill: #ff0045;
+      opacity: 1;
     }
     .selected .circle {
-      fill: #ff0045;
+      opacity: 1;
     }
-    .line line {
-      stroke: #ff0045;
+    .overlay circle {
+      fill: none;
+    }
+    .overlay line {
       stroke-width: 4;
     }
-    .line text {
+    .overlay text {
       fill: black;
       font-family: Arial, sans-serif;
       font-weight: bold;
@@ -31,8 +41,23 @@
     .tick line {
       stroke: #ccc;
     }
-    .axis-x {
+    .axis path.domain {
+      stroke: none;
+    }
+    .axis-x line{
+      stroke: #777;
       stroke-dasharray: 4,6;
+    }
+    .axis-y text {
+      font-size: 12px;
+    }
+    .lines path {
+      fill: none;
+      stroke-width: 1;
+      stroke-dasharray: 4,4;
+    }
+    path.line-average {
+      stroke: #16eaff;
     }
   </style>
   <title>Document</title>
@@ -43,176 +68,237 @@
 </body>
 <script>
 
-const nameFormat = d3.format('02d');
-const data = d3.range(0, 18).map(function(d, i) {
-  const values = d3.range(0, 36).map(function(v) {
-    const ran = Math.random();
-    return ran < 0.5 ? Math.round(ran * 180) : null;
-  }).filter(function(v) {
-    return v !== null;
+d3.json('./2017j1results.json', function(err, data) {
+  if (err) throw err;
+
+  data.forEach(function(d, i, arr) {
+    d.games = d.games.filter(function(obj) {
+      return obj['HA'] === 'HOME';
+    });
   });
-  values.sum = d3.sum(values);
-  values.mean = d3.mean(values);
-  return {
-    name: 'name-' + nameFormat(d),
-    values
+  
+  data.sort(function(a, b) {
+    return b.point_sum !== a.point_sum ? b.point_sum - a.point_sum : 
+    b.point_sum !== a.point_sum ? b.gd_sum - a.gd_sum : b.goals_sum - a.goals_sum;
+  });
+
+  console.log(data);
+  
+  let initialRoad = false;
+
+  const size = {
+    width: window.innerWidth, 
+    height: window.innerHeight
   };
-});
+  const margin = {top: 60, right: 26, bottom: 18, left: 50};
+  const svg = d3.select('#chart')
+                .attr('width', size.width)
+                .attr('height', size.height);
 
-data.sort(function(a, b) {
-  return b.values.sum - a.values.sum;
-});
+  const xScale = d3.scaleLinear()
+                    .domain([0, 60000])
+                    .range([margin.left, size.width - margin.right]);
+  const yScale = d3.scalePoint()
+                    .domain(data.map(function(d) {
+                      return d.name;
+                    }))
+                    .range([margin.top, size.height - margin.bottom])
+                    .padding(0.5);
+  const fillScale = d3.scaleOrdinal()
+                      .domain([3, 1, 0])
+                      .range(['lime', 'silver', 'red']);
+  
+  const xAxis = d3.axisTop(xScale)
+                    .tickSize(-(size.height - margin.bottom - margin.top))
+                    .ticks(size.width < 500 ? 6 : null)/*
+                    .tickFormat(size.width < 500 ? d3.format('.2s') : null)*/;
+  const yAxis = d3.axisLeft(yScale)
+                    .tickSize(-(size.width - margin.right - margin.left));
+  
+  const lineData = data.map(function(d) {
+    return {
+      name: d.name,
+      average: d3.mean(d.games, function(v, i) {
+        return v.attd;
+      })
+    }
+  });
+  
+  const average = d3.line()
+                    .x(function(d) {
+                      return xScale(d.average);
+                    })
+                    .y(function(d) {
+                      return yScale(d.name);
+                    });
 
-const size = {
-  width: window.innerWidth, 
-  height: window.innerHeight
-};
-const margin = {top: 60, right: 20, bottom: 20, left: 60};
-const svg = d3.select('#chart')
-              .attr('width', size.width)
-              .attr('height', size.height);
+  svg.append('g')
+      .attr('class', 'axis axis-x')
+      .attr('transform', 'translate(0, ' + margin.top + ')')
+      .call(xAxis);
 
-const xScale = d3.scaleLinear()
-                  .domain([0, 90])
-                  .range([margin.left, size.width - margin.right]);
-const yScale = d3.scalePoint()
-                  .domain(data.map(function(d) {
-                    return d.name;
-                  }))
-                  .range([margin.top, size.height - margin.bottom])
-                  .padding(0.5);
+  svg.append('g')
+      .attr('class', 'axis axis-y')
+      .attr('transform', 'translate(' + xScale(0) + ', 0)')
+      .call(yAxis);
 
-const xAxis = d3.axisTop(xScale)
-                  .tickSize(-(size.height - margin.bottom - margin.top));
-const yAxis = d3.axisLeft(yScale)
-                  .tickSize(-(size.width - margin.right - margin.left));
-
-svg.append('g')
-    .attr('class', 'axis axis-x')
-    .attr('transform', 'translate(0, ' + margin.top + ')')
-    .call(xAxis);
-
-svg.append('g')
-    .attr('class', 'axis axis-y')
-    .attr('transform', 'translate(' + xScale(0) + ', 0)')
-    .call(yAxis);
-
-const rows = svg.selectAll('.rows')
-                .data(data)
-                .enter()
-                .append('g')
-                .attr('class', 'rows')
-                .attr('transform', function(d) {
-                  return 'translate(0, ' + yScale(d.name) + ')';
-                });
-
-const els = rows.selectAll(".els")
-                .data(function(d) {
-                  return d.values;
-                })
-                .enter()
+  const lines = svg.append('g')
+                    .attr('class', 'lines')
+                    .datum(lineData);
+  lines.append('path')
+        .attr('class', 'line-average');/*
+        .attr('d', average);*/
+  
+  const rows = svg.selectAll('.rows')
+                  .data(data)
+                  .enter()
                   .append('g')
-                  .attr('class', 'els')
-                  .attr('transform', 'translate(' + margin.left + ', 0)');
-els.transition()
-    .delay(function(v, i) {
-      return 500 + i * 250;
-    })
-    .duration(500)
-    .attr('transform', function(v) {
-      return 'translate(' + xScale(v) + ', 0)';
+                  .attr('class', 'rows')
+                  .attr('transform', function(d) {
+                    return 'translate(0, ' + yScale(d.name) + ')';
+                  });
+
+  const els = rows.selectAll(".els")
+                  .data(function(d) {
+                    return d.games;
+                  })
+                  .enter()
+                    .append('g')
+                    .attr('class', 'els')
+                    .attr('transform', 'translate(' + margin.left + ', 0)')
+                    .style('display', 'none');
+/*  
+  els.transition()
+      .delay(function(v) {
+        return 500 + v.matchday * 250;
+      })
+      .duration(500)
+      .attr('transform', function(v) {
+        return 'translate(' + xScale(v.attd) + ', 0)';
+      });
+*/
+  d3.select(window)
+    .on('click touchstart mouseover focus', function(d, index, nodes) {
+      if (initialRoad) return;
+      els.transition()
+          .delay(function(v) {
+            return 500 + v.matchday * 250;
+          })
+          .duration(500)
+          .style('display', 'inline')
+          .attr('transform', function(v) {
+            return 'translate(' + xScale(v.attd) + ', 0)';
+          });
+      d3.select('.line-average')
+        .transition().delay(1000 + 250 * 42).duration(500)
+        .attr('d', average);
+      
+      d3.select(nodes[index])
+        .on('touch mouseover focusin', null);
+      initialRoad = true;
     });
 
-els.append('circle')
-    .attr('class', 'circle')
-    .attr('cx', 0)
-    .attr('cy', 0)
-    .attr('r', 6);
+  els.append('circle')
+      .attr('class', 'circle')
+      .attr('cx', 0)
+      .attr('cy', 0)
+      .attr('r', 6)
+      .style('fill', function(v) {
+        return fillScale(v.point);
+      });
 
-const guide = svg.append('text')
-      .attr('class', 'guide')
-      .attr('x', size.width - margin.right)
-      .attr('y', 0)
-      .attr('dy', '.5em')
-      .attr('text-anchor', 'end')
-      .attr('dominant-baseline', 'text-before-edge');
+  const guide = svg.append('text')
+        .attr('class', 'guide')
+        .attr('x', size.width)
+        .attr('y', 0)
+        .attr('dx', '-1em')
+        .attr('dy', '1em')
+        .attr('text-anchor', 'end')
+        .attr('dominant-baseline', 'hanging');
 
-
-els.on('click', function(v, i, nodes) {
-  const el = d3.select(nodes[i]);
-  const isSelected = el.classed('selected');
-  const hasSelected = !d3.selectAll('.selected').empty();
-  
-  el.classed('selected', !isSelected);
-  d3.selectAll('.active').classed('active', false);
-  
-  if (isSelected) {
-    //el.classed('selected', false);
-    d3.selectAll('.line').remove();
+  els.on('click', function(v, i, nodes) {
+    const el = d3.select(nodes[i]);
+    const isSelected = el.classed('selected');
+    const hasSelected = !d3.selectAll('.selected').empty();
     
-  } else if (!isSelected && hasSelected) {
-    d3.selectAll('.selected').classed('selected', false);
-    d3.selectAll('.line').remove();
-
-    // append new line
-    createLine(v, i, nodes);
-    createGuide(v, i, nodes);
+    el.classed('selected', !isSelected);
+    d3.selectAll('.active').classed('active', false);
     
-  } 
-  
-  el.classed('selected', !isSelected);
-  
-}).on('mouseover touchstart', function(v, i, nodes) {
-  
-  if (d3.selectAll('.selected').empty()) {
-    
-    createLine(v, i, nodes);
-    createGuide(v, i, nodes);
-
-  }
-  d3.select(nodes[i]).classed('active', true);
-        
-}).on('mouseout touchend', function(v, i, nodes) {
-  const isSelected = d3.select(nodes[i]).classed('selected');
-  
-  d3.select(nodes[i]).classed('active', false);
-  
-  if (d3.selectAll('.selected').empty()) {
+    if (isSelected) {
+      //el.classed('selected', false);
+      d3.selectAll('.overlay').remove();
       
-    d3.selectAll('.line').remove();
+    } else if (!isSelected && hasSelected) {
+      d3.selectAll('.selected').classed('selected', false);
+      d3.selectAll('.overlay').remove();
+
+      // append new line
+      createOverlay(v, i, nodes);
+      createGuide(v, i, nodes);
+      
+    } 
     
-    guide.style('display', 'none');
+    el.classed('selected', !isSelected);
     
+  }).on('mouseover touchstart', function(v, i, nodes) {
+    
+    if (d3.selectAll('.selected').empty()) {
+      
+      createOverlay(v, i, nodes);
+      createGuide(v, i, nodes);
+
+    }
+    d3.select(nodes[i]).classed('active', true);
+          
+  }).on('mouseout touchend', function(v, i, nodes) {
+    const isSelected = d3.select(nodes[i]).classed('selected');
+    
+    d3.select(nodes[i]).classed('active', false);
+    
+    if (d3.selectAll('.selected').empty()) {
+        
+      d3.selectAll('.overlay').remove();
+      
+      guide.style('display', 'none');
+      
+    }
+  });
+
+  function createOverlay(d, i, nodes) {
+    const overlay = d3.select(nodes[i].parentNode)
+                    .append('g')
+                    .attr('class', 'overlay');
+    
+    overlay.append('circle')
+        .attr('cx', xScale(d.attd))
+        .attr('r', 10)
+        .style('stroke', fillScale(d.point));
+    
+    overlay.append('line')
+        .attr('x1', margin.left)
+        .attr('x2', margin.left)
+        .style('stroke', fillScale(d.point))
+          .transition()
+          .delay(250)
+          .duration(250)
+          .attr('x2', xScale(d.attd) - 10);
+
+    overlay.append('text')
+        .attr('x', xScale(d.attd) + 6)
+        .attr('dx', '.2em')
+        .attr('dy', '-.2em')
+        .attr('text-anchor', 'start')
+        .text(d.attd);
   }
+
+  function createGuide(d, i, nodes) {
+    const text = d.home + d.home_score + '-' + d.away_score + d.away + ' ' + d.attd + '人 @' + d.venue;
+    
+    guide.style('display', 'inline')
+          .text(text);
+  }
+  
 });
-
-function createLine(d, i, nodes) {
-  const line = d3.select(nodes[i].parentNode)
-                  .append('g')
-                  .attr('class', 'line');
-  
-  line.append('line')
-      .attr('x1', margin.left)
-      .attr('x2', margin.left)
-        .transition()
-        .delay(250)
-        .duration(250)
-        .attr('x2', xScale(d) - 6);
-
-  line.append('text')
-      .attr('x', xScale(d) - 6)
-      .attr('dx', '-.2em')
-      .attr('dy', '-.2em')
-      .attr('text-anchor', 'end')
-      .text(d);
-}
-
-function createGuide(d, i, nodes) {
-  const text = d3.select(nodes[i].parentNode).datum().name + ' ' + d + 'min.';
-  
-  guide.style('display', 'inline')
-        .text(text);
-}
 
 </script>
 </html>
