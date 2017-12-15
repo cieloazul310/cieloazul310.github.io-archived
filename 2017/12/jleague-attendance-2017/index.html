@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Bリーグ クラブ別営業収入グラフ - 水戸地図</title>
+  <title>2017年Jリーグ全試合の観客数を可視化 - 水戸地図</title>
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74683419-3"></script>
 <script>
@@ -24,9 +24,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="cieloazul310" />
-  <meta name="description" content="前回作成したBリーグ決算情報のCSVデータを使って、D3.jsでシンプルな棒グラフを作成しました。 " />
-<meta name="keywords" content="D3.js, Data Visualization, B.LEAGUE, Bリーグ, スポーツビジネス, バスケットボール" />
+<meta name="author" content="cieloazul310" /><meta name="description" content="2017年の明治安田生命Jリーグ全試合の観客数を可視化したチャート" />
+<meta name="keywords" content="Jリーグ, サッカー, Data Visualization, D3.js" />
 
 
 
@@ -37,7 +36,7 @@
 <meta name="generator" content="Hugo 0.26" />
 
 
-<link rel="canonical" href="https://cieloazul310.github.io/2017/12/bleague-revenue/" />
+<link rel="canonical" href="https://cieloazul310.github.io/2017/12/jleague-attendance-2017/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://cieloazul310.github.io/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://cieloazul310.github.io/favicon-32x32.png">
@@ -52,22 +51,15 @@
 <link href="https://cieloazul310.github.io/dist/even.min.css?v=2.6.5" rel="stylesheet">
 <link href="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
-<meta property="og:title" content="Bリーグ クラブ別営業収入グラフ" />
-<meta property="og:description" content="
-
-前回作成したBリーグ決算情報のCSVデータを使って、D3.jsでシンプルな棒グラフを作成しました。
-" />
+<meta property="og:title" content="2017年Jリーグ全試合の観客数を可視化" />
+<meta property="og:description" content="2017年の明治安田生命Jリーグ全試合の観客数を可視化したチャート" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cieloazul310.github.io/2017/12/bleague-revenue/" />
+<meta property="og:url" content="https://cieloazul310.github.io/2017/12/jleague-attendance-2017/" />
 
 
 
-<meta property="article:published_time" content="2017-12-01T01:00:30&#43;09:00"/>
-<meta property="article:modified_time" content="2017-12-01T01:00:30&#43;09:00"/>
-
-
-
-
+<meta property="article:published_time" content="2017-12-15T23:55:34&#43;09:00"/>
+<meta property="article:modified_time" content="2017-12-15T23:55:34&#43;09:00"/>
 
 
 
@@ -75,24 +67,22 @@
 
 
 
-<meta itemprop="name" content="Bリーグ クラブ別営業収入グラフ">
-<meta itemprop="description" content="
-
-前回作成したBリーグ決算情報のCSVデータを使って、D3.jsでシンプルな棒グラフを作成しました。
-">
-
-
-<meta itemprop="dateModified" content="2017-12-01T01:00:30&#43;09:00" />
-<meta itemprop="wordCount" content="410">
 
 
 
-<meta itemprop="keywords" content="D3.js,Data Visualization,B.LEAGUE,Bリーグ,スポーツビジネス,バスケットボール," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Bリーグ クラブ別営業収入グラフ"/>
-<meta name="twitter:description" content="
 
-前回作成したBリーグ決算情報のCSVデータを使って、D3.jsでシンプルな棒グラフを作成しました。
-"/>
+<meta itemprop="name" content="2017年Jリーグ全試合の観客数を可視化">
+<meta itemprop="description" content="2017年の明治安田生命Jリーグ全試合の観客数を可視化したチャート">
+
+
+<meta itemprop="dateModified" content="2017-12-15T23:55:34&#43;09:00" />
+<meta itemprop="wordCount" content="432">
+
+
+
+<meta itemprop="keywords" content="Jリーグ,サッカー,Data Visualization,D3.js," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="2017年Jリーグ全試合の観客数を可視化"/>
+<meta name="twitter:description" content="2017年の明治安田生命Jリーグ全試合の観客数を可視化したチャート"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -159,12 +149,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Bリーグ クラブ別営業収入グラフ</h1>
+      <h1 class="post-title">2017年Jリーグ全試合の観客数を可視化</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2017-12-01 </span>
+        <span class="post-time"> 2017-12-15 </span>
         <div class="post-category">
-            <a href="https://cieloazul310.github.io/categories/works/">Works</a>
+            <a href="https://cieloazul310.github.io/categories/works/">works</a>
           </div>
         
       </div>
@@ -177,27 +167,58 @@
     <div class="post-content">
       <!-- Lead Paragraph -->
 
-<p><a href="//cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/">前回作成したBリーグ決算情報のCSVデータ</a>を使って、D3.jsでシンプルな棒グラフを作成しました。
+<p>前回作ったチャートを応用して、今年のJリーグの全試合の観客数のデータを可視化しました。
 </p>
 
-<h2 id="グラフ">グラフ</h2>
+<h2 id="数直線のチャート">数直線のチャート</h2>
+
+<p>今まで思いついたことがなかった形のチャートです。<br />
+各クラブのホームゲームの観客数を数直線（という言葉を聞くのは何十年振りだろう）の上にプロットしています。</p>
+
+<ul>
+<li><strong>縦軸</strong>: クラブ名（順位順）</li>
+<li><strong>横軸</strong>: ホームゲーム観客数</li>
+<li><strong>円の色</strong>
+
+<ul>
+<li>緑: 勝ち</li>
+<li>グレー: 引き分け</li>
+<li>赤: 負け</li>
+</ul></li>
+<li><strong>青の点線</strong>: クラブ毎の平均観客数を繋いだもの</li>
+</ul>
+
+<p>マウスを載せたり、タップするとグラフが表示されます。</p>
+
+<h3 id="j1">J1</h3>
 
 
 <div>
-  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="870" style="width:100%;" src="../../../figure/bleague-revenue/" class="iframe-chart" id="356891742">
+  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="480" style="width:100%;" src="../../../figure/j1attendance2017" class="iframe-chart" id="921463587">
   </iframe>
-  <small><a href="../../../figure/bleague-revenue/" target="_blank">Open in a New Tab</a></small>
+  <small><a href="../../../figure/j1attendance2017" target="_blank">Open in a New Tab</a></small>
 </div>
 
+<script>
+  var tg = document.getElementById("921463587");
+  tg.setAttribute("height", window.innerHeight - 50);
+</script>
 
 
-<h3 id="機能">機能</h3>
+<h3 id="j2">J2</h3>
 
-<ul>
-<li>棒グラフにカーソルを載せたり、クリックしたりすると右上に情報が出てきます。</li>
-<li>凡例をクリックすると、凡例に当てはまる棒が強調されます。</li>
-<li>凡例のタイトルにクリックできるものがあります。クリックすると、棒グラフの色が変わります。</li>
-</ul>
+
+<div>
+  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="480" style="width:100%;" src="../../../figure/j2attendance2017" class="iframe-chart" id="138495726">
+  </iframe>
+  <small><a href="../../../figure/j2attendance2017" target="_blank">Open in a New Tab</a></small>
+</div>
+
+<script>
+  var tg = document.getElementById("138495726");
+  tg.setAttribute("height", window.innerHeight - 50);
+</script>
+
 
 <div class="ad" style="width:100%;">
   
@@ -217,21 +238,34 @@
   
 </div>
 
-<h2 id="感想">感想</h2>
+<h3 id="j3">J3</h3>
+
+
+<div>
+  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="480" style="width:100%;" src="../../../figure/j3attendance2017" class="iframe-chart" id="724518369">
+  </iframe>
+  <small><a href="../../../figure/j3attendance2017" target="_blank">Open in a New Tab</a></small>
+</div>
+
+<script>
+  var tg = document.getElementById("724518369");
+  tg.setAttribute("height", window.innerHeight - 50);
+</script>
+
+
+<h2 id="課題">課題</h2>
 
 <ul>
-<li>営業収入最大が大阪エヴェッサだったのは本当に意外でした。</li>
-<li>ここまできっちりとB1とB2が上下に分かれるとは思いませんでした。JリーグではJ2のクラブがJ1のクラブより収入が大きいということがよくあります。</li>
-<li>旧NBLと旧bjクラブの差がこんなに小さいとは思いませんでした。もっと歴然とした差があるものだと思っていたのですが、旧bjクラブがかなり頑張ったと見ていいと思います。</li>
+<li>横軸のスケールはそれぞれのカテゴリーに合った値を設定しました。この記事のように縦に並べる場合は同じスケールでやったほうがいいんですが、操作性を損なってしまうため個別のスケールとしました。</li>
+<li>横軸のスケールを統一して可視化したものは<a href="https://cieloazul310.github.io/gallery/visualize-jleague-attendance2017/">別ページに置いています</a>。</li>
+<li>スマホで見ても大丈夫なように作っていますが、なかなか難しいです。</li>
 </ul>
-
-<p>単純に営業収入の大小のみをグラフにしましたが、収入の内訳を示したグラフも作成中です。</p>
 
 <!-- Music -->
 
 
 <div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/SCJ_tY2724I" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0"></iframe>
+  <iframe src="//www.youtube.com/embed/kMmoQUpTMH0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0"></iframe>
  </div>
 
 
@@ -264,7 +298,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">Update</span>
-    <span class="item-content">2017-12-01</span>
+    <span class="item-content">2017-12-15</span>
   </p>
   
   <p class="copyright-item">
@@ -279,31 +313,22 @@
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="https://cieloazul310.github.io/tags/d3.js/">D3.js</a>
+          <a href="https://cieloazul310.github.io/tags/j%E3%83%AA%E3%83%BC%E3%82%B0/">Jリーグ</a>
+          
+          <a href="https://cieloazul310.github.io/tags/%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC/">サッカー</a>
           
           <a href="https://cieloazul310.github.io/tags/data-visualization/">Data Visualization</a>
           
-          <a href="https://cieloazul310.github.io/tags/b.league/">B.LEAGUE</a>
-          
-          <a href="https://cieloazul310.github.io/tags/b%E3%83%AA%E3%83%BC%E3%82%B0/">Bリーグ</a>
-          
-          <a href="https://cieloazul310.github.io/tags/%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9/">スポーツビジネス</a>
-          
-          <a href="https://cieloazul310.github.io/tags/%E3%83%90%E3%82%B9%E3%82%B1%E3%83%83%E3%83%88%E3%83%9C%E3%83%BC%E3%83%AB/">バスケットボール</a>
+          <a href="https://cieloazul310.github.io/tags/d3.js/">D3.js</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="https://cieloazul310.github.io/2017/12/d3-get-parent-node/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">D3.jsで子要素のDOMから親要素のデータを取得</span>
-            <span class="prev-text nav-mobile">Newer</span>
-          </a>
         
-          <a class="next" href="https://cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/">
-            <span class="next-text nav-default">B.LEAGUE クラブ決算情報をCSV化</span>
+          <a class="next" href="https://cieloazul310.github.io/2017/12/d3-get-parent-node/">
+            <span class="next-text nav-default">D3.jsで子要素のDOMから親要素のデータを取得</span>
             <span class="prev-text nav-mobile">Older</span>
             <i class="iconfont icon-right"></i>
           </a>
