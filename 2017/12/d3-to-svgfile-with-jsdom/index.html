@@ -78,12 +78,14 @@
 
 <meta itemprop="datePublished" content="2017-12-16T18:50:55&#43;09:00" />
 <meta itemprop="dateModified" content="2017-12-16T18:50:55&#43;09:00" />
-<meta itemprop="wordCount" content="1309">
+<meta itemprop="wordCount" content="1307">
 
 
 
 <meta itemprop="keywords" content="D3.js,jsdom,SVG,node.js,headless chrome," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="D3.js &#43; jsdomでSVGファイルを作成"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image:src" content="https://cieloazul310.github.io/img/ogp.jpg"/>
+<meta name="twitter:title" content="D3.js &#43; jsdomでSVGファイルを作成"/>
 <meta name="twitter:description" content="D3.jsとjsdomを使って、SVGファイルを作る方法です。"/>
 
 <!--[if lte IE 9]>
@@ -315,10 +317,15 @@ q.awaitAll((err, files) =&gt; {
 $ chrome --headless --disable-gpu --screenshot --window-size=900,1200 http://localhost:1313/input.svg
 </code></pre>
 
-<p>元のSVGファイルとほぼ同じ状態のpngが生成されました。（当たり前といえば当たり前なのですが）<br />
-画像の大きさは、指定したウィンドウサイズの2倍（この場合だと1800x2400）になりました。しかしimagemagickで生成したものよりも小さい容量になりました。</p>
+<p>元のSVGファイルとほぼ同じ状態のpngが生成できました。（当たり前といえば当たり前なのですが）<br />
+画像のサイズは、指定したウィンドウサイズの2倍（この場合だと1800x2400）ですが、imagemagickで生成したものよりも小さい容量になりました。</p>
 
-<p>かなり手軽に綺麗なキャプチャができるので、今後headless chromeを使うことが多くなりそうです。</p>
+<ul>
+<li>imagemagick: 1125x1500 <strong>524KB</strong><br /></li>
+<li>Headless Chrome: 1800x2400 <strong>496KB</strong></li>
+</ul>
+
+<p>手軽に綺麗なキャプチャができるので、今後Headless Chromeを使うことが多くなりそうです。</p>
 
 <!-- Music -->
 
@@ -391,6 +398,11 @@ $ chrome --headless --disable-gpu --screenshot --window-size=900,1200 http://loc
       
       <nav class="post-nav">
         
+          <a class="prev" href="https://cieloazul310.github.io/2017/12/jleague-attd-2017/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">2017年明治安田生命Jリーグ全試合の観客数の可視化</span>
+            <span class="prev-text nav-mobile">Newer</span>
+          </a>
         
           <a class="next" href="https://cieloazul310.github.io/2017/12/d3-get-parent-node/">
             <span class="next-text nav-default">D3.jsで子要素のDOMから親要素のデータを取得</span>
