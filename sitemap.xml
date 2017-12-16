@@ -148,7 +148,7 @@
   </url>
   
   <url>
-    <loc>https://cieloazul310.github.io/categories/javascript/</loc>
+    <loc>https://cieloazul310.github.io/tags/headless-chrome/</loc>
     <lastmod>2017-12-16T18:50:55+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -157,6 +157,13 @@
   <url>
     <loc>https://cieloazul310.github.io/tags/javascript/</loc>
     <lastmod>2017-12-14T23:32:15+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cieloazul310.github.io/categories/javascript/</loc>
+    <lastmod>2017-12-16T18:50:55+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

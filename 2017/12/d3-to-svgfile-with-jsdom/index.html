@@ -25,7 +25,7 @@
 
 
 <meta name="author" content="cieloazul310" /><meta name="description" content="D3.jsとjsdomを使って、SVGファイルを作る方法です。" />
-<meta name="keywords" content="D3.js, jsdom, SVG, node.js" />
+<meta name="keywords" content="D3.js, jsdom, SVG, node.js, headless chrome" />
 
 
 
@@ -78,11 +78,11 @@
 
 <meta itemprop="datePublished" content="2017-12-16T18:50:55&#43;09:00" />
 <meta itemprop="dateModified" content="2017-12-16T18:50:55&#43;09:00" />
-<meta itemprop="wordCount" content="773">
+<meta itemprop="wordCount" content="1309">
 
 
 
-<meta itemprop="keywords" content="D3.js,jsdom,SVG,node.js," />
+<meta itemprop="keywords" content="D3.js,jsdom,SVG,node.js,headless chrome," />
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="D3.js &#43; jsdomでSVGファイルを作成"/>
 <meta name="twitter:description" content="D3.jsとjsdomを使って、SVGファイルを作る方法です。"/>
 
@@ -177,13 +177,13 @@
 <p>SVGファイルを作るに当たって、<a href="//qiita.com/cieloazul310/items/a8e776bbe8a70262df99">過去にQiitaに投稿したもの</a>を参照したら動作しませんでした。
 どうやら<a href="//github.com/tmpvar/jsdom">jsdom</a>が色々変わったらしいので、新しいバージョンで動くように書き換えました。</p>
 
-<h5 id="versions">versions</h5>
+<h4 id="versions">versions</h4>
 
 <pre><code class="language-text">d3@4.11.0
 jsdom@11.5.1
 </code></pre>
 
-<h5 id="makesvg-js">makeSVG.js</h5>
+<h4 id="makesvg-js">makeSVG.js</h4>
 
 <pre><code class="language-JavaScript">const d3 = require('d3');
 const jsdom = require('jsdom');
@@ -204,40 +204,22 @@ const svg = d3.select(document.body)
 console.log(document.body.innerHTML)
 </code></pre>
 
-<h5 id="command-line">Command Line</h5>
+<h4 id="command-line">Command Line</h4>
 
 <pre><code class="language-Shell">$ node makeSVG.js &gt; output.svg
 </code></pre>
 
-<h5 id="output-svg">output.svg</h5>
+<h4 id="output-svg">output.svg</h4>
 
 <pre><code class="language-xml">&lt;svg xmls=&quot;http://www.w3.org/2000/svg&quot; width=&quot;900&quot; height=&quot;1200&quot; style=&quot;background-color: #363b44;&quot;&gt;&lt;/svg&gt;
 </code></pre>
 
-<p>これが基本形です。jsdomの書き方が過去のものとは少し変わりました。</p>
-
-<div class="ad" style="width:100%;">
-  
-    <small>広告</small>
-    
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      
-      <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="5892967151"
-         data-ad-format="auto"></ins>
-      <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
-  
-</div>
+<p>これが基本形です。makeSVG.jsが<code>console.log()</code>で出力した内容を、<code>&gt;</code>（リダイレクト）でファイルoutput.svgに出力しています。
+jsdomの書き方が過去のものとは少し変わりました。</p>
 
 <h2 id="その他変更点など">その他変更点など</h2>
 
-<p>過去の記事では<code>d3.queue()</code>と<code>d3.json</code>で国土地理院のベクトルタイルを読み込みましたが、
-今回ローカルのファイルを読み込むに当たって<code>d3.json</code>が使えなかったので、代わりに<code>fs.readFile</code>を使用します。</p>
+<p>過去の記事では<code>d3.queue()</code>と<code>d3.json</code>で国土地理院のベクトルタイルを読み込みましたが、今回ローカルのファイルを読み込むに当たって<code>d3.json</code>が使えなかったので、代わりに<code>fs.readFile</code>を使用します。</p>
 
 <pre><code class="language-JavaScript">const fs = require('fs');
 
@@ -278,11 +260,31 @@ q.awaitAll((err, files) =&gt; {
 
 <p><img src="../../../img/j-attd-2017.svg" alt="2017年の明治安田生命Jリーグ全試合の観客数" title="2017年の明治安田生命Jリーグ全試合の観客数" /></p>
 
-<h2 id="svgファイルをpngに変換">SVGファイルをpngに変換</h2>
+<div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      
+      <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="5892967151"
+         data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
 
-<p>これをimagemagickでpngに変換します。</p>
+<h2 id="svgファイルをpngに変換-imagemagick編">SVGファイルをpngに変換(imagemagick編)</h2>
 
-<p><img src="../../../img/j-attd-2017.png" alt="pngに変換したもの" title="上記SVGファイルをpngに変換したもの" /></p>
+<p>SVGファイルをpngに変換する方法はいくつかあると思いますが、まず最初にimagemagickを使う方法を試してみます。</p>
+
+<p><img src="../../../img/j-attd-2017.png" alt="imagemagickでpngに変換したもの" title="imagemagickでpngに変換したもの" /></p>
+
+<h4 id="command-line-1">Command Line</h4>
 
 <pre><code class="language-Shell">$ convert -density 120 -background &quot;#363b44&quot; \
   -font &quot;/Library/Fonts/KozGoPr6N-Regular.otf&quot; input.svg output.png
@@ -294,7 +296,29 @@ q.awaitAll((err, files) =&gt; {
 <li><code>-font</code>でフォントを指定しないと日本語は文字化けしてしまいます</li>
 </ul>
 
+<p>フォントが変わる部分はさておき、SVGの透過度も再現してくれないのでかなり微妙な出来となってしまいました。</p>
+
 <p>参考: <a href="//qiita.com/hkoshiba/items/d5fe07f5d16316756f49">convert コマンドでラベルに日本語を含むsvgをPDFに変換 </a></p>
+
+<h2 id="svgファイルをpngに変換-headless-chrome編">SVGファイルをpngに変換(Headless Chrome編)</h2>
+
+<p>imagemagickの他に何かいい方法ないかなと調べてみたらHeadless Chromeという機能がChromeに備わっているということを知りました。<br />
+これを使ってhugoで立てたローカルホスト内のSVGファイルをキャプチャしてみます。</p>
+
+<p>参考: <a href="https://developers.google.com/web/updates/2017/04/headless-chrome?hl=ja">ヘッドレス Chrome ことはじめ</a> Google Developers</p>
+
+<p><img src="../../../img/j-attd-2017-screenshot.png" alt="headless chromeでキャプチャしたもの" title="headless chromeでキャプチャしたもの" /></p>
+
+<h4 id="command-line-2">Command Line</h4>
+
+<pre><code class="language-Shell">$ alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+$ chrome --headless --disable-gpu --screenshot --window-size=900,1200 http://localhost:1313/input.svg
+</code></pre>
+
+<p>元のSVGファイルとほぼ同じ状態のpngが生成されました。（当たり前といえば当たり前なのですが）<br />
+画像の大きさは、指定したウィンドウサイズの2倍（この場合だと1800x2400）になりました。しかしimagemagickで生成したものよりも小さい容量になりました。</p>
+
+<p>かなり手軽に綺麗なキャプチャができるので、今後headless chromeを使うことが多くなりそうです。</p>
 
 <!-- Music -->
 
@@ -324,6 +348,8 @@ q.awaitAll((err, files) =&gt; {
 <!-- References --></p>
 
 <!-- d3.js + jsdomで国土地理院のベクトルタイルからSVGファイルを生成 2017年07月06日に更新 -->
+
+<!-- ヘッドレス Chrome ことはじめ -->
     </div>
 
     
@@ -357,6 +383,8 @@ q.awaitAll((err, files) =&gt; {
           <a href="https://cieloazul310.github.io/tags/svg/">SVG</a>
           
           <a href="https://cieloazul310.github.io/tags/node.js/">node.js</a>
+          
+          <a href="https://cieloazul310.github.io/tags/headless-chrome/">headless chrome</a>
           
         </div>
 
