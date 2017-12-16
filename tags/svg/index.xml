@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Svg on 水戸地図</title>
+    <link>https://cieloazul310.github.io/tags/svg/</link>
+    <description>Recent content in Svg on 水戸地図</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>cieloazul310</copyright>
+    <lastBuildDate>Sat, 16 Dec 2017 18:50:55 +0900</lastBuildDate>
+    
+	<atom:link href="https://cieloazul310.github.io/tags/svg/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>D3.js &#43; jsdomでSVGファイルを作成</title>
+      <link>https://cieloazul310.github.io/2017/12/d3-to-svgfile-with-jsdom/</link>
+      <pubDate>Sat, 16 Dec 2017 18:50:55 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2017/12/d3-to-svgfile-with-jsdom/</guid>
+      <description>&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;D3.jsとjsdomを使って、SVGファイルを作る方法です。
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

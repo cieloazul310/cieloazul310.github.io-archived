@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>https://cieloazul310.github.io/2017/12/d3-to-svgfile-with-jsdom/</loc>
+    <lastmod>2017-12-16T18:50:55+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://cieloazul310.github.io/gallery/visualize-jleague-attendance2017/</loc>
     <lastmod>2017-12-15T20:35:47+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -107,7 +114,7 @@
   
   <url>
     <loc>https://cieloazul310.github.io/tags/d3.js/</loc>
-    <lastmod>2017-12-15T20:35:47+09:00</lastmod>
+    <lastmod>2017-12-16T18:50:55+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -141,6 +148,13 @@
   </url>
   
   <url>
+    <loc>https://cieloazul310.github.io/categories/javascript/</loc>
+    <lastmod>2017-12-16T18:50:55+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cieloazul310.github.io/tags/javascript/</loc>
     <lastmod>2017-12-14T23:32:15+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -148,8 +162,8 @@
   </url>
   
   <url>
-    <loc>https://cieloazul310.github.io/categories/javascript/</loc>
-    <lastmod>2017-12-14T23:32:15+09:00</lastmod>
+    <loc>https://cieloazul310.github.io/tags/jsdom/</loc>
+    <lastmod>2017-12-16T18:50:55+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -164,6 +178,13 @@
   <url>
     <loc>https://cieloazul310.github.io/tags/leaflet/</loc>
     <lastmod>2017-11-09T22:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cieloazul310.github.io/tags/node.js/</loc>
+    <lastmod>2017-12-16T18:50:55+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -184,7 +205,7 @@
   
   <url>
     <loc>https://cieloazul310.github.io/post/</loc>
-    <lastmod>2017-12-14T23:32:15+09:00</lastmod>
+    <lastmod>2017-12-16T18:50:55+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -198,6 +219,13 @@
   <url>
     <loc>https://cieloazul310.github.io/categories/subcategory/</loc>
     <lastmod>2017-07-07T16:12:11+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cieloazul310.github.io/tags/svg/</loc>
+    <lastmod>2017-12-16T18:50:55+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -281,7 +309,7 @@
   
   <url>
     <loc>https://cieloazul310.github.io/</loc>
-    <lastmod>2017-12-15T20:35:47+09:00</lastmod>
+    <lastmod>2017-12-16T18:50:55+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Fri, 15 Dec 2017 20:35:47 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 16 Dec 2017 18:50:55 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -23,12 +23,24 @@
     </item>
     
     <item>
+      <title>D3.js &#43; jsdomでSVGファイルを作成</title>
+      <link>https://cieloazul310.github.io/2017/12/d3-to-svgfile-with-jsdom/</link>
+      <pubDate>Sat, 16 Dec 2017 18:50:55 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2017/12/d3-to-svgfile-with-jsdom/</guid>
+      <description>&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;D3.jsとjsdomを使って、SVGファイルを作る方法です。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>2017 Jリーグ全試合 観客数の可視化</title>
       <link>https://cieloazul310.github.io/gallery/visualize-jleague-attendance2017/</link>
       <pubDate>Fri, 15 Dec 2017 20:35:47 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/gallery/visualize-jleague-attendance2017/</guid>
-      <description>2017 Jリーグ全試合 観客数の可視化 J.League 2017 All Games Attendance Visualization 2017年の明治安田生命Jリーグ全試合の観客数を可視化したチャート Your Browser do not support iframe. Open in a New Tab -- 動くやつ</description>
+      <description>2017 Jリーグ全試合 観客数の可視化 J.League 2017 All Games Attendance Visualization 2017年の明治安田生命Jリーグ全試合の観客数を可視化したチャート Your Browser do not support iframe. Open in a New Tab -- 上の画像</description>
     </item>
     
     <item>

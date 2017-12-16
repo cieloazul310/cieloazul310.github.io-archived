@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Bリーグ クラブ別営業収入グラフ - 水戸地図</title>
+  <title>D3.js &#43; jsdomでSVGファイルを作成 - 水戸地図</title>
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74683419-3"></script>
 <script>
@@ -24,9 +24,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="cieloazul310" />
-  <meta name="description" content="前回作成したBリーグ決算情報のCSVデータを使って、D3.jsでシンプルな棒グラフを作成しました。 " />
-<meta name="keywords" content="D3.js, Data Visualization, B.LEAGUE, Bリーグ, スポーツビジネス, バスケットボール" />
+<meta name="author" content="cieloazul310" /><meta name="description" content="D3.jsとjsdomを使って、SVGファイルを作る方法です。" />
+<meta name="keywords" content="D3.js, jsdom, SVG, node.js" />
 
 
 
@@ -37,7 +36,7 @@
 <meta name="generator" content="Hugo 0.31.1" />
 
 
-<link rel="canonical" href="https://cieloazul310.github.io/2017/12/bleague-revenue/" />
+<link rel="canonical" href="https://cieloazul310.github.io/2017/12/d3-to-svgfile-with-jsdom/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://cieloazul310.github.io/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://cieloazul310.github.io/favicon-32x32.png">
@@ -52,23 +51,16 @@
 <link href="https://cieloazul310.github.io/dist/even.min.css?v=2.6.5" rel="stylesheet">
 <link href="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
-<meta property="og:title" content="Bリーグ クラブ別営業収入グラフ" />
-<meta property="og:description" content="
-
-前回作成したBリーグ決算情報のCSVデータを使って、D3.jsでシンプルな棒グラフを作成しました。
-" />
+<meta property="og:title" content="D3.js &#43; jsdomでSVGファイルを作成" />
+<meta property="og:description" content="D3.jsとjsdomを使って、SVGファイルを作る方法です。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cieloazul310.github.io/2017/12/bleague-revenue/" />
+<meta property="og:url" content="https://cieloazul310.github.io/2017/12/d3-to-svgfile-with-jsdom/" />
 
 
 
-<meta property="article:published_time" content="2017-12-01T01:00:30&#43;09:00"/>
+<meta property="article:published_time" content="2017-12-16T18:50:55&#43;09:00"/>
 
-<meta property="article:modified_time" content="2017-12-01T01:00:30&#43;09:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2017-12-16T18:50:55&#43;09:00"/>
 
 
 
@@ -76,25 +68,23 @@
 
 
 
-<meta itemprop="name" content="Bリーグ クラブ別営業収入グラフ">
-<meta itemprop="description" content="
-
-前回作成したBリーグ決算情報のCSVデータを使って、D3.jsでシンプルな棒グラフを作成しました。
-">
-
-
-<meta itemprop="datePublished" content="2017-12-01T01:00:30&#43;09:00" />
-<meta itemprop="dateModified" content="2017-12-01T01:00:30&#43;09:00" />
-<meta itemprop="wordCount" content="416">
 
 
 
-<meta itemprop="keywords" content="D3.js,Data Visualization,B.LEAGUE,Bリーグ,スポーツビジネス,バスケットボール," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Bリーグ クラブ別営業収入グラフ"/>
-<meta name="twitter:description" content="
 
-前回作成したBリーグ決算情報のCSVデータを使って、D3.jsでシンプルな棒グラフを作成しました。
-"/>
+<meta itemprop="name" content="D3.js &#43; jsdomでSVGファイルを作成">
+<meta itemprop="description" content="D3.jsとjsdomを使って、SVGファイルを作る方法です。">
+
+
+<meta itemprop="datePublished" content="2017-12-16T18:50:55&#43;09:00" />
+<meta itemprop="dateModified" content="2017-12-16T18:50:55&#43;09:00" />
+<meta itemprop="wordCount" content="773">
+
+
+
+<meta itemprop="keywords" content="D3.js,jsdom,SVG,node.js," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="D3.js &#43; jsdomでSVGファイルを作成"/>
+<meta name="twitter:description" content="D3.jsとjsdomを使って、SVGファイルを作る方法です。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -161,12 +151,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Bリーグ クラブ別営業収入グラフ</h1>
+      <h1 class="post-title">D3.js &#43; jsdomでSVGファイルを作成</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2017-12-01 </span>
+        <span class="post-time"> 2017-12-16 </span>
         <div class="post-category">
-            <a href="https://cieloazul310.github.io/categories/works/">Works</a>
+            <a href="https://cieloazul310.github.io/categories/javascript/">JavaScript</a>
           </div>
         
       </div>
@@ -179,28 +169,52 @@
     <div class="post-content">
       <!-- Lead Paragraph -->
 
-<p><a href="//cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/">前回作成したBリーグ決算情報のCSVデータ</a>を使って、D3.jsでシンプルな棒グラフを作成しました。
+<p>D3.jsとjsdomを使って、SVGファイルを作る方法です。
 </p>
 
-<h2 id="グラフ">グラフ</h2>
+<h2 id="基本形">基本形</h2>
 
+<p>SVGファイルを作るに当たって、<a href="//qiita.com/cieloazul310/items/a8e776bbe8a70262df99">過去にQiitaに投稿したもの</a>を参照したら動作しませんでした。
+どうやら<a href="//github.com/tmpvar/jsdom">jsdom</a>が色々変わったらしいので、新しいバージョンで動くように書き換えました。</p>
 
-<div>
-  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="870" style="width:100%;" src="../../../figure/bleague-revenue/" class="iframe-chart" id="153847296">
-    <p>Your Browser do not support iframe.</p>
-  </iframe>
-  <small><a href="../../../figure/bleague-revenue/" target="_blank">Open in a New Tab</a></small>
-</div>
+<h5 id="versions">versions</h5>
 
+<pre><code class="language-text">d3@4.11.0
+jsdom@11.5.1
+</code></pre>
 
+<h5 id="makesvg-js">makeSVG.js</h5>
 
-<h3 id="機能">機能</h3>
+<pre><code class="language-JavaScript">const d3 = require('d3');
+const jsdom = require('jsdom');
+const { JSDOM } = jsdom;
 
-<ul>
-<li>棒グラフにカーソルを載せたり、クリックしたりすると右上に情報が出てきます。</li>
-<li>凡例をクリックすると、凡例に当てはまる棒が強調されます。</li>
-<li>凡例のタイトルにクリックできるものがあります。クリックすると、棒グラフの色が変わります。</li>
-</ul>
+const document = new JSDOM().window.document;
+const size = {
+  width: 900,
+  height: 1200
+};
+const svg = d3.select(document.body)
+              .append('svg')
+              .attr(&quot;xmlns&quot;,'http://www.w3.org/2000/svg')
+              .attr('width', size.width)
+              .attr('height', size.height)
+              .style('background-color', &quot;#363b44&quot;);
+
+console.log(document.body.innerHTML)
+</code></pre>
+
+<h5 id="command-line">Command Line</h5>
+
+<pre><code class="language-Shell">$ node makeSVG.js &gt; output.svg
+</code></pre>
+
+<h5 id="output-svg">output.svg</h5>
+
+<pre><code class="language-xml">&lt;svg xmls=&quot;http://www.w3.org/2000/svg&quot; width=&quot;900&quot; height=&quot;1200&quot; style=&quot;background-color: #363b44;&quot;&gt;&lt;/svg&gt;
+</code></pre>
+
+<p>これが基本形です。jsdomの書き方が過去のものとは少し変わりました。</p>
 
 <div class="ad" style="width:100%;">
   
@@ -220,21 +234,73 @@
   
 </div>
 
-<h2 id="感想">感想</h2>
+<h2 id="その他変更点など">その他変更点など</h2>
+
+<p>過去の記事では<code>d3.queue()</code>と<code>d3.json</code>で国土地理院のベクトルタイルを読み込みましたが、
+今回ローカルのファイルを読み込むに当たって<code>d3.json</code>が使えなかったので、代わりに<code>fs.readFile</code>を使用します。</p>
+
+<pre><code class="language-JavaScript">const fs = require('fs');
+
+// 上記の基本形は省略
+
+const q = d3.queue()
+            .defer(fs.readFile, './data/j1results.json')
+            .defer(fs.readFile, './data/j2results.json')
+            .defer(fs.readFile, './data/j3results.json');
+
+q.awaitAll((err, files) =&gt; {
+  if (err) throw err;
+  const data = files.map(str =&gt; JSON.parse(str));
+  
+  /** D3 Scripts
+    * ex. svg.selectAll('rect')
+    *        .data(d3.merge(data))
+    *        .enter()
+    *        .append('rect')
+    *        ...
+    */
+  
+  console.log(document.body.innerHTML);
+});
+</code></pre>
+
+<p>fsを使うなら、ファイルの出力方法は<code>console.log()</code>ではなく、<code>fs.writeFile()</code>でもいいかもしれません。お好きな方をお選びください。</p>
+
+<pre><code class="language-JavaScript">fs.writeFile('output.svg', document.body.innerHTML, (err) =&gt; {
+  if (err) throw err;
+  console.log('save successful!');
+});
+</code></pre>
+
+<p>D3.jsで描写したSVGはcssで要素のスタイルを設定する場合が多いのですが、SVGファイルはcssが読み込めません。<code>selection.attr</code>で地道にスタイリングしましょう。</p>
+
+<p>以下は作成したSVGファイルの例です。</p>
+
+<p><img src="../../../img/j-attd-2017.svg" alt="2017年の明治安田生命Jリーグ全試合の観客数" title="2017年の明治安田生命Jリーグ全試合の観客数" /></p>
+
+<h2 id="svgファイルをpngに変換">SVGファイルをpngに変換</h2>
+
+<p>これをimagemagickでpngに変換します。</p>
+
+<p><img src="../../../img/j-attd-2017.png" alt="pngに変換したもの" title="上記SVGファイルをpngに変換したもの" /></p>
+
+<pre><code class="language-Shell">$ convert -density 120 -background &quot;#363b44&quot; \
+  -font &quot;/Library/Fonts/KozGoPr6N-Regular.otf&quot; input.svg output.png
+</code></pre>
 
 <ul>
-<li>営業収入最大が大阪エヴェッサだったのは本当に意外でした。</li>
-<li>ここまできっちりとB1とB2が上下に分かれるとは思いませんでした。JリーグではJ2のクラブがJ1のクラブより収入が大きいということがよくあります。</li>
-<li>旧NBLと旧bjクラブの差がこんなに小さいとは思いませんでした。もっと歴然とした差があるものだと思っていたのですが、旧bjクラブがかなり頑張ったと見ていいと思います。</li>
+<li><code>-density</code>は倍率と考えてよい（実際の定義は知らない）</li>
+<li><code>-background</code>を設定しないと背景透過になってしまいます</li>
+<li><code>-font</code>でフォントを指定しないと日本語は文字化けしてしまいます</li>
 </ul>
 
-<p>単純に営業収入の大小のみをグラフにしましたが、収入の内訳を示したグラフも作成中です。</p>
+<p>参考: <a href="//qiita.com/hkoshiba/items/d5fe07f5d16316756f49">convert コマンドでラベルに日本語を含むsvgをPDFに変換 </a></p>
 
 <!-- Music -->
 
 
 <div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/SCJ_tY2724I" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/t6gDp9IsBgw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
  </div>
 
 
@@ -256,6 +322,8 @@
   
 </div>
 <!-- References --></p>
+
+<!-- d3.js + jsdomで国土地理院のベクトルタイルからSVGファイルを生成 2017年07月06日に更新 -->
     </div>
 
     
@@ -267,7 +335,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">Update</span>
-    <span class="item-content">2017-12-01</span>
+    <span class="item-content">2017-12-16</span>
   </p>
   
   <p class="copyright-item">
@@ -284,29 +352,20 @@
           
           <a href="https://cieloazul310.github.io/tags/d3.js/">D3.js</a>
           
-          <a href="https://cieloazul310.github.io/tags/data-visualization/">Data Visualization</a>
+          <a href="https://cieloazul310.github.io/tags/jsdom/">jsdom</a>
           
-          <a href="https://cieloazul310.github.io/tags/b.league/">B.LEAGUE</a>
+          <a href="https://cieloazul310.github.io/tags/svg/">SVG</a>
           
-          <a href="https://cieloazul310.github.io/tags/b%E3%83%AA%E3%83%BC%E3%82%B0/">Bリーグ</a>
-          
-          <a href="https://cieloazul310.github.io/tags/%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9/">スポーツビジネス</a>
-          
-          <a href="https://cieloazul310.github.io/tags/%E3%83%90%E3%82%B9%E3%82%B1%E3%83%83%E3%83%88%E3%83%9C%E3%83%BC%E3%83%AB/">バスケットボール</a>
+          <a href="https://cieloazul310.github.io/tags/node.js/">node.js</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="https://cieloazul310.github.io/2017/12/d3-get-parent-node/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">D3.jsで子要素のDOMから親要素のデータを取得</span>
-            <span class="prev-text nav-mobile">Newer</span>
-          </a>
         
-          <a class="next" href="https://cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/">
-            <span class="next-text nav-default">B.LEAGUE クラブ決算情報をCSV化</span>
+          <a class="next" href="https://cieloazul310.github.io/2017/12/d3-get-parent-node/">
+            <span class="next-text nav-default">D3.jsで子要素のDOMから親要素のデータを取得</span>
             <span class="prev-text nav-mobile">Older</span>
             <i class="iconfont icon-right"></i>
           </a>
