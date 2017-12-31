@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Sat, 16 Dec 2017 23:35:47 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 31 Dec 2017 22:30:00 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,6 +19,18 @@
       
       <guid>https://cieloazul310.github.io/about/</guid>
       <description>&lt;p&gt;水戸地図はD3.jsやOpenLayersなどJavaScriptのライブラリを使ってデータビジュアライゼーションを試みる実験室です。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>城里町議会の会議録メモ No.1</title>
+      <link>https://cieloazul310.github.io/2017/12/shirosato-assembly-201706/</link>
+      <pubDate>Sun, 31 Dec 2017 22:30:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2017/12/shirosato-assembly-201706/</guid>
+      <description>&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;平成29年度城里町一般会計予算が成立した、&lt;a href=&#34;http://www.town.shirosato.lg.jp/page/page003153.html&#34;&gt;城里町議会 第2回定例会会議録&lt;/a&gt;より七会町民センター関連の議論を抜粋しました。
 &lt;/p&gt;</description>
     </item>
     
