@@ -190,6 +190,13 @@
   </url>
   
   <url>
+    <loc>https://cieloazul310.github.io/categories/memo/</loc>
+    <lastmod>2017-12-31T22:30:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cieloazul310.github.io/tags/node.js/</loc>
     <lastmod>2017-12-16T18:50:55+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -296,13 +303,6 @@
   <url>
     <loc>https://cieloazul310.github.io/tags/%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%AB/</loc>
     <lastmod>2017-11-09T22:00:00+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cieloazul310.github.io/categories/%E3%83%A1%E3%83%A2/</loc>
-    <lastmod>2017-12-31T22:30:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
