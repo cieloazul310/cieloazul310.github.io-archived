@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>WikiLayersをリリースしました - 水戸地図</title>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-74683419-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-74683419-3');
+</script><meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="cieloazul310" /><meta name="description" content="Wikipediaを地図でみるWikiLayersを公開しました。" />
+<meta name="keywords" content="地図, OpenLayers, React, Redux" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.31.1" />
+
+
+<link rel="canonical" href="https://cieloazul310.github.io/2018/01/wikilayers/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://cieloazul310.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cieloazul310.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cieloazul310.github.io/favicon-16x16.png">
+<link rel="icon" href="https://cieloazul310.github.io/favicon.ico" />
+<link rel="manifest" href="https://cieloazul310.github.io/manifest.json">
+<link rel="mask-icon" href="https://cieloazul310.github.io/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="https://cieloazul310.github.io/dist/even.min.css?v=2.6.5" rel="stylesheet">
+<link href="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="WikiLayersをリリースしました" />
+<meta property="og:description" content="Wikipediaを地図でみるWikiLayersを公開しました。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cieloazul310.github.io/2018/01/wikilayers/" />
+
+
+
+<meta property="article:published_time" content="2018-01-29T23:00:00&#43;09:00"/>
+
+<meta property="article:modified_time" content="2018-01-29T23:00:00&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="WikiLayersをリリースしました">
+<meta itemprop="description" content="Wikipediaを地図でみるWikiLayersを公開しました。">
+
+
+<meta itemprop="datePublished" content="2018-01-29T23:00:00&#43;09:00" />
+<meta itemprop="dateModified" content="2018-01-29T23:00:00&#43;09:00" />
+<meta itemprop="wordCount" content="1674">
+
+
+
+<meta itemprop="keywords" content="地図,OpenLayers,React,Redux," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image:src" content="https://cieloazul310.github.io/img/ogp2.png"/>
+<meta name="twitter:title" content="WikiLayersをリリースしました"/>
+<meta name="twitter:description" content="Wikipediaを地図でみるWikiLayersを公開しました。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="https://cieloazul310.github.io/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="https://cieloazul310.github.io/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="https://cieloazul310.github.io/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cieloazul310.github.io/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="https://cieloazul310.github.io/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">WikiLayersをリリースしました</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-01-29 </span>
+        <div class="post-category">
+            <a href="https://cieloazul310.github.io/categories/works/">Works</a>
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      <!-- Lead Paragraph -->
+
+<p>Wikipediaを地図で見るアプリWikiLayersを公開しました。<br />
+URL: <a href="https://cieloazul310.github.io/wikilayers">https://cieloazul310.github.io/wikilayers</a>
+</p>
+
+<h2 id="wikilayersとは">WikiLayersとは</h2>
+
+<p><img src="../../../img/wikilayers_showcase.png" alt="WikiLayers" title="WikiLayers" /></p>
+
+<p><strong>WikiLayers</strong>（ウィキレイヤーズ）はWikipediaから座標を取得し地図で表示するアプリケーションです。</p>
+
+<h3 id="遊び方">遊び方</h3>
+
+<ol>
+<li>検索フォームに表示したい記事の<strong>タイトル</strong>、または<strong>URL</strong>を入れて検索（「水戸城」「 <a href="https://ja.wikipedia.org/wiki/偕楽園">https://ja.wikipedia.org/wiki/偕楽園</a> 」など）</li>
+<li>記事の座標を取得したら「<strong>地図に追加</strong>」を押す</li>
+<li>「<strong>地図</strong>」を見る</li>
+</ol>
+
+<h4 id="検索例">検索例</h4>
+
+<p>Wikipediaの記事に座標がついているものであれば取得可能です。
+（座標があるのに取得できないものもあるので、どういうカラクリなのか今後調べたいです）</p>
+
+<ul>
+<li><strong>都市・地名</strong>: 水戸市、小名浜、ラスベガス、ポンペイ など</li>
+<li><strong>史跡・名所</strong>: 水戸城、偕楽園、法隆寺、コロッセウム など</li>
+<li><strong>建築・土木</strong>: 東京タワー、トキワ荘、猿橋、サヴォア邸 など</li>
+<li><strong>山岳・地形</strong>: 富士山、室戸岬、ヌル島、カイバル峠 など</li>
+<li><strong>スタジアム</strong>: ケーズデンキスタジアム水戸、日立柏サッカー場、アザディ・スタジアム など</li>
+<li><strong>歴史上の事件</strong>: 本能寺の変、池田屋事件、ワールシュタットの戦い、ウッドストック・フェスティバル など</li>
+</ul>
+
+<h4 id="その他機能">その他機能</h4>
+
+<ul>
+<li>URLによる検索では多国語に対応しています。</li>
+<li>記事ページで選択した記事の本文を見ることができます。</li>
+<li>8種類の<strong>背景地図</strong>が選べます。</li>
+<li>GPSを使った<strong>現在地の表示</strong>ができます。</li>
+<li>スマートフォンでWikiLayersをホーム画面に追加すると、全画面でWikiLayersを起動できます。</li>
+<li>ローカルストレージに情報が保存されるので、アプリを離れても状態は維持されます。</li>
+<li>設定ページで取得したアイテムから<strong>GeoJSONファイルを出力</strong>することができます。</li>
+</ul>
+
+<div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="6120305662"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+
+<h2 id="きっかけ">きっかけ</h2>
+
+<p>Wikipediaには記事上の座標から他の地図サービスにリンクする<a href="https://tools.wmflabs.org/geohack/geohack.php?language=ja&amp;pagename=%E5%81%95%E6%A5%BD%E5%9C%92&amp;params=36_22_23_N_140_27_22_E_region:JP-08_type:landmark_source:dewiki">GeoHack</a>という機能があります。
+これはよく使っていて、例えば大河ドラマを見ながらお城の情報をWikipediaで見て、<a href="https://tools.wmflabs.org/geohack/geohack.php?language=ja&amp;pagename=%E5%81%95%E6%A5%BD%E5%9C%92&amp;params=36_22_23_N_140_27_22_E_region:JP-08_type:landmark_source:dewiki">GeoHack</a>で地理院地図に飛んで位置や地形を確認する、ということをよくやっています。</p>
+
+<p>地理院地図には色別標高図と傾斜量図というレイヤがあり、これを合成することでカシミール3Dのような綺麗な地形地図をWEB上で閲覧することができます。</p>
+
+<p><img src="../../../img/img20180129113617350.png" alt="色別標高図と傾斜量図の合成で表示した関東平野" title="色別標高図と傾斜量図の合成で表示した関東平野" /></p>
+
+<p><a href="http://maps.gsi.go.jp/#8/35.880149/139.836731/&amp;ls=std%7Crelief%2C0.7%7Cslopemap&amp;blend=11&amp;disp=011&amp;lcd=slopemap&amp;vs=c0j0l0u0t0z0r0f0">http://maps.gsi.go.jp/#8/35.880149/139.836731/&amp;ls=std%7Crelief%2C0.7%7Cslopemap&amp;blend=11&amp;disp=011&amp;lcd=slopemap&amp;vs=c0j0l0u0t0z0r0f0</a></p>
+
+<p>ただし、この方法だと複数の箇所を調べたいとき、その度にWikipediaを検索する→GeoHackで地理院地図に飛ぶ→レイヤを調整する、という一連の作業が必要になるので非常に面倒です。</p>
+
+<p>Wikipediaの座標をアイコンで複数表示できる地図があればいいなと思っていたので、ちょうど勉強中の<a href="https://reactjs.org/">React</a>や<a href="https://redux.js.org/">Redux</a>を使って、勉強がてら試しに作ってみました。</p>
+
+<h2 id="技術">技術</h2>
+
+<p><a href="https://github.com/facebook/create-react-app">create-react-app</a>でシングル・ページ・アプリケーション(SPA)やプログレッシブ・ウェブ・アプリ(PWA)のつもりで作ってみました。</p>
+
+<p><a href="https://reactjs.org/">React</a>, <a href="https://redux.js.org/">Redux</a>, <a href="http://www.material-ui.com/">Material-UI</a>, <a href="http://openlayers.org/">OpenLayers</a>を中心として動いています。<br />
+React+Redux関連のコードは基本的にはReduxのチュートリアルにあるTodo AppやReddit APIをベースに作っています。<br />
+他にもReact RouterやRedux Persistなど導入したい機能にしたがって色々使ってみました。使用ライブラリの詳細はGitHubリポジトリの<a href="https://github.com/cieloazul310/wikilayers/blob/master/package.json">package.json</a>を参照してください。</p>
+
+<p>Wikipediaの情報は<a href="https://www.mediawiki.org/wiki/API:Main_page/ja">MediaWiki API</a>を使用して取得しています。
+今回作るにあたって勉強になった部分が多くあったので、別途記事にしたいです。</p>
+
+<h2 id="苦労した点">苦労した点</h2>
+
+<p>Webデザインが苦手なので、Material-UIを使って楽しようと目論んでいましたが、結局デザインのところでかなり時間と労力を使ってしまいました。</p>
+
+<h2 id="今後の課題など">今後の課題など</h2>
+
+<ul>
+<li>Service Workerには全然手をつけてないので使ってみたい</li>
+<li>GitHubPagesで無理やりホストしたけど、今後必要に応じてFirebaseを使ってみたい</li>
+<li>コードを分割したい</li>
+<li>Wikipediaの記事の座標の追加方法などをまとめたい</li>
+</ul>
+
+<h3 id="付記">付記</h3>
+
+<ul>
+<li><strong>Version</strong>: 1.0 (2018/01/29)</li>
+<li><strong>作成者</strong>: <a href="https://twitter.com/cieloazul310">@cieloazul310</a></li>
+<li><strong>GitHubリポジトリ</strong>: <a href="https://github.com/cieloazul310/wikilayers/">https://github.com/cieloazul310/wikilayers/</a></li>
+</ul>
+
+<p>Copyright © 2018 cieloazul310 All right reserved.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/UkMxoYoqrfs" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
+ </div>
+
+
+<p><div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      
+      <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="5892967151"
+         data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+<!-- References --></p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">cieloazul310</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">Update</span>
+    <span class="item-content">2018-01-29</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/">地図</a>
+          
+          <a href="https://cieloazul310.github.io/tags/openlayers/">OpenLayers</a>
+          
+          <a href="https://cieloazul310.github.io/tags/react/">React</a>
+          
+          <a href="https://cieloazul310.github.io/tags/redux/">Redux</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="https://cieloazul310.github.io/2017/12/shirosato-assembly-201706/">
+            <span class="next-text nav-default">城里町議会の会議録メモ No.1</span>
+            <span class="prev-text nav-mobile">Older</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'cieloazul310';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com/" class="dsq-brlink" target="_blank">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="//twitter.com/cieloazul310" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="//github.com/cieloazul310" class="iconfont icon-github" title="github"></a>
+  <a href="https://cieloazul310.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">cieloazul310</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cieloazul310.github.io/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="https://cieloazul310.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="https://cieloazul310.github.io/dist/even.min.js?v=2.6.5"></script>
+
+
+
+
+
+</body>
+</html>

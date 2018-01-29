@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Thu, 09 Nov 2017 22:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jan 2018 23:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>WikiLayersをリリースしました</title>
+      <link>https://cieloazul310.github.io/2018/01/wikilayers/</link>
+      <pubDate>Mon, 29 Jan 2018 23:00:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2018/01/wikilayers/</guid>
+      <description>&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;Wikipediaを地図で見るアプリWikiLayersを公開しました。&lt;br /&gt;
+URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://cieloazul310.github.io/wikilayers&lt;/a&gt;
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>日本鉄道時系列地図</title>
