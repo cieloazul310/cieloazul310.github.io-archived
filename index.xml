@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Mon, 29 Jan 2018 23:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 06 Feb 2018 21:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,6 +19,18 @@
       
       <guid>https://cieloazul310.github.io/about/</guid>
       <description>&lt;p&gt;水戸地図はD3.jsやOpenLayersなどJavaScriptのライブラリを使ってデータビジュアライゼーションを試みる実験室です。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>WikiLayersで使っているパッケージやライブラリ</title>
+      <link>https://cieloazul310.github.io/2018/02/wikilayers-note/</link>
+      <pubDate>Tue, 06 Feb 2018 21:00:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2018/02/wikilayers-note/</guid>
+      <description>&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;WikiLayers&lt;/a&gt;で使っているパッケージやライブラリを自分のために覚書しておきます。&lt;br /&gt;
 &lt;/p&gt;</description>
     </item>
     

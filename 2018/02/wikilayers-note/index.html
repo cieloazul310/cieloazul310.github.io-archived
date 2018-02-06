@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>WikiLayersで使っているパッケージやライブラリ - 水戸地図</title>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-74683419-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-74683419-3');
+</script><meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="cieloazul310" /><meta name="description" content="WikiLayersで使っているパッケージやライブラリの紹介です。" />
+<meta name="keywords" content="React, Redux, WikiLayers" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.35" />
+
+
+<link rel="canonical" href="https://cieloazul310.github.io/2018/02/wikilayers-note/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://cieloazul310.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cieloazul310.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cieloazul310.github.io/favicon-16x16.png">
+<link rel="icon" href="https://cieloazul310.github.io/favicon.ico" />
+<link rel="manifest" href="https://cieloazul310.github.io/manifest.json">
+<link rel="mask-icon" href="https://cieloazul310.github.io/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="https://cieloazul310.github.io/dist/even.min.css?v=2.6.5" rel="stylesheet">
+<link href="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="WikiLayersで使っているパッケージやライブラリ" />
+<meta property="og:description" content="WikiLayersで使っているパッケージやライブラリの紹介です。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cieloazul310.github.io/2018/02/wikilayers-note/" />
+
+
+
+<meta property="article:published_time" content="2018-02-06T21:00:00&#43;09:00"/>
+
+<meta property="article:modified_time" content="2018-02-06T21:00:00&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="WikiLayersで使っているパッケージやライブラリ">
+<meta itemprop="description" content="WikiLayersで使っているパッケージやライブラリの紹介です。">
+
+
+<meta itemprop="datePublished" content="2018-02-06T21:00:00&#43;09:00" />
+<meta itemprop="dateModified" content="2018-02-06T21:00:00&#43;09:00" />
+<meta itemprop="wordCount" content="1250">
+
+
+
+<meta itemprop="keywords" content="React,Redux,WikiLayers,JavaScript," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image:src" content="https://cieloazul310.github.io/img/ogp2.png"/>
+
+<meta name="twitter:title" content="WikiLayersで使っているパッケージやライブラリ"/>
+<meta name="twitter:description" content="WikiLayersで使っているパッケージやライブラリの紹介です。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="https://cieloazul310.github.io/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="https://cieloazul310.github.io/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="https://cieloazul310.github.io/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cieloazul310.github.io/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="https://cieloazul310.github.io/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cieloazul310.github.io/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">WikiLayersで使っているパッケージやライブラリ</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-02-06 </span>
+        <div class="post-category">
+            <a href="https://cieloazul310.github.io/categories/javascript/">JavaScript</a>
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      <!-- Lead Paragraph -->
+
+<p><a href="https://cieloazul310.github.io/wikilayers">WikiLayers</a>で使っているパッケージやライブラリを自分のために覚書しておきます。<br />
+</p>
+
+<h2 id="create-react-app-small-v1-4-3-small">create-react-app <small>v1.4.3</small></h2>
+
+<p><em>Create React apps with no build configuration.</em></p>
+
+<p><a href="https://github.com/facebook/create-react-app">https://github.com/facebook/create-react-app</a></p>
+
+<p>手っ取り早くReactを試してみるのに最適なボイラープレートです。</p>
+
+<h2 id="react-small-v16-2-0-small">React <small>v16.2.0</small></h2>
+
+<p><em>A JavaScript library for building user interfaces.</em></p>
+
+<p><a href="https://reactjs.org/">https://reactjs.org/</a></p>
+
+<p>UIを構築するためのJavaScriptライブラリです。</p>
+
+<h2 id="redux-small-v3-7-2-small">Redux <small>v3.7.2</small></h2>
+
+<p><em>Redux is a predictable state container for JavaScript apps.</em></p>
+
+<p><a href="https://redux.js.org/">https://redux.js.org/</a></p>
+
+<p>JavaScriptアプリのState(状態)を管理するライブラリです。</p>
+
+<h2 id="react-redux-small-v5-0-6-small">React-Redux <small>v5.0.6</small></h2>
+
+<p><em>Official React bindings for Redux.</em><br />
+<em>Performant and flexible.</em></p>
+
+<p><a href="https://github.com/reactjs/react-redux">https://github.com/reactjs/react-redux</a></p>
+
+<p>ReduxをReactと組み合わせてくれるパッケージです。</p>
+
+<h2 id="material-ui-small-v0-20-0-small">Material-UI <small>v0.20.0</small></h2>
+
+<p><em>React components that implement Google&rsquo;s Material Design</em></p>
+
+<p><a href="http://www.material-ui.com/">http://www.material-ui.com/</a></p>
+
+<p>Googleの<a href="https://material.io/">マテリアルデザイン</a>をReactのComponentとして使えるパッケージです。</p>
+
+<h2 id="openlayers-small-v4-6-4-small">OpenLayers <small>v4.6.4</small></h2>
+
+<p><em>A high-performance, feature-packed library for all your mapping needs.</em></p>
+
+<p><a href="http://openlayers.org/">http://openlayers.org/</a></p>
+
+<p>地図ライブラリです。最初はLeafletを使うつもりでしたが、LeafletはWebpack方面での使い勝手が良くないようなので使い慣れてるOpenLayersにしました。</p>
+
+<h2 id="prop-types-small-v15-6-0-small">prop-types <small>v15.6.0</small></h2>
+
+<p><em>Runtime type checking for React props and similar objects.</em></p>
+
+<p><a href="https://www.npmjs.com/package/prop-types">https://www.npmjs.com/package/prop-types</a></p>
+
+<p>Componentのpropsの入力値が正しい型なのかチェックしてくれるパッケージです。<br />
+不要説もあるようですが一応導入しました。</p>
+
+<h2 id="redux-thunk-small-v2-2-0-small">redux-thunk <small>v2.2.0</small></h2>
+
+<p><em>Thunk middleware for Redux.</em></p>
+
+<p>非同期処理のミドルウェアらしいです。Reduxのチュートリアルに載っていたので、導入しているのですが、正直この辺は勉強不足でどう作用しているのか実感できていません。</p>
+
+<p><a href="https://github.com/gaearon/redux-thunk">https://github.com/gaearon/redux-thunk</a></p>
+
+<h2 id="redux-logger-small-v3-0-6-small">redux-logger <small>v3.0.6</small></h2>
+
+<p><em>Logger for Redux</em></p>
+
+<p><a href="https://github.com/evgenyrodionov/redux-logger">https://github.com/evgenyrodionov/redux-logger</a></p>
+
+<p>ReduxのState(状態)のログを取ってくれるパッケージです。ミドルウェアとして使います。</p>
+
+<p>参考: redux-loggerをproduction環境だけ無効にする<br />
+<a href="https://medium.com/@rukurx/redux-logger%E3%82%92production%E7%92%B0%E5%A2%83%E3%81%A0%E3%81%91%E7%84%A1%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B-103579be834e">https://medium.com/@rukurx/redux-logger%E3%82%92production%E7%92%B0%E5%A2%83%E3%81%A0%E3%81%91%E7%84%A1%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B-103579be834e</a></p>
+
+<div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="6120305662"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+
+<h2 id="react-router-dom-small-v4-2-2-small">react-router-dom <small>v4.2.2</small></h2>
+
+<p><em>DOM bindings for React Router</em></p>
+
+<p><a href="https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom">https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom</a></p>
+
+<p>Reactでルーティングを行うライブラリです。</p>
+
+<h2 id="react-router-redux-small-v5-0-0-alpha-9-small">react-router-redux <small>v5.0.0-alpha.9</small></h2>
+
+<p><em>Integration with React Router and Redux</em></p>
+
+<p><a href="https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux">https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux</a></p>
+
+<p>react-routerのv4に対応しているのはα版のv5なので、v5を入れています。</p>
+
+<h2 id="redux-persist-small-v5-5-0-small">redux-persist <small>v5.5.0</small></h2>
+
+<p><em>Persist and rehydrate a redux store.</em></p>
+
+<p><a href="https://github.com/rt2zz/redux-persist">https://github.com/rt2zz/redux-persist</a></p>
+
+<p>ReduxのState(状態)をローカルストレージに保存するパッケージです。<br />
+これを使うことによって、ユーザーがページを離れてもReduxのStateを維持することができます。</p>
+
+<h2 id="spa-github-pages">SPA github pages</h2>
+
+<p><em>Host single page apps with GitHub Pages</em></p>
+
+<p><a href="https://github.com/rafrex/spa-github-pages">https://github.com/rafrex/spa-github-pages</a></p>
+
+<p>GithubPagesは通常シングル・ページ・アプリケーションに対応していないので、例えば <a href="https://cieloazul310.github.io/wikilayers/map">https://cieloazul310.github.io/wikilayers/map</a> のようなルートに何も設定せずに直接アクセスすると404を返してしまいます。</p>
+
+<p>これを防ぐために<code>/public</code>ディレクトリに404ページを作成し、<code>index.html</code>にリダイレクトさせる方法をとります。</p>
+
+<h2 id="react-ga-small-v2-4-1-small">react-ga <small>v2.4.1</small></h2>
+
+<p><em>This is a JavaScript module that can be used to include Google Analytics tracking code in a website or app that uses React for its front-end codebase.</em></p>
+
+<p><a href="https://github.com/react-ga/react-ga">https://github.com/react-ga/react-ga</a></p>
+
+<p>ReactでGoogleアナリティクスを使用するのに有効なパッケージです。</p>
+
+<h2 id="gh-pages-small-v1-1-0-small">gh-pages <small>v1.1.0</small></h2>
+
+<p><em>Publish files to a gh-pages branch on GitHub (or any other branch anywhere else).</em></p>
+
+<p><a href="https://www.npmjs.com/package/gh-pages">https://www.npmjs.com/package/gh-pages</a></p>
+
+<p>create-react-appで作ったアプリをGithubPagesにデプロイするパッケージです。
+以下の記事を参考に導入しました。</p>
+
+<p>参考: create-react-appを使ってReactコンポーネントの素振り、GitHub Pagesへのデプロイまで<br />
+<a href="https://blog.wadackel.me/2016/create-react-app/">https://blog.wadackel.me/2016/create-react-app/</a></p>
+
+<h2 id="react-redux-i18n-small-v1-9-1-small">react-redux-i18n <small>v1.9.1</small></h2>
+
+<p><em>A binding library for redux to react-i18nify</em></p>
+
+<p><a href="https://github.com/artisavotins/react-redux-i18n">https://github.com/artisavotins/react-redux-i18n</a></p>
+
+<p>React-Reduxで作成したアプリをi18n(internationalization=国際化)するライブラリです。</p>
+
+<p><strong>WikiLayers</strong><br />
+<a href="https://cieloazul310.github.io/wikilayers">https://cieloazul310.github.io/wikilayers</a></p>
+
+<!-- Music -->
+
+
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/tga_93fok-Y" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
+ </div>
+
+
+<p><div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      
+      <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="5892967151"
+         data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+<!-- References --></p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">cieloazul310</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">Update</span>
+    <span class="item-content">2018-02-06</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="https://cieloazul310.github.io/tags/react/">React</a>
+          
+          <a href="https://cieloazul310.github.io/tags/redux/">Redux</a>
+          
+          <a href="https://cieloazul310.github.io/tags/wikilayers/">WikiLayers</a>
+          
+          <a href="https://cieloazul310.github.io/tags/javascript/">JavaScript</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="https://cieloazul310.github.io/2018/01/wikilayers/">
+            <span class="next-text nav-default">WikiLayersをリリースしました</span>
+            <span class="prev-text nav-mobile">Older</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'cieloazul310';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com/" class="dsq-brlink" target="_blank">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="//twitter.com/cieloazul310" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="//github.com/cieloazul310" class="iconfont icon-github" title="github"></a>
+  <a href="https://cieloazul310.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">cieloazul310</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cieloazul310.github.io/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="https://cieloazul310.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="https://cieloazul310.github.io/dist/even.min.js?v=2.6.5"></script>
+
+
+
+
+
+</body>
+</html>
