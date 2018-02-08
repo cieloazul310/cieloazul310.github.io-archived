@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gis on 水戸地図</title>
-    <link>https://cieloazul310.github.io/categories/gis/</link>
-    <description>Recent content in Gis on 水戸地図</description>
+    <title>位置情報 on 水戸地図</title>
+    <link>https://cieloazul310.github.io/tags/%E4%BD%8D%E7%BD%AE%E6%83%85%E5%A0%B1/</link>
+    <description>Recent content in 位置情報 on 水戸地図</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
     <lastBuildDate>Thu, 08 Feb 2018 22:30:00 +0900</lastBuildDate>
     
-	<atom:link href="https://cieloazul310.github.io/categories/gis/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cieloazul310.github.io/tags/%E4%BD%8D%E7%BD%AE%E6%83%85%E5%A0%B1/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -26,16 +26,6 @@
 &lt;!-- Lead Paragraph --&gt;
 
 &lt;p&gt;MediaWiki APIでWikipediaの記事から座標を取得する方法と、MediaWiki APIでWikipedia日本語記事の座標が取得できないことについての説明です。
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>バイナリベクトルタイルを作ってみた</title>
-      <link>https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/</link>
-      <pubDate>Sat, 12 Aug 2017 13:00:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/</guid>
-      <description>&lt;p&gt;最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。
 &lt;/p&gt;</description>
     </item>
     

@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>https://cieloazul310.github.io/2018/02/mediawiki-api-coodinates/</loc>
+    <lastmod>2018-02-08T22:30:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://cieloazul310.github.io/2018/02/wikilayers-note/</loc>
     <lastmod>2018-02-06T21:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -148,8 +155,15 @@
   </url>
   
   <url>
+    <loc>https://cieloazul310.github.io/tags/gis/</loc>
+    <lastmod>2018-02-08T22:30:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cieloazul310.github.io/categories/gis/</loc>
-    <lastmod>2017-11-09T22:00:00+09:00</lastmod>
+    <lastmod>2018-02-08T22:30:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -204,6 +218,13 @@
   </url>
   
   <url>
+    <loc>https://cieloazul310.github.io/tags/mediawiki-api/</loc>
+    <lastmod>2018-02-08T22:30:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cieloazul310.github.io/categories/memo/</loc>
     <lastmod>2018-01-02T19:30:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -233,7 +254,7 @@
   
   <url>
     <loc>https://cieloazul310.github.io/post/</loc>
-    <lastmod>2018-02-06T21:00:00+09:00</lastmod>
+    <lastmod>2018-02-08T22:30:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -301,6 +322,13 @@
   </url>
   
   <url>
+    <loc>https://cieloazul310.github.io/tags/wikipedia/</loc>
+    <lastmod>2018-02-08T22:30:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cieloazul310.github.io/categories/works/</loc>
     <lastmod>2018-01-29T23:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -350,6 +378,13 @@
   </url>
   
   <url>
+    <loc>https://cieloazul310.github.io/tags/%E4%BD%8D%E7%BD%AE%E6%83%85%E5%A0%B1/</loc>
+    <lastmod>2018-02-08T22:30:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/</loc>
     <lastmod>2018-01-29T23:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -393,7 +428,7 @@
   
   <url>
     <loc>https://cieloazul310.github.io/</loc>
-    <lastmod>2018-02-06T21:00:00+09:00</lastmod>
+    <lastmod>2018-02-08T22:30:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
