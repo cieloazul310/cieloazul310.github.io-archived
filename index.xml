@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Thu, 08 Feb 2018 22:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 23 Apr 2018 22:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,6 +19,18 @@
       
       <guid>https://cieloazul310.github.io/about/</guid>
       <description>&lt;p&gt;水戸地図はD3.jsやOpenLayersなどJavaScriptのライブラリを使ってデータビジュアライゼーションを試みる実験室です。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>国内のサッカースタジアム周辺の人口を求める</title>
+      <link>https://cieloazul310.github.io/2018/04/stadium-and-population/</link>
+      <pubDate>Mon, 23 Apr 2018 22:00:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2018/04/stadium-and-population/</guid>
+      <description>&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;地域メッシュ統計のデータを用いて国内の主要サッカースタジアムの周辺人口を算出しました。
 &lt;/p&gt;</description>
     </item>
     
