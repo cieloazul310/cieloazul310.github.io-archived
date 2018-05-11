@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" itemscope itemtype="http://schema.org/WebPage">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>バイナリベクトルタイルを作ってみた - 水戸地図</title>
-  
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-74683419-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <link rel="alternate" hreflang="ja" href="https://cieloazul310.github.io" />
 
-  gtag('config', 'UA-74683419-3');
-</script><meta name="renderer" content="webkit" />
+<meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
@@ -23,6 +22,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
+<meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="cieloazul310" /><meta name="description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました" />
 <meta name="keywords" content="JavaScript, 地図, ベクトルタイル, バイナリベクトルタイル" />
@@ -33,23 +33,28 @@
 
 
 
-<meta name="generator" content="Hugo 0.37.1" />
+<meta name="generator" content="Hugo 0.40.2" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/" />
 
-<link rel="apple-touch-icon" sizes="180x180" href="https://cieloazul310.github.io/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://cieloazul310.github.io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://cieloazul310.github.io/favicon-16x16.png">
+
+
 <link rel="icon" href="https://cieloazul310.github.io/favicon.ico" />
-<link rel="manifest" href="https://cieloazul310.github.io/manifest.json">
-<link rel="mask-icon" href="https://cieloazul310.github.io/safari-pinned-tab.svg" color="#5bbad5">
 
 
 
 
-<link href="https://cieloazul310.github.io/dist/even.min.css?v=2.6.5" rel="stylesheet">
-<link href="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+
+
+<link href="https://cieloazul310.github.io/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
 
 <meta property="og:title" content="バイナリベクトルタイルを作ってみた" />
 <meta property="og:description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました" />
@@ -78,7 +83,7 @@
 
 <meta itemprop="datePublished" content="2017-08-12T13:00:00&#43;09:00" />
 <meta itemprop="dateModified" content="2017-08-12T13:00:00&#43;09:00" />
-<meta itemprop="wordCount" content="2701">
+<meta itemprop="wordCount" content="2729">
 
 
 
@@ -98,6 +103,16 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74683419-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
 </head>
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
@@ -112,54 +127,176 @@
 </div>
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
-    <a href="https://cieloazul310.github.io/">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="https://cieloazul310.github.io/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="https://cieloazul310.github.io/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="https://cieloazul310.github.io/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="https://cieloazul310.github.io/about/">
-        <li class="mobile-menu-item">About</li>
-      </a>
+    <li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/categories/">
+          Categories
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/about/">
+          About
+        </a>
+      </li>
   </ul>
 </nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="https://cieloazul310.github.io/" class="logo">
+    
+      水戸地図
+    
+  </a>
 </div>
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="https://cieloazul310.github.io/">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="https://cieloazul310.github.io/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="https://cieloazul310.github.io/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="https://cieloazul310.github.io/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="https://cieloazul310.github.io/about/">About</a>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/">Home</a>
+          
+
+        
+
       </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/about/">About</a>
+          
+
+        
+
+      </li>
+    
   </ul>
 </nav>
-    </header>
 
-    <main id="main" class="main">
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
       <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
+        <div id="content" class="content container">
+          <article class="post bg-white">
     
     <header class="post-header">
       <h1 class="post-title">バイナリベクトルタイルを作ってみた</h1>
-
+      
       <div class="post-meta">
         <span class="post-time"> 2017-08-12 </span>
         <div class="post-category">
-            <a href="https://cieloazul310.github.io/categories/gis/">GIS</a>
+            
+              <a href="https://cieloazul310.github.io/categories/gis/"> GIS </a>
+            
           </div>
         
       </div>
@@ -187,10 +324,14 @@
 <h3 id="2-シェープファイルをgeojsonに変換">2.シェープファイルをGeoJSONに変換</h3>
 
 <p>一般的にはGDALの<a href="http://www.gdal.org/ogr2ogr.html">ogr2ogr</a>を使う場面だと思いますが、より楽な<a href="https://github.com/mbostock/shapefile#command-line-reference">shp2json</a>を使いました。npmでサクッとインストールできるので、D3.js、特にTopoJSON関連を使うなら導入して損はないと思います。</p>
-
-<pre><code class="language-Shell">  $ shp2json --encoding Shift-JIS source.shp &gt; output.geojson
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Shell" data-lang="Shell"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Shell" data-lang="Shell">  $ shp2json --encoding Shift-JIS source.shp &gt; output.geojson</code></pre></td></tr></table>
+</div>
+</div>
 <p>国土数値情報はShift-JISで提供されているので、<code>--encoding Shift-JIS</code>を忘れずに。</p>
 
 <p>次の手順で使う<a href="https://github.com/mapbox/tippecanoe">tippecanoe</a>では<a href="http://ndjson.org/">ndjson</a>形式を扱うことができるので、<code>shp2json</code>で<code>-n</code>オプションをつけて、ndjsonで出力してもいいです。tippecanoeのドキュメントによると、ndjsonだとちょっとだけ早くなるとのこと。</p>
@@ -204,20 +345,28 @@
 <p>入力が先述の<a href="http://ndjson.org/">ndjson</a>形式の場合は<code>-P</code>オプションをつけます。</p>
 
 <p>下記のように、<code>-L</code>オプションを使うことで複数のデータをレイヤーとして一つのmbtilesファイルにまとめることもできます。</p>
-
-<pre><code class="language-Shell">  $ tippecanoe -L hoge:./data/hoge.json -L fuga:./data/fuga.json -o output.mbtiles
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Shell" data-lang="Shell"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Shell" data-lang="Shell">  $ tippecanoe -L hoge:./data/hoge.json -L fuga:./data/fuga.json -o output.mbtiles</code></pre></td></tr></table>
+</div>
+</div>
 <p><code>tippecanoe</code>の公式ドキュメントはもう少しちゃんと読んでおきたいです。</p>
 
 <h3 id="4-mbutilを使ってpbfファイルへ展開">4.mbutilを使ってpbfファイルへ展開</h3>
 
 <p><a href="https://github.com/mapbox/mbutil">mbutil</a>は<a href="https://www.mapbox.com/help/define-mbtiles/">MBTiles</a>とタイルを構成するディレクトリの相互変換を行うツールです。「作り方」ではeasy_installでしたがpipを使ってインストールしました。
 拡張子は「作り方」でも言及されていたように、.pbfではなく<strong>.mvt</strong>としました。</p>
-
-<pre><code class="language-Shell">  $ find . -type f -exec mv -v '{}' '{}'.mvt \;
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Shell" data-lang="Shell"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Shell" data-lang="Shell">  $ find . -type f -exec mv -v <span class="s1">&#39;{}&#39;</span> <span class="s1">&#39;{}&#39;</span>.mvt <span class="se">\;</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>これで、mbutilで指定したディレクトリにmvtという拡張子がついたファイルが入ったフォルダが出来ているはずです。</p>
 
 <h3 id="5-表示してみる">5.表示してみる</h3>
@@ -227,31 +376,58 @@
 <p>「作り方」の記事に則って<a href="http://leafletjs.com">Leaflet</a>を使用して表示します。
 ここで注意点が一つ。バイナリベクトルタイルの表示に使用する<a href="https://github.com/SpatialServer/Leaflet.MapboxVectorTile/">Leaflet.MapboxVectorTileプラグイン</a>はLeaflet v1.0.0以降のバージョンでは動きません。ガーン。
 また、上記のデモでも実証されるように、地物の数が多すぎるタイルは読み込んでくれませんでした（タイルの欠損があるわけではないはず）。この辺の閾値なども調べていきたいです。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">  <span class="k">const</span> <span class="nx">schools</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">L</span><span class="p">.</span><span class="nx">TileLayer</span><span class="p">.</span><span class="nx">MVTSource</span><span class="p">({</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s2">&#34;./tile/schools/&#34;</span> <span class="o">+</span> <span class="s2">&#34;{z}/{x}/{y}.mvt&#34;</span><span class="p">,</span>
+    <span class="nx">maxZoom</span><span class="o">:</span> <span class="mi">18</span><span class="p">,</span>
+    <span class="nx">maxNativeZoom</span><span class="o">:</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="nx">attribution</span><span class="o">:</span> <span class="s1">&#39;&lt;a href=&#34;http://nlftp.mlit.go.jp/ksj/&#34; target=&#34;_blank&#34;&gt;国土数値情報（学校）&lt;/a&gt;&#39;</span><span class="p">,</span>
+    <span class="nx">mutexToggle</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">getIDForLayerFeature</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">feature</span><span class="p">){</span>
+      <span class="k">return</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_001</span> <span class="o">+</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_005</span><span class="p">;</span>
+    <span class="p">},</span>
+    <span class="nx">onClick</span><span class="o">:</span> <span class="nx">hoveronFeature</span><span class="p">,</span> <span class="c1">//別途設定した関数
+</span><span class="c1"></span>    <span class="nx">style</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">feature</span><span class="p">){</span>
+      <span class="kd">let</span> <span class="nx">color</span> <span class="o">=</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16001&#34;</span> <span class="o">?</span> <span class="s2">&#34;yellow&#34;</span> <span class="o">:</span>
+                  <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16002&#34;</span> <span class="o">?</span> <span class="s2">&#34;gold&#34;</span> <span class="o">:</span>
+                  <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16003&#34;</span> <span class="o">?</span> <span class="s2">&#34;#aca777&#34;</span> <span class="o">:</span>
+                  <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16004&#34;</span> <span class="o">?</span> <span class="s2">&#34;#ff963e&#34;</span> <span class="o">:</span>
+                  <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16005&#34;</span> <span class="o">?</span> <span class="s2">&#34;#ac815c&#34;</span> <span class="o">:</span>
+                  <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16006&#34;</span> <span class="o">?</span> <span class="s2">&#34;#78109d&#34;</span> <span class="o">:</span>
+                  <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16007&#34;</span> <span class="o">?</span> <span class="s2">&#34;#d90096&#34;</span> <span class="o">:</span> <span class="s2">&#34;#3f9386&#34;</span><span class="p">;</span>
 
-<pre><code class="language-JavaScript">  const schools = new L.TileLayer.MVTSource({
-    url: &quot;./tile/schools/&quot; + &quot;{z}/{x}/{y}.mvt&quot;,
-    maxZoom: 18,
-    maxNativeZoom: 15,
-    attribution: '&lt;a href=&quot;http://nlftp.mlit.go.jp/ksj/&quot; target=&quot;_blank&quot;&gt;国土数値情報（学校）&lt;/a&gt;',
-    mutexToggle: true,
-    getIDForLayerFeature: function(feature){
-      return feature.properties.P29_001 + feature.properties.P29_005;
-    },
-    onClick: hoveronFeature, //別途設定した関数
-    style: function(feature){
-      let color = feature.properties.P29_004 === &quot;16001&quot; ? &quot;yellow&quot; :
-                  feature.properties.P29_004 === &quot;16002&quot; ? &quot;gold&quot; :
-                  feature.properties.P29_004 === &quot;16003&quot; ? &quot;#aca777&quot; :
-                  feature.properties.P29_004 === &quot;16004&quot; ? &quot;#ff963e&quot; :
-                  feature.properties.P29_004 === &quot;16005&quot; ? &quot;#ac815c&quot; :
-                  feature.properties.P29_004 === &quot;16006&quot; ? &quot;#78109d&quot; :
-                  feature.properties.P29_004 === &quot;16007&quot; ? &quot;#d90096&quot; : &quot;#3f9386&quot;;
-
-      return {color: color, radius: 6, selected: {color: &quot;red&quot;, radius: 10}};
-    }
-  });
-</code></pre>
-
+      <span class="k">return</span> <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="nx">color</span><span class="p">,</span> <span class="nx">radius</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span> <span class="nx">selected</span><span class="o">:</span> <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s2">&#34;red&#34;</span><span class="p">,</span> <span class="nx">radius</span><span class="o">:</span> <span class="mi">10</span><span class="p">}};</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 <p>LeafletのMVTレイヤ設定の例です。<a href="https://github.com/SpatialServer/Leaflet.MapboxVectorTile/blob/master/docs/configuration.md">プラグインのドキュメント</a>によると、必須となるオプションは<code>url</code>、<code>getIDForLayerFeature</code>、<code>filter</code>のようです（ただしfilterオプションはなくても動く）。重要なのが<code>getIDForLayerFeature</code>で、これを設定しないと地物のスタイリングやクリックイベント時に正しい挙動をしてくれません。地物のプロパティに固有のidがある場合はそれを設定すればいいのですが、国土数値情報の学校データには存在しないので、行政区域コード（P29_001）に名称（P29_005）を繋げたものを設定しました。</p>
 
 <h4 id="その他のライブラリ">その他のライブラリ</h4>
@@ -327,7 +503,7 @@
     <span class="item-content">cieloazul310</span>
   </p>
   <p class="copyright-item">
-    <span class="item-title">Update</span>
+    <span class="item-title">LastMod</span>
     <span class="item-content">2017-11-09</span>
   </p>
   
@@ -363,17 +539,19 @@
           <a class="prev" href="https://cieloazul310.github.io/2017/08/d3-arrow-function/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">D3.jsでアロー関数を使う時の注意点</span>
-            <span class="prev-text nav-mobile">Newer</span>
+            <span class="prev-text nav-mobile">Prev</span>
           </a>
         
       </nav>
     </footer>
-  </article>
-        </div>
-        
-  <div id="disqus_thread"></div>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
     <script type="text/javascript">
-    (function() {
+    function load_disqus() {
         
         
         if (window.location.hostname === 'localhost') return;
@@ -382,20 +560,32 @@
         var disqus_shortname = 'cieloazul310';
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+
+        $('#load_disqus').remove();
+    };
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com/" class="dsq-brlink" target="_blank">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
 
   
-      </div>  
+
+  
+  </article>
+        </div>
+      </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="social-links">
-      <a href="//twitter.com/cieloazul310" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="//github.com/cieloazul310" class="iconfont icon-github" title="github"></a>
-  <a href="https://cieloazul310.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+      <a href="//twitter.com/cieloazul310" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="//github.com/cieloazul310" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://cieloazul310.github.io/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
 </div>
 
 <div class="copyright">
@@ -404,20 +594,17 @@
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
   </span>
 
   <span class="copyright-year">
-    &copy; 
+    &copy;
     
-      2017 - 
+      2017 -
     2018
     <span class="heart">
       <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">cieloazul310</span>
-  </span>
+    </span><span class="author">cieloazul310</span></span>
 </div>
     </footer>
 
@@ -426,11 +613,19 @@
     </div>
   </div>
   
-<script src="https://cieloazul310.github.io/lib/highlight/highlight.pack.js?v=20171001"></script>
 <script type="text/javascript" src="https://cieloazul310.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
-  <script type="text/javascript" src="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
-<script type="text/javascript" src="https://cieloazul310.github.io/dist/even.min.js?v=2.6.5"></script>
+<script type="text/javascript" src="https://cieloazul310.github.io/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="https://cieloazul310.github.io/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
 
 
 

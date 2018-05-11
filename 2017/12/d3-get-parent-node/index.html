@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" itemscope itemtype="http://schema.org/WebPage">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>D3.jsで子要素のDOMから親要素のデータを取得 - 水戸地図</title>
-  
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-74683419-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <link rel="alternate" hreflang="ja" href="https://cieloazul310.github.io" />
 
-  gtag('config', 'UA-74683419-3');
-</script><meta name="renderer" content="webkit" />
+<meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
@@ -23,6 +22,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
+<meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="cieloazul310" /><meta name="description" content="D3.jsで階層構造のDOMの子要素から親要素のデータを取得する方法です。" />
 <meta name="keywords" content="D3.js, Data Visualization, 散布図, JavaScript" />
@@ -33,23 +33,28 @@
 
 
 
-<meta name="generator" content="Hugo 0.37.1" />
+<meta name="generator" content="Hugo 0.40.2" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2017/12/d3-get-parent-node/" />
 
-<link rel="apple-touch-icon" sizes="180x180" href="https://cieloazul310.github.io/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://cieloazul310.github.io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://cieloazul310.github.io/favicon-16x16.png">
+
+
 <link rel="icon" href="https://cieloazul310.github.io/favicon.ico" />
-<link rel="manifest" href="https://cieloazul310.github.io/manifest.json">
-<link rel="mask-icon" href="https://cieloazul310.github.io/safari-pinned-tab.svg" color="#5bbad5">
 
 
 
 
-<link href="https://cieloazul310.github.io/dist/even.min.css?v=2.6.5" rel="stylesheet">
-<link href="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+
+
+<link href="https://cieloazul310.github.io/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
 
 <meta property="og:title" content="D3.jsで子要素のDOMから親要素のデータを取得" />
 <meta property="og:description" content="D3.jsで階層構造のDOMの子要素から親要素のデータを取得する方法です。" />
@@ -78,7 +83,7 @@
 
 <meta itemprop="datePublished" content="2017-12-14T23:32:15&#43;09:00" />
 <meta itemprop="dateModified" content="2017-12-14T23:32:15&#43;09:00" />
-<meta itemprop="wordCount" content="1286">
+<meta itemprop="wordCount" content="1359">
 
 
 
@@ -98,6 +103,16 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74683419-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
 </head>
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
@@ -112,54 +127,176 @@
 </div>
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
-    <a href="https://cieloazul310.github.io/">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="https://cieloazul310.github.io/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="https://cieloazul310.github.io/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="https://cieloazul310.github.io/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="https://cieloazul310.github.io/about/">
-        <li class="mobile-menu-item">About</li>
-      </a>
+    <li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/categories/">
+          Categories
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/about/">
+          About
+        </a>
+      </li>
   </ul>
 </nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="https://cieloazul310.github.io/" class="logo">
+    
+      水戸地図
+    
+  </a>
 </div>
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="https://cieloazul310.github.io/">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="https://cieloazul310.github.io/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="https://cieloazul310.github.io/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="https://cieloazul310.github.io/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="https://cieloazul310.github.io/about/">About</a>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/">Home</a>
+          
+
+        
+
       </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/about/">About</a>
+          
+
+        
+
+      </li>
+    
   </ul>
 </nav>
-    </header>
 
-    <main id="main" class="main">
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
       <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
+        <div id="content" class="content container">
+          <article class="post bg-white">
     
     <header class="post-header">
       <h1 class="post-title">D3.jsで子要素のDOMから親要素のデータを取得</h1>
-
+      
       <div class="post-meta">
         <span class="post-time"> 2017-12-14 </span>
         <div class="post-category">
-            <a href="https://cieloazul310.github.io/categories/javascript/">JavaScript</a>
+            
+              <a href="https://cieloazul310.github.io/categories/javascript/"> JavaScript </a>
+            
           </div>
         
       </div>
@@ -178,76 +315,138 @@
 <h2 id="例">例</h2>
 
 <p>以下のような配列から、</p>
-
-<pre><code class="language-JavaScript">  const data = [
-    {name: 'name-00', values: [20, 10, ...]},
-    {name: 'name-01', values: [12, 45, ...]},
-    ...,
-    {name: 'name-17', values: [48, 90, ...]}
-  ];
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">  <span class="k">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;name-00&#39;</span><span class="p">,</span> <span class="nx">values</span><span class="o">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">...]},</span>
+    <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;name-01&#39;</span><span class="p">,</span> <span class="nx">values</span><span class="o">:</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="p">...]},</span>
+    <span class="p">...,</span>
+    <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;name-17&#39;</span><span class="p">,</span> <span class="nx">values</span><span class="o">:</span> <span class="p">[</span><span class="mi">48</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="p">...]}</span>
+  <span class="p">];</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 <p>下図のようなチャートを作成します。</p>
 
 <p><img src="../../../img/playground03.png" alt="作例" title="作例" /></p>
 
 <p>まず初めに配列<code>data</code>から要素のグループ化を行なう<code>&lt;g&gt;</code>要素を生成します。<br />
 ここで生成した<code>&lt;g&gt;</code>要素にバインドされるデータは<code>data[i]</code>、すなわち<code>{name: 'name-00', values: [20, 10, ...]}</code>という内容のオブジェクトです。</p>
-
-<pre><code class="language-JavaScript">  const rows = svg.selectAll('.rows')
-                  .data(data)
-                  .enter()
-                  .append('g')
-                  .attr('class', 'rows')
-                  .attr('transform', d =&gt; `translate(0, ${yScale(d.name)})`)
-                  .on('click', (d) =&gt; {
-                    console.log(d);
-                    // =&gt; {name: 'name-00', values: [20, 10, ...]}
-                  });
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">  <span class="k">const</span> <span class="nx">rows</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">&#39;.rows&#39;</span><span class="p">)</span>
+                  <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+                  <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+                  <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+                  <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;rows&#39;</span><span class="p">)</span>
+                  <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;transform&#39;</span><span class="p">,</span> <span class="nx">d</span> <span class="p">=&gt;</span> <span class="sb">`translate(0, </span><span class="si">${</span><span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span><span class="si">}</span><span class="sb">)`</span><span class="p">)</span>
+                  <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span>
+                    <span class="c1">// =&gt; {name: &#39;name-00&#39;, values: [20, 10, ...]}
+</span><span class="c1"></span>                  <span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 <p><code>&lt;g&gt;</code>要素にバインドしたデータ<code>data[i]</code>のプロパティ<code>data[i].values</code>の配列を使用して、<code>&lt;g&gt;</code>要素の子要素に<code>data[i].values.length</code>の数だけ<code>&lt;circle&gt;</code>を生成します。</p>
-
-<pre><code class="language-JavaScript">  rows.selectAll(&quot;.circle&quot;)
-      .data(d =&gt; d.values)
-      .enter()
-      .append('circle')
-      .attr('class', 'circle')
-      .attr('cx', v =&gt; xScale(v))
-      .attr('cy', 0)
-      .attr('r', 4);
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">  <span class="nx">rows</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">&#34;.circle&#34;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">d</span> <span class="p">=&gt;</span> <span class="nx">d</span><span class="p">.</span><span class="nx">values</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+      <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;circle&#39;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;circle&#39;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;cx&#39;</span><span class="p">,</span> <span class="nx">v</span> <span class="p">=&gt;</span> <span class="nx">xScale</span><span class="p">(</span><span class="nx">v</span><span class="p">))</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;cy&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 <p>子要素の<code>selection.attr(name, value)</code>で使用する関数の引数を<code>v</code>としています。
 <code>v</code>の部分を従来の<code>d</code>と置いても問題なく動作しますが、親要素の関数の引数<code>d</code>との混同を避けるために<code>v</code>としました。</p>
 
 <p>上記の2つのコードで生成されるDOMは以下のようになります。</p>
-
-<pre><code class="language-html">  &lt;g class=&quot;rows&quot; transform=&quot;translate(0, 15)&quot;&gt;
-    &lt;circle class=&quot;circle&quot; cx=&quot;24&quot; cy=&quot;0&quot; r=&quot;4&quot;&gt;&lt;/circle&gt;
-    &lt;circle class=&quot;circle&quot; cx=&quot;12&quot; cy=&quot;0&quot; r=&quot;4&quot;&gt;&lt;/circle&gt;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">  <span class="p">&lt;</span><span class="nt">g</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;rows&#34;</span> <span class="na">transform</span><span class="o">=</span><span class="s">&#34;translate(0, 15)&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">circle</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;circle&#34;</span> <span class="na">cx</span><span class="o">=</span><span class="s">&#34;24&#34;</span> <span class="na">cy</span><span class="o">=</span><span class="s">&#34;0&#34;</span> <span class="na">r</span><span class="o">=</span><span class="s">&#34;4&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">circle</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">circle</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;circle&#34;</span> <span class="na">cx</span><span class="o">=</span><span class="s">&#34;12&#34;</span> <span class="na">cy</span><span class="o">=</span><span class="s">&#34;0&#34;</span> <span class="na">r</span><span class="o">=</span><span class="s">&#34;4&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">circle</span><span class="p">&gt;</span>
     ...
-    &lt;circle class=&quot;circle&quot; cx=&quot;168&quot; cy=&quot;0&quot; r=&quot;4&quot;&gt;&lt;/circle&gt;
-  &lt;/g&gt;
-  &lt;g class=&quot;rows&quot; transform=&quot;translate(0, 35)&quot;&gt;
-    &lt;circle class=&quot;circle&quot; cx=&quot;35&quot; cy=&quot;0&quot; r=&quot;4&quot;&gt;&lt;/circle&gt;
+    <span class="p">&lt;</span><span class="nt">circle</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;circle&#34;</span> <span class="na">cx</span><span class="o">=</span><span class="s">&#34;168&#34;</span> <span class="na">cy</span><span class="o">=</span><span class="s">&#34;0&#34;</span> <span class="na">r</span><span class="o">=</span><span class="s">&#34;4&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">circle</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">g</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">g</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;rows&#34;</span> <span class="na">transform</span><span class="o">=</span><span class="s">&#34;translate(0, 35)&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">circle</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;circle&#34;</span> <span class="na">cx</span><span class="o">=</span><span class="s">&#34;35&#34;</span> <span class="na">cy</span><span class="o">=</span><span class="s">&#34;0&#34;</span> <span class="na">r</span><span class="o">=</span><span class="s">&#34;4&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">circle</span><span class="p">&gt;</span>
     ...
-  &lt;/g&gt;
-  ...
-</code></pre>
-
+  <span class="p">&lt;/</span><span class="nt">g</span><span class="p">&gt;</span>
+  ...</code></pre></td></tr></table>
+</div>
+</div>
 <p>次に、各<code>&lt;circle&gt;</code>要素にイベントを設定します。
 「マウスオーバー、クリックで画面右上に名前<code>name</code>と数値<code>value</code>を表示する」という簡潔なイベントを考えます。</p>
 
 <p><code>selection.on(type, function(d, i, nodes) {...})</code>を使いますが、ここで一つ問題があります。
 <code>&lt;circle&gt;</code>要素にバインドされたデータ<code>v</code>は<code>data[i].values[idx]</code>、すなわち<code>20</code>や<code>10</code>のような数値データのみなので、名前のプロパティを持ちません。</p>
-
-<pre><code class="language-JavaScript">  rows.selectAll('.circle')
-      .on('click', (v, i, nodes) =&gt; {
-        console.log(v); // =&gt; 14
-      });
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">  <span class="nx">rows</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">&#39;.circle&#39;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">nodes</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span> <span class="c1">// =&gt; 14
+</span><span class="c1"></span>      <span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 <p>子要素から親要素のデータにあるプロパティ<code>data[i].name</code>にアクセスするには工夫が必要です。</p>
 
 <div class="ad" style="width:100%;">
@@ -271,35 +470,66 @@
 <h2 id="解決法">解決法</h2>
 
 <p><code>d3.select(nodes[i].parentNode).datum()</code>で親要素のデータを取得できます。</p>
-
-<pre><code class="language-JavaScript">  rows.selectAll('.circle')
-      .on('click', (v, i, nodes) =&gt; {
-        // &lt;circle&gt;要素を選択している
-        d3.select(nodes[i]);
-        // nodes[i] = &lt;circle class=&quot;circle&quot;&gt;
-        
-        // &lt;circle&gt;要素の親要素である&lt;g&gt;要素を選択している
-        d3.select(nodes[i].parentNode);
-        // nodes[i].parentNode = &lt;g class=&quot;rows&quot;&gt;
-        
-        // &lt;circle&gt;要素にバインドされたデータを表示
-        console.log(v);
-        // =&gt; 14
-        console.log(d3.select(nodes[i]).datum());
-        // =&gt; 14
-        
-        // &lt;circle&gt;要素の親要素である&lt;g&gt;要素にバインドされたデータを表示
-        console.log(d3.select(nodes[i].parentNode).datum());
-        // =&gt; Object {name: 'name-00', values: [14, 11, ...]}
-        
-        const text = `${d3.select(nodes[i].parentNode).datum().name}: ${v}min.`;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">  <span class="nx">rows</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">&#39;.circle&#39;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">nodes</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="c1">// &lt;circle&gt;要素を選択している
+</span><span class="c1"></span>        <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nx">nodes</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+        <span class="c1">// nodes[i] = &lt;circle class=&#34;circle&#34;&gt;
+</span><span class="c1"></span>        
+        <span class="c1">// &lt;circle&gt;要素の親要素である&lt;g&gt;要素を選択している
+</span><span class="c1"></span>        <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nx">nodes</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">parentNode</span><span class="p">);</span>
+        <span class="c1">// nodes[i].parentNode = &lt;g class=&#34;rows&#34;&gt;
+</span><span class="c1"></span>        
+        <span class="c1">// &lt;circle&gt;要素にバインドされたデータを表示
+</span><span class="c1"></span>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span>
+        <span class="c1">// =&gt; 14
+</span><span class="c1"></span>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nx">nodes</span><span class="p">[</span><span class="nx">i</span><span class="p">]).</span><span class="nx">datum</span><span class="p">());</span>
+        <span class="c1">// =&gt; 14
+</span><span class="c1"></span>        
+        <span class="c1">// &lt;circle&gt;要素の親要素である&lt;g&gt;要素にバインドされたデータを表示
+</span><span class="c1"></span>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nx">nodes</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">parentNode</span><span class="p">).</span><span class="nx">datum</span><span class="p">());</span>
+        <span class="c1">// =&gt; Object {name: &#39;name-00&#39;, values: [14, 11, ...]}
+</span><span class="c1"></span>        
+        <span class="k">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="sb">`</span><span class="si">${</span><span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nx">nodes</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">parentNode</span><span class="p">).</span><span class="nx">datum</span><span class="p">().</span><span class="nx">name</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">v</span><span class="si">}</span><span class="sb">min.`</span><span class="p">;</span>
           
-        svg.append('text')
-            .attr('class', 'guide')
-            .text(text);
-      });
-</code></pre>
-
+        <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;guide&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+      <span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 <p><code>&lt;g&gt;</code>と<code>&lt;circle&gt;</code>の階層構造のDOM生成がわかりづらかったら、<code>data</code>を単一の配列に整形し、それぞれの<code>&lt;circle&gt;</code>に<code>xScale</code>と<code>yScale</code>で座標を与えることで同じようなチャートが作成できます。<br />
 階層構造のDOMを作成する方法は慣れるまでは理解しづらいかもしれませんが、慣れるとDOMの扱いがわかりやすくなります。</p>
 
@@ -307,10 +537,10 @@
 
 
 <div>
-  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="480" style="width:100%;" src="../../../figure/playground/access-to-parent-data.html" class="iframe-chart" id="861734295">
+  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="480" style="width:100%;" src="../../../figure/playground/access-to-parent-data.html" class="iframe-chart" id="389467152">
     <p>Your Browser do not support iframe.</p>
   </iframe>
-  <small><a href="../../../figure/playground/access-to-parent-data.html" target="_blank">Open in a New Tab</a></small>
+  <small><a href="../../../figure/playground/access-to-parent-data.html" target="_blank">新しいタブで開く</a></small>
 </div>
 
 
@@ -353,7 +583,7 @@
     <span class="item-content">cieloazul310</span>
   </p>
   <p class="copyright-item">
-    <span class="item-title">Update</span>
+    <span class="item-title">LastMod</span>
     <span class="item-content">2017-12-14</span>
   </p>
   
@@ -385,22 +615,24 @@
           <a class="prev" href="https://cieloazul310.github.io/2017/12/d3-to-svgfile-with-jsdom/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">D3.js &#43; jsdomでSVGファイルを作成</span>
-            <span class="prev-text nav-mobile">Newer</span>
+            <span class="prev-text nav-mobile">Prev</span>
           </a>
         
           <a class="next" href="https://cieloazul310.github.io/2017/12/bleague-revenue/">
             <span class="next-text nav-default">Bリーグ クラブ別営業収入グラフ</span>
-            <span class="prev-text nav-mobile">Older</span>
+            <span class="prev-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
       </nav>
     </footer>
-  </article>
-        </div>
-        
-  <div id="disqus_thread"></div>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
     <script type="text/javascript">
-    (function() {
+    function load_disqus() {
         
         
         if (window.location.hostname === 'localhost') return;
@@ -409,20 +641,32 @@
         var disqus_shortname = 'cieloazul310';
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+
+        $('#load_disqus').remove();
+    };
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com/" class="dsq-brlink" target="_blank">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
 
   
-      </div>  
+
+  
+  </article>
+        </div>
+      </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="social-links">
-      <a href="//twitter.com/cieloazul310" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="//github.com/cieloazul310" class="iconfont icon-github" title="github"></a>
-  <a href="https://cieloazul310.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+      <a href="//twitter.com/cieloazul310" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="//github.com/cieloazul310" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://cieloazul310.github.io/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
 </div>
 
 <div class="copyright">
@@ -431,20 +675,17 @@
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
   </span>
 
   <span class="copyright-year">
-    &copy; 
+    &copy;
     
-      2017 - 
+      2017 -
     2018
     <span class="heart">
       <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">cieloazul310</span>
-  </span>
+    </span><span class="author">cieloazul310</span></span>
 </div>
     </footer>
 
@@ -453,11 +694,19 @@
     </div>
   </div>
   
-<script src="https://cieloazul310.github.io/lib/highlight/highlight.pack.js?v=20171001"></script>
 <script type="text/javascript" src="https://cieloazul310.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
-  <script type="text/javascript" src="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
-<script type="text/javascript" src="https://cieloazul310.github.io/dist/even.min.js?v=2.6.5"></script>
+<script type="text/javascript" src="https://cieloazul310.github.io/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="https://cieloazul310.github.io/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
 
 
 

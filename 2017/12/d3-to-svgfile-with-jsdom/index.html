@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" itemscope itemtype="http://schema.org/WebPage">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>D3.js &#43; jsdomでSVGファイルを作成 - 水戸地図</title>
-  
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-74683419-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <link rel="alternate" hreflang="ja" href="https://cieloazul310.github.io" />
 
-  gtag('config', 'UA-74683419-3');
-</script><meta name="renderer" content="webkit" />
+<meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
@@ -23,6 +22,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
+<meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="cieloazul310" /><meta name="description" content="D3.jsとjsdomを使って、SVGファイルを作る方法です。" />
 <meta name="keywords" content="D3.js, jsdom, SVG, node.js, headless chrome" />
@@ -33,23 +33,28 @@
 
 
 
-<meta name="generator" content="Hugo 0.37.1" />
+<meta name="generator" content="Hugo 0.40.2" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2017/12/d3-to-svgfile-with-jsdom/" />
 
-<link rel="apple-touch-icon" sizes="180x180" href="https://cieloazul310.github.io/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://cieloazul310.github.io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://cieloazul310.github.io/favicon-16x16.png">
+
+
 <link rel="icon" href="https://cieloazul310.github.io/favicon.ico" />
-<link rel="manifest" href="https://cieloazul310.github.io/manifest.json">
-<link rel="mask-icon" href="https://cieloazul310.github.io/safari-pinned-tab.svg" color="#5bbad5">
 
 
 
 
-<link href="https://cieloazul310.github.io/dist/even.min.css?v=2.6.5" rel="stylesheet">
-<link href="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+
+
+<link href="https://cieloazul310.github.io/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
 
 <meta property="og:title" content="D3.js &#43; jsdomでSVGファイルを作成" />
 <meta property="og:description" content="D3.jsとjsdomを使って、SVGファイルを作る方法です。" />
@@ -78,7 +83,7 @@
 
 <meta itemprop="datePublished" content="2017-12-16T18:50:55&#43;09:00" />
 <meta itemprop="dateModified" content="2017-12-16T18:50:55&#43;09:00" />
-<meta itemprop="wordCount" content="1307">
+<meta itemprop="wordCount" content="1362">
 
 
 
@@ -98,6 +103,16 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-74683419-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
 </head>
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
@@ -112,54 +127,176 @@
 </div>
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
-    <a href="https://cieloazul310.github.io/">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="https://cieloazul310.github.io/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="https://cieloazul310.github.io/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="https://cieloazul310.github.io/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="https://cieloazul310.github.io/about/">
-        <li class="mobile-menu-item">About</li>
-      </a>
+    <li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/categories/">
+          Categories
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/about/">
+          About
+        </a>
+      </li>
   </ul>
 </nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="https://cieloazul310.github.io/" class="logo">
+    
+      水戸地図
+    
+  </a>
 </div>
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="https://cieloazul310.github.io/">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="https://cieloazul310.github.io/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="https://cieloazul310.github.io/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="https://cieloazul310.github.io/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="https://cieloazul310.github.io/about/">About</a>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/">Home</a>
+          
+
+        
+
       </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/about/">About</a>
+          
+
+        
+
+      </li>
+    
   </ul>
 </nav>
-    </header>
 
-    <main id="main" class="main">
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
       <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
+        <div id="content" class="content container">
+          <article class="post bg-white">
     
     <header class="post-header">
       <h1 class="post-title">D3.js &#43; jsdomでSVGファイルを作成</h1>
-
+      
       <div class="post-meta">
         <span class="post-time"> 2017-12-16 </span>
         <div class="post-category">
-            <a href="https://cieloazul310.github.io/categories/javascript/">JavaScript</a>
+            
+              <a href="https://cieloazul310.github.io/categories/javascript/"> JavaScript </a>
+            
           </div>
         
       </div>
@@ -181,82 +318,154 @@
 どうやら<a href="//github.com/tmpvar/jsdom">jsdom</a>が色々変わったらしいので、新しいバージョンで動くように書き換えました。</p>
 
 <h4 id="versions">versions</h4>
-
-<pre><code class="language-text">d3@4.11.0
-jsdom@11.5.1
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">d3@4.11.0
+jsdom@11.5.1</code></pre></td></tr></table>
+</div>
+</div>
 <h4 id="makesvg-js">makeSVG.js</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="k">const</span> <span class="nx">d3</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;d3&#39;</span><span class="p">);</span>
+<span class="k">const</span> <span class="nx">jsdom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;jsdom&#39;</span><span class="p">);</span>
+<span class="k">const</span> <span class="p">{</span> <span class="nx">JSDOM</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">jsdom</span><span class="p">;</span>
 
-<pre><code class="language-JavaScript">const d3 = require('d3');
-const jsdom = require('jsdom');
-const { JSDOM } = jsdom;
+<span class="k">const</span> <span class="nb">document</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JSDOM</span><span class="p">().</span><span class="nb">window</span><span class="p">.</span><span class="nb">document</span><span class="p">;</span>
+<span class="k">const</span> <span class="nx">size</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">width</span><span class="o">:</span> <span class="mi">900</span><span class="p">,</span>
+  <span class="nx">height</span><span class="o">:</span> <span class="mi">1200</span>
+<span class="p">};</span>
+<span class="k">const</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">)</span>
+              <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;svg&#39;</span><span class="p">)</span>
+              <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;xmlns&#34;</span><span class="p">,</span><span class="s1">&#39;http://www.w3.org/2000/svg&#39;</span><span class="p">)</span>
+              <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="nx">size</span><span class="p">.</span><span class="nx">width</span><span class="p">)</span>
+              <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="nx">size</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
+              <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">&#39;background-color&#39;</span><span class="p">,</span> <span class="s2">&#34;#363b44&#34;</span><span class="p">);</span>
 
-const document = new JSDOM().window.document;
-const size = {
-  width: 900,
-  height: 1200
-};
-const svg = d3.select(document.body)
-              .append('svg')
-              .attr(&quot;xmlns&quot;,'http://www.w3.org/2000/svg')
-              .attr('width', size.width)
-              .attr('height', size.height)
-              .style('background-color', &quot;#363b44&quot;);
-
-console.log(document.body.innerHTML)
-</code></pre>
-
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 <h4 id="command-line">Command Line</h4>
-
-<pre><code class="language-Shell">$ node makeSVG.js &gt; output.svg
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Shell" data-lang="Shell"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Shell" data-lang="Shell">$ node makeSVG.js &gt; output.svg</code></pre></td></tr></table>
+</div>
+</div>
 <h4 id="output-svg">output.svg</h4>
-
-<pre><code class="language-xml">&lt;svg xmls=&quot;http://www.w3.org/2000/svg&quot; width=&quot;900&quot; height=&quot;1200&quot; style=&quot;background-color: #363b44;&quot;&gt;&lt;/svg&gt;
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;svg</span> <span class="na">xmls=</span><span class="s">&#34;http://www.w3.org/2000/svg&#34;</span> <span class="na">width=</span><span class="s">&#34;900&#34;</span> <span class="na">height=</span><span class="s">&#34;1200&#34;</span> <span class="na">style=</span><span class="s">&#34;background-color: #363b44;&#34;</span><span class="nt">&gt;&lt;/svg&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>これが基本形です。makeSVG.jsが<code>console.log()</code>で出力した内容を、<code>&gt;</code>（リダイレクト）でファイルoutput.svgに出力しています。
 jsdomの書き方が過去のものとは少し変わりました。</p>
 
 <h2 id="その他変更点など">その他変更点など</h2>
 
 <p>過去の記事では<code>d3.queue()</code>と<code>d3.json</code>で国土地理院のベクトルタイルを読み込みましたが、今回ローカルのファイルを読み込むに当たって<code>d3.json</code>が使えなかったので、代わりに<code>fs.readFile</code>を使用します。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="k">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
 
-<pre><code class="language-JavaScript">const fs = require('fs');
+<span class="c1">// 上記の基本形は省略
+</span><span class="c1"></span>
+<span class="k">const</span> <span class="nx">q</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">queue</span><span class="p">()</span>
+            <span class="p">.</span><span class="nx">defer</span><span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">,</span> <span class="s1">&#39;./data/j1results.json&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">defer</span><span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">,</span> <span class="s1">&#39;./data/j2results.json&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">defer</span><span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">,</span> <span class="s1">&#39;./data/j3results.json&#39;</span><span class="p">);</span>
 
-// 上記の基本形は省略
-
-const q = d3.queue()
-            .defer(fs.readFile, './data/j1results.json')
-            .defer(fs.readFile, './data/j2results.json')
-            .defer(fs.readFile, './data/j3results.json');
-
-q.awaitAll((err, files) =&gt; {
-  if (err) throw err;
-  const data = files.map(str =&gt; JSON.parse(str));
+<span class="nx">q</span><span class="p">.</span><span class="nx">awaitAll</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">files</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+  <span class="k">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">files</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">str</span> <span class="p">=&gt;</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span>
   
-  /** D3 Scripts
-    * ex. svg.selectAll('rect')
-    *        .data(d3.merge(data))
-    *        .enter()
-    *        .append('rect')
-    *        ...
-    */
+  <span class="cm">/** D3 Scripts
+</span><span class="cm">    * ex. svg.selectAll(&#39;rect&#39;)
+</span><span class="cm">    *        .data(d3.merge(data))
+</span><span class="cm">    *        .enter()
+</span><span class="cm">    *        .append(&#39;rect&#39;)
+</span><span class="cm">    *        ...
+</span><span class="cm">    */</span>
   
-  console.log(document.body.innerHTML);
-});
-</code></pre>
-
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 <p>fsを使うなら、ファイルの出力方法は<code>console.log()</code>ではなく、<code>fs.writeFile()</code>でもいいかもしれません。お好きな方をお選びください。</p>
-
-<pre><code class="language-JavaScript">fs.writeFile('output.svg', document.body.innerHTML, (err) =&gt; {
-  if (err) throw err;
-  console.log('save successful!');
-});
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">fs</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="s1">&#39;output.svg&#39;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;save successful!&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 <p>D3.jsで描写したSVGはcssで要素のスタイルを設定する場合が多いのですが、SVGファイルはcssが読み込めません。<code>selection.attr</code>で地道にスタイリングしましょう。</p>
 
 <p>以下は作成したSVGファイルの例です。</p>
@@ -288,11 +497,16 @@ q.awaitAll((err, files) =&gt; {
 <p><img src="../../../img/j-attd-2017.png" alt="imagemagickでpngに変換したもの" title="imagemagickでpngに変換したもの" /></p>
 
 <h4 id="command-line-1">Command Line</h4>
-
-<pre><code class="language-Shell">$ convert -density 120 -background &quot;#363b44&quot; \
-  -font &quot;/Library/Fonts/KozGoPr6N-Regular.otf&quot; input.svg output.png
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Shell" data-lang="Shell"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Shell" data-lang="Shell">$ convert -density <span class="m">120</span> -background <span class="s2">&#34;#363b44&#34;</span> <span class="se">\
+</span><span class="se"></span>  -font <span class="s2">&#34;/Library/Fonts/KozGoPr6N-Regular.otf&#34;</span> input.svg output.png</code></pre></td></tr></table>
+</div>
+</div>
 <ul>
 <li><code>-density</code>は倍率と考えてよい（実際の定義は知らない）</li>
 <li><code>-background</code>を設定しないと背景透過になってしまいます</li>
@@ -313,11 +527,16 @@ q.awaitAll((err, files) =&gt; {
 <p><img src="../../../img/j-attd-2017-screenshot.png" alt="headless chromeでキャプチャしたもの" title="headless chromeでキャプチャしたもの" /></p>
 
 <h4 id="command-line-2">Command Line</h4>
-
-<pre><code class="language-Shell">$ alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
-$ chrome --headless --disable-gpu --screenshot --window-size=900,1200 http://localhost:1313/input.svg
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Shell" data-lang="Shell"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Shell" data-lang="Shell">$ <span class="nb">alias</span> <span class="nv">chrome</span><span class="o">=</span><span class="s1">&#39;/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome&#39;</span>
+$ chrome --headless --disable-gpu --screenshot --window-size<span class="o">=</span><span class="m">900</span>,1200 http://localhost:1313/input.svg</code></pre></td></tr></table>
+</div>
+</div>
 <p>元のSVGファイルとほぼ同じ状態のpngが生成できました。（当たり前といえば当たり前なのですが）<br />
 画像のサイズは、指定したウィンドウサイズの2倍（この場合だと1800x2400）ですが、imagemagickで生成したものよりも小さい容量になりました。</p>
 
@@ -368,7 +587,7 @@ $ chrome --headless --disable-gpu --screenshot --window-size=900,1200 http://loc
     <span class="item-content">cieloazul310</span>
   </p>
   <p class="copyright-item">
-    <span class="item-title">Update</span>
+    <span class="item-title">LastMod</span>
     <span class="item-content">2017-12-16</span>
   </p>
   
@@ -402,22 +621,24 @@ $ chrome --headless --disable-gpu --screenshot --window-size=900,1200 http://loc
           <a class="prev" href="https://cieloazul310.github.io/2017/12/jleague-attd-2017/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">2017年明治安田生命Jリーグ全試合の観客数の可視化</span>
-            <span class="prev-text nav-mobile">Newer</span>
+            <span class="prev-text nav-mobile">Prev</span>
           </a>
         
           <a class="next" href="https://cieloazul310.github.io/2017/12/d3-get-parent-node/">
             <span class="next-text nav-default">D3.jsで子要素のDOMから親要素のデータを取得</span>
-            <span class="prev-text nav-mobile">Older</span>
+            <span class="prev-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
       </nav>
     </footer>
-  </article>
-        </div>
-        
-  <div id="disqus_thread"></div>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
     <script type="text/javascript">
-    (function() {
+    function load_disqus() {
         
         
         if (window.location.hostname === 'localhost') return;
@@ -426,20 +647,32 @@ $ chrome --headless --disable-gpu --screenshot --window-size=900,1200 http://loc
         var disqus_shortname = 'cieloazul310';
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+
+        $('#load_disqus').remove();
+    };
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com/" class="dsq-brlink" target="_blank">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
 
   
-      </div>  
+
+  
+  </article>
+        </div>
+      </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="social-links">
-      <a href="//twitter.com/cieloazul310" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="//github.com/cieloazul310" class="iconfont icon-github" title="github"></a>
-  <a href="https://cieloazul310.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+      <a href="//twitter.com/cieloazul310" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="//github.com/cieloazul310" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://cieloazul310.github.io/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
 </div>
 
 <div class="copyright">
@@ -448,20 +681,17 @@ $ chrome --headless --disable-gpu --screenshot --window-size=900,1200 http://loc
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
   </span>
 
   <span class="copyright-year">
-    &copy; 
+    &copy;
     
-      2017 - 
+      2017 -
     2018
     <span class="heart">
       <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">cieloazul310</span>
-  </span>
+    </span><span class="author">cieloazul310</span></span>
 </div>
     </footer>
 
@@ -470,11 +700,19 @@ $ chrome --headless --disable-gpu --screenshot --window-size=900,1200 http://loc
     </div>
   </div>
   
-<script src="https://cieloazul310.github.io/lib/highlight/highlight.pack.js?v=20171001"></script>
 <script type="text/javascript" src="https://cieloazul310.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
-  <script type="text/javascript" src="https://cieloazul310.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
-<script type="text/javascript" src="https://cieloazul310.github.io/dist/even.min.js?v=2.6.5"></script>
+<script type="text/javascript" src="https://cieloazul310.github.io/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="https://cieloazul310.github.io/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
 
 
 
