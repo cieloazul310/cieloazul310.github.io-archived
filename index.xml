@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Mon, 23 Apr 2018 23:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 21 Jul 2018 16:30:00 +0900</lastBuildDate>
     
         <atom:link href="https://cieloazul310.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -20,6 +20,20 @@
       <guid>https://cieloazul310.github.io/about/</guid>
       
         <description>&lt;p&gt;水戸地図はD3.jsやOpenLayersなどJavaScriptのライブラリを使ってデータビジュアライゼーションを試みる実験室です。
+&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>GIMPで陸地を生成する</title>
+      <link>https://cieloazul310.github.io/2018/07/how-to-generate-mundial-with-gimp/</link>
+      <pubDate>Sat, 21 Jul 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2018/07/how-to-generate-mundial-with-gimp/</guid>
+      
+        <description>&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;GIMPをいじっていたらたまたま架空の陸地のような画像が作れたので作り方を記録しておきます。
 &lt;/p&gt;</description>
       
     </item>

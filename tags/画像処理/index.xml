@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>画像処理 on 水戸地図</title>
+    <link>https://cieloazul310.github.io/tags/%E7%94%BB%E5%83%8F%E5%87%A6%E7%90%86/</link>
+    <description>Recent content in 画像処理 on 水戸地図</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>cieloazul310</copyright>
+    <lastBuildDate>Sat, 21 Jul 2018 16:30:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://cieloazul310.github.io/tags/%E7%94%BB%E5%83%8F%E5%87%A6%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GIMPで陸地を生成する</title>
+      <link>https://cieloazul310.github.io/2018/07/how-to-generate-mundial-with-gimp/</link>
+      <pubDate>Sat, 21 Jul 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2018/07/how-to-generate-mundial-with-gimp/</guid>
+      <description>&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;GIMPをいじっていたらたまたま架空の陸地のような画像が作れたので作り方を記録しておきます。
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

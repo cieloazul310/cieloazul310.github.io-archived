@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>https://cieloazul310.github.io/2018/07/how-to-generate-mundial-with-gimp/</loc>
+    <lastmod>2018-07-21T16:30:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://cieloazul310.github.io/2018/04/stadium-and-population/</loc>
     <lastmod>2018-04-23T23:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -162,6 +169,13 @@
   </url>
   
   <url>
+    <loc>https://cieloazul310.github.io/tags/gimp/</loc>
+    <lastmod>2018-07-21T16:30:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cieloazul310.github.io/tags/gis/</loc>
     <lastmod>2018-04-23T23:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -261,7 +275,7 @@
   
   <url>
     <loc>https://cieloazul310.github.io/post/</loc>
-    <lastmod>2018-04-23T23:00:00+09:00</lastmod>
+    <lastmod>2018-07-21T16:30:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -357,6 +371,13 @@
   </url>
   
   <url>
+    <loc>https://cieloazul310.github.io/categories/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/</loc>
+    <lastmod>2018-07-21T16:30:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cieloazul310.github.io/tags/%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%AB/</loc>
     <lastmod>2017-11-09T22:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -442,7 +463,14 @@
   
   <url>
     <loc>https://cieloazul310.github.io/</loc>
-    <lastmod>2018-04-23T23:00:00+09:00</lastmod>
+    <lastmod>2018-07-21T16:30:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cieloazul310.github.io/tags/%E7%94%BB%E5%83%8F%E5%87%A6%E7%90%86/</loc>
+    <lastmod>2018-07-21T16:30:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
