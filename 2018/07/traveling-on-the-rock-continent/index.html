@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ja" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ロック大陸漫遊記 オンエア曲可視化 - 水戸地図</title>
+  <link rel="alternate" hreflang="ja" href="https://cieloazul310.github.io" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="cieloazul310" /><meta name="description" content="TOKYO FMで放送されているラジオ番組「SPITZ 草野マサムネのロック大陸漫遊記」のプレイリストを年別・国別に分類しグラフ化しました。" />
+<meta name="keywords" content="JavaScript, D3.js, React, ラジオ, ロック大陸漫遊記, スピッツ, 音楽" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.1" />
+
+
+<link rel="canonical" href="https://cieloazul310.github.io/2018/07/traveling-on-the-rock-continent/" />
+
+
+
+<link rel="icon" href="https://cieloazul310.github.io/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="https://cieloazul310.github.io/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="ロック大陸漫遊記 オンエア曲可視化" />
+<meta property="og:description" content="TOKYO FMで放送されているラジオ番組「SPITZ 草野マサムネのロック大陸漫遊記」のプレイリストを年別・国別に分類しグラフ化しました。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cieloazul310.github.io/2018/07/traveling-on-the-rock-continent/" />
+
+
+
+<meta property="article:published_time" content="2018-07-22T20:30:00&#43;09:00"/>
+
+<meta property="article:modified_time" content="2018-07-22T20:30:00&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="ロック大陸漫遊記 オンエア曲可視化">
+<meta itemprop="description" content="TOKYO FMで放送されているラジオ番組「SPITZ 草野マサムネのロック大陸漫遊記」のプレイリストを年別・国別に分類しグラフ化しました。">
+
+
+<meta itemprop="datePublished" content="2018-07-22T20:30:00&#43;09:00" />
+<meta itemprop="dateModified" content="2018-07-22T20:30:00&#43;09:00" />
+<meta itemprop="wordCount" content="1725">
+
+
+
+<meta itemprop="keywords" content="JavaScript,D3.js,React,ラジオ,ロック大陸漫遊記,スピッツ,音楽," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+
+<meta name="twitter:title" content="ロック大陸漫遊記 オンエア曲可視化"/>
+<meta name="twitter:description" content="TOKYO FMで放送されているラジオ番組「SPITZ 草野マサムネのロック大陸漫遊記」のプレイリストを年別・国別に分類しグラフ化しました。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-74683419-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/categories/">
+          Categories
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/about/">
+          About
+        </a>
+      </li>
+  </ul>
+</nav>
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="https://cieloazul310.github.io/" class="logo">
+    
+      水戸地図
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/about/">About</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">ロック大陸漫遊記 オンエア曲可視化</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2018-07-22 </span>
+        <div class="post-category">
+            
+              <a href="https://cieloazul310.github.io/categories/works/"> Works </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      <!-- Lead Paragraph -->
+
+<p>TOKYO FMで放送されているラジオ番組<a href="https://www.tfm.co.jp/manyuki/">SPITZ 草野マサムネのロック大陸漫遊記</a>のオンエア曲を年別・国別に分類しグラフ化してみました。
+</p>
+
+<p><img src="../../../img/rockman-captures/all_wide.png" alt="グラフ" /></p>
+
+<p>ロック大陸測量部<br />
+<a href="https://cieloazul310.github.io/rockman-survey/">https://cieloazul310.github.io/rockman-survey/</a></p>
+
+<h2 id="spitz-草野マサムネのロック大陸漫遊記">SPITZ 草野マサムネのロック大陸漫遊記</h2>
+
+<p><a href="https://www.tfm.co.jp/manyuki/">SPITZ 草野マサムネのロック大陸漫遊記</a>は、TOKYO FMで2018年1月から日曜夜9時から放送されている音楽番組です。パーソナリティを務めるスピッツ草野マサムネによる、ビートルズからギャートルズまで網羅する一筋縄ではいかない独特の選曲が魅力です。</p>
+
+<p>自分自身いろんな音楽を聴くようになったきっかけはスピッツのインタビューで言及されている音楽を漁ったことだったので、マサムネ氏の選曲が毎週楽しめる番組が始まったのはとても嬉しいです。<br />
+（これはわかる人がわかればいいのですが「『ハチミツ』はツェッペリン」「『フェイクファー』はサバス」でツェッペリンやサバスを聴き始めた）</p>
+
+<div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="6120305662"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+
+<h2 id="ラジオ番組可視化">ラジオ番組可視化</h2>
+
+<p>ラジオ番組のオンエア曲を分類して可視化してみたいと思ったのは、2015年秋から2016年春までTBSラジオで放送されていた「SOUND AVENUE 905」という番組がきっかけです。この番組は火曜日に佐野元春、水曜日に鈴木慶一、木曜日に小西康陽、金曜日は週替わりのゲストが選曲した音楽を流すという構成の番組です(木曜日の小西康陽は生DJ)。</p>
+
+<p>選曲者ごとの選曲の傾向がグラフィックになると面白いなと思ったのですが、番組のプレイリストを過去に遡ってデータ化するのは大変だったので手をつけずにいました。<br />
+今回こうしてロック大陸漫遊記のプレイリストを可視化してみたら面白い感じになったので、木曜の小西回だけでもデータを集めて可視化してみようかなと思っています（しかしsound905のホームページは消滅…）</p>
+
+<h2 id="グラフの着想">グラフの着想</h2>
+
+<p>一曲一曲を年別に分類し、縦に積み上げていく形は<a href="https://d3js.org/">D3.js</a>の事例集に載っている<a href="https://www.visualcinnamon.com/2015/01/the-top-2000-equalizer-songs.html">The Top 2000 songs distributed by year of release</a>を参考にしています。<br />
+今回この説明用に調べて知ったのですが、「The Top 2000」というオランダのラジオ番組の選曲を可視化したもののようです。（ローリングストーン誌のような雑誌が選んだトップ2000だと思ってました）</p>
+
+<h2 id="ロック大陸漫遊記の半年間の選曲傾向">ロック大陸漫遊記の半年間の選曲傾向</h2>
+
+
+
+
+<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
+    
+  
+<link rel="stylesheet" href="https://cieloazul310.github.io/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('https://cieloazul310.github.io/img/rockman-captures/jpn.png');">
+      <img itemprop="thumbnail" src="https://cieloazul310.github.io/img/rockman-captures/jpn.png" />
+    </div>
+    <a href="https://cieloazul310.github.io/img/rockman-captures/jpn.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+  
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('https://cieloazul310.github.io/img/rockman-captures/uk.png');">
+      <img itemprop="thumbnail" src="https://cieloazul310.github.io/img/rockman-captures/uk.png" />
+    </div>
+    <a href="https://cieloazul310.github.io/img/rockman-captures/uk.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+  
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img" style="background-image: url('https://cieloazul310.github.io/img/rockman-captures/us.png');">
+      <img itemprop="thumbnail" src="https://cieloazul310.github.io/img/rockman-captures/us.png" />
+    </div>
+    <a href="https://cieloazul310.github.io/img/rockman-captures/us.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+
+</div>
+
+
+<p>初回から7/15日分までで28回放送、237曲が流れています。</p>
+
+<p>国別に見ると<a href="https://cieloazul310.github.io/rockman-survey/#nation=JPN">日本 133曲</a>、<a href="https://cieloazul310.github.io/rockman-survey/#nation=UK">UK 48曲</a>、<a href="https://cieloazul310.github.io/rockman-survey/#nation=US">US 36曲</a>、<a href="https://cieloazul310.github.io/rockman-survey/#nation=FR">フランス 11曲</a>です。<br />
+<a href="https://cieloazul310.github.io/rockman-survey/#week=1">初回</a>の感じでは洋楽のクラシックロック中心の番組になるのかなと思いましたが、予想に反して邦楽が半分以上を占める構成になっています。</p>
+
+<p>今のところUKロックは1970年前後が多く、USロックは80年前後が多い傾向にあります。<br />
+2000年代以降は洋楽が少なく邦楽が大半を占めています。特に2010年代の邦楽が多くかかっています。</p>
+
+<p>番組はまだ始まったばかりなので1回1回が全体のデータに大きく影響してしまっていますが、回を重ねるたびにより確かな傾向がわかってくるかと思います。</p>
+
+<div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      
+      <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="5892967151"
+         data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+
+<h2 id="技術的な話">技術的な話</h2>
+
+<p><a href="https://github.com/facebook/create-react-app">create-react-app</a>で作成しました。<br />
+全体の構成はReact、グラフ部分は<a href="https://d3js.org/">D3.js</a>の関数、UIデザインには<a href="https://react-bootstrap.github.io/">react-bootstrap</a>を利用しています。</p>
+
+<p>今回の収穫はreact-bootstrapの使い勝手のよさがわかったことです。<br />
+本家<a href="http://getbootstrap.com/">Bootstrap</a>は過去に使ったことがあったのでその便利さはわかっていましたが、なにぶんjQuery依存なので最近は使うのを避けていました。react-bootstrapのドキュメントを読んでみたところ、jQueryには依存しないと書いてあったので晴れて導入することにしました。</p>
+
+<p>今まで作ったものもreact-bootstrapに置き換えるか迷っています。</p>
+
+<h2 id="課題">課題</h2>
+
+<p>SVGのグラフはbbox要素を設定することでレスポンシブに対応しました。しかし、bboxだと設計したサイズ以外では文字のサイズが見えないほど小さくなるなど、バランスが悪くなってしまいます。<br />
+できれば早いうちにbboxに依存しないレスポンシブなグラフに書き換えたいです。</p>
+
+<p>また横長のグラフはスマホでは見にくいので、例えば10年単位のグラフをフリックで操作するなど、見せ方を工夫しなければいけないと思います。</p>
+
+<p>ロック大陸測量部<br />
+<a href="https://cieloazul310.github.io/rockman-survey/">https://cieloazul310.github.io/rockman-survey/</a></p>
+
+<!-- Music -->
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/SalC2mBb1QQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<!-- References -->
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">cieloazul310</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-07-22</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="https://cieloazul310.github.io/tags/javascript/">JavaScript</a>
+          
+          <a href="https://cieloazul310.github.io/tags/d3.js/">D3.js</a>
+          
+          <a href="https://cieloazul310.github.io/tags/react/">React</a>
+          
+          <a href="https://cieloazul310.github.io/tags/%E3%83%A9%E3%82%B8%E3%82%AA/">ラジオ</a>
+          
+          <a href="https://cieloazul310.github.io/tags/%E3%83%AD%E3%83%83%E3%82%AF%E5%A4%A7%E9%99%B8%E6%BC%AB%E9%81%8A%E8%A8%98/">ロック大陸漫遊記</a>
+          
+          <a href="https://cieloazul310.github.io/tags/%E3%82%B9%E3%83%94%E3%83%83%E3%83%84/">スピッツ</a>
+          
+          <a href="https://cieloazul310.github.io/tags/%E9%9F%B3%E6%A5%BD/">音楽</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="https://cieloazul310.github.io/2018/07/how-to-generate-mundial-with-gimp/">
+            <span class="next-text nav-default">GIMPで陸地を生成する</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'cieloazul310';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="//twitter.com/cieloazul310" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="//github.com/cieloazul310" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://cieloazul310.github.io/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">cieloazul310</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="https://cieloazul310.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="https://cieloazul310.github.io/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="https://cieloazul310.github.io/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>
