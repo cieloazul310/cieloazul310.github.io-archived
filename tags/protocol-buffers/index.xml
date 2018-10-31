@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Protocol Buffers on 水戸地図</title>
+    <link>https://cieloazul310.github.io/tags/protocol-buffers/</link>
+    <description>Recent content in Protocol Buffers on 水戸地図</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>cieloazul310</copyright>
+    <lastBuildDate>Wed, 31 Oct 2018 21:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://cieloazul310.github.io/tags/protocol-buffers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>バイナリベクトルタイルを地図ライブラリ以外で扱う</title>
+      <link>https://cieloazul310.github.io/2018/10/mvt-tile-to-geojson/</link>
+      <pubDate>Wed, 31 Oct 2018 21:00:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2018/10/mvt-tile-to-geojson/</guid>
+      <description>&lt;!--
+- 対象: バイナリベクトルタイルを知っているWEB技術者
+- 目的: バイナリベクトルタイルのファイルに対する理解
+--&gt;
+
+&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.mapbox.com/mapbox-gl-js/api/&#34;&gt;Mapbox GL JS&lt;/a&gt; や &lt;a href=&#34;https://leafletjs.com/&#34;&gt;Leaflet&lt;/a&gt; といった地図ライブラリを使わずにバイナリベクトルタイルを使う方法です。
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

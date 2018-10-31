@@ -7,10 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Sat, 12 Aug 2017 13:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 31 Oct 2018 21:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/tags/%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%AB/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>バイナリベクトルタイルを地図ライブラリ以外で扱う</title>
+      <link>https://cieloazul310.github.io/2018/10/mvt-tile-to-geojson/</link>
+      <pubDate>Wed, 31 Oct 2018 21:00:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2018/10/mvt-tile-to-geojson/</guid>
+      <description>&lt;!--
+- 対象: バイナリベクトルタイルを知っているWEB技術者
+- 目的: バイナリベクトルタイルのファイルに対する理解
+--&gt;
+
+&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.mapbox.com/mapbox-gl-js/api/&#34;&gt;Mapbox GL JS&lt;/a&gt; や &lt;a href=&#34;https://leafletjs.com/&#34;&gt;Leaflet&lt;/a&gt; といった地図ライブラリを使わずにバイナリベクトルタイルを使う方法です。
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>バイナリベクトルタイルを作ってみた</title>
