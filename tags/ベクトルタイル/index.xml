@@ -25,8 +25,7 @@
 
 &lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://www.mapbox.com/mapbox-gl-js/api/&#34;&gt;Mapbox GL JS&lt;/a&gt; や &lt;a href=&#34;https://leafletjs.com/&#34;&gt;Leaflet&lt;/a&gt; といった地図ライブラリを使わずにバイナリベクトルタイルを使う方法です。
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://www.mapbox.com/mapbox-gl-js/api/&#34;&gt;Mapbox GL JS&lt;/a&gt; や &lt;a href=&#34;https://leafletjs.com/&#34;&gt;Leaflet&lt;/a&gt; といった地図ライブラリを使わずに JavaScript でバイナリベクトルタイルを使う方法です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -35,8 +34,7 @@
       <pubDate>Sat, 12 Aug 2017 13:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/</guid>
-      <description>&lt;p&gt;最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。&lt;/p&gt;</description>
     </item>
     
   </channel>

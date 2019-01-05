@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Wed, 31 Oct 2018 21:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 04 Jan 2019 23:55:00 +0900</lastBuildDate>
     
         <atom:link href="https://cieloazul310.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,12 +15,11 @@
     <item>
       <title>About</title>
       <link>https://cieloazul310.github.io/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 04 Jan 2019 23:55:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/about/</guid>
       
-        <description>&lt;p&gt;水戸地図はD3.jsやOpenLayersなどJavaScriptのライブラリを使ってデータビジュアライゼーションを試みる実験室です。
-&lt;/p&gt;</description>
+        <description>&lt;p&gt;水戸地図はD3.jsやOpenLayersなどJavaScriptのライブラリを使ってデータビジュアライゼーションを試みる実験室です。&lt;/p&gt;</description>
       
     </item>
     
@@ -38,8 +37,7 @@
 
 &lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://www.mapbox.com/mapbox-gl-js/api/&#34;&gt;Mapbox GL JS&lt;/a&gt; や &lt;a href=&#34;https://leafletjs.com/&#34;&gt;Leaflet&lt;/a&gt; といった地図ライブラリを使わずにバイナリベクトルタイルを使う方法です。
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://www.mapbox.com/mapbox-gl-js/api/&#34;&gt;Mapbox GL JS&lt;/a&gt; や &lt;a href=&#34;https://leafletjs.com/&#34;&gt;Leaflet&lt;/a&gt; といった地図ライブラリを使わずに JavaScript でバイナリベクトルタイルを使う方法です。&lt;/p&gt;</description>
       
     </item>
     
@@ -52,8 +50,7 @@
       
         <description>&lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;TOKYO FMで放送されているラジオ番組&lt;a href=&#34;https://www.tfm.co.jp/manyuki/&#34;&gt;SPITZ 草野マサムネのロック大陸漫遊記&lt;/a&gt;のオンエア曲を年別・国別に分類しグラフ化してみました。
-&lt;/p&gt;</description>
+&lt;p&gt;TOKYO FMで放送されているラジオ番組&lt;a href=&#34;https://www.tfm.co.jp/manyuki/&#34;&gt;SPITZ 草野マサムネのロック大陸漫遊記&lt;/a&gt;のオンエア曲を年別・国別に分類しグラフ化してみました。&lt;/p&gt;</description>
       
     </item>
     
@@ -66,8 +63,7 @@
       
         <description>&lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;GIMPをいじっていたらたまたま架空の陸地のような画像が作れたので作り方を記録しておきます。
-&lt;/p&gt;</description>
+&lt;p&gt;GIMPをいじっていたらたまたま架空の陸地のような画像が作れたので作り方を記録しておきます。&lt;/p&gt;</description>
       
     </item>
     
@@ -80,8 +76,7 @@
       
         <description>&lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;地域メッシュ統計のデータを用いて国内の主要サッカースタジアムの周辺人口を算出しました。
-&lt;/p&gt;</description>
+&lt;p&gt;地域メッシュ統計のデータを用いて国内の主要サッカースタジアムの周辺人口を算出しました。&lt;/p&gt;</description>
       
     </item>
     
@@ -99,8 +94,7 @@
 
 &lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;MediaWiki APIでWikipediaの記事から座標を取得する方法と、MediaWiki APIでWikipedia日本語記事の座標が取得できないことについての説明です。
-&lt;/p&gt;</description>
+&lt;p&gt;MediaWiki APIでWikipediaの記事から座標を取得する方法と、MediaWiki APIでWikipedia日本語記事の座標が取得できないことについての説明です。&lt;/p&gt;</description>
       
     </item>
     
@@ -113,8 +107,7 @@
       
         <description>&lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;WikiLayers&lt;/a&gt;で使っているパッケージやライブラリを自分のために覚書しておきます。&lt;br /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;WikiLayers&lt;/a&gt;で使っているパッケージやライブラリを自分のために覚書しておきます。&lt;/p&gt;</description>
       
     </item>
     
@@ -128,8 +121,7 @@
         <description>&lt;!-- Lead Paragraph --&gt;
 
 &lt;p&gt;Wikipediaを地図で見るアプリWikiLayersを公開しました。&lt;br /&gt;
-URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://cieloazul310.github.io/wikilayers&lt;/a&gt;
-&lt;/p&gt;</description>
+URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://cieloazul310.github.io/wikilayers&lt;/a&gt;&lt;/p&gt;</description>
       
     </item>
     
@@ -142,8 +134,7 @@ URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://c
       
         <description>&lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;平成29年度城里町一般会計予算が成立した、&lt;a href=&#34;http://www.town.shirosato.lg.jp/page/page003153.html&#34;&gt;城里町議会 第2回定例会会議録&lt;/a&gt;より七会町民センター関連の議論を抜粋しました。
-&lt;/p&gt;</description>
+&lt;p&gt;平成29年度城里町一般会計予算が成立した、&lt;a href=&#34;http://www.town.shirosato.lg.jp/page/page003153.html&#34;&gt;城里町議会 第2回定例会会議録&lt;/a&gt;より七会町民センター関連の議論を抜粋しました。&lt;/p&gt;</description>
       
     </item>
     
@@ -155,8 +146,7 @@ URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://c
       <guid>https://cieloazul310.github.io/2017/12/jleague-attd-2017/</guid>
       
         <description>&lt;p&gt;&lt;em&gt;J.League 2017 All Games Attendance Visualization&lt;/em&gt;&lt;br /&gt;
-2017年の明治安田生命Jリーグ全試合の観客数を可視化したチャートです。
-&lt;/p&gt;</description>
+2017年の明治安田生命Jリーグ全試合の観客数を可視化したチャートです。&lt;/p&gt;</description>
       
     </item>
     
@@ -169,8 +159,7 @@ URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://c
       
         <description>&lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;D3.jsとjsdomを使って、SVGファイルを作る方法です。
-&lt;/p&gt;</description>
+&lt;p&gt;D3.jsとjsdomを使って、SVGファイルを作る方法です。&lt;/p&gt;</description>
       
     </item>
     
@@ -183,8 +172,7 @@ URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://c
       
         <description>&lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;D3.jsで階層構造のDOMの子要素から親要素のデータを取得する方法です。
-&lt;/p&gt;</description>
+&lt;p&gt;D3.jsで階層構造のDOMの子要素から親要素のデータを取得する方法です。&lt;/p&gt;</description>
       
     </item>
     
@@ -197,8 +185,7 @@ URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://c
       
         <description>&lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;&lt;a href=&#34;//cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/&#34;&gt;前回作成したBリーグ決算情報のCSVデータ&lt;/a&gt;を使って、D3.jsでシンプルな棒グラフを作成しました。
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;//cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/&#34;&gt;前回作成したBリーグ決算情報のCSVデータ&lt;/a&gt;を使って、D3.jsでシンプルな棒グラフを作成しました。&lt;/p&gt;</description>
       
     </item>
     
@@ -211,8 +198,7 @@ URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://c
       
         <description>&lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;&lt;a href=&#34;//www.bleague.jp/news/36544.html&#34;&gt;B.LEAGUEが公開した各クラブの決算情報&lt;/a&gt;をCSV化して&lt;a href=&#34;//gist.github.com/cieloazul310/ae2da35266de8f0832ed3ebc431d807f&#34;&gt;gistで公開&lt;/a&gt;しました。
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;//www.bleague.jp/news/36544.html&#34;&gt;B.LEAGUEが公開した各クラブの決算情報&lt;/a&gt;をCSV化して&lt;a href=&#34;//gist.github.com/cieloazul310/ae2da35266de8f0832ed3ebc431d807f&#34;&gt;gistで公開&lt;/a&gt;しました。&lt;/p&gt;</description>
       
     </item>
     
@@ -225,8 +211,7 @@ URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://c
       
         <description>&lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;D3.jsでSVGを描写するときは&lt;code&gt;&amp;lt;g&amp;gt;&lt;/code&gt;要素を使って要素をグループ化すると便利です。
-&lt;/p&gt;</description>
+&lt;p&gt;D3.jsでSVGを描写するときは&lt;code&gt;&amp;lt;g&amp;gt;&lt;/code&gt;要素を使って要素をグループ化すると便利です。&lt;/p&gt;</description>
       
     </item>
     
@@ -239,8 +224,7 @@ URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://c
       
         <description>&lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました。
-&lt;/p&gt;</description>
+&lt;p&gt;1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました。&lt;/p&gt;</description>
       
     </item>
     
@@ -251,8 +235,7 @@ URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://c
       
       <guid>https://cieloazul310.github.io/2017/08/d3-arrow-function/</guid>
       
-        <description>&lt;p&gt;既存のD3.jsのコードを&lt;a href=&#34;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/arrow_functions&#34;&gt;アロー関数&lt;/a&gt;で置き換える際に変な動作を起こしてしまったのでメモしておきます。
-&lt;/p&gt;</description>
+        <description>&lt;p&gt;既存のD3.jsのコードを&lt;a href=&#34;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/arrow_functions&#34;&gt;アロー関数&lt;/a&gt;で置き換える際に変な動作を起こしてしまったのでメモしておきます。&lt;/p&gt;</description>
       
     </item>
     
@@ -263,8 +246,7 @@ URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://c
       
       <guid>https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/</guid>
       
-        <description>&lt;p&gt;最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。
-&lt;/p&gt;</description>
+        <description>&lt;p&gt;最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。&lt;/p&gt;</description>
       
     </item>
     

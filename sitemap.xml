@@ -4,6 +4,7 @@
   
   <url>
     <loc>https://cieloazul310.github.io/about/</loc>
+    <lastmod>2019-01-04T23:55:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -190,15 +191,15 @@
   </url>
   
   <url>
-    <loc>https://cieloazul310.github.io/categories/gis/</loc>
-    <lastmod>2018-04-23T23:00:00+09:00</lastmod>
+    <loc>https://cieloazul310.github.io/tags/gis/</loc>
+    <lastmod>2018-10-31T21:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cieloazul310.github.io/tags/gis/</loc>
-    <lastmod>2018-10-31T21:00:00+09:00</lastmod>
+    <loc>https://cieloazul310.github.io/categories/gis/</loc>
+    <lastmod>2018-04-23T23:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -218,15 +219,15 @@
   </url>
   
   <url>
-    <loc>https://cieloazul310.github.io/categories/javascript/</loc>
-    <lastmod>2018-10-31T21:00:00+09:00</lastmod>
+    <loc>https://cieloazul310.github.io/tags/javascript/</loc>
+    <lastmod>2018-07-22T20:30:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cieloazul310.github.io/tags/javascript/</loc>
-    <lastmod>2018-07-22T20:30:00+09:00</lastmod>
+    <loc>https://cieloazul310.github.io/categories/javascript/</loc>
+    <lastmod>2018-10-31T21:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -317,6 +318,7 @@
   
   <url>
     <loc>https://cieloazul310.github.io/categories/releases/</loc>
+    <lastmod>2019-01-04T23:55:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -505,7 +507,7 @@
   
   <url>
     <loc>https://cieloazul310.github.io/</loc>
-    <lastmod>2018-10-31T21:00:00+09:00</lastmod>
+    <lastmod>2019-01-04T23:55:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

@@ -20,8 +20,7 @@
       <guid>https://cieloazul310.github.io/2018/04/stadium-and-population/</guid>
       <description>&lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;地域メッシュ統計のデータを用いて国内の主要サッカースタジアムの周辺人口を算出しました。
-&lt;/p&gt;</description>
+&lt;p&gt;地域メッシュ統計のデータを用いて国内の主要サッカースタジアムの周辺人口を算出しました。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,8 +36,7 @@
 
 &lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;MediaWiki APIでWikipediaの記事から座標を取得する方法と、MediaWiki APIでWikipedia日本語記事の座標が取得できないことについての説明です。
-&lt;/p&gt;</description>
+&lt;p&gt;MediaWiki APIでWikipediaの記事から座標を取得する方法と、MediaWiki APIでWikipedia日本語記事の座標が取得できないことについての説明です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -47,8 +45,7 @@
       <pubDate>Sat, 12 Aug 2017 13:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/</guid>
-      <description>&lt;p&gt;最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -20,8 +20,7 @@
       <guid>https://cieloazul310.github.io/2018/07/traveling-on-the-rock-continent/</guid>
       <description>&lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;TOKYO FMで放送されているラジオ番組&lt;a href=&#34;https://www.tfm.co.jp/manyuki/&#34;&gt;SPITZ 草野マサムネのロック大陸漫遊記&lt;/a&gt;のオンエア曲を年別・国別に分類しグラフ化してみました。
-&lt;/p&gt;</description>
+&lt;p&gt;TOKYO FMで放送されているラジオ番組&lt;a href=&#34;https://www.tfm.co.jp/manyuki/&#34;&gt;SPITZ 草野マサムネのロック大陸漫遊記&lt;/a&gt;のオンエア曲を年別・国別に分類しグラフ化してみました。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -32,8 +31,7 @@
       <guid>https://cieloazul310.github.io/2018/02/wikilayers-note/</guid>
       <description>&lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;WikiLayers&lt;/a&gt;で使っているパッケージやライブラリを自分のために覚書しておきます。&lt;br /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;WikiLayers&lt;/a&gt;で使っているパッケージやライブラリを自分のために覚書しておきます。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -44,8 +42,7 @@
       <guid>https://cieloazul310.github.io/2017/12/d3-get-parent-node/</guid>
       <description>&lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;D3.jsで階層構造のDOMの子要素から親要素のデータを取得する方法です。
-&lt;/p&gt;</description>
+&lt;p&gt;D3.jsで階層構造のDOMの子要素から親要素のデータを取得する方法です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -56,8 +53,7 @@
       <guid>https://cieloazul310.github.io/2017/11/d3-grouping-elements/</guid>
       <description>&lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;D3.jsでSVGを描写するときは&lt;code&gt;&amp;lt;g&amp;gt;&lt;/code&gt;要素を使って要素をグループ化すると便利です。
-&lt;/p&gt;</description>
+&lt;p&gt;D3.jsでSVGを描写するときは&lt;code&gt;&amp;lt;g&amp;gt;&lt;/code&gt;要素を使って要素をグループ化すると便利です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -68,8 +64,7 @@
       <guid>https://cieloazul310.github.io/2017/11/railroad-timeline-map/</guid>
       <description>&lt;!-- Lead Paragraph --&gt;
 
-&lt;p&gt;1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました。
-&lt;/p&gt;</description>
+&lt;p&gt;1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -78,8 +73,7 @@
       <pubDate>Tue, 29 Aug 2017 23:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2017/08/d3-arrow-function/</guid>
-      <description>&lt;p&gt;既存のD3.jsのコードを&lt;a href=&#34;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/arrow_functions&#34;&gt;アロー関数&lt;/a&gt;で置き換える際に変な動作を起こしてしまったのでメモしておきます。
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;既存のD3.jsのコードを&lt;a href=&#34;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/arrow_functions&#34;&gt;アロー関数&lt;/a&gt;で置き換える際に変な動作を起こしてしまったのでメモしておきます。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -88,8 +82,7 @@
       <pubDate>Sat, 12 Aug 2017 13:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/</guid>
-      <description>&lt;p&gt;最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。&lt;/p&gt;</description>
     </item>
     
   </channel>

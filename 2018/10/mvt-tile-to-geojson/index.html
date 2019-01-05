@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.49.2" />
+<meta name="generator" content="Hugo 0.53" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2018/10/mvt-tile-to-geojson/" />
@@ -303,12 +303,11 @@ if (!doNotTrack) {
 
 <!-- Lead Paragraph -->
 
-<p><a href="https://www.mapbox.com/mapbox-gl-js/api/">Mapbox GL JS</a> や <a href="https://leafletjs.com/">Leaflet</a> といった地図ライブラリを使わずにバイナリベクトルタイルを使う方法です。
-</p>
+<p><a href="https://www.mapbox.com/mapbox-gl-js/api/">Mapbox GL JS</a> や <a href="https://leafletjs.com/">Leaflet</a> といった地図ライブラリを使わずに JavaScript でバイナリベクトルタイルを使う方法です。</p>
 
 <h2 id="やること">やること</h2>
 
-<p>JavaScript で <code>pbf (mvt)</code> 形式のファイルを <code>fetch</code> で取得し、Features の配列に変換する。</p>
+<p><code>fetch</code> で <code>pbf (mvt)</code> 形式のファイルを取得し、GeoJSON Feature の配列に変換する。</p>
 
 <h2 id="コード">コード</h2>
 
@@ -665,7 +664,7 @@ Promise オブジェクトの配列 <code>tasks</code> を生成することで�
     &copy;
     
       2017 -
-    2018
+    2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span><span class="author">cieloazul310</span></span>
