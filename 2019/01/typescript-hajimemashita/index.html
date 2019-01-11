@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>国内のサッカースタジアム周辺の人口を求める - 水戸地図</title>
+  <title>TypeScript はじめました - 水戸地図</title>
   <link rel="alternate" hreflang="ja" href="https://cieloazul310.github.io" />
 
 <meta name="renderer" content="webkit" />
@@ -24,8 +24,8 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="cieloazul310" /><meta name="description" content="地域メッシュ統計のデータを用いて国内の主要サッカースタジアムの周辺人口を算出しました。" />
-<meta name="keywords" content="Jリーグ, サッカー, GIS, D3.js, 人口" />
+<meta name="author" content="cieloazul310" /><meta name="description" content="TypeScript を始めました。TypeScript を始めるに至った過程を紹介します。" />
+<meta name="keywords" content="TypeScript, JavaScript, Dart, Flutter, VS Code" />
 
 
 
@@ -36,7 +36,7 @@
 <meta name="generator" content="Hugo 0.53" />
 
 
-<link rel="canonical" href="https://cieloazul310.github.io/2018/04/stadium-and-population/" />
+<link rel="canonical" href="https://cieloazul310.github.io/2019/01/typescript-hajimemashita/" />
 
 
 
@@ -56,28 +56,28 @@
 
 
 
-<meta property="og:title" content="国内のサッカースタジアム周辺の人口を求める" />
-<meta property="og:description" content="地域メッシュ統計のデータを用いて国内の主要サッカースタジアムの周辺人口を算出しました。" />
+<meta property="og:title" content="TypeScript はじめました" />
+<meta property="og:description" content="TypeScript を始めました。TypeScript を始めるに至った過程を紹介します。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cieloazul310.github.io/2018/04/stadium-and-population/" /><meta property="article:published_time" content="2018-04-23T23:00:00&#43;09:00"/>
-<meta property="article:modified_time" content="2018-04-23T23:00:00&#43;09:00"/>
+<meta property="og:url" content="https://cieloazul310.github.io/2019/01/typescript-hajimemashita/" /><meta property="article:published_time" content="2019-01-11T22:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2019-01-11T22:00:00&#43;09:00"/>
 
-<meta itemprop="name" content="国内のサッカースタジアム周辺の人口を求める">
-<meta itemprop="description" content="地域メッシュ統計のデータを用いて国内の主要サッカースタジアムの周辺人口を算出しました。">
-
-
-<meta itemprop="datePublished" content="2018-04-23T23:00:00&#43;09:00" />
-<meta itemprop="dateModified" content="2018-04-23T23:00:00&#43;09:00" />
-<meta itemprop="wordCount" content="961">
+<meta itemprop="name" content="TypeScript はじめました">
+<meta itemprop="description" content="TypeScript を始めました。TypeScript を始めるに至った過程を紹介します。">
 
 
+<meta itemprop="datePublished" content="2019-01-11T22:00:00&#43;09:00" />
+<meta itemprop="dateModified" content="2019-01-11T22:00:00&#43;09:00" />
+<meta itemprop="wordCount" content="840">
 
-<meta itemprop="keywords" content="Jリーグ,サッカー,GIS,D3.js,人口," />
+
+
+<meta itemprop="keywords" content="TypeScript,JavaScript," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
-<meta name="twitter:title" content="国内のサッカースタジアム周辺の人口を求める"/>
-<meta name="twitter:description" content="地域メッシュ統計のデータを用いて国内の主要サッカースタジアムの周辺人口を算出しました。"/>
+<meta name="twitter:title" content="TypeScript はじめました"/>
+<meta name="twitter:description" content="TypeScript を始めました。TypeScript を始めるに至った過程を紹介します。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -278,13 +278,13 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">国内のサッカースタジアム周辺の人口を求める</h1>
+      <h1 class="post-title">TypeScript はじめました</h1>
       
       <div class="post-meta">
-        <span class="post-time"> 2018-04-23 </span>
+        <span class="post-time"> 2019-01-11 </span>
         <div class="post-category">
             
-              <a href="https://cieloazul310.github.io/categories/gis/"> GIS </a>
+              <a href="https://cieloazul310.github.io/categories/javascript/"> JavaScript </a>
             
           </div>
         
@@ -296,43 +296,60 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <!-- Lead Paragraph -->
+      <!--
+- 対象: 
+- 目的: TypeScriptを始めたことを宣言する
+-->
 
-<p>地域メッシュ統計のデータを用いて国内の主要サッカースタジアムの周辺人口を算出しました。</p>
+<!-- Lead Paragraph -->
 
-<p>まず予め断っておきますが、これはただの遊びです。<br />
-各スタジアムの周辺人口を求めて、求めたデータから何かを評価したり結論を導くようなものではありません。<br />
-スタジアムの周辺人口を求めました。以上。という内容の記事です。</p>
+<p><a href="https://www.typescriptlang.org">TypeScript</a> を始めました。TypeScript を始めるに至った過程を紹介します。</p>
 
-<h2 id="人口データ">人口データ</h2>
+<h2 id="typescript-に行き着くまで">TypeScript に行き着くまで</h2>
 
-<p><strong>国勢調査 2015年 5次メッシュ(250mメッシュ) その1 人口等基本集計に関する事項</strong></p>
+<p>今までは JavaScript や Python など型がゆるい言語ばかり書いていました。<br />
+<a href="https://reactjs.org/">React</a> で <a href="https://github.com/facebook/prop-types">prop-types</a> を使ったりもしましたが、型について特に考えることなくプログラミングを行なってきました。</p>
 
-<ul>
-<li>URL: <a href="https://www.e-stat.go.jp/gis/statmap-search?page=1&amp;type=1&amp;toukeiCode=00200521&amp;toukeiYear=2015&amp;aggregateUnit=Q&amp;serveyId=Q002005112015&amp;statsId=T000876">https://www.e-stat.go.jp/gis/statmap-search?page=1&amp;type=1&amp;toukeiCode=00200521&amp;toukeiYear=2015&amp;aggregateUnit=Q&amp;serveyId=Q002005112015&amp;statsId=T000876</a></li>
-<li>公開日: 2018年1月4日</li>
-<li>データ取得日: 2018年4月10日</li>
-</ul>
+<h2 id="dart-flutter-を使う">Dart + Flutter を使う</h2>
 
-<h2 id="人口の求め方">人口の求め方</h2>
+<p>2018年12月にネイティブアプリの開発ツールキット <a href="https://flutter.io">Flutter</a> の v1 がリリースされたので、いい機会なので勉強し始めました。<br />
+Flutter では <a href="https://www.dartlang.org">Dart</a> という言語を用いて開発を行ないます。Dart は型安全な言語です。今まで型がゆるい言語ばかり書いてきたため型の記法に戸惑いもありましたが、慣れていくうちに型システムの利便性が感じられるようになりました。</p>
 
-<p><a href="https://midoriit.com/2014/08/qgis%E3%81%AB%E3%82%88%E3%82%8B%E7%B5%B1%E8%A8%88%E8%A7%A3%E6%9E%904.html">QGISによるデータ分析(4) 合同会社 緑IT事務所</a>を参考にしています。</p>
+<p>Dart を書くにつれて型についての意識が高まり、今まで書いていた JavaScript や Python は動的型付き言語、Flutter で使う Dart は静的型付き言語ということがわかり、また静的型付けが自分の好みであることに気がつきました。</p>
 
-<ol>
-<li>まず各メッシュの中心点を作成します。<br /></li>
-<li>次に各スタジアムからの距離円(厳密には<strong>スタジアムのピッチのセンターマーク</strong>からの距離円)を作成します。</li>
-<li>最後に、距離円に含まれる点を抽出し、点の集合から人口を算出します。</li>
-</ol>
+<h2 id="atom-から-vs-code-への移行">Atom から VS Code への移行</h2>
 
-<h2 id="国内主要サッカースタジアム">国内主要サッカースタジアム</h2>
+<p>今までコードエディタは Atom を使っていましたが、Flutter を始めるにあたりマイクロソフト製の <a href="https://code.visualstudio.com">Visual Studio Code</a> を導入しました。</p>
 
-<ul>
-<li>J1〜JFLのホームスタジアム</li>
-<li>地域リーグで特定クラブのホームスタジアムと言える会場</li>
-<li>建設中、計画中、構想中のスタジアム</li>
-</ul>
+<h2 id="型を意識した-javascript">型を意識した JavaScript</h2>
 
-<div class="ad" style="width:100%;">
+<p>TypeScript や <a href="https://coffeescript.org">CoffeeScript</a> は JavaScript の単なる亜種的な認識でした。
+以前は、そういった JavaScript の亜種に手を出すつもりはない…と思っていました。</p>
+
+<p>しかしながら、Dart で静的型付き言語の有効性がわかった後に、JavaScript で型を厳格にしながら書くにはどんな方法があるだろうと考えてみたところ、気がつきました。</p>
+
+<p><strong>TypeScript、お前だったのか！</strong></p>
+
+<p>そういう訳で、JavaScript の亜種はやらないと思っていましたが（今でも CoffeeScript には手を出すつもりはないけど）、華麗に手のひらを返し TypeScript を学習を始めました。</p>
+
+<p>TypeScript はマイクロソフトが開発しているため VS Code と相性がいいことも TypeScript を始める大きな動機となりました。</p>
+
+<h2 id="今後">今後</h2>
+
+<p>今は昨年作った<a href="https://cieloazul310.github.io/2018/04/stadium-and-population/">国内のサッカースタジアム周辺の人口を求める</a>を React + <a href="https://www.gatsbyjs.org">Gatsby</a> + TypeScript + <a href="https://material-ui.com">Material-UI</a> で再構築しています。<br />
+TypeScript や Gatsby を学びながらの開発になるので時間がかかると思いますが、なんとか完成させたいと思います。</p>
+
+<!-- Music -->
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/x_2FJRhEoNg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<p>晴耕雨読 / OLD DAYS TAILOR (2018)</p>
+
+<p><div class="ad" style="width:100%;">
   
     <small>広告</small>
     
@@ -349,72 +366,7 @@ if (!doNotTrack) {
     
   
 </div>
-
-<h2 id="結果-可視化">結果&amp;可視化</h2>
-
-<p>国内主要スタジアムからの500m圏内、1.0km圏内、1.5km圏内、3.0km圏内、5.0km圏内を算出しました。<br />
-MAP画面で選択したスタジアム周辺の人口地図を表示できます。</p>
-
-
-<div>
-  <iframe frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" height="480" style="width:100%;" src="../../../figure/stadiums_population/" class="iframe-chart" id="435276189">
-    <p>Your Browser do not support iframe.</p>
-  </iframe>
-  <small><a href="../../../figure/stadiums_population/" target="_blank">新しいタブで開く</a></small>
-</div>
-
-<script>
-  var tg = document.getElementById("435276189");
-  tg.setAttribute("height", window.innerHeight - 50);
-</script>
-
-
-<h2 id="表">表</h2>
-
-<p><img src="../../../img/stadiums_population.png" alt="表" title="表" /></p>
-
-<p>CSV形式のものを<a href="https://gist.github.com/cieloazul310/2ec16b8e2b437cfb301dc9319b0dc403">gist</a>に上げています。</p>
-
-<h2 id="あとがき">あとがき</h2>
-
-<p>500m, 1.0km, 1.5km圏は徒歩圏をイメージしています。<br />
-3kmくらい平気で歩くサッカーファンは多いですが、一般的に「徒歩で行く」選択肢になりうるのは1.5km圏が限界かなという感じがします。</p>
-
-<p>3.0km圏は自転車圏をイメージしています。自転車でもっと長い距離を行き来する人も多いですが、一般的に苦に感じることなく自転車で行ける範囲は3kmくらいかなと思います。<br />
-ただし山や川など地形的な制約もあるので、一概に3.0km圏人口を持って自転車圏と言うことはできません。例えば保土ヶ谷から三ツ沢までは3kmほどですが自転車で行くのは大変ですよね。</p>
-
-<p>5.0km圏は特にこれといった意味はないです。参考としてご覧ください。</p>
-
-<p>繰り返しますがこれはただの遊びです。<br />
-この結果を持ってどうのこうの論じるのは見る側に委ねるので、そこのところ宜しくお願いします。</p>
-
-<!-- Music 
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/pYK2fZTYyYE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
--->
-
-<p><div class="ad" style="width:100%;">
-  
-    <small>広告</small>
-    
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-layout="in-article"
-         data-ad-format="fluid"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="6120305662"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
-  
-</div>
-<!-- References -->
-<!-- QGISによるデータ分析(4) 合同会社 緑ＩＴ事務所 2014年8月3日--></p>
+<!-- References --></p>
     </div>
 
     
@@ -426,7 +378,7 @@ MAP画面で選択したスタジアム周辺の人口地図を表示できま�
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2018-04-23</span>
+    <span class="item-content">2019-01-11</span>
   </p>
   
   <p class="copyright-item">
@@ -441,29 +393,18 @@ MAP画面で選択したスタジアム周辺の人口地図を表示できま�
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="https://cieloazul310.github.io/tags/j%E3%83%AA%E3%83%BC%E3%82%B0/">Jリーグ</a>
+          <a href="https://cieloazul310.github.io/tags/typescript/">TypeScript</a>
           
-          <a href="https://cieloazul310.github.io/tags/%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC/">サッカー</a>
-          
-          <a href="https://cieloazul310.github.io/tags/gis/">GIS</a>
-          
-          <a href="https://cieloazul310.github.io/tags/d3.js/">D3.js</a>
-          
-          <a href="https://cieloazul310.github.io/tags/%E4%BA%BA%E5%8F%A3/">人口</a>
+          <a href="https://cieloazul310.github.io/tags/javascript/">JavaScript</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="https://cieloazul310.github.io/2018/07/how-to-generate-mundial-with-gimp/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">GIMPで陸地を生成する</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
         
-          <a class="next" href="https://cieloazul310.github.io/2018/02/mediawiki-api-coodinates/">
-            <span class="next-text nav-default">Wikipedia記事の座標を取得&amp;日本語記事の座標が取得できない問題</span>
+          <a class="next" href="https://cieloazul310.github.io/2018/10/mvt-tile-to-geojson/">
+            <span class="next-text nav-default">バイナリベクトルタイルを地図ライブラリ以外で扱う</span>
             <span class="prev-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

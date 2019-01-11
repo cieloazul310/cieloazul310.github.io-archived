@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>https://cieloazul310.github.io/2019/01/typescript-hajimemashita/</loc>
+    <lastmod>2019-01-11T22:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://cieloazul310.github.io/2018/10/mvt-tile-to-geojson/</loc>
     <lastmod>2018-10-31T21:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -220,14 +227,14 @@
   
   <url>
     <loc>https://cieloazul310.github.io/tags/javascript/</loc>
-    <lastmod>2018-07-22T20:30:00+09:00</lastmod>
+    <lastmod>2019-01-11T22:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://cieloazul310.github.io/categories/javascript/</loc>
-    <lastmod>2018-10-31T21:00:00+09:00</lastmod>
+    <lastmod>2019-01-11T22:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -290,7 +297,7 @@
   
   <url>
     <loc>https://cieloazul310.github.io/post/</loc>
-    <lastmod>2018-10-31T21:00:00+09:00</lastmod>
+    <lastmod>2019-01-11T22:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -354,6 +361,13 @@
   <url>
     <loc>https://cieloazul310.github.io/tags/</loc>
     <lastmod>2017-12-01T01:00:30+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cieloazul310.github.io/tags/typescript/</loc>
+    <lastmod>2019-01-11T22:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

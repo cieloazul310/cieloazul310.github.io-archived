@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Typescript on 水戸地図</title>
+    <link>https://cieloazul310.github.io/tags/typescript/</link>
+    <description>Recent content in Typescript on 水戸地図</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>cieloazul310</copyright>
+    <lastBuildDate>Fri, 11 Jan 2019 22:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://cieloazul310.github.io/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TypeScript はじめました</title>
+      <link>https://cieloazul310.github.io/2019/01/typescript-hajimemashita/</link>
+      <pubDate>Fri, 11 Jan 2019 22:00:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2019/01/typescript-hajimemashita/</guid>
+      <description>&lt;!--
+- 対象: 
+- 目的: TypeScriptを始めたことを宣言する
+--&gt;
+
+&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.typescriptlang.org&#34;&gt;TypeScript&lt;/a&gt; を始めました。TypeScript を始めるに至った過程を紹介します。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
