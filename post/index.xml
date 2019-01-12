@@ -7,10 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Fri, 11 Jan 2019 22:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 12 Jan 2019 23:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TypeScript &#43; React &#43; Material-UI v3 のスタイル付き Components ガイド</title>
+      <link>https://cieloazul310.github.io/2019/01/material-react-typescript-nonation/</link>
+      <pubDate>Sat, 12 Jan 2019 23:00:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2019/01/material-react-typescript-nonation/</guid>
+      <description>&lt;!--
+- 対象: React + TypeScript + Material-UI で書いてる人
+- 目的: React + TypeScript + Material-UI の Component の記法のガイド
+--&gt;
+
+&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;React + &lt;a href=&#34;https://material-ui.com&#34;&gt;Material-UI v3&lt;/a&gt; では &lt;code&gt;withStyles(styles)(Component)&lt;/code&gt; という独自の記法で&lt;strong&gt;スタイル付き Components&lt;/strong&gt; を生成します。&lt;br /&gt;
+TypeScript で Material-UI のスタイル付き Components を記述する場合は、従来の JavaScript での記法とは多少異なるのですが、 TypeScript を使った記法については情報が少ないと思ったので覚え書きとして残しておきます。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>TypeScript はじめました</title>

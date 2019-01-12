@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Typescript on 水戸地図</title>
-    <link>https://cieloazul310.github.io/tags/typescript/</link>
-    <description>Recent content in Typescript on 水戸地図</description>
+    <title>Material Ui on 水戸地図</title>
+    <link>https://cieloazul310.github.io/tags/material-ui/</link>
+    <description>Recent content in Material Ui on 水戸地図</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
     <lastBuildDate>Sat, 12 Jan 2019 23:00:00 +0900</lastBuildDate>
     
-	<atom:link href="https://cieloazul310.github.io/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cieloazul310.github.io/tags/material-ui/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -27,22 +27,6 @@
 
 &lt;p&gt;React + &lt;a href=&#34;https://material-ui.com&#34;&gt;Material-UI v3&lt;/a&gt; では &lt;code&gt;withStyles(styles)(Component)&lt;/code&gt; という独自の記法で&lt;strong&gt;スタイル付き Components&lt;/strong&gt; を生成します。&lt;br /&gt;
 TypeScript で Material-UI のスタイル付き Components を記述する場合は、従来の JavaScript での記法とは多少異なるのですが、 TypeScript を使った記法については情報が少ないと思ったので覚え書きとして残しておきます。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>TypeScript はじめました</title>
-      <link>https://cieloazul310.github.io/2019/01/typescript-hajimemashita/</link>
-      <pubDate>Fri, 11 Jan 2019 22:00:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2019/01/typescript-hajimemashita/</guid>
-      <description>&lt;!--
-- 対象: 
-- 目的: TypeScriptを始めたことを宣言する
---&gt;
-
-&lt;!-- Lead Paragraph --&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.typescriptlang.org&#34;&gt;TypeScript&lt;/a&gt; を始めました。TypeScript を始めるに至った過程を紹介します。&lt;/p&gt;</description>
     </item>
     
   </channel>
