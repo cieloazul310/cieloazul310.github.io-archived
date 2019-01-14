@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="ja" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>TypeScript &#43; React &#43; Material-UI v3 のスタイル付き Components ガイド - 水戸地図</title>
+  <link rel="alternate" hreflang="ja" href="https://cieloazul310.github.io" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="cieloazul310" /><meta name="description" content="TypeScript &#43; React &#43; Material-UI でスタイル付き Components を生成するガイド" />
+<meta name="keywords" content="TypeScript, React, Material-UI, JavaScript" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.53" />
+
+
+<link rel="canonical" href="https://cieloazul310.github.io/2019/01/material-react-typescript-notation/" />
+
+
+
+<link rel="icon" href="https://cieloazul310.github.io/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="https://cieloazul310.github.io/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="TypeScript &#43; React &#43; Material-UI v3 のスタイル付き Components ガイド" />
+<meta property="og:description" content="TypeScript &#43; React &#43; Material-UI でスタイル付き Components を生成するガイド" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cieloazul310.github.io/2019/01/material-react-typescript-notation/" /><meta property="article:published_time" content="2019-01-12T23:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2019-01-12T23:00:00&#43;09:00"/>
+
+<meta itemprop="name" content="TypeScript &#43; React &#43; Material-UI v3 のスタイル付き Components ガイド">
+<meta itemprop="description" content="TypeScript &#43; React &#43; Material-UI でスタイル付き Components を生成するガイド">
+
+
+<meta itemprop="datePublished" content="2019-01-12T23:00:00&#43;09:00" />
+<meta itemprop="dateModified" content="2019-01-12T23:00:00&#43;09:00" />
+<meta itemprop="wordCount" content="3115">
+
+
+
+<meta itemprop="keywords" content="TypeScript,React,Material-UI,JavaScript," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+
+<meta name="twitter:title" content="TypeScript &#43; React &#43; Material-UI v3 のスタイル付き Components ガイド"/>
+<meta name="twitter:description" content="TypeScript &#43; React &#43; Material-UI でスタイル付き Components を生成するガイド"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-74683419-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/categories/">
+          Categories
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/about/">
+          About
+        </a>
+      </li>
+  </ul>
+</nav>
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="https://cieloazul310.github.io/" class="logo">
+    
+      水戸地図
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/about/">About</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">TypeScript &#43; React &#43; Material-UI v3 のスタイル付き Components ガイド</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2019-01-12 </span>
+        <div class="post-category">
+            
+              <a href="https://cieloazul310.github.io/categories/javascript/"> JavaScript </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      <!--
+- 対象: React + TypeScript + Material-UI で書いてる人
+- 目的: React + TypeScript + Material-UI の Component の記法のガイド
+-->
+
+<!-- Lead Paragraph -->
+
+<p>React + <a href="https://material-ui.com">Material-UI v3</a> では <code>withStyles(styles)(Component)</code> という独自の記法で<strong>スタイル付き Components</strong> を生成します。<br />
+TypeScript で Material-UI のスタイル付き Components を記述する場合は、従来の JavaScript での記法とは多少異なるのですが、 TypeScript を使った記法については情報が少ないと思ったので覚え書きとして残しておきます。</p>
+
+<h2 id="環境">環境</h2>
+
+<p><code>create-react-app</code> で作成したディレクトリを前提にしています。<br />
+<code>tsconfig.json</code> や <code>tslint.json</code> の設定はここでは省きます。</p>
+
+<p>参考: <a href="https://github.com/Microsoft/TypeScript-React-Starter#typescript-react-starter">TypeScript React Starter</a></p>
+
+<h3 id="typescript-react-app-の作成">TypeScript React App の作成</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Shell" data-lang="Shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Shell" data-lang="Shell">$ create-react-app my-ts-app --scripts-version<span class="o">=</span>react-scripts-ts
+$ <span class="nb">cd</span> my-ts-app
+$ yarn add @material-ui/core @material-ui/icons</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="バージョン">バージョン</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">- @material-ui/core @3.8.3
+- react @16.7.0
+- react-dom @16.7.0
+- react-scripts-ts @3.1.0</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="ディレクトリ構成">ディレクトリ構成</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">.── src
+    └── index.tsx (entry point)
+    └── App.tsx
+    └── components
+    │   └── FirstComponent.tsx
+    │   └── SecondComponent.tsx
+    │   └── ThirdComponent.tsx
+    └── utils
+        └── withRoot.tsx</code></pre></td></tr></table>
+</div>
+</div>
+<p>以上のようなディレクトリ構成を想定しています。<br />
+ここからは <code>./src/components/</code> 内にファイルを作成していきます。</p>
+
+<h2 id="従来の-javascript-material-ui-の記法">従来の JavaScript + Material-UI の記法</h2>
+
+<p>まず従来の JavaScript + Material-UI でスタイル付き Components を作成する方法を見ておきましょう。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="k">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">withStyles</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/withStyles&#39;</span><span class="p">;</span>
+
+<span class="c1">// styles を定義
+</span><span class="c1">// theme を使わない場合は関数ではなく object でもよい
+</span><span class="c1"></span><span class="k">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="nx">theme</span> <span class="p">=&gt;</span> <span class="p">({</span>
+  <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">textAlign</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span>
+  <span class="p">},</span>
+  <span class="nx">paragraph</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">fontFamily</span><span class="o">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span>
+    <span class="nx">padding</span><span class="o">:</span> <span class="nx">theme</span><span class="p">.</span><span class="nx">spacing</span><span class="p">.</span><span class="nx">unit</span> <span class="o">*</span> <span class="mi">2</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Component を作成
+</span><span class="c1"></span><span class="k">const</span> <span class="nx">FirstComponent</span> <span class="o">=</span> <span class="nx">props</span> <span class="p">=&gt;</span> <span class="p">(</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">{props.classes.root}</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">className</span><span class="o">=</span><span class="s">{props.classes.paragraph}</span><span class="p">&gt;</span>
+      <span class="p">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">title</span> <span class="o">||</span> <span class="s1">&#39;My First TS Component&#39;</span> <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">);</span>
+
+<span class="c1">// withStyles(styles)(Component) で export
+</span><span class="c1"></span><span class="k">export</span> <span class="k">default</span> <span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)(</span><span class="nx">FirstComponent</span><span class="p">);</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Material-UI v3 では、上記のように <code>withStyles(styles)(Component)</code> でスタイリングされた Component を作成することを推奨しています。<br />
+<a href="https://material-ui.com/style/typography/#component">https://material-ui.com/style/typography/#component</a></p>
+
+<h2 id="typescript-の場合-stateless-components-編">TypeScript の場合 (Stateless Components 編)</h2>
+
+<p>TypeScript で Material-UI のスタイル付き Components を作成する場合です。<br />
+基本的には<a href="https://material-ui.com/guides/typescript/#typescript">Material-UI の TypeScript ガイド</a>に則っています。</p>
+
+<p>まず State を持たない Stateless Components の作成を、</p>
+
+<ol>
+<li>Function Components (props あり)</li>
+<li>Function Components (props なし)</li>
+<li>React Component Class</li>
+</ol>
+
+<p>の3通りのパターンで書きます。型をかっちりと書きたい人向けの書き方なので、煩雑に感じたら JavaScript 的な書き方をしてもいいと思います。</p>
+
+<p>TypeScript における Components の書き方は <a href="https://github.com/piotrwitek/react-redux-typescript-guide">React &amp; Redux in TypeScript - Static Typing Guide</a> を参考にしています。</p>
+
+<h3 id="共通するコード">共通するコード</h3>
+
+<p>ここから先のコードで共通するのは以下の型定義と関数のインポートです。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-TypeScript" data-lang="TypeScript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-TypeScript" data-lang="TypeScript"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Theme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/createMuiTheme&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">withStyles</span><span class="p">,</span> <span class="p">{</span> <span class="nx">WithStyles</span><span class="p">,</span> <span class="nx">StyleRules</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/withStyles&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">createStyles</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/createStyles&#39;</span><span class="p">;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>@material-ui/core/styles/createMuiTheme</code> から <code>Theme</code>という型定義を、<br />
+<code>@material-ui/core/styles/withStyles</code> から <code>WithStyles</code> と <code>StyleRules</code>という型定義を、<br />
+<code>@material-ui/core/styles/createStyles</code> という関数を <code>createStyles</code> としてインポートします。</p>
+
+<h3 id="1-function-components-props-あり">1. Function Components (props あり)</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Theme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/createMuiTheme&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">withStyles</span><span class="p">,</span> <span class="p">{</span> <span class="nx">WithStyles</span><span class="p">,</span> <span class="nx">StyleRules</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/withStyles&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">createStyles</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/createStyles&#39;</span><span class="p">;</span>
+
+<span class="c1">// TypeScript で書く場合の styles 定義方法
+</span><span class="c1">// theme を使わない場合は、 styles = createStyles(object) でもよい
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=&gt;</span> <span class="nx">createStyles</span><span class="p">({</span>
+  <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">textAlign</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span>
+  <span class="p">},</span>
+  <span class="nx">paragraph</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">fontFamily</span><span class="o">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span>
+    <span class="nx">padding</span>: <span class="kt">theme.spacing.unit</span> <span class="o">*</span> <span class="mi">2</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Component の Props を WithStyles&lt;typeof styles&gt; で拡張
+</span><span class="c1"></span><span class="kr">interface</span> <span class="nx">Props</span> <span class="kr">extends</span> <span class="nx">WithStyles</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">styles</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">title?</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Component を定義
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">FirstComponent</span>: <span class="kt">React.FunctionComponent</span><span class="o">&lt;</span><span class="nx">Props</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span>: <span class="kt">Props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">}</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">classes</span><span class="p">.</span><span class="nx">paragraph</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="p">{</span> <span class="nx">props</span><span class="p">.</span><span class="nx">title</span> <span class="o">||</span> <span class="s1">&#39;My First TS Component&#39;</span> <span class="p">}</span>
+    <span class="o">&lt;</span><span class="err">/p&gt;</span>
+  <span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="p">);</span>
+
+<span class="c1">// withStyles(styles)(Component) で スタイリングした Component を export
+</span><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)(</span><span class="nx">FirstComponent</span><span class="p">);</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Function Components を TypeScript で書く場合 <code>React.SFC</code>を使う解説が多いのですが、<code>React.SFC</code>は廃止予定となっているので <code>React.FunctionComponent</code> を使いました。</p>
+
+<h4 id="javascript-のコードとの違い">JavaScript のコードとの違い</h4>
+
+<h5 id="1-styles-の定義に-createstyles-という関数を使う-重要">1. styles の定義に <code>createStyles</code> という関数を使う (重要)</h5>
+
+<p>styles で返すオブジェクトに <code>createStyles</code> という関数を適用します。<br />
+Components のスタイリングに theme を使う場合は、</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span><span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=&gt;</span> <span class="nx">createStyles</span><span class="p">({</span>
+  <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">fontSize</span>: <span class="kt">18</span>
+  <span class="p">},</span>
+  <span class="nx">header</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">backgroundColor</span>: <span class="kt">theme.palette.primary.main</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>theme を使わない場合は、</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-TypeScript" data-lang="TypeScript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-TypeScript" data-lang="TypeScript"><span class="kr">const</span> <span class="nx">styles</span>: <span class="kt">StyleRules</span> <span class="o">=</span> <span class="nx">createStyles</span><span class="p">({</span>
+  <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">fontSize</span>: <span class="kt">18</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>という書き方をします。<br />
+<code>createStyles</code> 関数を使うことで型拡大を防ぐことができるようです。</p>
+
+<p>参考: <a href="https://material-ui.com/guides/typescript/#using-createstyles-to-defeat-type-widening">Using createStyles to defeat type widening</a></p>
+
+<h5 id="2-styles-の関数の引数-theme-に型定義-theme-を与える">2. styles の関数の引数 theme に型定義 <code>Theme</code> を与える</h5>
+
+<p>引数 theme に型定義 <code>Theme</code> を与えることで、エディタの補助機能が効くようになり、theme を使ったスタイリングが楽になります。
+theme について詳しくは<a href="https://material-ui.com/customization/themes/">公式ドキュメント</a>をお読みください。</p>
+
+<h5 id="3-型定義-props-を-withstyles-typeof-styles-で拡張する">3. 型定義 <code>Props</code> を <code>WithStyles&lt;typeof styles&gt;</code> で拡張する</h5>
+
+<p>props の型定義 <code>Props</code> を <code>WithStyles&lt;typeof styles&gt;</code> で拡張します。<br />
+<code>interface Props extends WithStyles&lt;typeof styles&gt;</code> は以下の型定義 <code>Props</code> と同等のものになります。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span><span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=&gt;</span> <span class="nx">createStyles</span><span class="p">({</span>
+  <span class="nx">root</span><span class="o">:</span> <span class="p">{},</span>
+  <span class="nx">header</span><span class="o">:</span> <span class="p">{},</span>
+  <span class="nx">paragraph</span><span class="o">:</span> <span class="p">{},</span>
+  <span class="nx">footer</span><span class="o">:</span> <span class="p">{}</span>
+<span class="p">});</span>
+
+<span class="c1">// Props extends WithStyles&lt;typeof styles&gt; は下と等しくなる
+</span><span class="c1"></span><span class="kr">interface</span> <span class="nx">Props</span> <span class="p">{</span>
+  <span class="nx">title?</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">classes</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">root</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">header</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">paragraph</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">footer</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="p">};</span> 
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>WithStyles&lt;typeof styles&gt;</code>を用いることで、上の例のように styles に定義した <code>classes</code> の <code>Key</code> をいちいち書く必要がなくなります。</p>
+
+<h3 id="2-function-components-props-なし">2. Function Components (props なし)</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Theme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/createMuiTheme&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">withStyles</span><span class="p">,</span> <span class="p">{</span> <span class="nx">WithStyles</span><span class="p">,</span> <span class="nx">StyleRules</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/withStyles&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">createStyles</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/createStyles&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=&gt;</span> <span class="nx">createStyles</span><span class="p">({</span>
+  <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">textAlign</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span>
+  <span class="p">},</span>
+  <span class="nx">paragraph</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">fontFamily</span><span class="o">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span>
+    <span class="nx">padding</span>: <span class="kt">theme.spacing.unit</span> <span class="o">*</span> <span class="mi">2</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="kr">const</span> <span class="nx">FirstComponent</span>: <span class="kt">React.FunctionComponent</span><span class="o">&lt;</span><span class="nx">WithStyles</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">styles</span><span class="o">&gt;&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span>: <span class="kt">WithStyles</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">styles</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">}</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">classes</span><span class="p">.</span><span class="nx">paragraph</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="nx">My</span> <span class="nx">First</span> <span class="nx">TS</span> <span class="nx">Component</span>
+    <span class="o">&lt;</span><span class="err">/p&gt;</span>
+  <span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="p">);</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)(</span><span class="nx">FirstComponent</span><span class="p">);</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>本来、型定義 <code>Props</code> を置くところに <code>WithStyles&lt;typeof styles&gt;</code> と置きます。<br />
+従来の props なしの Components では <code>React.FunctionComponent&lt;{}&gt;</code> と書けばいいのですが、<code>withStyles</code> を使ってスタイリングを行なう場合、 Props は <code>props.classes</code> というプロパティを持つことになります。<br />
+そのため、型定義は <code>Props</code> の代わりに <code>WithStyles&lt;typeof styles&gt;</code> を置かなければなりません。</p>
+
+<p>この記法が煩雑に感じるなら、以下のような方法もあります。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="kr">interface</span> <span class="nx">Props</span> <span class="kr">extends</span> <span class="nx">WithStyles</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">styles</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="c1">// empty
+</span><span class="c1"></span><span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>あるいは、</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="nx">type</span> <span class="nx">Props</span> <span class="o">=</span> <span class="nx">WithStyles</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">styles</span><span class="o">&gt;</span><span class="p">;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>と書いた上で、 <code>React.FunctionComponent&lt;Props&gt;</code> としても良いです。</p>
+
+<h3 id="3-react-component-class">3. React Component Class</h3>
+
+<p>class を使って State を持たない Stateless Components を作る場合</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Theme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/createMuiTheme&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">withStyles</span><span class="p">,</span> <span class="p">{</span> <span class="nx">WithStyles</span><span class="p">,</span> <span class="nx">StyleRules</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/withStyles&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">createStyles</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/createStyles&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=&gt;</span> <span class="nx">createStyles</span><span class="p">({</span>
+  <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">textAlign</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span>
+  <span class="p">},</span>
+  <span class="nx">paragraph</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">fontFamily</span><span class="o">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span>
+    <span class="nx">padding</span>: <span class="kt">theme.spacing.unit</span> <span class="o">*</span> <span class="mi">2</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="kr">interface</span> <span class="nx">Props</span> <span class="nx">WithStyles</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">styles</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">title?</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Component を定義: React.PureComponent&lt;Props&gt; で拡張する
+</span><span class="c1"></span><span class="kr">class</span> <span class="nx">SecondComponent</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PureComponent</span><span class="o">&lt;</span><span class="nx">Props</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="kr">public</span> <span class="nx">render() {</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">classes</span><span class="p">,</span> <span class="nx">title</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">paragraph</span><span class="p">}</span><span class="o">&gt;</span>
+          <span class="p">{</span><span class="nx">title</span> <span class="o">||</span> <span class="s2">&#34;My Second TS Component&#34;</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="err">/p&gt;</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)(</span><span class="nx">SecondComponent</span><span class="p">);</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>State を持たない Stateless Components の作成で React Component Class を使うことは少ないと思いますが、参考までに載せておきます。<br />
+Stateless Components の場合、<code>React.Component</code> ではなく <code>React.PureComponent</code> を使った方が良いみたいです。</p>
+
+<div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="6120305662"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+
+<h2 id="typescript-で-stateful-components-を作成する">TypeScript で Stateful Components を作成する</h2>
+
+<p>State を持つ Components の場合も特に変わりません。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">&#34;react&#34;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Button</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/Button&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Theme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;@material-ui/core/styles/createMuiTheme&#34;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">withStyles</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">WithStyles</span><span class="p">,</span>
+  <span class="nx">StyleRules</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;@material-ui/core/styles/withStyles&#34;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">createStyles</span> <span class="nx">from</span> <span class="s2">&#34;@material-ui/core/styles/createStyles&#34;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span><span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=&gt;</span>
+  <span class="nx">createStyles</span><span class="p">({</span>
+    <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">textAlign</span><span class="o">:</span> <span class="s2">&#34;center&#34;</span>
+    <span class="p">},</span>
+    <span class="nx">header</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">backgroundColor</span>: <span class="kt">theme.palette.primary.main</span><span class="p">,</span>
+      <span class="nx">boxShadow</span>: <span class="kt">theme.shadows</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+      <span class="nx">padding</span>: <span class="kt">theme.spacing.unit</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="nx">counter</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">fontSize</span>: <span class="kt">60</span>
+    <span class="p">},</span>
+  <span class="p">});</span>
+
+<span class="kr">interface</span> <span class="nx">Props</span> <span class="kr">extends</span> <span class="nx">WithStyles</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">styles</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">title?</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">State</span> <span class="p">{</span>
+  <span class="nx">readonly</span> <span class="nx">counter</span>: <span class="kt">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">class</span> <span class="nx">ThirdComponent</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="o">&lt;</span><span class="nx">Props</span><span class="p">,</span> <span class="nx">State</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">readonly</span> <span class="nx">state</span>: <span class="kt">State</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">counter</span>: <span class="kt">0</span>
+  <span class="p">};</span>
+
+  <span class="kr">private</span> <span class="nx">_onIncrement</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">(</span><span class="nx">prevState</span> <span class="o">=&gt;</span> <span class="p">({</span>
+      <span class="nx">counter</span>: <span class="kt">prevState.counter</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="p">}));</span>
+  <span class="p">};</span>
+
+  <span class="kr">public</span> <span class="nx">render() {</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">classes</span><span class="p">,</span> <span class="nx">title</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">counter</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">header</span><span class="p">}</span><span class="o">&gt;</span>
+          <span class="p">{</span><span class="nx">title</span> <span class="o">||</span> <span class="s2">&#34;My Third TS Component&#34;</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">counter</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">counter</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/span&gt;</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">Button</span> <span class="nx">variant</span><span class="o">=</span><span class="s2">&#34;contained&#34;</span> <span class="nx">color</span><span class="o">=</span><span class="s2">&#34;primary&#34;</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_onIncrement</span><span class="p">}</span><span class="o">&gt;</span>
+            <span class="nx">Increment</span>
+          <span class="o">&lt;</span><span class="err">/Button&gt;</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)(</span><span class="nx">ThirdComponent</span><span class="p">);</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>readonly</code>, <code>private</code>, <code>public</code> といった修飾子は任意でつけてください。<br />
+<code>constructor</code> を書かない記法、メソッドではなくアロー関数でイベントハンドラを記述する記法は、先述の <a href="https://github.com/piotrwitek/react-redux-typescript-guide#stateful-components---class">React &amp; Redux in TypeScript - Static Typing Guide</a> に則っています。</p>
+
+<h2 id="app-に-muitheme-を適用する">App に MuiTheme を適用する</h2>
+
+<p>ここまでは Material-UI + TypeScript におけるスタイル付き Components の作成方法を見てきました。 TypeScript 特有の記法の説明はここまでになります。</p>
+
+<p>ここからは、App 全体に Material-UI の Themes (<a href="https://material-ui.com/customization/themes/">MuiTheme</a>) を適用する方法を見ていきます。 Material-UI v3 では App の最上位に位置する Component に <code>withRoot</code> 関数を適用することで、App 全体の Components に MuiTheme のスタイルを適用します。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">.── src
+    └── index.tsx (entry point)
+    └── App.tsx
+    └── components
+    │   └── FirstComponent.tsx
+    │   └── SecondComponent.tsx
+    │   └── ThirdComponent.tsx
+    └── utils
+        └── withRoot.tsx</code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="src-utils-withroot-tsx">./src/utils/withRoot.tsx</h4>
+
+<p><code>./src/utils</code> ディレクトリに <code>withRoot.tsx</code> を作成します。<br />
+<code>withRoot</code> 関数は、App 内の最上位の Component に一度だけ適用します。この関数を適用した Component 傘下のすべての Components に MuiTheme を供給します。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MuiThemeProvider</span><span class="p">,</span> <span class="nx">createMuiTheme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles&#39;</span><span class="p">;</span>
+<span class="c1">// 任意の Theme Colors
+</span><span class="c1"></span><span class="kr">import</span> <span class="nx">lightblue</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/colors/lightBlue&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">blueGrey</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/colors/blueGrey&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">CssBaseline</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/CssBaseline&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">createMuiTheme</span><span class="p">({</span>
+  <span class="c1">// Theme Colors
+</span><span class="c1"></span>  <span class="nx">palette</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">primary</span>: <span class="kt">lightblue</span><span class="p">,</span>
+    <span class="nx">secondary</span>: <span class="kt">blueGrey</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="c1">// typography
+</span><span class="c1"></span>  <span class="nx">typography</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">useNextVariants</span>: <span class="kt">true</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="kd">function</span> <span class="nx">withRoot</span><span class="o">&lt;</span><span class="nx">P</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">Component</span>: <span class="kt">React.ComponentType</span><span class="o">&lt;</span><span class="nx">P</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">function</span> <span class="nx">WithRoot</span><span class="p">(</span><span class="nx">props</span>: <span class="kt">P</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">MuiThemeProvider</span> <span class="nx">theme</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">CssBaseline</span> <span class="err">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Component</span> <span class="p">{...</span><span class="nx">props</span><span class="p">}</span> <span class="err">/&gt;</span>
+      <span class="o">&lt;</span><span class="err">/MuiThemeProvider&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">WithRoot</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">withRoot</span><span class="p">;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>theme で App 全体の色設定や Material-UI Components のスタイルを定義することができます。<br />
+Themes の記述方法は<a href="https://material-ui.com/customization/themes/">公式ドキュメント</a>を参照ください。</p>
+
+<h4 id="src-app-tsx">./src/App.tsx</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">&#34;react&#34;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Theme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;@material-ui/core/styles/createMuiTheme&#34;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">withStyles</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">WithStyles</span><span class="p">,</span>
+  <span class="nx">StyleRules</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;@material-ui/core/styles/withStyles&#34;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">createStyles</span> <span class="nx">from</span> <span class="s2">&#34;@material-ui/core/styles/createStyles&#34;</span><span class="p">;</span>
+
+<span class="c1">// Components
+</span><span class="c1"></span><span class="kr">import</span> <span class="nx">ThirdComponent</span> <span class="nx">from</span> <span class="s1">&#39;./components/ThirdComponent&#39;</span><span class="p">;</span>
+<span class="c1">// withRoot を import
+</span><span class="c1"></span><span class="kr">import</span> <span class="nx">withRoot</span> <span class="nx">from</span> <span class="s1">&#39;./utils/withRoot&#39;</span><span class="p">;</span>
+
+<span class="c1">// styles を定義
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span><span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=&gt;</span> <span class="nx">createStyles</span><span class="p">({</span>
+  <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
+    
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// 型定義 Props を定義
+</span><span class="c1"></span><span class="nx">type</span> <span class="nx">Props</span> <span class="o">=</span> <span class="nx">WithStyles</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">styles</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="c1">// App Component を定義
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">App</span>: <span class="kt">React.FunctionComponent</span><span class="o">&lt;</span><span class="nx">Props</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span>: <span class="kt">Props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">}</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">ThirdComponent</span> <span class="nx">title</span><span class="o">=</span><span class="s2">&#34;React TypeScript Material-UI Example&#34;</span> <span class="err">/&gt;</span>
+  <span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="p">);</span>
+
+<span class="c1">// withRoot で export
+</span><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="nx">withRoot</span><span class="p">(</span><span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)(</span><span class="nx">App</span><span class="p">));</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>この例では <code>App.tsx</code> が最上位に来るので、<code>withRoot</code> 関数をスタイル付き Component である <code>withStyles(styles)(App)</code> に適用して export しています。これで App 傘下のすべての Components に MuiTheme が適用されます。</p>
+
+<h4 id="src-index-tsx-エントリーポイント">./src/index.tsx (エントリーポイント)</h4>
+
+<p>エントリーポイントである <code>./src/index.tsx</code> は普通の React App と同じ書き方です。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">ReactDOM</span> <span class="nx">from</span> <span class="s1">&#39;react-dom&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="nx">App</span> <span class="nx">from</span> <span class="s1">&#39;./App&#39;</span><span class="p">;</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">App</span> <span class="err">/&gt;,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)</span> <span class="kr">as</span> <span class="nx">HTMLElement</span>
+<span class="p">);</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>TypeScript で Material-UI v3 を扱った情報は少なかったのでまとめてみました。</p>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="https://material-ui.com/guides/typescript/#typescript">Material-UI TypeScript Guide</a> / Material-UI</li>
+<li><a href="https://github.com/mui-org/material-ui/tree/master/examples/create-react-app-with-typescript">Create React App example with TypeScript</a> / GitHub</li>
+<li><a href="https://github.com/piotrwitek/react-redux-typescript-guide">React &amp; Redux in TypeScript - Static Typing Guide</a> / GitHub</li>
+</ul>
+
+<!-- Music -->
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/6p-lDYPR2P8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<p>Material Girl / Madonna (1984)</p>
+
+<p><div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      
+      <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="5892967151"
+         data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+<!-- References --></p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">cieloazul310</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2019-01-12</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="https://cieloazul310.github.io/tags/typescript/">TypeScript</a>
+          
+          <a href="https://cieloazul310.github.io/tags/react/">React</a>
+          
+          <a href="https://cieloazul310.github.io/tags/material-ui/">Material-UI</a>
+          
+          <a href="https://cieloazul310.github.io/tags/javascript/">JavaScript</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="https://cieloazul310.github.io/2019/01/typescript-hajimemashita/">
+            <span class="next-text nav-default">TypeScript はじめました</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'cieloazul310';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="//twitter.com/cieloazul310" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="//github.com/cieloazul310" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://cieloazul310.github.io/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">cieloazul310</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="https://cieloazul310.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="https://cieloazul310.github.io/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="https://cieloazul310.github.io/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>
