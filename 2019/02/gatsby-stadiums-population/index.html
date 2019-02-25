@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>WikiLayersで使っているパッケージやライブラリ - 水戸地図</title>
+  <title>国内のサッカースタジアム・アリーナ周辺の人口を調べる - 水戸地図</title>
   <link rel="alternate" hreflang="ja" href="https://cieloazul310.github.io" />
 
 <meta name="renderer" content="webkit" />
@@ -24,8 +24,8 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="cieloazul310" /><meta name="description" content="WikiLayersで使っているパッケージやライブラリの紹介です。" />
-<meta name="keywords" content="React, Redux, WikiLayers" />
+<meta name="author" content="cieloazul310" /><meta name="description" content="国内のサッカースタジアム・アリーナ周辺の人口を調べ、地図に表示するページを作成しました。" />
+<meta name="keywords" content="人口, GIS, JavaScript, TypeScript, Jリーグ, Bリーグ" />
 
 
 
@@ -36,7 +36,7 @@
 <meta name="generator" content="Hugo 0.54.0" />
 
 
-<link rel="canonical" href="https://cieloazul310.github.io/2018/02/wikilayers-note/" />
+<link rel="canonical" href="https://cieloazul310.github.io/2019/02/gatsby-stadiums-population/" />
 
 
 
@@ -56,31 +56,31 @@
 
 
 
-<meta property="og:title" content="WikiLayersで使っているパッケージやライブラリ" />
-<meta property="og:description" content="WikiLayersで使っているパッケージやライブラリの紹介です。" />
+<meta property="og:title" content="国内のサッカースタジアム・アリーナ周辺の人口を調べる" />
+<meta property="og:description" content="国内のサッカースタジアム・アリーナ周辺の人口を調べ、地図に表示するページを作成しました。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cieloazul310.github.io/2018/02/wikilayers-note/" />
+<meta property="og:url" content="https://cieloazul310.github.io/2019/02/gatsby-stadiums-population/" />
 
 <meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png" />
-<meta property="article:published_time" content="2018-02-06T21:00:00&#43;09:00"/>
-<meta property="article:modified_time" content="2018-02-06T21:00:00&#43;09:00"/>
+<meta property="article:published_time" content="2019-02-25T23:30:00&#43;09:00"/>
+<meta property="article:modified_time" content="2019-02-25T23:30:00&#43;09:00"/>
 
-<meta itemprop="name" content="WikiLayersで使っているパッケージやライブラリ">
-<meta itemprop="description" content="WikiLayersで使っているパッケージやライブラリの紹介です。">
-
-
-<meta itemprop="datePublished" content="2018-02-06T21:00:00&#43;09:00" />
-<meta itemprop="dateModified" content="2018-02-06T21:00:00&#43;09:00" />
-<meta itemprop="wordCount" content="1250">
+<meta itemprop="name" content="国内のサッカースタジアム・アリーナ周辺の人口を調べる">
+<meta itemprop="description" content="国内のサッカースタジアム・アリーナ周辺の人口を調べ、地図に表示するページを作成しました。">
 
 
+<meta itemprop="datePublished" content="2019-02-25T23:30:00&#43;09:00" />
+<meta itemprop="dateModified" content="2019-02-25T23:30:00&#43;09:00" />
+<meta itemprop="wordCount" content="1539">
 
-<meta itemprop="keywords" content="React,Redux,WikiLayers,JavaScript," />
+
+
+<meta itemprop="keywords" content="人口,GIS,JavaScript,TypeScript,Jリーグ,Bリーグ," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
-<meta name="twitter:title" content="WikiLayersで使っているパッケージやライブラリ"/>
-<meta name="twitter:description" content="WikiLayersで使っているパッケージやライブラリの紹介です。"/>
+<meta name="twitter:title" content="国内のサッカースタジアム・アリーナ周辺の人口を調べる"/>
+<meta name="twitter:description" content="国内のサッカースタジアム・アリーナ周辺の人口を調べ、地図に表示するページを作成しました。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -281,13 +281,13 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">WikiLayersで使っているパッケージやライブラリ</h1>
+      <h1 class="post-title">国内のサッカースタジアム・アリーナ周辺の人口を調べる</h1>
       
       <div class="post-meta">
-        <span class="post-time"> 2018-02-06 </span>
+        <span class="post-time"> 2019-02-25 </span>
         <div class="post-category">
             
-              <a href="https://cieloazul310.github.io/categories/javascript/"> JavaScript </a>
+              <a href="https://cieloazul310.github.io/categories/works/"> Works </a>
             
           </div>
         
@@ -299,86 +299,52 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <!-- Lead Paragraph -->
+      <!--
+- 対象: 
+- 目的: リリース文と技術的な話の概要
+-->
 
-<p><a href="https://cieloazul310.github.io/wikilayers">WikiLayers</a>で使っているパッケージやライブラリを自分のために覚書しておきます。</p>
+<!-- Lead Paragraph -->
 
-<h2 id="create-react-app-small-v1-4-3-small">create-react-app <small>v1.4.3</small></h2>
+<p>昨年<a href="https://cieloazul310.github.io/2018/04/stadium-and-population/">国内のサッカースタジアム周辺の人口を求める</a>という記事を書きました。<br />
+前回の記事で算出結果の表示のために作ったページを新たに作り直し、ついでに前回算出しなかった半径 10km 圏内の人口と Bリーグのアリーナを加えました。</p>
 
-<p><em>Create React apps with no build configuration.</em></p>
+<h2 id="概要">概要</h2>
 
-<p><a href="https://github.com/facebook/create-react-app">https://github.com/facebook/create-react-app</a></p>
+<p>スタジアム・アリーナと人口<br />
+URL: <a href="https://cieloazul310.github.io/gatsby-stadiums-population/">https://cieloazul310.github.io/gatsby-stadiums-population/</a></p>
 
-<p>手っ取り早くReactを試してみるのに最適なボイラープレートです。</p>
+<ul>
+<li><strong>スタジアム</strong>: 149ヶ所 (J1, J2, J3, JFLのホームスタジアム, 地域リーグの一部、その他)</li>
+<li><strong>アリーナ</strong>: 52ヶ所 (B1, B2, B3のホームアリーナ, 地域リーグの一部)</li>
+<li><strong>距離</strong>: 1000m, 3000m, 5000m, 10000m</li>
+</ul>
 
-<h2 id="react-small-v16-2-0-small">React <small>v16.2.0</small></h2>
+<p>以前公開した同様の機能のページ<br />
+URL: <a href="https://cieloazul310.github.io/figure/stadiums_population/">https://cieloazul310.github.io/figure/stadiums_population/</a></p>
 
-<p><em>A JavaScript library for building user interfaces.</em></p>
+<ul>
+<li><strong>スタジアム</strong>: 102ヶ所 (J1, J2, J3, JFLのホームスタジアム, 地域リーグの一部、その他)</li>
+<li><strong>距離</strong>: 500m, 1000m, 1500m, 3000m, 5000m</li>
+</ul>
 
-<p><a href="https://reactjs.org/">https://reactjs.org/</a></p>
+<h2 id="主な変更点">主な変更点</h2>
 
-<p>UIを構築するためのJavaScriptライブラリです。</p>
+<ul>
+<li><a href="https://cieloazul310.github.io/gatsby-stadiums-population/arenas">Bリーグのページを作った</a></li>
+<li>サッカースタジアムを50ヶ所くらい増やした</li>
+<li>表を作り直した</li>
+<li>表でカテゴリー毎にフィルタできるようにした</li>
+<li>新たに 10km 圏の人口を算出した</li>
+<li>8方位毎の人口を算出した</li>
+<li><a href="https://cieloazul310.github.io/gatsby-stadiums-population/venues/kobuki/">地図を作り直した</a></li>
+<li>地図をズームできるようにした</li>
+<li>地形モードを搭載した</li>
+<li>静的なサイトにした</li>
+</ul>
 
-<h2 id="redux-small-v3-7-2-small">Redux <small>v3.7.2</small></h2>
-
-<p><em>Redux is a predictable state container for JavaScript apps.</em></p>
-
-<p><a href="https://redux.js.org/">https://redux.js.org/</a></p>
-
-<p>JavaScriptアプリのState(状態)を管理するライブラリです。</p>
-
-<h2 id="react-redux-small-v5-0-6-small">React-Redux <small>v5.0.6</small></h2>
-
-<p><em>Official React bindings for Redux.</em><br />
-<em>Performant and flexible.</em></p>
-
-<p><a href="https://github.com/reactjs/react-redux">https://github.com/reactjs/react-redux</a></p>
-
-<p>ReduxをReactと組み合わせてくれるパッケージです。</p>
-
-<h2 id="material-ui-small-v0-20-0-small">Material-UI <small>v0.20.0</small></h2>
-
-<p><em>React components that implement Google&rsquo;s Material Design</em></p>
-
-<p><a href="http://www.material-ui.com/">http://www.material-ui.com/</a></p>
-
-<p>Googleの<a href="https://material.io/">マテリアルデザイン</a>をReactのComponentとして使えるパッケージです。</p>
-
-<h2 id="openlayers-small-v4-6-4-small">OpenLayers <small>v4.6.4</small></h2>
-
-<p><em>A high-performance, feature-packed library for all your mapping needs.</em></p>
-
-<p><a href="http://openlayers.org/">http://openlayers.org/</a></p>
-
-<p>地図ライブラリです。最初はLeafletを使うつもりでしたが、LeafletはWebpack方面での使い勝手が良くないようなので使い慣れてるOpenLayersにしました。</p>
-
-<h2 id="prop-types-small-v15-6-0-small">prop-types <small>v15.6.0</small></h2>
-
-<p><em>Runtime type checking for React props and similar objects.</em></p>
-
-<p><a href="https://www.npmjs.com/package/prop-types">https://www.npmjs.com/package/prop-types</a></p>
-
-<p>Componentのpropsの入力値が正しい型なのかチェックしてくれるパッケージです。<br />
-不要説もあるようですが一応導入しました。</p>
-
-<h2 id="redux-thunk-small-v2-2-0-small">redux-thunk <small>v2.2.0</small></h2>
-
-<p><em>Thunk middleware for Redux.</em></p>
-
-<p>非同期処理のミドルウェアらしいです。Reduxのチュートリアルに載っていたので、導入しているのですが、正直この辺は勉強不足でどう作用しているのか実感できていません。</p>
-
-<p><a href="https://github.com/gaearon/redux-thunk">https://github.com/gaearon/redux-thunk</a></p>
-
-<h2 id="redux-logger-small-v3-0-6-small">redux-logger <small>v3.0.6</small></h2>
-
-<p><em>Logger for Redux</em></p>
-
-<p><a href="https://github.com/evgenyrodionov/redux-logger">https://github.com/evgenyrodionov/redux-logger</a></p>
-
-<p>ReduxのState(状態)のログを取ってくれるパッケージです。ミドルウェアとして使います。</p>
-
-<p>参考: redux-loggerをproduction環境だけ無効にする<br />
-<a href="https://medium.com/@rukurx/redux-logger%E3%82%92production%E7%92%B0%E5%A2%83%E3%81%A0%E3%81%91%E7%84%A1%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B-103579be834e">https://medium.com/@rukurx/redux-logger%E3%82%92production%E7%92%B0%E5%A2%83%E3%81%A0%E3%81%91%E7%84%A1%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B-103579be834e</a></p>
+<p>以前のページは、一応 Single Page Application (SPA) の体は成しているものの、各スタジアムに対して固有のリンクを持たない仕様でした。
+今回は静的なサイトなので、それぞれのスタジアムが(例) <a href="https://cieloazul310.github.io/gatsby-stadiums-population/venues/ajista/">https://cieloazul310.github.io/gatsby-stadiums-population/venues/ajista/</a> のように固有の HTML ページを持っています。</p>
 
 <div class="ad" style="width:100%;">
   
@@ -398,79 +364,70 @@ if (!doNotTrack) {
   
 </div>
 
-<h2 id="react-router-dom-small-v4-2-2-small">react-router-dom <small>v4.2.2</small></h2>
+<h2 id="技術的な話">技術的な話</h2>
 
-<p><em>DOM bindings for React Router</em></p>
+<p><a href="https://www.gatsbyjs.org">Gatsby JS</a> を使って、<a href="https://www.typescriptlang.org">TypeScript</a> で開発しました。
+<a href="https://www.gatsbyjs.org">Gatsby</a> は <a href="https://reactjs.org/">React</a> で SPA (Single Page Application) 風の静的なサイトを作るフレームワークです。ビルド時に <a href="https://graphql.org">GraphQL</a> を実行することでデータを用いた HTML ページを作成することができます。</p>
 
-<p><a href="https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom">https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom</a></p>
+<p>各スタジアム・アリーナの JSON ファイルを生成し、JSON ファイルから HTML ページを機械的に作成します。200以上の html ファイルがあっという間に作成できます。</p>
 
-<p>Reactでルーティングを行うライブラリです。</p>
+<p>バイナリベクトルタイルと <a href="http://turfjs.org">Turf.js</a> を用いて各スタジアムの距離圏人口を求め、JSON ファイルを作成するプログラムの書き方はいつか載せます。</p>
 
-<h2 id="react-router-redux-small-v5-0-0-alpha-9-small">react-router-redux <small>v5.0.0-alpha.9</small></h2>
+<h2 id="学習したこと">学習したこと</h2>
 
-<p><em>Integration with React Router and Redux</em></p>
+<h3 id="npm-から-yarn-への以降">npm から yarn への以降</h3>
 
-<p><a href="https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux">https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux</a></p>
+<p>今まではパッケージ管理を npm でおこなってきましたが、 <a href="https://yarnpkg.com/lang/ja/">yarn</a> を使ってみました。</p>
 
-<p>react-routerのv4に対応しているのはα版のv5なので、v5を入れています。</p>
+<h3 id="typescript-の基礎">TypeScript の基礎</h3>
 
-<h2 id="redux-persist-small-v5-5-0-small">redux-persist <small>v5.5.0</small></h2>
+<p><a href="https://www.dartlang.org">Dart</a> + <a href="https://flutter.io">Flutter</a> を使ったことで型の重要性に気づき <a href="https://www.typescriptlang.org">TypeScript</a> を学び始めました。<br />
+このページを作成しながら TypeScript の基礎的な部分は押さえられたと思います。</p>
 
-<p><em>Persist and rehydrate a redux store.</em></p>
+<p>TypeScript + React の書き方は以下のページを参考にしています。</p>
 
-<p><a href="https://github.com/rt2zz/redux-persist">https://github.com/rt2zz/redux-persist</a></p>
+<p>React &amp; Redux in TypeScript - Static Typing Guide<br />
+<a href="https://github.com/piotrwitek/react-redux-typescript-guide">https://github.com/piotrwitek/react-redux-typescript-guide</a></p>
 
-<p>ReduxのState(状態)をローカルストレージに保存するパッケージです。<br />
-これを使うことによって、ユーザーがページを離れてもReduxのStateを維持することができます。</p>
+<h3 id="css3-の-flex">CSS3 の Flex</h3>
 
-<h2 id="spa-github-pages">SPA github pages</h2>
+<p>後述する Material-UI が flex を多く使っているため、この機に flex レイアウトを学びました。<br />
+今まで CSS によるレイアウトはとても苦手だったんですが、少し好きになりました。</p>
 
-<p><em>Host single page apps with GitHub Pages</em></p>
+<p>で、やっていくうちに気づいたのですが、<a href="https://flutter.io">Flutter</a> のレイアウトも flex 的な発想で作られていますね。 <a href="https://flutter.io">Flutter</a> を学んでおいてよかった。</p>
 
-<p><a href="https://github.com/rafrex/spa-github-pages">https://github.com/rafrex/spa-github-pages</a></p>
+<p>CSS フレックスボックスレイアウト<br />
+<a href="https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Flexible_Box_Layout">https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Flexible_Box_Layout</a></p>
 
-<p>GithubPagesは通常シングル・ページ・アプリケーションに対応していないので、例えば <a href="https://cieloazul310.github.io/wikilayers/map">https://cieloazul310.github.io/wikilayers/map</a> のようなルートに何も設定せずに直接アクセスすると404を返してしまいます。</p>
+<h3 id="gatsby-のファイルシステム">Gatsby のファイルシステム</h3>
 
-<p>これを防ぐために<code>/public</code>ディレクトリに404ページを作成し、<code>index.html</code>にリダイレクトさせる方法をとります。</p>
+<p><a href="https://www.gatsbyjs.org">Gatsby JS</a> は GraphQL を使うことによって開発に強力な効果を発揮することができます。<br />
+<a href="https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-json"><code>gatsby-transformer-json</code></a> を使うと、 <a href="https://github.com/cieloazul310/gatsby-stadiums-population/tree/master/src/data"><code>./src/data/</code> ディレクトリ</a>傘下の独立した JSON ファイルを GraphQL で取得できるようにします。
+独立した JSON ファイルのデータセットを用意している点では旧バージョンも同じなのですが、旧バージョンがクライアント側で データを fetch してデータを処理していたのに対し、Gatsby バージョンではビルド時に GraphQL を実行し静的な HTML ページを作成しています。</p>
 
-<h2 id="react-ga-small-v2-4-1-small">react-ga <small>v2.4.1</small></h2>
+<h3 id="material-ui">Material-UI</h3>
 
-<p><em>This is a JavaScript module that can be used to include Google Analytics tracking code in a website or app that uses React for its front-end codebase.</em></p>
+<p><a href="https://material-ui.com">Material-UI</a> は Google の Material Design を React で使えるようにした React のライブラリです。<br />
+一度離れたものの、<a href="https://flutter.io">Flutter</a> を使ったおかげで Material Design を良いと思えるようになったため再び使い始めました。</p>
 
-<p><a href="https://github.com/react-ga/react-ga">https://github.com/react-ga/react-ga</a></p>
+<p>以前一度使ったバージョンはまだ v0系 でしたが、いつの間にか v3.9.2 になっていました。Bootstrap のような Grid レイアウトができるようになっています。<br />
+CSS を使った UI デザインが苦手なので、今後は全て Material-UI に丸投げしてしまおうと思います。</p>
 
-<p>ReactでGoogleアナリティクスを使用するのに有効なパッケージです。</p>
+<p>全体的に <a href="https://flutter.io">Flutter</a> を勉強したことがとてもとても生きています。</p>
 
-<h2 id="gh-pages-small-v1-1-0-small">gh-pages <small>v1.1.0</small></h2>
+<h2 id="今後">今後</h2>
 
-<p><em>Publish files to a gh-pages branch on GitHub (or any other branch anywhere else).</em></p>
-
-<p><a href="https://www.npmjs.com/package/gh-pages">https://www.npmjs.com/package/gh-pages</a></p>
-
-<p>create-react-appで作ったアプリをGithubPagesにデプロイするパッケージです。
-以下の記事を参考に導入しました。</p>
-
-<p>参考: create-react-appを使ってReactコンポーネントの素振り、GitHub Pagesへのデプロイまで<br />
-<a href="https://blog.wadackel.me/2016/create-react-app/">https://blog.wadackel.me/2016/create-react-app/</a></p>
-
-<h2 id="react-redux-i18n-small-v1-9-1-small">react-redux-i18n <small>v1.9.1</small></h2>
-
-<p><em>A binding library for redux to react-i18nify</em></p>
-
-<p><a href="https://github.com/artisavotins/react-redux-i18n">https://github.com/artisavotins/react-redux-i18n</a></p>
-
-<p>React-Reduxで作成したアプリをi18n(internationalization=国際化)するライブラリです。</p>
-
-<p><strong>WikiLayers</strong><br />
-<a href="https://cieloazul310.github.io/wikilayers">https://cieloazul310.github.io/wikilayers</a></p>
+<p>Gatsby の使い方がわかってきたので、以前 <a href="https://github.com/facebook/create-react-app">create-react-app</a> で作った<a href="https://cieloazul310.github.io/jclub-financial-table/">Jクラブ経営情報2005-2017</a>や<a href="https://cieloazul310.github.io/rockman-survey/">ロック大陸測量部</a>も Gatsby で作り直したいと思います。</p>
 
 <!-- Music -->
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/tga_93fok-Y" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/j1WIz23CHOU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
+
+<p>Can&rsquo;t Give You Anything (But My Love) / The Stylistics (1974)</p>
 
 <p><div class="ad" style="width:100%;">
   
@@ -501,7 +458,7 @@ if (!doNotTrack) {
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2018-02-06</span>
+    <span class="item-content">2019-02-25</span>
   </p>
   
   <p class="copyright-item">
@@ -516,27 +473,26 @@ if (!doNotTrack) {
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="https://cieloazul310.github.io/tags/react/">React</a>
+          <a href="https://cieloazul310.github.io/tags/%E4%BA%BA%E5%8F%A3/">人口</a>
           
-          <a href="https://cieloazul310.github.io/tags/redux/">Redux</a>
-          
-          <a href="https://cieloazul310.github.io/tags/wikilayers/">WikiLayers</a>
+          <a href="https://cieloazul310.github.io/tags/gis/">GIS</a>
           
           <a href="https://cieloazul310.github.io/tags/javascript/">JavaScript</a>
+          
+          <a href="https://cieloazul310.github.io/tags/typescript/">TypeScript</a>
+          
+          <a href="https://cieloazul310.github.io/tags/j%E3%83%AA%E3%83%BC%E3%82%B0/">Jリーグ</a>
+          
+          <a href="https://cieloazul310.github.io/tags/b%E3%83%AA%E3%83%BC%E3%82%B0/">Bリーグ</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="https://cieloazul310.github.io/2018/02/mediawiki-api-coodinates/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Wikipedia記事の座標を取得&amp;日本語記事の座標が取得できない問題</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
         
-          <a class="next" href="https://cieloazul310.github.io/2018/01/wikilayers/">
-            <span class="next-text nav-default">WikiLayersをリリースしました</span>
+          <a class="next" href="https://cieloazul310.github.io/2019/01/material-react-typescript-notation/">
+            <span class="next-text nav-default">TypeScript &#43; React &#43; Material-UI v3 のスタイル付き Components ガイド</span>
             <span class="prev-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.53" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2017/12/d3-to-svgfile-with-jsdom/" />
@@ -59,7 +59,10 @@
 <meta property="og:title" content="D3.js &#43; jsdomでSVGファイルを作成" />
 <meta property="og:description" content="D3.jsとjsdomを使って、SVGファイルを作る方法です。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cieloazul310.github.io/2017/12/d3-to-svgfile-with-jsdom/" /><meta property="article:published_time" content="2017-12-16T18:50:55&#43;09:00"/>
+<meta property="og:url" content="https://cieloazul310.github.io/2017/12/d3-to-svgfile-with-jsdom/" />
+
+<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png" />
+<meta property="article:published_time" content="2017-12-16T18:50:55&#43;09:00"/>
 <meta property="article:modified_time" content="2017-12-16T18:50:55&#43;09:00"/>
 
 <meta itemprop="name" content="D3.js &#43; jsdomでSVGファイルを作成">
@@ -68,7 +71,7 @@
 
 <meta itemprop="datePublished" content="2017-12-16T18:50:55&#43;09:00" />
 <meta itemprop="dateModified" content="2017-12-16T18:50:55&#43;09:00" />
-<meta itemprop="wordCount" content="1362">
+<meta itemprop="wordCount" content="1359">
 
 
 
@@ -336,7 +339,6 @@ jsdom@11.5.1</code></pre></td></tr></table>
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
-</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="k">const</span> <span class="nx">d3</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;d3&#39;</span><span class="p">);</span>
@@ -408,7 +410,6 @@ jsdomの書き方が過去のものとは少し変わりました。</p>
 </span><span class="lnt">21
 </span><span class="lnt">22
 </span><span class="lnt">23
-</span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="k">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
@@ -444,7 +445,6 @@ jsdomの書き方が過去のものとは少し変わりました。</p>
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">fs</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="s1">&#39;output.svg&#39;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
