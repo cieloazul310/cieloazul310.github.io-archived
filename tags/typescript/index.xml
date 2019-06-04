@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Typescript on 水戸地図</title>
+    <title>TypeScript on 水戸地図</title>
     <link>https://cieloazul310.github.io/tags/typescript/</link>
-    <description>Recent content in Typescript on 水戸地図</description>
+    <description>Recent content in TypeScript on 水戸地図</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Mon, 25 Feb 2019 23:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 04 Jun 2019 21:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TypeScript &#43; Material-UI v4 のスタイル付きコンポーネントのガイド</title>
+      <link>https://cieloazul310.github.io/2019/06/typescript-material-ui-v4/</link>
+      <pubDate>Tue, 04 Jun 2019 21:00:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2019/06/typescript-material-ui-v4/</guid>
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+
+&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;2019年5月下旬に &lt;a href=&#34;https://material-ui.com&#34;&gt;Material-UI v4&lt;/a&gt; が正式にリリースされました。スタイル付きコンポーネントの記法が v3 以前のものとは変わったのでメモしておきます。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>国内のサッカースタジアム・アリーナ周辺の人口を調べる</title>

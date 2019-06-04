@@ -7,70 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
+    <lastBuildDate>Tue, 04 Jun 2019 21:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Category</title>
-      <link>https://cieloazul310.github.io/categories/category/</link>
-      <pubDate>Fri, 07 Jul 2017 16:12:11 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/categories/category/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Column</title>
-      <link>https://cieloazul310.github.io/categories/column/</link>
-      <pubDate>Thu, 30 Nov 2017 22:26:35 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/categories/column/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gis</title>
-      <link>https://cieloazul310.github.io/categories/gis/</link>
-      <pubDate>Mon, 23 Apr 2018 23:00:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/categories/gis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Javascript</title>
+      <title>JavaScript</title>
       <link>https://cieloazul310.github.io/categories/javascript/</link>
-      <pubDate>Sat, 12 Jan 2019 23:00:00 +0900</pubDate>
+      <pubDate>Tue, 04 Jun 2019 21:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/categories/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Memo</title>
-      <link>https://cieloazul310.github.io/categories/memo/</link>
-      <pubDate>Sun, 31 Dec 2017 22:30:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/categories/memo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Releases</title>
-      <link>https://cieloazul310.github.io/categories/releases/</link>
-      <pubDate>Fri, 04 Jan 2019 23:55:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/categories/releases/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Subcategory</title>
-      <link>https://cieloazul310.github.io/categories/subcategory/</link>
-      <pubDate>Fri, 07 Jul 2017 16:12:11 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/categories/subcategory/</guid>
       <description></description>
     </item>
     
@@ -84,11 +31,65 @@
     </item>
     
     <item>
+      <title>Releases</title>
+      <link>https://cieloazul310.github.io/categories/releases/</link>
+      <pubDate>Fri, 04 Jan 2019 23:55:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/categories/releases/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>デザイン</title>
       <link>https://cieloazul310.github.io/categories/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/</link>
       <pubDate>Sat, 21 Jul 2018 16:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/categories/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GIS</title>
+      <link>https://cieloazul310.github.io/categories/gis/</link>
+      <pubDate>Mon, 23 Apr 2018 23:00:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/categories/gis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>memo</title>
+      <link>https://cieloazul310.github.io/categories/memo/</link>
+      <pubDate>Sun, 31 Dec 2017 22:30:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/categories/memo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Column</title>
+      <link>https://cieloazul310.github.io/categories/column/</link>
+      <pubDate>Thu, 30 Nov 2017 22:26:35 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/categories/column/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>category</title>
+      <link>https://cieloazul310.github.io/categories/category/</link>
+      <pubDate>Fri, 07 Jul 2017 16:12:11 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/categories/category/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>subcategory</title>
+      <link>https://cieloazul310.github.io/categories/subcategory/</link>
+      <pubDate>Fri, 07 Jul 2017 16:12:11 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/categories/subcategory/</guid>
       <description></description>
     </item>
     

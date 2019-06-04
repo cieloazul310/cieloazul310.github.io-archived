@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="ja" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>TypeScript &#43; Material-UI v4 のスタイル付きコンポーネントのガイド - 水戸地図</title>
+  <link rel="alternate" hreflang="ja" href="https://cieloazul310.github.io" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="cieloazul310" /><meta name="description" content="TypeScript &#43; React &#43; Material-UI v4 でスタイル付きコンポーネントを生成するガイド" />
+<meta name="keywords" content="TypeScript, React, Material-UI, JavaScript" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.5" />
+
+
+<link rel="canonical" href="https://cieloazul310.github.io/2019/06/typescript-material-ui-v4/" />
+
+
+
+<link rel="icon" href="https://cieloazul310.github.io/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="https://cieloazul310.github.io/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="TypeScript &#43; Material-UI v4 のスタイル付きコンポーネントのガイド" />
+<meta property="og:description" content="TypeScript &#43; React &#43; Material-UI v4 でスタイル付きコンポーネントを生成するガイド" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cieloazul310.github.io/2019/06/typescript-material-ui-v4/" />
+
+<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png" />
+<meta property="article:published_time" content="2019-06-04T21:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2019-06-04T21:00:00&#43;09:00"/>
+
+<meta itemprop="name" content="TypeScript &#43; Material-UI v4 のスタイル付きコンポーネントのガイド">
+<meta itemprop="description" content="TypeScript &#43; React &#43; Material-UI v4 でスタイル付きコンポーネントを生成するガイド">
+
+
+<meta itemprop="datePublished" content="2019-06-04T21:00:00&#43;09:00" />
+<meta itemprop="dateModified" content="2019-06-04T21:00:00&#43;09:00" />
+<meta itemprop="wordCount" content="1582">
+
+
+
+<meta itemprop="keywords" content="TypeScript,React,Material-UI,JavaScript," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+
+<meta name="twitter:title" content="TypeScript &#43; Material-UI v4 のスタイル付きコンポーネントのガイド"/>
+<meta name="twitter:description" content="TypeScript &#43; React &#43; Material-UI v4 でスタイル付きコンポーネントを生成するガイド"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-74683419-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/categories/">
+          Categories
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/about/">
+          About
+        </a>
+      </li>
+  </ul>
+</nav>
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="https://cieloazul310.github.io/" class="logo">
+    
+      水戸地図
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/about/">About</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">TypeScript &#43; Material-UI v4 のスタイル付きコンポーネントのガイド</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2019-06-04 </span>
+        <div class="post-category">
+            
+              <a href="https://cieloazul310.github.io/categories/javascript/"> JavaScript </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      <!--
+- 対象: 
+- 目的: 
+-->
+
+<!-- Lead Paragraph -->
+
+<p>2019年5月下旬に <a href="https://material-ui.com">Material-UI v4</a> が正式にリリースされました。スタイル付きコンポーネントの記法が v3 以前のものとは変わったのでメモしておきます。</p>
+
+<h2 id="環境">環境</h2>
+
+<p><code>create-react-app</code> で作成したディレクトリを前提にしています。</p>
+
+<p>参考: <a href="https://github.com/Microsoft/TypeScript-React-Starter#typescript-react-starter">TypeScript React Starter</a></p>
+
+<h2 id="バージョン">バージョン</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">- typescript @3.2.2
+- @material-ui/core @4.0.1
+- react @16.8.6
+- react-dom @16.8.6</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="v3-からの変更点">v3 からの変更点</h2>
+
+<p>v3 でのスタイル付きコンポーネントの記法は以下の記事に参照してください。<br />
+v4 から始めるという人は読む必要はありません。</p>
+
+<p><a href="https://cieloazul310.github.io/2019/01/material-react-typescript-notation/">TypeScript + React + Material-UI v3 のスタイル付き Components ガイド</a></p>
+
+<ul>
+<li><code>withStyles(styles)(Component)</code> という記法ではなくなった(互換性はあるため v4 でも利用可能)</li>
+<li>代わりに <code>makeStyles</code> という関数を使ってスタイルを定義する</li>
+<li>className を <code>props</code> で与えるのではなくコンポーネント内で取得する</li>
+</ul>
+
+<div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="6120305662"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+
+<h2 id="material-ui-v4-での記法">Material-UI v4 での記法</h2>
+
+<h3 id="例">例</h3>
+
+<p>スタイル付きコンポーネント作成の一例です。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">makeStyles</span><span class="p">,</span> <span class="nx">createStyles</span><span class="p">,</span> <span class="nx">Theme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles&#39;</span><span class="p">;</span>
+
+<span class="c1">// スタイルを定義
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">useStyles</span> <span class="o">=</span> <span class="nx">makeStyles</span><span class="p">((</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">=&gt;</span>
+  <span class="nx">createStyles</span><span class="p">({</span>
+    <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">padding</span>: <span class="kt">theme.spacing</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="p">},</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">borderBottom</span><span class="o">:</span> <span class="sb">`2px solid </span><span class="si">${</span><span class="nx">theme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">.</span><span class="nx">main</span><span class="si">}</span><span class="sb">`</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">);</span>
+
+<span class="c1">// props の型を定義
+</span><span class="c1"></span><span class="nx">type</span> <span class="nx">Props</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">title?</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// コンポーネントを定義
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">MyStyledComponent</span><span class="p">({</span> <span class="nx">title</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ここでクラス名を取得
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">classes</span> <span class="o">=</span> <span class="nx">useStyles</span><span class="p">();</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h4</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="nx">title</span> <span class="o">||</span> <span class="s1">&#39;My Styled Component&#39;</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="err">/h4&gt;</span>
+    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// エクスポート
+</span><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="nx">MyStyledComponent</span><span class="p">;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><a href="https://github.com/piotrwitek/react-redux-typescript-guide">React &amp; Redux in TypeScript - Static Typing Guide</a> を参考にしています。</p>
+
+<h3 id="1-インポート">1. インポート</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// JavaScript の場合は createStyles, Theme は不要
+</span><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">makeStyles</span><span class="p">,</span> <span class="nx">createStyles</span><span class="p">,</span> <span class="nx">Theme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles&#39;</span><span class="p">;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>createStyles</code> は型拡大を防ぐ関数で TypeScript のときのみ任意で使用します。<br />
+<code>Theme</code> は Material テーマ (theme) の 型定義で、これを使うことでエディタの補助機能が効き入力が楽になります。</p>
+
+<h3 id="2-変数-usestyles-を定義">2. 変数 <code>useStyles</code> を定義</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// JavaScript の場合は makeStyles(theme =&gt; styleObject)で良い
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">useStyles</span> <span class="o">=</span> <span class="nx">makeStyles</span><span class="p">((</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">=&gt;</span>
+  <span class="nx">createStyles</span><span class="p">({</span>
+    <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">padding</span>: <span class="kt">theme.spacing</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="p">},</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">borderBottom</span><span class="o">:</span> <span class="sb">`2px solid </span><span class="si">${</span><span class="nx">theme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">.</span><span class="nx">main</span><span class="si">}</span><span class="sb">`</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">);</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>ここで定義した <code>useStyles</code> は <code>makeStyles</code> で定義したスタイルオブジェクトの key と className の組を返す関数になります。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">const</span> <span class="nx">classes</span> <span class="o">=</span> <span class="nx">useStyles</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">classes</span><span class="p">);</span>
+<span class="err">// =&gt; Object { root: &#34;useStyles-root-41&#34;, title: &#34;useStyles-title-56&#34; }</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="3-コンポーネントの中で-classname-を取得">3. コンポーネントの中で className を取得</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kd">function</span> <span class="nx">MyStyledComponent</span><span class="p">({</span> <span class="nx">title</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">classes</span> <span class="o">=</span> <span class="nx">useStyles</span><span class="p">();</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h4</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="nx">title</span> <span class="o">||</span> <span class="s1">&#39;タイトル&#39;</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="err">/h4&gt;</span>
+    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>v3 のときは、コンポーネントの <code>props</code> で className を与えていましたが、v4 ではコンポーネントの中でクラス名を取得します。<br />
+これによって、コンポーネントの <code>props</code> の型定義 <code>Props</code> を拡張する必要がなくなりました。</p>
+
+<p>したがって、v3 時代の <code>Props extends WithStyles&lt;typeof styles&gt;</code> や <code>export default withStyles(styles)(Component)</code> という煩雑な書き方がなくなりすっきりとした表現になっています。</p>
+
+<h3 id="v3-以前からv4-への移行の注意点">v3 以前からv4 への移行の注意点</h3>
+
+<p>v3 時代の <code>withStyles(styles)(Component)</code> という書き方は v4 でも可能です。<br />
+互換性がない変更点では、padding などを指定する際に使う <a href="https://material-ui.com/customization/spacing/"><code>theme.spacing</code> が関数になりました</a>。したがって、v3 以前の <code>theme.spacing.unit * 2</code> という書き方ではエラーを吐いてしまいます。v3 から v4 へ移行するならまず <code>theme.spacing</code> の書き方を変更しましょう。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">const</span> <span class="nx">useStyles</span> <span class="o">=</span> <span class="nx">makeStyles</span><span class="p">((</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">createStyles</span><span class="p">({</span>
+  <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
+    <span class="c1">// v3 時代は theme.spacing.unit * 2 という書き方だった
+</span><span class="c1"></span>    <span class="nx">padding</span>: <span class="kt">theme.spacing</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="補足-react-の記法について">補足: React の記法について</h2>
+
+<p>ここは Material-UI に関係ないので読み飛ばしても構いません。<br />
+React + TypeScript の記法の流行り(?)に関する話題です。<strong>最終的には好みの問題</strong>になります。</p>
+
+<h3 id="function-component-で-const-と-function-どちらを使うべきか">Function Component で <code>const</code> と <code>function</code> どちらを使うべきか</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">const</span> <span class="nx">MyComponent</span>: <span class="kt">React.FC</span><span class="o">&lt;</span><span class="nx">Props</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">title</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span> <span class="nx">title</span> <span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="p">);</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">MyComponent</span><span class="p">;</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kd">function</span> <span class="nx">MyComponent</span><span class="p">({</span> <span class="nx">title</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span> <span class="nx">title</span> <span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">MyComponent</span><span class="p">;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>最近は <code>function</code> 記法を目にすることが多いです。特に理由がなければ、<code>React.FC&lt;Props&gt;</code> はもう使わなくていいかもしれません。</p>
+
+<ul>
+<li><a href="https://reactjs.org/">React 公式ドキュメント</a> =&gt; <code>function</code></li>
+<li><a href="https://github.com/piotrwitek/react-redux-typescript-guide">React &amp; Redux in TypeScript - Static Typing Guide</a> =&gt; <code>function</code></li>
+<li><a href="https://material-ui.com">Material-UI ドキュメント</a> =&gt; <code>function</code></li>
+</ul>
+
+<p>また State を使う場合でも、 React Component Class を使わずに、React 16.8 で導入された <a href="https://reactjs.org/docs/hooks-intro.html">React Hooks</a> で書いているドキュメントが多いです。</p>
+
+<h3 id="props-の定義は-type-か-interface-か"><code>Props</code> の定義は <code>type</code> か <code>interface</code> か</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">interface</span> <span class="nx">Props</span> <span class="p">{</span>
+  <span class="nx">title?</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="nx">type</span> <span class="nx">Props</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">title?</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>最近は <code>type</code> を使うのをよく目にします。<br />
+また state を使用する場合でも、 React Hooks を使って、型定義 <code>State</code> を定義しない書き方を多く目にします。</p>
+
+<p>最終的には好みの問題なので、自分のやりやすいように書いてください。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>ここでは手っ取り早く Material-UI v4 でのスタイル付きコンポーネントの記法について書きました。v4 についてもっと知りたい方は下記の Medium を読むと理解が深まるかと思います。</p>
+
+<p>Material-UI v4 is out<br />
+<a href="https://medium.com/material-ui/material-ui-v4-is-out-4b7587d1e701">https://medium.com/material-ui/material-ui-v4-is-out-4b7587d1e701</a></p>
+
+<p>Material-UI<br />
+<a href="https://material-ui.com">https://material-ui.com</a></p>
+
+<p>React &amp; Redux in TypeScript - Static Typing Guide<br />
+<a href="https://github.com/piotrwitek/react-redux-typescript-guide">https://github.com/piotrwitek/react-redux-typescript-guide</a></p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/xtn_SmyT87s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<p>Pretty Old Man / No Buses (2019)</p>
+
+<p><div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      
+      <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="5892967151"
+         data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+<!-- References --></p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">cieloazul310</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2019-06-04</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="https://cieloazul310.github.io/tags/typescript/">TypeScript</a>
+          
+          <a href="https://cieloazul310.github.io/tags/react/">React</a>
+          
+          <a href="https://cieloazul310.github.io/tags/material-ui/">Material-UI</a>
+          
+          <a href="https://cieloazul310.github.io/tags/javascript/">JavaScript</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="https://cieloazul310.github.io/2019/02/gatsby-stadiums-population/">
+            <span class="next-text nav-default">国内のサッカースタジアム・アリーナ周辺の人口を調べる</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'cieloazul310';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="//twitter.com/cieloazul310" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="//github.com/cieloazul310" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://cieloazul310.github.io/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">cieloazul310</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="https://cieloazul310.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="https://cieloazul310.github.io/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="https://cieloazul310.github.io/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

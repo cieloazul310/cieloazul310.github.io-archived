@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.55.5" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2017/11/d3-grouping-elements/" />
@@ -420,7 +420,7 @@ if (!doNotTrack) {
                     <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)</span>
                     <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;texts&#39;</span><span class="p">)</span>
                     <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="nx">xScale</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-                    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="nx">d</span> <span class="p">=&gt;</span> <span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span> <span class="o">+</span> <span class="nx">yScale</span><span class="p">.</span><span class="nx">bandwidth</span><span class="p">()</span> <span class="err">/ 2)</span>
+                    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="nx">d</span> <span class="p">=&gt;</span> <span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span> <span class="o">+</span> <span class="nx">yScale</span><span class="p">.</span><span class="nx">bandwidth</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
                     <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;dx&#39;</span><span class="p">,</span> <span class="s1">&#39;.5em&#39;</span><span class="p">)</span>
                     <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;dy&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
                     <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;text-anchor&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">)</span>
@@ -433,14 +433,14 @@ if (!doNotTrack) {
 
 
 <div>
-  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="480" style="width:100%;" src="../../../figure/playground/d3-grouping-01.html" class="iframe-chart" id="591364728">
+  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="480" style="width:100%;" src="../../../figure/playground/d3-grouping-01.html" class="iframe-chart" id="281647953">
     <p>Your Browser do not support iframe.</p>
   </iframe>
   <small><a href="../../../figure/playground/d3-grouping-01.html" target="_blank">新しいタブで開く</a></small>
 </div>
 
 <script>
-  var tg = document.getElementById("591364728");
+  var tg = document.getElementById("281647953");
   tg.setAttribute("height", window.innerHeight - 50);
 </script>
 
@@ -523,8 +523,8 @@ if (!doNotTrack) {
 <span class="nx">rows</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;texts&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="nx">xScale</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="c1">// 親要素からの相対位置
-</span><span class="c1"></span>    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="nx">yScale</span><span class="p">.</span><span class="nx">bandwidth</span><span class="p">()</span> <span class="sr">/ 2) /</span><span class="err">/ 親要素からの相対位置</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;dx&#39;</span><span class="p">,</span> <span class="s1">&#39;.5em&#39;</span><span class="p">)</span> <span class="c1">// 細かな位置はdx, dyで調整
+</span><span class="c1"></span>    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="nx">yScale</span><span class="p">.</span><span class="nx">bandwidth</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// 親要素からの相対位置
+</span><span class="c1"></span>    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;dx&#39;</span><span class="p">,</span> <span class="s1">&#39;.5em&#39;</span><span class="p">)</span> <span class="c1">// 細かな位置はdx, dyで調整
 </span><span class="c1"></span>    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;dy&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;text-anchor&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;dominant-baseline&#39;</span><span class="p">,</span> <span class="s1">&#39;middle&#39;</span><span class="p">)</span>
@@ -608,14 +608,14 @@ if (!doNotTrack) {
 
 
 <div>
-  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="480" style="width:100%;" src="../../../figure/playground/d3-grouping-02.html" class="iframe-chart" id="946835172">
+  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="480" style="width:100%;" src="../../../figure/playground/d3-grouping-02.html" class="iframe-chart" id="986231754">
     <p>Your Browser do not support iframe.</p>
   </iframe>
   <small><a href="../../../figure/playground/d3-grouping-02.html" target="_blank">新しいタブで開く</a></small>
 </div>
 
 <script>
-  var tg = document.getElementById("946835172");
+  var tg = document.getElementById("986231754");
   tg.setAttribute("height", window.innerHeight - 50);
 </script>
 
