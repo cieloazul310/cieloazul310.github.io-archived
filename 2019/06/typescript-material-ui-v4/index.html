@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>TypeScript &#43; Material-UI v4 のスタイル付きコンポーネントのガイド - 水戸地図</title>
+  <title>TypeScript &#43; Material-UI v4 のスタイル付きコンポーネント作成ガイド - 水戸地図</title>
   <link rel="alternate" hreflang="ja" href="https://cieloazul310.github.io" />
 
 <meta name="renderer" content="webkit" />
@@ -56,7 +56,7 @@
 
 
 
-<meta property="og:title" content="TypeScript &#43; Material-UI v4 のスタイル付きコンポーネントのガイド" />
+<meta property="og:title" content="TypeScript &#43; Material-UI v4 のスタイル付きコンポーネント作成ガイド" />
 <meta property="og:description" content="TypeScript &#43; React &#43; Material-UI v4 でスタイル付きコンポーネントを生成するガイド" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cieloazul310.github.io/2019/06/typescript-material-ui-v4/" />
@@ -65,13 +65,13 @@
 <meta property="article:published_time" content="2019-06-04T21:00:00&#43;09:00"/>
 <meta property="article:modified_time" content="2019-06-04T21:00:00&#43;09:00"/>
 
-<meta itemprop="name" content="TypeScript &#43; Material-UI v4 のスタイル付きコンポーネントのガイド">
+<meta itemprop="name" content="TypeScript &#43; Material-UI v4 のスタイル付きコンポーネント作成ガイド">
 <meta itemprop="description" content="TypeScript &#43; React &#43; Material-UI v4 でスタイル付きコンポーネントを生成するガイド">
 
 
 <meta itemprop="datePublished" content="2019-06-04T21:00:00&#43;09:00" />
 <meta itemprop="dateModified" content="2019-06-04T21:00:00&#43;09:00" />
-<meta itemprop="wordCount" content="1582">
+<meta itemprop="wordCount" content="1586">
 
 
 
@@ -79,7 +79,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
-<meta name="twitter:title" content="TypeScript &#43; Material-UI v4 のスタイル付きコンポーネントのガイド"/>
+<meta name="twitter:title" content="TypeScript &#43; Material-UI v4 のスタイル付きコンポーネント作成ガイド"/>
 <meta name="twitter:description" content="TypeScript &#43; React &#43; Material-UI v4 でスタイル付きコンポーネントを生成するガイド"/>
 
 <!--[if lte IE 9]>
@@ -281,7 +281,7 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">TypeScript &#43; Material-UI v4 のスタイル付きコンポーネントのガイド</h1>
+      <h1 class="post-title">TypeScript &#43; Material-UI v4 のスタイル付きコンポーネント作成ガイド</h1>
       
       <div class="post-meta">
         <span class="post-time"> 2019-06-04 </span>
@@ -306,7 +306,7 @@ if (!doNotTrack) {
 
 <!-- Lead Paragraph -->
 
-<p>2019年5月下旬に <a href="https://material-ui.com">Material-UI v4</a> が正式にリリースされました。スタイル付きコンポーネントの記法が v3 以前のものとは変わったのでメモしておきます。</p>
+<p>2019年5月下旬に <a href="https://material-ui.com">Material-UI v4</a> が正式にリリースされました。スタイル付きコンポーネントの記法が v3 以前のものと変わったのでメモしておきます。</p>
 
 <h2 id="環境">環境</h2>
 
@@ -324,15 +324,15 @@ if (!doNotTrack) {
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-txt" data-lang="txt">- typescript @3.2.2
-- @material-ui/core @4.0.1
+- @material-ui/core @4.0.2
 - react @16.8.6
 - react-dom @16.8.6</code></pre></td></tr></table>
 </div>
 </div>
 <h2 id="v3-からの変更点">v3 からの変更点</h2>
 
-<p>v3 でのスタイル付きコンポーネントの記法は以下の記事に参照してください。<br />
-v4 から始めるという人は読む必要はありません。</p>
+<p>v3 でのスタイル付きコンポーネントの記法は以下の記事を参照してください。<br />
+v4 で初めて Material-UI を使うという人は読む必要はありません。</p>
 
 <p><a href="https://cieloazul310.github.io/2019/01/material-react-typescript-notation/">TypeScript + React + Material-UI v3 のスタイル付き Components ガイド</a></p>
 
@@ -404,7 +404,7 @@ v4 から始めるという人は読む必要はありません。</p>
 </span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">makeStyles</span><span class="p">,</span> <span class="nx">createStyles</span><span class="p">,</span> <span class="nx">Theme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles&#39;</span><span class="p">;</span>
 
 <span class="c1">// スタイルを定義
