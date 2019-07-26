@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>国内のサッカースタジアム周辺の人口を求める - 水戸地図</title>
+  <title>Jクラブ経営情報 2006-2018 作りました - 水戸地図</title>
   <link rel="alternate" hreflang="ja" href="https://cieloazul310.github.io" />
 
 <meta name="renderer" content="webkit" />
@@ -24,8 +24,8 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="cieloazul310" /><meta name="description" content="地域メッシュ統計のデータを用いて国内の主要サッカースタジアムの周辺人口を算出しました。" />
-<meta name="keywords" content="Jリーグ, サッカー, GIS, D3.js, 人口" />
+<meta name="author" content="cieloazul310" /><meta name="description" content="Jリーグクラブの経営情報をクラブ別・年別に見ることができるページを作成しました。" />
+<meta name="keywords" content="Jリーグ, JavaScript, React" />
 
 
 
@@ -36,7 +36,7 @@
 <meta name="generator" content="Hugo 0.55.5" />
 
 
-<link rel="canonical" href="https://cieloazul310.github.io/2018/04/stadium-and-population/" />
+<link rel="canonical" href="https://cieloazul310.github.io/2019/07/jclub-financial-table/" />
 
 
 
@@ -56,31 +56,31 @@
 
 
 
-<meta property="og:title" content="国内のサッカースタジアム周辺の人口を求める" />
-<meta property="og:description" content="地域メッシュ統計のデータを用いて国内の主要サッカースタジアムの周辺人口を算出しました。" />
+<meta property="og:title" content="Jクラブ経営情報 2006-2018 作りました" />
+<meta property="og:description" content="Jリーグクラブの経営情報をクラブ別・年別に見ることができるページを作成しました。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cieloazul310.github.io/2018/04/stadium-and-population/" />
+<meta property="og:url" content="https://cieloazul310.github.io/2019/07/jclub-financial-table/" />
 
 <meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png" />
-<meta property="article:published_time" content="2018-04-23T23:00:00&#43;09:00"/>
-<meta property="article:modified_time" content="2018-04-23T23:00:00&#43;09:00"/>
+<meta property="article:published_time" content="2019-07-26T22:30:00&#43;09:00"/>
+<meta property="article:modified_time" content="2019-07-26T22:30:00&#43;09:00"/>
 
-<meta itemprop="name" content="国内のサッカースタジアム周辺の人口を求める">
-<meta itemprop="description" content="地域メッシュ統計のデータを用いて国内の主要サッカースタジアムの周辺人口を算出しました。">
-
-
-<meta itemprop="datePublished" content="2018-04-23T23:00:00&#43;09:00" />
-<meta itemprop="dateModified" content="2018-04-23T23:00:00&#43;09:00" />
-<meta itemprop="wordCount" content="961">
+<meta itemprop="name" content="Jクラブ経営情報 2006-2018 作りました">
+<meta itemprop="description" content="Jリーグクラブの経営情報をクラブ別・年別に見ることができるページを作成しました。">
 
 
+<meta itemprop="datePublished" content="2019-07-26T22:30:00&#43;09:00" />
+<meta itemprop="dateModified" content="2019-07-26T22:30:00&#43;09:00" />
+<meta itemprop="wordCount" content="711">
 
-<meta itemprop="keywords" content="Jリーグ,サッカー,GIS,D3.js,人口," />
+
+
+<meta itemprop="keywords" content="Jリーグ,JavaScript,React," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
-<meta name="twitter:title" content="国内のサッカースタジアム周辺の人口を求める"/>
-<meta name="twitter:description" content="地域メッシュ統計のデータを用いて国内の主要サッカースタジアムの周辺人口を算出しました。"/>
+<meta name="twitter:title" content="Jクラブ経営情報 2006-2018 作りました"/>
+<meta name="twitter:description" content="Jリーグクラブの経営情報をクラブ別・年別に見ることができるページを作成しました。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -281,13 +281,13 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">国内のサッカースタジアム周辺の人口を求める</h1>
+      <h1 class="post-title">Jクラブ経営情報 2006-2018 作りました</h1>
       
       <div class="post-meta">
-        <span class="post-time"> 2018-04-23 </span>
+        <span class="post-time"> 2019-07-26 </span>
         <div class="post-category">
             
-              <a href="https://cieloazul310.github.io/categories/gis/"> GIS </a>
+              <a href="https://cieloazul310.github.io/categories/works/"> Works </a>
             
           </div>
         
@@ -299,107 +299,30 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <!-- Lead Paragraph -->
-
-<p>地域メッシュ統計のデータを用いて国内の主要サッカースタジアムの周辺人口を算出しました。</p>
-
-<p>まず予め断っておきますが、これはただの遊びです。<br />
-各スタジアムの周辺人口を求めて、求めたデータから何かを評価したり結論を導くようなものではありません。<br />
-スタジアムの周辺人口を求めました。以上。という内容の記事です。</p>
-
-<h2 id="人口データ">人口データ</h2>
-
-<p><strong>国勢調査 2015年 5次メッシュ(250mメッシュ) その1 人口等基本集計に関する事項</strong></p>
-
-<ul>
-<li>URL: <a href="https://www.e-stat.go.jp/gis/statmap-search?page=1&amp;type=1&amp;toukeiCode=00200521&amp;toukeiYear=2015&amp;aggregateUnit=Q&amp;serveyId=Q002005112015&amp;statsId=T000876">https://www.e-stat.go.jp/gis/statmap-search?page=1&amp;type=1&amp;toukeiCode=00200521&amp;toukeiYear=2015&amp;aggregateUnit=Q&amp;serveyId=Q002005112015&amp;statsId=T000876</a></li>
-<li>公開日: 2018年1月4日</li>
-<li>データ取得日: 2018年4月10日</li>
-</ul>
-
-<h2 id="人口の求め方">人口の求め方</h2>
-
-<p><a href="https://midoriit.com/2014/08/qgis%E3%81%AB%E3%82%88%E3%82%8B%E7%B5%B1%E8%A8%88%E8%A7%A3%E6%9E%904.html">QGISによるデータ分析(4) 合同会社 緑IT事務所</a>を参考にしています。</p>
-
-<ol>
-<li>まず各メッシュの中心点を作成します。<br /></li>
-<li>次に各スタジアムからの距離円(厳密には<strong>スタジアムのピッチのセンターマーク</strong>からの距離円)を作成します。</li>
-<li>最後に、距離円に含まれる点を抽出し、点の集合から人口を算出します。</li>
-</ol>
-
-<h2 id="国内主要サッカースタジアム">国内主要サッカースタジアム</h2>
-
-<ul>
-<li>J1〜JFLのホームスタジアム</li>
-<li>地域リーグで特定クラブのホームスタジアムと言える会場</li>
-<li>建設中、計画中、構想中のスタジアム</li>
-</ul>
-
-<div class="ad" style="width:100%;">
-  
-    <small>広告</small>
-    
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      
-      <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="5892967151"
-         data-ad-format="auto"></ins>
-      <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
-  
-</div>
-
-<h2 id="結果-可視化">結果&amp;可視化</h2>
-
-<p>国内主要スタジアムからの500m圏内、1.0km圏内、1.5km圏内、3.0km圏内、5.0km圏内を算出しました。<br />
-MAP画面で選択したスタジアム周辺の人口地図を表示できます。</p>
-
-
-<div>
-  <iframe frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" height="480" style="width:100%;" src="../../../figure/stadiums_population/" class="iframe-chart" id="813975246">
-    <p>Your Browser do not support iframe.</p>
-  </iframe>
-  <small><a href="../../../figure/stadiums_population/" target="_blank">新しいタブで開く</a></small>
-</div>
-
-<script>
-  var tg = document.getElementById("813975246");
-  tg.setAttribute("height", window.innerHeight - 50);
-</script>
-
-
-<h2 id="表">表</h2>
-
-<p><img src="../../../img/stadiums_population.png" alt="表" title="表" /></p>
-
-<p>CSV形式のものを<a href="https://gist.github.com/cieloazul310/2ec16b8e2b437cfb301dc9319b0dc403">gist</a>に上げています。</p>
-
-<h2 id="あとがき">あとがき</h2>
-
-<p>500m, 1.0km, 1.5km圏は徒歩圏をイメージしています。<br />
-3kmくらい平気で歩くサッカーファンは多いですが、一般的に「徒歩で行く」選択肢になりうるのは1.5km圏が限界かなという感じがします。</p>
-
-<p>3.0km圏は自転車圏をイメージしています。自転車でもっと長い距離を行き来する人も多いですが、一般的に苦に感じることなく自転車で行ける範囲は3kmくらいかなと思います。<br />
-ただし山や川など地形的な制約もあるので、一概に3.0km圏人口を持って自転車圏と言うことはできません。例えば保土ヶ谷から三ツ沢までは3kmほどですが自転車で行くのは大変ですよね。</p>
-
-<p>5.0km圏は特にこれといった意味はないです。参考としてご覧ください。</p>
-
-<p>繰り返しますがこれはただの遊びです。<br />
-この結果を持ってどうのこうの論じるのは見る側に委ねるので、そこのところ宜しくお願いします。</p>
-
-<!-- Music 
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/pYK2fZTYyYE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
+      <!--
+- 対象: 
+- 目的: 
 -->
 
-<p><div class="ad" style="width:100%;">
+<!-- Lead Paragraph -->
+
+<p>Jリーグクラブの経営情報をクラブ別・年別に見ることができるページを作成しました。</p>
+
+<h2 id="作ったもの">作ったもの</h2>
+
+<p>Jクラブ経営情報2006-2018<br />
+URL: <a href="https://cieloazul310.github.io/jclub-financial-table/">https://cieloazul310.github.io/jclub-financial-table/</a></p>
+
+<p>2006年から2018年までのJクラブ経営情報を、年別・クラブ別に、「損益計算書」「貸借対照表」「営業収入」「営業費用」「入場者数」という項目に分けて掲載しています。</p>
+
+<h2 id="発想">発想</h2>
+
+<p>Jクラブの経営情報を読み解くには、タテとヨコ2つの視点で見ることが重要です。
+Jリーグの公開形式は年度毎のみなので、他クラブとのヨコの比較は可能ですが、特定クラブの数値の推移、つまりタテの情報を見るには一手間必要でした。</p>
+
+<p>年別だけでなくクラブ別にまとめることで、クラブの経営の経年変化を個別に見ることが容易になりました。</p>
+
+<div class="ad" style="width:100%;">
   
     <small>広告</small>
     
@@ -416,8 +339,46 @@ MAP画面で選択したスタジアム周辺の人口地図を表示できま�
     
   
 </div>
-<!-- References -->
-<!-- QGISによるデータ分析(4) 合同会社 緑ＩＴ事務所 2014年8月3日--></p>
+
+<h2 id="技術的な話">技術的な話</h2>
+
+<p>そもそもこれは去年作成したものだったのですが、制作報告のブログが書きかけのまま一年近くが経ってしまいました。今回、2018年度の経営情報を更新したので、改めて制作報告も兼ねて更新します。</p>
+
+<p>さて、制作報告をしたばかりであれなのですが、このページはいずれ破棄して全く新しく作り直す予定です。</p>
+
+<p>このページは <a href="https://github.com/facebook/create-react-app">create-react-app</a> で作成したものですが、そもそも SPA (Single Page Application) で作るべきものではなかったと思います。<br />
+GraphQL を使って React 製の静的なページを作成する <a href="https://www.gatsbyjs.org">Gatsby</a> に移行したいけど、どんなデータ構成がいいかなと考えてるうちに2018年度のデータが更新されてしまって、止む無くこのページを更新した次第です。</p>
+
+<p>止む無く更新したと言ったばかりですが、今回の更新で簡易なグラフも掲載しました。グラフは React で <a href="https://d3js.org/">D3.js</a> のモジュールを使って作成しました。レスポンシブなグラフの作成には <a href="https://bvaughn.github.io/react-virtualized/">react-virtualized</a> の <code>AutoSizer</code> を使うと便利です。</p>
+
+<!-- Music -->
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/2C2uufoKeNA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<p>はたらくおっさん / フジロッ久(仮) (2011)</p>
+
+<p><div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      
+      <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="5892967151"
+         data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+<!-- References --></p>
     </div>
 
     
@@ -429,7 +390,7 @@ MAP画面で選択したスタジアム周辺の人口地図を表示できま�
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2018-04-23</span>
+    <span class="item-content">2019-07-26</span>
   </p>
   
   <p class="copyright-item">
@@ -446,27 +407,18 @@ MAP画面で選択したスタジアム周辺の人口地図を表示できま�
           
           <a href="https://cieloazul310.github.io/tags/j%E3%83%AA%E3%83%BC%E3%82%B0/">Jリーグ</a>
           
-          <a href="https://cieloazul310.github.io/tags/%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC/">サッカー</a>
+          <a href="https://cieloazul310.github.io/tags/javascript/">JavaScript</a>
           
-          <a href="https://cieloazul310.github.io/tags/gis/">GIS</a>
-          
-          <a href="https://cieloazul310.github.io/tags/d3.js/">D3.js</a>
-          
-          <a href="https://cieloazul310.github.io/tags/%E4%BA%BA%E5%8F%A3/">人口</a>
+          <a href="https://cieloazul310.github.io/tags/react/">React</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="https://cieloazul310.github.io/2018/07/how-to-generate-mundial-with-gimp/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">GIMPで陸地を生成する</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
         
-          <a class="next" href="https://cieloazul310.github.io/2018/02/mediawiki-api-coodinates/">
-            <span class="next-text nav-default">Wikipedia記事の座標を取得&amp;日本語記事の座標が取得できない問題</span>
+          <a class="next" href="https://cieloazul310.github.io/2019/06/typescript-material-ui-v4/">
+            <span class="next-text nav-default">TypeScript &#43; Material-UI v4 のスタイル付きコンポーネント作成ガイド</span>
             <span class="prev-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

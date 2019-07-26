@@ -7,10 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Tue, 04 Jun 2019 21:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jul 2019 22:30:00 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jクラブ経営情報 2006-2018 作りました</title>
+      <link>https://cieloazul310.github.io/2019/07/jclub-financial-table/</link>
+      <pubDate>Fri, 26 Jul 2019 22:30:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2019/07/jclub-financial-table/</guid>
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+
+&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;Jリーグクラブの経営情報をクラブ別・年別に見ることができるページを作成しました。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>TypeScript &#43; Material-UI v4 のスタイル付きコンポーネント作成ガイド</title>
