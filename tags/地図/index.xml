@@ -7,10 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Mon, 29 Jan 2018 23:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 03 Aug 2019 22:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>国土地理院のバイナリベクトルタイルを OpenLayers で表示</title>
+      <link>https://cieloazul310.github.io/2019/08/openlayers-vt/</link>
+      <pubDate>Sat, 03 Aug 2019 22:00:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2019/08/openlayers-vt/</guid>
+      <description>&lt;!--
+- 対象: ある程度 OpenLayers の知識がある人
+- 目的: 
+--&gt;
+
+&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/gsi-cyberjapan/gsimaps-vector-experiment&#34; title=&#34;地理院地図Vector（仮称）提供実験のソース&#34;&gt;2019年7月29日に国土地理院が提供実験を開始したバイナリ形式のベクトルタイル&lt;/a&gt;を JavaScript の地図ライブラリである &lt;a href=&#34;http://openlayers.org/&#34; title=&#34;OpenLayers&#34;&gt;OpenLayers&lt;/a&gt; で表示する方法です。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>WikiLayersをリリースしました</title>

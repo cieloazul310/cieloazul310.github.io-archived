@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="ja" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>国土地理院のバイナリベクトルタイルを OpenLayers で表示 - 水戸地図</title>
+  <link rel="alternate" hreflang="ja" href="https://cieloazul310.github.io" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="cieloazul310" /><meta name="description" content="2019年7月29日に国土地理院が提供実験を開始したバイナリ形式のベクトルタイルを JavaScript の地図ライブラリである OpenLayers で表示する方法です。" />
+<meta name="keywords" content="OpenLayers, バイナリベクトルタイル, GIS, 地図" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.5" />
+
+
+<link rel="canonical" href="https://cieloazul310.github.io/2019/08/openlayers-vt/" />
+
+
+
+<link rel="icon" href="https://cieloazul310.github.io/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="https://cieloazul310.github.io/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="国土地理院のバイナリベクトルタイルを OpenLayers で表示" />
+<meta property="og:description" content="2019年7月29日に国土地理院が提供実験を開始したバイナリ形式のベクトルタイルを JavaScript の地図ライブラリである OpenLayers で表示する方法です。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cieloazul310.github.io/2019/08/openlayers-vt/" />
+
+<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png" />
+<meta property="article:published_time" content="2019-08-03T22:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2019-08-03T22:00:00&#43;09:00"/>
+
+<meta itemprop="name" content="国土地理院のバイナリベクトルタイルを OpenLayers で表示">
+<meta itemprop="description" content="2019年7月29日に国土地理院が提供実験を開始したバイナリ形式のベクトルタイルを JavaScript の地図ライブラリである OpenLayers で表示する方法です。">
+
+
+<meta itemprop="datePublished" content="2019-08-03T22:00:00&#43;09:00" />
+<meta itemprop="dateModified" content="2019-08-03T22:00:00&#43;09:00" />
+<meta itemprop="wordCount" content="2635">
+
+
+
+<meta itemprop="keywords" content="OpenLayers,バイナリベクトルタイル,GIS,地図," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+
+<meta name="twitter:title" content="国土地理院のバイナリベクトルタイルを OpenLayers で表示"/>
+<meta name="twitter:description" content="2019年7月29日に国土地理院が提供実験を開始したバイナリ形式のベクトルタイルを JavaScript の地図ライブラリである OpenLayers で表示する方法です。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-74683419-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/">
+          Home
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/post/">
+          Archives
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/categories/">
+          Categories
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/tags/">
+          Tags
+        </a>
+      </li><li class="mobile-menu-item">
+        <a href="https://cieloazul310.github.io/about/">
+          About
+        </a>
+      </li>
+  </ul>
+</nav>
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="https://cieloazul310.github.io/" class="logo">
+    
+      水戸地図
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/about/">About</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">国土地理院のバイナリベクトルタイルを OpenLayers で表示</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2019-08-03 </span>
+        <div class="post-category">
+            
+              <a href="https://cieloazul310.github.io/categories/javascript/"> JavaScript </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      <!--
+- 対象: ある程度 OpenLayers の知識がある人
+- 目的: 
+-->
+
+<!-- Lead Paragraph -->
+
+<p><a href="https://github.com/gsi-cyberjapan/gsimaps-vector-experiment" title="地理院地図Vector（仮称）提供実験のソース">2019年7月29日に国土地理院が提供実験を開始したバイナリ形式のベクトルタイル</a>を JavaScript の地図ライブラリである <a href="http://openlayers.org/" title="OpenLayers">OpenLayers</a> で表示する方法です。</p>
+
+<p>まずは<a href="https://cieloazul310.github.io/figure/ol-vectortile-example3/" title="デモ3">作成したデモ</a>をどうぞ</p>
+
+<h2 id="ベクトルタイル概要">ベクトルタイル概要</h2>
+
+<p><img src="../../../img/ol-vectortile/example3_1.png" alt="デモ3のスクリーンショット1" title="デモ3のスクリーンショット1" /></p>
+
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>URL</td>
+<td><a href="https://cyberjapandata.gsi.go.jp/xyz/experimental_bvmap/{z}/{x}/{y}.pbf">https://cyberjapandata.gsi.go.jp/xyz/experimental_bvmap/{z}/{x}/{y}.pbf</a></td>
+</tr>
+
+<tr>
+<td>データソース</td>
+<td>数値地図（国土基本情報）- 地図情報　等</td>
+</tr>
+
+<tr>
+<td>ズームレベル</td>
+<td>5～17</td>
+</tr>
+
+<tr>
+<td>提供範囲</td>
+<td>20万分1地勢図「宇都宮」「水戸」「甲府」「東京」「千葉」の範囲（縮尺によっては、その周辺も提供）</td>
+</tr>
+
+<tr>
+<td>提供開始</td>
+<td>令和元年7月29日</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="https://github.com/gsi-cyberjapan/gsimaps-vector-experiment" title="地理院地図Vector（仮称）提供実験のソース">地理院地図Vector（仮称）提供実験のソース</a></p>
+
+<p>従来のベクトルタイルは GeoJSON 形式でしたが、今回新たに提供実験が始まったベクトルタイルはシリアライズされた pbf という形式のファイルです。</p>
+
+<p>また公開に合わせて <a href="https://docs.mapbox.com/mapbox-gl-js/" title="Mapbox GL JS">Mapbox GL JS</a> ベースの <a href="https://maps.gsi.go.jp/vector/" title="地理院地図Vector">地理院地図Vector</a> の試験公開も始まりました。</p>
+
+<h2 id="開発環境">開発環境</h2>
+
+<p>Webpack + TypeScript 環境を想定しています。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ mkdir ol-vectortile
+$ <span class="nb">cd</span> ol-vectortile
+$ yarn init -y
+$ yarn add --dev webpack webpack-cli webpack-dev-server
+$ yarn add --dev css-loader style-loader
+$ yarn add ol
+// TypeScript を使う場合
+$ yarn add --dev typescript ts-loader
+$ yarn add @types/ol</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="バージョン">バージョン</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">- ol@5.3.3</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="ディレクトリ構成">ディレクトリ構成</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">.
+├── dist
+│   └── index.html
+├── src
+│   └── index.ts
+├── .gitignore
+├── .prettierrc
+├── tsconfig.json
+├── webpack.config.js
+├── package.json
+└── yarn.lock</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="バイナリベクトルタイル表示の最小限のコード">バイナリベクトルタイル表示の最小限のコード</h2>
+
+<p>OpenLayers でバイナリベクトルタイルを表示する最小限のコードです。</p>
+
+<h3 id="dist-index-html">./dist/index.html</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ja&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>OpenLayers Vector Tiles<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+      <span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="p">{</span>
+        <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="p">.</span><span class="nc">map</span> <span class="p">{</span>
+        <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+        <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;map&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;map&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;./bundle.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="src-index-ts">./src/index.ts</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="nx">Map</span> <span class="nx">from</span> <span class="s1">&#39;ol/Map&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">View</span> <span class="nx">from</span> <span class="s1">&#39;ol/View&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">VectorTileLayer</span> <span class="nx">from</span> <span class="s1">&#39;ol/layer/VectorTile&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">VectorTileSource</span> <span class="nx">from</span> <span class="s1">&#39;ol/source/VectorTile&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">MVTFormat</span> <span class="nx">from</span> <span class="s1">&#39;ol/format/MVT&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">fromLonLat</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;ol/proj&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="s1">&#39;ol/ol.css&#39;</span><span class="p">;</span>
+
+<span class="c1">// ベクトルタイルの olレイヤを定義
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">vt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VectorTileLayer</span><span class="p">({</span>
+  <span class="nx">source</span>: <span class="kt">new</span> <span class="nx">VectorTileSource</span><span class="p">({</span>
+    <span class="nx">format</span>: <span class="kt">new</span> <span class="nx">MVTFormat</span><span class="p">(),</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;https://cyberjapandata.gsi.go.jp/xyz/experimental_bvmap/{z}/{x}/{y}.pbf&#39;</span><span class="p">,</span>
+    <span class="nx">attributions</span><span class="o">:</span> <span class="p">[</span>
+      <span class="s1">&#39;&lt;a href=&#34;https://github.com/gsi-cyberjapan/gsimaps-vector-experiment&#34; target=&#34;_blank&#34; rel=”noopener noreferrer”&gt;国土地理院&lt;/a&gt;&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+
+<span class="k">new</span> <span class="nx">Map</span><span class="p">({</span>
+  <span class="nx">target</span><span class="o">:</span> <span class="s1">&#39;map&#39;</span><span class="p">,</span>
+  <span class="nx">view</span>: <span class="kt">new</span> <span class="nx">View</span><span class="p">({</span>
+    <span class="nx">center</span>: <span class="kt">fromLonLat</span><span class="p">([</span><span class="mf">140.46</span><span class="p">,</span> <span class="mf">36.37</span><span class="p">]),</span>
+    <span class="nx">zoom</span>: <span class="kt">10</span>
+  <span class="p">}),</span>
+  <span class="nx">layers</span><span class="o">:</span> <span class="p">[</span><span class="nx">vt</span><span class="p">]</span>
+<span class="p">});</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>このコードで作成したデモは<a href="https://cieloazul310.github.io/figure/ol-vectortile-example1/" title="デモ1">こちら</a>です。</p>
+
+<p><img src="../../../img/ol-vectortile/example1.png" alt="デモ1のスクリーンショット" title="デモ1のスクリーンショット" /></p>
+
+<p>このデモではベクトルタイルの <strong>olレイヤ</strong> <code>vt</code> にスタイルを設定していないので、全ての地物にデフォルトのスタイルが適用されています。</p>
+
+<p>さて、ここからはベクトルタイル内に含まれる地物のレイヤを扱いますが、これを OpenLayers のレイヤクラスと区別するため、OpenLayers のレイヤクラスを <strong>olレイヤ</strong> と表記します。</p>
+
+<p>webpack guide: <a href="https://webpack.js.org/guides/typescript/" title="webpack guide TypeScript">TypeScript</a><br />
+OpenLayers API: <a href="https://openlayers.org/en/latest/apidoc/module-ol_layer_VectorTile.html" title="OpenLayers API ol/layer/VectorTile">ol/layer/VectorTile</a><br />
+OpenLayers API: <a href="https://openlayers.org/en/latest/apidoc/module-ol_source_VectorTile.html" title="OpenLayers API ol/source/VectorTile">ol/source/VectorTile</a></p>
+
+<div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="6120305662"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+
+<h2 id="より地図らしくしていく">より地図らしくしていく</h2>
+
+<p>先ほどのコードで国土地理院のバイナリベクトルタイルを OpenLayers で表示することに成功しました。ここからは「レイヤの選択」と「スタイルの設定」で表示する地図を、より地図らしくしていく作業になります。</p>
+
+<p>まずは <code>src</code> ディレクトリに <code>layers</code> ディレクトリと <code>styles</code> ディレクトリを作成し、<code>src</code> ディレクトリの構成を以下のように変更します。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">src
+├── index.ts
+├── layers
+│   └── vt.ts
+└── styles
+    └── vtstyle.ts</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="レイヤを選択して描写">レイヤを選択して描写</h3>
+
+<p>バイナリベクトルタイルは、GeoJSON 形式のベクトルタイルとは違って、タイル内にレイヤ情報を含んでいます。全てのレイヤをスタイリングするのは非常に手間がかかるため、ここではレイヤの選択をおこないます。</p>
+
+<p>レイヤの選択は、<code>VectorTileSource</code> オブジェクトの <code>format</code> プロパティに設定した <code>MVTFormat</code> オブジェクトを編集することで実現できます。<code>layers</code> プロパティに選択するレイヤ名の配列を設定します。</p>
+
+<p>次の例では、道路(road)、鉄道(railway)、海岸線(coastline)、河川(river)、湖池(lake)、水域(waterarea) のみを選んで描写しています。</p>
+
+<h4 id="src-layers-vt-ts">./src/layers/vt.ts</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="nx">VectorTileLayer</span> <span class="nx">from</span> <span class="s1">&#39;ol/layer/VectorTile&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">VectorTileSource</span> <span class="nx">from</span> <span class="s1">&#39;ol/source/VectorTile&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">MVTFormat</span> <span class="nx">from</span> <span class="s1">&#39;ol/format/MVT&#39;</span><span class="p">;</span>
+
+<span class="c1">// 次の項で作成する StyleFunction
+</span><span class="c1"></span><span class="kr">import</span> <span class="nx">vtstyle</span> <span class="nx">from</span> <span class="s1">&#39;../styles/vtstyle.ts&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">vt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VectorTileLayer</span><span class="p">({</span>
+  <span class="nx">source</span>: <span class="kt">new</span> <span class="nx">VectorTileSource</span><span class="p">({</span>
+    <span class="nx">format</span>: <span class="kt">new</span> <span class="nx">MVTFormat</span><span class="p">({</span>
+      <span class="c1">// 取得するレイヤ名を配列に記述する
+</span><span class="c1"></span>      <span class="nx">layers</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;river&#39;</span><span class="p">,</span> <span class="s1">&#39;coastline&#39;</span><span class="p">,</span> <span class="s1">&#39;lake&#39;</span><span class="p">,</span> <span class="s1">&#39;waterarea&#39;</span><span class="p">,</span> <span class="s1">&#39;road&#39;</span><span class="p">,</span> <span class="s1">&#39;railway&#39;</span><span class="p">]</span>
+    <span class="p">}),</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;https://cyberjapandata.gsi.go.jp/xyz/experimental_bvmap/{z}/{x}/{y}.pbf&#39;</span><span class="p">,</span>
+    <span class="nx">attributions</span><span class="o">:</span> <span class="p">[</span>
+      <span class="s1">&#39;&lt;a href=&#34;https://github.com/gsi-cyberjapan/gsimaps-vector-experiment&#34; target=&#34;_blank&#34; rel=”noopener noreferrer”&gt;国土地理院&lt;/a&gt;&#39;</span>
+    <span class="p">]</span>
+  <span class="p">}),</span>
+  <span class="nx">style</span>: <span class="kt">vtstyle</span>
+<span class="p">});</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">vt</span><span class="p">;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>レイヤを取捨選択することで、必要に応じた様々な地図を作成することができます。<br />
+レイヤの一覧は<a href="https://maps.gsi.go.jp/help/pdf/vector/dataspec.pdf" title="データ仕様">地物コード及び表示ズームレベル一覧</a>で確認できます。</p>
+
+<p>OpenLayers API: <a href="https://openlayers.org/en/latest/apidoc/module-ol_format_MVT.html" title="OpenLayers API ol/format/MVT">ol/format/MVT</a></p>
+
+<h3 id="レイヤごとにスタイルを作成">レイヤごとにスタイルを作成</h3>
+
+<p>olレイヤにスタイルを適用していきます。<br />
+olレイヤのスタイルの指定方法は以下の3通りです</p>
+
+<ol>
+<li><code>Style</code> オブジェクトを指定 <code>Style</code></li>
+<li><code>Style</code> オブジェクトの配列を指定 <code>Style[]</code></li>
+<li><code>StyleFunction</code> を指定 <code>(RenderFeature, number) =&gt; Style | Style[]</code></li>
+</ol>
+
+<p>ここからは <code>StyleFunction</code> を作成してベクトルタイルのレイヤに合わせたスタイル指定の方法を行ないます。<br />
+<code>StyleFunction</code> は <code>RenderFeature</code> と <code>resolution (number)</code> を引数にとり、<code>Style</code> オブジェクトあるいは <code>Style</code> オブジェクトの配列を返します。</p>
+
+<h4 id="src-styles-vtstyle-ts">./src/styles/vtstyle.ts</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="nx">Style</span> <span class="nx">from</span> <span class="s1">&#39;ol/style/Style&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Stroke</span> <span class="nx">from</span> <span class="s1">&#39;ol/style/Stroke&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Fill</span> <span class="nx">from</span> <span class="s1">&#39;ol/style/Fill&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">RenderFeature</span> <span class="nx">from</span> <span class="s1">&#39;ol/render/Feature&#39;</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">vtStyle</span><span class="p">(</span>
+  <span class="nx">feature</span>: <span class="kt">RenderFeature</span><span class="p">,</span>
+  <span class="nx">resolution</span>: <span class="kt">number</span>
+<span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// RenderFeature から properties を取得
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">properties</span> <span class="o">=</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">getProperties</span><span class="p">();</span>
+  <span class="c1">// properties に格納されているレイヤ名からスタイルを書き分ける
+</span><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">properties</span><span class="p">.</span><span class="nx">layer</span> <span class="o">===</span> <span class="s1">&#39;road&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Style</span><span class="p">({</span>
+      <span class="nx">stroke</span>: <span class="kt">new</span> <span class="nx">Stroke</span><span class="p">({</span>
+        <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;#ddd&#39;</span><span class="p">,</span>
+        <span class="nx">width</span>: <span class="kt">2</span>
+      <span class="p">}),</span>
+      <span class="nx">zIndex</span>: <span class="kt">1</span>
+    <span class="p">});</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">properties</span><span class="p">.</span><span class="nx">layer</span> <span class="o">===</span> <span class="s1">&#39;railway&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Style</span><span class="p">({</span>
+      <span class="nx">stroke</span>: <span class="kt">new</span> <span class="nx">Stroke</span><span class="p">({</span>
+        <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span>
+      <span class="p">}),</span>
+      <span class="nx">zIndex</span>: <span class="kt">2</span>
+    <span class="p">});</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">properties</span><span class="p">.</span><span class="nx">layer</span> <span class="o">===</span> <span class="s1">&#39;coastline&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Style</span><span class="p">({</span>
+      <span class="nx">stroke</span>: <span class="kt">new</span> <span class="nx">Stroke</span><span class="p">({</span>
+        <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;skyblue&#39;</span><span class="p">,</span>
+        <span class="nx">width</span>: <span class="kt">2</span>
+      <span class="p">}),</span>
+      <span class="nx">zIndex</span>: <span class="kt">0</span>
+    <span class="p">});</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">properties</span><span class="p">.</span><span class="nx">layer</span> <span class="o">===</span> <span class="s1">&#39;river&#39;</span> <span class="o">||</span> <span class="nx">properties</span><span class="p">.</span><span class="nx">layer</span> <span class="o">===</span> <span class="s1">&#39;lake&#39;</span> <span class="o">||</span> <span class="nx">properties</span><span class="p">.</span><span class="nx">layer</span> <span class="o">===</span> <span class="s1">&#39;waterarea&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Style</span><span class="p">({</span>
+      <span class="nx">fill</span>: <span class="kt">new</span> <span class="nx">Fill</span><span class="p">({</span>
+        <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;skyblue&#39;</span><span class="p">,</span>
+      <span class="p">}),</span>
+      <span class="nx">zIndex</span>: <span class="kt">0</span>
+    <span class="p">});</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// 空の new Style() を返すと何も描写しない
+</span><span class="c1"></span>    <span class="k">return</span> <span class="k">new</span> <span class="nx">Style</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>このスタイルで作成したのが<a href="https://cieloazul310.github.io/figure/ol-vectortile-example2/" title="デモ2">デモ2</a>です。</p>
+
+<p><img src="../../../img/ol-vectortile/example2_1.png" alt="デモ2のスクリーンショット1" title="デモ2のスクリーンショット1" /></p>
+
+<p><img src="../../../img/ol-vectortile/example2_2.png" alt="デモ2のスクリーンショット2" title="デモ2のスクリーンショット2" /></p>
+
+<p><img src="../../../img/ol-vectortile/example2_3.png" alt="デモ2のスクリーンショット3" title="デモ2のスクリーンショット3" /></p>
+
+<p>この例では、ベクトルタイル内のレイヤのみでスタイルを書き分けましたが、地物の属性(properties)から道路の区分や幅員を取得することで、さらに複雑なスタイリングを施すことができます。<br />
+<a href="https://maps.gsi.go.jp/help/pdf/vector/dataspec.pdf" title="データ仕様">地物コード及び表示ズームレベル一覧</a>と<a href="https://maps.gsi.go.jp/help/pdf/vector/attribute.pdf" title="属性解説書">地物の属性一覧</a>を読んで、どのようなレイヤ、属性があるか確認してください。</p>
+
+<p>OpenLayers API: <a href="https://openlayers.org/en/latest/apidoc/module-ol_render_Feature.html" title="OpenLayers API ol/render/Feature">ol/render/Feature</a><br />
+OpenLayers API: <a href="https://openlayers.org/en/latest/apidoc/module-ol_style_Style.html" title="OpenLayers API ol/style/Style">ol/style/Style</a></p>
+
+<h2 id="プロジェクト作成例">プロジェクト作成例</h2>
+
+<p><img src="../../../img/ol-vectortile/example3_1.png" alt="デモ3のスクリーンショット1" title="デモ2のスクリーンショット1" /></p>
+
+<p>GitHub に OpenLayers + TypeScript プロジェクト作成例のリポジトリを作成しました。
+このリポジトリを clone すれば、Webpack 周りの初期設定をせずに OpenLayers で国土地理院ベクトルタイルを使った開発が可能になります。</p>
+
+<p>国土地理院ベクトルタイル + OpenLayers + TypeScript Example<br />
+<a href="https://github.com/cieloazul310/ol-vectortile/">https://github.com/cieloazul310/ol-vectortile/</a></p>
+
+<p><img src="../../../img/ol-vectortile/example3_2.png" alt="デモ3のスクリーンショット2" title="デモ3のスクリーンショット2" /></p>
+
+<p><img src="../../../img/ol-vectortile/example3_3.png" alt="デモ3のスクリーンショット3" title="デモ3のスクリーンショット3" /></p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>以上、OpenLayers で国土地理院のバイナリベクトルタイルを使う上での基礎的な内容でした。</p>
+
+<p>バイナリベクトルタイルの利用は、 <a href="https://docs.mapbox.com/mapbox-gl-js/" title="Mapbox GL JS">Mapbox GL JS</a> を使うのが一番良い方法だとは思いますが、バイナリベクトルタイルへの対応を見ると OpenLayers もまだまだ捨ててもんじゃないなと思いました。</p>
+
+<p>今までは煩雑だと思っていた OpenLayers の書き方も、TypeScript や Dart といった静的型付け言語を勉強して、その理屈がよくわかりました。
+今回初めて OpenLayers を TypeScript で書いてみたのですがやはり相性がよかったです。</p>
+
+<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="https://maps.gsi.go.jp/development/vt.html" title="ベクトルタイルとその提供実験について">ベクトルタイルとその提供実験について</a> 国土地理院</li>
+<li><a href="https://github.com/gsi-cyberjapan/gsimaps-vector-experiment" title="地理院地図Vector（仮称）提供実験のソース">地理院地図Vector（仮称）提供実験のソース</a> GitHub</li>
+<li><a href="https://maps.gsi.go.jp/vector/" title="地理院地図Vector">地理院地図Vector</a></li>
+<li><a href="https://github.com/cieloazul310/ol-vectortile/">国土地理院ベクトルタイル + OpenLayers + TypeScript Example</a> GitHub</li>
+<li><a href="http://openlayers.org/" title="OpenLayers">OpenLayers</a></li>
+</ul>
+
+<!-- Music -->
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/3vodWFH9JlQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<p>エニウェア / ベランダ (2018)</p>
+
+<p><div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      
+      <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="5892967151"
+         data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+<!-- References --></p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">cieloazul310</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2019-08-03</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="https://cieloazul310.github.io/tags/openlayers/">OpenLayers</a>
+          
+          <a href="https://cieloazul310.github.io/tags/%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%AB/">バイナリベクトルタイル</a>
+          
+          <a href="https://cieloazul310.github.io/tags/gis/">GIS</a>
+          
+          <a href="https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/">地図</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="https://cieloazul310.github.io/2019/07/jclub-financial-table/">
+            <span class="next-text nav-default">Jクラブ経営情報 2006-2018 作りました</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+      Show Disqus Comments
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function load_disqus() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'cieloazul310';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+        $('#load_disqus').remove();
+    };
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+  
+
+  
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="//twitter.com/cieloazul310" rel="me noopener" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="//github.com/cieloazul310" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://cieloazul310.github.io/index.xml" rel="noopener" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">cieloazul310</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="https://cieloazul310.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="https://cieloazul310.github.io/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="https://cieloazul310.github.io/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>
