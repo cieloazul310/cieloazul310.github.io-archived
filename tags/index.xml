@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Sat, 03 Aug 2019 22:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 06 Aug 2019 22:30:00 +0900</lastBuildDate>
     
 	<atom:link href="https://cieloazul310.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://cieloazul310.github.io/tags/javascript/</link>
+      <pubDate>Tue, 06 Aug 2019 22:30:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OpenLayers</title>
+      <link>https://cieloazul310.github.io/tags/openlayers/</link>
+      <pubDate>Tue, 06 Aug 2019 22:30:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/tags/openlayers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>地図</title>
+      <link>https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/</link>
+      <pubDate>Tue, 06 Aug 2019 22:30:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>GIS</title>
@@ -22,38 +49,11 @@
     </item>
     
     <item>
-      <title>OpenLayers</title>
-      <link>https://cieloazul310.github.io/tags/openlayers/</link>
-      <pubDate>Sat, 03 Aug 2019 22:00:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/tags/openlayers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>バイナリベクトルタイル</title>
       <link>https://cieloazul310.github.io/tags/%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%AB/</link>
       <pubDate>Sat, 03 Aug 2019 22:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/tags/%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%AB/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>地図</title>
-      <link>https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/</link>
-      <pubDate>Sat, 03 Aug 2019 22:00:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JavaScript</title>
-      <link>https://cieloazul310.github.io/tags/javascript/</link>
-      <pubDate>Fri, 26 Jul 2019 22:30:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/tags/javascript/</guid>
       <description></description>
     </item>
     

@@ -6,7 +6,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Sat, 03 Aug 2019 22:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 06 Aug 2019 22:30:00 +0900</lastBuildDate>
     
         <atom:link href="https://cieloazul310.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,6 +19,24 @@
       <guid>https://cieloazul310.github.io/about/</guid>
       
         <description>&lt;p&gt;水戸地図はD3.jsやOpenLayersなどJavaScriptのライブラリを使ってデータビジュアライゼーションを試みる実験室です。&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>土地利用地図を作りました</title>
+      <link>https://cieloazul310.github.io/2019/08/landuse-map/</link>
+      <pubDate>Tue, 06 Aug 2019 22:30:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2019/08/landuse-map/</guid>
+      
+        <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+
+&lt;!-- Lead Paragraph --&gt;
+
+&lt;p&gt;土地利用を文字で見る地図を作りました。&lt;/p&gt;</description>
       
     </item>
     
