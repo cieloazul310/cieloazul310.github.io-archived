@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2018/07/how-to-generate-mundial-with-gimp/" />
@@ -50,7 +50,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.476d377da573c5c16f57ecf4e956d06120bcef19549406478a2cd9565a009ebe.css" integrity="sha256-R203faVzxcFvV&#43;z06VbQYSC87xlUlAZHiizZVloAnr4=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.762ae52e49657988e37a406dd0c1f40d131ca30af45afb5795e7dadfcd73303e.css" integrity="sha256-dirlLklleYjjekBt0MH0DRMcowr0WvtXlefa381zMD4=" media="screen" crossorigin="anonymous">
 
 
 
@@ -60,22 +60,19 @@
 <meta property="og:description" content="GIMPで架空の陸地の地図を生成する方法" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cieloazul310.github.io/2018/07/how-to-generate-mundial-with-gimp/" />
-
-<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png" />
+<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 <meta property="article:published_time" content="2018-07-21T16:30:00+09:00" />
 <meta property="article:modified_time" content="2018-07-21T16:30:00+09:00" />
 <meta itemprop="name" content="GIMPで陸地を生成する">
 <meta itemprop="description" content="GIMPで架空の陸地の地図を生成する方法">
-
-
 <meta itemprop="datePublished" content="2018-07-21T16:30:00&#43;09:00" />
 <meta itemprop="dateModified" content="2018-07-21T16:30:00&#43;09:00" />
-<meta itemprop="wordCount" content="1056">
+<meta itemprop="wordCount" content="1046">
+<meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 
 
-<meta itemprop="keywords" content="GIMP,画像処理," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="GIMP,画像処理," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 <meta name="twitter:title" content="GIMPで陸地を生成する"/>
@@ -335,160 +332,85 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <!-- Lead Paragraph -->
-
+      <!-- raw HTML omitted -->
 <p>GIMPをいじっていたらたまたま架空の陸地のような画像が作れたので作り方を記録しておきます。</p>
-
-<h2 id="見本">見本</h2>
-
-<p><img src="../../../img/mundial/master.png" alt="見本" /></p>
-
+<h2 id="heading">見本</h2>
+<p><img src="../../../img/mundial/master.png" alt="見本"></p>
 <p>設定次第で島にも大陸にもできます。</p>
-
-<h2 id="作り方">作り方</h2>
-
+<h2 id="heading-1">作り方</h2>
 <p>所要時間: 10分くらい</p>
-
-<h3 id="陸地レイヤー-海レイヤー">陸地レイヤー・海レイヤー</h3>
-
-<h4 id="1-黒無地の背景に霧を生成">1. 黒無地の背景に霧を生成</h4>
-
-<p><img src="../../../img/mundial/01.png" alt="霧を生成" /></p>
-
-<p>「フィルター」&gt;「下塗り」&gt;「雲」&gt;「霧」で霧を生成します。<br />
-パラメータのTurbulenceを小さくすると大きな塊に、大きくすると分散した形になります。<br />
+<h3 id="heading-2">陸地レイヤー・海レイヤー</h3>
+<h4 id="1-">1. 黒無地の背景に霧を生成</h4>
+<p><img src="../../../img/mundial/01.png" alt="霧を生成"></p>
+<p>「フィルター」&gt;「下塗り」&gt;「雲」&gt;「霧」で霧を生成します。<br>
+パラメータのTurbulenceを小さくすると大きな塊に、大きくすると分散した形になります。<br>
 今回はTurbulenceを3.0に設定しました。</p>
-
-<h4 id="2-黒無地と霧を合成し-ガウスぼかしをかける">2. 黒無地と霧を合成し、ガウスぼかしをかける</h4>
-
-<p><img src="../../../img/mundial/02.png" alt="ガウスぼかし" /></p>
-
-<p>「フィルター」&gt;「ぼかし」&gt;「ガウスぼかし」でガウスぼかしをかけます。<br />
-ぼかしの半径を小さくすると海岸線が複雑な形に、大きくすると単純な形になります。<br />
+<h4 id="2-">2. 黒無地と霧を合成し、ガウスぼかしをかける</h4>
+<p><img src="../../../img/mundial/02.png" alt="ガウスぼかし"></p>
+<p>「フィルター」&gt;「ぼかし」&gt;「ガウスぼかし」でガウスぼかしをかけます。<br>
+ぼかしの半径を小さくすると海岸線が複雑な形に、大きくすると単純な形になります。<br>
 今回は水平・垂直共に5.0に設定しました。</p>
-
-<h4 id="3-画像を2段階化">3. 画像を2段階化</h4>
-
-<p><img src="../../../img/mundial/03.png" alt="2段階化" /></p>
-
-<p>「色」&gt;「しきい値」で画像を2段階化します。<br />
+<h4 id="3-2">3. 画像を2段階化</h4>
+<p><img src="../../../img/mundial/03.png" alt="2段階化"></p>
+<p>「色」&gt;「しきい値」で画像を2段階化します。<br>
 しきい値の値はスライダーをいじって感覚で設定します。</p>
-
-<p>白い方と黒い方、どちらかを陸、どちらかを海に決めます。<br />
+<p>白い方と黒い方、どちらかを陸、どちらかを海に決めます。<br>
 今回は白い方を陸にしました。</p>
-
-<h4 id="4-海と陸の色をつける">4. 海と陸の色をつける</h4>
-
-<p><img src="../../../img/mundial/04.png" alt="海と陸の色をつける" /></p>
-
+<h4 id="4-">4. 海と陸の色をつける</h4>
+<p><img src="../../../img/mundial/04.png" alt="海と陸の色をつける"></p>
 <p>陸地にする方（今回は白い方）を「色域を選択」で選択し、選択範囲を保存します。</p>
-
 <p>新しいレイヤーを2枚作り、1枚は選択範囲を使ってベージュで塗りつぶします。
 もう1枚は選択範囲を使わずに水色で塗りつぶします。</p>
-
 <p>色調は後で調整できるので、ここでは大雑把な色の選択でいいです。</p>
-
 <div class="ad" style="width:100%;">
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-layout="in-article"
-         data-ad-format="fluid"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="6120305662"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
   
 </div>
-
-<h3 id="凹凸レイヤー">凹凸レイヤー</h3>
-
-<h4 id="5-凹凸地形の元になる霧を生成">5. 凹凸地形の元になる霧を生成</h4>
-
-<p><img src="../../../img/mundial/05.png" alt="地形の素の霧生成" /></p>
-
-<p>新しいレイヤーを2枚作ります。<br />
+<h3 id="heading-3">凹凸レイヤー</h3>
+<h4 id="5-">5. 凹凸地形の元になる霧を生成</h4>
+<p><img src="../../../img/mundial/05.png" alt="地形の素の霧生成"></p>
+<p>新しいレイヤーを2枚作ります。<br>
 1枚は黒地で先ほど保存した選択範囲を塗りつぶしたもの、もう1枚は選択範囲の範囲に霧を生成したものです。</p>
-
-<h4 id="6-上の2枚を合成しガウスぼかしをかける">6. 上の2枚を合成しガウスぼかしをかける</h4>
-
-<p><img src="../../../img/mundial/06.png" alt="ガウスぼかし" /></p>
-
-<h4 id="7-エンボス加工">7. エンボス加工</h4>
-
-<p><img src="../../../img/mundial/07.png" alt="エンボス加工" /></p>
-
-<p>「フィルター」&gt;「変形」&gt;「エンボス」でエンボスをかけます。<br />
+<h4 id="6-2">6. 上の2枚を合成しガウスぼかしをかける</h4>
+<p><img src="../../../img/mundial/06.png" alt="ガウスぼかし"></p>
+<h4 id="7-">7. エンボス加工</h4>
+<p><img src="../../../img/mundial/07.png" alt="エンボス加工"></p>
+<p>「フィルター」&gt;「変形」&gt;「エンボス」でエンボスをかけます。<br>
 今回は明度を反転する前提で、方向320度、持ち上げ0、深度10に設定していますが、最終的に凸凹しているように見えればいいので適当に設定してください。</p>
-
-<h4 id="8-エンボスを明度を反転">8. エンボスを明度を反転</h4>
-
-<p><img src="../../../img/mundial/08.png" alt="見本" /></p>
-
-<p>「色」&gt;「明度の反転」で右下に影が来るような画像にします。<br />
+<h4 id="8-">8. エンボスを明度を反転</h4>
+<p><img src="../../../img/mundial/08.png" alt="見本"></p>
+<p>「色」&gt;「明度の反転」で右下に影が来るような画像にします。<br>
 乗算で合成し、透過度を適当に設定します。</p>
-
 <div class="ad" style="width:100%;">
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      
-      <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="5892967151"
-         data-ad-format="auto"></ins>
-      <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
   
 </div>
-
-<h3 id="植生レイヤー">植生レイヤー</h3>
-
-<h4 id="9-緑色の霧を生成">9. 緑色の霧を生成</h4>
-
-<p><img src="../../../img/mundial/09.png" alt="植生を霧で生成" /></p>
-
-<p>保存した陸地の範囲の選択範囲を使って緑色の霧を生成します。<br />
+<h3 id="heading-4">植生レイヤー</h3>
+<h4 id="9-">9. 緑色の霧を生成</h4>
+<p><img src="../../../img/mundial/09.png" alt="植生を霧で生成"></p>
+<p>保存した陸地の範囲の選択範囲を使って緑色の霧を生成します。<br>
 任意でぼかしたりするといいと思います。</p>
-
-<h3 id="色の調整">色の調整</h3>
-
-<h4 id="10-レイヤーごとに色を調整する">10. レイヤーごとに色を調整する</h4>
-
-<p><img src="../../../img/mundial/10.png" alt="色の調整" /></p>
-
+<h3 id="heading-5">色の調整</h3>
+<h4 id="10-">10. レイヤーごとに色を調整する</h4>
+<p><img src="../../../img/mundial/10.png" alt="色の調整"></p>
 <p>お好みでレイヤーごとに色を調整します。</p>
-
-<h4 id="11-その他微調整">11. その他微調整</h4>
-
-<p><img src="../../../img/mundial/11.png" alt="微調整" /></p>
-
+<h4 id="11-">11. その他微調整</h4>
+<p><img src="../../../img/mundial/11.png" alt="微調整"></p>
 <p>陸地の周りに青いぼかしを入れました。とりあえず完成。</p>
-
-<h2 id="その他の作例">その他の作例</h2>
-
-<p><img src="../../../img/mundial/junk.png" alt="その他の作例" /></p>
-
+<h2 id="heading-6">その他の作例</h2>
+<p><img src="../../../img/mundial/junk.png" alt="その他の作例"></p>
 <p>霧で雲を作ったり、明るさをグラデーション隅をぼかしたりするといい感じになると思います。</p>
-
-<!-- Music -->
-
+<!-- raw HTML omitted -->
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/oyoy2_7FegI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/oyoy2_7FegI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
-<!-- References -->
+<!-- raw HTML omitted -->
     </div>
 
     

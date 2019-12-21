@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JavaScript on 水戸地図</title>
@@ -18,13 +18,9 @@
       <pubDate>Tue, 06 Aug 2019 22:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/08/landuse-map/</guid>
-      <description>&lt;!--
-- 対象: 
-- 目的: 
---&gt;
-
-&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;土地利用を文字で見る地図を作りました。&lt;/p&gt;</description>
     </item>
     
@@ -34,13 +30,9 @@
       <pubDate>Fri, 26 Jul 2019 22:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/07/jclub-financial-table/</guid>
-      <description>&lt;!--
-- 対象: 
-- 目的: 
---&gt;
-
-&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;Jリーグクラブの経営情報をクラブ別・年別に見ることができるページを作成しました。&lt;/p&gt;</description>
     </item>
     
@@ -50,13 +42,9 @@
       <pubDate>Tue, 04 Jun 2019 21:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/06/typescript-material-ui-v4/</guid>
-      <description>&lt;!--
-- 対象: 
-- 目的: 
---&gt;
-
-&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;2019年5月下旬に &lt;a href=&#34;https://material-ui.com&#34;&gt;Material-UI v4&lt;/a&gt; が正式にリリースされました。スタイル付きコンポーネントの記法が v3 以前のものと変わったのでメモしておきます。&lt;/p&gt;</description>
     </item>
     
@@ -66,14 +54,10 @@
       <pubDate>Mon, 25 Feb 2019 23:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/02/gatsby-stadiums-population/</guid>
-      <description>&lt;!--
-- 対象: 
-- 目的: リリース文と技術的な話の概要
---&gt;
-
-&lt;!-- Lead Paragraph --&gt;
-
-&lt;p&gt;昨年&lt;a href=&#34;https://cieloazul310.github.io/2018/04/stadium-and-population/&#34;&gt;国内のサッカースタジアム周辺の人口を求める&lt;/a&gt;という記事を書きました。&lt;br /&gt;
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;昨年&lt;a href=&#34;https://cieloazul310.github.io/2018/04/stadium-and-population/&#34;&gt;国内のサッカースタジアム周辺の人口を求める&lt;/a&gt;という記事を書きました。&lt;br&gt;
 前回の記事で算出結果の表示のために作ったページを新たに作り直し、ついでに前回算出しなかった半径 10km 圏内の人口と Bリーグのアリーナを加えました。&lt;/p&gt;</description>
     </item>
     
@@ -83,14 +67,10 @@
       <pubDate>Sat, 12 Jan 2019 23:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/01/material-react-typescript-notation/</guid>
-      <description>&lt;!--
-- 対象: React + TypeScript + Material-UI で書いてる人
-- 目的: React + TypeScript + Material-UI の Component の記法のガイド
---&gt;
-
-&lt;!-- Lead Paragraph --&gt;
-
-&lt;p&gt;React + &lt;a href=&#34;https://material-ui.com&#34;&gt;Material-UI v3&lt;/a&gt; では &lt;code&gt;withStyles(styles)(Component)&lt;/code&gt; という独自の記法で&lt;strong&gt;スタイル付き Components&lt;/strong&gt; を生成します。&lt;br /&gt;
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;React + &lt;a href=&#34;https://material-ui.com&#34;&gt;Material-UI v3&lt;/a&gt; では &lt;code&gt;withStyles(styles)(Component)&lt;/code&gt; という独自の記法で&lt;strong&gt;スタイル付き Components&lt;/strong&gt; を生成します。&lt;br&gt;
 TypeScript で Material-UI のスタイル付き Components を記述する場合は、従来の JavaScript での記法とは多少異なるのですが、 TypeScript を使った記法については情報が少ないと思ったので覚え書きとして残しておきます。&lt;/p&gt;</description>
     </item>
     
@@ -100,13 +80,9 @@ TypeScript で Material-UI のスタイル付き Components を記述する場�
       <pubDate>Fri, 11 Jan 2019 22:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/01/typescript-hajimemashita/</guid>
-      <description>&lt;!--
-- 対象: 
-- 目的: TypeScriptを始めたことを宣言する
---&gt;
-
-&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.typescriptlang.org&#34;&gt;TypeScript&lt;/a&gt; を始めました。TypeScript を始めるに至った過程を紹介します。&lt;/p&gt;</description>
     </item>
     
@@ -116,8 +92,7 @@ TypeScript で Material-UI のスタイル付き Components を記述する場�
       <pubDate>Sun, 22 Jul 2018 20:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2018/07/traveling-on-the-rock-continent/</guid>
-      <description>&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;TOKYO FMで放送されているラジオ番組&lt;a href=&#34;https://www.tfm.co.jp/manyuki/&#34;&gt;SPITZ 草野マサムネのロック大陸漫遊記&lt;/a&gt;のオンエア曲を年別・国別に分類しグラフ化してみました。&lt;/p&gt;</description>
     </item>
     
@@ -127,8 +102,7 @@ TypeScript で Material-UI のスタイル付き Components を記述する場�
       <pubDate>Tue, 06 Feb 2018 21:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2018/02/wikilayers-note/</guid>
-      <description>&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;&lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;WikiLayers&lt;/a&gt;で使っているパッケージやライブラリを自分のために覚書しておきます。&lt;/p&gt;</description>
     </item>
     
@@ -138,8 +112,7 @@ TypeScript で Material-UI のスタイル付き Components を記述する場�
       <pubDate>Thu, 14 Dec 2017 23:32:15 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2017/12/d3-get-parent-node/</guid>
-      <description>&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;D3.jsで階層構造のDOMの子要素から親要素のデータを取得する方法です。&lt;/p&gt;</description>
     </item>
     
@@ -149,8 +122,7 @@ TypeScript で Material-UI のスタイル付き Components を記述する場�
       <pubDate>Sat, 25 Nov 2017 16:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2017/11/d3-grouping-elements/</guid>
-      <description>&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;D3.jsでSVGを描写するときは&lt;code&gt;&amp;lt;g&amp;gt;&lt;/code&gt;要素を使って要素をグループ化すると便利です。&lt;/p&gt;</description>
     </item>
     
@@ -160,8 +132,7 @@ TypeScript で Material-UI のスタイル付き Components を記述する場�
       <pubDate>Thu, 09 Nov 2017 22:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2017/11/railroad-timeline-map/</guid>
-      <description>&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました。&lt;/p&gt;</description>
     </item>
     

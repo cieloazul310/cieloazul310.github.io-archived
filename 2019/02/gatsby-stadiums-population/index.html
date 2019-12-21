@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2019/02/gatsby-stadiums-population/" />
@@ -50,7 +50,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.476d377da573c5c16f57ecf4e956d06120bcef19549406478a2cd9565a009ebe.css" integrity="sha256-R203faVzxcFvV&#43;z06VbQYSC87xlUlAZHiizZVloAnr4=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.762ae52e49657988e37a406dd0c1f40d131ca30af45afb5795e7dadfcd73303e.css" integrity="sha256-dirlLklleYjjekBt0MH0DRMcowr0WvtXlefa381zMD4=" media="screen" crossorigin="anonymous">
 
 
 
@@ -60,22 +60,19 @@
 <meta property="og:description" content="国内のサッカースタジアム・アリーナ周辺の人口を調べ、地図に表示するページを作成しました。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cieloazul310.github.io/2019/02/gatsby-stadiums-population/" />
-
-<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png" />
+<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 <meta property="article:published_time" content="2019-02-25T23:30:00+09:00" />
 <meta property="article:modified_time" content="2019-02-25T23:30:00+09:00" />
 <meta itemprop="name" content="国内のサッカースタジアム・アリーナ周辺の人口を調べる">
 <meta itemprop="description" content="国内のサッカースタジアム・アリーナ周辺の人口を調べ、地図に表示するページを作成しました。">
-
-
 <meta itemprop="datePublished" content="2019-02-25T23:30:00&#43;09:00" />
 <meta itemprop="dateModified" content="2019-02-25T23:30:00&#43;09:00" />
-<meta itemprop="wordCount" content="1578">
+<meta itemprop="wordCount" content="1568">
+<meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 
 
-<meta itemprop="keywords" content="人口,GIS,JavaScript,TypeScript,Jリーグ,Bリーグ," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="人口,GIS,JavaScript,TypeScript,Jリーグ,Bリーグ," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 <meta name="twitter:title" content="国内のサッカースタジアム・アリーナ周辺の人口を調べる"/>
@@ -335,37 +332,26 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <!--
-- 対象: 
-- 目的: リリース文と技術的な話の概要
--->
-
-<!-- Lead Paragraph -->
-
-<p>昨年<a href="https://cieloazul310.github.io/2018/04/stadium-and-population/">国内のサッカースタジアム周辺の人口を求める</a>という記事を書きました。<br />
+      <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>昨年<a href="https://cieloazul310.github.io/2018/04/stadium-and-population/">国内のサッカースタジアム周辺の人口を求める</a>という記事を書きました。<br>
 前回の記事で算出結果の表示のために作ったページを新たに作り直し、ついでに前回算出しなかった半径 10km 圏内の人口と Bリーグのアリーナを加えました。</p>
-
-<h2 id="概要">概要</h2>
-
-<p>スタジアム・アリーナと人口<br />
+<h2 id="heading">概要</h2>
+<p>スタジアム・アリーナと人口<br>
 URL: <a href="https://cieloazul310.github.io/gatsby-stadiums-population/">https://cieloazul310.github.io/gatsby-stadiums-population/</a></p>
-
 <ul>
 <li><strong>スタジアム</strong>: 149ヶ所 (J1, J2, J3, JFLのホームスタジアム, 地域リーグの一部、その他)</li>
 <li><strong>アリーナ</strong>: 52ヶ所 (B1, B2, B3のホームアリーナ, 地域リーグの一部)</li>
 <li><strong>距離</strong>: 1000m, 3000m, 5000m, 10000m</li>
 </ul>
-
-<p>以前公開した同様の機能のページ<br />
+<p>以前公開した同様の機能のページ<br>
 URL: <a href="https://cieloazul310.github.io/figure/stadiums_population/">https://cieloazul310.github.io/figure/stadiums_population/</a></p>
-
 <ul>
 <li><strong>スタジアム</strong>: 102ヶ所 (J1, J2, J3, JFLのホームスタジアム, 地域リーグの一部、その他)</li>
 <li><strong>距離</strong>: 500m, 1000m, 1500m, 3000m, 5000m</li>
 </ul>
-
-<h2 id="主な変更点">主な変更点</h2>
-
+<h2 id="heading-1">主な変更点</h2>
 <ul>
 <li><a href="https://cieloazul310.github.io/gatsby-stadiums-population/arenas">Bリーグのページを作った</a></li>
 <li>サッカースタジアムを50ヶ所くらい増やした</li>
@@ -378,111 +364,60 @@ URL: <a href="https://cieloazul310.github.io/figure/stadiums_population/">https:
 <li>地形モードを搭載した</li>
 <li>静的なサイトにした</li>
 </ul>
-
 <p>以前のページは、一応 Single Page Application (SPA) の体は成しているものの、各スタジアムに対して固有のリンクを持たない仕様でした。
 今回は静的なサイトなので、それぞれのスタジアムが(例) <a href="https://cieloazul310.github.io/gatsby-stadiums-population/venues/ajista/">https://cieloazul310.github.io/gatsby-stadiums-population/venues/ajista/</a> のように固有の HTML ページを持っています。</p>
-
 <div class="ad" style="width:100%;">
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-layout="in-article"
-         data-ad-format="fluid"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="6120305662"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
   
 </div>
-
-<h2 id="技術的な話">技術的な話</h2>
-
+<h2 id="heading-2">技術的な話</h2>
 <p><a href="https://www.gatsbyjs.org">Gatsby JS</a> を使って、<a href="https://www.typescriptlang.org">TypeScript</a> で開発しました。
 <a href="https://www.gatsbyjs.org">Gatsby</a> は <a href="https://reactjs.org/">React</a> で SPA (Single Page Application) 風の静的なサイトを作るフレームワークです。ビルド時に <a href="https://graphql.org">GraphQL</a> を実行することでデータを用いた HTML ページを作成することができます。</p>
-
 <p>各スタジアム・アリーナの JSON ファイルを生成し、JSON ファイルから HTML ページを機械的に作成します。200以上の html ファイルがあっという間に作成できます。</p>
-
 <p>バイナリベクトルタイルと <a href="http://turfjs.org">Turf.js</a> を用いて各スタジアムの距離圏人口を求め、JSON ファイルを作成するプログラムの書き方はいつか載せます。</p>
-
-<h2 id="学習したこと">学習したこと</h2>
-
-<h3 id="npm-から-yarn-への以降">npm から yarn への以降</h3>
-
+<h2 id="heading-3">学習したこと</h2>
+<h3 id="npm--yarn-">npm から yarn への以降</h3>
 <p>今まではパッケージ管理を npm でおこなってきましたが、 <a href="https://yarnpkg.com/lang/ja/">yarn</a> を使ってみました。</p>
-
-<h3 id="typescript-の基礎">TypeScript の基礎</h3>
-
-<p><a href="https://www.dartlang.org">Dart</a> + <a href="https://flutter.io">Flutter</a> を使ったことで型の重要性に気づき <a href="https://www.typescriptlang.org">TypeScript</a> を学び始めました。<br />
+<h3 id="typescript-">TypeScript の基礎</h3>
+<p><a href="https://www.dartlang.org">Dart</a> + <a href="https://flutter.io">Flutter</a> を使ったことで型の重要性に気づき <a href="https://www.typescriptlang.org">TypeScript</a> を学び始めました。<br>
 このページを作成しながら TypeScript の基礎的な部分は押さえられたと思います。</p>
-
 <p>TypeScript + React の書き方は以下のページを参考にしています。</p>
-
-<p>React &amp; Redux in TypeScript - Static Typing Guide<br />
+<p>React &amp; Redux in TypeScript - Static Typing Guide<br>
 <a href="https://github.com/piotrwitek/react-redux-typescript-guide">https://github.com/piotrwitek/react-redux-typescript-guide</a></p>
-
-<h3 id="css3-の-flex">CSS3 の Flex</h3>
-
-<p>後述する Material-UI が flex を多く使っているため、この機に flex レイアウトを学びました。<br />
+<h3 id="css3--flex">CSS3 の Flex</h3>
+<p>後述する Material-UI が flex を多く使っているため、この機に flex レイアウトを学びました。<br>
 今まで CSS によるレイアウトはとても苦手だったんですが、少し好きになりました。</p>
-
 <p>で、やっていくうちに気づいたのですが、<a href="https://flutter.io">Flutter</a> のレイアウトも flex 的な発想で作られていますね。 <a href="https://flutter.io">Flutter</a> を学んでおいてよかった。</p>
-
-<p>CSS フレックスボックスレイアウト<br />
+<p>CSS フレックスボックスレイアウト<br>
 <a href="https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Flexible_Box_Layout">https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Flexible_Box_Layout</a></p>
-
-<h3 id="gatsby-のファイルシステム">Gatsby のファイルシステム</h3>
-
-<p><a href="https://www.gatsbyjs.org">Gatsby JS</a> は GraphQL を使うことによって開発に強力な効果を発揮することができます。<br />
+<h3 id="gatsby-">Gatsby のファイルシステム</h3>
+<p><a href="https://www.gatsbyjs.org">Gatsby JS</a> は GraphQL を使うことによって開発に強力な効果を発揮することができます。<br>
 今回作ったスタジアム・アリーナと人口では、<a href="https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-json"><code>gatsby-transformer-json</code></a> を使って、 <a href="https://github.com/cieloazul310/gatsby-stadiums-population/tree/master/src/data"><code>./src/data/</code> ディレクトリ</a>傘下の独立した JSON ファイルを GraphQL で取得しています。
 独立した JSON ファイルのデータセットを用意している点では旧バージョンも同じなのですが、旧バージョンがクライアント側で データを fetch してデータを処理していたのに対し、Gatsby バージョンではビルド時に GraphQL を実行し静的な HTML ページを作成しています。</p>
-
 <h3 id="material-ui">Material-UI</h3>
-
-<p><a href="https://material-ui.com">Material-UI</a> は Google の Material Design を React で使えるようにした React のライブラリです。<br />
+<p><a href="https://material-ui.com">Material-UI</a> は Google の Material Design を React で使えるようにした React のライブラリです。<br>
 一度離れたものの、<a href="https://flutter.io">Flutter</a> を使ったおかげで Material Design を良いと思えるようになったため再び使い始めました。</p>
-
-<p>以前一度使ったバージョンはまだ v0系 でしたが、いつの間にか v3.9.2 になっていました。Bootstrap のような Grid レイアウトができるようになっています。<br />
+<p>以前一度使ったバージョンはまだ v0系 でしたが、いつの間にか v3.9.2 になっていました。Bootstrap のような Grid レイアウトができるようになっています。<br>
 CSS を使った UI デザインが苦手なので、今後は全て Material-UI に丸投げしてしまおうと思います。</p>
-
 <p>全体的に <a href="https://flutter.io">Flutter</a> を勉強したことがとてもとても生きています。</p>
-
-<h2 id="今後">今後</h2>
-
+<h2 id="heading-4">今後</h2>
 <p>Gatsby の使い方がわかってきたので、以前 <a href="https://github.com/facebook/create-react-app">create-react-app</a> で作った<a href="https://cieloazul310.github.io/jclub-financial-table/">Jクラブ経営情報2005-2017</a>や<a href="https://cieloazul310.github.io/rockman-survey/">ロック大陸測量部</a>も Gatsby で作り直したいと思います。</p>
-
-<!-- Music -->
-
+<!-- raw HTML omitted -->
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/j1WIz23CHOU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/j1WIz23CHOU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
-<p>Can&rsquo;t Give You Anything (But My Love) / The Stylistics (1974)</p>
-
-<p><div class="ad" style="width:100%;">
+<p>Can't Give You Anything (But My Love) / The Stylistics (1974)</p>
+<div class="ad" style="width:100%;">
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      
-      <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="5892967151"
-         data-ad-format="auto"></ins>
-      <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
   
 </div>
-<!-- References --></p>
+<!-- raw HTML omitted -->
     </div>
 
     

@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2018/10/mvt-tile-to-geojson/" />
@@ -50,7 +50,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.476d377da573c5c16f57ecf4e956d06120bcef19549406478a2cd9565a009ebe.css" integrity="sha256-R203faVzxcFvV&#43;z06VbQYSC87xlUlAZHiizZVloAnr4=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.762ae52e49657988e37a406dd0c1f40d131ca30af45afb5795e7dadfcd73303e.css" integrity="sha256-dirlLklleYjjekBt0MH0DRMcowr0WvtXlefa381zMD4=" media="screen" crossorigin="anonymous">
 
 
 
@@ -60,22 +60,19 @@
 <meta property="og:description" content="Mapbox GL JS や Leaflet といった地図ライブラリを使わずに、 JavaScript でバイナリベクトルタイルを使う方法の解説とコードを掲載。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cieloazul310.github.io/2018/10/mvt-tile-to-geojson/" />
-
-<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png" />
+<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 <meta property="article:published_time" content="2018-10-31T21:00:00+09:00" />
 <meta property="article:modified_time" content="2018-10-31T21:00:00+09:00" />
 <meta itemprop="name" content="バイナリベクトルタイルを地図ライブラリ以外で扱う">
 <meta itemprop="description" content="Mapbox GL JS や Leaflet といった地図ライブラリを使わずに、 JavaScript でバイナリベクトルタイルを使う方法の解説とコードを掲載。">
-
-
 <meta itemprop="datePublished" content="2018-10-31T21:00:00&#43;09:00" />
 <meta itemprop="dateModified" content="2018-10-31T21:00:00&#43;09:00" />
-<meta itemprop="wordCount" content="1016">
+<meta itemprop="wordCount" content="1006">
+<meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 
 
-<meta itemprop="keywords" content="バイナリベクトルタイル,ベクトルタイル,GIS,Protocol Buffers," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="バイナリベクトルタイル,ベクトルタイル,GIS,Protocol Buffers," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 <meta name="twitter:title" content="バイナリベクトルタイルを地図ライブラリ以外で扱う"/>
@@ -335,34 +332,26 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <!--
-- 対象: バイナリベクトルタイルを知っているWEB技術者
-- 目的: バイナリベクトルタイルのファイルに対する理解
--->
-
-<!-- Lead Paragraph -->
-
+      <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p><a href="https://www.mapbox.com/mapbox-gl-js/api/">Mapbox GL JS</a> や <a href="https://leafletjs.com/">Leaflet</a> といった地図ライブラリを使わずに JavaScript でバイナリベクトルタイルを使う方法です。</p>
-
-<h2 id="やること">やること</h2>
-
+<h2 id="heading">やること</h2>
 <p><code>fetch</code> で <code>pbf (mvt)</code> 形式のファイルを取得し、GeoJSON Feature の配列に変換する。</p>
-
-<h2 id="コード">コード</h2>
-
+<h2 id="heading-1">コード</h2>
 <p>npm で <a href="https://github.com/mapbox/pbf">pbf</a> と <a href="https://github.com/mapbox/vector-tile-js">@mapbox/vector-tile</a> モジュールをインストールします。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-Shell" data-lang="Shell"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Shell" data-lang="Shell">$ npm install --save pbf @mapbox/vector-tile</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-Shell" data-lang="Shell">$ npm install --save pbf @mapbox/vector-tile
+</code></pre></td></tr></table>
 </div>
-</div>
-<p><code>fetch</code> して response → ArrayBuffer → Pbf の順に変換し、GeoJSON Feature の配列を取得</p>
+</div><p><code>fetch</code> して response → ArrayBuffer → Pbf の順に変換し、GeoJSON Feature の配列を取得</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -389,68 +378,51 @@ if (!doNotTrack) {
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="k">import</span> <span class="nx">Pbf</span> <span class="nx">from</span> <span class="s1">&#39;pbf&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">VectorTile</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@mapbox/vector-tile&#39;</span><span class="p">;</span>
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">import</span> <span class="nx">Pbf</span> <span class="nx">from</span> <span class="s1">&#39;pbf&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">VectorTile</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@mapbox/vector-tile&#39;</span><span class="p">;</span>
 
-<span class="k">const</span> <span class="nx">tileCoord</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">14582</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">6414</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span> <span class="mi">14</span> <span class="p">};</span>
-<span class="k">const</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="s1">&#39;https://cieloazul310.github.io/mvt-tiles/tile/population_250m/&#39;</span><span class="p">;</span>
-<span class="k">const</span> <span class="nx">layerName</span> <span class="o">=</span> <span class="s1">&#39;250mesh&#39;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">tileCoord</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">14582</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">6414</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span> <span class="mi">14</span> <span class="p">}</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="s1">&#39;https://cieloazul310.github.io/mvt-tiles/tile/population_250m/&#39;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">layerName</span> <span class="o">=</span> <span class="s1">&#39;250mesh&#39;</span><span class="p">;</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="nx">baseUrl</span> <span class="o">+</span> <span class="sb">`</span><span class="si">${</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">z</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">x</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">y</span><span class="si">}</span><span class="sb">.mvt`</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">arrayBuffer</span><span class="p">())</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">buffer</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nx">Pbf</span><span class="p">(</span><span class="nx">buffer</span><span class="p">))</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">baseUrl</span> <span class="o">+</span> <span class="sb">`</span><span class="si">${</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">z</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">x</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">y</span><span class="si">}</span><span class="sb">.mvt</span><span class="sb">`</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">arrayBuffer</span><span class="p">(</span><span class="p">)</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">buffer</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nx">Pbf</span><span class="p">(</span><span class="nx">buffer</span><span class="p">)</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">pbf</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="k">const</span> <span class="nx">layer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VectorTile</span><span class="p">(</span><span class="nx">pbf</span><span class="p">).</span><span class="nx">layers</span><span class="p">[</span><span class="nx">layerName</span><span class="p">];</span>
-    <span class="k">const</span> <span class="nx">features</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="kr">const</span> <span class="nx">layer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VectorTile</span><span class="p">(</span><span class="nx">pbf</span><span class="p">)</span><span class="p">.</span><span class="nx">layers</span><span class="p">[</span><span class="nx">layerName</span><span class="p">]</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">features</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">layer</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">layer</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">const</span> <span class="nx">feature</span> <span class="o">=</span> <span class="nx">layer</span><span class="p">.</span><span class="nx">feature</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">toGeoJSON</span><span class="p">(</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">tileCoord</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">tileCoord</span><span class="p">.</span><span class="nx">z</span><span class="p">);</span>
-        <span class="nx">features</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">feature</span><span class="p">);</span>
+        <span class="kr">const</span> <span class="nx">feature</span> <span class="o">=</span> <span class="nx">layer</span><span class="p">.</span><span class="nx">feature</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span><span class="p">.</span><span class="nx">toGeoJSON</span><span class="p">(</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">tileCoord</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">tileCoord</span><span class="p">.</span><span class="nx">z</span><span class="p">)</span><span class="p">;</span>
+        <span class="nx">features</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">feature</span><span class="p">)</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nx">features</span><span class="p">;</span>
-  <span class="p">})</span>
+  <span class="p">}</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">features</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">features</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">features</span><span class="p">)</span><span class="p">;</span>
     <span class="c1">// =&gt; Array(46) [ feature, feature, feature, ..., feature ]
-</span><span class="c1"></span>  <span class="p">});</span>
+</span><span class="c1"></span>  <span class="p">}</span><span class="p">)</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p>バイナリベクトルタイルの拡張子は作成時に mvt にしていたので、この記事でも mvt としています。<br />
+</div><p>バイナリベクトルタイルの拡張子は作成時に mvt にしていたので、この記事でも mvt としています。<br>
 しかし、この分野の国内における先駆者である<a href="https://qiita.com/hfu">@hfu</a>さんの記事 <a href="https://qiita.com/hfu/items/69fbe24be92654f634da">バイナリベクトルタイルの拡張子が mvt であったり pbf であったりするのはなんでだろう</a> に下記のようなコメントが付いていたので、今後は pbf にします。</p>
-
 <blockquote>
 <p>その後、Mapzen (Tilezen) のサービスが（いったん）終了して状況が変化したので、hfu も拡張子を pbf に変更しました。</p>
 </blockquote>
-
 <div class="ad" style="width:100%;">
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-layout="in-article"
-         data-ad-format="fluid"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="6120305662"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
   
 </div>
-
-<h2 id="応用">応用</h2>
-
+<h2 id="heading-2">応用</h2>
 <p><code>fetchTile</code> という関数を作成します。</p>
-
-<p>この関数はタイル座標のオブジェクト <code>tile</code> を入力し、Promise オブジェクト(fetch)を返します。<br />
+<p>この関数はタイル座標のオブジェクト <code>tile</code> を入力し、Promise オブジェクト(fetch)を返します。<br>
 <code>fetch</code>が成功したら mvt (pbf) 形式のファイルの変換を行ない、GeoJSON Feature の配列 features を返し、失敗したら空の配列を返します。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -476,38 +448,37 @@ if (!doNotTrack) {
 </span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="k">import</span> <span class="nx">Pbf</span> <span class="nx">from</span> <span class="s1">&#39;pbf&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">VectorTile</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@mapbox/vector-tile&#39;</span><span class="p">;</span>
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">import</span> <span class="nx">Pbf</span> <span class="nx">from</span> <span class="s1">&#39;pbf&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">VectorTile</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@mapbox/vector-tile&#39;</span><span class="p">;</span>
 
 <span class="cm">/**
 </span><span class="cm">  * @param {object} tile 
 </span><span class="cm">  * @returns {Promise} Promise object
 </span><span class="cm">  */</span> 
 <span class="kd">function</span> <span class="nx">fetchTile</span><span class="p">(</span><span class="nx">tile</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">baseUrl</span> <span class="o">+</span> <span class="sb">`</span><span class="si">${</span><span class="nx">tile</span><span class="p">.</span><span class="nx">z</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">tile</span><span class="p">.</span><span class="nx">x</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">tile</span><span class="p">.</span><span class="nx">y</span><span class="si">}</span><span class="sb">.mvt`</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">arrayBuffer</span><span class="p">())</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">buffer</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nx">Pbf</span><span class="p">(</span><span class="nx">buffer</span><span class="p">))</span>
+  <span class="k">return</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">baseUrl</span> <span class="o">+</span> <span class="sb">`</span><span class="si">${</span><span class="nx">tile</span><span class="p">.</span><span class="nx">z</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">tile</span><span class="p">.</span><span class="nx">x</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">tile</span><span class="p">.</span><span class="nx">y</span><span class="si">}</span><span class="sb">.mvt</span><span class="sb">`</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">arrayBuffer</span><span class="p">(</span><span class="p">)</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">buffer</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nx">Pbf</span><span class="p">(</span><span class="nx">buffer</span><span class="p">)</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">pbf</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="k">const</span> <span class="nx">layer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VectorTile</span><span class="p">(</span><span class="nx">pbf</span><span class="p">).</span><span class="nx">layers</span><span class="p">[</span><span class="nx">layerName</span><span class="p">];</span>
-    <span class="k">const</span> <span class="nx">features</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="kr">const</span> <span class="nx">layer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VectorTile</span><span class="p">(</span><span class="nx">pbf</span><span class="p">)</span><span class="p">.</span><span class="nx">layers</span><span class="p">[</span><span class="nx">layerName</span><span class="p">]</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">features</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">layer</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">layer</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">const</span> <span class="nx">feature</span> <span class="o">=</span> <span class="nx">layer</span><span class="p">.</span><span class="nx">feature</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">toGeoJSON</span><span class="p">(</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">tileCoord</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">tileCoord</span><span class="p">.</span><span class="nx">z</span><span class="p">);</span>
-        <span class="nx">features</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">feature</span><span class="p">);</span>
+        <span class="kr">const</span> <span class="nx">feature</span> <span class="o">=</span> <span class="nx">layer</span><span class="p">.</span><span class="nx">feature</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span><span class="p">.</span><span class="nx">toGeoJSON</span><span class="p">(</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">tileCoord</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">tileCoord</span><span class="p">.</span><span class="nx">z</span><span class="p">)</span><span class="p">;</span>
+        <span class="nx">features</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">feature</span><span class="p">)</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nx">features</span><span class="p">;</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">[]);</span>
+  <span class="p">}</span><span class="p">)</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">[</span><span class="p">]</span><span class="p">)</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p><a href="https://github.com/d3/d3-tile">d3-tile</a> などで求めたタイル座標の組の配列 <code>tiles</code> から、<code>array.map</code> で Promise オブジェクトの配列 <code>tasks</code> を生成します。<br />
+</div><p><a href="https://github.com/d3/d3-tile">d3-tile</a> などで求めたタイル座標の組の配列 <code>tiles</code> から、<code>array.map</code> で Promise オブジェクトの配列 <code>tasks</code> を生成します。<br>
 Promise オブジェクトの配列 <code>tasks</code> を生成することで、 <code>Promise.all(tasks)</code> で全てのタイルの取得が終わった後に、一括で処理を行なうことができます。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -527,75 +498,52 @@ Promise オブジェクトの配列 <code>tasks</code> を生成することで�
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="k">const</span> <span class="nx">tiles</span> <span class="o">=</span> <span class="p">[{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span> <span class="p">},</span> <span class="p">...,</span> <span class="p">{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span> <span class="p">}];</span>
-<span class="k">const</span> <span class="nx">tasks</span> <span class="o">=</span> <span class="nx">tiles</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">tile</span> <span class="p">=&gt;</span> <span class="nx">fetchTile</span><span class="p">(</span><span class="nx">tile</span><span class="p">));</span>
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">const</span> <span class="nx">tiles</span> <span class="o">=</span> <span class="p">[</span><span class="p">{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span> <span class="p">}</span><span class="p">,</span> <span class="p">{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span> <span class="p">}</span><span class="p">,</span> <span class="p">...</span><span class="p">,</span> <span class="p">{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span> <span class="p">}</span><span class="p">]</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">tasks</span> <span class="o">=</span> <span class="nx">tiles</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">tile</span> <span class="p">=&gt;</span> <span class="nx">fetchTile</span><span class="p">(</span><span class="nx">tile</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
 <span class="c1">// =&gt; Array [ Promise, Promise, ..., Promise ]
 </span><span class="c1"></span>
 <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">tasks</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="p">;</span>
     <span class="c1">// =&gt; Array [ features, [], features, features, [], ...]
 </span><span class="c1"></span>    
     <span class="c1">// 二次元配列である data を一次元の配列 features に変換
-</span><span class="c1"></span>    <span class="k">const</span> <span class="nx">features</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span>
-      <span class="p">(</span><span class="nx">accum</span><span class="p">,</span> <span class="nx">curr</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">[...</span><span class="nx">accum</span><span class="p">,</span> <span class="p">...</span><span class="nx">curr</span><span class="p">],</span> 
-      <span class="p">[]</span>
-    <span class="p">);</span>
+</span><span class="c1"></span>    <span class="kr">const</span> <span class="nx">features</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span>
+      <span class="p">(</span><span class="nx">accum</span><span class="p">,</span> <span class="nx">curr</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">[</span><span class="p">...</span><span class="nx">accum</span><span class="p">,</span> <span class="p">...</span><span class="nx">curr</span><span class="p">]</span><span class="p">,</span> 
+      <span class="p">[</span><span class="p">]</span>
+    <span class="p">)</span><span class="p">;</span>
 
     <span class="k">return</span> <span class="nx">features</span><span class="p">;</span>
     <span class="c1">// =&gt; Array [ feature, feature, ..., feature ]
-</span><span class="c1"></span>  <span class="p">});</span>
+</span><span class="c1"></span>  <span class="p">}</span><span class="p">)</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p><a href="https://cieloazul310.github.io/2018/04/stadium-and-population/">国内のサッカースタジアム周辺の人口を求める</a>という記事では、上記の方法で人口データの入ったバイナリベクトルタイルを取得し、<a href="http://turfjs.org/">Turf.js</a> を使って距離円との演算を行いました。</p>
-
-<h2 id="参照">参照</h2>
-
+</div><p><a href="https://cieloazul310.github.io/2018/04/stadium-and-population/">国内のサッカースタジアム周辺の人口を求める</a>という記事では、上記の方法で人口データの入ったバイナリベクトルタイルを取得し、<a href="http://turfjs.org/">Turf.js</a> を使って距離円との演算を行いました。</p>
+<h2 id="heading-3">参照</h2>
 <ul>
 <li><a href="https://github.com/mapbox/pbf">pbf</a> / GitHub</li>
 <li><a href="https://github.com/mapbox/vector-tile-js">@mapbox/vector-tile</a> / GitHub</li>
 <li><a href="https://developers.google.com/protocol-buffers/">Protocol Buffers</a> / Google Developers</li>
 <li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer">Array Buffer</a> / MDN web docs</li>
 </ul>
-
-<!-- Music -->
-
+<!-- raw HTML omitted -->
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/kjCRwc-VdYA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/kjCRwc-VdYA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <p>幼い二人 / 寺尾紗穂 (2017)</p>
-
 <div class="ad" style="width:100%;">
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      
-      <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="5892967151"
-         data-ad-format="auto"></ins>
-      <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
   
 </div>
-
-<!-- References -->
-
-<!-- Google Developers -->
-
-<!-- MDN web docs -->
-
-<!-- GitHub -->
-
-<!-- Qiita -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
     </div>
 
     

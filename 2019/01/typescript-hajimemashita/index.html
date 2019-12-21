@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2019/01/typescript-hajimemashita/" />
@@ -50,7 +50,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.476d377da573c5c16f57ecf4e956d06120bcef19549406478a2cd9565a009ebe.css" integrity="sha256-R203faVzxcFvV&#43;z06VbQYSC87xlUlAZHiizZVloAnr4=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.762ae52e49657988e37a406dd0c1f40d131ca30af45afb5795e7dadfcd73303e.css" integrity="sha256-dirlLklleYjjekBt0MH0DRMcowr0WvtXlefa381zMD4=" media="screen" crossorigin="anonymous">
 
 
 
@@ -60,22 +60,19 @@
 <meta property="og:description" content="TypeScript を始めました。TypeScript を始めるに至った過程を紹介します。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cieloazul310.github.io/2019/01/typescript-hajimemashita/" />
-
-<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png" />
+<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 <meta property="article:published_time" content="2019-01-11T22:00:00+09:00" />
 <meta property="article:modified_time" content="2019-01-11T22:00:00+09:00" />
 <meta itemprop="name" content="TypeScript はじめました">
 <meta itemprop="description" content="TypeScript を始めました。TypeScript を始めるに至った過程を紹介します。">
-
-
 <meta itemprop="datePublished" content="2019-01-11T22:00:00&#43;09:00" />
 <meta itemprop="dateModified" content="2019-01-11T22:00:00&#43;09:00" />
-<meta itemprop="wordCount" content="840">
+<meta itemprop="wordCount" content="835">
+<meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 
 
-<meta itemprop="keywords" content="TypeScript,JavaScript," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="TypeScript,JavaScript," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 <meta name="twitter:title" content="TypeScript はじめました"/>
@@ -335,77 +332,43 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <!--
-- 対象: 
-- 目的: TypeScriptを始めたことを宣言する
--->
-
-<!-- Lead Paragraph -->
-
+      <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p><a href="https://www.typescriptlang.org">TypeScript</a> を始めました。TypeScript を始めるに至った過程を紹介します。</p>
-
-<h2 id="typescript-に行き着くまで">TypeScript に行き着くまで</h2>
-
-<p>今までは JavaScript や Python など型がゆるい言語ばかり書いていました。<br />
+<h2 id="typescript-">TypeScript に行き着くまで</h2>
+<p>今までは JavaScript や Python など型がゆるい言語ばかり書いていました。<br>
 <a href="https://reactjs.org/">React</a> で <a href="https://github.com/facebook/prop-types">prop-types</a> を使ったりもしましたが、型について特に考えることなくプログラミングを行なってきました。</p>
-
-<h2 id="dart-flutter-を使う">Dart + Flutter を使う</h2>
-
-<p>2018年12月にネイティブアプリの開発ツールキット <a href="https://flutter.io">Flutter</a> の v1 がリリースされたので、いい機会なので勉強し始めました。<br />
+<h2 id="dart--flutter-">Dart + Flutter を使う</h2>
+<p>2018年12月にネイティブアプリの開発ツールキット <a href="https://flutter.io">Flutter</a> の v1 がリリースされたので、いい機会なので勉強し始めました。<br>
 Flutter では <a href="https://www.dartlang.org">Dart</a> という言語を用いて開発を行ないます。Dart は型安全な言語です。今まで型がゆるい言語ばかり書いてきたため型の記法に戸惑いもありましたが、慣れていくうちに型システムの利便性が感じられるようになりました。</p>
-
 <p>Dart を書くにつれて型についての意識が高まり、今まで書いていた JavaScript や Python は動的型付き言語、Flutter で使う Dart は静的型付き言語ということがわかり、また静的型付けが自分の好みであることに気がつきました。</p>
-
-<h2 id="atom-から-vs-code-への移行">Atom から VS Code への移行</h2>
-
+<h2 id="atom--vs-code-">Atom から VS Code への移行</h2>
 <p>今までコードエディタは Atom を使っていましたが、Flutter を始めるにあたりマイクロソフト製の <a href="https://code.visualstudio.com">Visual Studio Code</a> を導入しました。</p>
-
-<h2 id="型を意識した-javascript">型を意識した JavaScript</h2>
-
+<h2 id="-javascript">型を意識した JavaScript</h2>
 <p>TypeScript や <a href="https://coffeescript.org">CoffeeScript</a> は JavaScript の単なる亜種的な認識でした。
 以前は、そういった JavaScript の亜種に手を出すつもりはない…と思っていました。</p>
-
 <p>しかしながら、Dart で静的型付き言語の有効性がわかった後に、JavaScript で型を厳格にしながら書くにはどんな方法があるだろうと考えてみたところ、気がつきました。</p>
-
 <p><strong>TypeScript、お前だったのか！</strong></p>
-
 <p>そういう訳で、JavaScript の亜種はやらないと思っていましたが（今でも CoffeeScript には手を出すつもりはないけど）、華麗に手のひらを返し TypeScript を学習を始めました。</p>
-
 <p>TypeScript はマイクロソフトが開発しているため VS Code と相性がいいことも TypeScript を始める大きな動機となりました。</p>
-
-<h2 id="今後">今後</h2>
-
-<p>今は昨年作った<a href="https://cieloazul310.github.io/2018/04/stadium-and-population/">国内のサッカースタジアム周辺の人口を求める</a>を React + <a href="https://www.gatsbyjs.org">Gatsby</a> + TypeScript + <a href="https://material-ui.com">Material-UI</a> で再構築しています。<br />
+<h2 id="heading">今後</h2>
+<p>今は昨年作った<a href="https://cieloazul310.github.io/2018/04/stadium-and-population/">国内のサッカースタジアム周辺の人口を求める</a>を React + <a href="https://www.gatsbyjs.org">Gatsby</a> + TypeScript + <a href="https://material-ui.com">Material-UI</a> で再構築しています。<br>
 TypeScript や Gatsby を学びながらの開発になるので時間がかかると思いますが、なんとか完成させたいと思います。</p>
-
-<!-- Music -->
-
+<!-- raw HTML omitted -->
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/x_2FJRhEoNg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/x_2FJRhEoNg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <p>晴耕雨読 / OLD DAYS TAILOR (2018)</p>
-
-<p><div class="ad" style="width:100%;">
+<div class="ad" style="width:100%;">
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      
-      <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="5892967151"
-         data-ad-format="auto"></ins>
-      <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
   
 </div>
-<!-- References --></p>
+<!-- raw HTML omitted -->
     </div>
 
     

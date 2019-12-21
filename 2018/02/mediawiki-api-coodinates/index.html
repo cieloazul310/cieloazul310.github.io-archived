@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2018/02/mediawiki-api-coodinates/" />
@@ -50,7 +50,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.476d377da573c5c16f57ecf4e956d06120bcef19549406478a2cd9565a009ebe.css" integrity="sha256-R203faVzxcFvV&#43;z06VbQYSC87xlUlAZHiizZVloAnr4=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.762ae52e49657988e37a406dd0c1f40d131ca30af45afb5795e7dadfcd73303e.css" integrity="sha256-dirlLklleYjjekBt0MH0DRMcowr0WvtXlefa381zMD4=" media="screen" crossorigin="anonymous">
 
 
 
@@ -60,22 +60,19 @@
 <meta property="og:description" content="MediaWiki APIでWikipediaの記事から座標を取得する方法です。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cieloazul310.github.io/2018/02/mediawiki-api-coodinates/" />
-
-<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png" />
+<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 <meta property="article:published_time" content="2018-02-08T22:30:00+09:00" />
 <meta property="article:modified_time" content="2018-02-08T22:30:00+09:00" />
 <meta itemprop="name" content="Wikipedia記事の座標を取得&amp;日本語記事の座標が取得できない問題">
 <meta itemprop="description" content="MediaWiki APIでWikipediaの記事から座標を取得する方法です。">
-
-
 <meta itemprop="datePublished" content="2018-02-08T22:30:00&#43;09:00" />
 <meta itemprop="dateModified" content="2018-02-08T22:30:00&#43;09:00" />
-<meta itemprop="wordCount" content="3845">
+<meta itemprop="wordCount" content="3839">
+<meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 
 
-<meta itemprop="keywords" content="MediaWiki API,Wikipedia,位置情報,GIS," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="MediaWiki API,Wikipedia,位置情報,GIS," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 <meta name="twitter:title" content="Wikipedia記事の座標を取得&amp;日本語記事の座標が取得できない問題"/>
@@ -335,245 +332,151 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <!--
-対象: 地理情報に明るいエンジニア
-目的: MediaWiki APIの使い方の学習と、ウィキ座標問題の周知
--->
-
-<!-- Lead Paragraph -->
-
+      <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>MediaWiki APIでWikipediaの記事から座標を取得する方法と、MediaWiki APIでWikipedia日本語記事の座標が取得できないことについての説明です。</p>
-
 <h2 id="wikilayers">WikiLayers</h2>
-
-<!-- WikiLayersの紹介 -->
-
-<p>唐突ですが、React+Redux+Material-UI+OpenLayersで<a href="https://cieloazul310.github.io/wikilayers/">WikiLayers</a>というWebアプリっぽいものを作りました。<br />
+<!-- raw HTML omitted -->
+<p>唐突ですが、React+Redux+Material-UI+OpenLayersで<a href="https://cieloazul310.github.io/wikilayers/">WikiLayers</a>というWebアプリっぽいものを作りました。<br>
 これは今から紹介するMediaWiki APIでWikipediaの記事から座標を取得しOpenLayersで表示するという内容のアプリです。
 MediaWiki APIで記事の座標を取得する実例として試してみてください。</p>
-
-<p><img src="../../../img/wikilayers_showcase.png" alt="WikiLayers" title="WikiLayers" /></p>
-
-<p>WikiLayers<br />
+<p><img src="../../../img/wikilayers_showcase.png" alt="WikiLayers" title="WikiLayers"></p>
+<p>WikiLayers<br>
 <a href="https://cieloazul310.github.io/wikilayers/">https://cieloazul310.github.io/wikilayers/</a></p>
-
-<h2 id="wikipediaの記事の座標">Wikipediaの記事の座標</h2>
-
-<!-- Wikipediaの座標及びGeoHackの紹介 -->
-
-<p><img src="../../../img/img20180207.png" alt="Wikipediaの座標" title="Wikipediaの座標" /></p>
-
+<h2 id="wikipedia">Wikipediaの記事の座標</h2>
+<!-- raw HTML omitted -->
+<p><img src="../../../img/img20180207.png" alt="Wikipediaの座標" title="Wikipediaの座標"></p>
 <p>Wikipediaにはタイトルの右側または本文などに座標が記載されている記事があります。
 この座標は地図サービスへのリンク集<a href="https://tools.wmflabs.org/geohack/geohack.php?language=ja&amp;pagename=%E5%81%95%E6%A5%BD%E5%9C%92&amp;params=36_22_23_N_140_27_22_E_region:JP-08_type:landmark_source:dewiki">GeoHack</a>へのリンクになっていて、手軽にGoogleマップや地理院地図などで記事の座標を表示することができます。</p>
-
 <p>この座標をMediaWiki APIで取得します。</p>
-
-<h2 id="mediawiki-apiの基礎">MediaWiki APIの基礎</h2>
-
-<!-- MediaWiki APIの使い方を簡潔に -->
-
-<p><strong>https://${lang}.wikipedia.org/w/api.php?</strong><br />
+<h2 id="mediawiki-api">MediaWiki APIの基礎</h2>
+<!-- raw HTML omitted -->
+<p><strong>https://${lang}.wikipedia.org/w/api.php?</strong><br>
 にクエリを加えていきます。</p>
-
-<h3 id="覚えておくべきクエリ">覚えておくべきクエリ</h3>
-
+<h3 id="heading">覚えておくべきクエリ</h3>
 <ul>
-<li><strong>origin=*</strong>: CORS対策です。</li>
+<li>__origin=*__: CORS対策です。</li>
 <li><strong>action=query</strong>: ページの情報を取得するクエリです。</li>
 <li><strong>format=${format}</strong>: 取得フォーマットをxml,json,phpから選択します。</li>
 <li><strong>formatversion=2</strong>: データをJSONで取得したい場合は<code>formatversion=2</code>をつけた方がいいです。</li>
 <li><strong>prop=${prop1}|${prop2}|${prop3}&hellip;</strong>: 取得するデータの内容を選択。複数選択の場合は縦線<code>|</code>で区切ります。</li>
 <li><strong>redirects</strong>: タイトルが正確でない場合でもリダイレクトをする。</li>
 </ul>
-
 <p>大雑把にしか説明していないのでクエリの詳細な説明を知りたい方がいたら以下のAPIヘルプやAPIサンドボックスを参照してください。</p>
-
 <ul>
-<li><a href="https://ja.wikipedia.org/w/api.php?&amp;action=help">MediaWiki API ヘルプ</a><br /></li>
-<li><a href="https://ja.wikipedia.org/wiki/特別:ApiSandbox">APIサンドボックス</a></li>
+<li><a href="https://ja.wikipedia.org/w/api.php?&amp;action=help">MediaWiki API ヘルプ</a></li>
+<li><a href="https://ja.wikipedia.org/wiki/%E7%89%B9%E5%88%A5:ApiSandbox">APIサンドボックス</a></li>
 </ul>
-
-<h3 id="例">例</h3>
-
+<h3 id="heading-1">例</h3>
 <p>※注 リンク先は返り値を見やすくするためにformat=jsonfmにしてあります。</p>
-
-<h4 id="日本語版で水戸城の概要をプレーンテキストで取得">日本語版で水戸城の概要をプレーンテキストで取得</h4>
-
-<p><a href="https://ja.wikipedia.org/w/api.php?action=query&amp;format=jsonfm&amp;formatversion=2&amp;prop=extracts&amp;exintro&amp;explaintext&amp;titles=水戸城">https://ja.wikipedia.org/w/api.php?action=query&amp;format=json&amp;formatversion=2&amp;prop=extracts&amp;exintro&amp;explaintext&amp;titles=水戸城</a></p>
-
-<h5 id="prop-extracts">prop=extracts</h5>
-
-<p>指定されたページをプレーンテキストまたは制限付きhtmlで返すプロパティ。<br />
+<h4 id="heading-2">日本語版で水戸城の概要をプレーンテキストで取得</h4>
+<p><a href="https://ja.wikipedia.org/w/api.php?action=query&amp;format=jsonfm&amp;formatversion=2&amp;prop=extracts&amp;exintro&amp;explaintext&amp;titles=%E6%B0%B4%E6%88%B8%E5%9F%8E">https://ja.wikipedia.org/w/api.php?action=query&amp;format=json&amp;formatversion=2&amp;prop=extracts&amp;exintro&amp;explaintext&amp;titles=水戸城</a></p>
+<h5 id="propextracts">prop=extracts</h5>
+<p>指定されたページをプレーンテキストまたは制限付きhtmlで返すプロパティ。<br>
 <a href="https://ja.wikipedia.org/w/api.php?action=help&amp;modules=query%2Bextracts">https://ja.wikipedia.org/w/api.php?action=help&amp;modules=query%2Bextracts</a></p>
-
-<h5 id="extractsのパラメータ">extractsのパラメータ</h5>
-
+<h5 id="extracts">extractsのパラメータ</h5>
 <ul>
 <li><strong>&amp;exintro</strong>: 記事の一章目より前の文章のみを返す。</li>
 <li><strong>&amp;explaintext</strong>: 制限付きhtmlではなくプレーンテキストで返す。</li>
 </ul>
-
-<h4 id="英語版でotis-reddingのサムネイル画像urlを取得">英語版でOtis Reddingのサムネイル画像URLを取得</h4>
-
+<h4 id="otis-reddingurl">英語版でOtis Reddingのサムネイル画像URLを取得</h4>
 <p><a href="https://en.wikipedia.org/w/api.php?action=query&amp;format=jsonfm&amp;formatversion=2&amp;prop=pageimages&amp;titles=Otis_Redding">https://en.wikipedia.org/w/api.php?action=query&amp;format=json&amp;formatversion=2&amp;prop=pageimages&amp;titles=Otis_Redding</a></p>
-
-<h5 id="prop-pageimages">prop=pageimages</h5>
-
-<p>サムネイルや写真の有無など、ページ上の画像に関する情報を返すプロパティ。<br />
+<h5 id="proppageimages">prop=pageimages</h5>
+<p>サムネイルや写真の有無など、ページ上の画像に関する情報を返すプロパティ。<br>
 <a href="https://ja.wikipedia.org/w/api.php?action=help&amp;modules=query%2Bpageimages">https://ja.wikipedia.org/w/api.php?action=help&amp;modules=query%2Bpageimages</a></p>
-
-<h4 id="日本語版で水戸ホーリーホックの他国版のタイトルを取得">日本語版で水戸ホーリーホックの他国版のタイトルを取得</h4>
-
-<p><a href="https://ja.wikipedia.org/w/api.php?action=query&amp;format=jsonfm&amp;formatversion=2&amp;prop=langlinks&amp;titles=水戸ホーリーホック">https://ja.wikipedia.org/w/api.php?action=query&amp;format=json&amp;formatversion=2&amp;prop=langlinks&amp;titles=水戸ホーリーホック</a></p>
-
-<h2 id="座標を取得する方法">座標を取得する方法</h2>
-
-<p>MediaWiki APIの使い方をざっと覚えたら次は本題の座標の取得方法です。<br />
+<h4 id="heading-3">日本語版で水戸ホーリーホックの他国版のタイトルを取得</h4>
+<p><a href="https://ja.wikipedia.org/w/api.php?action=query&amp;format=jsonfm&amp;formatversion=2&amp;prop=langlinks&amp;titles=%E6%B0%B4%E6%88%B8%E3%83%9B%E3%83%BC%E3%83%AA%E3%83%BC%E3%83%9B%E3%83%83%E3%82%AF">https://ja.wikipedia.org/w/api.php?action=query&amp;format=json&amp;formatversion=2&amp;prop=langlinks&amp;titles=水戸ホーリーホック</a></p>
+<h2 id="heading-4">座標を取得する方法</h2>
+<p>MediaWiki APIの使い方をざっと覚えたら次は本題の座標の取得方法です。<br>
 なんのこっちゃない、上記の方法と同じように<code>prop=coordinates</code>で座標を取得できます。</p>
-
 <ul>
 <li><a href="https://ja.wikipedia.org/w/api.php?action=help&amp;modules=query%2Bcoordinates">https://ja.wikipedia.org/w/api.php?action=help&amp;modules=query%2Bcoordinates</a></li>
 <li><a href="https://www.mediawiki.org/wiki/Extension:GeoData">https://www.mediawiki.org/wiki/Extension:GeoData</a></li>
 </ul>
-
-<h3 id="例-1">例</h3>
-
-<h4 id="日本語版で偕楽園の座標を取得">日本語版で偕楽園の座標を取得</h4>
-
-<p><a href="https://ja.wikipedia.org/w/api.php?&amp;action=query&amp;format=jsonfm&amp;formatversion=2&amp;prop=coordinates&amp;titles=偕楽園">https://ja.wikipedia.org/w/api.php?&amp;action=query&amp;format=json&amp;formatversion=2&amp;prop=coordinates&amp;titles=偕楽園</a></p>
-
-<h4 id="英語版でabbey-road-studiosの概要と座標を取得">英語版でAbbey Road Studiosの概要と座標を取得</h4>
-
-<p><a href="https://en.wikipedia.org/w/api.php?&amp;action=query&amp;format=jsonfm&amp;formatversion=2&amp;prop=extracts|coordinates&amp;exintro&amp;explaintext&amp;titles=Abbey%20Road%20Studios&amp;redirects">https://en.wikipedia.org/w/api.php?&amp;action=query&amp;format=json&amp;formatversion=2&amp;prop=extracts|coordinates&amp;exintro&amp;explaintext&amp;titles=Abbey Road Studios&amp;redirects</a></p>
-
-<h4 id="日本語版で東経140-528162北緯36-533588付近の座標を持つ記事を取得">日本語版で東経140.528162北緯36.533588付近の座標を持つ記事を取得</h4>
-
+<h3 id="heading-5">例</h3>
+<h4 id="heading-6">日本語版で偕楽園の座標を取得</h4>
+<p><a href="https://ja.wikipedia.org/w/api.php?&amp;action=query&amp;format=jsonfm&amp;formatversion=2&amp;prop=coordinates&amp;titles=%E5%81%95%E6%A5%BD%E5%9C%92">https://ja.wikipedia.org/w/api.php?&amp;action=query&amp;format=json&amp;formatversion=2&amp;prop=coordinates&amp;titles=偕楽園</a></p>
+<h4 id="abbey-road-studios">英語版でAbbey Road Studiosの概要と座標を取得</h4>
+<p><a href="https://en.wikipedia.org/w/api.php?&amp;action=query&amp;format=jsonfm&amp;formatversion=2&amp;prop=extracts%7Ccoordinates&amp;exintro&amp;explaintext&amp;titles=Abbey%20Road%20Studios&amp;redirects">https://en.wikipedia.org/w/api.php?&amp;action=query&amp;format=json&amp;formatversion=2&amp;prop=extracts|coordinates&amp;exintro&amp;explaintext&amp;titles=Abbey Road Studios&amp;redirects</a></p>
+<h4 id="14052816236533588">日本語版で東経140.528162北緯36.533588付近の座標を持つ記事を取得</h4>
 <p><a href="https://ja.wikipedia.org/w/api.php?action=query&amp;format=jsonfm&amp;formatversion=2&amp;list=geosearch&amp;gsradius=10000&amp;gscoord=36.533588%7C140.528162">https://ja.wikipedia.org/w/api.php?action=query&amp;format=json&amp;formatversion=2&amp;list=geosearch&amp;gsradius=10000&amp;gscoord=36.533588%7C140.528162</a></p>
-
 <div class="ad" style="width:100%;">
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-layout="in-article"
-         data-ad-format="fluid"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="6120305662"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
   
 </div>
-
-<h2 id="日本語の記事だと座標が取得しにくい問題">日本語の記事だと座標が取得しにくい問題</h2>
-
+<h2 id="heading-7">日本語の記事だと座標が取得しにくい問題</h2>
 <p>さて、実はここからが本題です。</p>
-
 <p>無事Wikipediaから座標が取得できました。めでたしめでたし、とは行かないようで、<strong>何故か日本語の記事では座標が紐付けられているにも関わらず座標を返してくれない事態が度々発生します</strong>。</p>
-
 <p>例えば、「水戸城」を日本語と英語の両方で取得した場合、以下のような結果になります。</p>
-
 <ol>
-<li>日本語版
-
+<li>日本語版</li>
+</ol>
 <ul>
-<li>URL: <a href="https://ja.wikipedia.org/wiki/水戸城">https://ja.wikipedia.org/wiki/水戸城</a></li>
-<li>API: <a href="https://ja.wikipedia.org/w/api.php?&amp;action=query&amp;format=jsonfm&amp;formatversion=2&amp;prop=coordinates&amp;titles=水戸城">https://ja.wikipedia.org/w/api.php?&amp;action=query&amp;format=json&amp;formatversion=2&amp;prop=coordinates&amp;titles=水戸城</a></li>
+<li>URL: <a href="https://ja.wikipedia.org/wiki/">https://ja.wikipedia.org/wiki/</a>水戸城</li>
+<li>API: <a href="https://ja.wikipedia.org/w/api.php?&amp;action=query&amp;format=jsonfm&amp;formatversion=2&amp;prop=coordinates&amp;titles=%E6%B0%B4%E6%88%B8%E5%9F%8E">https://ja.wikipedia.org/w/api.php?&amp;action=query&amp;format=json&amp;formatversion=2&amp;prop=coordinates&amp;titles=水戸城</a></li>
 <li>結果: <strong>座標なし</strong></li>
-</ul></li>
-<li>英語版
-
+</ul>
+<ol start="2">
+<li>英語版</li>
+</ol>
 <ul>
 <li>URL: <a href="https://en.wikipedia.org/wiki/Mito_Castle">https://en.wikipedia.org/wiki/Mito_Castle</a></li>
 <li>API: <a href="https://en.wikipedia.org/w/api.php?&amp;action=query&amp;format=jsonfm&amp;formatversion=2&amp;prop=coordinates&amp;titles=Mito%20Castle">https://en.wikipedia.org/w/api.php?&amp;action=query&amp;format=json&amp;formatversion=2&amp;prop=coordinates&amp;titles=Mito%20Castle</a></li>
 <li>結果: <strong>座標あり!!!!!!</strong></li>
-</ul></li>
-</ol>
-
+</ul>
 <p>この差は一体どんな理由で生じるものなのか、疑問に思いWikipediaの記事のソースなどを調べてみたところ、記事に組み込まれた<strong>座標テンプレートの種類</strong>が違うことに気がつきました。</p>
-
-<p>全世界で使われている汎用的な<strong><a href="https://ja.wikipedia.org/wiki/Template:Coord">Coord</a>という座標テンプレートの他に、日本独自？の<a href="https://ja.wikipedia.org/wiki/Template:%E3%82%A6%E3%82%A3%E3%82%AD%E5%BA%A7%E6%A8%99%E5%BA%A6%E5%88%86%E7%A7%92">ウィキ座標度分秒</a>や<a href="https://ja.wikipedia.org/wiki/Template:%E3%82%A6%E3%82%A3%E3%82%AD%E5%BA%A7%E6%A8%992%E6%AE%B5%E5%BA%A6%E5%88%86%E7%A7%92">ウィキ座標2段度分秒</a>という座標テンプレートが使われていた</strong>のです。<br />
+<p>全世界で使われている汎用的な**<a href="https://ja.wikipedia.org/wiki/Template:Coord">Coord</a>という座標テンプレートの他に、日本独自？の<a href="https://ja.wikipedia.org/wiki/Template:%E3%82%A6%E3%82%A3%E3%82%AD%E5%BA%A7%E6%A8%99%E5%BA%A6%E5%88%86%E7%A7%92">ウィキ座標度分秒</a>や<a href="https://ja.wikipedia.org/wiki/Template:%E3%82%A6%E3%82%A3%E3%82%AD%E5%BA%A7%E6%A8%992%E6%AE%B5%E5%BA%A6%E5%88%86%E7%A7%92">ウィキ座標2段度分秒</a>という座標テンプレートが使われていた**のです。<br>
 <strong>MediaWiki APIで取得できるのは座標テンプレートが<a href="https://ja.wikipedia.org/wiki/Template:Coord">Coord</a>のときのみなので、ウィキ座標が多く使われている日本語版の記事は座標の取得がしづらい状況にあります。</strong></p>
-
-<h2 id="対策">対策</h2>
-
-<h3 id="1-他国語版で取得する">1. 他国語版で取得する</h3>
-
-<p>第一の方法は、ウィキ座標という謎テンプレートが使用されていない他国語版で座標を取得することです。<br />
+<h2 id="heading-8">対策</h2>
+<h3 id="1-">1. 他国語版で取得する</h3>
+<p>第一の方法は、ウィキ座標という謎テンプレートが使用されていない他国語版で座標を取得することです。<br>
 <a href="https://cieloazul310.github.io/wikilayers/">WikiLayers</a>では、日本語版で座標の取得に失敗したら自動的に他言語版で座標を取得する仕組みにしています。</p>
-
 <p>ただし座標が取得できるのは他国語版の記事があるものに限定されてしまいます。</p>
-
-<h3 id="2-wikipediaを編集する-ウィキ座標を駆逐せよ">2. Wikipediaを編集する 〜ウィキ座標を駆逐せよ！〜</h3>
-
+<h3 id="2-wikipedia-">2. Wikipediaを編集する 〜ウィキ座標を駆逐せよ！〜</h3>
 <p>第二の方法は、そもそもウィキ座標という謎のテンプレートを使っているのが悪いのだから、Wikipediaを編集して<strong>ウィキ座標をCoordテンプレートに置き換えてしまおう</strong>というものです。</p>
-
 <p>一つ一つの記事をしらみつぶしに編集していくのは大変ですが、幸い（？）なことにWikipediaの記事はテンプレート（React的な表現だとComponentsがしっくりくる）を多数組み込んだ構造をしています。</p>
-
-<p>Wikipediaのテンプレートでは、あるテンプレートの中に別のテンプレートを組み込むことが可能です。例えば<a href="https://ja.wikipedia.org/wiki/Template:%E6%97%A5%E6%9C%AC%E3%81%AE%E5%9F%8E%E9%83%AD%E6%A6%82%E8%A6%81%E8%A1%A8">日本の城郭概要表</a>というテンプレートの中には座標テンプレートが組み込まれています。このようにテンプレートの中に組み込まれている座標テンプレートが先述のウィキ座標である場合、そのテンプレートを使用している記事はMediaWiki APIから座標を取得することはできません。<br />
+<p>Wikipediaのテンプレートでは、あるテンプレートの中に別のテンプレートを組み込むことが可能です。例えば<a href="https://ja.wikipedia.org/wiki/Template:%E6%97%A5%E6%9C%AC%E3%81%AE%E5%9F%8E%E9%83%AD%E6%A6%82%E8%A6%81%E8%A1%A8">日本の城郭概要表</a>というテンプレートの中には座標テンプレートが組み込まれています。このようにテンプレートの中に組み込まれている座標テンプレートが先述のウィキ座標である場合、そのテンプレートを使用している記事はMediaWiki APIから座標を取得することはできません。<br>
 逆に言うと、<strong>テンプレート内の座標テンプレートをウィキ座標からCoordに変更すれば、そのテンプレートを使用している記事はMediaWiki APIの<code>prop=coordinates</code>で座標が取得できるようになります</strong>。</p>
-
-<p><a href="https://ja.wikipedia.org/wiki/Template:%E6%97%A5%E6%9C%AC%E3%81%AE%E5%9F%8E%E9%83%AD%E6%A6%82%E8%A6%81%E8%A1%A8">日本の城郭概要表</a>というテンプレートは2018年2月5日現在、1446ページで使用されています。このテンプレートには緯度・経度の引数が設定されていて、記事側で数値を設定することによって記事タイトル右側に座標を表示することができます。<br />
-しかしここで使われている座標テンプレートは<strong>ウィキ座標度分秒</strong>なので、<strong>日本の城郭概要表テンプレートを使用している1446ページはMediaWiki APIで座標を取得することができません</strong>。<br />
-（正確には、日本の城郭概要表テンプレート以外の部分でCoordテンプレートを使用している記事もあり、その座標は取得できます（「<a href="https://ja.wikipedia.org/w/api.php?&amp;action=query&amp;format=jsonfm&amp;formatversion=2&amp;prop=coordinates&amp;titles=浜松城">浜松城</a>」など））<br />
+<p><a href="https://ja.wikipedia.org/wiki/Template:%E6%97%A5%E6%9C%AC%E3%81%AE%E5%9F%8E%E9%83%AD%E6%A6%82%E8%A6%81%E8%A1%A8">日本の城郭概要表</a>というテンプレートは2018年2月5日現在、1446ページで使用されています。このテンプレートには緯度・経度の引数が設定されていて、記事側で数値を設定することによって記事タイトル右側に座標を表示することができます。<br>
+しかしここで使われている座標テンプレートは<strong>ウィキ座標度分秒</strong>なので、<strong>日本の城郭概要表テンプレートを使用している1446ページはMediaWiki APIで座標を取得することができません</strong>。<br>
+（正確には、日本の城郭概要表テンプレート以外の部分でCoordテンプレートを使用している記事もあり、その座標は取得できます（「<a href="https://ja.wikipedia.org/w/api.php?&amp;action=query&amp;format=jsonfm&amp;formatversion=2&amp;prop=coordinates&amp;titles=%E6%B5%9C%E6%9D%BE%E5%9F%8E">浜松城</a>」など））<br>
 逆にこの日本の城郭概要表テンプレート一つをウィキ座標からCoordに変更するだけで、このテンプレートを使用している1446ページをMediaWiki APIで座標が取得可能なページに変更することができます。</p>
-
 <p>とはいえ、ウィキ座標を駆逐せよ！とか書いてますが、日本独自のウィキ座標がどのような背景で導入されたものなのか、ウィキ座標を使うことにどのような利点があるのか、ウィキ座標をCoordに置き換えることによってどこにどのような影響があるのかわからないことには編集するのも気が引けるというのが現状です。</p>
-
 <blockquote>
-<p>「ウィキ座標」系はどうしようもない駄テンプレートですね。廃止してもよいかもしれない。<br />
-&ndash;ラッキースター・キッド ◆Luck.w.AEQ 2010年8月25日 (水) 21:57 (UTC)<br />
- <a href="https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E2%80%90%E3%83%8E%E3%83%BC%E3%83%88:%E5%9C%B0%E7%90%86%E5%BA%A7%E6%A8%99">https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E2%80%90%E3%83%8E%E3%83%BC%E3%83%88:%E5%9C%B0%E7%90%86%E5%BA%A7%E6%A8%99</a></p>
+<p>「ウィキ座標」系はどうしようもない駄テンプレートですね。廃止してもよいかもしれない。<br>
+&ndash;ラッキースター・キッド ◆Luck.w.AEQ 2010年8月25日 (水) 21:57 (UTC)<br>
+<a href="https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E2%80%90%E3%83%8E%E3%83%BC%E3%83%88:%E5%9C%B0%E7%90%86%E5%BA%A7%E6%A8%99">https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E2%80%90%E3%83%8E%E3%83%BC%E3%83%88:%E5%9C%B0%E7%90%86%E5%BA%A7%E6%A8%99</a></p>
 </blockquote>
-
 <p>と<a href="https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E2%80%90%E3%83%8E%E3%83%BC%E3%83%88:%E5%9C%B0%E7%90%86%E5%BA%A7%E6%A8%99">プロジェクトノート:地理座標</a>に8年前に書かれた意見を見つけましたが、特に進展なく？座標の付いている記事の半分ほどは未だにウィキ座標が使われています。</p>
-
 <p>2018年2月5日時点での各座標テンプレートの使用数(<a href="https://ja.wikipedia.org/w/index.php?title=%E7%89%B9%E5%88%A5:%E4%BD%BF%E7%94%A8%E7%AE%87%E6%89%80%E3%81%AE%E5%A4%9A%E3%81%84%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88&amp;limit=500&amp;offset=0">使用箇所の多いテンプレート</a>より)</p>
-
 <ul>
 <li><strong>Template:Coord</strong>‏‎ (66,588 ページで使用)</li>
 <li><strong>Template:ウィキ座標2段度分秒‏‎</strong> (34,598 ページで使用)</li>
 <li><strong>Template:ウィキ座標度分秒</strong>‏‎ (21,907 ページで使用)</li>
 </ul>
-
 <p>ウィキ座標を使っているテンプレートをCoordに置き換える作業をしたいところですが、初心者ウィキペディアンの自分がそういう大胆な編集をしてしまっていいのか悩ましいところです。（置き換えたい理由も、自分のアプリの使い勝手がよくなるというほとんど私利に近いものですし…）</p>
-
-<p>以上、MediaWiki APIで座標を取得する方法および日本語記事では座標が取得できないものが多い、という話でした。<br />
+<p>以上、MediaWiki APIで座標を取得する方法および日本語記事では座標が取得できないものが多い、という話でした。<br>
 ウィキ座標という日本独自のテンプレートがどのような経緯で誕生したのか、知っている方がいたら是非教えてください。</p>
-
-<!-- Music -->
-
+<!-- raw HTML omitted -->
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/SFEewD4EVwU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/SFEewD4EVwU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
-<p><div class="ad" style="width:100%;">
+<div class="ad" style="width:100%;">
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      
-      <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="5892967151"
-         data-ad-format="auto"></ins>
-      <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
   
 </div>
-<!-- References --></p>
-
-<!--
-地図座標の表示およびナビゲーションページへの誘導のためのテンプレートです。基本的な入力事項は{{ウィキ座標度分秒}}や{{Coord}}と同様ですが、経度と緯度の間に改行を挿入した2段表示に特化しています。主に基礎情報テンプレート内の座標表示に使用されます。
--->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<blockquote>
+</blockquote>
     </div>
 
     

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>人口 on 水戸地図</title>
@@ -18,14 +18,10 @@
       <pubDate>Mon, 25 Feb 2019 23:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/02/gatsby-stadiums-population/</guid>
-      <description>&lt;!--
-- 対象: 
-- 目的: リリース文と技術的な話の概要
---&gt;
-
-&lt;!-- Lead Paragraph --&gt;
-
-&lt;p&gt;昨年&lt;a href=&#34;https://cieloazul310.github.io/2018/04/stadium-and-population/&#34;&gt;国内のサッカースタジアム周辺の人口を求める&lt;/a&gt;という記事を書きました。&lt;br /&gt;
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;昨年&lt;a href=&#34;https://cieloazul310.github.io/2018/04/stadium-and-population/&#34;&gt;国内のサッカースタジアム周辺の人口を求める&lt;/a&gt;という記事を書きました。&lt;br&gt;
 前回の記事で算出結果の表示のために作ったページを新たに作り直し、ついでに前回算出しなかった半径 10km 圏内の人口と Bリーグのアリーナを加えました。&lt;/p&gt;</description>
     </item>
     
@@ -35,8 +31,7 @@
       <pubDate>Mon, 23 Apr 2018 23:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2018/04/stadium-and-population/</guid>
-      <description>&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;地域メッシュ統計のデータを用いて国内の主要サッカースタジアムの周辺人口を算出しました。&lt;/p&gt;</description>
     </item>
     

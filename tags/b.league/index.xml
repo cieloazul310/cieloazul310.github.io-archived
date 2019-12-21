@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>B.LEAGUE on 水戸地図</title>
@@ -18,8 +18,7 @@
       <pubDate>Fri, 01 Dec 2017 01:00:30 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2017/12/bleague-revenue/</guid>
-      <description>&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;&lt;a href=&#34;//cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/&#34;&gt;前回作成したBリーグ決算情報のCSVデータ&lt;/a&gt;を使って、D3.jsでシンプルな棒グラフを作成しました。&lt;/p&gt;</description>
     </item>
     
@@ -29,8 +28,7 @@
       <pubDate>Thu, 30 Nov 2017 22:26:35 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/</guid>
-      <description>&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;&lt;a href=&#34;//www.bleague.jp/news/36544.html&#34;&gt;B.LEAGUEが公開した各クラブの決算情報&lt;/a&gt;をCSV化して&lt;a href=&#34;//gist.github.com/cieloazul310/ae2da35266de8f0832ed3ebc431d807f&#34;&gt;gistで公開&lt;/a&gt;しました。&lt;/p&gt;</description>
     </item>
     

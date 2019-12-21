@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2019/08/landuse-map/" />
@@ -50,7 +50,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.476d377da573c5c16f57ecf4e956d06120bcef19549406478a2cd9565a009ebe.css" integrity="sha256-R203faVzxcFvV&#43;z06VbQYSC87xlUlAZHiizZVloAnr4=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.762ae52e49657988e37a406dd0c1f40d131ca30af45afb5795e7dadfcd73303e.css" integrity="sha256-dirlLklleYjjekBt0MH0DRMcowr0WvtXlefa381zMD4=" media="screen" crossorigin="anonymous">
 
 
 
@@ -60,22 +60,19 @@
 <meta property="og:description" content="土地利用を文字で見る地図を作成しました。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cieloazul310.github.io/2019/08/landuse-map/" />
-
-<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png" />
+<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 <meta property="article:published_time" content="2019-08-06T22:30:00+09:00" />
 <meta property="article:modified_time" content="2019-08-08T00:00:00+09:00" />
 <meta itemprop="name" content="土地利用地図を作りました">
 <meta itemprop="description" content="土地利用を文字で見る地図を作成しました。">
-
-
 <meta itemprop="datePublished" content="2019-08-06T22:30:00&#43;09:00" />
 <meta itemprop="dateModified" content="2019-08-08T00:00:00&#43;09:00" />
-<meta itemprop="wordCount" content="524">
+<meta itemprop="wordCount" content="515">
+<meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 
 
-<meta itemprop="keywords" content="地図,JavaScript,OpenLayers," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="地図,JavaScript,OpenLayers," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 <meta name="twitter:title" content="土地利用地図を作りました"/>
@@ -335,15 +332,10 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <!--
-- 対象: 
-- 目的: 
--->
-
-<!-- Lead Paragraph -->
-
+      <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>土地利用を文字で見る地図を作りました。</p>
-
 <link rel="stylesheet" href="https://cieloazul310.github.io/css/hugo-easy-gallery.css" />
 <div class="box">
 <figure  itemprop="associatedMedia"
@@ -358,40 +350,20 @@ if (!doNotTrack) {
   </figure>
 </div>
 
-
-<p>土地利用地図<br />
+<p>土地利用地図<br>
 <a href="https://cieloazul310.github.io/figure/landuse-map/">https://cieloazul310.github.io/figure/landuse-map/</a></p>
-
-<h2 id="制作">制作</h2>
-
+<h2 id="heading">制作</h2>
 <p><a href="https://cieloazul310.github.io/2019/08/openlayers-vt/" title="国土地理院のバイナリベクトルタイルを OpenLayers で表示">国土地理院のバイナリベクトルタイルを OpenLayers で表示</a>で作成したプロジェクトをほぼそのまま利用したので、思いついてから完成まで2時間かからないくらいで完成しました。</p>
-
 <div class="ad" style="width:100%;">
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-layout="in-article"
-         data-ad-format="fluid"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="6120305662"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
   
 </div>
-
-<h2 id="ソース">ソース</h2>
-
+<h2 id="heading-1">ソース</h2>
 <p>ベクトルタイルの記号レイヤーを色分け文字として表示しています。土地利用が一目でわかる！と思ったのですが、実はこれ全て地形図や<a href="https://maps.gsi.go.jp/" title="地理院地図">地理院地図</a>には普通に記号として載っている情報なんですよね。</p>
-
 <p>普段いかに地図記号を見ていないか（見えていても頭で処理していないか）自覚しました。</p>
-
-<h2 id="ギャラリー">ギャラリー</h2>
-
+<h2 id="heading-2">ギャラリー</h2>
 
 
 
@@ -445,41 +417,23 @@ if (!doNotTrack) {
 
 </div>
 
-
-<h2 id="問題">問題</h2>
-
+<h2 id="heading-3">問題</h2>
 <p>Xcode のシミュレータを使って iOS 版の Safari で動かしてみたら頻繁に落ちてしまいました。コンソールを開くと &ldquo;Total canvas memory use exceeds the maximum limit&hellip;&rdquo; と出てきて、どうやら iOS 版 Safari の canvas のメモリ制限に引っかかってしまったようです。一応、キャッシュの量を制限することで対処していますが、より効果的な対策は今後考えていきたいです。</p>
-
-<p><a href="https://qiita.com/minimo/items/b724c6793f45aca5e6f5" title="Qiita">safari(iOS12)で&rdquo;Total canvas memory use exceeds the maximum limit&rdquo;が出る場合の対処法 | Qiita</a></p>
-
-<!-- Music -->
-
+<p>[safari(iOS12)で&quot;Total canvas memory use exceeds the maximum limit&quot;が出る場合の対処法 | Qiita] (<a href="https://qiita.com/minimo/items/b724c6793f45aca5e6f5">https://qiita.com/minimo/items/b724c6793f45aca5e6f5</a> &ldquo;Qiita&rdquo;)</p>
+<!-- raw HTML omitted -->
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/aDsBNHdFrXc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/aDsBNHdFrXc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <p>今夜浮かれたい / キイチビール＆ザ・ホーリーティッツ (2019)</p>
-
-<p><div class="ad" style="width:100%;">
+<div class="ad" style="width:100%;">
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      
-      <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="5892967151"
-         data-ad-format="auto"></ins>
-      <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
   
 </div>
-<!-- References --></p>
+<!-- raw HTML omitted -->
     </div>
 
     

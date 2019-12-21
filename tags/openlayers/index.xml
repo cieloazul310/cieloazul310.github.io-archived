@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OpenLayers on 水戸地図</title>
@@ -18,13 +18,9 @@
       <pubDate>Tue, 06 Aug 2019 22:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/08/landuse-map/</guid>
-      <description>&lt;!--
-- 対象: 
-- 目的: 
---&gt;
-
-&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;土地利用を文字で見る地図を作りました。&lt;/p&gt;</description>
     </item>
     
@@ -34,13 +30,9 @@
       <pubDate>Sat, 03 Aug 2019 22:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/08/openlayers-vt/</guid>
-      <description>&lt;!--
-- 対象: ある程度 OpenLayers の知識がある人
-- 目的: 
---&gt;
-
-&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/gsi-cyberjapan/gsimaps-vector-experiment&#34; title=&#34;地理院地図Vector（仮称）提供実験のソース&#34;&gt;2019年7月29日に国土地理院が提供実験を開始したバイナリ形式のベクトルタイル&lt;/a&gt;を JavaScript の地図ライブラリである &lt;a href=&#34;http://openlayers.org/&#34; title=&#34;OpenLayers&#34;&gt;OpenLayers&lt;/a&gt; で表示する方法です。&lt;/p&gt;</description>
     </item>
     
@@ -50,9 +42,8 @@
       <pubDate>Mon, 29 Jan 2018 23:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2018/01/wikilayers/</guid>
-      <description>&lt;!-- Lead Paragraph --&gt;
-
-&lt;p&gt;Wikipediaを地図で見るアプリWikiLayersを公開しました。&lt;br /&gt;
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Wikipediaを地図で見るアプリWikiLayersを公開しました。&lt;br&gt;
 URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://cieloazul310.github.io/wikilayers&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
@@ -62,8 +53,7 @@ URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://c
       <pubDate>Thu, 09 Nov 2017 22:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2017/11/railroad-timeline-map/</guid>
-      <description>&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました。&lt;/p&gt;</description>
     </item>
     

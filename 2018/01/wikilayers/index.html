@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2018/01/wikilayers/" />
@@ -50,7 +50,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.476d377da573c5c16f57ecf4e956d06120bcef19549406478a2cd9565a009ebe.css" integrity="sha256-R203faVzxcFvV&#43;z06VbQYSC87xlUlAZHiizZVloAnr4=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.762ae52e49657988e37a406dd0c1f40d131ca30af45afb5795e7dadfcd73303e.css" integrity="sha256-dirlLklleYjjekBt0MH0DRMcowr0WvtXlefa381zMD4=" media="screen" crossorigin="anonymous">
 
 
 
@@ -60,22 +60,19 @@
 <meta property="og:description" content="Wikipediaを地図でみるWikiLayersを公開しました。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cieloazul310.github.io/2018/01/wikilayers/" />
-
-<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png" />
+<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 <meta property="article:published_time" content="2018-01-29T23:00:00+09:00" />
 <meta property="article:modified_time" content="2018-01-29T23:00:00+09:00" />
 <meta itemprop="name" content="WikiLayersをリリースしました">
 <meta itemprop="description" content="Wikipediaを地図でみるWikiLayersを公開しました。">
-
-
 <meta itemprop="datePublished" content="2018-01-29T23:00:00&#43;09:00" />
 <meta itemprop="dateModified" content="2018-01-29T23:00:00&#43;09:00" />
-<meta itemprop="wordCount" content="1674">
+<meta itemprop="wordCount" content="1664">
+<meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 
 
-<meta itemprop="keywords" content="地図,OpenLayers,React,Redux," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="地図,OpenLayers,React,Redux," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 <meta name="twitter:title" content="WikiLayersをリリースしました"/>
@@ -335,30 +332,21 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <!-- Lead Paragraph -->
-
-<p>Wikipediaを地図で見るアプリWikiLayersを公開しました。<br />
+      <!-- raw HTML omitted -->
+<p>Wikipediaを地図で見るアプリWikiLayersを公開しました。<br>
 URL: <a href="https://cieloazul310.github.io/wikilayers">https://cieloazul310.github.io/wikilayers</a></p>
-
-<h2 id="wikilayersとは">WikiLayersとは</h2>
-
-<p><img src="../../../img/wikilayers_showcase.png" alt="WikiLayers" title="WikiLayers" /></p>
-
+<h2 id="wikilayers">WikiLayersとは</h2>
+<p><img src="../../../img/wikilayers_showcase.png" alt="WikiLayers" title="WikiLayers"></p>
 <p><strong>WikiLayers</strong>（ウィキレイヤーズ）はWikipediaから座標を取得し地図で表示するアプリケーションです。</p>
-
-<h3 id="遊び方">遊び方</h3>
-
+<h3 id="heading">遊び方</h3>
 <ol>
-<li>検索フォームに表示したい記事の<strong>タイトル</strong>、または<strong>URL</strong>を入れて検索（「水戸城」「 <a href="https://ja.wikipedia.org/wiki/偕楽園">https://ja.wikipedia.org/wiki/偕楽園</a> 」など）</li>
+<li>検索フォームに表示したい記事の<strong>タイトル</strong>、または<strong>URL</strong>を入れて検索（「水戸城」「 <a href="https://ja.wikipedia.org/wiki/">https://ja.wikipedia.org/wiki/</a>偕楽園 」など）</li>
 <li>記事の座標を取得したら「<strong>地図に追加</strong>」を押す</li>
 <li>「<strong>地図</strong>」を見る</li>
 </ol>
-
-<h4 id="検索例">検索例</h4>
-
+<h4 id="heading-1">検索例</h4>
 <p>Wikipediaの記事に座標がついているものであれば取得可能です。
 （座標があるのに取得できないものもあるので、どういうカラクリなのか今後調べたいです）</p>
-
 <ul>
 <li><strong>都市・地名</strong>: 水戸市、小名浜、ラスベガス、ポンペイ など</li>
 <li><strong>史跡・名所</strong>: 水戸城、偕楽園、法隆寺、コロッセウム など</li>
@@ -367,9 +355,7 @@ URL: <a href="https://cieloazul310.github.io/wikilayers">https://cieloazul310.gi
 <li><strong>スタジアム</strong>: ケーズデンキスタジアム水戸、日立柏サッカー場、アザディ・スタジアム など</li>
 <li><strong>歴史上の事件</strong>: 本能寺の変、池田屋事件、ワールシュタットの戦い、ウッドストック・フェスティバル など</li>
 </ul>
-
-<h4 id="その他機能">その他機能</h4>
-
+<h4 id="heading-2">その他機能</h4>
 <ul>
 <li>URLによる検索では多国語に対応しています。</li>
 <li>記事ページで選択した記事の本文を見ることができます。</li>
@@ -379,98 +365,55 @@ URL: <a href="https://cieloazul310.github.io/wikilayers">https://cieloazul310.gi
 <li>ローカルストレージに情報が保存されるので、アプリを離れても状態は維持されます。</li>
 <li>設定ページで取得したアイテムから<strong>GeoJSONファイルを出力</strong>することができます。</li>
 </ul>
-
 <div class="ad" style="width:100%;">
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-layout="in-article"
-         data-ad-format="fluid"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="6120305662"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
   
 </div>
-
-<h2 id="きっかけ">きっかけ</h2>
-
+<h2 id="heading-3">きっかけ</h2>
 <p>Wikipediaには記事上の座標から他の地図サービスにリンクする<a href="https://tools.wmflabs.org/geohack/geohack.php?language=ja&amp;pagename=%E5%81%95%E6%A5%BD%E5%9C%92&amp;params=36_22_23_N_140_27_22_E_region:JP-08_type:landmark_source:dewiki">GeoHack</a>という機能があります。
 これはよく使っていて、例えば大河ドラマを見ながらお城の情報をWikipediaで見て、<a href="https://tools.wmflabs.org/geohack/geohack.php?language=ja&amp;pagename=%E5%81%95%E6%A5%BD%E5%9C%92&amp;params=36_22_23_N_140_27_22_E_region:JP-08_type:landmark_source:dewiki">GeoHack</a>で地理院地図に飛んで位置や地形を確認する、ということをよくやっています。</p>
-
 <p>地理院地図には色別標高図と傾斜量図というレイヤがあり、これを合成することでカシミール3Dのような綺麗な地形地図をWEB上で閲覧することができます。</p>
-
-<p><img src="../../../img/img20180129113617350.png" alt="色別標高図と傾斜量図の合成で表示した関東平野" title="色別標高図と傾斜量図の合成で表示した関東平野" /></p>
-
+<p><img src="../../../img/img20180129113617350.png" alt="色別標高図と傾斜量図の合成で表示した関東平野" title="色別標高図と傾斜量図の合成で表示した関東平野"></p>
 <p><a href="http://maps.gsi.go.jp/#8/35.880149/139.836731/&amp;ls=std%7Crelief%2C0.7%7Cslopemap&amp;blend=11&amp;disp=011&amp;lcd=slopemap&amp;vs=c0j0l0u0t0z0r0f0">http://maps.gsi.go.jp/#8/35.880149/139.836731/&amp;ls=std%7Crelief%2C0.7%7Cslopemap&amp;blend=11&amp;disp=011&amp;lcd=slopemap&amp;vs=c0j0l0u0t0z0r0f0</a></p>
-
 <p>ただし、この方法だと複数の箇所を調べたいとき、その度にWikipediaを検索する→GeoHackで地理院地図に飛ぶ→レイヤを調整する、という一連の作業が必要になるので非常に面倒です。</p>
-
 <p>Wikipediaの座標をアイコンで複数表示できる地図があればいいなと思っていたので、ちょうど勉強中の<a href="https://reactjs.org/">React</a>や<a href="https://redux.js.org/">Redux</a>を使って、勉強がてら試しに作ってみました。</p>
-
-<h2 id="技術">技術</h2>
-
+<h2 id="heading-4">技術</h2>
 <p><a href="https://github.com/facebook/create-react-app">create-react-app</a>でシングル・ページ・アプリケーション(SPA)やプログレッシブ・ウェブ・アプリ(PWA)のつもりで作ってみました。</p>
-
-<p><a href="https://reactjs.org/">React</a>, <a href="https://redux.js.org/">Redux</a>, <a href="http://www.material-ui.com/">Material-UI</a>, <a href="http://openlayers.org/">OpenLayers</a>を中心として動いています。<br />
-React+Redux関連のコードは基本的にはReduxのチュートリアルにあるTodo AppやReddit APIをベースに作っています。<br />
+<p><a href="https://reactjs.org/">React</a>, <a href="https://redux.js.org/">Redux</a>, <a href="http://www.material-ui.com/">Material-UI</a>, <a href="http://openlayers.org/">OpenLayers</a>を中心として動いています。<br>
+React+Redux関連のコードは基本的にはReduxのチュートリアルにあるTodo AppやReddit APIをベースに作っています。<br>
 他にもReact RouterやRedux Persistなど導入したい機能にしたがって色々使ってみました。使用ライブラリの詳細はGitHubリポジトリの<a href="https://github.com/cieloazul310/wikilayers/blob/master/package.json">package.json</a>を参照してください。</p>
-
 <p>Wikipediaの情報は<a href="https://www.mediawiki.org/wiki/API:Main_page/ja">MediaWiki API</a>を使用して取得しています。
 今回作るにあたって勉強になった部分が多くあったので、別途記事にしたいです。</p>
-
-<h2 id="苦労した点">苦労した点</h2>
-
+<h2 id="heading-5">苦労した点</h2>
 <p>Webデザインが苦手なので、Material-UIを使って楽しようと目論んでいましたが、結局デザインのところでかなり時間と労力を使ってしまいました。</p>
-
-<h2 id="今後の課題など">今後の課題など</h2>
-
+<h2 id="heading-6">今後の課題など</h2>
 <ul>
 <li>Service Workerには全然手をつけてないので使ってみたい</li>
 <li>GitHubPagesで無理やりホストしたけど、今後必要に応じてFirebaseを使ってみたい</li>
 <li>コードを分割したい</li>
 <li>Wikipediaの記事の座標の追加方法などをまとめたい</li>
 </ul>
-
-<h3 id="付記">付記</h3>
-
+<h3 id="heading-7">付記</h3>
 <ul>
 <li><strong>Version</strong>: 1.0 (2018/01/29)</li>
 <li><strong>作成者</strong>: <a href="https://twitter.com/cieloazul310">@cieloazul310</a></li>
 <li><strong>GitHubリポジトリ</strong>: <a href="https://github.com/cieloazul310/wikilayers/">https://github.com/cieloazul310/wikilayers/</a></li>
 </ul>
-
 <p>Copyright © 2018 cieloazul310 All right reserved.</p>
 
-
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/UkMxoYoqrfs" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/UkMxoYoqrfs" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
-<p><div class="ad" style="width:100%;">
+<div class="ad" style="width:100%;">
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      
-      <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="5892967151"
-         data-ad-format="auto"></ins>
-      <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
   
 </div>
-<!-- References --></p>
+<!-- raw HTML omitted -->
     </div>
 
     

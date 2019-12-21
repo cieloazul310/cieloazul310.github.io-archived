@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2017/12/bleague-revenue/" />
@@ -50,7 +50,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.476d377da573c5c16f57ecf4e956d06120bcef19549406478a2cd9565a009ebe.css" integrity="sha256-R203faVzxcFvV&#43;z06VbQYSC87xlUlAZHiizZVloAnr4=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.762ae52e49657988e37a406dd0c1f40d131ca30af45afb5795e7dadfcd73303e.css" integrity="sha256-dirlLklleYjjekBt0MH0DRMcowr0WvtXlefa381zMD4=" media="screen" crossorigin="anonymous">
 
 
 
@@ -60,22 +60,19 @@
 <meta property="og:description" content="Bリーグの決算情報を使ってD3.jsでシンプルな棒グラフを作成しました。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cieloazul310.github.io/2017/12/bleague-revenue/" />
-
-<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png" />
+<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 <meta property="article:published_time" content="2017-12-01T01:00:30+09:00" />
 <meta property="article:modified_time" content="2017-12-01T01:00:30+09:00" />
 <meta itemprop="name" content="Bリーグ クラブ別営業収入グラフ">
 <meta itemprop="description" content="Bリーグの決算情報を使ってD3.jsでシンプルな棒グラフを作成しました。">
-
-
 <meta itemprop="datePublished" content="2017-12-01T01:00:30&#43;09:00" />
 <meta itemprop="dateModified" content="2017-12-01T01:00:30&#43;09:00" />
-<meta itemprop="wordCount" content="419">
+<meta itemprop="wordCount" content="409">
+<meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 
 
-<meta itemprop="keywords" content="D3.js,Data Visualization,B.LEAGUE,Bリーグ,スポーツビジネス,バスケットボール," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="D3.js,Data Visualization,B.LEAGUE,Bリーグ,スポーツビジネス,バスケットボール," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 <meta name="twitter:title" content="Bリーグ クラブ別営業収入グラフ"/>
@@ -335,84 +332,50 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <!-- Lead Paragraph -->
-
+      <!-- raw HTML omitted -->
 <p><a href="//cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/">前回作成したBリーグ決算情報のCSVデータ</a>を使って、D3.jsでシンプルな棒グラフを作成しました。</p>
-
-<h2 id="グラフ">グラフ</h2>
-
+<h2 id="heading">グラフ</h2>
 
 <div>
-  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="870" style="width:100%;" src="../../../figure/bleague-revenue/" class="iframe-chart" id="732954816">
+  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="870" style="width:100%;" src="../../../figure/bleague-revenue/" class="iframe-chart" id="368741925">
     <p>Your Browser do not support iframe.</p>
   </iframe>
   <small><a href="../../../figure/bleague-revenue/" target="_blank">新しいタブで開く</a></small>
 </div>
 
 
-
-<h3 id="機能">機能</h3>
-
+<h3 id="heading-1">機能</h3>
 <ul>
 <li>棒グラフにカーソルを載せたり、クリックしたりすると右上に情報が出てきます。</li>
 <li>凡例をクリックすると、凡例に当てはまる棒が強調されます。</li>
 <li>凡例のタイトルにクリックできるものがあります。クリックすると、棒グラフの色が変わります。</li>
 </ul>
-
 <div class="ad" style="width:100%;">
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      
-      <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="5892967151"
-         data-ad-format="auto"></ins>
-      <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
   
 </div>
-
-<h2 id="感想">感想</h2>
-
+<h2 id="heading-2">感想</h2>
 <ul>
 <li>営業収入最大が大阪エヴェッサだったのは本当に意外でした。</li>
 <li>ここまできっちりとB1とB2が上下に分かれるとは思いませんでした。JリーグではJ2のクラブがJ1のクラブより収入が大きいということがよくあります。</li>
 <li>旧NBLと旧bjクラブの差がこんなに小さいとは思いませんでした。もっと歴然とした差があるものだと思っていたのですが、旧bjクラブがかなり頑張ったと見ていいと思います。</li>
 </ul>
-
 <p>単純に営業収入の大小のみをグラフにしましたが、収入の内訳を示したグラフも作成中です。</p>
-
-<!-- Music -->
-
+<!-- raw HTML omitted -->
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/SCJ_tY2724I" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/SCJ_tY2724I" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
-<p><div class="ad" style="width:100%;">
+<div class="ad" style="width:100%;">
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-layout="in-article"
-         data-ad-format="fluid"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="6120305662"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
   
 </div>
-<!-- References --></p>
+<!-- raw HTML omitted -->
     </div>
 
     

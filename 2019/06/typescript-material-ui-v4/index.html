@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2019/06/typescript-material-ui-v4/" />
@@ -50,7 +50,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.476d377da573c5c16f57ecf4e956d06120bcef19549406478a2cd9565a009ebe.css" integrity="sha256-R203faVzxcFvV&#43;z06VbQYSC87xlUlAZHiizZVloAnr4=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.762ae52e49657988e37a406dd0c1f40d131ca30af45afb5795e7dadfcd73303e.css" integrity="sha256-dirlLklleYjjekBt0MH0DRMcowr0WvtXlefa381zMD4=" media="screen" crossorigin="anonymous">
 
 
 
@@ -60,22 +60,19 @@
 <meta property="og:description" content="TypeScript &#43; React &#43; Material-UI v4 でスタイル付きコンポーネントを生成するガイド" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cieloazul310.github.io/2019/06/typescript-material-ui-v4/" />
-
-<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png" />
+<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 <meta property="article:published_time" content="2019-06-04T21:00:00+09:00" />
-<meta property="article:modified_time" content="2019-06-04T21:00:00+09:00" />
+<meta property="article:modified_time" content="2019-12-21T21:00:00+09:00" />
 <meta itemprop="name" content="TypeScript &#43; Material-UI v4 のスタイル付きコンポーネント作成ガイド">
 <meta itemprop="description" content="TypeScript &#43; React &#43; Material-UI v4 でスタイル付きコンポーネントを生成するガイド">
-
-
 <meta itemprop="datePublished" content="2019-06-04T21:00:00&#43;09:00" />
-<meta itemprop="dateModified" content="2019-06-04T21:00:00&#43;09:00" />
-<meta itemprop="wordCount" content="1586">
+<meta itemprop="dateModified" content="2019-12-21T21:00:00&#43;09:00" />
+<meta itemprop="wordCount" content="1666">
+<meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 
 
-<meta itemprop="keywords" content="TypeScript,React,Material-UI,JavaScript," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="TypeScript,React,Material-UI,JavaScript," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 <meta name="twitter:title" content="TypeScript &#43; Material-UI v4 のスタイル付きコンポーネント作成ガイド"/>
@@ -335,25 +332,17 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <!--
-- 対象: 
-- 目的: 
--->
-
-<!-- Lead Paragraph -->
-
+      <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>2019年5月下旬に <a href="https://material-ui.com">Material-UI v4</a> が正式にリリースされました。スタイル付きコンポーネントの記法が v3 以前のものと変わったのでメモしておきます。</p>
-
-<h2 id="環境">環境</h2>
-
+<h2 id="heading">環境</h2>
 <p><code>create-react-app</code> で作成したディレクトリを前提にしています。</p>
-
 <p>参考: <a href="https://github.com/Microsoft/TypeScript-React-Starter#typescript-react-starter">TypeScript React Starter</a></p>
-
-<h2 id="バージョン">バージョン</h2>
+<h2 id="heading-1">バージョン</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-txt" data-lang="txt"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -362,48 +351,32 @@ if (!doNotTrack) {
 <pre class="chroma"><code class="language-txt" data-lang="txt">- typescript @3.2.2
 - @material-ui/core @4.0.2
 - react @16.8.6
-- react-dom @16.8.6</code></pre></td></tr></table>
+- react-dom @16.8.6
+</code></pre></td></tr></table>
 </div>
-</div>
-<h2 id="v3-からの変更点">v3 からの変更点</h2>
-
-<p>v3 でのスタイル付きコンポーネントの記法は以下の記事を参照してください。<br />
+</div><h2 id="v3-">v3 からの変更点</h2>
+<p>v3 でのスタイル付きコンポーネントの記法は以下の記事を参照してください。<br>
 v4 で初めて Material-UI を使うという人は読む必要はありません。</p>
-
 <p><a href="https://cieloazul310.github.io/2019/01/material-react-typescript-notation/">TypeScript + React + Material-UI v3 のスタイル付き Components ガイド</a></p>
-
 <ul>
 <li><code>withStyles(styles)(Component)</code> という記法ではなくなった(互換性はあるため v4 でも利用可能)</li>
 <li>代わりに <code>makeStyles</code> という関数を使ってスタイルを定義する</li>
 <li>className を <code>props</code> で与えるのではなくコンポーネント内で取得する</li>
 </ul>
-
+<h3 id="20191217"><strong>追記(2019/12/17)</strong></h3>
+<p>以下の記法は、React 16.8 で追加された <a href="https://ja.reactjs.org/docs/hooks-intro.html">フック(hook)</a> を使っています。</p>
 <div class="ad" style="width:100%;">
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-layout="in-article"
-         data-ad-format="fluid"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="6120305662"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
   
 </div>
-
-<h2 id="material-ui-v4-での記法">Material-UI v4 での記法</h2>
-
-<h3 id="例">例</h3>
-
+<h2 id="material-ui-v4-">Material-UI v4 での記法</h2>
+<h3 id="heading-2">例</h3>
 <p>スタイル付きコンポーネント作成の一例です。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -444,16 +417,16 @@ v4 で初めて Material-UI を使うという人は読む必要はありませ�
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">makeStyles</span><span class="p">,</span> <span class="nx">createStyles</span><span class="p">,</span> <span class="nx">Theme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles&#39;</span><span class="p">;</span>
 
 <span class="c1">// スタイルを定義
-</span><span class="c1"></span><span class="kr">const</span> <span class="nx">useStyles</span> <span class="o">=</span> <span class="nx">makeStyles</span><span class="p">((</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">=&gt;</span>
-  <span class="nx">createStyles</span><span class="p">({</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">useStyles</span> <span class="o">=</span> <span class="nx">makeStyles</span><span class="p">(</span><span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">=</span><span class="o">&gt;</span>
+  <span class="nx">createStyles</span><span class="p">(</span><span class="p">{</span>
     <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
       <span class="nx">padding</span>: <span class="kt">theme.spacing</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="p">},</span>
+    <span class="p">}</span><span class="p">,</span>
     <span class="nx">title</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">borderBottom</span><span class="o">:</span> <span class="sb">`2px solid </span><span class="si">${</span><span class="nx">theme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">.</span><span class="nx">main</span><span class="si">}</span><span class="sb">`</span>
+      <span class="nx">borderBottom</span><span class="o">:</span> <span class="sb">`</span><span class="sb">2px solid </span><span class="si">${</span><span class="nx">theme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">.</span><span class="nx">main</span><span class="si">}</span><span class="sb">`</span>
     <span class="p">}</span>
-  <span class="p">})</span>
-<span class="p">);</span>
+  <span class="p">}</span><span class="p">)</span>
+<span class="p">)</span><span class="p">;</span>
 
 <span class="c1">// props の型を定義
 </span><span class="c1"></span><span class="nx">type</span> <span class="nx">Props</span> <span class="o">=</span> <span class="p">{</span>
@@ -461,42 +434,40 @@ v4 で初めて Material-UI を使うという人は読む必要はありませ�
 <span class="p">}</span>
 
 <span class="c1">// コンポーネントを定義
-</span><span class="c1"></span><span class="kd">function</span> <span class="nx">MyStyledComponent</span><span class="p">({</span> <span class="nx">title</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">MyStyledComponent</span><span class="p">(</span><span class="p">{</span> <span class="nx">title</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ここでクラス名を取得
-</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">classes</span> <span class="o">=</span> <span class="nx">useStyles</span><span class="p">();</span>
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">classes</span> <span class="o">=</span> <span class="nx">useStyles</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
   <span class="k">return</span> <span class="p">(</span>
     <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">}</span><span class="o">&gt;</span>
       <span class="o">&lt;</span><span class="nx">h4</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="o">&gt;</span>
         <span class="p">{</span><span class="nx">title</span> <span class="o">||</span> <span class="s1">&#39;My Styled Component&#39;</span><span class="p">}</span>
-      <span class="o">&lt;</span><span class="err">/h4&gt;</span>
-    <span class="o">&lt;</span><span class="err">/div&gt;</span>
-  <span class="p">);</span>
+      <span class="o">&lt;</span><span class="err">/</span><span class="err">h</span><span class="err">4</span><span class="err">&gt;</span>
+    <span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
+  <span class="p">)</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// エクスポート
-</span><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="nx">MyStyledComponent</span><span class="p">;</span></code></pre></td></tr></table>
+</span><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="nx">MyStyledComponent</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p><a href="https://github.com/piotrwitek/react-redux-typescript-guide">React &amp; Redux in TypeScript - Static Typing Guide</a> を参考にしています。</p>
-
-<h3 id="1-インポート">1. インポート</h3>
+</div><p><a href="https://github.com/piotrwitek/react-redux-typescript-guide">React &amp; Redux in TypeScript - Static Typing Guide</a> を参考にしています。</p>
+<h3 id="1-">1. インポート</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// JavaScript の場合は createStyles, Theme は不要
-</span><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">makeStyles</span><span class="p">,</span> <span class="nx">createStyles</span><span class="p">,</span> <span class="nx">Theme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles&#39;</span><span class="p">;</span></code></pre></td></tr></table>
+</span><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">makeStyles</span><span class="p">,</span> <span class="nx">createStyles</span><span class="p">,</span> <span class="nx">Theme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles&#39;</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p><code>createStyles</code> は型拡大を防ぐ関数で TypeScript のときのみ任意で使用します。<br />
+</div><p><code>createStyles</code> は型拡大を防ぐ関数で TypeScript のときのみ任意で使用します。<br>
 <code>Theme</code> は Material テーマ (theme) の 型定義で、これを使うことでエディタの補助機能が効き入力が楽になります。</p>
-
-<h3 id="2-変数-usestyles-を定義">2. 変数 <code>useStyles</code> を定義</h3>
+<h3 id="2--usestyles-">2. フック <code>useStyles</code> を定義</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -510,35 +481,35 @@ v4 で初めて Material-UI を使うという人は読む必要はありませ�
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// JavaScript の場合は makeStyles(theme =&gt; styleObject)で良い
-</span><span class="c1"></span><span class="kr">const</span> <span class="nx">useStyles</span> <span class="o">=</span> <span class="nx">makeStyles</span><span class="p">((</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">=&gt;</span>
-  <span class="nx">createStyles</span><span class="p">({</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">useStyles</span> <span class="o">=</span> <span class="nx">makeStyles</span><span class="p">(</span><span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">=</span><span class="o">&gt;</span>
+  <span class="nx">createStyles</span><span class="p">(</span><span class="p">{</span>
     <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
       <span class="nx">padding</span>: <span class="kt">theme.spacing</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="p">},</span>
+    <span class="p">}</span><span class="p">,</span>
     <span class="nx">title</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">borderBottom</span><span class="o">:</span> <span class="sb">`2px solid </span><span class="si">${</span><span class="nx">theme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">.</span><span class="nx">main</span><span class="si">}</span><span class="sb">`</span>
+      <span class="nx">borderBottom</span><span class="o">:</span> <span class="sb">`</span><span class="sb">2px solid </span><span class="si">${</span><span class="nx">theme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">.</span><span class="nx">main</span><span class="si">}</span><span class="sb">`</span>
     <span class="p">}</span>
-  <span class="p">})</span>
-<span class="p">);</span></code></pre></td></tr></table>
+  <span class="p">}</span><span class="p">)</span>
+<span class="p">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>ここで定義した <code>useStyles</code> は <code>makeStyles</code> で定義したスタイルオブジェクトの key と className の組を返す関数になります。</p>
+</div><p>ここで定義した <code>useStyles</code> は <code>makeStyles</code> で定義したスタイルオブジェクトの key と className の組を返すフックになります。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">const</span> <span class="nx">classes</span> <span class="o">=</span> <span class="nx">useStyles</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">classes</span><span class="p">);</span>
-<span class="err">// =&gt; Object { root: &#34;useStyles-root-41&#34;, title: &#34;useStyles-title-56&#34; }</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">const</span> <span class="nx">classes</span> <span class="o">=</span> <span class="nx">useStyles</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">classes</span><span class="p">)</span><span class="p">;</span>
+<span class="c1">// =&gt; Object { root: &#34;useStyles-root-41&#34;, title: &#34;useStyles-title-56&#34; }
+</span></code></pre></td></tr></table>
 </div>
-</div>
-<h3 id="3-コンポーネントの中で-classname-を取得">3. コンポーネントの中で className を取得</h3>
+</div><h3 id="3--classname-">3. コンポーネントの中で className を取得</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -550,30 +521,27 @@ v4 で初めて Material-UI を使うという人は読む必要はありませ�
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kd">function</span> <span class="nx">MyStyledComponent</span><span class="p">({</span> <span class="nx">title</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">classes</span> <span class="o">=</span> <span class="nx">useStyles</span><span class="p">();</span>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kd">function</span> <span class="nx">MyStyledComponent</span><span class="p">(</span><span class="p">{</span> <span class="nx">title</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">classes</span> <span class="o">=</span> <span class="nx">useStyles</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
   <span class="k">return</span> <span class="p">(</span>
     <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">}</span><span class="o">&gt;</span>
       <span class="o">&lt;</span><span class="nx">h4</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="o">&gt;</span>
         <span class="p">{</span><span class="nx">title</span> <span class="o">||</span> <span class="s1">&#39;タイトル&#39;</span><span class="p">}</span>
-      <span class="o">&lt;</span><span class="err">/h4&gt;</span>
-    <span class="o">&lt;</span><span class="err">/div&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span></code></pre></td></tr></table>
+      <span class="o">&lt;</span><span class="err">/</span><span class="err">h</span><span class="err">4</span><span class="err">&gt;</span>
+    <span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
+  <span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>v3 のときは、コンポーネントの <code>props</code> で className を与えていましたが、v4 ではコンポーネントの中でクラス名を取得します。<br />
+</div><p>v3 のときは、コンポーネントの <code>props</code> で className を与えていましたが、v4 ではコンポーネントの中でフックを使ってクラス名を取得します。<br>
 これによって、コンポーネントの <code>props</code> の型定義 <code>Props</code> を拡張する必要がなくなりました。</p>
-
 <p>したがって、v3 時代の <code>Props extends WithStyles&lt;typeof styles&gt;</code> や <code>export default withStyles(styles)(Component)</code> という煩雑な書き方がなくなりすっきりとした表現になっています。</p>
-
-<h3 id="v3-以前からv4-への移行の注意点">v3 以前からv4 への移行の注意点</h3>
-
-<p>v3 時代の <code>withStyles(styles)(Component)</code> という書き方は v4 でも可能です。<br />
+<h3 id="v3-v4-">v3 以前からv4 への移行の注意点</h3>
+<p>v3 時代の <code>withStyles(styles)(Component)</code> という書き方は v4 でも可能です。<br>
 互換性がない変更点では、padding などを指定する際に使う <a href="https://material-ui.com/customization/spacing/"><code>theme.spacing</code> が関数になりました</a>。したがって、v3 以前の <code>theme.spacing.unit * 2</code> という書き方ではエラーを吐いてしまいます。v3 から v4 へ移行するならまず <code>theme.spacing</code> の書き方を変更しましょう。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -581,36 +549,35 @@ v4 で初めて Material-UI を使うという人は読む必要はありませ�
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">const</span> <span class="nx">useStyles</span> <span class="o">=</span> <span class="nx">makeStyles</span><span class="p">((</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">createStyles</span><span class="p">({</span>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">const</span> <span class="nx">useStyles</span> <span class="o">=</span> <span class="nx">makeStyles</span><span class="p">(</span><span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">=</span><span class="o">&gt;</span> <span class="nx">createStyles</span><span class="p">(</span><span class="p">{</span>
   <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
     <span class="c1">// v3 時代は theme.spacing.unit * 2 という書き方だった
 </span><span class="c1"></span>    <span class="nx">padding</span>: <span class="kt">theme.spacing</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
   <span class="p">}</span>
-<span class="p">});</span></code></pre></td></tr></table>
+<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<h2 id="補足-react-の記法について">補足: React の記法について</h2>
-
-<p>ここは Material-UI に関係ないので読み飛ばしても構いません。<br />
+</div><h2 id="-react-">補足: React の記法について</h2>
+<p>ここは Material-UI に関係ないので読み飛ばしても構いません。<br>
 React + TypeScript の記法の流行り(?)に関する話題です。<strong>最終的には好みの問題</strong>になります。</p>
-
-<h3 id="function-component-で-const-と-function-どちらを使うべきか">Function Component で <code>const</code> と <code>function</code> どちらを使うべきか</h3>
+<h3 id="function-component--const--function-">Function Component で <code>const</code> と <code>function</code> どちらを使うべきか</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">const</span> <span class="nx">MyComponent</span>: <span class="kt">React.FC</span><span class="o">&lt;</span><span class="nx">Props</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">title</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
-  <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span> <span class="nx">title</span> <span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
-<span class="p">);</span>
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">MyComponent</span><span class="p">;</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">const</span> <span class="nx">MyComponent</span>: <span class="kt">React.FC</span><span class="o">&lt;</span><span class="nx">Props</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="p">{</span> <span class="nx">title</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="o">=</span><span class="o">&gt;</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span> <span class="nx">title</span> <span class="p">}</span><span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
+<span class="p">)</span><span class="p">;</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">MyComponent</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -618,92 +585,74 @@ React + TypeScript の記法の流行り(?)に関する話題です。<strong>�
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kd">function</span> <span class="nx">MyComponent</span><span class="p">({</span> <span class="nx">title</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="p">{</span>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kd">function</span> <span class="nx">MyComponent</span><span class="p">(</span><span class="p">{</span> <span class="nx">title</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span> <span class="nx">title</span> <span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
-  <span class="p">);</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span> <span class="nx">title</span> <span class="p">}</span><span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
+  <span class="p">)</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">MyComponent</span><span class="p">;</span></code></pre></td></tr></table>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">MyComponent</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>最近は <code>function</code> 記法を目にすることが多いです。特に理由がなければ、<code>React.FC&lt;Props&gt;</code> はもう使わなくていいかもしれません。</p>
-
+</div><p>最近は <code>function</code> 記法を目にすることが多いです。特に理由がなければ、<code>React.FC&lt;Props&gt;</code> はもう使わなくていいかもしれません。</p>
 <ul>
 <li><a href="https://reactjs.org/">React 公式ドキュメント</a> =&gt; <code>function</code></li>
 <li><a href="https://github.com/piotrwitek/react-redux-typescript-guide">React &amp; Redux in TypeScript - Static Typing Guide</a> =&gt; <code>function</code></li>
 <li><a href="https://material-ui.com">Material-UI ドキュメント</a> =&gt; <code>function</code></li>
 </ul>
-
-<p>また State を使う場合でも、 React Component Class を使わずに、React 16.8 で導入された <a href="https://reactjs.org/docs/hooks-intro.html">React Hooks</a> で書いているドキュメントが多いです。</p>
-
-<h3 id="props-の定義は-type-か-interface-か"><code>Props</code> の定義は <code>type</code> か <code>interface</code> か</h3>
+<p>また State を使う場合でも、クラス型コンポーネントを使わずに、React 16.8 で導入された <a href="https://reactjs.org/docs/hooks-intro.html">フック</a> で書いているドキュメントが多いです。</p>
+<h3 id="props--type--interface-"><code>Props</code> の定義は <code>type</code> か <code>interface</code> か</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">interface</span> <span class="nx">Props</span> <span class="p">{</span>
   <span class="nx">title?</span>: <span class="kt">string</span><span class="p">;</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-ts" data-lang="ts"><span class="nx">type</span> <span class="nx">Props</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">title?</span>: <span class="kt">string</span><span class="p">;</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>最近は <code>type</code> を使うのをよく目にします。<br />
-また state を使用する場合でも、 React Hooks を使って、型定義 <code>State</code> を定義しない書き方を多く目にします。</p>
-
+</div><p>最近は <code>type</code> を使うのをよく目にします。<br>
+また state を使用する場合でも、 フックを使って、型定義 <code>State</code> を定義しない書き方を多く目にします。</p>
 <p>最終的には好みの問題なので、自分のやりやすいように書いてください。</p>
-
-<h2 id="まとめ">まとめ</h2>
-
+<h2 id="heading-3">まとめ</h2>
 <p>ここでは手っ取り早く Material-UI v4 でのスタイル付きコンポーネントの記法について書きました。v4 についてもっと知りたい方は下記の Medium を読むと理解が深まるかと思います。</p>
-
-<p>Material-UI v4 is out<br />
+<p>Material-UI v4 is out<br>
 <a href="https://medium.com/material-ui/material-ui-v4-is-out-4b7587d1e701">https://medium.com/material-ui/material-ui-v4-is-out-4b7587d1e701</a></p>
-
-<p>Material-UI<br />
+<p>Material-UI<br>
 <a href="https://material-ui.com">https://material-ui.com</a></p>
-
-<p>React &amp; Redux in TypeScript - Static Typing Guide<br />
+<p>React &amp; Redux in TypeScript - Static Typing Guide<br>
 <a href="https://github.com/piotrwitek/react-redux-typescript-guide">https://github.com/piotrwitek/react-redux-typescript-guide</a></p>
-
+<p>フックの導入<br>
+<a href="https://ja.reactjs.org/docs/hooks-intro.html">https://ja.reactjs.org/docs/hooks-intro.html</a></p>
+<p>フックに関するよくある質問<br>
+<a href="https://ja.reactjs.org/docs/hooks-faq.html">https://ja.reactjs.org/docs/hooks-faq.html</a></p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/xtn_SmyT87s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/xtn_SmyT87s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <p>Pretty Old Man / No Buses (2019)</p>
-
-<p><div class="ad" style="width:100%;">
+<div class="ad" style="width:100%;">
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      
-      <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="5892967151"
-         data-ad-format="auto"></ins>
-      <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    
   
 </div>
-<!-- References --></p>
+<!-- raw HTML omitted -->
     </div>
 
     
@@ -716,7 +665,7 @@ React + TypeScript の記法の流行り(?)に関する話題です。<strong>�
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-      2019-06-04
+      2019-12-21
       
     </span>
   </p>

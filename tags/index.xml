@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 水戸地図</title>
@@ -301,15 +301,6 @@
     </item>
     
     <item>
-      <title>SVG</title>
-      <link>https://cieloazul310.github.io/tags/svg/</link>
-      <pubDate>Sat, 16 Dec 2017 18:50:55 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/tags/svg/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>headless chrome</title>
       <link>https://cieloazul310.github.io/tags/headless-chrome/</link>
       <pubDate>Sat, 16 Dec 2017 18:50:55 +0900</pubDate>
@@ -333,6 +324,15 @@
       <pubDate>Sat, 16 Dec 2017 18:50:55 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/tags/node.js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SVG</title>
+      <link>https://cieloazul310.github.io/tags/svg/</link>
+      <pubDate>Sat, 16 Dec 2017 18:50:55 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/tags/svg/</guid>
       <description></description>
     </item>
     

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WikiLayers on 水戸地図</title>
@@ -18,8 +18,7 @@
       <pubDate>Tue, 06 Feb 2018 21:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2018/02/wikilayers-note/</guid>
-      <description>&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;&lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;WikiLayers&lt;/a&gt;で使っているパッケージやライブラリを自分のために覚書しておきます。&lt;/p&gt;</description>
     </item>
     

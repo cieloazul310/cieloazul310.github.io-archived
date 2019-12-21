@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Works on 水戸地図</title>
@@ -18,13 +18,9 @@
       <pubDate>Tue, 06 Aug 2019 22:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/08/landuse-map/</guid>
-      <description>&lt;!--
-- 対象: 
-- 目的: 
---&gt;
-
-&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;土地利用を文字で見る地図を作りました。&lt;/p&gt;</description>
     </item>
     
@@ -34,13 +30,9 @@
       <pubDate>Fri, 26 Jul 2019 22:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/07/jclub-financial-table/</guid>
-      <description>&lt;!--
-- 対象: 
-- 目的: 
---&gt;
-
-&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;Jリーグクラブの経営情報をクラブ別・年別に見ることができるページを作成しました。&lt;/p&gt;</description>
     </item>
     
@@ -50,14 +42,10 @@
       <pubDate>Mon, 25 Feb 2019 23:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/02/gatsby-stadiums-population/</guid>
-      <description>&lt;!--
-- 対象: 
-- 目的: リリース文と技術的な話の概要
---&gt;
-
-&lt;!-- Lead Paragraph --&gt;
-
-&lt;p&gt;昨年&lt;a href=&#34;https://cieloazul310.github.io/2018/04/stadium-and-population/&#34;&gt;国内のサッカースタジアム周辺の人口を求める&lt;/a&gt;という記事を書きました。&lt;br /&gt;
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;昨年&lt;a href=&#34;https://cieloazul310.github.io/2018/04/stadium-and-population/&#34;&gt;国内のサッカースタジアム周辺の人口を求める&lt;/a&gt;という記事を書きました。&lt;br&gt;
 前回の記事で算出結果の表示のために作ったページを新たに作り直し、ついでに前回算出しなかった半径 10km 圏内の人口と Bリーグのアリーナを加えました。&lt;/p&gt;</description>
     </item>
     
@@ -67,8 +55,7 @@
       <pubDate>Sun, 22 Jul 2018 20:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2018/07/traveling-on-the-rock-continent/</guid>
-      <description>&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;TOKYO FMで放送されているラジオ番組&lt;a href=&#34;https://www.tfm.co.jp/manyuki/&#34;&gt;SPITZ 草野マサムネのロック大陸漫遊記&lt;/a&gt;のオンエア曲を年別・国別に分類しグラフ化してみました。&lt;/p&gt;</description>
     </item>
     
@@ -78,9 +65,8 @@
       <pubDate>Mon, 29 Jan 2018 23:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2018/01/wikilayers/</guid>
-      <description>&lt;!-- Lead Paragraph --&gt;
-
-&lt;p&gt;Wikipediaを地図で見るアプリWikiLayersを公開しました。&lt;br /&gt;
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Wikipediaを地図で見るアプリWikiLayersを公開しました。&lt;br&gt;
 URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://cieloazul310.github.io/wikilayers&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
@@ -90,7 +76,7 @@ URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://c
       <pubDate>Sat, 16 Dec 2017 23:35:47 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2017/12/jleague-attd-2017/</guid>
-      <description>&lt;p&gt;&lt;em&gt;J.League 2017 All Games Attendance Visualization&lt;/em&gt;&lt;br /&gt;
+      <description>&lt;p&gt;&lt;em&gt;J.League 2017 All Games Attendance Visualization&lt;/em&gt;&lt;br&gt;
 2017年の明治安田生命Jリーグ全試合の観客数を可視化したチャートです。&lt;/p&gt;</description>
     </item>
     
@@ -100,8 +86,7 @@ URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://c
       <pubDate>Fri, 01 Dec 2017 01:00:30 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2017/12/bleague-revenue/</guid>
-      <description>&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;&lt;a href=&#34;//cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/&#34;&gt;前回作成したBリーグ決算情報のCSVデータ&lt;/a&gt;を使って、D3.jsでシンプルな棒グラフを作成しました。&lt;/p&gt;</description>
     </item>
     
@@ -111,8 +96,7 @@ URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://c
       <pubDate>Thu, 09 Nov 2017 22:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2017/11/railroad-timeline-map/</guid>
-      <description>&lt;!-- Lead Paragraph --&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました。&lt;/p&gt;</description>
     </item>
     

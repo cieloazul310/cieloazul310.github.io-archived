@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/" />
@@ -50,7 +50,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.476d377da573c5c16f57ecf4e956d06120bcef19549406478a2cd9565a009ebe.css" integrity="sha256-R203faVzxcFvV&#43;z06VbQYSC87xlUlAZHiizZVloAnr4=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.762ae52e49657988e37a406dd0c1f40d131ca30af45afb5795e7dadfcd73303e.css" integrity="sha256-dirlLklleYjjekBt0MH0DRMcowr0WvtXlefa381zMD4=" media="screen" crossorigin="anonymous">
 
 
 
@@ -60,22 +60,19 @@
 <meta property="og:description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/" />
-
-<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png" />
+<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 <meta property="article:published_time" content="2017-08-12T13:00:00+09:00" />
 <meta property="article:modified_time" content="2017-11-09T22:00:00+09:00" />
 <meta itemprop="name" content="バイナリベクトルタイルを作ってみた">
 <meta itemprop="description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました">
-
-
 <meta itemprop="datePublished" content="2017-08-12T13:00:00&#43;09:00" />
 <meta itemprop="dateModified" content="2017-11-09T22:00:00&#43;09:00" />
-<meta itemprop="wordCount" content="2728">
+<meta itemprop="wordCount" content="2727">
+<meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 
 
-<meta itemprop="keywords" content="JavaScript,地図,ベクトルタイル,バイナリベクトルタイル,Leaflet,OpenLayers," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="JavaScript,地図,ベクトルタイル,バイナリベクトルタイル,Leaflet,OpenLayers," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 <meta name="twitter:title" content="バイナリベクトルタイルを作ってみた"/>
@@ -336,76 +333,59 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。</p>
-
 <p>この記事は、<a href="https://shimz.me/blog/leaflet-js/5354">バイナリベクトルタイルの作り方(GUNMA GIS GEEK)</a>という記事にある作り方をそのままそっくりやってみたという内容の記事です。クックパッドで言うところの「つくれぽ」ですね。
 なので、バイナリベクトルタイルや途中で出てくるMBTilesなどの仕様や仕組みについてはあまり理解していません。ご了承ください。</p>
-
 <p><a href="https://cieloazul310.github.io/mvt-tiles">Leafletで表示例</a></p>
-
-<h3 id="1-データをダウンロード">1.データをダウンロード</h3>
-
+<h3 id="1">1.データをダウンロード</h3>
 <p>データは何でも良いのですが、とりあえず<a href="http://nlftp.mlit.go.jp/ksj/">国土数値情報</a>を使ってみます。
 今回は点データである「学校」（平成25年度）のデータを利用しました。zipファイルをダウンロードし、解凍するとシェープファイルが手に入ります。
 フォルダごと作業ディレクトリのどこかに放り込んでおきましょう。</p>
-
-<h3 id="2-シェープファイルをgeojsonに変換">2.シェープファイルをGeoJSONに変換</h3>
-
+<h3 id="2geojson">2.シェープファイルをGeoJSONに変換</h3>
 <p>一般的にはGDALの<a href="http://www.gdal.org/ogr2ogr.html">ogr2ogr</a>を使う場面だと思いますが、より楽な<a href="https://github.com/mbostock/shapefile#command-line-reference">shp2json</a>を使いました。npmでサクッとインストールできるので、D3.js、特にTopoJSON関連を使うなら導入して損はないと思います。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-Shell" data-lang="Shell"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Shell" data-lang="Shell">  $ shp2json --encoding Shift-JIS source.shp &gt; output.geojson</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-Shell" data-lang="Shell">  $ shp2json --encoding Shift-JIS source.shp &gt; output.geojson
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>国土数値情報はShift-JISで提供されているので、<code>--encoding Shift-JIS</code>を忘れずに。</p>
-
+</div><p>国土数値情報はShift-JISで提供されているので、<code>--encoding Shift-JIS</code>を忘れずに。</p>
 <p>次の手順で使う<a href="https://github.com/mapbox/tippecanoe">tippecanoe</a>では<a href="http://ndjson.org/">ndjson</a>形式を扱うことができるので、<code>shp2json</code>で<code>-n</code>オプションをつけて、ndjsonで出力してもいいです。tippecanoeのドキュメントによると、ndjsonだとちょっとだけ早くなるとのこと。</p>
-
-<h3 id="3-geojsonからmbtilesを作成">3.GeoJSONからMBTilesを作成</h3>
-
+<h3 id="3geojsonmbtiles">3.GeoJSONからMBTilesを作成</h3>
 <p><a href="https://www.mapbox.com/help/define-mbtiles/">MBTiles</a>はSQLiteベースで作られたタイルセットを格納するためのファイル形式です。GeoJSONからMBTilesを作るために<a href="https://github.com/mapbox/tippecanoe">tippecanoe</a>を手に入れます。macなのでhomebrewを使いました。</p>
-
 <p>tippecanoeのオプションですが、基本的には「作り方」の例に従っています。<code>-r</code>オプションで設定するレートも、数値ではなく<code>-rg</code>オプションにしました。実用的なものを作る場合は適切なレートを設定した方がいいと思います。要検証。</p>
-
 <p>入力が先述の<a href="http://ndjson.org/">ndjson</a>形式の場合は<code>-P</code>オプションをつけます。</p>
-
 <p>下記のように、<code>-L</code>オプションを使うことで複数のデータをレイヤーとして一つのmbtilesファイルにまとめることもできます。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-Shell" data-lang="Shell"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Shell" data-lang="Shell">  $ tippecanoe -L hoge:./data/hoge.json -L fuga:./data/fuga.json -o output.mbtiles</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-Shell" data-lang="Shell">  $ tippecanoe -L hoge:./data/hoge.json -L fuga:./data/fuga.json -o output.mbtiles
+</code></pre></td></tr></table>
 </div>
-</div>
-<p><code>tippecanoe</code>の公式ドキュメントはもう少しちゃんと読んでおきたいです。</p>
-
-<h3 id="4-mbutilを使ってpbfファイルへ展開">4.mbutilを使ってpbfファイルへ展開</h3>
-
+</div><p><code>tippecanoe</code>の公式ドキュメントはもう少しちゃんと読んでおきたいです。</p>
+<h3 id="4mbutilpbf">4.mbutilを使ってpbfファイルへ展開</h3>
 <p><a href="https://github.com/mapbox/mbutil">mbutil</a>は<a href="https://www.mapbox.com/help/define-mbtiles/">MBTiles</a>とタイルを構成するディレクトリの相互変換を行うツールです。「作り方」ではeasy_installでしたがpipを使ってインストールしました。
-拡張子は「作り方」でも言及されていたように、.pbfではなく<strong>.mvt</strong>としました。</p>
+拡張子は「作り方」でも言及されていたように、.pbfではなく**.mvt**としました。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-Shell" data-lang="Shell"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Shell" data-lang="Shell">  $ find . -type f -exec mv -v <span class="s1">&#39;{}&#39;</span> <span class="s1">&#39;{}&#39;</span>.mvt <span class="se">\;</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-Shell" data-lang="Shell">  $ find . -type f -exec mv -v <span class="s1">&#39;{}&#39;</span> <span class="s1">&#39;{}&#39;</span>.mvt <span class="se">\;</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>これで、mbutilで指定したディレクトリにmvtという拡張子がついたファイルが入ったフォルダが出来ているはずです。</p>
-
-<h3 id="5-表示してみる">5.表示してみる</h3>
-
+</div><p>これで、mbutilで指定したディレクトリにmvtという拡張子がついたファイルが入ったフォルダが出来ているはずです。</p>
+<h3 id="5">5.表示してみる</h3>
 <p><a href="https://cieloazul310.github.io/mvt-tiles">Leafletでの表示例</a></p>
-
 <p>「作り方」の記事に則って<a href="http://leafletjs.com">Leaflet</a>を使用して表示します。
 ここで注意点が一つ。バイナリベクトルタイルの表示に使用する<a href="https://github.com/SpatialServer/Leaflet.MapboxVectorTile/">Leaflet.MapboxVectorTileプラグイン</a>はLeaflet v1.0.0以降のバージョンでは動きません。ガーン。
 また、上記のデモでも実証されるように、地物の数が多すぎるタイルは読み込んでくれませんでした（タイルの欠損があるわけではないはず）。この辺の閾値なども調べていきたいです。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -429,17 +409,17 @@ if (!doNotTrack) {
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">  <span class="k">const</span> <span class="nx">schools</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">L</span><span class="p">.</span><span class="nx">TileLayer</span><span class="p">.</span><span class="nx">MVTSource</span><span class="p">({</span>
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">  <span class="kr">const</span> <span class="nx">schools</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">L</span><span class="p">.</span><span class="nx">TileLayer</span><span class="p">.</span><span class="nx">MVTSource</span><span class="p">(</span><span class="p">{</span>
     <span class="nx">url</span><span class="o">:</span> <span class="s2">&#34;./tile/schools/&#34;</span> <span class="o">+</span> <span class="s2">&#34;{z}/{x}/{y}.mvt&#34;</span><span class="p">,</span>
     <span class="nx">maxZoom</span><span class="o">:</span> <span class="mi">18</span><span class="p">,</span>
     <span class="nx">maxNativeZoom</span><span class="o">:</span> <span class="mi">15</span><span class="p">,</span>
     <span class="nx">attribution</span><span class="o">:</span> <span class="s1">&#39;&lt;a href=&#34;http://nlftp.mlit.go.jp/ksj/&#34; target=&#34;_blank&#34;&gt;国土数値情報（学校）&lt;/a&gt;&#39;</span><span class="p">,</span>
     <span class="nx">mutexToggle</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nx">getIDForLayerFeature</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">feature</span><span class="p">){</span>
+    <span class="nx">getIDForLayerFeature</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">feature</span><span class="p">)</span><span class="p">{</span>
       <span class="k">return</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_001</span> <span class="o">+</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_005</span><span class="p">;</span>
-    <span class="p">},</span>
+    <span class="p">}</span><span class="p">,</span>
     <span class="nx">onClick</span><span class="o">:</span> <span class="nx">hoveronFeature</span><span class="p">,</span> <span class="c1">//別途設定した関数
-</span><span class="c1"></span>    <span class="nx">style</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">feature</span><span class="p">){</span>
+</span><span class="c1"></span>    <span class="nx">style</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">feature</span><span class="p">)</span><span class="p">{</span>
       <span class="kd">let</span> <span class="nx">color</span> <span class="o">=</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16001&#34;</span> <span class="o">?</span> <span class="s2">&#34;yellow&#34;</span> <span class="o">:</span>
                   <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16002&#34;</span> <span class="o">?</span> <span class="s2">&#34;gold&#34;</span> <span class="o">:</span>
                   <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16003&#34;</span> <span class="o">?</span> <span class="s2">&#34;#aca777&#34;</span> <span class="o">:</span>
@@ -448,74 +428,47 @@ if (!doNotTrack) {
                   <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16006&#34;</span> <span class="o">?</span> <span class="s2">&#34;#78109d&#34;</span> <span class="o">:</span>
                   <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16007&#34;</span> <span class="o">?</span> <span class="s2">&#34;#d90096&#34;</span> <span class="o">:</span> <span class="s2">&#34;#3f9386&#34;</span><span class="p">;</span>
 
-      <span class="k">return</span> <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="nx">color</span><span class="p">,</span> <span class="nx">radius</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span> <span class="nx">selected</span><span class="o">:</span> <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s2">&#34;red&#34;</span><span class="p">,</span> <span class="nx">radius</span><span class="o">:</span> <span class="mi">10</span><span class="p">}};</span>
+      <span class="k">return</span> <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="nx">color</span><span class="p">,</span> <span class="nx">radius</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span> <span class="nx">selected</span><span class="o">:</span> <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s2">&#34;red&#34;</span><span class="p">,</span> <span class="nx">radius</span><span class="o">:</span> <span class="mi">10</span><span class="p">}</span><span class="p">}</span><span class="p">;</span>
     <span class="p">}</span>
-  <span class="p">});</span>
+  <span class="p">}</span><span class="p">)</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p>LeafletのMVTレイヤ設定の例です。<a href="https://github.com/SpatialServer/Leaflet.MapboxVectorTile/blob/master/docs/configuration.md">プラグインのドキュメント</a>によると、必須となるオプションは<code>url</code>、<code>getIDForLayerFeature</code>、<code>filter</code>のようです（ただしfilterオプションはなくても動く）。重要なのが<code>getIDForLayerFeature</code>で、これを設定しないと地物のスタイリングやクリックイベント時に正しい挙動をしてくれません。地物のプロパティに固有のidがある場合はそれを設定すればいいのですが、国土数値情報の学校データには存在しないので、行政区域コード（P29_001）に名称（P29_005）を繋げたものを設定しました。</p>
-
-<h4 id="その他のライブラリ">その他のライブラリ</h4>
-
+</div><p>LeafletのMVTレイヤ設定の例です。<a href="https://github.com/SpatialServer/Leaflet.MapboxVectorTile/blob/master/docs/configuration.md">プラグインのドキュメント</a>によると、必須となるオプションは<code>url</code>、<code>getIDForLayerFeature</code>、<code>filter</code>のようです（ただしfilterオプションはなくても動く）。重要なのが<code>getIDForLayerFeature</code>で、これを設定しないと地物のスタイリングやクリックイベント時に正しい挙動をしてくれません。地物のプロパティに固有のidがある場合はそれを設定すればいいのですが、国土数値情報の学校データには存在しないので、行政区域コード（P29_001）に名称（P29_005）を繋げたものを設定しました。</p>
+<h4 id="heading">その他のライブラリ</h4>
 <p><a href="https://cieloazul310.github.io/mvt-tiles/openlayers.html">OpenLayersでの表示例</a></p>
-
 <p><a href="http://openlayers.org">OpenLayers</a>ではバイナリベクトルタイルを読み込む<code>ol.source.MVTSource()</code>が存在しているのですが、<del>なぜか上手く動作してくれません。もしかしたら<a href="http://openlayers.org/en/latest/examples/mapbox-vector-tiles.html">Mapboxが配信しているタイル</a>に特化しているかもしれません。（あるいはラスタタイルとの併用を前提としていないか）</del></p>
-
 <p>※追記
 2017/08/13にリリースされたOpenLayers v4.3.0ではMVTソースの動作はめちゃくちゃ良くなってます。</p>
-
 <p>ちゃんと調べてないのでアレなんですが、WEBGLベースの<a href="https://www.mapbox.com/mapbox-gl-js/api/">Mapbox GL JS</a>が一番良いみたいですね。後々試してみます。</p>
-
-<h3 id="6-github-pagesでホストしてみる">6.GitHub Pagesでホストしてみる</h3>
-
+<h3 id="6github-pages">6.GitHub Pagesでホストしてみる</h3>
 <p>作成したバイナリベクトルタイルをGitHub Pagesを使ってホストしてみます。
 2016年からの新機能でmasterブランチのdocsフォルダの中身をホストできるようなので(参考:<a href="http://qiita.com/tonkotsuboy_com/items/f98667b89228b98bc096">2016年新機能! GitHubのmasterブランチをWebページとして公開する手順</a>)、それに則ってやってみました。</p>
-
 <ul>
 <li>レポジトリ: <a href="https://github.com/cieloazul310/mvt-tiles/">https://github.com/cieloazul310/mvt-tiles</a></li>
-<li>ホストしたタイル:  <a href="https://cieloazul310.github.io/mvt-tiles/tile/schools/{z}/{x}/{y}.mvt">https://cieloazul310.github.io/mvt-tiles/tile/schools/{z}/{x}/{y}.mvt</a></li>
+<li>ホストしたタイル:  <a href="https://cieloazul310.github.io/mvt-tiles/tile/schools/">https://cieloazul310.github.io/mvt-tiles/tile/schools/</a>{z}/{x}/{y}.mvt</li>
 <li>ホストしたページ: <a href="https://cieloazul310.github.io/mvt-tiles">https://cieloazul310.github.io/mvt-tiles</a></li>
 </ul>
-
-<h3 id="課題">課題</h3>
-
+<h3 id="heading-1">課題</h3>
 <ul>
 <li>tippecanoeの機能をもっと試していきたい。</li>
 <li>Leafletでのクリックイベントや複雑なスタイリングなどを試していきたい。</li>
 <li>LeafletのMapboxVectorTileプラグインは最終更新が2015年9月で、Leafletの最新バージョンに対応する可能性はなさそう。それでもLeafletを使うべきか悩みどころ。</li>
 </ul>
-
-<h3 id="感想">感想</h3>
-
+<h3 id="heading-2">感想</h3>
 <p>難易度が高い印象があったバイナリベクトルタイルが意外なほどあっさり作れてしまって驚きました。
 レシピを公開してくれた<a href="https://shimz.me/blog/">GUNMA GIS GEEK</a>の清水正行氏には感謝申し上げたいです。</p>
-
-<h3 id="参考リンク">参考リンク</h3>
-
+<h3 id="heading-3">参考リンク</h3>
 <ul>
 <li><a href="https://www.mapbox.com/vector-tiles/specification/">VectorTilesSpecification</a> mapbox</li>
 <li><a href="https://www.mapbox.com/help/define-mbtiles/">MbTiles</a> mapbox</li>
 <li><a href="https://shimz.me/blog/leaflet-js/5354">バイナリベクトルタイルの作り方</a> GUNMA GIS GEEK</li>
-<li><a href="http://qiita.com/hfu/items/e3fab485fa90b4b89da5">anyone can host vector tiles</a> hfu&rsquo;s Qiita</li>
-<li><a href="http://qiita.com/hfu/items/c7040662af1fe21a9f56">Vector Tiles to start in Japan</a> hfu&rsquo;s Qiita</li>
+<li><a href="http://qiita.com/hfu/items/e3fab485fa90b4b89da5">anyone can host vector tiles</a> hfu's Qiita</li>
+<li><a href="http://qiita.com/hfu/items/c7040662af1fe21a9f56">Vector Tiles to start in Japan</a> hfu's Qiita</li>
 <li><a href="http://ccpn.gsi.go.jp/meeting_partners/data/20170608/GSI_3.html">地球地図バイナリベクトルタイルの整備</a> 国土地理院</li>
 </ul>
-
 <div class="ad" style="width:100%;">
   
     <small>広告</small>
-    
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-layout="in-article"
-         data-ad-format="fluid"
-         data-ad-client="ca-pub-7323207940463794"
-         data-ad-slot="6120305662"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
     
   
 </div>
