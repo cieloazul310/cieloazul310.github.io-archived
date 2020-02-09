@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="ja" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Gatsby &#43; Material-UI ダークモード実装方法 - 水戸地図</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="cieloazul310" /><meta name="description" content="Gatsby &#43; Material-UI のプロジェクトに React コンテクストとカスタムフックを利用したダークモードの実装方法" />
+<meta name="keywords" content="ダークモード, React, Reactコンテクスト, Reactフック, Material-UI" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.62.1" />
+
+
+<link rel="canonical" href="https://cieloazul310.github.io/2020/02/gatsby-material-ui-darkmode/" />
+
+
+
+
+
+<link rel="icon" href="https://cieloazul310.github.io/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.0ac9d6e1a269940edf21e0975154ced8e36aa516f40395e60aba2f31970072b6.css" integrity="sha256-CsnW4aJplA7fIeCXUVTO2ONqpRb0A5XmCrovMZcAcrY=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="Gatsby &#43; Material-UI ダークモード実装方法" />
+<meta property="og:description" content="Gatsby &#43; Material-UI のプロジェクトに React コンテクストとカスタムフックを利用したダークモードの実装方法" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cieloazul310.github.io/2020/02/gatsby-material-ui-darkmode/" />
+<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+<meta property="article:published_time" content="2020-02-09T17:00:00+09:00" />
+<meta property="article:modified_time" content="2020-02-09T17:00:00+09:00" />
+<meta itemprop="name" content="Gatsby &#43; Material-UI ダークモード実装方法">
+<meta itemprop="description" content="Gatsby &#43; Material-UI のプロジェクトに React コンテクストとカスタムフックを利用したダークモードの実装方法">
+<meta itemprop="datePublished" content="2020-02-09T17:00:00&#43;09:00" />
+<meta itemprop="dateModified" content="2020-02-09T17:00:00&#43;09:00" />
+<meta itemprop="wordCount" content="3800">
+<meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+
+
+
+<meta itemprop="keywords" content="ダークモード,React,Reactコンテクスト,Reactフック,Material-UI," /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+
+<meta name="twitter:title" content="Gatsby &#43; Material-UI ダークモード実装方法"/>
+<meta name="twitter:description" content="Gatsby &#43; Material-UI のプロジェクトに React コンテクストとカスタムフックを利用したダークモードの実装方法"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-74683419-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/">Home</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/categories/">Categories</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/about/">About</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="https://cieloazul310.github.io/" class="logo">
+    
+      水戸地図
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/">Home</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://cieloazul310.github.io/about/">About</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Gatsby &#43; Material-UI ダークモード実装方法</h1>
+      
+      <div class="post-meta">
+        <time datetime="2020-02-09" class="post-time">
+          2020-02-09
+        </time>
+        <div class="post-category">
+            <a href="https://cieloazul310.github.io/categories/javascript/"> JavaScript </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><a href="https://www.gatsbyjs.org" title="Gatsby">Gatsby</a> + <a href="https://material-ui.com" title="Material-UI">Material-UI</a> でダークモードを実装する方法です。<br>
+Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html" title="フックの導入 - React">React フック</a>に関するある程度の理解がある人向けの内容になります。</p>
+<h2 id="heading">概要</h2>
+<p><a href="https://github.com/mui-org/material-ui/tree/master/examples/gatsby" title="mui-org/material-ui/examples/gatsby - GitHub">Material-UI 公式による Gatsby example</a> をベースに、ダークモード切り替えの実装例を見ます。</p>
+<p>(裏テーマ)<br>
+<a href="https://ja.reactjs.org/docs/context.html" title="コンテクスト - React">コンテクスト</a>を使ってコンポーネントツリーの上層にある Material-UI のテーマ <code>MuiTheme</code> を下層から更新する。</p>
+<p><a href="https://cieloazul310.github.io/gatsby-material-ui-darkmode/">ダークモード導入後のデモページ</a><br>
+<a href="https://github.com/cieloazul310/gatsby-material-ui-darkmode/">ダークモード導入後のプロジェクト例</a></p>
+<h2 id="heading-1">準備と前提知識</h2>
+<p>この記事では Material-UI 公式による Gatsby example をプロジェクト構成のベースとして最小限のコードでダークモードを実装します。
+既存のプロジェクトを持っている人はこのプロジェクト構成に合致しているか確かめて(特に後述する <code>gatsby-plugin-top-layout</code> を使っているかどうか)、ここから始める人は Gatsby example を 手順に従ってダウンロードしてください。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">curl https://codeload.github.com/mui-org/material-ui/tar.gz/master <span class="p">|</span> tar -xz --strip<span class="o">=</span><span class="m">2</span>  material-ui-master/examples/gatsby
+mv gatsby <span class="o">[</span>新しいプロジェクト名<span class="o">]</span>
+<span class="nb">cd</span> <span class="o">[</span>新しいプロジェクト名<span class="o">]</span>
+yarn install
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="heading-2">バージョン</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">- react@16.12.0
+- gatsby@2.19.12
+- @material-ui/core@4.9.1
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="gatsby-plugin-top-layout-"><code>gatsby-plugin-top-layout</code> について</h3>
+<p>Material-UI 公式による Gatsby example では、プロジェクト内の plugins ディレクトリに <a href="https://github.com/mui-org/material-ui/tree/master/examples/gatsby/plugins/gatsby-plugin-top-layout"><code>gatsby-plugin-top-layout</code></a> という自作プラグインが組み込まれています。</p>
+<p>Material-UI の基本ですが、mui コンポーネントを使うには、コンポーネントツリーの上層に <code>MuiTheme</code> のプロバイダとなる <a href="https://material-ui.com/customization/theming/#theme-provider"><code>&lt;ThemeProvider&gt;</code></a> を必要とします。<br>
+この <code>gatsby-plugin-top-layout</code> という自作プラグインは開発・ビルドの際に自動で各ページのコンポーネントツリーの最上位に <code>&lt;ThemeProvider&gt;</code> を位置付けてくれます。つまり作成する全てのページで自由に mui コンポーネントを使うことができるようになります。</p>
+<p>この記事では <code>gatsby-plugin-top-layout</code> を使用していることが前提となります。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// plugins/gatsby-plugin-top-layout/TopLayout.js
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">TopLayout</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">React</span><span class="na">.Fragment</span><span class="p"></span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">ThemeProvider</span> <span class="na">theme</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">CssBaseline</span> <span class="p">/</span><span class="p">&gt;</span> <span class="c1">// normarize.css のようなもの
+</span><span class="c1"></span>        <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span> <span class="c1">// =&gt; ここで mui コンポーネントが使える
+</span><span class="c1"></span>      <span class="p">&lt;</span><span class="p">/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
+    <span class="o">&lt;</span><span class="err">/</span><span class="err">R</span><span class="err">e</span><span class="err">a</span><span class="err">c</span><span class="err">t</span><span class="err">.</span><span class="err">F</span><span class="err">r</span><span class="err">a</span><span class="err">g</span><span class="err">m</span><span class="err">e</span><span class="err">n</span><span class="err">t</span><span class="err">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>参考<br>
+<a href="https://material-ui.com/customization/theming/">Theming - Material-UI</a></p>
+<h3 id="muitheme-">MuiTheme のダークモードの仕様</h3>
+<p><code>MuiTheme</code> には元々<a href="https://material-ui.com/customization/palette/#dark-mode">ダークモードの仕様</a>があります。<br>
+<code>createMuiTheme</code> の引数オブジェクトの <code>palette.type</code> を <code>'dark'</code> に設定するだけで、背景と文字の色が反転するダークモードになります。 (デフォルトは <code>'light'</code>)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">createMuiTheme</span><span class="p">(</span><span class="p">{</span>
+  <span class="nx">palette</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;dark&#39;</span> <span class="c1">// &#39;light&#39;(default) or &#39;dark&#39;
+</span><span class="c1"></span>  <span class="p">}</span>
+<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>参考<br>
+<a href="https://material-ui.com/customization/palette/">Palette - Material-UI</a></p>
+<p>サイトをただ単にダークモードにするのであれば、パレットタイプを <code>'dark'</code> にすればいいのですが、実際に必要な機能はダークモードの on/off の切り替えです。</p>
+<p>ここまでは準備と前提知識を見てきました。次の章からダークモード切り替えの実装に入ります。</p>
+<div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="6120305662"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+<h2 id="heading-3">ダークモード切り替えを実装する</h2>
+<p><code>MuiTheme</code> を使ったダークモード切り替えの実装にあたり、コンポーネントツリーの最上位(しかもプラグインの中)で扱う <code>MuiTheme</code> を<strong>ステート管理の対象とする</strong>方法が問題になります。今回は React の機能である<a href="https://ja.reactjs.org/docs/context.html" title="コンテクスト - React">コンテクスト</a>を使ったステート管理の方法を紹介します。</p>
+<h3 id="heading-4">ダークモード実装の概要</h3>
+<p>各ページのコンポーネントツリー最上位に位置する <code>plugins/gatsby-plugin-top-layout/TopLayout.js</code> に<a href="https://ja.reactjs.org/docs/hooks-reference.html#usereducer" title="useReducer - React">リデューサ</a> (reducer) を導入し、その <code>dispatch</code> 関数を<a href="https://ja.reactjs.org/docs/context.html" title="コンテクスト - React">コンテクスト</a>として下層のコンポーネントに受け渡す。コンテクストを使ったカスタムフックを作成し他のコンポーネント内から呼び出す。</p>
+<p>編集するのは以下の4ファイルです。</p>
+<ol>
+<li><strong>作成</strong>: <code>src/themeReducer.js</code></li>
+<li><strong>作成</strong>: <code>src/DispatchContext.js</code></li>
+<li><strong>変更</strong>: <code>plugins/gatsby-plugin-top-layout/TopLayout.js</code></li>
+<li><strong>作成</strong>: <code>src/components/DarkModeButton.js</code></li>
+</ol>
+<p>(デモではその他にレイアウトコンポーネントを作成していますが、本筋とは関係がないので省きます)</p>
+<h4 id="1--srcthemereducerjs">1. 作成: <code>src/themeReducer.js</code></h4>
+<p><a href="https://ja.reactjs.org/docs/hooks-reference.html#usereducer" title="useReducer - React">リデューサ</a>を作成し、テーマのステート、アクションを定義します。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// src/themeReducer.js
+</span><span class="c1"></span><span class="cm">/** TypeScript を使う場合
+</span><span class="cm"> *  
+</span><span class="cm"> *  export interface ThemeState {
+</span><span class="cm"> *    darkMode: boolean;
+</span><span class="cm"> *  }
+</span><span class="cm"> *  export type Action = { type: &#39;TOGGLE_DARKMODE&#39; };
+</span><span class="cm"> */</span>
+
+<span class="c1">// 初期ステートを定義
+</span><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">darkMode</span><span class="o">:</span> <span class="kc">false</span>
+<span class="p">}</span><span class="p">;</span>
+
+<span class="c1">// リデューサの定義
+</span><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">themeReducer</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="s1">&#39;TOGGLE_DARKMODE&#39;</span><span class="o">:</span>
+      <span class="k">return</span> <span class="p">{</span>
+        <span class="p">...</span><span class="nx">state</span><span class="p">,</span>
+        <span class="nx">darkMode</span><span class="o">:</span> <span class="o">!</span><span class="nx">state</span><span class="p">.</span><span class="nx">darkMode</span>
+      <span class="p">}</span><span class="p">;</span>
+    <span class="k">default</span><span class="o">:</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2--srcdispatchcontextjs">2. 作成: <code>src/DispatchContext.js</code></h4>
+<p><a href="https://ja.reactjs.org/docs/context.html" title="コンテクスト - React">コンテクスト</a>と<a href="https://ja.reactjs.org/docs/hooks-custom.html" title="カスタムフックの作成 - React">カスタムフック</a>の作成をおこないます。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// src/DispatchContext.js
+</span><span class="c1"></span><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+
+<span class="cm">/** TypeScript を使う場合
+</span><span class="cm"> *
+</span><span class="cm"> *  import { Action } from &#39;../themeReducer&#39;;
+</span><span class="cm"> *  
+</span><span class="cm"> *  const DispatchContext =
+</span><span class="cm"> *  React.createContext&lt;React.Dispatch&lt;Action&gt;&gt;(...)
+</span><span class="cm"> */</span>
+
+<span class="c1">// コンテクストの作成
+</span><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">DispatchContext</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createContext</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+
+<span class="c1">// カスタムフックの作成
+</span><span class="c1"></span><span class="kr">export</span> <span class="kd">function</span> <span class="nx">useToggleDarkMode</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">dispatch</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useContext</span><span class="p">(</span><span class="nx">DispatchContext</span><span class="p">)</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useCallback</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">dispatch</span><span class="p">(</span><span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;TOGGLE_DARKMODE&#39;</span> <span class="p">}</span><span class="p">)</span><span class="p">,</span> <span class="p">[</span><span class="nx">dispatch</span><span class="p">]</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://ja.reactjs.org/docs/context.html" title="コンテクスト - React">コンテクスト</a> については解説を省きます。なんせ自分も今回初めて使ったものですから。詳しくは React 公式のドキュメントをお読みください。</p>
+<p>参考<br>
+<a href="https://ja.reactjs.org/docs/context.html" title="コンテクスト - React">コンテクスト - React</a><br>
+<a href="https://ja.reactjs.org/docs/hooks-reference.html#usecontext">React.useContext - React</a></p>
+<p>さて、ここで作成した <code>useToggleDarkMode</code> は<a href="https://ja.reactjs.org/docs/hooks-custom.html" title="カスタムフックの作成 - React">カスタムフック</a>です。<br>
+コンテクストを使ったフックにすることでパレットタイプの切り替えをコンポーネントツリー内の<strong>どこからでも</strong>使うことができます。</p>
+<p>参考<br>
+<a href="https://ja.reactjs.org/docs/hooks-custom.html" title="カスタムフックの作成 - React">カスタムフック - React</a><br>
+<a href="https://ja.reactjs.org/docs/hooks-reference.html#usecallback">React.useCallback - React</a></p>
+<h4 id="3--pluginsgatsby-plugin-top-layouttoplayoutjs">3. 変更: <code>plugins/gatsby-plugin-top-layout/TopLayout.js</code></h4>
+<p>作成したリデューサとコンテクストを <code>&lt;TopLayout&gt;</code> コンポーネント内で使用します。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// plugins/gatsby-plugin-top-layout/TopLayout.js
+</span><span class="c1"></span><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">PropTypes</span> <span class="nx">from</span> <span class="s1">&#39;prop-types&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Helmet</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-helmet&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">CssBaseline</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/CssBaseline&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">ThemeProvider</span><span class="p">,</span> <span class="nx">createMuiTheme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="nx">initialTheme</span> <span class="nx">from</span> <span class="s1">&#39;../../src/theme&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">themeReducer</span><span class="p">,</span> <span class="nx">initialState</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../src/themeReducer&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">DispatchContext</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../src/DispatchContext&#39;</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">TopLayout</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// React.useReducer でリデューサの導入
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">]</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useReducer</span><span class="p">(</span><span class="nx">themeReducer</span><span class="p">,</span> <span class="nx">initialState</span><span class="p">)</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="p">{</span> <span class="nx">darkMode</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">state</span><span class="p">;</span>
+  <span class="c1">// React.useMemo でステートに応じた theme を作成
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useMemo</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">createMuiTheme</span><span class="p">(</span><span class="p">{</span>
+      <span class="p">...</span><span class="nx">initialTheme</span><span class="p">,</span>
+      <span class="nx">palette</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="nx">darkMode</span> <span class="o">?</span> <span class="s1">&#39;dark&#39;</span> <span class="o">:</span> <span class="s1">&#39;light&#39;</span><span class="p">,</span>
+        <span class="nx">primary</span><span class="o">:</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">,</span>
+        <span class="nx">secondary</span><span class="o">:</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">secondary</span><span class="p">,</span>
+      <span class="p">}</span>
+    <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">,</span> <span class="p">[</span><span class="nx">darkMode</span><span class="p">]</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">React</span><span class="na">.Fragment</span><span class="p"></span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">Helmet</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span>
+          <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span>
+          <span class="na">content</span><span class="o">=</span><span class="s">&#34;minimum-scale=1, initial-scale=1, width=device-width&#34;</span>
+        <span class="p">/</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span>
+          <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;display=swap&#34;</span>
+          <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span>
+        <span class="p">/</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="p">/</span><span class="nt">Helmet</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">ThemeProvider</span> <span class="na">theme</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">CssBaseline</span> <span class="p">/</span><span class="p">&gt;</span>
+        <span class="p">{</span><span class="cm">/* DispatchContext.Provider を挿入 */</span><span class="p">}</span>
+        <span class="p">&lt;</span><span class="nt">DispatchContext</span><span class="na">.Provider</span> <span class="na">value</span><span class="o">=</span><span class="p">{</span><span class="nx">dispatch</span><span class="p">}</span><span class="p"></span><span class="p">&gt;</span>
+          <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="err">/</span><span class="err">D</span><span class="err">i</span><span class="err">s</span><span class="err">p</span><span class="err">a</span><span class="err">t</span><span class="err">c</span><span class="err">h</span><span class="err">C</span><span class="err">o</span><span class="err">n</span><span class="err">t</span><span class="err">e</span><span class="err">x</span><span class="err">t</span><span class="err">.</span><span class="err">P</span><span class="err">r</span><span class="err">o</span><span class="err">v</span><span class="err">i</span><span class="err">d</span><span class="err">e</span><span class="err">r</span><span class="err">&gt;</span>
+      <span class="p">&lt;</span><span class="p">/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
+    <span class="o">&lt;</span><span class="err">/</span><span class="err">R</span><span class="err">e</span><span class="err">a</span><span class="err">c</span><span class="err">t</span><span class="err">.</span><span class="err">F</span><span class="err">r</span><span class="err">a</span><span class="err">g</span><span class="err">m</span><span class="err">e</span><span class="err">n</span><span class="err">t</span><span class="err">&gt;</span>
+  <span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">TopLayout</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">children</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">node</span><span class="p">,</span>
+<span class="p">}</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><a href="https://ja.reactjs.org/docs/hooks-reference.html#usereducer" title="useReducer - React"><code>React.useReducer</code></a> を使って <code>&lt;TopLayout&gt;</code> にステートを作成</li>
+<li><a href="https://ja.reactjs.org/docs/hooks-reference.html#usememo"><code>React.useMemo</code></a> を使ってステートに応じた <code>MuiTheme</code> を再生産</li>
+<li><code>&lt;ThemeProvider&gt;</code> の子要素にプロバイダコンポーネントである <a href="https://ja.reactjs.org/docs/context.html#contextprovider"><code>&lt;DispatchContext.Provider&gt;</code></a> を挿入</li>
+<li><code>&lt;DispatchContext.Provider&gt;</code> の値に <code>dispatch</code> 関数を設定</li>
+</ul>
+<p><code>dispatch</code> はコンテクストとして、子要素に渡されます。子要素からステートが変更された時に、<code>&lt;TopLayout&gt;</code> 内で <code>MuiTheme</code> を再生産し、ページ全体のデザインを更新します。<br>
+これでダークモードの実装、コンポーネントツリー下層から最上層の <code>MuiTheme</code> の更新という裏テーマを達成しました。</p>
+<p>参考<br>
+<a href="https://ja.reactjs.org/docs/hooks-reference.html#usereducer" title="useReducer - React">useReducer - React</a><br>
+<a href="https://ja.reactjs.org/docs/hooks-reference.html#usememo">useMemo - React</a><br>
+<a href="https://ja.reactjs.org/docs/context.html#contextprovider">Context.Provider - React</a></p>
+<p>先ほど作成したカスタムフック <code>useToggleDarkMode</code> でパレットタイプ切り替えのアイコンボタンを作ってみましょう。</p>
+<h4 id="-srccomponentsdarkmodebuttonjs">作成: <code>src/components/DarkModeButton.js</code></h4>
+<p><code>@material-ui/icons</code> をインストールします。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">yarn add @material-ui/icons
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// src/components/DarkModeButton.js
+</span><span class="c1"></span><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">IconButton</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/IconButton&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">useTheme</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/useTheme&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Brightness4</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/icons/Brightness4&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Brightness5</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/icons/Brightness5&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">useToggleDarkMode</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../utils/themeReducer&#39;</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">DarkModeButton</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// パレットタイプを取得
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">paletteType</span> <span class="o">=</span> <span class="nx">useTheme</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">type</span><span class="p">;</span>
+  <span class="c1">// パレットタイプ切り替えのフックを使用
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">_toggleDarkMode</span> <span class="o">=</span> <span class="nx">useToggleDarkMode</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">IconButton</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">_toggleDarkMode</span><span class="p">}</span> <span class="p">{</span><span class="na">...props</span><span class="p">}</span><span class="p"></span><span class="p">&gt;</span>
+      <span class="p">{</span><span class="nx">paletteType</span> <span class="o">===</span> <span class="s1">&#39;dark&#39;</span> <span class="o">?</span> <span class="p">&lt;</span><span class="nt">Brightness5</span> <span class="p">/</span><span class="p">&gt;</span> <span class="o">:</span> <span class="p">&lt;</span><span class="nt">Brightness4</span> <span class="p">/</span><span class="p">&gt;</span><span class="p">}</span>
+    <span class="p">&lt;</span><span class="p">/</span><span class="nt">IconButton</span><span class="p">&gt;</span>
+  <span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">DarkModeButton</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Material-UI の <code>MuiTheme</code> もコンテクストです。<code>useTheme</code> というカスタムフックでどのコンポーネントからでも <code>MuiTheme</code> を取得できます。現在のパレットタイプ取得には <code>useTheme</code> フックを使います。<br>
+ここで定義した <code>_toggleDarkMode</code> という変数は、パレットタイプ切り替えを実行するコールバック関数です。</p>
+<p>簡潔なコードで書かれたこの <code>&lt;DarkModeButton&gt;</code> を好きな場所に置くだけでダークモードの切り替えが可能になります。<br>
+<a href="https://cieloazul310.github.io/gatsby-material-ui-darkmode/">デモページ</a>では作成したレイアウトコンポーネントの中に <code>&lt;DarkModeButton&gt;</code> を設置しています。</p>
+<p>参考<br>
+<a href="https://material-ui.com/components/icons/">Icons - Material-UI</a><br>
+<a href="https://material-ui.com/styles/api/#usetheme-theme">useTheme - Material-UI</a></p>
+<h3 id="heading-5">コードの元ネタ</h3>
+<p>解説ですが、<strong>実は実装が上手くいった後に仕組みを調べている</strong>ので至らない部分があると思います。</p>
+<p>このコードの元ネタとなったのは MuiTheme のパレット変更とダークモードを実装している <a href="https://material-ui.com" title="Material-UI">Material-UI ドキュメント</a>の<a href="https://github.com/mui-org/material-ui/tree/master/docs">ソース</a>です。このドキュメントは <a href="https://nextjs.org/">Next.js</a> 製ですが、このコードを真似して、Gatsby での実装が上手くいった後にどのような仕組みで動いているのか調べました。</p>
+<p>参考<br>
+<a href="https://github.com/mui-org/material-ui/blob/master/docs/src/modules/components/ThemeContext.js">material-ui/docs/src/modules/components/ThemeContext.js</a></p>
+<p>今回はダークモードの切り替えのみに絞って簡略化した形で実装しましたが、元ネタのコードは、ダークモードの他に<a href="https://github.com/mui-org/material-ui/blob/master/docs/src/modules/components/ThemeContext.js#L138">パレットの配色変更</a>や<a href="https://github.com/mui-org/material-ui/blob/master/docs/src/modules/components/ThemeContext.js#L110">余白の変更</a>、<a href="https://github.com/mui-org/material-ui/blob/master/docs/src/modules/components/ThemeContext.js#L236">複数の要素を変更するための合理的なフックの作成</a>などを実装していて、大変勉強になります。</p>
+<h2 id="heading-6">発展編</h2>
+<p>今回はシンプルなダークモードの実装をしました。<br>
+ダークモードをより良いUIにするためには様々な改良が必要になります。</p>
+<h3 id="heading-7">パレットカラーを調整する</h3>
+<p>ダークモードでパレットをそのまま使うと視認性が悪い可能性があります。パレットタイプ切り替え時に、プライマリーカラーとアクセントカラーのメインをやや明るめにしておくと視認性が改善されます。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// plugins/gatsby-plugin-top-layout/TopLayout.js
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useMemo</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">createMuiTheme</span><span class="p">(</span><span class="p">{</span>
+      <span class="p">...</span><span class="nx">initialTheme</span><span class="p">,</span>
+      <span class="nx">palette</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="nx">darkMode</span> <span class="o">?</span> <span class="s1">&#39;dark&#39;</span> <span class="o">:</span> <span class="s1">&#39;light&#39;</span><span class="p">,</span>
+        <span class="nx">primary</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">main</span><span class="o">:</span> <span class="nx">darkMode</span> <span class="o">?</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">[</span><span class="mi">300</span><span class="p">]</span> <span class="o">:</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">.</span><span class="nx">main</span>
+        <span class="p">}</span><span class="p">,</span>
+        <span class="nx">secondary</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">main</span><span class="o">:</span> <span class="nx">darkMode</span> <span class="o">?</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">secondary</span><span class="p">[</span><span class="mi">300</span><span class="p">]</span> <span class="o">:</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">secondary</span><span class="p">.</span><span class="nx">main</span>
+        <span class="p">}</span><span class="p">,</span>
+      <span class="p">}</span>
+    <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">,</span> <span class="p">[</span><span class="nx">darkMode</span><span class="p">]</span><span class="p">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>参考<br>
+<a href="https://material-ui.com/customization/color/">Color - Material-UI</a></p>
+<h3 id="heading-8">メディアクエリを使う</h3>
+<p>CSS メディアクエリの <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme"><code>prefers-color-scheme</code></a> は現在のシステムがライトテーマかダークテーマかを判別します。
+また、Material-UI には JavaScript から CSS のメディアクエリを使うカスタムフック <a href="https://material-ui.com/components/use-media-query/"><code>useMediaQuery</code></a> があります。</p>
+<p>Material-UI のドキュメントには <code>useMediaQuery</code> と <code>React.useMemo</code> を組み合わせて <a href="https://material-ui.com/customization/palette/#user-preference">MuiTheme のパレットテーマを動的に変更するサンプルコード</a>が載っています。</p>
+<p>参考<br>
+<a href="https://material-ui.com/components/use-media-query/">useMediaQuery - Material-UI</a><br>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">prefers-color-scheme - MDN web docs</a></p>
+<h3 id="cookie--local-storage-">Cookie や Local Storage を使って設定を保存</h3>
+<p>このデモでは、ダークモードのページを一度閉じてしまうと、次に開いた場合にまたライトテーマが適用されてしまいます。前回閉じた画面と同じテーマを表示するためには、<a href="https://developer.mozilla.org/ja/docs/Web/API/Document/cookie">Cookie</a> や <a href="https://developer.mozilla.org/ja/docs/Web/API/Window/localStorage">Local Storage</a> を使って設定を保存する必要があります。</p>
+<p>現在 Cookie に対して風当たりが強いご時世なので Local Storage の方がいいかなと思いますが、Material-UI 公式や Twitter Web App ではテーマの保存にまだ Cookie が使われているので一応紹介しておきます。ちなみに、Gatsby 公式ドキュメントは Local Storage を使っていました。</p>
+<p>Local Storage を使うときは、 React フックのレシピ集である <a href="https://usehooks.com">useHooks</a> に載っている <a href="https://usehooks.com/useLocalStorage"><code>useLocalStorage</code></a> を使うといいと思います。</p>
+<p>参考<br>
+<a href="https://developer.mozilla.org/ja/docs/Web/API/Document/cookie">Cookie - MDN web docs</a><br>
+<a href="https://developer.mozilla.org/ja/docs/Web/API/Window/localStorage">LocalStorage - MDN web docs</a><br>
+<a href="https://usehooks.com/useLocalStorage">useLocalStorage - useHooks</a><br>
+<a href="https://usehooks.com/useDarkMode/">useDarkMode - useHooks</a></p>
+<h2 id="heading-9">まとめ</h2>
+<p>ダークモード実装のため、コンポーネントツリー最上位に位置する <code>TopLayout.js</code> に<a href="https://ja.reactjs.org/docs/hooks-reference.html#usereducer" title="useReducer - React">リデューサ</a> (reducer) を導入し、その <code>dispatch</code> 関数を<a href="https://ja.reactjs.org/docs/context.html" title="コンテクスト - React">コンテクスト</a>として下層のコンポーネントに受け渡すことで <code>MuiTheme</code> を下層から更新できるようにしました。また、コンテクストを利用した<a href="https://ja.reactjs.org/docs/hooks-custom.html" title="カスタムフックの作成 - React">カスタムフック</a>を作成することで、他のどのコンポーネント内からでもパレットタイプの切り替えが可能になりました。</p>
+<p>props で受け渡すのではなくコンテクストとフックを使った実装なので、既存プロジェクトでも小さい改修コストで導入できます。</p>
+<p>今まであまり使っていなかった<a href="https://ja.reactjs.org/docs/context.html" title="コンテクスト - React">コンテクスト</a>や<a href="https://ja.reactjs.org/docs/hooks-custom.html" title="カスタムフックの作成 - React">カスタムフック</a>に対する知見が得られてとても勉強になりました。</p>
+<h2 id="heading-10">参考</h2>
+<ul>
+<li><a href="https://github.com/mui-org/material-ui/tree/master/examples/gatsby" title="mui-org/material-ui/examples/gatsby - GitHub">Material-UI Gatsby example - GitHub</a></li>
+<li><a href="https://ja.reactjs.org/docs/hooks-intro.html" title="フックの導入 - React">フックの導入 - React</a></li>
+<li><a href="https://ja.reactjs.org/docs/context.html" title="コンテクスト - React">コンテクスト - React</a></li>
+<li><a href="https://material-ui.com/customization/theming/">Theming - Material-UI</a></li>
+<li><a href="https://material-ui.com/customization/palette/">Palette - Material-UI</a></li>
+<li><a href="https://ja.reactjs.org/docs/hooks-custom.html" title="カスタムフックの作成 - React">カスタムフックの作成 - React</a></li>
+</ul>
+<!-- raw HTML omitted -->
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/E5C4kupWq18" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>もう踊れない / 宇宙まお (2020)</p>
+<div class="ad" style="width:100%;">
+  
+    <small>広告</small>
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      
+      <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7323207940463794"
+         data-ad-slot="5892967151"
+         data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    
+  
+</div>
+<!-- raw HTML omitted -->
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">cieloazul310</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+      2020-02-09
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://cieloazul310.github.io/tags/%E3%83%80%E3%83%BC%E3%82%AF%E3%83%A2%E3%83%BC%E3%83%89/">ダークモード</a>
+          <a href="https://cieloazul310.github.io/tags/react/">React</a>
+          <a href="https://cieloazul310.github.io/tags/react%E3%82%B3%E3%83%B3%E3%83%86%E3%82%AF%E3%82%B9%E3%83%88/">Reactコンテクスト</a>
+          <a href="https://cieloazul310.github.io/tags/react%E3%83%95%E3%83%83%E3%82%AF/">Reactフック</a>
+          <a href="https://cieloazul310.github.io/tags/material-ui/">Material-UI</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="https://cieloazul310.github.io/2019/08/landuse-map/">
+            <span class="next-text nav-default">土地利用地図を作りました</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    Show Disqus Comments
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://cieloazul310.github.io/2020/02/gatsby-material-ui-darkmode/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'cieloazul310';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+    
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="//twitter.com/cieloazul310" rel="me noopener" class="iconfont"
+      title="twitter"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1264 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M1229.8616 18.043658c0 0-117.852626 63.135335-164.151872 67.344358-105.225559-164.151872-505.082682-92.598492-437.738325 223.078185C278.622548 312.675223 89.216542 47.506814 89.216542 47.506814s-117.852626 189.406006 75.762402 345.139833C127.097743 396.85567 55.544363 371.601535 55.544363 371.601535S26.081207 535.753407 253.368414 615.724832c-21.045112 29.463156-113.643603 8.418045-113.643603 8.418045s25.254134 143.10676 231.496229 180.987961c-143.10676 130.479693-387.230056 92.598492-370.393967 105.225559 206.242095 189.406006 1119.599946 231.496229 1128.01799-643.98042C1179.353331 249.539887 1263.533778 123.269217 1263.533778 123.269217s-130.479693 37.881201-138.897738 33.672179C1225.652577 98.015083 1229.8616 18.043658 1229.8616 18.043658"></path>
+</svg>
+
+    </a>
+  
+    <a href="//github.com/cieloazul310" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://cieloazul310.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2020
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        cieloazul310
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="https://cieloazul310.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="https://cieloazul310.github.io/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="https://cieloazul310.github.io/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
