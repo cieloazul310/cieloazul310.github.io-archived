@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.62.1" />
+<meta name="generator" content="Hugo 0.67.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2018/04/stadium-and-population/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.0ac9d6e1a269940edf21e0975154ced8e36aa516f40395e60aba2f31970072b6.css" integrity="sha256-CsnW4aJplA7fIeCXUVTO2ONqpRb0A5XmCrovMZcAcrY=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.03d43414944e30066de67a7ba9ff895236d021801c54c44df330397ca21df57b.css" integrity="sha256-A9Q0FJROMAZt5np7qf&#43;JUjbQIYAcVMRN8zA5fKId9Xs=" media="screen" crossorigin="anonymous">
 
 
 
@@ -339,21 +339,21 @@ if (!doNotTrack) {
 <p>まず予め断っておきますが、これはただの遊びです。<br>
 各スタジアムの周辺人口を求めて、求めたデータから何かを評価したり結論を導くようなものではありません。<br>
 スタジアムの周辺人口を求めました。以上。という内容の記事です。</p>
-<h2 id="heading">人口データ</h2>
+<h2 id="人口データ">人口データ</h2>
 <p><strong>国勢調査 2015年 5次メッシュ(250mメッシュ) その1 人口等基本集計に関する事項</strong></p>
 <ul>
 <li>URL: <a href="https://www.e-stat.go.jp/gis/statmap-search?page=1&amp;type=1&amp;toukeiCode=00200521&amp;toukeiYear=2015&amp;aggregateUnit=Q&amp;serveyId=Q002005112015&amp;statsId=T000876">https://www.e-stat.go.jp/gis/statmap-search?page=1&amp;type=1&amp;toukeiCode=00200521&amp;toukeiYear=2015&amp;aggregateUnit=Q&amp;serveyId=Q002005112015&amp;statsId=T000876</a></li>
 <li>公開日: 2018年1月4日</li>
 <li>データ取得日: 2018年4月10日</li>
 </ul>
-<h2 id="heading-1">人口の求め方</h2>
+<h2 id="人口の求め方">人口の求め方</h2>
 <p><a href="https://midoriit.com/2014/08/qgis%E3%81%AB%E3%82%88%E3%82%8B%E7%B5%B1%E8%A8%88%E8%A7%A3%E6%9E%904.html">QGISによるデータ分析(4) 合同会社 緑IT事務所</a>を参考にしています。</p>
 <ol>
 <li>まず各メッシュの中心点を作成します。</li>
 <li>次に各スタジアムからの距離円(厳密には<strong>スタジアムのピッチのセンターマーク</strong>からの距離円)を作成します。</li>
 <li>最後に、距離円に含まれる点を抽出し、点の集合から人口を算出します。</li>
 </ol>
-<h2 id="heading-2">国内主要サッカースタジアム</h2>
+<h2 id="国内主要サッカースタジアム">国内主要サッカースタジアム</h2>
 <ul>
 <li>J1〜JFLのホームスタジアム</li>
 <li>地域リーグで特定クラブのホームスタジアムと言える会場</li>
@@ -376,26 +376,26 @@ if (!doNotTrack) {
     
   
 </div>
-<h2 id="heading-3">結果&amp;可視化</h2>
+<h2 id="結果可視化">結果&amp;可視化</h2>
 <p>国内主要スタジアムからの500m圏内、1.0km圏内、1.5km圏内、3.0km圏内、5.0km圏内を算出しました。<br>
 MAP画面で選択したスタジアム周辺の人口地図を表示できます。</p>
 
 <div>
-  <iframe frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" height="480" style="width:100%;" src="../../../figure/stadiums_population/" class="iframe-chart" id="837612495">
+  <iframe frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" height="480" style="width:100%;" src="../../../figure/stadiums_population/" class="iframe-chart" id="723641985">
     <p>Your Browser do not support iframe.</p>
   </iframe>
   <small><a href="../../../figure/stadiums_population/" target="_blank">新しいタブで開く</a></small>
 </div>
 
 <script>
-  var tg = document.getElementById("837612495");
+  var tg = document.getElementById("723641985");
   tg.setAttribute("height", window.innerHeight - 50);
 </script>
 
-<h2 id="heading-4">表</h2>
+<h2 id="表">表</h2>
 <p><img src="../../../img/stadiums_population.png" alt="表" title="表"></p>
 <p>CSV形式のものを<a href="https://gist.github.com/cieloazul310/2ec16b8e2b437cfb301dc9319b0dc403">gist</a>に上げています。</p>
-<h2 id="heading-5">あとがき</h2>
+<h2 id="あとがき">あとがき</h2>
 <p>500m, 1.0km, 1.5km圏は徒歩圏をイメージしています。<br>
 3kmくらい平気で歩くサッカーファンは多いですが、一般的に「徒歩で行く」選択肢になりうるのは1.5km圏が限界かなという感じがします。</p>
 <p>3.0km圏は自転車圏をイメージしています。自転車でもっと長い距離を行き来する人も多いですが、一般的に苦に感じることなく自転車で行ける範囲は3kmくらいかなと思います。<br>

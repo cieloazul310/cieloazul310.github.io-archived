@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.62.1" />
+<meta name="generator" content="Hugo 0.67.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2018/07/how-to-generate-mundial-with-gimp/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.0ac9d6e1a269940edf21e0975154ced8e36aa516f40395e60aba2f31970072b6.css" integrity="sha256-CsnW4aJplA7fIeCXUVTO2ONqpRb0A5XmCrovMZcAcrY=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.03d43414944e30066de67a7ba9ff895236d021801c54c44df330397ca21df57b.css" integrity="sha256-A9Q0FJROMAZt5np7qf&#43;JUjbQIYAcVMRN8zA5fKId9Xs=" media="screen" crossorigin="anonymous">
 
 
 
@@ -336,29 +336,29 @@ if (!doNotTrack) {
     <div class="post-content">
       <!-- raw HTML omitted -->
 <p>GIMPをいじっていたらたまたま架空の陸地のような画像が作れたので作り方を記録しておきます。</p>
-<h2 id="heading">見本</h2>
+<h2 id="見本">見本</h2>
 <p><img src="../../../img/mundial/master.png" alt="見本"></p>
 <p>設定次第で島にも大陸にもできます。</p>
-<h2 id="heading-1">作り方</h2>
+<h2 id="作り方">作り方</h2>
 <p>所要時間: 10分くらい</p>
-<h3 id="heading-2">陸地レイヤー・海レイヤー</h3>
-<h4 id="1-">1. 黒無地の背景に霧を生成</h4>
+<h3 id="陸地レイヤー海レイヤー">陸地レイヤー・海レイヤー</h3>
+<h4 id="1-黒無地の背景に霧を生成">1. 黒無地の背景に霧を生成</h4>
 <p><img src="../../../img/mundial/01.png" alt="霧を生成"></p>
 <p>「フィルター」&gt;「下塗り」&gt;「雲」&gt;「霧」で霧を生成します。<br>
 パラメータのTurbulenceを小さくすると大きな塊に、大きくすると分散した形になります。<br>
 今回はTurbulenceを3.0に設定しました。</p>
-<h4 id="2-">2. 黒無地と霧を合成し、ガウスぼかしをかける</h4>
+<h4 id="2-黒無地と霧を合成しガウスぼかしをかける">2. 黒無地と霧を合成し、ガウスぼかしをかける</h4>
 <p><img src="../../../img/mundial/02.png" alt="ガウスぼかし"></p>
 <p>「フィルター」&gt;「ぼかし」&gt;「ガウスぼかし」でガウスぼかしをかけます。<br>
 ぼかしの半径を小さくすると海岸線が複雑な形に、大きくすると単純な形になります。<br>
 今回は水平・垂直共に5.0に設定しました。</p>
-<h4 id="3-2">3. 画像を2段階化</h4>
+<h4 id="3-画像を2段階化">3. 画像を2段階化</h4>
 <p><img src="../../../img/mundial/03.png" alt="2段階化"></p>
 <p>「色」&gt;「しきい値」で画像を2段階化します。<br>
 しきい値の値はスライダーをいじって感覚で設定します。</p>
 <p>白い方と黒い方、どちらかを陸、どちらかを海に決めます。<br>
 今回は白い方を陸にしました。</p>
-<h4 id="4-">4. 海と陸の色をつける</h4>
+<h4 id="4-海と陸の色をつける">4. 海と陸の色をつける</h4>
 <p><img src="../../../img/mundial/04.png" alt="海と陸の色をつける"></p>
 <p>陸地にする方（今回は白い方）を「色域を選択」で選択し、選択範囲を保存します。</p>
 <p>新しいレイヤーを2枚作り、1枚は選択範囲を使ってベージュで塗りつぶします。
@@ -381,18 +381,18 @@ if (!doNotTrack) {
     
   
 </div>
-<h3 id="heading-3">凹凸レイヤー</h3>
-<h4 id="5-">5. 凹凸地形の元になる霧を生成</h4>
+<h3 id="凹凸レイヤー">凹凸レイヤー</h3>
+<h4 id="5-凹凸地形の元になる霧を生成">5. 凹凸地形の元になる霧を生成</h4>
 <p><img src="../../../img/mundial/05.png" alt="地形の素の霧生成"></p>
 <p>新しいレイヤーを2枚作ります。<br>
 1枚は黒地で先ほど保存した選択範囲を塗りつぶしたもの、もう1枚は選択範囲の範囲に霧を生成したものです。</p>
-<h4 id="6-2">6. 上の2枚を合成しガウスぼかしをかける</h4>
+<h4 id="6-上の2枚を合成しガウスぼかしをかける">6. 上の2枚を合成しガウスぼかしをかける</h4>
 <p><img src="../../../img/mundial/06.png" alt="ガウスぼかし"></p>
-<h4 id="7-">7. エンボス加工</h4>
+<h4 id="7-エンボス加工">7. エンボス加工</h4>
 <p><img src="../../../img/mundial/07.png" alt="エンボス加工"></p>
 <p>「フィルター」&gt;「変形」&gt;「エンボス」でエンボスをかけます。<br>
 今回は明度を反転する前提で、方向320度、持ち上げ0、深度10に設定していますが、最終的に凸凹しているように見えればいいので適当に設定してください。</p>
-<h4 id="8-">8. エンボスを明度を反転</h4>
+<h4 id="8-エンボスを明度を反転">8. エンボスを明度を反転</h4>
 <p><img src="../../../img/mundial/08.png" alt="見本"></p>
 <p>「色」&gt;「明度の反転」で右下に影が来るような画像にします。<br>
 乗算で合成し、透過度を適当に設定します。</p>
@@ -413,19 +413,19 @@ if (!doNotTrack) {
     
   
 </div>
-<h3 id="heading-4">植生レイヤー</h3>
-<h4 id="9-">9. 緑色の霧を生成</h4>
+<h3 id="植生レイヤー">植生レイヤー</h3>
+<h4 id="9-緑色の霧を生成">9. 緑色の霧を生成</h4>
 <p><img src="../../../img/mundial/09.png" alt="植生を霧で生成"></p>
 <p>保存した陸地の範囲の選択範囲を使って緑色の霧を生成します。<br>
 任意でぼかしたりするといいと思います。</p>
-<h3 id="heading-5">色の調整</h3>
-<h4 id="10-">10. レイヤーごとに色を調整する</h4>
+<h3 id="色の調整">色の調整</h3>
+<h4 id="10-レイヤーごとに色を調整する">10. レイヤーごとに色を調整する</h4>
 <p><img src="../../../img/mundial/10.png" alt="色の調整"></p>
 <p>お好みでレイヤーごとに色を調整します。</p>
-<h4 id="11-">11. その他微調整</h4>
+<h4 id="11-その他微調整">11. その他微調整</h4>
 <p><img src="../../../img/mundial/11.png" alt="微調整"></p>
 <p>陸地の周りに青いぼかしを入れました。とりあえず完成。</p>
-<h2 id="heading-6">その他の作例</h2>
+<h2 id="その他の作例">その他の作例</h2>
 <p><img src="../../../img/mundial/junk.png" alt="その他の作例"></p>
 <p>霧で雲を作ったり、明るさをグラデーション隅をぼかしたりするといい感じになると思います。</p>
 <!-- raw HTML omitted -->

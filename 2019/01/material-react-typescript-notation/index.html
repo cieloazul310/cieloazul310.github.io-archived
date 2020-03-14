@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.62.1" />
+<meta name="generator" content="Hugo 0.67.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2019/01/material-react-typescript-notation/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.0ac9d6e1a269940edf21e0975154ced8e36aa516f40395e60aba2f31970072b6.css" integrity="sha256-CsnW4aJplA7fIeCXUVTO2ONqpRb0A5XmCrovMZcAcrY=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.03d43414944e30066de67a7ba9ff895236d021801c54c44df330397ca21df57b.css" integrity="sha256-A9Q0FJROMAZt5np7qf&#43;JUjbQIYAcVMRN8zA5fKId9Xs=" media="screen" crossorigin="anonymous">
 
 
 
@@ -339,22 +339,22 @@ if (!doNotTrack) {
 <!-- raw HTML omitted -->
 <p>React + <a href="https://material-ui.com">Material-UI v3</a> では <code>withStyles(styles)(Component)</code> という独自の記法で<strong>スタイル付き Components</strong> を生成します。<br>
 TypeScript で Material-UI のスタイル付き Components を記述する場合は、従来の JavaScript での記法とは多少異なるのですが、 TypeScript を使った記法については情報が少ないと思ったので覚え書きとして残しておきます。</p>
-<h2 id="material-ui-v4-">Material-UI v4 について</h2>
+<h2 id="material-ui-v4-について">Material-UI v4 について</h2>
 <p>2019年5月末に Material-UI v4 がリリースされました。記法が変わったので、v4 の記法は<a href="https://cieloazul310.github.io/2019/06/typescript-material-ui-v4/">別記事</a>にしています。<br>
 この先は Material-UI v3 の記法になります。予めインストールした Material-UI のバージョンを確認してから閲覧してください。</p>
 <p>TypeScript + Material-UI v4 のスタイル付きコンポーネント作成ガイド
 <a href="https://cieloazul310.github.io/2019/06/typescript-material-ui-v4/">https://cieloazul310.github.io/2019/06/typescript-material-ui-v4/</a></p>
-<h2 id="heading">更新</h2>
+<h2 id="更新">更新</h2>
 <ul>
 <li>2019/02/23: <code>React.FunctionComponent</code> を <code>React.FC</code> に書き換えました。</li>
 <li>2019/02/23: <code>(props: Props) =&gt; {}</code> を <code>({ classes }: Props) =&gt; {}</code> に書き換えました。</li>
 <li>2019/06/04: Material-UI v4 に関する追記を行いました。</li>
 </ul>
-<h2 id="heading-1">環境</h2>
+<h2 id="環境">環境</h2>
 <p><code>create-react-app</code> で作成したディレクトリを前提にしています。<br>
 <code>tsconfig.json</code> や <code>tslint.json</code> の設定はここでは省きます。</p>
 <p>参考: <a href="https://github.com/Microsoft/TypeScript-React-Starter#typescript-react-starter">TypeScript React Starter</a></p>
-<h3 id="typescript-react-app-">TypeScript React App の作成</h3>
+<h3 id="typescript-react-app-の作成">TypeScript React App の作成</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -367,7 +367,7 @@ $ <span class="nb">cd</span> my-ts-app
 $ yarn add @material-ui/core @material-ui/icons
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="heading-2">バージョン</h3>
+</div><h3 id="バージョン">バージョン</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -382,7 +382,7 @@ $ yarn add @material-ui/core @material-ui/icons
 - react-scripts-ts @3.1.0
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="heading-3">ディレクトリ構成</h3>
+</div><h3 id="ディレクトリ構成">ディレクトリ構成</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -409,7 +409,7 @@ $ yarn add @material-ui/core @material-ui/icons
 </div>
 </div><p>以上のようなディレクトリ構成を想定しています。<br>
 ここからは <code>./src/components/</code> 内にファイルを作成していきます。</p>
-<h2 id="-javascript--material-ui-">従来の JavaScript + Material-UI の記法</h2>
+<h2 id="従来の-javascript--material-ui-の記法">従来の JavaScript + Material-UI の記法</h2>
 <p>まず従来の JavaScript + Material-UI でスタイル付き Components を作成する方法を見ておきましょう。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -445,33 +445,33 @@ $ yarn add @material-ui/core @material-ui/icons
 <span class="kr">import</span> <span class="nx">withStyles</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/withStyles&#39;</span><span class="p">;</span>
 
 <span class="c1">// styles を定義
-</span><span class="c1"></span><span class="c1">// theme を使わない場合は関数ではなく object でもよい
-</span><span class="c1"></span><span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="nx">theme</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="p">{</span>
+</span><span class="c1">// theme を使わない場合は関数ではなく object でもよい
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="nx">theme</span> <span class="p">=&gt;</span> <span class="p">({</span>
   <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">textAlign</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span>
-  <span class="p">}</span><span class="p">,</span>
+  <span class="p">},</span>
   <span class="nx">paragraph</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">fontFamily</span><span class="o">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span>
     <span class="nx">padding</span><span class="o">:</span> <span class="nx">theme</span><span class="p">.</span><span class="nx">spacing</span><span class="p">.</span><span class="nx">unit</span> <span class="o">*</span> <span class="mi">2</span>
   <span class="p">}</span>
-<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+<span class="p">});</span>
 
 <span class="c1">// Component を作成
-</span><span class="c1"></span><span class="kr">const</span> <span class="nx">FirstComponent</span> <span class="o">=</span> <span class="p">(</span><span class="p">{</span> <span class="nx">classes</span><span class="p">,</span> <span class="nx">title</span> <span class="p">}</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span>
-  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">}</span><span class="p"></span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">paragraph</span><span class="p">}</span><span class="p"></span><span class="p">&gt;</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">FirstComponent</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">classes</span><span class="p">,</span> <span class="nx">title</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">(</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">}&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">paragraph</span><span class="p">}&gt;</span>
       <span class="p">{</span> <span class="nx">title</span> <span class="o">||</span> <span class="s1">&#39;My First TS Component&#39;</span> <span class="p">}</span>
-    <span class="p">&lt;</span><span class="p">/</span><span class="nt">p</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">)</span><span class="p">;</span>
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">);</span>
 
 <span class="c1">// withStyles(styles)(Component) で export
-</span><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)</span><span class="p">(</span><span class="nx">FirstComponent</span><span class="p">)</span><span class="p">;</span>
+</span><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)(</span><span class="nx">FirstComponent</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Material-UI v3 では、上記のように <code>withStyles(styles)(Component)</code> でスタイリングされた Component を作成することを推奨しています。<br>
 <a href="https://material-ui.com/style/typography/#component">https://material-ui.com/style/typography/#component</a></p>
-<h2 id="typescript--stateless-components-">TypeScript の場合 (Stateless Components 編)</h2>
+<h2 id="typescript-の場合-stateless-components-編">TypeScript の場合 (Stateless Components 編)</h2>
 <p>TypeScript で Material-UI のスタイル付き Components を作成する場合です。<br>
 基本的には<a href="https://material-ui.com/guides/typescript/#typescript">Material-UI の TypeScript ガイド</a>に則っています。</p>
 <p>まず State を持たない Stateless Components の作成を、</p>
@@ -482,7 +482,7 @@ $ yarn add @material-ui/core @material-ui/icons
 </ol>
 <p>の3通りのパターンで書きます。型をかっちりと書きたい人向けの書き方なので、煩雑に感じたら JavaScript 的な書き方をしてもいいと思います。</p>
 <p>TypeScript における Components の書き方は <a href="https://github.com/piotrwitek/react-redux-typescript-guide">React &amp; Redux in TypeScript - Static Typing Guide</a> を参考にしています。</p>
-<h3 id="heading-4">共通するコード</h3>
+<h3 id="共通するコード">共通するコード</h3>
 <p>ここから先のコードで共通するのは以下の型定義と関数のインポートです。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -499,7 +499,7 @@ $ yarn add @material-ui/core @material-ui/icons
 </div><p><code>@material-ui/core/styles/createMuiTheme</code> から <code>Theme</code>という型定義を、<br>
 <code>@material-ui/core/styles/withStyles</code> から <code>WithStyles</code> と <code>StyleRules</code>という型定義を、<br>
 <code>@material-ui/core/styles/createStyles</code> という関数を <code>createStyles</code> としてインポートします。</p>
-<h3 id="1-function-components-props-">1. Function Components (props あり)</h3>
+<h3 id="1-function-components-props-あり">1. Function Components (props あり)</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -543,16 +543,16 @@ $ yarn add @material-ui/core @material-ui/icons
 <span class="kr">import</span> <span class="nx">createStyles</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/createStyles&#39;</span><span class="p">;</span>
 
 <span class="c1">// TypeScript で書く場合の styles 定義方法
-</span><span class="c1"></span><span class="c1">// theme を使わない場合は、 styles = createStyles(object) でもよい
-</span><span class="c1"></span><span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=</span><span class="o">&gt;</span> <span class="nx">createStyles</span><span class="p">(</span><span class="p">{</span>
+</span><span class="c1">// theme を使わない場合は、 styles = createStyles(object) でもよい
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=&gt;</span> <span class="nx">createStyles</span><span class="p">({</span>
   <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">textAlign</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span>
-  <span class="p">}</span><span class="p">,</span>
+  <span class="p">},</span>
   <span class="nx">paragraph</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">fontFamily</span><span class="o">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span>
     <span class="nx">padding</span>: <span class="kt">theme.spacing.unit</span> <span class="o">*</span> <span class="mi">2</span>
   <span class="p">}</span>
-<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+<span class="p">});</span>
 
 <span class="c1">// Component の Props を WithStyles&lt;typeof styles&gt; で拡張
 </span><span class="c1"></span><span class="kr">interface</span> <span class="nx">Props</span> <span class="kr">extends</span> <span class="nx">WithStyles</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">styles</span><span class="o">&gt;</span> <span class="p">{</span>
@@ -560,21 +560,21 @@ $ yarn add @material-ui/core @material-ui/icons
 <span class="p">}</span>
 
 <span class="c1">// Component を定義
-</span><span class="c1"></span><span class="kr">const</span> <span class="nx">FirstComponent</span>: <span class="kt">React.FC</span><span class="o">&lt;</span><span class="nx">Props</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="p">{</span> <span class="nx">classes</span><span class="p">,</span> <span class="nx">title</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="o">=</span><span class="o">&gt;</span> <span class="p">(</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">FirstComponent</span>: <span class="kt">React.FC</span><span class="o">&lt;</span><span class="nx">Props</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">classes</span><span class="p">,</span> <span class="nx">title</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
   <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">}</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">paragraph</span><span class="p">}</span><span class="o">&gt;</span>
       <span class="p">{</span> <span class="nx">title</span> <span class="o">||</span> <span class="s1">&#39;My First TS Component&#39;</span> <span class="p">}</span>
-    <span class="o">&lt;</span><span class="err">/</span><span class="err">p</span><span class="err">&gt;</span>
-  <span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
-<span class="p">)</span><span class="p">;</span>
+    <span class="o">&lt;</span><span class="err">/p&gt;</span>
+  <span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="p">);</span>
 
 <span class="c1">// withStyles(styles)(Component) で スタイリングした Component を export
-</span><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)</span><span class="p">(</span><span class="nx">FirstComponent</span><span class="p">)</span><span class="p">;</span>
+</span><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)(</span><span class="nx">FirstComponent</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Function Components を TypeScript で書く場合 <code>React.SFC</code>を使う解説が多いのですが、<code>React.SFC</code>は廃止予定となっているので <code>React.FC</code> を使いました。</p>
-<h4 id="javascript-">JavaScript のコードとの違い</h4>
-<h5 id="1-styles--createstyles--">1. styles の定義に <code>createStyles</code> という関数を使う (重要)</h5>
+<h4 id="javascript-のコードとの違い">JavaScript のコードとの違い</h4>
+<h5 id="1-styles-の定義に-createstyles-という関数を使う-重要">1. styles の定義に <code>createStyles</code> という関数を使う (重要)</h5>
 <p>styles で返すオブジェクトに <code>createStyles</code> という関数を適用します。<br>
 Components のスタイリングに theme を使う場合は、</p>
 <div class="highlight"><div class="chroma">
@@ -589,14 +589,14 @@ Components のスタイリングに theme を使う場合は、</p>
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span><span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=</span><span class="o">&gt;</span> <span class="nx">createStyles</span><span class="p">(</span><span class="p">{</span>
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span><span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=&gt;</span> <span class="nx">createStyles</span><span class="p">({</span>
   <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">fontSize</span>: <span class="kt">18</span>
-  <span class="p">}</span><span class="p">,</span>
+  <span class="p">},</span>
   <span class="nx">header</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">backgroundColor</span>: <span class="kt">theme.palette.primary.main</span>
   <span class="p">}</span>
-<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+<span class="p">});</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>theme を使わない場合は、</p>
@@ -609,20 +609,20 @@ Components のスタイリングに theme を使う場合は、</p>
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-TypeScript" data-lang="TypeScript"><span class="kr">const</span> <span class="nx">styles</span>: <span class="kt">StyleRules</span> <span class="o">=</span> <span class="nx">createStyles</span><span class="p">(</span><span class="p">{</span>
+<pre class="chroma"><code class="language-TypeScript" data-lang="TypeScript"><span class="kr">const</span> <span class="nx">styles</span>: <span class="kt">StyleRules</span> <span class="o">=</span> <span class="nx">createStyles</span><span class="p">({</span>
   <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">fontSize</span>: <span class="kt">18</span>
   <span class="p">}</span>
-<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+<span class="p">});</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>という書き方をします。<br>
 <code>createStyles</code> 関数を使うことで型拡大を防ぐことができるようです。</p>
 <p>参考: <a href="https://material-ui.com/guides/typescript/#using-createstyles-to-defeat-type-widening">Using createStyles to defeat type widening</a></p>
-<h5 id="2-styles--theme--theme-">2. styles の関数の引数 theme に型定義 <code>Theme</code> を与える</h5>
+<h5 id="2-styles-の関数の引数-theme-に型定義-theme-を与える">2. styles の関数の引数 theme に型定義 <code>Theme</code> を与える</h5>
 <p>引数 theme に型定義 <code>Theme</code> を与えることで、エディタの補助機能が効くようになり、theme を使ったスタイリングが楽になります。
 theme について詳しくは<a href="https://material-ui.com/customization/themes/">公式ドキュメント</a>をお読みください。</p>
-<h5 id="3--props--withstylestypeof-styles-">3. 型定義 <code>Props</code> を <code>WithStyles&lt;typeof styles&gt;</code> で拡張する</h5>
+<h5 id="3-型定義-props-を-withstylestypeof-styles-で拡張する">3. 型定義 <code>Props</code> を <code>WithStyles&lt;typeof styles&gt;</code> で拡張する</h5>
 <p>props の型定義 <code>Props</code> を <code>WithStyles&lt;typeof styles&gt;</code> で拡張します。<br>
 <code>interface Props extends WithStyles&lt;typeof styles&gt;</code> は以下の型定義 <code>Props</code> と同等のものになります。</p>
 <div class="highlight"><div class="chroma">
@@ -646,12 +646,12 @@ theme について詳しくは<a href="https://material-ui.com/customization/the
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span><span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=</span><span class="o">&gt;</span> <span class="nx">createStyles</span><span class="p">(</span><span class="p">{</span>
-  <span class="nx">root</span><span class="o">:</span> <span class="p">{</span><span class="p">}</span><span class="p">,</span>
-  <span class="nx">header</span><span class="o">:</span> <span class="p">{</span><span class="p">}</span><span class="p">,</span>
-  <span class="nx">paragraph</span><span class="o">:</span> <span class="p">{</span><span class="p">}</span><span class="p">,</span>
-  <span class="nx">footer</span><span class="o">:</span> <span class="p">{</span><span class="p">}</span>
-<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span><span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=&gt;</span> <span class="nx">createStyles</span><span class="p">({</span>
+  <span class="nx">root</span><span class="o">:</span> <span class="p">{},</span>
+  <span class="nx">header</span><span class="o">:</span> <span class="p">{},</span>
+  <span class="nx">paragraph</span><span class="o">:</span> <span class="p">{},</span>
+  <span class="nx">footer</span><span class="o">:</span> <span class="p">{}</span>
+<span class="p">});</span>
 
 <span class="c1">// Props extends WithStyles&lt;typeof styles&gt; は下と等しくなる
 </span><span class="c1"></span><span class="kr">interface</span> <span class="nx">Props</span> <span class="p">{</span>
@@ -661,12 +661,12 @@ theme について詳しくは<a href="https://material-ui.com/customization/the
     <span class="nx">header</span>: <span class="kt">string</span><span class="p">;</span>
     <span class="nx">paragraph</span>: <span class="kt">string</span><span class="p">;</span>
     <span class="nx">footer</span>: <span class="kt">string</span><span class="p">;</span>
-  <span class="p">}</span><span class="p">;</span> 
+  <span class="p">};</span> 
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><code>WithStyles&lt;typeof styles&gt;</code>を用いることで、上の例のように styles に定義した <code>classes</code> の <code>Key</code> をいちいち書く必要がなくなります。</p>
-<h3 id="2-function-components-props-">2. Function Components (props なし)</h3>
+<h3 id="2-function-components-props-なし">2. Function Components (props なし)</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -700,25 +700,25 @@ theme について詳しくは<a href="https://material-ui.com/customization/the
 <span class="kr">import</span> <span class="nx">withStyles</span><span class="p">,</span> <span class="p">{</span> <span class="nx">WithStyles</span><span class="p">,</span> <span class="nx">StyleRules</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/withStyles&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">createStyles</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/createStyles&#39;</span><span class="p">;</span>
 
-<span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=</span><span class="o">&gt;</span> <span class="nx">createStyles</span><span class="p">(</span><span class="p">{</span>
+<span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=&gt;</span> <span class="nx">createStyles</span><span class="p">({</span>
   <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">textAlign</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span>
-  <span class="p">}</span><span class="p">,</span>
+  <span class="p">},</span>
   <span class="nx">paragraph</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">fontFamily</span><span class="o">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span>
     <span class="nx">padding</span>: <span class="kt">theme.spacing.unit</span> <span class="o">*</span> <span class="mi">2</span>
   <span class="p">}</span>
-<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+<span class="p">});</span>
 
-<span class="kr">const</span> <span class="nx">FirstComponent</span>: <span class="kt">React.FC</span><span class="o">&lt;</span><span class="nx">WithStyles</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">styles</span><span class="o">&gt;&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="p">{</span> <span class="nx">classes</span> <span class="p">}</span><span class="o">:</span> <span class="nx">WithStyles</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">styles</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">=</span><span class="o">&gt;</span> <span class="p">(</span>
+<span class="kr">const</span> <span class="nx">FirstComponent</span>: <span class="kt">React.FC</span><span class="o">&lt;</span><span class="nx">WithStyles</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">styles</span><span class="o">&gt;&gt;</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">classes</span> <span class="p">}</span><span class="o">:</span> <span class="nx">WithStyles</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">styles</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
   <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">}</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">paragraph</span><span class="p">}</span><span class="o">&gt;</span>
       <span class="nx">My</span> <span class="nx">First</span> <span class="nx">TS</span> <span class="nx">Component</span>
-    <span class="o">&lt;</span><span class="err">/</span><span class="err">p</span><span class="err">&gt;</span>
-  <span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
-<span class="p">)</span><span class="p">;</span>
+    <span class="o">&lt;</span><span class="err">/p&gt;</span>
+  <span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="p">);</span>
 
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)</span><span class="p">(</span><span class="nx">FirstComponent</span><span class="p">)</span><span class="p">;</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)(</span><span class="nx">FirstComponent</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>本来、型定義 <code>Props</code> を置くところに <code>WithStyles&lt;typeof styles&gt;</code> と置きます。<br>
@@ -792,15 +792,15 @@ theme について詳しくは<a href="https://material-ui.com/customization/the
 <span class="kr">import</span> <span class="nx">withStyles</span><span class="p">,</span> <span class="p">{</span> <span class="nx">WithStyles</span><span class="p">,</span> <span class="nx">StyleRules</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/withStyles&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">createStyles</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/createStyles&#39;</span><span class="p">;</span>
 
-<span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=</span><span class="o">&gt;</span> <span class="nx">createStyles</span><span class="p">(</span><span class="p">{</span>
+<span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=&gt;</span> <span class="nx">createStyles</span><span class="p">({</span>
   <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">textAlign</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span>
-  <span class="p">}</span><span class="p">,</span>
+  <span class="p">},</span>
   <span class="nx">paragraph</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">fontFamily</span><span class="o">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span>
     <span class="nx">padding</span>: <span class="kt">theme.spacing.unit</span> <span class="o">*</span> <span class="mi">2</span>
   <span class="p">}</span>
-<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+<span class="p">});</span>
 
 <span class="kr">interface</span> <span class="nx">Props</span> <span class="nx">WithStyles</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">styles</span><span class="o">&gt;</span> <span class="p">{</span>
   <span class="nx">title?</span>: <span class="kt">string</span><span class="p">;</span>
@@ -814,13 +814,13 @@ theme について詳しくは<a href="https://material-ui.com/customization/the
       <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">}</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">paragraph</span><span class="p">}</span><span class="o">&gt;</span>
           <span class="p">{</span><span class="nx">title</span> <span class="o">||</span> <span class="s2">&#34;My Second TS Component&#34;</span><span class="p">}</span>
-        <span class="o">&lt;</span><span class="err">/</span><span class="err">p</span><span class="err">&gt;</span>
-      <span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
-    <span class="p">)</span><span class="p">;</span>
+        <span class="o">&lt;</span><span class="err">/p&gt;</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)</span><span class="p">(</span><span class="nx">SecondComponent</span><span class="p">)</span><span class="p">;</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)(</span><span class="nx">SecondComponent</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>State を持たない Stateless Components の作成で React Component Class を使うことは少ないと思いますが、参考までに載せておきます。<br>
@@ -842,7 +842,7 @@ Stateless Components の場合、<code>React.Component</code> ではなく <code
     
   
 </div>
-<h2 id="typescript--stateful-components-">TypeScript で Stateful Components を作成する</h2>
+<h2 id="typescript-で-stateful-components-を作成する">TypeScript で Stateful Components を作成する</h2>
 <p>State を持つ Components の場合も特に変わりません。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -922,20 +922,20 @@ Stateless Components の場合、<code>React.Component</code> ではなく <code
 <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;@material-ui/core/styles/withStyles&#34;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">createStyles</span> <span class="nx">from</span> <span class="s2">&#34;@material-ui/core/styles/createStyles&#34;</span><span class="p">;</span>
 
-<span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span><span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=</span><span class="o">&gt;</span>
-  <span class="nx">createStyles</span><span class="p">(</span><span class="p">{</span>
+<span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span><span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=&gt;</span>
+  <span class="nx">createStyles</span><span class="p">({</span>
     <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
       <span class="nx">textAlign</span><span class="o">:</span> <span class="s2">&#34;center&#34;</span>
-    <span class="p">}</span><span class="p">,</span>
+    <span class="p">},</span>
     <span class="nx">header</span><span class="o">:</span> <span class="p">{</span>
       <span class="nx">backgroundColor</span>: <span class="kt">theme.palette.primary.main</span><span class="p">,</span>
-      <span class="nx">boxShadow</span>: <span class="kt">theme.shadows</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="p">,</span>
+      <span class="nx">boxShadow</span>: <span class="kt">theme.shadows</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
       <span class="nx">padding</span>: <span class="kt">theme.spacing.unit</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="p">}</span><span class="p">,</span>
+    <span class="p">},</span>
     <span class="nx">counter</span><span class="o">:</span> <span class="p">{</span>
       <span class="nx">fontSize</span>: <span class="kt">60</span>
-    <span class="p">}</span><span class="p">,</span>
-  <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+    <span class="p">},</span>
+  <span class="p">});</span>
 
 <span class="kr">interface</span> <span class="nx">Props</span> <span class="kr">extends</span> <span class="nx">WithStyles</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">styles</span><span class="o">&gt;</span> <span class="p">{</span>
   <span class="nx">title?</span>: <span class="kt">string</span><span class="p">;</span>
@@ -948,13 +948,13 @@ Stateless Components の場合、<code>React.Component</code> ではなく <code
 <span class="kr">class</span> <span class="nx">ThirdComponent</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="o">&lt;</span><span class="nx">Props</span><span class="p">,</span> <span class="nx">State</span><span class="o">&gt;</span> <span class="p">{</span>
   <span class="nx">readonly</span> <span class="nx">state</span>: <span class="kt">State</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">counter</span>: <span class="kt">0</span>
-  <span class="p">}</span><span class="p">;</span>
+  <span class="p">};</span>
 
-  <span class="kr">private</span> <span class="nx">_onIncrement</span> <span class="o">=</span> <span class="p">(</span><span class="p">)</span> <span class="o">=</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">(</span><span class="nx">prevState</span> <span class="o">=</span><span class="o">&gt;</span> <span class="p">(</span><span class="p">{</span>
+  <span class="kr">private</span> <span class="nx">_onIncrement</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">(</span><span class="nx">prevState</span> <span class="o">=&gt;</span> <span class="p">({</span>
       <span class="nx">counter</span>: <span class="kt">prevState.counter</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="p">}</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
-  <span class="p">}</span><span class="p">;</span>
+    <span class="p">}));</span>
+  <span class="p">};</span>
 
   <span class="kr">public</span> <span class="nx">render() {</span>
     <span class="kr">const</span> <span class="p">{</span> <span class="nx">classes</span><span class="p">,</span> <span class="nx">title</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
@@ -963,26 +963,26 @@ Stateless Components の場合、<code>React.Component</code> ではなく <code
       <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">}</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">header</span><span class="p">}</span><span class="o">&gt;</span>
           <span class="p">{</span><span class="nx">title</span> <span class="o">||</span> <span class="s2">&#34;My Third TS Component&#34;</span><span class="p">}</span>
-        <span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
         <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">counter</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">counter</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/</span><span class="err">s</span><span class="err">p</span><span class="err">a</span><span class="err">n</span><span class="err">&gt;</span>
-        <span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">counter</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">counter</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/span&gt;</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
         <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
           <span class="o">&lt;</span><span class="nx">Button</span> <span class="nx">variant</span><span class="o">=</span><span class="s2">&#34;contained&#34;</span> <span class="nx">color</span><span class="o">=</span><span class="s2">&#34;primary&#34;</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_onIncrement</span><span class="p">}</span><span class="o">&gt;</span>
             <span class="nx">Increment</span>
-          <span class="o">&lt;</span><span class="err">/</span><span class="err">B</span><span class="err">u</span><span class="err">t</span><span class="err">t</span><span class="err">o</span><span class="err">n</span><span class="err">&gt;</span>
-        <span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
-      <span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
-    <span class="p">)</span><span class="p">;</span>
+          <span class="o">&lt;</span><span class="err">/Button&gt;</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)</span><span class="p">(</span><span class="nx">ThirdComponent</span><span class="p">)</span><span class="p">;</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)(</span><span class="nx">ThirdComponent</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><code>readonly</code>, <code>private</code>, <code>public</code> といった修飾子は任意でつけてください。<br>
 <code>constructor</code> を書かない記法、メソッドではなくアロー関数でイベントハンドラを記述する記法は、先述の <a href="https://github.com/piotrwitek/react-redux-typescript-guide#stateful-components---class">React &amp; Redux in TypeScript - Static Typing Guide</a> に則っています。</p>
-<h2 id="app--muitheme-">App に MuiTheme を適用する</h2>
+<h2 id="app-に-muitheme-を適用する">App に MuiTheme を適用する</h2>
 <p>ここまでは Material-UI + TypeScript におけるスタイル付き Components の作成方法を見てきました。 TypeScript 特有の記法の説明はここまでになります。</p>
 <p>ここからは、App 全体に Material-UI の Themes (<a href="https://material-ui.com/customization/themes/">MuiTheme</a>) を適用する方法を見ていきます。 Material-UI v3 では App の最上位に位置する Component に <code>withRoot</code> 関数を適用することで、App 全体の Components に MuiTheme のスタイルを適用します。</p>
 <div class="highlight"><div class="chroma">
@@ -1056,26 +1056,26 @@ Stateless Components の場合、<code>React.Component</code> ではなく <code
 <span class="kr">import</span> <span class="nx">blueGrey</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/colors/blueGrey&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">CssBaseline</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/CssBaseline&#39;</span><span class="p">;</span>
 
-<span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">createMuiTheme</span><span class="p">(</span><span class="p">{</span>
+<span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">createMuiTheme</span><span class="p">({</span>
   <span class="c1">// Theme Colors
 </span><span class="c1"></span>  <span class="nx">palette</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">primary</span>: <span class="kt">lightblue</span><span class="p">,</span>
     <span class="nx">secondary</span>: <span class="kt">blueGrey</span><span class="p">,</span>
-  <span class="p">}</span><span class="p">,</span>
+  <span class="p">},</span>
   <span class="c1">// typography
 </span><span class="c1"></span>  <span class="nx">typography</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">useNextVariants</span>: <span class="kt">true</span>
   <span class="p">}</span>
-<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+<span class="p">});</span>
 
 <span class="kd">function</span> <span class="nx">withRoot</span><span class="o">&lt;</span><span class="nx">P</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">Component</span>: <span class="kt">React.ComponentType</span><span class="o">&lt;</span><span class="nx">P</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">function</span> <span class="nx">WithRoot</span><span class="p">(</span><span class="nx">props</span>: <span class="kt">P</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
       <span class="o">&lt;</span><span class="nx">MuiThemeProvider</span> <span class="nx">theme</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">CssBaseline</span> <span class="o">/</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">Component</span> <span class="p">{</span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="nx">props</span><span class="p">}</span> <span class="o">/</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="err">/</span><span class="err">M</span><span class="err">u</span><span class="err">i</span><span class="err">T</span><span class="err">h</span><span class="err">e</span><span class="err">m</span><span class="err">e</span><span class="err">P</span><span class="err">r</span><span class="err">o</span><span class="err">v</span><span class="err">i</span><span class="err">d</span><span class="err">e</span><span class="err">r</span><span class="err">&gt;</span>
-    <span class="p">)</span><span class="p">;</span>
+        <span class="o">&lt;</span><span class="nx">CssBaseline</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Component</span> <span class="p">{...</span><span class="nx">props</span><span class="p">}</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="err">/MuiThemeProvider&gt;</span>
+    <span class="p">);</span>
   <span class="p">}</span>
 
   <span class="k">return</span> <span class="nx">WithRoot</span><span class="p">;</span>
@@ -1137,28 +1137,28 @@ Themes の記述方法は<a href="https://material-ui.com/customization/themes/"
 </span><span class="c1"></span><span class="kr">import</span> <span class="nx">withRoot</span> <span class="nx">from</span> <span class="s1">&#39;./utils/withRoot&#39;</span><span class="p">;</span>
 
 <span class="c1">// styles を定義
-</span><span class="c1"></span><span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span><span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=</span><span class="o">&gt;</span> <span class="nx">createStyles</span><span class="p">(</span><span class="p">{</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="p">(</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span><span class="o">:</span> <span class="nx">StyleRules</span> <span class="o">=&gt;</span> <span class="nx">createStyles</span><span class="p">({</span>
   <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
     
   <span class="p">}</span>
-<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+<span class="p">});</span>
 
 <span class="c1">// 型定義 Props を定義
 </span><span class="c1"></span><span class="nx">type</span> <span class="nx">Props</span> <span class="o">=</span> <span class="nx">WithStyles</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">styles</span><span class="o">&gt;</span><span class="p">;</span>
 
 <span class="c1">// App Component を定義
-</span><span class="c1"></span><span class="kr">const</span> <span class="nx">App</span>: <span class="kt">React.FC</span><span class="o">&lt;</span><span class="nx">Props</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="p">{</span> <span class="nx">classes</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="o">=</span><span class="o">&gt;</span> <span class="p">(</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">App</span>: <span class="kt">React.FC</span><span class="o">&lt;</span><span class="nx">Props</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">classes</span> <span class="p">}</span><span class="o">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
   <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">}</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">ThirdComponent</span> <span class="nx">title</span><span class="o">=</span><span class="s2">&#34;React TypeScript Material-UI Example&#34;</span> <span class="o">/</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
-<span class="p">)</span><span class="p">;</span>
+    <span class="o">&lt;</span><span class="nx">ThirdComponent</span> <span class="nx">title</span><span class="o">=</span><span class="s2">&#34;React TypeScript Material-UI Example&#34;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="p">);</span>
 
 <span class="c1">// withRoot で export
-</span><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="nx">withRoot</span><span class="p">(</span><span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)</span><span class="p">(</span><span class="nx">App</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
+</span><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="nx">withRoot</span><span class="p">(</span><span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)(</span><span class="nx">App</span><span class="p">));</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>この例では <code>App.tsx</code> が最上位に来るので、<code>withRoot</code> 関数をスタイル付き Component である <code>withStyles(styles)(App)</code> に適用して export しています。これで App 傘下のすべての Components に MuiTheme が適用されます。</p>
-<h4 id="srcindextsx-">./src/index.tsx (エントリーポイント)</h4>
+<h4 id="srcindextsx-エントリーポイント">./src/index.tsx (エントリーポイント)</h4>
 <p>エントリーポイントである <code>./src/index.tsx</code> は普通の React App と同じ書き方です。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1179,13 +1179,13 @@ Themes の記述方法は<a href="https://material-ui.com/customization/themes/"
 <span class="kr">import</span> <span class="nx">App</span> <span class="nx">from</span> <span class="s1">&#39;./App&#39;</span><span class="p">;</span>
 
 <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
-  <span class="o">&lt;</span><span class="nx">App</span> <span class="o">/</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="o">&lt;</span><span class="nx">App</span> <span class="o">/&gt;</span><span class="p">,</span>
   <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)</span> <span class="kr">as</span> <span class="nx">HTMLElement</span>
-<span class="p">)</span><span class="p">;</span>
+<span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>TypeScript で Material-UI v3 を扱った情報は少なかったのでまとめてみました。</p>
-<h2 id="heading-5">参考</h2>
+<h2 id="参考">参考</h2>
 <ul>
 <li><a href="https://material-ui.com/guides/typescript/#typescript">Material-UI TypeScript Guide</a> / Material-UI</li>
 <li><a href="https://github.com/mui-org/material-ui/tree/master/examples/create-react-app-with-typescript">Create React App example with TypeScript</a> / GitHub</li>

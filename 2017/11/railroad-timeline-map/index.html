@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.62.1" />
+<meta name="generator" content="Hugo 0.67.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2017/11/railroad-timeline-map/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.0ac9d6e1a269940edf21e0975154ced8e36aa516f40395e60aba2f31970072b6.css" integrity="sha256-CsnW4aJplA7fIeCXUVTO2ONqpRb0A5XmCrovMZcAcrY=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.03d43414944e30066de67a7ba9ff895236d021801c54c44df330397ca21df57b.css" integrity="sha256-A9Q0FJROMAZt5np7qf&#43;JUjbQIYAcVMRN8zA5fKId9Xs=" media="screen" crossorigin="anonymous">
 
 
 
@@ -336,18 +336,18 @@ if (!doNotTrack) {
     <div class="post-content">
       <!-- raw HTML omitted -->
 <p>1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました。</p>
-<h2 id="heading"><a href="//cieloazul310.github.io/railroad-timeline-map/">日本鉄道時系列地図</a></h2>
+<h2 id="日本鉄道時系列地図"><a href="//cieloazul310.github.io/railroad-timeline-map/">日本鉄道時系列地図</a></h2>
 <p><img src="../../../img/tokyo.gif" alt="日本鉄道時系列地図で東京を表示したもの" title="日本鉄道時系列地図で東京を表示したもの"></p>
 <p>URL: <a href="//cieloazul310.github.io/railroad-timeline-map/">https://cieloazul310.github.io/railroad-timeline-map</a></p>
 <p>日本鉄道時系列地図は、国土交通省が提供する地図データ（国土数値情報・鉄道時系列）を表示した地図です。1950年から2017年までに存在した日本全国の鉄道路線を表示しています。</p>
-<h3 id="heading-1">機能</h3>
+<h3 id="機能">機能</h3>
 <ul>
 <li>画面下のスライダーを操作することで、指定した年代のデータを表示することができます。</li>
 <li>画面内の路線をクリックすると、路線を選択することができます。</li>
 <li>メニュー画面から表示する地図データを選択することができます。</li>
 <li>メニュー画面内の「現在地を表示」をクリックすると、地図内に現在地が表示されます。</li>
 </ul>
-<h3 id="heading-2">データ</h3>
+<h3 id="データ">データ</h3>
 <p><a href="http://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-v1_3.html">国土数値情報 鉄道時系列データ</a>をバイナリベクトルタイルに変換したもの</p>
 <div class="ad" style="width:100%;">
   
@@ -366,10 +366,10 @@ if (!doNotTrack) {
     
   
 </div>
-<h2 id="heading-3">作ったきっかけ</h2>
+<h2 id="作ったきっかけ">作ったきっかけ</h2>
 <p>最近WEB地図界隈で注目を浴びているバイナルベクトルタイルの作成・表示を試行していたところ、面白い感じになったので公開できる形にしてみました。</p>
-<h2 id="heading-4">技術的側面</h2>
-<h3 id="heading-5">バイナリベクトルタイル</h3>
+<h2 id="技術的側面">技術的側面</h2>
+<h3 id="バイナリベクトルタイル">バイナリベクトルタイル</h3>
 <p>今話題になっている<a href="//github.com/madefor/vector-tile-spec/blob/master/2.1/README.md">バイナリベクトルタイル</a>という方式を使っています。
 従来のベクトルタイルがGeoJSONで提供されているのに対し、バイナリベクトルタイルはより効率的なバイナリによるデータ形式で提供する方法です。読み込み、描写速度はGeoJSONタイルと比べ物にならないほど早いです。またGeoJSONタイルは広範囲を描写しようとするとどうしても重くなってしまいます。</p>
 <p>正直バイナリベクトルタイルの仕組みは全然理解できていません。Google Protocol Buffers？シリアル化？全然わかりません。</p>
@@ -384,7 +384,7 @@ if (!doNotTrack) {
 <p>ここ数年はLeafletが強い印象がありましたが、最近はLeafletからMapbox GL JSに移行する人が多くなっている印象があります。</p>
 <p>ややレガシー化している印象のあるOpenLayersですが、2017年8月にリリースされたv4.3ではバイナリベクトルタイルの表示が快適になりました（現時点での最新バージョンはv4.4.2）。
 バイナルベクトルタイルへの適応によってOpenLayersの復権もあるかもしれません。</p>
-<h3 id="heading-6">その他</h3>
+<h3 id="その他">その他</h3>
 <p>実は今回この地図を作る過程で、初めて<a href="//webpack.js.org">webpack</a>や<a href="https://babeljs.io/">Babel</a>を導入しました。</p>
 <p>何かを作ったら下手なものでもいいから形にして公開することは大切だなと思いました。</p>
 <div class="ad" style="width:100%;">

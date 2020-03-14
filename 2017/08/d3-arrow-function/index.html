@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.62.1" />
+<meta name="generator" content="Hugo 0.67.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2017/08/d3-arrow-function/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.0ac9d6e1a269940edf21e0975154ced8e36aa516f40395e60aba2f31970072b6.css" integrity="sha256-CsnW4aJplA7fIeCXUVTO2ONqpRb0A5XmCrovMZcAcrY=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.03d43414944e30066de67a7ba9ff895236d021801c54c44df330397ca21df57b.css" integrity="sha256-A9Q0FJROMAZt5np7qf&#43;JUjbQIYAcVMRN8zA5fKId9Xs=" media="screen" crossorigin="anonymous">
 
 
 
@@ -362,23 +362,23 @@ if (!doNotTrack) {
 <td class="lntd">
 <pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">  <span class="nx">d3</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">&#34;rect&#34;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">enter</span><span class="p">(</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
     <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&#34;rect&#34;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;x&#34;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">xScale</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="p">;</span><span class="p">}</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;y&#34;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span><span class="p">;</span><span class="p">}</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;width&#34;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">xScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="o">-</span> <span class="nx">xScale</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="p">;</span><span class="p">}</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;height&#34;</span><span class="p">,</span> <span class="nx">yScale</span><span class="p">.</span><span class="nx">bandwidth</span><span class="p">(</span><span class="p">)</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;x&#34;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">xScale</span><span class="p">(</span><span class="mi">0</span><span class="p">);})</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;y&#34;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">name</span><span class="p">);})</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;width&#34;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">xScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="o">-</span> <span class="nx">xScale</span><span class="p">(</span><span class="mi">0</span><span class="p">);})</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;height&#34;</span><span class="p">,</span> <span class="nx">yScale</span><span class="p">.</span><span class="nx">bandwidth</span><span class="p">())</span>
     <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;fill&#34;</span><span class="p">,</span> <span class="s2">&#34;white&#34;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&#34;mouseover&#34;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&#34;mouseover&#34;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
       <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">transition</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;fill&#34;</span><span class="p">,</span> <span class="s2">&#34;orange&#34;</span><span class="p">)</span><span class="p">;</span>
-    <span class="p">}</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&#34;mouseout&#34;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">.</span><span class="nx">transition</span><span class="p">().</span><span class="nx">duration</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;fill&#34;</span><span class="p">,</span> <span class="s2">&#34;orange&#34;</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&#34;mouseout&#34;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
       <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">transition</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;fill&#34;</span><span class="p">,</span> <span class="s2">&#34;white&#34;</span><span class="p">)</span><span class="p">;</span>
-    <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+        <span class="p">.</span><span class="nx">transition</span><span class="p">().</span><span class="nx">duration</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;fill&#34;</span><span class="p">,</span> <span class="s2">&#34;white&#34;</span><span class="p">);</span>
+    <span class="p">});</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>このコードに使われている関数を<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/arrow_functions">アロー関数</a>で置き換えると、最後の二つ<code>.on(&quot;mouseover&quot;, listener)</code>と<code>.on(&quot;mouseout&quot;, listener)</code>で設定されたイベントリスナーは正常に動作しません。これはアロー関数の<strong>thisを束縛しない</strong>という性質によるものです。</p>
@@ -408,23 +408,23 @@ if (!doNotTrack) {
 <td class="lntd">
 <pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">  <span class="nx">d3</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">&#34;rect&#34;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">enter</span><span class="p">(</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
     <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&#34;rect&#34;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;x&#34;</span><span class="p">,</span> <span class="nx">d</span> <span class="p">=&gt;</span> <span class="nx">xScale</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;y&#34;</span><span class="p">,</span> <span class="nx">d</span> <span class="p">=&gt;</span> <span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;width&#34;</span><span class="p">,</span> <span class="nx">d</span> <span class="p">=&gt;</span> <span class="nx">xScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="o">-</span> <span class="nx">xScale</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;height&#34;</span><span class="p">,</span> <span class="nx">yScale</span><span class="p">.</span><span class="nx">bandwidth</span><span class="p">(</span><span class="p">)</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;x&#34;</span><span class="p">,</span> <span class="nx">d</span> <span class="p">=&gt;</span> <span class="nx">xScale</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;y&#34;</span><span class="p">,</span> <span class="nx">d</span> <span class="p">=&gt;</span> <span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">name</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;width&#34;</span><span class="p">,</span> <span class="nx">d</span> <span class="p">=&gt;</span> <span class="nx">xScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="o">-</span> <span class="nx">xScale</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;height&#34;</span><span class="p">,</span> <span class="nx">yScale</span><span class="p">.</span><span class="nx">bandwidth</span><span class="p">())</span>
     <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;fill&#34;</span><span class="p">,</span> <span class="s2">&#34;white&#34;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&#34;mouseover&#34;</span><span class="p">,</span> <span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">nodes</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-      <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nx">nodes</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">transition</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;fill&#34;</span><span class="p">,</span> <span class="s2">&#34;orange&#34;</span><span class="p">)</span><span class="p">;</span>
-    <span class="p">}</span><span class="p">)</span>
+      <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nx">nodes</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+        <span class="p">.</span><span class="nx">transition</span><span class="p">().</span><span class="nx">duration</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;fill&#34;</span><span class="p">,</span> <span class="s2">&#34;orange&#34;</span><span class="p">);</span>
+    <span class="p">})</span>
     <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&#34;mouseout&#34;</span><span class="p">,</span> <span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">nodes</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-      <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nx">nodes</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">transition</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;fill&#34;</span><span class="p">,</span> <span class="s2">&#34;white&#34;</span><span class="p">)</span><span class="p">;</span>
-    <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+      <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nx">nodes</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+        <span class="p">.</span><span class="nx">transition</span><span class="p">().</span><span class="nx">duration</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;fill&#34;</span><span class="p">,</span> <span class="s2">&#34;white&#34;</span><span class="p">);</span>
+    <span class="p">});</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><a href="https://github.com/d3/d3-selection#selection_on"><code>selection.on(typenames, listener)</code></a>ではイベントリスナーの引数に、<code>datum(d)、index(i)、nodes</code>が渡されます。</p>
@@ -457,16 +457,16 @@ if (!doNotTrack) {
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span>
       <span class="c1">//=&gt; datum (= data[i])
 </span><span class="c1"></span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span><span class="p">;</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
       <span class="c1">//=&gt; index (0, 1, 2, ...)
 </span><span class="c1"></span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nodes</span><span class="p">)</span><span class="p">;</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nodes</span><span class="p">);</span>
       <span class="c1">//=&gt; NodeList [rect, rect, rect, ...]
 </span><span class="c1"></span>      <span class="c1">// d3.selectAll(&#34;rect&#34;).nodes()で得られるものと同じ
 </span><span class="c1"></span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nodes</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="p">)</span><span class="p">;</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nodes</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
       <span class="c1">//=&gt; rect
-</span><span class="c1"></span>    <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+</span><span class="c1"></span>    <span class="p">});</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>既存のコードを無理にアロー関数に置き換える必要はありませんが、置き換えたときにこういうことが起きる可能性はあると思うので、備忘録として残しておきます。</p>
