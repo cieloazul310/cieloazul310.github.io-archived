@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Sun, 09 Feb 2020 17:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2020 06:07:08 +0900</lastBuildDate>
     
         <atom:link href="https://cieloazul310.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -20,6 +20,21 @@
       <guid>https://cieloazul310.github.io/about/</guid>
       
         <description>&lt;p&gt;水戸地図はD3.jsやOpenLayersなどJavaScriptのライブラリを使ってデータビジュアライゼーションを試みる実験室です。&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Jクラブ経営情報2005-2019を作りました</title>
+      <link>https://cieloazul310.github.io/2020/08/jclub-financial-table/</link>
+      <pubDate>Wed, 12 Aug 2020 06:07:08 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2020/08/jclub-financial-table/</guid>
+      
+        <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://cieloazul310.github.io/jclub-financial-table/&#34;&gt;Jクラブ経営情報2005-2019&lt;/a&gt;というページを作りました。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cieloazul310.github.io/jclub-financial-table/&#34;&gt;https://cieloazul310.github.io/jclub-financial-table/&lt;/a&gt;&lt;/p&gt;</description>
       
     </item>
     
