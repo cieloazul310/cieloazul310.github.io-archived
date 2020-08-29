@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Thu, 13 Aug 2020 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 29 Aug 2020 10:30:00 +0900</lastBuildDate>
     
         <atom:link href="https://cieloazul310.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -20,6 +20,21 @@
       <guid>https://cieloazul310.github.io/about/</guid>
       
         <description>&lt;p&gt;水戸地図はD3.jsやOpenLayersなどJavaScriptのライブラリを使ってデータビジュアライゼーションを試みる実験室です。&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>D3 v6 アロー関数使用時の移行ガイド</title>
+      <link>https://cieloazul310.github.io/2020/08/d3-v6-event/</link>
+      <pubDate>Sat, 29 Aug 2020 10:30:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2020/08/d3-v6-event/</guid>
+      
+        <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/d3/d3/releases/tag/v6.0.0&#34;&gt;D3 v6&lt;/a&gt; が2020年8月26日にリリースされました。D3 v6 では &lt;code&gt;selection.on&lt;/code&gt; によるイベント処理の方法が変わりました。この記事では&lt;strong&gt;公式の移行ガイドに載っていないアロー関数使用時&lt;/strong&gt;に限った移行の方法を記していきます。&lt;/p&gt;
+&lt;p&gt;移行ガイドというタイトルですが、実質的には以前書いた&lt;a href=&#34;https://cieloazul310.github.io/2017/08/d3-arrow-function/&#34;&gt;D3.jsでアロー関数を使う時の注意点&lt;/a&gt; の v6 版です。&lt;/p&gt;</description>
       
     </item>
     
