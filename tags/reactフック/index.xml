@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Sun, 09 Feb 2020 17:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://cieloazul310.github.io/tags/react%E3%83%95%E3%83%83%E3%82%AF/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 09 Feb 2020 17:00:00 +0900</lastBuildDate><atom:link href="https://cieloazul310.github.io/tags/react%E3%83%95%E3%83%83%E3%82%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gatsby &#43; Material-UI ダークモード実装方法</title>
       <link>https://cieloazul310.github.io/2020/02/gatsby-material-ui-darkmode/</link>

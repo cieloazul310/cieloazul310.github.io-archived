@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2019/08/openlayers-vt/" />
@@ -545,12 +545,12 @@ $ yarn add @types/ol
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="nx">Map</span> <span class="nx">from</span> <span class="s1">&#39;ol/Map&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">View</span> <span class="nx">from</span> <span class="s1">&#39;ol/View&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">VectorTileLayer</span> <span class="nx">from</span> <span class="s1">&#39;ol/layer/VectorTile&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">VectorTileSource</span> <span class="nx">from</span> <span class="s1">&#39;ol/source/VectorTile&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">MVTFormat</span> <span class="nx">from</span> <span class="s1">&#39;ol/format/MVT&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">fromLonLat</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;ol/proj&#39;</span><span class="p">;</span>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="nx">Map</span> <span class="kr">from</span> <span class="s1">&#39;ol/Map&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">View</span> <span class="kr">from</span> <span class="s1">&#39;ol/View&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">VectorTileLayer</span> <span class="kr">from</span> <span class="s1">&#39;ol/layer/VectorTile&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">VectorTileSource</span> <span class="kr">from</span> <span class="s1">&#39;ol/source/VectorTile&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">MVTFormat</span> <span class="kr">from</span> <span class="s1">&#39;ol/format/MVT&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">fromLonLat</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;ol/proj&#39;</span><span class="p">;</span>
 
 <span class="kr">import</span> <span class="s1">&#39;ol/ol.css&#39;</span><span class="p">;</span>
 
@@ -665,12 +665,12 @@ OpenLayers API: <a href="https://openlayers.org/en/latest/apidoc/module-ol_sourc
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="nx">VectorTileLayer</span> <span class="nx">from</span> <span class="s1">&#39;ol/layer/VectorTile&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">VectorTileSource</span> <span class="nx">from</span> <span class="s1">&#39;ol/source/VectorTile&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">MVTFormat</span> <span class="nx">from</span> <span class="s1">&#39;ol/format/MVT&#39;</span><span class="p">;</span>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="nx">VectorTileLayer</span> <span class="kr">from</span> <span class="s1">&#39;ol/layer/VectorTile&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">VectorTileSource</span> <span class="kr">from</span> <span class="s1">&#39;ol/source/VectorTile&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">MVTFormat</span> <span class="kr">from</span> <span class="s1">&#39;ol/format/MVT&#39;</span><span class="p">;</span>
 
 <span class="c1">// 次の項で作成する StyleFunction
-</span><span class="c1"></span><span class="kr">import</span> <span class="nx">vtstyle</span> <span class="nx">from</span> <span class="s1">&#39;../styles/vtstyle.ts&#39;</span><span class="p">;</span>
+</span><span class="c1"></span><span class="kr">import</span> <span class="nx">vtstyle</span> <span class="kr">from</span> <span class="s1">&#39;../styles/vtstyle.ts&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">vt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VectorTileLayer</span><span class="p">({</span>
   <span class="nx">source</span>: <span class="kt">new</span> <span class="nx">VectorTileSource</span><span class="p">({</span>
@@ -754,10 +754,10 @@ olレイヤのスタイルの指定方法は以下の3通りです</p>
 </span><span class="lnt">47
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="nx">Style</span> <span class="nx">from</span> <span class="s1">&#39;ol/style/Style&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">Stroke</span> <span class="nx">from</span> <span class="s1">&#39;ol/style/Stroke&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">Fill</span> <span class="nx">from</span> <span class="s1">&#39;ol/style/Fill&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">RenderFeature</span> <span class="nx">from</span> <span class="s1">&#39;ol/render/Feature&#39;</span><span class="p">;</span>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="nx">Style</span> <span class="kr">from</span> <span class="s1">&#39;ol/style/Style&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Stroke</span> <span class="kr">from</span> <span class="s1">&#39;ol/style/Stroke&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Fill</span> <span class="kr">from</span> <span class="s1">&#39;ol/style/Fill&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">RenderFeature</span> <span class="kr">from</span> <span class="s1">&#39;ol/render/Feature&#39;</span><span class="p">;</span>
 
 <span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">vtStyle</span><span class="p">(</span>
   <span class="nx">feature</span>: <span class="kt">RenderFeature</span><span class="p">,</span>
@@ -1130,7 +1130,7 @@ OpenLayers API: <a href="https://openlayers.org/en/latest/apidoc/module-ol_style
     &copy;
     
       2017 -
-    2020
+    2021
     <span class="heart">
       
       <i class="iconfont">

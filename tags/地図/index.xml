@@ -7,10 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Tue, 06 Aug 2019 22:30:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Mon, 18 Jan 2021 21:30:00 +0900</lastBuildDate><atom:link href="https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>データビジュアライゼーションのための地図を生成するモジュールを作成</title>
+      <link>https://cieloazul310.github.io/2021/01/canvasmap/</link>
+      <pubDate>Mon, 18 Jan 2021 21:30:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2021/01/canvasmap/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/cieloazul310/canvasmap&#34; title=&#34;Canvas マップ&#34;&gt;Canvas マップ&lt;/a&gt;という国土地理院のバイナリベクトルタイルを利用して、データビジュアライゼーションのためのベースマップを生成する Node.js 向けのモジュールを作成しました。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>土地利用地図を作りました</title>

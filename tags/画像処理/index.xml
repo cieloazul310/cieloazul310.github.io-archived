@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Sat, 21 Jul 2018 16:30:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://cieloazul310.github.io/tags/%E7%94%BB%E5%83%8F%E5%87%A6%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 21 Jul 2018 16:30:00 +0900</lastBuildDate><atom:link href="https://cieloazul310.github.io/tags/%E7%94%BB%E5%83%8F%E5%87%A6%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GIMPで陸地を生成する</title>
       <link>https://cieloazul310.github.io/2018/07/how-to-generate-mundial-with-gimp/</link>

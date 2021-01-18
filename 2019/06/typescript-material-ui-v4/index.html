@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2019/06/typescript-material-ui-v4/" />
@@ -429,8 +429,8 @@ v4 で初めて Material-UI を使うという人は読む必要はありませ�
 </span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">makeStyles</span><span class="p">,</span> <span class="nx">createStyles</span><span class="p">,</span> <span class="nx">Theme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles&#39;</span><span class="p">;</span>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">React</span> <span class="kr">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">makeStyles</span><span class="p">,</span> <span class="nx">createStyles</span><span class="p">,</span> <span class="nx">Theme</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@material-ui/core/styles&#39;</span><span class="p">;</span>
 
 <span class="c1">// スタイルを定義
 </span><span class="c1"></span><span class="kr">const</span> <span class="nx">useStyles</span> <span class="o">=</span> <span class="nx">makeStyles</span><span class="p">((</span><span class="nx">theme</span>: <span class="kt">Theme</span><span class="p">)</span> <span class="o">=&gt;</span>
@@ -445,7 +445,7 @@ v4 で初めて Material-UI を使うという人は読む必要はありませ�
 <span class="p">);</span>
 
 <span class="c1">// props の型を定義
-</span><span class="c1"></span><span class="nx">type</span> <span class="nx">Props</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class="c1"></span><span class="kr">type</span> <span class="nx">Props</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">title?</span>: <span class="kt">string</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -475,7 +475,7 @@ v4 で初めて Material-UI を使うという人は読む必要はありませ�
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// JavaScript の場合は createStyles, Theme は不要
-</span><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">makeStyles</span><span class="p">,</span> <span class="nx">createStyles</span><span class="p">,</span> <span class="nx">Theme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles&#39;</span><span class="p">;</span>
+</span><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">makeStyles</span><span class="p">,</span> <span class="nx">createStyles</span><span class="p">,</span> <span class="nx">Theme</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@material-ui/core/styles&#39;</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><code>createStyles</code> は型拡大を防ぐ関数で TypeScript のときのみ任意で使用します。<br>
@@ -698,7 +698,7 @@ React + TypeScript の記法の流行り(?)に関する話題です。<strong>�
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="nx">type</span> <span class="nx">Props</span> <span class="o">=</span> <span class="p">{</span>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">type</span> <span class="nx">Props</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">title?</span>: <span class="kt">string</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -915,7 +915,7 @@ React + TypeScript の記法の流行り(?)に関する話題です。<strong>�
     &copy;
     
       2017 -
-    2020
+    2021
     <span class="heart">
       
       <i class="iconfont">

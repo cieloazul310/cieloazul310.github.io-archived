@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2017/08/d3-arrow-function/" />
@@ -64,12 +64,12 @@
 <meta property="og:url" content="https://cieloazul310.github.io/2017/08/d3-arrow-function/" />
 <meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 <meta property="article:published_time" content="2017-08-29T23:30:00+09:00" />
-<meta property="article:modified_time" content="2017-08-29T23:30:00+09:00" />
+<meta property="article:modified_time" content="2020-08-29T11:00:00+09:00" />
 <meta itemprop="name" content="D3.jsでアロー関数を使う時の注意点">
 <meta itemprop="description" content="D3.jsでアロー関数を使うと変な動作を起こすことがあります。注意点と解決法をまとめています。">
 <meta itemprop="datePublished" content="2017-08-29T23:30:00+09:00" />
-<meta itemprop="dateModified" content="2017-08-29T23:30:00+09:00" />
-<meta itemprop="wordCount" content="827">
+<meta itemprop="dateModified" content="2020-08-29T11:00:00+09:00" />
+<meta itemprop="wordCount" content="906">
 <meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 
@@ -336,6 +336,9 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>既存のD3.jsのコードを<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/arrow_functions">アロー関数</a>で置き換える際に変な動作を起こしてしまったのでメモしておきます。</p>
+<h2 id="追記-20200829">追記 (2020/08/29)</h2>
+<p>2020年8月にリリースされた D3 v6 ではイベントリスナの書き方が変わりました。<br>
+詳しくは <a href="https://cieloazul310.github.io/2020/08/d3-v6-event/">D3 v6 アロー関数使用時の移行ガイド</a>へ。以下は v5 以前のコードになります。</p>
 <p>D3.jsでは、DOMにイベントを与える<a href="https://github.com/d3/d3-selection#selection_on"><code>selection.on(typenames, listener)</code></a>で、イベントリスナ内でそのDOMを選択したいときに<code>this</code>を使うことが多いです。</p>
 <p>例えば、以下のようなコードがよく使われます。</p>
 <div class="highlight"><div class="chroma">
@@ -500,7 +503,7 @@ if (!doNotTrack) {
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-      2017-08-29
+      2020-08-29
       
     </span>
   </p>
@@ -659,7 +662,7 @@ if (!doNotTrack) {
     &copy;
     
       2017 -
-    2020
+    2021
     <span class="heart">
       
       <i class="iconfont">

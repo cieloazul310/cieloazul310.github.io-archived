@@ -7,10 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Sat, 16 Dec 2017 23:35:47 +0900</lastBuildDate>
-    
-	<atom:link href="https://cieloazul310.github.io/tags/data-visualization/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Mon, 18 Jan 2021 21:30:00 +0900</lastBuildDate><atom:link href="https://cieloazul310.github.io/tags/data-visualization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>データビジュアライゼーションのための地図を生成するモジュールを作成</title>
+      <link>https://cieloazul310.github.io/2021/01/canvasmap/</link>
+      <pubDate>Mon, 18 Jan 2021 21:30:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2021/01/canvasmap/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/cieloazul310/canvasmap&#34; title=&#34;Canvas マップ&#34;&gt;Canvas マップ&lt;/a&gt;という国土地理院のバイナリベクトルタイルを利用して、データビジュアライゼーションのためのベースマップを生成する Node.js 向けのモジュールを作成しました。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>2017年明治安田生命Jリーグ全試合の観客数の可視化</title>
