@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Sun, 31 Jan 2021 16:30:00 +0900</lastBuildDate><atom:link href="https://cieloazul310.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Feb 2021 20:00:00 +0900</lastBuildDate><atom:link href="https://cieloazul310.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenLayers</title>
+      <link>https://cieloazul310.github.io/tags/openlayers/</link>
+      <pubDate>Mon, 01 Feb 2021 20:00:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/tags/openlayers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>地図</title>
+      <link>https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/</link>
+      <pubDate>Mon, 01 Feb 2021 20:00:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Gatsby</title>
       <link>https://cieloazul310.github.io/tags/gatsby/</link>
@@ -50,15 +68,6 @@
       <pubDate>Mon, 18 Jan 2021 21:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/tags/data-visualization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>地図</title>
-      <link>https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/</link>
-      <pubDate>Mon, 18 Jan 2021 21:30:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/</guid>
       <description></description>
     </item>
     
@@ -122,15 +131,6 @@
       <pubDate>Sun, 09 Feb 2020 17:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/tags/%E3%83%80%E3%83%BC%E3%82%AF%E3%83%A2%E3%83%BC%E3%83%89/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>OpenLayers</title>
-      <link>https://cieloazul310.github.io/tags/openlayers/</link>
-      <pubDate>Tue, 06 Aug 2019 22:30:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/tags/openlayers/</guid>
       <description></description>
     </item>
     
