@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.87.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2018/10/mvt-tile-to-geojson/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.03d43414944e30066de67a7ba9ff895236d021801c54c44df330397ca21df57b.css" integrity="sha256-A9Q0FJROMAZt5np7qf&#43;JUjbQIYAcVMRN8zA5fKId9Xs=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.96618627414b80b49c5bcc3c7eb0bf291b1ac3313f1a54e7944fdbd571c109bc.css" integrity="sha256-lmGGJ0FLgLScW8w8frC/KRsawzE/GlTnlE/b1XHBCbw=" media="screen" crossorigin="anonymous">
 
 
 
@@ -61,21 +61,15 @@
 <meta property="og:title" content="バイナリベクトルタイルを地図ライブラリ以外で扱う" />
 <meta property="og:description" content="Mapbox GL JS や Leaflet といった地図ライブラリを使わずに、 JavaScript でバイナリベクトルタイルを使う方法の解説とコードを掲載。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cieloazul310.github.io/2018/10/mvt-tile-to-geojson/" />
-<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+<meta property="og:url" content="https://cieloazul310.github.io/2018/10/mvt-tile-to-geojson/" /><meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2018-10-31T21:00:00+09:00" />
 <meta property="article:modified_time" content="2018-10-31T21:00:00+09:00" />
+
 <meta itemprop="name" content="バイナリベクトルタイルを地図ライブラリ以外で扱う">
-<meta itemprop="description" content="Mapbox GL JS や Leaflet といった地図ライブラリを使わずに、 JavaScript でバイナリベクトルタイルを使う方法の解説とコードを掲載。">
-<meta itemprop="datePublished" content="2018-10-31T21:00:00+09:00" />
+<meta itemprop="description" content="Mapbox GL JS や Leaflet といった地図ライブラリを使わずに、 JavaScript でバイナリベクトルタイルを使う方法の解説とコードを掲載。"><meta itemprop="datePublished" content="2018-10-31T21:00:00+09:00" />
 <meta itemprop="dateModified" content="2018-10-31T21:00:00+09:00" />
-<meta itemprop="wordCount" content="1016">
-<meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
-
-
-
-<meta itemprop="keywords" content="バイナリベクトルタイル,ベクトルタイル,GIS,Protocol Buffers," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="wordCount" content="1016"><meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+<meta itemprop="keywords" content="バイナリベクトルタイル,ベクトルタイル,GIS,Protocol Buffers," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 <meta name="twitter:title" content="バイナリベクトルタイルを地図ライブラリ以外で扱う"/>
@@ -345,16 +339,16 @@ if (!doNotTrack) {
 <p>npm で <a href="https://github.com/mapbox/pbf">pbf</a> と <a href="https://github.com/mapbox/vector-tile-js">@mapbox/vector-tile</a> モジュールをインストールします。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Shell" data-lang="Shell">$ npm install --save pbf @mapbox/vector-tile
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell">$ npm install --save pbf @mapbox/vector-tile
 </code></pre></td></tr></table>
 </div>
 </div><p><code>fetch</code> して response → ArrayBuffer → Pbf の順に変換し、GeoJSON Feature の配列を取得</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -381,7 +375,7 @@ if (!doNotTrack) {
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">import</span> <span class="nx">Pbf</span> <span class="nx">from</span> <span class="s1">&#39;pbf&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">import</span> <span class="nx">Pbf</span> <span class="nx">from</span> <span class="s1">&#39;pbf&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">VectorTile</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@mapbox/vector-tile&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">tileCoord</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">14582</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">6414</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span> <span class="mi">14</span> <span class="p">};</span>
@@ -417,7 +411,7 @@ if (!doNotTrack) {
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7323207940463794" crossorigin="anonymous"></script>
       <ins class="adsbygoogle"
          style="display:block; text-align:center;"
          data-ad-layout="in-article"
@@ -436,7 +430,7 @@ if (!doNotTrack) {
 <code>fetch</code>が成功したら mvt (pbf) 形式のファイルの変換を行ない、GeoJSON Feature の配列 features を返し、失敗したら空の配列を返します。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -462,7 +456,7 @@ if (!doNotTrack) {
 </span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">import</span> <span class="nx">Pbf</span> <span class="nx">from</span> <span class="s1">&#39;pbf&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">import</span> <span class="nx">Pbf</span> <span class="nx">from</span> <span class="s1">&#39;pbf&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">VectorTile</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@mapbox/vector-tile&#39;</span><span class="p">;</span>
 
 <span class="cm">/**
@@ -492,7 +486,7 @@ if (!doNotTrack) {
 Promise オブジェクトの配列 <code>tasks</code> を生成することで、 <code>Promise.all(tasks)</code> で全てのタイルの取得が終わった後に、一括で処理を行なうことができます。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -512,7 +506,7 @@ Promise オブジェクトの配列 <code>tasks</code> を生成することで�
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">const</span> <span class="nx">tiles</span> <span class="o">=</span> <span class="p">[{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span> <span class="p">},</span> <span class="p">...,</span> <span class="p">{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span> <span class="p">}];</span>
+<pre tabindex="0" class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">const</span> <span class="nx">tiles</span> <span class="o">=</span> <span class="p">[{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span> <span class="p">},</span> <span class="p">...,</span> <span class="p">{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span> <span class="p">}];</span>
 <span class="kr">const</span> <span class="nx">tasks</span> <span class="o">=</span> <span class="nx">tiles</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">tile</span> <span class="p">=&gt;</span> <span class="nx">fetchTile</span><span class="p">(</span><span class="nx">tile</span><span class="p">));</span>
 <span class="c1">// =&gt; Array [ Promise, Promise, ..., Promise ]
 </span><span class="c1"></span>
@@ -551,7 +545,7 @@ Promise オブジェクトの配列 <code>tasks</code> を生成することで�
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7323207940463794" crossorigin="anonymous"></script>
       
       <ins class="adsbygoogle"
          style="display:block"

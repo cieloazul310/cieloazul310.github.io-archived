@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.87.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2021/01/canvasmap/" />
@@ -54,7 +54,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.03d43414944e30066de67a7ba9ff895236d021801c54c44df330397ca21df57b.css" integrity="sha256-A9Q0FJROMAZt5np7qf&#43;JUjbQIYAcVMRN8zA5fKId9Xs=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.96618627414b80b49c5bcc3c7eb0bf291b1ac3313f1a54e7944fdbd571c109bc.css" integrity="sha256-lmGGJ0FLgLScW8w8frC/KRsawzE/GlTnlE/b1XHBCbw=" media="screen" crossorigin="anonymous">
 
 
 
@@ -66,24 +66,18 @@
 
 Canvas マップという国土地理院のバイナリベクトルタイルを利用して、データビジュアライゼーションのためのベースマップを生成する Node.js 向けのモジュールを作成しました。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cieloazul310.github.io/2021/01/canvasmap/" />
-<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+<meta property="og:url" content="https://cieloazul310.github.io/2021/01/canvasmap/" /><meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-01-18T21:30:00+09:00" />
 <meta property="article:modified_time" content="2021-01-26T20:30:00+09:00" />
+
 <meta itemprop="name" content="データビジュアライゼーションのための地図を生成するモジュールを作成">
 <meta itemprop="description" content="
 
 
-Canvas マップという国土地理院のバイナリベクトルタイルを利用して、データビジュアライゼーションのためのベースマップを生成する Node.js 向けのモジュールを作成しました。">
-<meta itemprop="datePublished" content="2021-01-18T21:30:00+09:00" />
+Canvas マップという国土地理院のバイナリベクトルタイルを利用して、データビジュアライゼーションのためのベースマップを生成する Node.js 向けのモジュールを作成しました。"><meta itemprop="datePublished" content="2021-01-18T21:30:00+09:00" />
 <meta itemprop="dateModified" content="2021-01-26T20:30:00+09:00" />
-<meta itemprop="wordCount" content="1188">
-<meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
-
-
-
-<meta itemprop="keywords" content="D3.js,Data Visualization,地図," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="wordCount" content="1188"><meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+<meta itemprop="keywords" content="D3.js,Data Visualization,地図," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 <meta name="twitter:title" content="データビジュアライゼーションのための地図を生成するモジュールを作成"/>
@@ -364,15 +358,15 @@ if (!doNotTrack) {
 <h2 id="使い方">使い方</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">yarn add @cieloazul310/canvasmap
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">yarn add @cieloazul310/canvasmap
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -386,7 +380,7 @@ if (!doNotTrack) {
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">{</span> <span class="nx">CanvasMap</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@cieloazul310/canvasmap&#39;</span><span class="p">);</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">{</span> <span class="nx">CanvasMap</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@cieloazul310/canvasmap&#39;</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">width</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">height</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
@@ -405,7 +399,7 @@ if (!doNotTrack) {
 <p>Canvas マップには <a href="https://github.com/d3/d3-geo" title="d3-geo">d3-geo</a> の機能を組み込んでいるので、GeoJSON を設定不要で描写することができます。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -422,7 +416,7 @@ if (!doNotTrack) {
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">geojson</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;hoge.geojson&#39;</span><span class="p">,</span> <span class="s1">&#39;utf8&#39;</span><span class="p">));</span>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">geojson</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;hoge.geojson&#39;</span><span class="p">,</span> <span class="s1">&#39;utf8&#39;</span><span class="p">));</span>
 <span class="kr">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CanvasMap</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">,</span> <span class="nx">geojson</span><span class="p">,</span> <span class="p">{</span>
   <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Canvas Map&#39;</span><span class="p">,</span>
 <span class="p">});</span>
@@ -445,7 +439,7 @@ if (!doNotTrack) {
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7323207940463794" crossorigin="anonymous"></script>
       <ins class="adsbygoogle"
          style="display:block; text-align:center;"
          data-ad-layout="in-article"
@@ -562,7 +556,7 @@ if (!doNotTrack) {
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7323207940463794" crossorigin="anonymous"></script>
       
       <ins class="adsbygoogle"
          style="display:block"

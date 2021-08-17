@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.87.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.03d43414944e30066de67a7ba9ff895236d021801c54c44df330397ca21df57b.css" integrity="sha256-A9Q0FJROMAZt5np7qf&#43;JUjbQIYAcVMRN8zA5fKId9Xs=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.96618627414b80b49c5bcc3c7eb0bf291b1ac3313f1a54e7944fdbd571c109bc.css" integrity="sha256-lmGGJ0FLgLScW8w8frC/KRsawzE/GlTnlE/b1XHBCbw=" media="screen" crossorigin="anonymous">
 
 
 
@@ -61,21 +61,15 @@
 <meta property="og:title" content="バイナリベクトルタイルを作ってみた" />
 <meta property="og:description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/" />
-<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+<meta property="og:url" content="https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/" /><meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2017-08-12T13:00:00+09:00" />
 <meta property="article:modified_time" content="2017-11-09T22:00:00+09:00" />
+
 <meta itemprop="name" content="バイナリベクトルタイルを作ってみた">
-<meta itemprop="description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました">
-<meta itemprop="datePublished" content="2017-08-12T13:00:00+09:00" />
+<meta itemprop="description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました"><meta itemprop="datePublished" content="2017-08-12T13:00:00+09:00" />
 <meta itemprop="dateModified" content="2017-11-09T22:00:00+09:00" />
-<meta itemprop="wordCount" content="2732">
-<meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
-
-
-
-<meta itemprop="keywords" content="JavaScript,地図,ベクトルタイル,バイナリベクトルタイル,Leaflet,OpenLayers," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="wordCount" content="2732"><meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+<meta itemprop="keywords" content="JavaScript,地図,ベクトルタイル,バイナリベクトルタイル,Leaflet,OpenLayers," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 <meta name="twitter:title" content="バイナリベクトルタイルを作ってみた"/>
@@ -347,10 +341,10 @@ if (!doNotTrack) {
 <p>一般的にはGDALの<a href="http://www.gdal.org/ogr2ogr.html">ogr2ogr</a>を使う場面だと思いますが、より楽な<a href="https://github.com/mbostock/shapefile#command-line-reference">shp2json</a>を使いました。npmでサクッとインストールできるので、D3.js、特にTopoJSON関連を使うなら導入して損はないと思います。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Shell" data-lang="Shell">  $ shp2json --encoding Shift-JIS source.shp &gt; output.geojson
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell">  $ shp2json --encoding Shift-JIS source.shp &gt; output.geojson
 </code></pre></td></tr></table>
 </div>
 </div><p>国土数値情報はShift-JISで提供されているので、<code>--encoding Shift-JIS</code>を忘れずに。</p>
@@ -362,10 +356,10 @@ if (!doNotTrack) {
 <p>下記のように、<code>-L</code>オプションを使うことで複数のデータをレイヤーとして一つのmbtilesファイルにまとめることもできます。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Shell" data-lang="Shell">  $ tippecanoe -L hoge:./data/hoge.json -L fuga:./data/fuga.json -o output.mbtiles
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell">  $ tippecanoe -L hoge:./data/hoge.json -L fuga:./data/fuga.json -o output.mbtiles
 </code></pre></td></tr></table>
 </div>
 </div><p><code>tippecanoe</code>の公式ドキュメントはもう少しちゃんと読んでおきたいです。</p>
@@ -374,10 +368,10 @@ if (!doNotTrack) {
 拡張子は「作り方」でも言及されていたように、.pbfではなく**.mvt**としました。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Shell" data-lang="Shell">  $ find . -type f -exec mv -v <span class="s1">&#39;{}&#39;</span> <span class="s1">&#39;{}&#39;</span>.mvt <span class="se">\;</span>
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell">  $ find . -type f -exec mv -v <span class="s1">&#39;{}&#39;</span> <span class="s1">&#39;{}&#39;</span>.mvt <span class="se">\;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>これで、mbutilで指定したディレクトリにmvtという拡張子がついたファイルが入ったフォルダが出来ているはずです。</p>
@@ -388,7 +382,7 @@ if (!doNotTrack) {
 また、上記のデモでも実証されるように、地物の数が多すぎるタイルは読み込んでくれませんでした（タイルの欠損があるわけではないはず）。この辺の閾値なども調べていきたいです。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -412,7 +406,7 @@ if (!doNotTrack) {
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">  <span class="kr">const</span> <span class="nx">schools</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">L</span><span class="p">.</span><span class="nx">TileLayer</span><span class="p">.</span><span class="nx">MVTSource</span><span class="p">({</span>
+<pre tabindex="0" class="chroma"><code class="language-JavaScript" data-lang="JavaScript">  <span class="kr">const</span> <span class="nx">schools</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">L</span><span class="p">.</span><span class="nx">TileLayer</span><span class="p">.</span><span class="nx">MVTSource</span><span class="p">({</span>
     <span class="nx">url</span><span class="o">:</span> <span class="s2">&#34;./tile/schools/&#34;</span> <span class="o">+</span> <span class="s2">&#34;{z}/{x}/{y}.mvt&#34;</span><span class="p">,</span>
     <span class="nx">maxZoom</span><span class="o">:</span> <span class="mi">18</span><span class="p">,</span>
     <span class="nx">maxNativeZoom</span><span class="o">:</span> <span class="mi">15</span><span class="p">,</span>
@@ -473,7 +467,7 @@ if (!doNotTrack) {
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7323207940463794" crossorigin="anonymous"></script>
       <ins class="adsbygoogle"
          style="display:block; text-align:center;"
          data-ad-layout="in-article"

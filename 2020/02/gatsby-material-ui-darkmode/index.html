@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.87.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2020/02/gatsby-material-ui-darkmode/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.03d43414944e30066de67a7ba9ff895236d021801c54c44df330397ca21df57b.css" integrity="sha256-A9Q0FJROMAZt5np7qf&#43;JUjbQIYAcVMRN8zA5fKId9Xs=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.96618627414b80b49c5bcc3c7eb0bf291b1ac3313f1a54e7944fdbd571c109bc.css" integrity="sha256-lmGGJ0FLgLScW8w8frC/KRsawzE/GlTnlE/b1XHBCbw=" media="screen" crossorigin="anonymous">
 
 
 
@@ -61,21 +61,15 @@
 <meta property="og:title" content="Gatsby &#43; Material-UI ダークモード実装方法" />
 <meta property="og:description" content="Gatsby &#43; Material-UI のプロジェクトに React コンテクストとカスタムフックを利用したダークモードの実装方法" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cieloazul310.github.io/2020/02/gatsby-material-ui-darkmode/" />
-<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+<meta property="og:url" content="https://cieloazul310.github.io/2020/02/gatsby-material-ui-darkmode/" /><meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-02-09T17:00:00+09:00" />
 <meta property="article:modified_time" content="2020-02-09T17:00:00+09:00" />
+
 <meta itemprop="name" content="Gatsby &#43; Material-UI ダークモード実装方法">
-<meta itemprop="description" content="Gatsby &#43; Material-UI のプロジェクトに React コンテクストとカスタムフックを利用したダークモードの実装方法">
-<meta itemprop="datePublished" content="2020-02-09T17:00:00+09:00" />
+<meta itemprop="description" content="Gatsby &#43; Material-UI のプロジェクトに React コンテクストとカスタムフックを利用したダークモードの実装方法"><meta itemprop="datePublished" content="2020-02-09T17:00:00+09:00" />
 <meta itemprop="dateModified" content="2020-02-09T17:00:00+09:00" />
-<meta itemprop="wordCount" content="3809">
-<meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
-
-
-
-<meta itemprop="keywords" content="ダークモード,React,Reactコンテクスト,Reactフック,Material-UI," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="wordCount" content="3809"><meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+<meta itemprop="keywords" content="ダークモード,React,Reactコンテクスト,Reactフック,Material-UI," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 <meta name="twitter:title" content="Gatsby &#43; Material-UI ダークモード実装方法"/>
@@ -351,13 +345,13 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
 既存のプロジェクトを持っている人はこのプロジェクト構成に合致しているか確かめて(特に後述する <code>gatsby-plugin-top-layout</code> を使っているかどうか)、ここから始める人は Gatsby example を 手順に従ってダウンロードしてください。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">curl https://codeload.github.com/mui-org/material-ui/tar.gz/master <span class="p">|</span> tar -xz --strip<span class="o">=</span><span class="m">2</span>  material-ui-master/examples/gatsby
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">curl https://codeload.github.com/mui-org/material-ui/tar.gz/master <span class="p">|</span> tar -xz --strip<span class="o">=</span><span class="m">2</span>  material-ui-master/examples/gatsby
 mv gatsby <span class="o">[</span>新しいプロジェクト名<span class="o">]</span>
 <span class="nb">cd</span> <span class="o">[</span>新しいプロジェクト名<span class="o">]</span>
 yarn install
@@ -366,12 +360,12 @@ yarn install
 </div><h3 id="バージョン">バージョン</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-txt" data-lang="txt">- react@16.12.0
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt">- react@16.12.0
 - gatsby@2.19.12
 - @material-ui/core@4.9.1
 </code></pre></td></tr></table>
@@ -383,7 +377,7 @@ yarn install
 <p>この記事では <code>gatsby-plugin-top-layout</code> を使用していることが前提となります。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -396,7 +390,7 @@ yarn install
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// plugins/gatsby-plugin-top-layout/TopLayout.js
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// plugins/gatsby-plugin-top-layout/TopLayout.js
 </span><span class="c1"></span><span class="kd">function</span> <span class="nx">TopLayout</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">React.Fragment</span><span class="p">&gt;</span>
@@ -416,14 +410,14 @@ yarn install
 <code>createMuiTheme</code> の引数オブジェクトの <code>palette.type</code> を <code>'dark'</code> に設定するだけで、背景と文字の色が反転するダークモードになります。 (デフォルトは <code>'light'</code>)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">createMuiTheme</span><span class="p">({</span>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">createMuiTheme</span><span class="p">({</span>
   <span class="nx">palette</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;dark&#39;</span> <span class="c1">// &#39;light&#39;(default) or &#39;dark&#39;
 </span><span class="c1"></span>  <span class="p">}</span>
@@ -438,7 +432,7 @@ yarn install
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7323207940463794" crossorigin="anonymous"></script>
       <ins class="adsbygoogle"
          style="display:block; text-align:center;"
          data-ad-layout="in-article"
@@ -467,7 +461,7 @@ yarn install
 <p><a href="https://ja.reactjs.org/docs/hooks-reference.html#usereducer" title="useReducer - React">リデューサ</a>を作成し、テーマのステート、アクションを定義します。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -495,7 +489,7 @@ yarn install
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// src/themeReducer.js
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// src/themeReducer.js
 </span><span class="c1"></span><span class="cm">/** TypeScript を使う場合
 </span><span class="cm"> *  
 </span><span class="cm"> *  export interface ThemeState {
@@ -527,7 +521,7 @@ yarn install
 <p><a href="https://ja.reactjs.org/docs/context.html" title="コンテクスト - React">コンテクスト</a>と<a href="https://ja.reactjs.org/docs/hooks-custom.html" title="カスタムフックの作成 - React">カスタムフック</a>の作成をおこないます。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -550,7 +544,7 @@ yarn install
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// src/DispatchContext.js
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// src/DispatchContext.js
 </span><span class="c1"></span><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 
 <span class="cm">/** TypeScript を使う場合
@@ -586,7 +580,7 @@ yarn install
 <p>作成したリデューサとコンテクストを <code>&lt;TopLayout&gt;</code> コンポーネント内で使用します。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -641,7 +635,7 @@ yarn install
 </span><span class="lnt">53
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// plugins/gatsby-plugin-top-layout/TopLayout.js
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// plugins/gatsby-plugin-top-layout/TopLayout.js
 </span><span class="c1"></span><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">PropTypes</span> <span class="nx">from</span> <span class="s1">&#39;prop-types&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">Helmet</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-helmet&#39;</span><span class="p">;</span>
@@ -713,15 +707,15 @@ yarn install
 <p><code>@material-ui/icons</code> をインストールします。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">yarn add @material-ui/icons
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">yarn add @material-ui/icons
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -745,7 +739,7 @@ yarn install
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// src/components/DarkModeButton.js
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// src/components/DarkModeButton.js
 </span><span class="c1"></span><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">IconButton</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/IconButton&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">useTheme</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/useTheme&#39;</span><span class="p">;</span>
@@ -789,7 +783,7 @@ yarn install
 <p>ダークモードでパレットをそのまま使うと視認性が悪い可能性があります。パレットタイプ切り替え時に、プライマリーカラーとアクセントカラーのメインをやや明るめにしておくと視認性が改善されます。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -807,7 +801,7 @@ yarn install
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// plugins/gatsby-plugin-top-layout/TopLayout.js
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// plugins/gatsby-plugin-top-layout/TopLayout.js
 </span><span class="c1"></span>
 <span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useMemo</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">createMuiTheme</span><span class="p">({</span>
@@ -868,7 +862,7 @@ yarn install
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7323207940463794" crossorigin="anonymous"></script>
       
       <ins class="adsbygoogle"
          style="display:block"

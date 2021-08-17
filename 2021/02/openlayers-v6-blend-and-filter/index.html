@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.87.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2021/02/openlayers-v6-blend-and-filter/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.03d43414944e30066de67a7ba9ff895236d021801c54c44df330397ca21df57b.css" integrity="sha256-A9Q0FJROMAZt5np7qf&#43;JUjbQIYAcVMRN8zA5fKId9Xs=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.96618627414b80b49c5bcc3c7eb0bf291b1ac3313f1a54e7944fdbd571c109bc.css" integrity="sha256-lmGGJ0FLgLScW8w8frC/KRsawzE/GlTnlE/b1XHBCbw=" media="screen" crossorigin="anonymous">
 
 
 
@@ -61,21 +61,15 @@
 <meta property="og:title" content="OpenLayers で地図をグレースケールにしたり乗算合成したり" />
 <meta property="og:description" content="OpenLayers で地図をグレースケールにしたり乗算合成したりする方法です。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cieloazul310.github.io/2021/02/openlayers-v6-blend-and-filter/" />
-<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+<meta property="og:url" content="https://cieloazul310.github.io/2021/02/openlayers-v6-blend-and-filter/" /><meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-02-01T20:00:00+09:00" />
 <meta property="article:modified_time" content="2021-02-01T20:00:00+09:00" />
+
 <meta itemprop="name" content="OpenLayers で地図をグレースケールにしたり乗算合成したり">
-<meta itemprop="description" content="OpenLayers で地図をグレースケールにしたり乗算合成したりする方法です。">
-<meta itemprop="datePublished" content="2021-02-01T20:00:00+09:00" />
+<meta itemprop="description" content="OpenLayers で地図をグレースケールにしたり乗算合成したりする方法です。"><meta itemprop="datePublished" content="2021-02-01T20:00:00+09:00" />
 <meta itemprop="dateModified" content="2021-02-01T20:00:00+09:00" />
-<meta itemprop="wordCount" content="511">
-<meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
-
-
-
-<meta itemprop="keywords" content="OpenLayers,地図," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="wordCount" content="511"><meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+<meta itemprop="keywords" content="OpenLayers,地図," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 <meta name="twitter:title" content="OpenLayers で地図をグレースケールにしたり乗算合成したり"/>
@@ -347,7 +341,7 @@ if (!doNotTrack) {
 <h3 id="javascript">JavaScript</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -360,7 +354,7 @@ if (!doNotTrack) {
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">TileLayer</span> <span class="nx">from</span> <span class="s1">&#39;ol/layer/Tile&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">TileLayer</span> <span class="nx">from</span> <span class="s1">&#39;ol/layer/Tile&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">XYZSource</span> <span class="nx">from</span> <span class="s1">&#39;ol/source/XYZ&#39;</span><span class="p">;</span>
 
 <span class="c1">// 地理院標準タイル
@@ -376,13 +370,13 @@ if (!doNotTrack) {
 </div><h3 id="css">CSS</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">hoge</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">hoge</span> <span class="p">{</span>
   <span class="k">mix-blend-mode</span><span class="p">:</span> <span class="kc">multiply</span><span class="p">;</span>
   <span class="k">filter</span><span class="p">:</span> <span class="nf">grayScale</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="p">}</span>
@@ -394,7 +388,7 @@ if (!doNotTrack) {
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7323207940463794" crossorigin="anonymous"></script>
       <ins class="adsbygoogle"
          style="display:block; text-align:center;"
          data-ad-layout="in-article"
@@ -412,7 +406,7 @@ if (!doNotTrack) {
 この方法はイベント名を <code>precompose</code> → <code>prerender</code>、<code>postcompose</code> → <code>postrender</code> に変更することで v6 でも利用することができます。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -425,7 +419,7 @@ if (!doNotTrack) {
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// v5 以前は layer.on(&#39;precompose&#39;, (event) =&gt; {});
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// v5 以前は layer.on(&#39;precompose&#39;, (event) =&gt; {});
 </span><span class="c1"></span><span class="nx">layer</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;prerender&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
   <span class="c1">// 乗算合成
 </span><span class="c1"></span>  <span class="nx">event</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">globalCompositeOperation</span> <span class="o">=</span> <span class="s1">&#39;multiply&#39;</span><span class="p">;</span>
@@ -449,7 +443,7 @@ So We Won&rsquo;t Forget / Khruangbin (2020)</p>
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7323207940463794" crossorigin="anonymous"></script>
       
       <ins class="adsbygoogle"
          style="display:block"

@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.87.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2019/08/openlayers-vt/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.03d43414944e30066de67a7ba9ff895236d021801c54c44df330397ca21df57b.css" integrity="sha256-A9Q0FJROMAZt5np7qf&#43;JUjbQIYAcVMRN8zA5fKId9Xs=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.96618627414b80b49c5bcc3c7eb0bf291b1ac3313f1a54e7944fdbd571c109bc.css" integrity="sha256-lmGGJ0FLgLScW8w8frC/KRsawzE/GlTnlE/b1XHBCbw=" media="screen" crossorigin="anonymous">
 
 
 
@@ -61,21 +61,15 @@
 <meta property="og:title" content="国土地理院のバイナリベクトルタイルを OpenLayers で表示" />
 <meta property="og:description" content="2019年7月29日に国土地理院が提供実験を開始したバイナリ形式のベクトルタイルを JavaScript の地図ライブラリである OpenLayers で表示する方法です。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cieloazul310.github.io/2019/08/openlayers-vt/" />
-<meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+<meta property="og:url" content="https://cieloazul310.github.io/2019/08/openlayers-vt/" /><meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-08-03T22:00:00+09:00" />
 <meta property="article:modified_time" content="2019-08-07T23:30:00+09:00" />
+
 <meta itemprop="name" content="国土地理院のバイナリベクトルタイルを OpenLayers で表示">
-<meta itemprop="description" content="2019年7月29日に国土地理院が提供実験を開始したバイナリ形式のベクトルタイルを JavaScript の地図ライブラリである OpenLayers で表示する方法です。">
-<meta itemprop="datePublished" content="2019-08-03T22:00:00+09:00" />
+<meta itemprop="description" content="2019年7月29日に国土地理院が提供実験を開始したバイナリ形式のベクトルタイルを JavaScript の地図ライブラリである OpenLayers で表示する方法です。"><meta itemprop="datePublished" content="2019-08-03T22:00:00+09:00" />
 <meta itemprop="dateModified" content="2019-08-07T23:30:00+09:00" />
-<meta itemprop="wordCount" content="2744">
-<meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
-
-
-
-<meta itemprop="keywords" content="OpenLayers,バイナリベクトルタイル,GIS,地図," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="wordCount" content="2744"><meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+<meta itemprop="keywords" content="OpenLayers,バイナリベクトルタイル,GIS,地図," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
 <meta name="twitter:title" content="国土地理院のバイナリベクトルタイルを OpenLayers で表示"/>
@@ -393,7 +387,7 @@ if (!doNotTrack) {
 <p>Webpack + TypeScript 環境を想定しています。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -404,7 +398,7 @@ if (!doNotTrack) {
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ mkdir ol-vectortile
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ mkdir ol-vectortile
 $ <span class="nb">cd</span> ol-vectortile
 $ yarn init -y
 $ yarn add --dev webpack webpack-cli webpack-dev-server
@@ -418,16 +412,16 @@ $ yarn add @types/ol
 </div><h3 id="バージョン">バージョン</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-txt" data-lang="txt">- ol@5.3.3
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt">- ol@5.3.3
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="ディレクトリ構成">ディレクトリ構成</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -440,7 +434,7 @@ $ yarn add @types/ol
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-txt" data-lang="txt">.
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt">.
 ├── dist
 │   └── index.html
 ├── src
@@ -458,7 +452,7 @@ $ yarn add @types/ol
 <h3 id="distindexhtml">./dist/index.html</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -485,7 +479,7 @@ $ yarn add @types/ol
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ja&#34;</span><span class="p">&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ja&#34;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1&#34;</span><span class="p">&gt;</span>
@@ -515,7 +509,7 @@ $ yarn add @types/ol
 </div><h3 id="srcindexts">./src/index.ts</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -545,7 +539,7 @@ $ yarn add @types/ol
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="nx">Map</span> <span class="kr">from</span> <span class="s1">&#39;ol/Map&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="nx">Map</span> <span class="kr">from</span> <span class="s1">&#39;ol/Map&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">View</span> <span class="kr">from</span> <span class="s1">&#39;ol/View&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">VectorTileLayer</span> <span class="kr">from</span> <span class="s1">&#39;ol/layer/VectorTile&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">VectorTileSource</span> <span class="kr">from</span> <span class="s1">&#39;ol/source/VectorTile&#39;</span><span class="p">;</span>
@@ -600,7 +594,7 @@ OpenLayers API: <a href="https://openlayers.org/en/latest/apidoc/module-ol_sourc
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7323207940463794" crossorigin="anonymous"></script>
       <ins class="adsbygoogle"
          style="display:block; text-align:center;"
          data-ad-layout="in-article"
@@ -618,7 +612,7 @@ OpenLayers API: <a href="https://openlayers.org/en/latest/apidoc/module-ol_sourc
 <p>まずは <code>src</code> ディレクトリに <code>layers</code> ディレクトリと <code>styles</code> ディレクトリを作成し、<code>src</code> ディレクトリの構成を以下のように変更します。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -626,7 +620,7 @@ OpenLayers API: <a href="https://openlayers.org/en/latest/apidoc/module-ol_sourc
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-txt" data-lang="txt">src
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt">src
 ├── index.ts
 ├── layers
 │   └── vt.ts
@@ -641,7 +635,7 @@ OpenLayers API: <a href="https://openlayers.org/en/latest/apidoc/module-ol_sourc
 <h4 id="srclayersvtts">./src/layers/vt.ts</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -665,7 +659,7 @@ OpenLayers API: <a href="https://openlayers.org/en/latest/apidoc/module-ol_sourc
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="nx">VectorTileLayer</span> <span class="kr">from</span> <span class="s1">&#39;ol/layer/VectorTile&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="nx">VectorTileLayer</span> <span class="kr">from</span> <span class="s1">&#39;ol/layer/VectorTile&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">VectorTileSource</span> <span class="kr">from</span> <span class="s1">&#39;ol/source/VectorTile&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">MVTFormat</span> <span class="kr">from</span> <span class="s1">&#39;ol/format/MVT&#39;</span><span class="p">;</span>
 
@@ -705,7 +699,7 @@ olレイヤのスタイルの指定方法は以下の3通りです</p>
 <h4 id="srcstylesvtstylets">./src/styles/vtstyle.ts</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -754,7 +748,7 @@ olレイヤのスタイルの指定方法は以下の3通りです</p>
 </span><span class="lnt">47
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="nx">Style</span> <span class="kr">from</span> <span class="s1">&#39;ol/style/Style&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="nx">Style</span> <span class="kr">from</span> <span class="s1">&#39;ol/style/Style&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">Stroke</span> <span class="kr">from</span> <span class="s1">&#39;ol/style/Stroke&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">Fill</span> <span class="kr">from</span> <span class="s1">&#39;ol/style/Fill&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">RenderFeature</span> <span class="kr">from</span> <span class="s1">&#39;ol/render/Feature&#39;</span><span class="p">;</span>
@@ -943,7 +937,7 @@ OpenLayers API: <a href="https://openlayers.org/en/latest/apidoc/module-ol_style
   
     <small>広告</small>
     
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7323207940463794" crossorigin="anonymous"></script>
       
       <ins class="adsbygoogle"
          style="display:block"
