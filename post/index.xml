@@ -7,7 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Wed, 17 Feb 2021 21:00:00 +0900</lastBuildDate><atom:link href="https://cieloazul310.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Sep 2021 20:30:00 +0900</lastBuildDate><atom:link href="https://cieloazul310.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MUI (Material-UI) v5 のスタイリング方法</title>
+      <link>https://cieloazul310.github.io/2021/09/mui5/</link>
+      <pubDate>Mon, 20 Sep 2021 20:30:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2021/09/mui5/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;2021年9月16日に &lt;a href=&#34;https://mui.com/blog/mui-core-v5/&#34; title=&#34;Introducing MUI Core v5.0&#34;&gt;MUI (Material-UI) v5 が正式にリリースされました&lt;/a&gt;。&lt;a href=&#34;https://mui.com/blog/material-ui-v4-is-out/&#34;&gt;Material-UI v4 のリリース&lt;/a&gt;が 2019年3月なので、約2年半ぶりのメジャーアップデートです。&lt;a href=&#34;https://mui.com/blog/material-ui-is-now-mui/&#34; title=&#34;Material-UI is now MUI!&#34;&gt;正式名称が Material-UI から MUI に変更になり&lt;/a&gt;、パッケージ名も &lt;code&gt;@material-ui/*&lt;/code&gt; から &lt;code&gt;@mui/*&lt;/code&gt; になりました。&lt;/p&gt;
+&lt;p&gt;MUI v5 ではコンポーネントのスタイリングの実装方法や記法が一新し、Material-UI v4 以前までの独特な記法から、&lt;a href=&#34;https://theme-ui.com&#34; title=&#34;Theme UI&#34;&gt;Theme UI&lt;/a&gt;、&lt;a href=&#34;https://chakra-ui.com&#34; title=&#34;chakra&#34;&gt;chakra&lt;/a&gt; などで用いられている &lt;code&gt;sx&lt;/code&gt; Prop によるスタイリングになりました。&lt;br&gt;
+大幅な変更になるので、v4 からの移行コストは大きいですが、新たに MUI を学ぶ人には優しくなった印象です。&lt;/p&gt;
+&lt;p&gt;MUI v5 のスタイリング方法を v4 の記法と比較しながら紹介していきます。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>ロック大陸漫遊記プレイリスト集を公開しました</title>
       <link>https://cieloazul310.github.io/2021/02/rockman/</link>
