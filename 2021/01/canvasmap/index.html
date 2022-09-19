@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="cieloazul310" />
-  <meta name="description" content="Canvas マップという国土地理院のバイナリベクトルタイルを利用して、データビジュアライゼーションのためのベースマップを生成する Node.js 向けのモジュールを作成しました。
+  <meta name="description" content=" Canvas マップという国土地理院のバイナリベクトルタイルを利用して、データビジュアライゼーションのためのベースマップを生成する Node.js 向けのモジュールを作成しました。
 " />
 <meta name="keywords" content="D3.js, Data Visualization, Map" />
 
@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.102.3" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2021/01/canvasmap/" />
@@ -76,7 +76,7 @@ Canvas マップという国土地理院のバイナリベクトルタイルを�
 
 Canvas マップという国土地理院のバイナリベクトルタイルを利用して、データビジュアライゼーションのためのベースマップを生成する Node.js 向けのモジュールを作成しました。"><meta itemprop="datePublished" content="2021-01-18T21:30:00+09:00" />
 <meta itemprop="dateModified" content="2021-01-26T20:30:00+09:00" />
-<meta itemprop="wordCount" content="1188"><meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+<meta itemprop="wordCount" content="1178"><meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 <meta itemprop="keywords" content="D3.js,Data Visualization,地図," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
@@ -361,8 +361,8 @@ if (!doNotTrack) {
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">yarn add @cieloazul310/canvasmap
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">yarn add @cieloazul310/canvasmap
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -380,19 +380,19 @@ if (!doNotTrack) {
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">{</span> <span class="nx">CanvasMap</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@cieloazul310/canvasmap&#39;</span><span class="p">);</span>
-
-<span class="kr">const</span> <span class="nx">width</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">height</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CanvasMap</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">center</span><span class="o">:</span> <span class="p">[</span><span class="mf">140.4602</span><span class="p">,</span> <span class="mf">36.3703</span><span class="p">],</span>
-  <span class="nx">zoom</span><span class="o">:</span> <span class="mi">13</span><span class="p">,</span>
-  <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Canvas Map for Data Visualization&#39;</span><span class="p">,</span>
-<span class="p">});</span>
-<span class="nx">map</span><span class="p">.</span><span class="nx">renderBasemap</span><span class="p">(</span><span class="s1">&#39;vector&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">map</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="nx">map</span><span class="p">.</span><span class="nx">exportPng</span><span class="p">(</span><span class="s1">&#39;./gallery/basic.png&#39;</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">CanvasMap</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@cieloazul310/canvasmap&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">width</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">height</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CanvasMap</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">center</span><span class="o">:</span> <span class="p">[</span><span class="mf">140.4602</span><span class="p">,</span> <span class="mf">36.3703</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">zoom</span><span class="o">:</span> <span class="mi">13</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Canvas Map for Data Visualization&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="nx">map</span><span class="p">.</span><span class="nx">renderBasemap</span><span class="p">(</span><span class="s1">&#39;vector&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">map</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">map</span><span class="p">.</span><span class="nx">exportPng</span><span class="p">(</span><span class="s1">&#39;./gallery/basic.png&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>API レファレンスやサンプルコードは <a href="https://github.com/cieloazul310/canvasmap" title="Canvas マップ">GitHub リポジトリ</a>に置いてあります。</p>
 <h2 id="特長">特長</h2>
@@ -416,22 +416,22 @@ if (!doNotTrack) {
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">geojson</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;hoge.geojson&#39;</span><span class="p">,</span> <span class="s1">&#39;utf8&#39;</span><span class="p">));</span>
-<span class="kr">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CanvasMap</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">,</span> <span class="nx">geojson</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Canvas Map&#39;</span><span class="p">,</span>
-<span class="p">});</span>
-<span class="nx">map</span><span class="p">.</span><span class="nx">renderBasemap</span><span class="p">(</span><span class="s1">&#39;vector&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">map</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">map</span><span class="p">.</span><span class="nx">getContext</span><span class="p">();</span>
-  <span class="kr">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">map</span><span class="p">.</span><span class="nx">getPath</span><span class="p">();</span>
-  <span class="nx">geojson</span><span class="p">.</span><span class="nx">features</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">feature</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">context</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
-    <span class="nx">path</span><span class="p">(</span><span class="nx">feature</span><span class="p">);</span>
-    <span class="nx">context</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s1">&#39;#77f&#39;</span><span class="p">;</span>
-    <span class="nx">context</span><span class="p">.</span><span class="nx">fill</span><span class="p">();</span>
-  <span class="p">});</span>
-  <span class="nx">map</span><span class="p">.</span><span class="nx">exportPng</span><span class="p">(</span><span class="s1">&#39;./gallery/basic.png&#39;</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">geojson</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;hoge.geojson&#39;</span><span class="p">,</span> <span class="s1">&#39;utf8&#39;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CanvasMap</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">,</span> <span class="nx">geojson</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Canvas Map&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="nx">map</span><span class="p">.</span><span class="nx">renderBasemap</span><span class="p">(</span><span class="s1">&#39;vector&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">map</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">map</span><span class="p">.</span><span class="nx">getContext</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">map</span><span class="p">.</span><span class="nx">getPath</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">geojson</span><span class="p">.</span><span class="nx">features</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">feature</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">context</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">path</span><span class="p">(</span><span class="nx">feature</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">context</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s1">&#39;#77f&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">context</span><span class="p">.</span><span class="nx">fill</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">map</span><span class="p">.</span><span class="nx">exportPng</span><span class="p">(</span><span class="s1">&#39;./gallery/basic.png&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><a href="https://github.com/d3/d3-geo" title="d3-geo">d3-geo</a> を使った Canvas の描写例は以下のリンクが参考になります。<br>
 <a href="https://observablehq.com/@d3/world-map">https://observablehq.com/@d3/world-map</a></p>
@@ -476,64 +476,64 @@ if (!doNotTrack) {
 <div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
     
   
-
-<div class="box">
-<figure  itemprop="associatedMedia"
-  itemscope itemtype="http://schema.org/ImageObject" >
-    <div class="img" style="background-image: url('./async.png');">
-      <img itemprop="thumbnail" src="./async.png" />
-    </div>
-    <a href="./async.png" itemprop="contentUrl"></a>
-  </figure>
-</div>
+  
+  <div class="box">
+  <figure  itemprop="associatedMedia"
+    itemscope itemtype="http://schema.org/ImageObject" >
+      <div class="img" style="background-image: url('./async.png');">
+        <img itemprop="thumbnail" src="./async.png" />
+      </div>
+      <a href="./async.png" itemprop="contentUrl"></a>
+    </figure>
+  </div>
 
   
-
-<div class="box">
-<figure  itemprop="associatedMedia"
-  itemscope itemtype="http://schema.org/ImageObject" >
-    <div class="img" style="background-image: url('./raster.png');">
-      <img itemprop="thumbnail" src="./raster.png" />
-    </div>
-    <a href="./raster.png" itemprop="contentUrl"></a>
-  </figure>
-</div>
+  
+  <div class="box">
+  <figure  itemprop="associatedMedia"
+    itemscope itemtype="http://schema.org/ImageObject" >
+      <div class="img" style="background-image: url('./raster.png');">
+        <img itemprop="thumbnail" src="./raster.png" />
+      </div>
+      <a href="./raster.png" itemprop="contentUrl"></a>
+    </figure>
+  </div>
 
   
-
-<div class="box">
-<figure  itemprop="associatedMedia"
-  itemscope itemtype="http://schema.org/ImageObject" >
-    <div class="img" style="background-image: url('./geojson.png');">
-      <img itemprop="thumbnail" src="./geojson.png" />
-    </div>
-    <a href="./geojson.png" itemprop="contentUrl"></a>
-  </figure>
-</div>
+  
+  <div class="box">
+  <figure  itemprop="associatedMedia"
+    itemscope itemtype="http://schema.org/ImageObject" >
+      <div class="img" style="background-image: url('./geojson.png');">
+        <img itemprop="thumbnail" src="./geojson.png" />
+      </div>
+      <a href="./geojson.png" itemprop="contentUrl"></a>
+    </figure>
+  </div>
 
   
-
-<div class="box">
-<figure  itemprop="associatedMedia"
-  itemscope itemtype="http://schema.org/ImageObject" >
-    <div class="img" style="background-image: url('./background.png');">
-      <img itemprop="thumbnail" src="./background.png" />
-    </div>
-    <a href="./background.png" itemprop="contentUrl"></a>
-  </figure>
-</div>
+  
+  <div class="box">
+  <figure  itemprop="associatedMedia"
+    itemscope itemtype="http://schema.org/ImageObject" >
+      <div class="img" style="background-image: url('./background.png');">
+        <img itemprop="thumbnail" src="./background.png" />
+      </div>
+      <a href="./background.png" itemprop="contentUrl"></a>
+    </figure>
+  </div>
 
   
-
-<div class="box">
-<figure  itemprop="associatedMedia"
-  itemscope itemtype="http://schema.org/ImageObject" >
-    <div class="img" style="background-image: url('./ibaraki_population.png');">
-      <img itemprop="thumbnail" src="./ibaraki_population.png" />
-    </div>
-    <a href="./ibaraki_population.png" itemprop="contentUrl"></a>
-  </figure>
-</div>
+  
+  <div class="box">
+  <figure  itemprop="associatedMedia"
+    itemscope itemtype="http://schema.org/ImageObject" >
+      <div class="img" style="background-image: url('./ibaraki_population.png');">
+        <img itemprop="thumbnail" src="./ibaraki_population.png" />
+      </div>
+      <a href="./ibaraki_population.png" itemprop="contentUrl"></a>
+    </figure>
+  </div>
 
 
 </div>
@@ -742,7 +742,7 @@ if (!doNotTrack) {
     &copy;
     
       2017 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">

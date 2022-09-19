@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.102.3" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2018/10/mvt-tile-to-geojson/" />
@@ -68,7 +68,7 @@
 <meta itemprop="name" content="バイナリベクトルタイルを地図ライブラリ以外で扱う">
 <meta itemprop="description" content="Mapbox GL JS や Leaflet といった地図ライブラリを使わずに、 JavaScript でバイナリベクトルタイルを使う方法の解説とコードを掲載。"><meta itemprop="datePublished" content="2018-10-31T21:00:00+09:00" />
 <meta itemprop="dateModified" content="2018-10-31T21:00:00+09:00" />
-<meta itemprop="wordCount" content="1016"><meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+<meta itemprop="wordCount" content="1006"><meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 <meta itemprop="keywords" content="バイナリベクトルタイル,ベクトルタイル,GIS,Protocol Buffers," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
@@ -342,8 +342,8 @@ if (!doNotTrack) {
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell">$ npm install --save pbf @mapbox/vector-tile
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">$ npm install --save pbf @mapbox/vector-tile
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>fetch</code> して response → ArrayBuffer → Pbf の順に変換し、GeoJSON Feature の配列を取得</p>
 <div class="highlight"><div class="chroma">
@@ -375,32 +375,32 @@ if (!doNotTrack) {
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">import</span> <span class="nx">Pbf</span> <span class="nx">from</span> <span class="s1">&#39;pbf&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">VectorTile</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@mapbox/vector-tile&#39;</span><span class="p">;</span>
-
-<span class="kr">const</span> <span class="nx">tileCoord</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">14582</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">6414</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span> <span class="mi">14</span> <span class="p">};</span>
-<span class="kr">const</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="s1">&#39;https://cieloazul310.github.io/mvt-tiles/tile/population_250m/&#39;</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">layerName</span> <span class="o">=</span> <span class="s1">&#39;250mesh&#39;</span><span class="p">;</span>
-
-<span class="nx">fetch</span><span class="p">(</span><span class="nx">baseUrl</span> <span class="o">+</span> <span class="sb">`</span><span class="si">${</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">z</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">x</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">y</span><span class="si">}</span><span class="sb">.mvt`</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">arrayBuffer</span><span class="p">())</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">buffer</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nx">Pbf</span><span class="p">(</span><span class="nx">buffer</span><span class="p">))</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">pbf</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">layer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VectorTile</span><span class="p">(</span><span class="nx">pbf</span><span class="p">).</span><span class="nx">layers</span><span class="p">[</span><span class="nx">layerName</span><span class="p">];</span>
-    <span class="kr">const</span> <span class="nx">features</span> <span class="o">=</span> <span class="p">[];</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">layer</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">layer</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kr">const</span> <span class="nx">feature</span> <span class="o">=</span> <span class="nx">layer</span><span class="p">.</span><span class="nx">feature</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">toGeoJSON</span><span class="p">(</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">tileCoord</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">tileCoord</span><span class="p">.</span><span class="nx">z</span><span class="p">);</span>
-        <span class="nx">features</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">feature</span><span class="p">);</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">features</span><span class="p">;</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">features</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">features</span><span class="p">);</span>
-    <span class="c1">// =&gt; Array(46) [ feature, feature, feature, ..., feature ]
-</span><span class="c1"></span>  <span class="p">});</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Pbf</span> <span class="nx">from</span> <span class="s1">&#39;pbf&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">VectorTile</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@mapbox/vector-tile&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">tileCoord</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">14582</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">6414</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span> <span class="mi">14</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="s1">&#39;https://cieloazul310.github.io/mvt-tiles/tile/population_250m/&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">layerName</span> <span class="o">=</span> <span class="s1">&#39;250mesh&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">fetch</span><span class="p">(</span><span class="nx">baseUrl</span> <span class="o">+</span> <span class="sb">`</span><span class="si">${</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">z</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">x</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">y</span><span class="si">}</span><span class="sb">.mvt`</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">arrayBuffer</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">buffer</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nx">Pbf</span><span class="p">(</span><span class="nx">buffer</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">pbf</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">layer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VectorTile</span><span class="p">(</span><span class="nx">pbf</span><span class="p">).</span><span class="nx">layers</span><span class="p">[</span><span class="nx">layerName</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">features</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">layer</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">layer</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">feature</span> <span class="o">=</span> <span class="nx">layer</span><span class="p">.</span><span class="nx">feature</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">toGeoJSON</span><span class="p">(</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">tileCoord</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">tileCoord</span><span class="p">.</span><span class="nx">z</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">features</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">feature</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">features</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">features</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">features</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// =&gt; Array(46) [ feature, feature, feature, ..., feature ]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">});</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>バイナリベクトルタイルの拡張子は作成時に mvt にしていたので、この記事でも mvt としています。<br>
 しかし、この分野の国内における先駆者である<a href="https://qiita.com/hfu">@hfu</a>さんの記事 <a href="https://qiita.com/hfu/items/69fbe24be92654f634da">バイナリベクトルタイルの拡張子が mvt であったり pbf であったりするのはなんでだろう</a> に下記のようなコメントが付いていたので、今後は pbf にします。</p>
@@ -456,31 +456,31 @@ if (!doNotTrack) {
 </span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">import</span> <span class="nx">Pbf</span> <span class="nx">from</span> <span class="s1">&#39;pbf&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">VectorTile</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@mapbox/vector-tile&#39;</span><span class="p">;</span>
-
-<span class="cm">/**
-</span><span class="cm">  * @param {object} tile 
-</span><span class="cm">  * @returns {Promise} Promise object
-</span><span class="cm">  */</span> 
-<span class="kd">function</span> <span class="nx">fetchTile</span><span class="p">(</span><span class="nx">tile</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">baseUrl</span> <span class="o">+</span> <span class="sb">`</span><span class="si">${</span><span class="nx">tile</span><span class="p">.</span><span class="nx">z</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">tile</span><span class="p">.</span><span class="nx">x</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">tile</span><span class="p">.</span><span class="nx">y</span><span class="si">}</span><span class="sb">.mvt`</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">arrayBuffer</span><span class="p">())</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">buffer</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nx">Pbf</span><span class="p">(</span><span class="nx">buffer</span><span class="p">))</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">pbf</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">layer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VectorTile</span><span class="p">(</span><span class="nx">pbf</span><span class="p">).</span><span class="nx">layers</span><span class="p">[</span><span class="nx">layerName</span><span class="p">];</span>
-    <span class="kr">const</span> <span class="nx">features</span> <span class="o">=</span> <span class="p">[];</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">layer</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">layer</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kr">const</span> <span class="nx">feature</span> <span class="o">=</span> <span class="nx">layer</span><span class="p">.</span><span class="nx">feature</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">toGeoJSON</span><span class="p">(</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">tileCoord</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">tileCoord</span><span class="p">.</span><span class="nx">z</span><span class="p">);</span>
-        <span class="nx">features</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">feature</span><span class="p">);</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">features</span><span class="p">;</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">[]);</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Pbf</span> <span class="nx">from</span> <span class="s1">&#39;pbf&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">VectorTile</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@mapbox/vector-tile&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * @param {object} tile 
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * @returns {Promise} Promise object
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span> 
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">fetchTile</span><span class="p">(</span><span class="nx">tile</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">baseUrl</span> <span class="o">+</span> <span class="sb">`</span><span class="si">${</span><span class="nx">tile</span><span class="p">.</span><span class="nx">z</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">tile</span><span class="p">.</span><span class="nx">x</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">tile</span><span class="p">.</span><span class="nx">y</span><span class="si">}</span><span class="sb">.mvt`</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">arrayBuffer</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">buffer</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nx">Pbf</span><span class="p">(</span><span class="nx">buffer</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">pbf</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">layer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VectorTile</span><span class="p">(</span><span class="nx">pbf</span><span class="p">).</span><span class="nx">layers</span><span class="p">[</span><span class="nx">layerName</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">features</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">layer</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">layer</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">feature</span> <span class="o">=</span> <span class="nx">layer</span><span class="p">.</span><span class="nx">feature</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">toGeoJSON</span><span class="p">(</span><span class="nx">tileCoord</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">tileCoord</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">tileCoord</span><span class="p">.</span><span class="nx">z</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">features</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">feature</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">features</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="k">catch</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">[]);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><a href="https://github.com/d3/d3-tile">d3-tile</a> などで求めたタイル座標の組の配列 <code>tiles</code> から、<code>array.map</code> で Promise オブジェクトの配列 <code>tasks</code> を生成します。<br>
 Promise オブジェクトの配列 <code>tasks</code> を生成することで、 <code>Promise.all(tasks)</code> で全てのタイルの取得が終わった後に、一括で処理を行なうことができます。</p>
@@ -506,25 +506,25 @@ Promise オブジェクトの配列 <code>tasks</code> を生成することで�
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">const</span> <span class="nx">tiles</span> <span class="o">=</span> <span class="p">[{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span> <span class="p">},</span> <span class="p">...,</span> <span class="p">{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span> <span class="p">}];</span>
-<span class="kr">const</span> <span class="nx">tasks</span> <span class="o">=</span> <span class="nx">tiles</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">tile</span> <span class="p">=&gt;</span> <span class="nx">fetchTile</span><span class="p">(</span><span class="nx">tile</span><span class="p">));</span>
-<span class="c1">// =&gt; Array [ Promise, Promise, ..., Promise ]
-</span><span class="c1"></span>
-<span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">tasks</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-    <span class="c1">// =&gt; Array [ features, [], features, features, [], ...]
-</span><span class="c1"></span>    
-    <span class="c1">// 二次元配列である data を一次元の配列 features に変換
-</span><span class="c1"></span>    <span class="kr">const</span> <span class="nx">features</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span>
-      <span class="p">(</span><span class="nx">accum</span><span class="p">,</span> <span class="nx">curr</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">[...</span><span class="nx">accum</span><span class="p">,</span> <span class="p">...</span><span class="nx">curr</span><span class="p">],</span> 
-      <span class="p">[]</span>
-    <span class="p">);</span>
-
-    <span class="k">return</span> <span class="nx">features</span><span class="p">;</span>
-    <span class="c1">// =&gt; Array [ feature, feature, ..., feature ]
-</span><span class="c1"></span>  <span class="p">});</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">tiles</span> <span class="o">=</span> <span class="p">[{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span> <span class="p">},</span> <span class="p">...,</span> <span class="p">{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span> <span class="p">}];</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">tasks</span> <span class="o">=</span> <span class="nx">tiles</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">tile</span> <span class="p">=&gt;</span> <span class="nx">fetchTile</span><span class="p">(</span><span class="nx">tile</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// =&gt; Array [ Promise, Promise, ..., Promise ]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">tasks</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// =&gt; Array [ features, [], features, features, [], ...]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 二次元配列である data を一次元の配列 features に変換
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">const</span> <span class="nx">features</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nx">accum</span><span class="p">,</span> <span class="nx">curr</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">[...</span><span class="nx">accum</span><span class="p">,</span> <span class="p">...</span><span class="nx">curr</span><span class="p">],</span> 
+</span></span><span class="line"><span class="cl">      <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">features</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// =&gt; Array [ feature, feature, ..., feature ]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">});</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><a href="https://cieloazul310.github.io/2018/04/stadium-and-population/">国内のサッカースタジアム周辺の人口を求める</a>という記事では、上記の方法で人口データの入ったバイナリベクトルタイルを取得し、<a href="http://turfjs.org/">Turf.js</a> を使って距離円との演算を行いました。</p>
 <h2 id="参照">参照</h2>
@@ -736,7 +736,7 @@ Promise オブジェクトの配列 <code>tasks</code> を生成することで�
     &copy;
     
       2017 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">

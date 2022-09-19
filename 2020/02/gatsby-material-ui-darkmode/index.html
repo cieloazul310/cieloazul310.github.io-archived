@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.102.3" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2020/02/gatsby-material-ui-darkmode/" />
@@ -68,7 +68,7 @@
 <meta itemprop="name" content="Gatsby &#43; Material-UI ダークモード実装方法">
 <meta itemprop="description" content="Gatsby &#43; Material-UI のプロジェクトに React コンテクストとカスタムフックを利用したダークモードの実装方法"><meta itemprop="datePublished" content="2020-02-09T17:00:00+09:00" />
 <meta itemprop="dateModified" content="2020-02-09T17:00:00+09:00" />
-<meta itemprop="wordCount" content="3809"><meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+<meta itemprop="wordCount" content="3799"><meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 <meta itemprop="keywords" content="ダークモード,React,Reactコンテクスト,Reactフック,Material-UI," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
@@ -351,11 +351,11 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">curl https://codeload.github.com/mui-org/material-ui/tar.gz/master <span class="p">|</span> tar -xz --strip<span class="o">=</span><span class="m">2</span>  material-ui-master/examples/gatsby
-mv gatsby <span class="o">[</span>新しいプロジェクト名<span class="o">]</span>
-<span class="nb">cd</span> <span class="o">[</span>新しいプロジェクト名<span class="o">]</span>
-yarn install
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl https://codeload.github.com/mui-org/material-ui/tar.gz/master <span class="p">|</span> tar -xz --strip<span class="o">=</span><span class="m">2</span>  material-ui-master/examples/gatsby
+</span></span><span class="line"><span class="cl">mv gatsby <span class="o">[</span>新しいプロジェクト名<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> <span class="o">[</span>新しいプロジェクト名<span class="o">]</span>
+</span></span><span class="line"><span class="cl">yarn install
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="バージョン">バージョン</h3>
 <div class="highlight"><div class="chroma">
@@ -365,10 +365,10 @@ yarn install
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt">- react@16.12.0
-- gatsby@2.19.12
-- @material-ui/core@4.9.1
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">- react@16.12.0
+</span></span><span class="line"><span class="cl">- gatsby@2.19.12
+</span></span><span class="line"><span class="cl">- @material-ui/core@4.9.1
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="gatsby-plugin-top-layout-について"><code>gatsby-plugin-top-layout</code> について</h3>
 <p>Material-UI 公式による Gatsby example では、プロジェクト内の plugins ディレクトリに <a href="https://github.com/mui-org/material-ui/tree/master/examples/gatsby/plugins/gatsby-plugin-top-layout"><code>gatsby-plugin-top-layout</code></a> という自作プラグインが組み込まれています。</p>
@@ -390,18 +390,18 @@ yarn install
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// plugins/gatsby-plugin-top-layout/TopLayout.js
-</span><span class="c1"></span><span class="kd">function</span> <span class="nx">TopLayout</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">React.Fragment</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">ThemeProvider</span> <span class="na">theme</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}&gt;</span>
-        <span class="p">&lt;</span><span class="nt">CssBaseline</span> <span class="p">/&gt;</span> <span class="c1">// normarize.css のようなもの
-</span><span class="c1"></span>        <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span> <span class="c1">// =&gt; ここで mui コンポーネントが使える
-</span><span class="c1"></span>      <span class="p">&lt;/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">React.Fragment</span><span class="p">&gt;</span>
-  <span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// plugins/gatsby-plugin-top-layout/TopLayout.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">TopLayout</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">React.Fragment</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">ThemeProvider</span> <span class="na">theme</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">CssBaseline</span> <span class="p">/&gt;</span> <span class="c1">// normarize.css のようなもの
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span> <span class="c1">// =&gt; ここで mui コンポーネントが使える
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="p">&lt;/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">React.Fragment</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>参考<br>
 <a href="https://material-ui.com/customization/theming/">Theming - Material-UI</a></p>
@@ -417,12 +417,12 @@ yarn install
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">createMuiTheme</span><span class="p">({</span>
-  <span class="nx">palette</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;dark&#39;</span> <span class="c1">// &#39;light&#39;(default) or &#39;dark&#39;
-</span><span class="c1"></span>  <span class="p">}</span>
-<span class="p">});</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">createMuiTheme</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">palette</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;dark&#39;</span> <span class="c1">// &#39;light&#39;(default) or &#39;dark&#39;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>参考<br>
 <a href="https://material-ui.com/customization/palette/">Palette - Material-UI</a></p>
@@ -489,33 +489,33 @@ yarn install
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// src/themeReducer.js
-</span><span class="c1"></span><span class="cm">/** TypeScript を使う場合
-</span><span class="cm"> *  
-</span><span class="cm"> *  export interface ThemeState {
-</span><span class="cm"> *    darkMode: boolean;
-</span><span class="cm"> *  }
-</span><span class="cm"> *  export type Action = { type: &#39;TOGGLE_DARKMODE&#39; };
-</span><span class="cm"> */</span>
-
-<span class="c1">// 初期ステートを定義
-</span><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">darkMode</span><span class="o">:</span> <span class="kc">false</span>
-<span class="p">};</span>
-
-<span class="c1">// リデューサの定義
-</span><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">themeReducer</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="s1">&#39;TOGGLE_DARKMODE&#39;</span><span class="o">:</span>
-      <span class="k">return</span> <span class="p">{</span>
-        <span class="p">...</span><span class="nx">state</span><span class="p">,</span>
-        <span class="nx">darkMode</span><span class="o">:</span> <span class="o">!</span><span class="nx">state</span><span class="p">.</span><span class="nx">darkMode</span>
-      <span class="p">};</span>
-    <span class="k">default</span><span class="o">:</span>
-      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">();</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// src/themeReducer.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cm">/** TypeScript を使う場合
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *  
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *  export interface ThemeState {
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *    darkMode: boolean;
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *  }
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *  export type Action = { type: &#39;TOGGLE_DARKMODE&#39; };
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 初期ステートを定義
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">darkMode</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// リデューサの定義
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">themeReducer</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s1">&#39;TOGGLE_DARKMODE&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span><span class="nx">state</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">darkMode</span><span class="o">:</span> <span class="o">!</span><span class="nx">state</span><span class="p">.</span><span class="nx">darkMode</span>
+</span></span><span class="line"><span class="cl">      <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">default</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="2-作成-srcdispatchcontextjs">2. 作成: <code>src/DispatchContext.js</code></h4>
 <p><a href="https://ja.reactjs.org/docs/context.html" title="コンテクスト - React">コンテクスト</a>と<a href="https://ja.reactjs.org/docs/hooks-custom.html" title="カスタムフックの作成 - React">カスタムフック</a>の作成をおこないます。</p>
@@ -544,28 +544,28 @@ yarn install
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// src/DispatchContext.js
-</span><span class="c1"></span><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-
-<span class="cm">/** TypeScript を使う場合
-</span><span class="cm"> *
-</span><span class="cm"> *  import { Action } from &#39;./themeReducer&#39;;
-</span><span class="cm"> *  
-</span><span class="cm"> *  const DispatchContext =
-</span><span class="cm"> *  React.createContext&lt;React.Dispatch&lt;Action&gt;&gt;(...)
-</span><span class="cm"> */</span>
-
-<span class="c1">// コンテクストの作成
-</span><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">DispatchContext</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createContext</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">();</span>
-<span class="p">});</span>
-
-<span class="c1">// カスタムフックの作成
-</span><span class="c1"></span><span class="kr">export</span> <span class="kd">function</span> <span class="nx">useToggleDarkMode</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">dispatch</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useContext</span><span class="p">(</span><span class="nx">DispatchContext</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useCallback</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">dispatch</span><span class="p">({</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;TOGGLE_DARKMODE&#39;</span> <span class="p">}),</span> <span class="p">[</span><span class="nx">dispatch</span><span class="p">]);</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// src/DispatchContext.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/** TypeScript を使う場合
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *  import { Action } from &#39;./themeReducer&#39;;
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *  
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *  const DispatchContext =
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *  React.createContext&lt;React.Dispatch&lt;Action&gt;&gt;(...)
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// コンテクストの作成
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">DispatchContext</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createContext</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// カスタムフックの作成
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kd">function</span> <span class="nx">useToggleDarkMode</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">dispatch</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useContext</span><span class="p">(</span><span class="nx">DispatchContext</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useCallback</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">dispatch</span><span class="p">({</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;TOGGLE_DARKMODE&#39;</span> <span class="p">}),</span> <span class="p">[</span><span class="nx">dispatch</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><a href="https://ja.reactjs.org/docs/context.html" title="コンテクスト - React">コンテクスト</a> については解説を省きます。なんせ自分も今回初めて使ったものですから。詳しくは React 公式のドキュメントをお読みください。</p>
 <p>参考<br>
@@ -635,60 +635,60 @@ yarn install
 </span><span class="lnt">53
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// plugins/gatsby-plugin-top-layout/TopLayout.js
-</span><span class="c1"></span><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">PropTypes</span> <span class="nx">from</span> <span class="s1">&#39;prop-types&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Helmet</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-helmet&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">CssBaseline</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/CssBaseline&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">ThemeProvider</span><span class="p">,</span> <span class="nx">createMuiTheme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles&#39;</span><span class="p">;</span>
-
-<span class="kr">import</span> <span class="nx">initialTheme</span> <span class="nx">from</span> <span class="s1">&#39;../../src/theme&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">themeReducer</span><span class="p">,</span> <span class="nx">initialState</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../src/themeReducer&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">DispatchContext</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../src/DispatchContext&#39;</span><span class="p">;</span>
-
-<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">TopLayout</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// React.useReducer でリデューサの導入
-</span><span class="c1"></span>  <span class="kr">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">]</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useReducer</span><span class="p">(</span><span class="nx">themeReducer</span><span class="p">,</span> <span class="nx">initialState</span><span class="p">);</span>
-  <span class="kr">const</span> <span class="p">{</span> <span class="nx">darkMode</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">state</span><span class="p">;</span>
-  <span class="c1">// React.useMemo でステートに応じた theme を作成
-</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useMemo</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">createMuiTheme</span><span class="p">({</span>
-      <span class="p">...</span><span class="nx">initialTheme</span><span class="p">,</span>
-      <span class="nx">palette</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">darkMode</span> <span class="o">?</span> <span class="s1">&#39;dark&#39;</span> <span class="o">:</span> <span class="s1">&#39;light&#39;</span><span class="p">,</span>
-        <span class="nx">primary</span><span class="o">:</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">,</span>
-        <span class="nx">secondary</span><span class="o">:</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">secondary</span><span class="p">,</span>
-      <span class="p">}</span>
-    <span class="p">});</span>
-  <span class="p">},</span> <span class="p">[</span><span class="nx">darkMode</span><span class="p">]);</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">React.Fragment</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">Helmet</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">meta</span>
-          <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span>
-          <span class="na">content</span><span class="o">=</span><span class="s">&#34;minimum-scale=1, initial-scale=1, width=device-width&#34;</span>
-        <span class="p">/&gt;</span>
-        <span class="p">&lt;</span><span class="nt">link</span>
-          <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;display=swap&#34;</span>
-          <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span>
-        <span class="p">/&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">Helmet</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">ThemeProvider</span> <span class="na">theme</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}&gt;</span>
-        <span class="p">&lt;</span><span class="nt">CssBaseline</span> <span class="p">/&gt;</span>
-        <span class="p">{</span><span class="cm">/* DispatchContext.Provider を挿入 */</span><span class="p">}</span>
-        <span class="p">&lt;</span><span class="nt">DispatchContext.Provider</span> <span class="na">value</span><span class="o">=</span><span class="p">{</span><span class="nx">dispatch</span><span class="p">}&gt;</span>
-          <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span>
-        <span class="p">&lt;/</span><span class="nt">DispatchContext.Provider</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">React.Fragment</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="nx">TopLayout</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">children</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">node</span><span class="p">,</span>
-<span class="p">};</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// plugins/gatsby-plugin-top-layout/TopLayout.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">PropTypes</span> <span class="nx">from</span> <span class="s1">&#39;prop-types&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Helmet</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-helmet&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">CssBaseline</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/CssBaseline&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ThemeProvider</span><span class="p">,</span> <span class="nx">createMuiTheme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">initialTheme</span> <span class="nx">from</span> <span class="s1">&#39;../../src/theme&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">themeReducer</span><span class="p">,</span> <span class="nx">initialState</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../src/themeReducer&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">DispatchContext</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../src/DispatchContext&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">TopLayout</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// React.useReducer でリデューサの導入
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">]</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useReducer</span><span class="p">(</span><span class="nx">themeReducer</span><span class="p">,</span> <span class="nx">initialState</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">darkMode</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">state</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// React.useMemo でステートに応じた theme を作成
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useMemo</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">createMuiTheme</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="p">...</span><span class="nx">initialTheme</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">palette</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">darkMode</span> <span class="o">?</span> <span class="s1">&#39;dark&#39;</span> <span class="o">:</span> <span class="s1">&#39;light&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">primary</span><span class="o">:</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">secondary</span><span class="o">:</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">secondary</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span> <span class="p">[</span><span class="nx">darkMode</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">React.Fragment</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Helmet</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">meta</span>
+</span></span><span class="line"><span class="cl">          <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="na">content</span><span class="o">=</span><span class="s">&#34;minimum-scale=1, initial-scale=1, width=device-width&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">link</span>
+</span></span><span class="line"><span class="cl">          <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;display=swap&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">Helmet</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">ThemeProvider</span> <span class="na">theme</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">CssBaseline</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="cm">/* DispatchContext.Provider を挿入 */</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">DispatchContext.Provider</span> <span class="na">value</span><span class="o">=</span><span class="p">{</span><span class="nx">dispatch</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">DispatchContext.Provider</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">React.Fragment</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">TopLayout</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">children</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">node</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li><a href="https://ja.reactjs.org/docs/hooks-reference.html#usereducer" title="useReducer - React"><code>React.useReducer</code></a> を使って <code>&lt;TopLayout&gt;</code> にステートを作成</li>
@@ -710,8 +710,8 @@ yarn install
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">yarn add @material-ui/icons
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">yarn add @material-ui/icons
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -739,29 +739,29 @@ yarn install
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// src/components/DarkModeButton.js
-</span><span class="c1"></span><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">IconButton</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/IconButton&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">useTheme</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/useTheme&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">Brightness4</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/icons/Brightness4&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">Brightness5</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/icons/Brightness5&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">useToggleDarkMode</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../themeReducer&#39;</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">DarkModeButton</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// パレットタイプを取得
-</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">paletteType</span> <span class="o">=</span> <span class="nx">useTheme</span><span class="p">().</span><span class="nx">palette</span><span class="p">.</span><span class="nx">type</span><span class="p">;</span>
-  <span class="c1">// パレットタイプ切り替えのフックを使用
-</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">_toggleDarkMode</span> <span class="o">=</span> <span class="nx">useToggleDarkMode</span><span class="p">();</span>
-  
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">IconButton</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">_toggleDarkMode</span><span class="p">}</span> <span class="p">{</span><span class="na">...props</span><span class="p">}&gt;</span>
-      <span class="p">{</span><span class="nx">paletteType</span> <span class="o">===</span> <span class="s1">&#39;dark&#39;</span> <span class="o">?</span> <span class="p">&lt;</span><span class="nt">Brightness5</span> <span class="p">/&gt;</span> <span class="o">:</span> <span class="p">&lt;</span><span class="nt">Brightness4</span> <span class="p">/&gt;}</span>
-    <span class="p">&lt;/</span><span class="nt">IconButton</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">DarkModeButton</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// src/components/DarkModeButton.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">IconButton</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/IconButton&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">useTheme</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/useTheme&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Brightness4</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/icons/Brightness4&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Brightness5</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/icons/Brightness5&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">useToggleDarkMode</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../themeReducer&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">DarkModeButton</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// パレットタイプを取得
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">paletteType</span> <span class="o">=</span> <span class="nx">useTheme</span><span class="p">().</span><span class="nx">palette</span><span class="p">.</span><span class="nx">type</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// パレットタイプ切り替えのフックを使用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">_toggleDarkMode</span> <span class="o">=</span> <span class="nx">useToggleDarkMode</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">IconButton</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">_toggleDarkMode</span><span class="p">}</span> <span class="p">{</span><span class="na">...props</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="nx">paletteType</span> <span class="o">===</span> <span class="s1">&#39;dark&#39;</span> <span class="o">?</span> <span class="p">&lt;</span><span class="nt">Brightness5</span> <span class="p">/&gt;</span> <span class="o">:</span> <span class="p">&lt;</span><span class="nt">Brightness4</span> <span class="p">/&gt;}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">IconButton</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">DarkModeButton</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Material-UI の <code>MuiTheme</code> もコンテクストです。<code>useTheme</code> というカスタムフックでどのコンポーネントからでも <code>MuiTheme</code> を取得できます。現在のパレットタイプ取得には <code>useTheme</code> フックを使います。<br>
 ここで定義した <code>_toggleDarkMode</code> という変数は、パレットタイプ切り替えを実行するコールバック関数です。</p>
@@ -801,23 +801,23 @@ yarn install
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// plugins/gatsby-plugin-top-layout/TopLayout.js
-</span><span class="c1"></span>
-<span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useMemo</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">createMuiTheme</span><span class="p">({</span>
-      <span class="p">...</span><span class="nx">initialTheme</span><span class="p">,</span>
-      <span class="nx">palette</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">darkMode</span> <span class="o">?</span> <span class="s1">&#39;dark&#39;</span> <span class="o">:</span> <span class="s1">&#39;light&#39;</span><span class="p">,</span>
-        <span class="nx">primary</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">main</span><span class="o">:</span> <span class="nx">darkMode</span> <span class="o">?</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">[</span><span class="mi">300</span><span class="p">]</span> <span class="o">:</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">.</span><span class="nx">main</span>
-        <span class="p">},</span>
-        <span class="nx">secondary</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">main</span><span class="o">:</span> <span class="nx">darkMode</span> <span class="o">?</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">secondary</span><span class="p">[</span><span class="mi">300</span><span class="p">]</span> <span class="o">:</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">secondary</span><span class="p">.</span><span class="nx">main</span>
-        <span class="p">},</span>
-      <span class="p">}</span>
-    <span class="p">});</span>
-  <span class="p">},</span> <span class="p">[</span><span class="nx">darkMode</span><span class="p">]);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// plugins/gatsby-plugin-top-layout/TopLayout.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useMemo</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">createMuiTheme</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="p">...</span><span class="nx">initialTheme</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">palette</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">darkMode</span> <span class="o">?</span> <span class="s1">&#39;dark&#39;</span> <span class="o">:</span> <span class="s1">&#39;light&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">primary</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">main</span><span class="o">:</span> <span class="nx">darkMode</span> <span class="o">?</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">[</span><span class="mi">300</span><span class="p">]</span> <span class="o">:</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">.</span><span class="nx">main</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">secondary</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">main</span><span class="o">:</span> <span class="nx">darkMode</span> <span class="o">?</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">secondary</span><span class="p">[</span><span class="mi">300</span><span class="p">]</span> <span class="o">:</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">secondary</span><span class="p">.</span><span class="nx">main</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span> <span class="p">[</span><span class="nx">darkMode</span><span class="p">]);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>参考<br>
 <a href="https://material-ui.com/customization/color/">Color - Material-UI</a></p>
@@ -1050,7 +1050,7 @@ yarn install
     &copy;
     
       2017 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">

@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.102.3" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2021/02/openlayers-v6-blend-and-filter/" />
@@ -68,7 +68,7 @@
 <meta itemprop="name" content="OpenLayers で地図をグレースケールにしたり乗算合成したり">
 <meta itemprop="description" content="OpenLayers で地図をグレースケールにしたり乗算合成したりする方法です。"><meta itemprop="datePublished" content="2021-02-01T20:00:00+09:00" />
 <meta itemprop="dateModified" content="2021-02-01T20:00:00+09:00" />
-<meta itemprop="wordCount" content="511"><meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
+<meta itemprop="wordCount" content="501"><meta itemprop="image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 <meta itemprop="keywords" content="OpenLayers,地図," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cieloazul310.github.io/img/ogp2.png"/>
 
@@ -354,18 +354,18 @@ if (!doNotTrack) {
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">TileLayer</span> <span class="nx">from</span> <span class="s1">&#39;ol/layer/Tile&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">XYZSource</span> <span class="nx">from</span> <span class="s1">&#39;ol/source/XYZ&#39;</span><span class="p">;</span>
-
-<span class="c1">// 地理院標準タイル
-</span><span class="c1"></span><span class="kr">const</span> <span class="nx">layer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TileLayer</span><span class="p">({</span>
-  <span class="nx">className</span><span class="o">:</span> <span class="s1">&#39;hoge&#39;</span><span class="p">,</span> <span class="c1">// className を設定
-</span><span class="c1"></span>  <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">XYZSource</span><span class="p">({</span>
-    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;https://cyberjapandata.gsi.go.jp/xyz/cjstd/{z}/{x}/{y}.png&#39;</span><span class="p">,</span>
-    <span class="nx">attribution</span><span class="o">:</span> <span class="s1">&#39;国土地理院&#39;</span><span class="p">,</span>
-  <span class="p">}),</span>
-<span class="p">});</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">TileLayer</span> <span class="nx">from</span> <span class="s1">&#39;ol/layer/Tile&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">XYZSource</span> <span class="nx">from</span> <span class="s1">&#39;ol/source/XYZ&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 地理院標準タイル
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">layer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TileLayer</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">className</span><span class="o">:</span> <span class="s1">&#39;hoge&#39;</span><span class="p">,</span> <span class="c1">// className を設定
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">XYZSource</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;https://cyberjapandata.gsi.go.jp/xyz/cjstd/{z}/{x}/{y}.png&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">attribution</span><span class="o">:</span> <span class="s1">&#39;国土地理院&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}),</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="css">CSS</h3>
 <div class="highlight"><div class="chroma">
@@ -376,11 +376,11 @@ if (!doNotTrack) {
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">hoge</span> <span class="p">{</span>
-  <span class="k">mix-blend-mode</span><span class="p">:</span> <span class="kc">multiply</span><span class="p">;</span>
-  <span class="k">filter</span><span class="p">:</span> <span class="nf">grayScale</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">hoge</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">mix-blend-mode</span><span class="p">:</span> <span class="kc">multiply</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">filter</span><span class="p">:</span> <span class="nf">grayScale</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>以上！</p>
 <p>レイヤに className を設定し、CSS で <a href="https://developer.mozilla.org/ja/docs/Web/CSS/mix-blend-mode">mix-blend-mode</a> や <a href="https://developer.mozilla.org/ja/docs/Web/CSS/filter">filter</a> を設定することで、地図の乗算合成やグレースケール化などが簡潔に実装できます。</p>
@@ -419,18 +419,18 @@ if (!doNotTrack) {
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// v5 以前は layer.on(&#39;precompose&#39;, (event) =&gt; {});
-</span><span class="c1"></span><span class="nx">layer</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;prerender&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// 乗算合成
-</span><span class="c1"></span>  <span class="nx">event</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">globalCompositeOperation</span> <span class="o">=</span> <span class="s1">&#39;multiply&#39;</span><span class="p">;</span>
-<span class="p">});</span>
-
-<span class="c1">// v5 以前は layer.on(&#39;postcompose&#39;, (event) =&gt; {});
-</span><span class="c1"></span><span class="nx">layer</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;postrender&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// 元に戻す
-</span><span class="c1"></span>  <span class="nx">event</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">globalCompositeOperation</span> <span class="o">=</span> <span class="s1">&#39;source-over&#39;</span><span class="p">;</span>
-<span class="p">});</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// v5 以前は layer.on(&#39;precompose&#39;, (event) =&gt; {});
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">layer</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;prerender&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 乗算合成
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">event</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">globalCompositeOperation</span> <span class="o">=</span> <span class="s1">&#39;multiply&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// v5 以前は layer.on(&#39;postcompose&#39;, (event) =&gt; {});
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">layer</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;postrender&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 元に戻す
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">event</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">globalCompositeOperation</span> <span class="o">=</span> <span class="s1">&#39;source-over&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><!-- raw HTML omitted -->
 <p>
@@ -628,7 +628,7 @@ So We Won&rsquo;t Forget / Khruangbin (2020)</p>
     &copy;
     
       2017 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">
