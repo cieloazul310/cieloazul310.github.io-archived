@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Mon, 19 Sep 2022 21:00:00 +0900</lastBuildDate><atom:link href="https://cieloazul310.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Sep 2022 21:10:00 +0900</lastBuildDate><atom:link href="https://cieloazul310.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ol-gsi-vt 技術面のメモ</title>
+      <link>https://cieloazul310.github.io/2022/09/ol-gsi-vt-tech/</link>
+      <pubDate>Fri, 30 Sep 2022 21:10:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2022/09/ol-gsi-vt-tech/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;http://openlayers.org/&#34; title=&#34;OpenLayers&#34;&gt;OpenLayers&lt;/a&gt; で国土地理院のベクトルタイルを簡単に表示するパッケージ &lt;code&gt;@cieloazul310/ol-gsi-vt&lt;/code&gt; の作成に関する技術面のメモです。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>国土地理院のベクトルタイルを手軽にOpenLayersで表示するパッケージを作成しました</title>
       <link>https://cieloazul310.github.io/2022/09/ol-gsi-vt/</link>
