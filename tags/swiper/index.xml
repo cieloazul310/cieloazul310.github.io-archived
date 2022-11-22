@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Swiper on 水戸地図</title>
+    <link>https://cieloazul310.github.io/tags/swiper/</link>
+    <description>Recent content in Swiper on 水戸地図</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>cieloazul310</copyright>
+    <lastBuildDate>Tue, 22 Nov 2022 22:30:00 +0900</lastBuildDate><atom:link href="https://cieloazul310.github.io/tags/swiper/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>react-swipeable-views から Swiper への移行</title>
+      <link>https://cieloazul310.github.io/2022/11/migration-from-react-swipeable-views-to-swiper/</link>
+      <pubDate>Tue, 22 Nov 2022 22:30:00 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2022/11/migration-from-react-swipeable-views-to-swiper/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://reactjs.org/&#34; title=&#34;React&#34;&gt;React&lt;/a&gt; でスワイプによるスライドの操作を実装するライブラリ &lt;a href=&#34;https://react-swipeable-views.com/&#34; title=&#34;react-swipeable-views&#34;&gt;react-swipeable-views&lt;/a&gt; が非推奨になりました。この記事では、&lt;a href=&#34;https://mui.com&#34; title=&#34;MUI&#34;&gt;MUI&lt;/a&gt; (旧 Material-UI) のドキュメントに掲載されている &lt;a href=&#34;https://mui.com/material-ui/react-tabs/#full-width&#34;&gt;react-swipeable-views を使ったコード&lt;/a&gt;を代替するライブラリ &lt;a href=&#34;https://swiperjs.com/&#34; title=&#34;Swiper&#34;&gt;Swiper&lt;/a&gt; に置き換えていきます。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
