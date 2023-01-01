@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.106.0" />
+<meta name="generator" content="Hugo 0.109.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/" />
@@ -40,7 +40,7 @@
 
 
 
-<link rel="icon" href="https://cieloazul310.github.io/favicon.ico" />
+<link rel="icon" href="/favicon.ico" />
 
 
 
@@ -52,7 +52,9 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.96618627414b80b49c5bcc3c7eb0bf291b1ac3313f1a54e7944fdbd571c109bc.css" integrity="sha256-lmGGJ0FLgLScW8w8frC/KRsawzE/GlTnlE/b1XHBCbw=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.53a61ff5f929838ea90da6a8209628ba026b336b363b70898efc84562ba4115b.css" integrity="sha256-U6Yf9fkpg46pDaaoIJYougJrM2s2O3CJjvyEViukEVs=" media="screen" crossorigin="anonymous">
+
+
 
 
 
@@ -64,7 +66,6 @@
 <meta property="og:url" content="https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/" /><meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2017-08-12T13:00:00+09:00" />
 <meta property="article:modified_time" content="2017-11-09T22:00:00+09:00" />
-
 <meta itemprop="name" content="バイナリベクトルタイルを作ってみた">
 <meta itemprop="description" content="1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました"><meta itemprop="datePublished" content="2017-08-12T13:00:00+09:00" />
 <meta itemprop="dateModified" content="2017-11-09T22:00:00+09:00" />
@@ -85,16 +86,16 @@
 <![endif]-->
 
 
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VE0MVTCH7K"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-74683419-3', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-VE0MVTCH7K', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -102,7 +103,7 @@ if (!doNotTrack) {
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+    <a href="/" class="logo">水戸地図</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -163,8 +164,8 @@ if (!doNotTrack) {
 
 
 
-  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.css" />
-  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/default-skin/default-skin.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
 
 
 
@@ -221,7 +222,7 @@ if (!doNotTrack) {
 
   <header id="header" class="header container">
     <div class="logo-wrapper">
-  <a href="https://cieloazul310.github.io/" class="logo">
+  <a href="/" class="logo">
     
       水戸地図
     
@@ -298,7 +299,7 @@ if (!doNotTrack) {
   </header>
 
   <div id="mobile-panel">
-    <main id="main" class="main bg-llight">
+    <main id="main" class="main bg-llight wallpaper">
       <div class="content-wrapper">
         <div id="content" class="content container">
           <article class="post bg-white">
@@ -306,26 +307,51 @@ if (!doNotTrack) {
     <header class="post-header">
       <h1 class="post-title">バイナリベクトルタイルを作ってみた</h1>
       
+
       <div class="post-meta">
-        <time datetime="2017-08-12" class="post-time">
-          2017-08-12
-        </time>
-        <div class="post-category">
-            <a href="https://cieloazul310.github.io/categories/gis/"> GIS </a>
-            
-          </div>
-        
+  <div class="post-meta-author">
+    by
+      cieloazul310
+    
+  </div>
 
-        
-        
+  <div class="post-meta-time">
+    <time datetime="2017-08-12">
+      2017-08-12
+    </time>
+  </div>
 
-        
-        
+  
+    <div class="post-meta-lastmod">
+      (LastMod:
+      2017-11-09)
+    </div>
+  
+
+
+  <div class="post-meta__right">
+    
+
+    <div class="post-meta-category">
+        <a href="https://cieloazul310.github.io/categories/gis/"> GIS </a>
+          
       </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
     </header>
 
     
     
+
 
     
     <div class="post-content">
@@ -339,12 +365,12 @@ if (!doNotTrack) {
 フォルダごと作業ディレクトリのどこかに放り込んでおきましょう。</p>
 <h3 id="2シェープファイルをgeojsonに変換">2.シェープファイルをGeoJSONに変換</h3>
 <p>一般的にはGDALの<a href="http://www.gdal.org/ogr2ogr.html">ogr2ogr</a>を使う場面だと思いますが、より楽な<a href="https://github.com/mbostock/shapefile#command-line-reference">shp2json</a>を使いました。npmでサクッとインストールできるので、D3.js、特にTopoJSON関連を使うなら導入して損はないと思います。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">  $ shp2json --encoding Shift-JIS source.shp &gt; output.geojson
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Shell" data-lang="Shell"><span style="display:flex;"><span>  $ shp2json --encoding Shift-JIS source.shp &gt; output.geojson
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>国土数値情報はShift-JISで提供されているので、<code>--encoding Shift-JIS</code>を忘れずに。</p>
@@ -354,24 +380,24 @@ if (!doNotTrack) {
 <p>tippecanoeのオプションですが、基本的には「作り方」の例に従っています。<code>-r</code>オプションで設定するレートも、数値ではなく<code>-rg</code>オプションにしました。実用的なものを作る場合は適切なレートを設定した方がいいと思います。要検証。</p>
 <p>入力が先述の<a href="http://ndjson.org/">ndjson</a>形式の場合は<code>-P</code>オプションをつけます。</p>
 <p>下記のように、<code>-L</code>オプションを使うことで複数のデータをレイヤーとして一つのmbtilesファイルにまとめることもできます。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">  $ tippecanoe -L hoge:./data/hoge.json -L fuga:./data/fuga.json -o output.mbtiles
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Shell" data-lang="Shell"><span style="display:flex;"><span>  $ tippecanoe -L hoge:./data/hoge.json -L fuga:./data/fuga.json -o output.mbtiles
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>tippecanoe</code>の公式ドキュメントはもう少しちゃんと読んでおきたいです。</p>
 <h3 id="4mbutilを使ってpbfファイルへ展開">4.mbutilを使ってpbfファイルへ展開</h3>
 <p><a href="https://github.com/mapbox/mbutil">mbutil</a>は<a href="https://www.mapbox.com/help/define-mbtiles/">MBTiles</a>とタイルを構成するディレクトリの相互変換を行うツールです。「作り方」ではeasy_installでしたがpipを使ってインストールしました。
 拡張子は「作り方」でも言及されていたように、.pbfではなく**.mvt**としました。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">  $ find . -type f -exec mv -v <span class="s1">&#39;{}&#39;</span> <span class="s1">&#39;{}&#39;</span>.mvt <span class="se">\;</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Shell" data-lang="Shell"><span style="display:flex;"><span>  $ find . -type f -exec mv -v <span style="color:#d14">&#39;{}&#39;</span> <span style="color:#d14">&#39;{}&#39;</span>.mvt <span style="color:#d14">\;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>これで、mbutilで指定したディレクトリにmvtという拡張子がついたファイルが入ったフォルダが出来ているはずです。</p>
@@ -380,54 +406,54 @@ if (!doNotTrack) {
 <p>「作り方」の記事に則って<a href="http://leafletjs.com">Leaflet</a>を使用して表示します。
 ここで注意点が一つ。バイナリベクトルタイルの表示に使用する<a href="https://github.com/SpatialServer/Leaflet.MapboxVectorTile/">Leaflet.MapboxVectorTileプラグイン</a>はLeaflet v1.0.0以降のバージョンでは動きません。ガーン。
 また、上記のデモでも実証されるように、地物の数が多すぎるタイルは読み込んでくれませんでした（タイルの欠損があるわけではないはず）。この辺の閾値なども調べていきたいです。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-16">16</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-17">17</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-18">18</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-19">19</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-20">20</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-21">21</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-22">22</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">schools</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">L</span><span class="p">.</span><span class="nx">TileLayer</span><span class="p">.</span><span class="nx">MVTSource</span><span class="p">({</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">url</span><span class="o">:</span> <span class="s2">&#34;./tile/schools/&#34;</span> <span class="o">+</span> <span class="s2">&#34;{z}/{x}/{y}.mvt&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">maxZoom</span><span class="o">:</span> <span class="mi">18</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">maxNativeZoom</span><span class="o">:</span> <span class="mi">15</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">attribution</span><span class="o">:</span> <span class="s1">&#39;&lt;a href=&#34;http://nlftp.mlit.go.jp/ksj/&#34; target=&#34;_blank&#34;&gt;国土数値情報（学校）&lt;/a&gt;&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">mutexToggle</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">getIDForLayerFeature</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">feature</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_001</span> <span class="o">+</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_005</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">onClick</span><span class="o">:</span> <span class="nx">hoveronFeature</span><span class="p">,</span> <span class="c1">//別途設定した関数
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">style</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">feature</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">      <span class="kd">let</span> <span class="nx">color</span> <span class="o">=</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16001&#34;</span> <span class="o">?</span> <span class="s2">&#34;yellow&#34;</span> <span class="o">:</span>
-</span></span><span class="line"><span class="cl">                  <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16002&#34;</span> <span class="o">?</span> <span class="s2">&#34;gold&#34;</span> <span class="o">:</span>
-</span></span><span class="line"><span class="cl">                  <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16003&#34;</span> <span class="o">?</span> <span class="s2">&#34;#aca777&#34;</span> <span class="o">:</span>
-</span></span><span class="line"><span class="cl">                  <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16004&#34;</span> <span class="o">?</span> <span class="s2">&#34;#ff963e&#34;</span> <span class="o">:</span>
-</span></span><span class="line"><span class="cl">                  <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16005&#34;</span> <span class="o">?</span> <span class="s2">&#34;#ac815c&#34;</span> <span class="o">:</span>
-</span></span><span class="line"><span class="cl">                  <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16006&#34;</span> <span class="o">?</span> <span class="s2">&#34;#78109d&#34;</span> <span class="o">:</span>
-</span></span><span class="line"><span class="cl">                  <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">P29_004</span> <span class="o">===</span> <span class="s2">&#34;16007&#34;</span> <span class="o">?</span> <span class="s2">&#34;#d90096&#34;</span> <span class="o">:</span> <span class="s2">&#34;#3f9386&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="nx">color</span><span class="p">,</span> <span class="nx">radius</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span> <span class="nx">selected</span><span class="o">:</span> <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s2">&#34;red&#34;</span><span class="p">,</span> <span class="nx">radius</span><span class="o">:</span> <span class="mi">10</span><span class="p">}};</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">const</span> schools <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> L.TileLayer.MVTSource({
+</span></span><span style="display:flex;"><span>    url<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;./tile/schools/&#34;</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;{z}/{x}/{y}.mvt&#34;</span>,
+</span></span><span style="display:flex;"><span>    maxZoom<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">18</span>,
+</span></span><span style="display:flex;"><span>    maxNativeZoom<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">15</span>,
+</span></span><span style="display:flex;"><span>    attribution<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#39;&lt;a href=&#34;http://nlftp.mlit.go.jp/ksj/&#34; target=&#34;_blank&#34;&gt;国土数値情報（学校）&lt;/a&gt;&#39;</span>,
+</span></span><span style="display:flex;"><span>    mutexToggle<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">true</span>,
+</span></span><span style="display:flex;"><span>    getIDForLayerFeature<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">function</span>(feature){
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">return</span> feature.properties.P29_001 <span style="color:#000;font-weight:bold">+</span> feature.properties.P29_005;
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    onClick<span style="color:#000;font-weight:bold">:</span> hoveronFeature, <span style="color:#998;font-style:italic">//別途設定した関数
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>    style<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">function</span>(feature){
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">let</span> color <span style="color:#000;font-weight:bold">=</span> feature.properties.P29_004 <span style="color:#000;font-weight:bold">===</span> <span style="color:#d14">&#34;16001&#34;</span> <span style="color:#000;font-weight:bold">?</span> <span style="color:#d14">&#34;yellow&#34;</span> <span style="color:#000;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>                  feature.properties.P29_004 <span style="color:#000;font-weight:bold">===</span> <span style="color:#d14">&#34;16002&#34;</span> <span style="color:#000;font-weight:bold">?</span> <span style="color:#d14">&#34;gold&#34;</span> <span style="color:#000;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>                  feature.properties.P29_004 <span style="color:#000;font-weight:bold">===</span> <span style="color:#d14">&#34;16003&#34;</span> <span style="color:#000;font-weight:bold">?</span> <span style="color:#d14">&#34;#aca777&#34;</span> <span style="color:#000;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>                  feature.properties.P29_004 <span style="color:#000;font-weight:bold">===</span> <span style="color:#d14">&#34;16004&#34;</span> <span style="color:#000;font-weight:bold">?</span> <span style="color:#d14">&#34;#ff963e&#34;</span> <span style="color:#000;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>                  feature.properties.P29_004 <span style="color:#000;font-weight:bold">===</span> <span style="color:#d14">&#34;16005&#34;</span> <span style="color:#000;font-weight:bold">?</span> <span style="color:#d14">&#34;#ac815c&#34;</span> <span style="color:#000;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>                  feature.properties.P29_004 <span style="color:#000;font-weight:bold">===</span> <span style="color:#d14">&#34;16006&#34;</span> <span style="color:#000;font-weight:bold">?</span> <span style="color:#d14">&#34;#78109d&#34;</span> <span style="color:#000;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>                  feature.properties.P29_004 <span style="color:#000;font-weight:bold">===</span> <span style="color:#d14">&#34;16007&#34;</span> <span style="color:#000;font-weight:bold">?</span> <span style="color:#d14">&#34;#d90096&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;#3f9386&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">return</span> {color<span style="color:#000;font-weight:bold">:</span> color, radius<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">6</span>, selected<span style="color:#000;font-weight:bold">:</span> {color<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;red&#34;</span>, radius<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">10</span>}};
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  });
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>LeafletのMVTレイヤ設定の例です。<a href="https://github.com/SpatialServer/Leaflet.MapboxVectorTile/blob/master/docs/configuration.md">プラグインのドキュメント</a>によると、必須となるオプションは<code>url</code>、<code>getIDForLayerFeature</code>、<code>filter</code>のようです（ただしfilterオプションはなくても動く）。重要なのが<code>getIDForLayerFeature</code>で、これを設定しないと地物のスタイリングやクリックイベント時に正しい挙動をしてくれません。地物のプロパティに固有のidがある場合はそれを設定すればいいのですが、国土数値情報の学校データには存在しないので、行政区域コード（P29_001）に名称（P29_005）を繋げたものを設定しました。</p>
@@ -504,24 +530,27 @@ if (!doNotTrack) {
 </div>
 
 
+
     
     
+
 
     <footer class="post-footer">
       <div class="post-tags">
           <a href="https://cieloazul310.github.io/tags/javascript/">JavaScript</a>
-          <a href="https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/">地図</a>
-          <a href="https://cieloazul310.github.io/tags/%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%AB/">ベクトルタイル</a>
-          <a href="https://cieloazul310.github.io/tags/%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%AB/">バイナリベクトルタイル</a>
-          <a href="https://cieloazul310.github.io/tags/leaflet/">Leaflet</a>
-          <a href="https://cieloazul310.github.io/tags/openlayers/">OpenLayers</a>
-          
+            <a href="https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/">地図</a>
+            <a href="https://cieloazul310.github.io/tags/%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%AB/">ベクトルタイル</a>
+            <a href="https://cieloazul310.github.io/tags/%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%AB/">バイナリベクトルタイル</a>
+            <a href="https://cieloazul310.github.io/tags/leaflet/">Leaflet</a>
+            <a href="https://cieloazul310.github.io/tags/openlayers/">OpenLayers</a>
+            
         </div>
+
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="https://cieloazul310.github.io/2017/08/d3-arrow-function/">
+          <a class="prev" href="/2017/08/d3-arrow-function/">
             
             <i class="iconfont">
               <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -542,14 +571,16 @@ if (!doNotTrack) {
   
   
 
-  
-  
-
-  
 
   
   
 
+  
+
+  
+  
+
+  
   
 
   
@@ -576,13 +607,17 @@ if (!doNotTrack) {
       $('#load_disqus').remove();
     };
   </script>
-  <noscript>Please enable JavaScript to view the
+  <noscript
+    >Please enable JavaScript to view the
     <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
   </noscript>
   
-  </div>
+</div>
+
 
     
+
+  
 
   
 
@@ -626,7 +661,7 @@ if (!doNotTrack) {
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
@@ -642,7 +677,7 @@ if (!doNotTrack) {
     &copy;
     
       2017 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -680,13 +715,13 @@ if (!doNotTrack) {
     </div>
   </div>
   
-<script type="text/javascript" src="https://cieloazul310.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
 
 
 
 
-<script type="text/javascript" src="https://cieloazul310.github.io/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.fe83e11b4fbc9193d67e2c9db78bad21f8dc59fca0cacd8c1c3bb071bb16a852.js" integrity="sha256-/oPhG0&#43;8kZPWfiydt4utIfjcWfygys2MHDuwcbsWqFI=" crossorigin="anonymous"></script>
 
 
 
@@ -700,10 +735,12 @@ if (!doNotTrack) {
 
 
   
-    <script type="text/javascript" src="https://cieloazul310.github.io/js/load-photoswipe.js"></script>
-    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.js"></script>
-    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
   
+
+
 
 
 

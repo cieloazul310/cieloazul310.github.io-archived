@@ -14,7 +14,7 @@
       <pubDate>Mon, 23 Apr 2018 23:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2018/04/stadium-and-population/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;地域メッシュ統計のデータを用いて国内の主要サッカースタジアムの周辺人口を算出しました。&lt;/p&gt;</description>
     </item>
     
@@ -24,9 +24,11 @@
       <pubDate>Thu, 08 Feb 2018 22:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2018/02/mediawiki-api-coodinates/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+対象: 地理情報に明るいエンジニア
+目的: MediaWiki APIの使い方の学習と、ウィキ座標問題の周知
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;MediaWiki APIでWikipediaの記事から座標を取得する方法と、MediaWiki APIでWikipedia日本語記事の座標が取得できないことについての説明です。&lt;/p&gt;</description>
     </item>
     

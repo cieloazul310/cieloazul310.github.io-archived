@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.106.0" />
+<meta name="generator" content="Hugo 0.109.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2021/02/openlayers-v6-blend-and-filter/" />
@@ -40,7 +40,7 @@
 
 
 
-<link rel="icon" href="https://cieloazul310.github.io/favicon.ico" />
+<link rel="icon" href="/favicon.ico" />
 
 
 
@@ -52,7 +52,9 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.96618627414b80b49c5bcc3c7eb0bf291b1ac3313f1a54e7944fdbd571c109bc.css" integrity="sha256-lmGGJ0FLgLScW8w8frC/KRsawzE/GlTnlE/b1XHBCbw=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.53a61ff5f929838ea90da6a8209628ba026b336b363b70898efc84562ba4115b.css" integrity="sha256-U6Yf9fkpg46pDaaoIJYougJrM2s2O3CJjvyEViukEVs=" media="screen" crossorigin="anonymous">
+
+
 
 
 
@@ -64,7 +66,6 @@
 <meta property="og:url" content="https://cieloazul310.github.io/2021/02/openlayers-v6-blend-and-filter/" /><meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-02-01T20:00:00+09:00" />
 <meta property="article:modified_time" content="2021-02-01T20:00:00+09:00" />
-
 <meta itemprop="name" content="OpenLayers で地図をグレースケールにしたり乗算合成したり">
 <meta itemprop="description" content="OpenLayers で地図をグレースケールにしたり乗算合成したりする方法です。"><meta itemprop="datePublished" content="2021-02-01T20:00:00+09:00" />
 <meta itemprop="dateModified" content="2021-02-01T20:00:00+09:00" />
@@ -85,16 +86,16 @@
 <![endif]-->
 
 
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VE0MVTCH7K"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-74683419-3', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-VE0MVTCH7K', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -102,7 +103,7 @@ if (!doNotTrack) {
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+    <a href="/" class="logo">水戸地図</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -163,8 +164,8 @@ if (!doNotTrack) {
 
 
 
-  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.css" />
-  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/default-skin/default-skin.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
 
 
 
@@ -221,7 +222,7 @@ if (!doNotTrack) {
 
   <header id="header" class="header container">
     <div class="logo-wrapper">
-  <a href="https://cieloazul310.github.io/" class="logo">
+  <a href="/" class="logo">
     
       水戸地図
     
@@ -298,7 +299,7 @@ if (!doNotTrack) {
   </header>
 
   <div id="mobile-panel">
-    <main id="main" class="main bg-llight">
+    <main id="main" class="main bg-llight wallpaper">
       <div class="content-wrapper">
         <div id="content" class="content container">
           <article class="post bg-white">
@@ -306,32 +307,54 @@ if (!doNotTrack) {
     <header class="post-header">
       <h1 class="post-title">OpenLayers で地図をグレースケールにしたり乗算合成したり</h1>
       
+
       <div class="post-meta">
-        <time datetime="2021-02-01" class="post-time">
-          2021-02-01
-        </time>
-        <div class="post-category">
-            <a href="https://cieloazul310.github.io/categories/javascript/"> JavaScript </a>
-            
-          </div>
-        
+  <div class="post-meta-author">
+    by
+      cieloazul310
+    
+  </div>
 
-        
-        
+  <div class="post-meta-time">
+    <time datetime="2021-02-01">
+      2021-02-01
+    </time>
+  </div>
 
-        
-        
+  
+
+
+  <div class="post-meta__right">
+    
+
+    <div class="post-meta-category">
+        <a href="https://cieloazul310.github.io/categories/javascript/"> JavaScript </a>
+          
       </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
     </header>
 
     
     
 
+
     
     <div class="post-content">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <!--
+- 対象: 
+- 目的: 
+-->
+<!-- Lead Paragraph -->
 <p><a href="http://openlayers.org/" title="OpenLayers">OpenLayers</a> で地図をグレースケールにしたり、乗算合成する方法です。<br>
 この記事は <a href="https://qiita.com/cieloazul310/items/473300534e4e506ec0b9">OpenLayers v3 時代に一度書いていましたが</a>、<a href="https://github.com/openlayers/openlayers/releases/tag/v6.0.0">2019年11月にリリースされた v6</a> では CSS で実装可能になっていたので、メモとして残しておきます。</p>
 <p>デモページ (Observable)<br>
@@ -339,47 +362,47 @@ if (!doNotTrack) {
 <h2 id="v6-の実装方法">v6 の実装方法</h2>
 <p>v6 での実装は CSS で記述することができます。v5 以前のイベントによる実装に比べるととても簡単になりました。以下がサンプルコードです。</p>
 <h3 id="javascript">JavaScript</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-11">11</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">TileLayer</span> <span class="nx">from</span> <span class="s1">&#39;ol/layer/Tile&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">XYZSource</span> <span class="nx">from</span> <span class="s1">&#39;ol/source/XYZ&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 地理院標準タイル
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">layer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TileLayer</span><span class="p">({</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">className</span><span class="o">:</span> <span class="s1">&#39;hoge&#39;</span><span class="p">,</span> <span class="c1">// className を設定
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">XYZSource</span><span class="p">({</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;https://cyberjapandata.gsi.go.jp/xyz/cjstd/{z}/{x}/{y}.png&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">attribution</span><span class="o">:</span> <span class="s1">&#39;国土地理院&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}),</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> TileLayer from <span style="color:#d14">&#39;ol/layer/Tile&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> XYZSource from <span style="color:#d14">&#39;ol/source/XYZ&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 地理院標準タイル
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">const</span> layer <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> TileLayer({
+</span></span><span style="display:flex;"><span>  className<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#39;hoge&#39;</span>, <span style="color:#998;font-style:italic">// className を設定
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>  source<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">new</span> XYZSource({
+</span></span><span style="display:flex;"><span>    url<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#39;https://cyberjapandata.gsi.go.jp/xyz/cjstd/{z}/{x}/{y}.png&#39;</span>,
+</span></span><span style="display:flex;"><span>    attribution<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#39;国土地理院&#39;</span>,
+</span></span><span style="display:flex;"><span>  }),
+</span></span><span style="display:flex;"><span>});
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="css">CSS</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-4">4</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">hoge</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">mix-blend-mode</span><span class="p">:</span> <span class="kc">multiply</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="k">filter</span><span class="p">:</span> <span class="nf">grayScale</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#458;font-weight:bold">hoge</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">mix-blend-mode</span>: <span style="color:#000;font-weight:bold">multiply</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">filter</span>: <span style="color:#900;font-weight:bold">grayScale</span>(<span style="color:#099">1</span>);
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>以上！</p>
@@ -404,35 +427,35 @@ if (!doNotTrack) {
 <h2 id="v5-以前の書き方">v5 以前の書き方</h2>
 <p>v5 以前はレイヤにイベントを実装し、レイヤの描写時に canvas の <code>globalCompositeOperation</code> 属性をいじることでレイヤの乗算合成やグレースケール化が可能でした。<br>
 この方法はイベント名を <code>precompose</code> → <code>prerender</code>、<code>postcompose</code> → <code>postrender</code> に変更することで v6 でも利用することができます。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-11">11</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// v5 以前は layer.on(&#39;precompose&#39;, (event) =&gt; {});
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">layer</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;prerender&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 乗算合成
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">event</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">globalCompositeOperation</span> <span class="o">=</span> <span class="s1">&#39;multiply&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// v5 以前は layer.on(&#39;postcompose&#39;, (event) =&gt; {});
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">layer</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;postrender&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 元に戻す
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">event</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">globalCompositeOperation</span> <span class="o">=</span> <span class="s1">&#39;source-over&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// v5 以前は layer.on(&#39;precompose&#39;, (event) =&gt; {});
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>layer.on(<span style="color:#d14">&#39;prerender&#39;</span>, (event) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#998;font-style:italic">// 乗算合成
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>  event.context.globalCompositeOperation <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;multiply&#39;</span>;
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// v5 以前は layer.on(&#39;postcompose&#39;, (event) =&gt; {});
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>layer.on(<span style="color:#d14">&#39;postrender&#39;</span>, (event) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#998;font-style:italic">// 元に戻す
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>  event.context.globalCompositeOperation <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;source-over&#39;</span>;
+</span></span><span style="display:flex;"><span>});
 </span></span></code></pre></td></tr></table>
 </div>
-</div><!-- raw HTML omitted -->
+</div><!-- Music -->
 <p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/lo4KMGiy--Y" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
@@ -456,7 +479,7 @@ So We Won&rsquo;t Forget / Khruangbin (2020)</p>
     
   
 </div>
-<!-- raw HTML omitted -->
+<!-- References -->
     </div>
 
     
@@ -481,20 +504,23 @@ So We Won&rsquo;t Forget / Khruangbin (2020)</p>
 </div>
 
 
+
     
     
+
 
     <footer class="post-footer">
       <div class="post-tags">
           <a href="https://cieloazul310.github.io/tags/openlayers/">OpenLayers</a>
-          <a href="https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/">地図</a>
-          
+            <a href="https://cieloazul310.github.io/tags/%E5%9C%B0%E5%9B%B3/">地図</a>
+            
         </div>
+
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="https://cieloazul310.github.io/2021/02/rockman/">
+          <a class="prev" href="/2021/02/rockman/">
             
             <i class="iconfont">
               <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -508,7 +534,7 @@ So We Won&rsquo;t Forget / Khruangbin (2020)</p>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
-          <a class="next" href="https://cieloazul310.github.io/2021/01/stadiums-population/">
+          <a class="next" href="/2021/01/stadiums-population/">
             <span class="next-text nav-default">国内のサッカースタジアム周辺の人口を求める2021</span>
             <span class="prev-text nav-mobile">Next</span>
             
@@ -528,14 +554,16 @@ So We Won&rsquo;t Forget / Khruangbin (2020)</p>
   
   
 
-  
-  
-
-  
 
   
   
 
+  
+
+  
+  
+
+  
   
 
   
@@ -562,13 +590,17 @@ So We Won&rsquo;t Forget / Khruangbin (2020)</p>
       $('#load_disqus').remove();
     };
   </script>
-  <noscript>Please enable JavaScript to view the
+  <noscript
+    >Please enable JavaScript to view the
     <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
   </noscript>
   
-  </div>
+</div>
+
 
     
+
+  
 
   
 
@@ -612,7 +644,7 @@ So We Won&rsquo;t Forget / Khruangbin (2020)</p>
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
@@ -628,7 +660,7 @@ So We Won&rsquo;t Forget / Khruangbin (2020)</p>
     &copy;
     
       2017 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -666,13 +698,13 @@ So We Won&rsquo;t Forget / Khruangbin (2020)</p>
     </div>
   </div>
   
-<script type="text/javascript" src="https://cieloazul310.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
 
 
 
 
-<script type="text/javascript" src="https://cieloazul310.github.io/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.fe83e11b4fbc9193d67e2c9db78bad21f8dc59fca0cacd8c1c3bb071bb16a852.js" integrity="sha256-/oPhG0&#43;8kZPWfiydt4utIfjcWfygys2MHDuwcbsWqFI=" crossorigin="anonymous"></script>
 
 
 
@@ -686,10 +718,12 @@ So We Won&rsquo;t Forget / Khruangbin (2020)</p>
 
 
   
-    <script type="text/javascript" src="https://cieloazul310.github.io/js/load-photoswipe.js"></script>
-    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.js"></script>
-    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
   
+
+
 
 
 

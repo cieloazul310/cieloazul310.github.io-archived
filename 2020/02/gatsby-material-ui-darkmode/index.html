@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.106.0" />
+<meta name="generator" content="Hugo 0.109.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2020/02/gatsby-material-ui-darkmode/" />
@@ -40,7 +40,7 @@
 
 
 
-<link rel="icon" href="https://cieloazul310.github.io/favicon.ico" />
+<link rel="icon" href="/favicon.ico" />
 
 
 
@@ -52,7 +52,9 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.96618627414b80b49c5bcc3c7eb0bf291b1ac3313f1a54e7944fdbd571c109bc.css" integrity="sha256-lmGGJ0FLgLScW8w8frC/KRsawzE/GlTnlE/b1XHBCbw=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.53a61ff5f929838ea90da6a8209628ba026b336b363b70898efc84562ba4115b.css" integrity="sha256-U6Yf9fkpg46pDaaoIJYougJrM2s2O3CJjvyEViukEVs=" media="screen" crossorigin="anonymous">
+
+
 
 
 
@@ -64,7 +66,6 @@
 <meta property="og:url" content="https://cieloazul310.github.io/2020/02/gatsby-material-ui-darkmode/" /><meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-02-09T17:00:00+09:00" />
 <meta property="article:modified_time" content="2020-02-09T17:00:00+09:00" />
-
 <meta itemprop="name" content="Gatsby &#43; Material-UI ダークモード実装方法">
 <meta itemprop="description" content="Gatsby &#43; Material-UI のプロジェクトに React コンテクストとカスタムフックを利用したダークモードの実装方法"><meta itemprop="datePublished" content="2020-02-09T17:00:00+09:00" />
 <meta itemprop="dateModified" content="2020-02-09T17:00:00+09:00" />
@@ -85,16 +86,16 @@
 <![endif]-->
 
 
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VE0MVTCH7K"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-74683419-3', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-VE0MVTCH7K', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -102,7 +103,7 @@ if (!doNotTrack) {
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+    <a href="/" class="logo">水戸地図</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -163,8 +164,8 @@ if (!doNotTrack) {
 
 
 
-  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.css" />
-  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/default-skin/default-skin.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
 
 
 
@@ -221,7 +222,7 @@ if (!doNotTrack) {
 
   <header id="header" class="header container">
     <div class="logo-wrapper">
-  <a href="https://cieloazul310.github.io/" class="logo">
+  <a href="/" class="logo">
     
       水戸地図
     
@@ -298,7 +299,7 @@ if (!doNotTrack) {
   </header>
 
   <div id="mobile-panel">
-    <main id="main" class="main bg-llight">
+    <main id="main" class="main bg-llight wallpaper">
       <div class="content-wrapper">
         <div id="content" class="content container">
           <article class="post bg-white">
@@ -306,32 +307,54 @@ if (!doNotTrack) {
     <header class="post-header">
       <h1 class="post-title">Gatsby &#43; Material-UI ダークモード実装方法</h1>
       
+
       <div class="post-meta">
-        <time datetime="2020-02-09" class="post-time">
-          2020-02-09
-        </time>
-        <div class="post-category">
-            <a href="https://cieloazul310.github.io/categories/javascript/"> JavaScript </a>
-            
-          </div>
-        
+  <div class="post-meta-author">
+    by
+      cieloazul310
+    
+  </div>
 
-        
-        
+  <div class="post-meta-time">
+    <time datetime="2020-02-09">
+      2020-02-09
+    </time>
+  </div>
 
-        
-        
+  
+
+
+  <div class="post-meta__right">
+    
+
+    <div class="post-meta-category">
+        <a href="https://cieloazul310.github.io/categories/javascript/"> JavaScript </a>
+          
       </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
     </header>
 
     
     
 
+
     
     <div class="post-content">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <!--
+- 対象: 自分、Gatsby, Material-UI, React フックに一定の理解がある人
+- 目的: 自分向けの覚書 React Hooks の
+-->
+<!-- Lead Paragraph -->
 <p><a href="https://www.gatsbyjs.org" title="Gatsby">Gatsby</a> + <a href="https://material-ui.com" title="Material-UI">Material-UI</a> でダークモードを実装する方法です。<br>
 Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html" title="フックの導入 - React">React フック</a>に関するある程度の理解がある人向けの内容になります。</p>
 <h2 id="概要">概要</h2>
@@ -343,31 +366,31 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
 <h2 id="準備と前提知識">準備と前提知識</h2>
 <p>この記事では Material-UI 公式による Gatsby example をプロジェクト構成のベースとして最小限のコードでダークモードを実装します。
 既存のプロジェクトを持っている人はこのプロジェクト構成に合致しているか確かめて(特に後述する <code>gatsby-plugin-top-layout</code> を使っているかどうか)、ここから始める人は Gatsby example を 手順に従ってダウンロードしてください。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-4">4</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl https://codeload.github.com/mui-org/material-ui/tar.gz/master <span class="p">|</span> tar -xz --strip<span class="o">=</span><span class="m">2</span>  material-ui-master/examples/gatsby
-</span></span><span class="line"><span class="cl">mv gatsby <span class="o">[</span>新しいプロジェクト名<span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> <span class="o">[</span>新しいプロジェクト名<span class="o">]</span>
-</span></span><span class="line"><span class="cl">yarn install
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl https://codeload.github.com/mui-org/material-ui/tar.gz/master | tar -xz --strip<span style="color:#000;font-weight:bold">=</span><span style="color:#099">2</span>  material-ui-master/examples/gatsby
+</span></span><span style="display:flex;"><span>mv gatsby <span style="color:#000;font-weight:bold">[</span>新しいプロジェクト名<span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#0086b3">cd</span> <span style="color:#000;font-weight:bold">[</span>新しいプロジェクト名<span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>yarn install
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="バージョン">バージョン</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-3">3</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">- react@16.12.0
-</span></span><span class="line"><span class="cl">- gatsby@2.19.12
-</span></span><span class="line"><span class="cl">- @material-ui/core@4.9.1
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>- react@16.12.0
+</span></span><span style="display:flex;"><span>- gatsby@2.19.12
+</span></span><span style="display:flex;"><span>- @material-ui/core@4.9.1
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="gatsby-plugin-top-layout-について"><code>gatsby-plugin-top-layout</code> について</h3>
@@ -375,32 +398,32 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
 <p>Material-UI の基本ですが、mui コンポーネントを使うには、コンポーネントツリーの上層に <code>MuiTheme</code> のプロバイダとなる <a href="https://material-ui.com/customization/theming/#theme-provider"><code>&lt;ThemeProvider&gt;</code></a> を必要とします。<br>
 この <code>gatsby-plugin-top-layout</code> という自作プラグインは開発・ビルドの際に自動で各ページのコンポーネントツリーの最上位に <code>&lt;ThemeProvider&gt;</code> を位置付けてくれます。つまり作成する全てのページで自由に mui コンポーネントを使うことができるようになります。</p>
 <p>この記事では <code>gatsby-plugin-top-layout</code> を使用していることが前提となります。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-11">11</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// plugins/gatsby-plugin-top-layout/TopLayout.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">TopLayout</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">React.Fragment</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">ThemeProvider</span> <span class="na">theme</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">CssBaseline</span> <span class="p">/&gt;</span> <span class="c1">// normarize.css のようなもの
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span> <span class="c1">// =&gt; ここで mui コンポーネントが使える
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="p">&lt;/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">React.Fragment</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// plugins/gatsby-plugin-top-layout/TopLayout.js
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">function</span> TopLayout(props) {
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#000080">React.Fragment</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#000080">ThemeProvider</span> <span style="color:#008080">theme</span><span style="color:#000;font-weight:bold">=</span>{theme}&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#000080">CssBaseline</span> /&gt; <span style="color:#998;font-style:italic">// normarize.css のようなもの
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>        {props.children} <span style="color:#998;font-style:italic">// =&gt; ここで mui コンポーネントが使える
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>      &lt;/<span style="color:#000080">ThemeProvider</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#000080">React.Fragment</span>&gt;
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>参考<br>
@@ -408,20 +431,20 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
 <h3 id="muitheme-のダークモードの仕様">MuiTheme のダークモードの仕様</h3>
 <p><code>MuiTheme</code> には元々<a href="https://material-ui.com/customization/palette/#dark-mode">ダークモードの仕様</a>があります。<br>
 <code>createMuiTheme</code> の引数オブジェクトの <code>palette.type</code> を <code>'dark'</code> に設定するだけで、背景と文字の色が反転するダークモードになります。 (デフォルトは <code>'light'</code>)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-5">5</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">createMuiTheme</span><span class="p">({</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">palette</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;dark&#39;</span> <span class="c1">// &#39;light&#39;(default) or &#39;dark&#39;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">const</span> theme <span style="color:#000;font-weight:bold">=</span> createMuiTheme({
+</span></span><span style="display:flex;"><span>  palette<span style="color:#000;font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>    type<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#39;dark&#39;</span> <span style="color:#998;font-style:italic">// &#39;light&#39;(default) or &#39;dark&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>  }
+</span></span><span style="display:flex;"><span>});
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>参考<br>
@@ -459,112 +482,112 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
 <p>(デモではその他にレイアウトコンポーネントを作成していますが、本筋とは関係がないので省きます)</p>
 <h4 id="1-作成-srcthemereducerjs">1. 作成: <code>src/themeReducer.js</code></h4>
 <p><a href="https://ja.reactjs.org/docs/hooks-reference.html#usereducer" title="useReducer - React">リデューサ</a>を作成し、テーマのステート、アクションを定義します。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-16">16</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-17">17</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-18">18</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-19">19</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-20">20</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-21">21</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-22">22</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-23">23</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-24">24</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-25">25</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-26">26</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// src/themeReducer.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cm">/** TypeScript を使う場合
-</span></span></span><span class="line"><span class="cl"><span class="cm"> *  
-</span></span></span><span class="line"><span class="cl"><span class="cm"> *  export interface ThemeState {
-</span></span></span><span class="line"><span class="cl"><span class="cm"> *    darkMode: boolean;
-</span></span></span><span class="line"><span class="cl"><span class="cm"> *  }
-</span></span></span><span class="line"><span class="cl"><span class="cm"> *  export type Action = { type: &#39;TOGGLE_DARKMODE&#39; };
-</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 初期ステートを定義
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">darkMode</span><span class="o">:</span> <span class="kc">false</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// リデューサの定義
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">themeReducer</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s1">&#39;TOGGLE_DARKMODE&#39;</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="p">...</span><span class="nx">state</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">darkMode</span><span class="o">:</span> <span class="o">!</span><span class="nx">state</span><span class="p">.</span><span class="nx">darkMode</span>
-</span></span><span class="line"><span class="cl">      <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="k">default</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// src/themeReducer.js
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">/** TypeScript を使う場合
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"> *  
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"> *  export interface ThemeState {
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"> *    darkMode: boolean;
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"> *  }
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"> *  export type Action = { type: &#39;TOGGLE_DARKMODE&#39; };
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"> */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 初期ステートを定義
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">export</span> <span style="color:#000;font-weight:bold">const</span> initialState <span style="color:#000;font-weight:bold">=</span> {
+</span></span><span style="display:flex;"><span>  darkMode<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">false</span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// リデューサの定義
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">export</span> <span style="color:#000;font-weight:bold">const</span> themeReducer <span style="color:#000;font-weight:bold">=</span> (state, action) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">switch</span> (action.type) {
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">case</span> <span style="color:#d14">&#39;TOGGLE_DARKMODE&#39;</span><span style="color:#000;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">return</span> {
+</span></span><span style="display:flex;"><span>        ...state,
+</span></span><span style="display:flex;"><span>        darkMode<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">!</span>state.darkMode
+</span></span><span style="display:flex;"><span>      };
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">default</span><span style="color:#000;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">throw</span> <span style="color:#000;font-weight:bold">new</span> <span style="color:#0086b3">Error</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="2-作成-srcdispatchcontextjs">2. 作成: <code>src/DispatchContext.js</code></h4>
 <p><a href="https://ja.reactjs.org/docs/context.html" title="コンテクスト - React">コンテクスト</a>と<a href="https://ja.reactjs.org/docs/hooks-custom.html" title="カスタムフックの作成 - React">カスタムフック</a>の作成をおこないます。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-16">16</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-17">17</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-18">18</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-19">19</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-20">20</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-21">21</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// src/DispatchContext.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="cm">/** TypeScript を使う場合
-</span></span></span><span class="line"><span class="cl"><span class="cm"> *
-</span></span></span><span class="line"><span class="cl"><span class="cm"> *  import { Action } from &#39;./themeReducer&#39;;
-</span></span></span><span class="line"><span class="cl"><span class="cm"> *  
-</span></span></span><span class="line"><span class="cl"><span class="cm"> *  const DispatchContext =
-</span></span></span><span class="line"><span class="cl"><span class="cm"> *  React.createContext&lt;React.Dispatch&lt;Action&gt;&gt;(...)
-</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// コンテクストの作成
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">DispatchContext</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createContext</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// カスタムフックの作成
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kd">function</span> <span class="nx">useToggleDarkMode</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">dispatch</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useContext</span><span class="p">(</span><span class="nx">DispatchContext</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useCallback</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">dispatch</span><span class="p">({</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;TOGGLE_DARKMODE&#39;</span> <span class="p">}),</span> <span class="p">[</span><span class="nx">dispatch</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// src/DispatchContext.js
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">import</span> React from <span style="color:#d14">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">/** TypeScript を使う場合
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"> *  import { Action } from &#39;./themeReducer&#39;;
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"> *  
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"> *  const DispatchContext =
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"> *  React.createContext&lt;React.Dispatch&lt;Action&gt;&gt;(...)
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"> */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// コンテクストの作成
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">export</span> <span style="color:#000;font-weight:bold">const</span> DispatchContext <span style="color:#000;font-weight:bold">=</span> React.createContext(() =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">throw</span> <span style="color:#000;font-weight:bold">new</span> <span style="color:#0086b3">Error</span>();
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// カスタムフックの作成
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">export</span> <span style="color:#000;font-weight:bold">function</span> useToggleDarkMode() {
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">const</span> dispatch <span style="color:#000;font-weight:bold">=</span> React.useContext(DispatchContext);
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">return</span> React.useCallback(() =&gt; dispatch({ type<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#39;TOGGLE_DARKMODE&#39;</span> }), [dispatch]);
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><a href="https://ja.reactjs.org/docs/context.html" title="コンテクスト - React">コンテクスト</a> については解説を省きます。なんせ自分も今回初めて使ったものですから。詳しくは React 公式のドキュメントをお読みください。</p>
@@ -578,116 +601,116 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
 <a href="https://ja.reactjs.org/docs/hooks-reference.html#usecallback">React.useCallback - React</a></p>
 <h4 id="3-変更-pluginsgatsby-plugin-top-layouttoplayoutjs">3. 変更: <code>plugins/gatsby-plugin-top-layout/TopLayout.js</code></h4>
 <p>作成したリデューサとコンテクストを <code>&lt;TopLayout&gt;</code> コンポーネント内で使用します。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-16">16</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-17">17</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-18">18</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-19">19</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-20">20</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-21">21</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-22">22</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-23">23</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-24">24</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-25">25</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-26">26</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-27"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-27">27</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-28"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-28">28</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-29"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-29">29</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-30"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-30">30</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-31"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-31">31</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-32"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-32">32</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-33"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-33">33</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-34"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-34">34</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-35"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-35">35</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-36"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-36">36</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-37"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-37">37</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-38"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-38">38</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-39"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-39">39</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-40"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-40">40</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-41"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-41">41</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-42"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-42">42</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-43"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-43">43</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-44"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-44">44</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-45"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-45">45</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-46"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-46">46</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-47"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-47">47</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-48"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-48">48</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-49"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-49">49</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-50"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-50">50</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-51"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-51">51</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-52"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-52">52</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-53"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-53">53</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// plugins/gatsby-plugin-top-layout/TopLayout.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">PropTypes</span> <span class="nx">from</span> <span class="s1">&#39;prop-types&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Helmet</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-helmet&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">CssBaseline</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/CssBaseline&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ThemeProvider</span><span class="p">,</span> <span class="nx">createMuiTheme</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">initialTheme</span> <span class="nx">from</span> <span class="s1">&#39;../../src/theme&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">themeReducer</span><span class="p">,</span> <span class="nx">initialState</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../src/themeReducer&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">DispatchContext</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../src/DispatchContext&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">TopLayout</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// React.useReducer でリデューサの導入
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">]</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useReducer</span><span class="p">(</span><span class="nx">themeReducer</span><span class="p">,</span> <span class="nx">initialState</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">darkMode</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">state</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// React.useMemo でステートに応じた theme を作成
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useMemo</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">createMuiTheme</span><span class="p">({</span>
-</span></span><span class="line"><span class="cl">      <span class="p">...</span><span class="nx">initialTheme</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">palette</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">darkMode</span> <span class="o">?</span> <span class="s1">&#39;dark&#39;</span> <span class="o">:</span> <span class="s1">&#39;light&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">primary</span><span class="o">:</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">secondary</span><span class="o">:</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">secondary</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">});</span>
-</span></span><span class="line"><span class="cl">  <span class="p">},</span> <span class="p">[</span><span class="nx">darkMode</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">React.Fragment</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Helmet</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">meta</span>
-</span></span><span class="line"><span class="cl">          <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span>
-</span></span><span class="line"><span class="cl">          <span class="na">content</span><span class="o">=</span><span class="s">&#34;minimum-scale=1, initial-scale=1, width=device-width&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">link</span>
-</span></span><span class="line"><span class="cl">          <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;display=swap&#34;</span>
-</span></span><span class="line"><span class="cl">          <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">Helmet</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">ThemeProvider</span> <span class="na">theme</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">CssBaseline</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="cm">/* DispatchContext.Provider を挿入 */</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">DispatchContext.Provider</span> <span class="na">value</span><span class="o">=</span><span class="p">{</span><span class="nx">dispatch</span><span class="p">}&gt;</span>
-</span></span><span class="line"><span class="cl">          <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">DispatchContext.Provider</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">React.Fragment</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">TopLayout</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">children</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">node</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// plugins/gatsby-plugin-top-layout/TopLayout.js
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">import</span> React from <span style="color:#d14">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> PropTypes from <span style="color:#d14">&#39;prop-types&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> { Helmet } from <span style="color:#d14">&#39;react-helmet&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> CssBaseline from <span style="color:#d14">&#39;@material-ui/core/CssBaseline&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> { ThemeProvider, createMuiTheme } from <span style="color:#d14">&#39;@material-ui/core/styles&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> initialTheme from <span style="color:#d14">&#39;../../src/theme&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> { themeReducer, initialState } from <span style="color:#d14">&#39;../../src/themeReducer&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> { DispatchContext } from <span style="color:#d14">&#39;../../src/DispatchContext&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">export</span> <span style="color:#000;font-weight:bold">default</span> <span style="color:#000;font-weight:bold">function</span> TopLayout(props) {
+</span></span><span style="display:flex;"><span>  <span style="color:#998;font-style:italic">// React.useReducer でリデューサの導入
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>  <span style="color:#000;font-weight:bold">const</span> [state, dispatch] <span style="color:#000;font-weight:bold">=</span> React.useReducer(themeReducer, initialState);
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">const</span> { darkMode } <span style="color:#000;font-weight:bold">=</span> state;
+</span></span><span style="display:flex;"><span>  <span style="color:#998;font-style:italic">// React.useMemo でステートに応じた theme を作成
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>  <span style="color:#000;font-weight:bold">const</span> theme <span style="color:#000;font-weight:bold">=</span> React.useMemo(() =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">return</span> createMuiTheme({
+</span></span><span style="display:flex;"><span>      ...initialTheme,
+</span></span><span style="display:flex;"><span>      palette<span style="color:#000;font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>        type<span style="color:#000;font-weight:bold">:</span> darkMode <span style="color:#000;font-weight:bold">?</span> <span style="color:#d14">&#39;dark&#39;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#39;light&#39;</span>,
+</span></span><span style="display:flex;"><span>        primary<span style="color:#000;font-weight:bold">:</span> initialTheme.palette.primary,
+</span></span><span style="display:flex;"><span>        secondary<span style="color:#000;font-weight:bold">:</span> initialTheme.palette.secondary,
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  }, [darkMode]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#000080">React.Fragment</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#000080">Helmet</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#000080">meta</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#008080">name</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;viewport&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#008080">content</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;minimum-scale=1, initial-scale=1, width=device-width&#34;</span>
+</span></span><span style="display:flex;"><span>        /&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#000080">link</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#008080">href</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;display=swap&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#008080">rel</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;stylesheet&#34;</span>
+</span></span><span style="display:flex;"><span>        /&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#000080">Helmet</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#000080">ThemeProvider</span> <span style="color:#008080">theme</span><span style="color:#000;font-weight:bold">=</span>{theme}&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#000080">CssBaseline</span> /&gt;
+</span></span><span style="display:flex;"><span>        {<span style="color:#998;font-style:italic">/* DispatchContext.Provider を挿入 */</span>}
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#000080">DispatchContext.Provider</span> <span style="color:#008080">value</span><span style="color:#000;font-weight:bold">=</span>{dispatch}&gt;
+</span></span><span style="display:flex;"><span>          {props.children}
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#000080">DispatchContext.Provider</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#000080">ThemeProvider</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#000080">React.Fragment</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>TopLayout.propTypes <span style="color:#000;font-weight:bold">=</span> {
+</span></span><span style="display:flex;"><span>  children<span style="color:#000;font-weight:bold">:</span> PropTypes.node,
+</span></span><span style="display:flex;"><span>};
 </span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -705,62 +728,62 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
 <p>先ほど作成したカスタムフック <code>useToggleDarkMode</code> でパレットタイプ切り替えのアイコンボタンを作ってみましょう。</p>
 <h4 id="4-作成-srccomponentsdarkmodebuttonjs">4. 作成: <code>src/components/DarkModeButton.js</code></h4>
 <p><code>@material-ui/icons</code> をインストールします。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-1">1</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">yarn add @material-ui/icons
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>yarn add @material-ui/icons
 </span></span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-16">16</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-17">17</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-18">18</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-19">19</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-20">20</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-21">21</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-22">22</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// src/components/DarkModeButton.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">IconButton</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/IconButton&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">useTheme</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/core/styles/useTheme&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Brightness4</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/icons/Brightness4&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Brightness5</span> <span class="nx">from</span> <span class="s1">&#39;@material-ui/icons/Brightness5&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">useToggleDarkMode</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../themeReducer&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">DarkModeButton</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// パレットタイプを取得
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">paletteType</span> <span class="o">=</span> <span class="nx">useTheme</span><span class="p">().</span><span class="nx">palette</span><span class="p">.</span><span class="nx">type</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// パレットタイプ切り替えのフックを使用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">_toggleDarkMode</span> <span class="o">=</span> <span class="nx">useToggleDarkMode</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">IconButton</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">_toggleDarkMode</span><span class="p">}</span> <span class="p">{</span><span class="na">...props</span><span class="p">}&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="nx">paletteType</span> <span class="o">===</span> <span class="s1">&#39;dark&#39;</span> <span class="o">?</span> <span class="p">&lt;</span><span class="nt">Brightness5</span> <span class="p">/&gt;</span> <span class="o">:</span> <span class="p">&lt;</span><span class="nt">Brightness4</span> <span class="p">/&gt;}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">IconButton</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">DarkModeButton</span><span class="p">;</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// src/components/DarkModeButton.js
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">import</span> React from <span style="color:#d14">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> IconButton from <span style="color:#d14">&#39;@material-ui/core/IconButton&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> useTheme from <span style="color:#d14">&#39;@material-ui/core/styles/useTheme&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> Brightness4 from <span style="color:#d14">&#39;@material-ui/icons/Brightness4&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> Brightness5 from <span style="color:#d14">&#39;@material-ui/icons/Brightness5&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> { useToggleDarkMode } from <span style="color:#d14">&#39;../themeReducer&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">function</span> DarkModeButton(props) {
+</span></span><span style="display:flex;"><span>  <span style="color:#998;font-style:italic">// パレットタイプを取得
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>  <span style="color:#000;font-weight:bold">const</span> paletteType <span style="color:#000;font-weight:bold">=</span> useTheme().palette.type;
+</span></span><span style="display:flex;"><span>  <span style="color:#998;font-style:italic">// パレットタイプ切り替えのフックを使用
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>  <span style="color:#000;font-weight:bold">const</span> _toggleDarkMode <span style="color:#000;font-weight:bold">=</span> useToggleDarkMode();
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#000080">IconButton</span> <span style="color:#008080">onClick</span><span style="color:#000;font-weight:bold">=</span>{_toggleDarkMode} {<span style="color:#008080">...props</span>}&gt;
+</span></span><span style="display:flex;"><span>      {paletteType <span style="color:#000;font-weight:bold">===</span> <span style="color:#d14">&#39;dark&#39;</span> <span style="color:#000;font-weight:bold">?</span> &lt;<span style="color:#000080">Brightness5</span> /&gt; <span style="color:#000;font-weight:bold">:</span> &lt;<span style="color:#000080">Brightness4</span> /&gt;}
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#000080">IconButton</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">export</span> <span style="color:#000;font-weight:bold">default</span> DarkModeButton;
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Material-UI の <code>MuiTheme</code> もコンテクストです。<code>useTheme</code> というカスタムフックでどのコンポーネントからでも <code>MuiTheme</code> を取得できます。現在のパレットタイプ取得には <code>useTheme</code> フックを使います。<br>
@@ -781,42 +804,42 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
 ダークモードをより良いUIにするためには様々な改良が必要になります。</p>
 <h3 id="パレットカラーを調整する">パレットカラーを調整する</h3>
 <p>ダークモードでパレットをそのまま使うと視認性が悪い可能性があります。パレットタイプ切り替え時に、プライマリーカラーとアクセントカラーのメインをやや明るめにしておくと視認性が改善されます。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-16">16</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// plugins/gatsby-plugin-top-layout/TopLayout.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useMemo</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">createMuiTheme</span><span class="p">({</span>
-</span></span><span class="line"><span class="cl">      <span class="p">...</span><span class="nx">initialTheme</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">palette</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="nx">darkMode</span> <span class="o">?</span> <span class="s1">&#39;dark&#39;</span> <span class="o">:</span> <span class="s1">&#39;light&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">primary</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">          <span class="nx">main</span><span class="o">:</span> <span class="nx">darkMode</span> <span class="o">?</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">[</span><span class="mi">300</span><span class="p">]</span> <span class="o">:</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">.</span><span class="nx">main</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">secondary</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">          <span class="nx">main</span><span class="o">:</span> <span class="nx">darkMode</span> <span class="o">?</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">secondary</span><span class="p">[</span><span class="mi">300</span><span class="p">]</span> <span class="o">:</span> <span class="nx">initialTheme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">secondary</span><span class="p">.</span><span class="nx">main</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">      <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">});</span>
-</span></span><span class="line"><span class="cl">  <span class="p">},</span> <span class="p">[</span><span class="nx">darkMode</span><span class="p">]);</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// plugins/gatsby-plugin-top-layout/TopLayout.js
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">const</span> theme <span style="color:#000;font-weight:bold">=</span> React.useMemo(() =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">return</span> createMuiTheme({
+</span></span><span style="display:flex;"><span>      ...initialTheme,
+</span></span><span style="display:flex;"><span>      palette<span style="color:#000;font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>        type<span style="color:#000;font-weight:bold">:</span> darkMode <span style="color:#000;font-weight:bold">?</span> <span style="color:#d14">&#39;dark&#39;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#39;light&#39;</span>,
+</span></span><span style="display:flex;"><span>        primary<span style="color:#000;font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>          main<span style="color:#000;font-weight:bold">:</span> darkMode <span style="color:#000;font-weight:bold">?</span> initialTheme.palette.primary[<span style="color:#099">300</span>] <span style="color:#000;font-weight:bold">:</span> initialTheme.palette.primary.main
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        secondary<span style="color:#000;font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>          main<span style="color:#000;font-weight:bold">:</span> darkMode <span style="color:#000;font-weight:bold">?</span> initialTheme.palette.secondary[<span style="color:#099">300</span>] <span style="color:#000;font-weight:bold">:</span> initialTheme.palette.secondary.main
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  }, [darkMode]);
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>参考<br>
@@ -851,7 +874,7 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
 <li><a href="https://ja.reactjs.org/docs/hooks-custom.html" title="カスタムフックの作成 - React">カスタムフックの作成 - React</a></li>
 <li><a href="https://www.gatsbyjs.org/blog/2019-01-31-using-react-context-api-with-gatsby/">Using React Context API with Gatsby - Gatsby</a></li>
 </ul>
-<!-- raw HTML omitted -->
+<!-- Music -->
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/E5C4kupWq18" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
@@ -875,7 +898,7 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
     
   
 </div>
-<!-- raw HTML omitted -->
+<!-- References -->
     </div>
 
     
@@ -900,23 +923,26 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
 </div>
 
 
+
     
     
+
 
     <footer class="post-footer">
       <div class="post-tags">
           <a href="https://cieloazul310.github.io/tags/%E3%83%80%E3%83%BC%E3%82%AF%E3%83%A2%E3%83%BC%E3%83%89/">ダークモード</a>
-          <a href="https://cieloazul310.github.io/tags/react/">React</a>
-          <a href="https://cieloazul310.github.io/tags/react%E3%82%B3%E3%83%B3%E3%83%86%E3%82%AF%E3%82%B9%E3%83%88/">Reactコンテクスト</a>
-          <a href="https://cieloazul310.github.io/tags/react%E3%83%95%E3%83%83%E3%82%AF/">Reactフック</a>
-          <a href="https://cieloazul310.github.io/tags/material-ui/">Material-UI</a>
-          
+            <a href="https://cieloazul310.github.io/tags/react/">React</a>
+            <a href="https://cieloazul310.github.io/tags/react%E3%82%B3%E3%83%B3%E3%83%86%E3%82%AF%E3%82%B9%E3%83%88/">Reactコンテクスト</a>
+            <a href="https://cieloazul310.github.io/tags/react%E3%83%95%E3%83%83%E3%82%AF/">Reactフック</a>
+            <a href="https://cieloazul310.github.io/tags/material-ui/">Material-UI</a>
+            
         </div>
+
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="https://cieloazul310.github.io/2020/08/jclub-financial-table/">
+          <a class="prev" href="/2020/08/jclub-financial-table/">
             
             <i class="iconfont">
               <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -930,7 +956,7 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
-          <a class="next" href="https://cieloazul310.github.io/2019/08/landuse-map/">
+          <a class="next" href="/2019/08/landuse-map/">
             <span class="next-text nav-default">土地利用地図を作りました</span>
             <span class="prev-text nav-mobile">Next</span>
             
@@ -950,14 +976,16 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
   
   
 
-  
-  
-
-  
 
   
   
 
+  
+
+  
+  
+
+  
   
 
   
@@ -984,13 +1012,17 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
       $('#load_disqus').remove();
     };
   </script>
-  <noscript>Please enable JavaScript to view the
+  <noscript
+    >Please enable JavaScript to view the
     <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
   </noscript>
   
-  </div>
+</div>
+
 
     
+
+  
 
   
 
@@ -1034,7 +1066,7 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
@@ -1050,7 +1082,7 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
     &copy;
     
       2017 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -1088,13 +1120,13 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
     </div>
   </div>
   
-<script type="text/javascript" src="https://cieloazul310.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
 
 
 
 
-<script type="text/javascript" src="https://cieloazul310.github.io/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.fe83e11b4fbc9193d67e2c9db78bad21f8dc59fca0cacd8c1c3bb071bb16a852.js" integrity="sha256-/oPhG0&#43;8kZPWfiydt4utIfjcWfygys2MHDuwcbsWqFI=" crossorigin="anonymous"></script>
 
 
 
@@ -1108,10 +1140,12 @@ Gatsby, Material-UI 及び <a href="https://ja.reactjs.org/docs/hooks-intro.html
 
 
   
-    <script type="text/javascript" src="https://cieloazul310.github.io/js/load-photoswipe.js"></script>
-    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.js"></script>
-    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
   
+
+
 
 
 

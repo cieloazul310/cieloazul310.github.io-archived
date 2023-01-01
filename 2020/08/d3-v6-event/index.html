@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.106.0" />
+<meta name="generator" content="Hugo 0.109.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2020/08/d3-v6-event/" />
@@ -40,7 +40,7 @@
 
 
 
-<link rel="icon" href="https://cieloazul310.github.io/favicon.ico" />
+<link rel="icon" href="/favicon.ico" />
 
 
 
@@ -52,7 +52,9 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.96618627414b80b49c5bcc3c7eb0bf291b1ac3313f1a54e7944fdbd571c109bc.css" integrity="sha256-lmGGJ0FLgLScW8w8frC/KRsawzE/GlTnlE/b1XHBCbw=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.53a61ff5f929838ea90da6a8209628ba026b336b363b70898efc84562ba4115b.css" integrity="sha256-U6Yf9fkpg46pDaaoIJYougJrM2s2O3CJjvyEViukEVs=" media="screen" crossorigin="anonymous">
+
+
 
 
 
@@ -64,7 +66,6 @@
 <meta property="og:url" content="https://cieloazul310.github.io/2020/08/d3-v6-event/" /><meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-08-29T10:30:00+09:00" />
 <meta property="article:modified_time" content="2022-09-19T19:00:00+09:00" />
-
 <meta itemprop="name" content="D3 v6 アロー関数使用時の移行ガイド">
 <meta itemprop="description" content="D3 v6 でアロー関数を使ってイベント処理をする場合のメモ"><meta itemprop="datePublished" content="2020-08-29T10:30:00+09:00" />
 <meta itemprop="dateModified" content="2022-09-19T19:00:00+09:00" />
@@ -85,16 +86,16 @@
 <![endif]-->
 
 
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VE0MVTCH7K"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-74683419-3', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-VE0MVTCH7K', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -102,7 +103,7 @@ if (!doNotTrack) {
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+    <a href="/" class="logo">水戸地図</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -163,8 +164,8 @@ if (!doNotTrack) {
 
 
 
-  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.css" />
-  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/default-skin/default-skin.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
 
 
 
@@ -221,7 +222,7 @@ if (!doNotTrack) {
 
   <header id="header" class="header container">
     <div class="logo-wrapper">
-  <a href="https://cieloazul310.github.io/" class="logo">
+  <a href="/" class="logo">
     
       水戸地図
     
@@ -298,7 +299,7 @@ if (!doNotTrack) {
   </header>
 
   <div id="mobile-panel">
-    <main id="main" class="main bg-llight">
+    <main id="main" class="main bg-llight wallpaper">
       <div class="content-wrapper">
         <div id="content" class="content container">
           <article class="post bg-white">
@@ -306,32 +307,59 @@ if (!doNotTrack) {
     <header class="post-header">
       <h1 class="post-title">D3 v6 アロー関数使用時の移行ガイド</h1>
       
+
       <div class="post-meta">
-        <time datetime="2020-08-29" class="post-time">
-          2020-08-29
-        </time>
-        <div class="post-category">
-            <a href="https://cieloazul310.github.io/categories/javascript/"> JavaScript </a>
-            
-          </div>
-        
+  <div class="post-meta-author">
+    by
+      cieloazul310
+    
+  </div>
 
-        
-        
+  <div class="post-meta-time">
+    <time datetime="2020-08-29">
+      2020-08-29
+    </time>
+  </div>
 
-        
-        
+  
+    <div class="post-meta-lastmod">
+      (LastMod:
+      2022-09-19)
+    </div>
+  
+
+
+  <div class="post-meta__right">
+    
+
+    <div class="post-meta-category">
+        <a href="https://cieloazul310.github.io/categories/javascript/"> JavaScript </a>
+          
       </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
     </header>
 
     
     
 
+
     
     <div class="post-content">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <!--
+- 対象: 
+- 目的: 
+-->
+<!-- Lead Paragraph -->
 <p><a href="https://github.com/d3/d3/releases/tag/v6.0.0">D3 v6</a> が2020年8月26日にリリースされました。D3 v6 では <code>selection.on</code> によるイベント処理の方法が変わりました。この記事では<strong>公式の移行ガイドに載っていないアロー関数使用時</strong>に限った移行の方法を記していきます。</p>
 <p>移行ガイドというタイトルですが、実質的には以前書いた<a href="https://cieloazul310.github.io/2017/08/d3-arrow-function/">D3.jsでアロー関数を使う時の注意点</a> の v6 版です。</p>
 <p><a href="https://observablehq.com/@cieloazul310/d3-6-0-arrow-function-event">デモページ</a></p>
@@ -351,35 +379,35 @@ if (!doNotTrack) {
 <h2 id="v6-イベント処理の変更">v6 イベント処理の変更</h2>
 <p>D3 では <code>selection.on</code> で DOM にイベントを実装できます。データをバインドした D3 版 <code>addEventListener</code> です。これは、マウスオーバーで色を変更、クリックで選択、などインタラクティブな動作を実装したい場面で使います。</p>
 <h3 id="今までの書き方-無名関数式版">今までの書き方 (無名関数式版)</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-4">4</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">selection</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">nodes</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">&#39;fill&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>selection.on(<span style="color:#d14">&#39;click&#39;</span>, <span style="color:#000;font-weight:bold">function</span>(d, i, nodes) {
+</span></span><span style="display:flex;"><span>  d3.select(<span style="color:#000;font-weight:bold">this</span>)
+</span></span><span style="display:flex;"><span>    .style(<span style="color:#d14">&#39;fill&#39;</span>, <span style="color:#d14">&#39;red&#39;</span>);
+</span></span><span style="display:flex;"><span>});
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>selection.on</code> の第一引数は<a href="https://developer.mozilla.org/en-US/docs/Web/Events#Standard_events">イベントのタイプ</a>、第二引数にリスナを取ります。ここまでは v6 も同様です。</p>
 <p>第二引数のリスナは、v5 以前は <code>selection.attr</code>、<code>selection.style</code> と同様に、datum (<code>d</code>), index (<code>i</code>), <code>nodes</code> を引数にとっていました。</p>
 <h3 id="v6-の書き方-無名関数式版">v6 の書き方 (無名関数式版)</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-4">4</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">selection</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">&#39;fill&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>selection.on(<span style="color:#d14">&#39;click&#39;</span>, <span style="color:#000;font-weight:bold">function</span>(event, d) {
+</span></span><span style="display:flex;"><span>  d3.select(<span style="color:#000;font-weight:bold">this</span>)
+</span></span><span style="display:flex;"><span>    .style(<span style="color:#d14">&#39;fill&#39;</span>, <span style="color:#d14">&#39;red&#39;</span>);
+</span></span><span style="display:flex;"><span>});
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>リスナの引数が イベントオブジェクト <code>event</code> と datum (<code>d</code>) に変わりました。この変更により <code>selection.attr</code>, <code>selection.style</code> との統一感はなくなりましたが、代わりに イベントオブジェクトを利用できるようになりました。 <code>d</code> が第一引数から第二引数に変わったので、v5 以前のコードでリスナ内でデータを利用している場合はここを書き換えなければなりません。</p>
@@ -403,39 +431,39 @@ if (!doNotTrack) {
 </div>
 <h2 id="アロー関数式を使う移行方法">アロー関数式を使う移行方法</h2>
 <h3 id="今までの書き方-アロー関数版">今までの書き方 (アロー関数版)</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-4">4</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">selection</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">nodes</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nx">nodes</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">&#39;fill&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>selection.on(<span style="color:#d14">&#39;click&#39;</span>, (d, i, nodes) =&gt; {
+</span></span><span style="display:flex;"><span>  d3.select(nodes[i])
+</span></span><span style="display:flex;"><span>    .style(<span style="color:#d14">&#39;fill&#39;</span>, <span style="color:#d14">&#39;red&#39;</span>);
+</span></span><span style="display:flex;"><span>});
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>無名関数式とアロー関数式では <code>this</code> の内容が異なります。したがって、アロー関数を使うと D3 公式が紹介している <code>this</code> を使ったコードは動きません。無名関数式で <code>this</code> で書いていた場所は v5 以前のコードでは <code>nodes[i]</code> で書くことができました。</p>
 <p>では、<code>i</code> と <code>nodes</code> が消えた v6 のリスナではどのように書き換えればよいでしょうか。</p>
 <h3 id="v6-の書き方-アロー関数版">v6 の書き方 (アロー関数版)</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-6">6</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">selection</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">d</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">&#39;fill&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// const nodes = selection.nodes();
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// const i = nodes.indexOf(event.currentTarget);
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">});</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>selection.on(<span style="color:#d14">&#39;click&#39;</span>, (event, d) =&gt; {
+</span></span><span style="display:flex;"><span>  d3.select(event.currentTarget)
+</span></span><span style="display:flex;"><span>    .style(<span style="color:#d14">&#39;fill&#39;</span>, <span style="color:#d14">&#39;red&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#998;font-style:italic">// const nodes = selection.nodes();
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>  <span style="color:#998;font-style:italic">// const i = nodes.indexOf(event.currentTarget);
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>});
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>event.currentTarget</code> で <code>this</code> と同じように自身の DOM を選択することができます。<br>
@@ -448,7 +476,7 @@ v5 以前のリスナで引数に取られていた <code>nodes</code> は <code
 <li><a href="https://github.com/d3/d3/releases/tag/v6.0.0">D3 6.0 Release Note</a></li>
 <li><a href="https://observablehq.com/d/f91cccf0cad5e9cb">D3 6.0 migration guide</a></li>
 </ul>
-<!-- raw HTML omitted -->
+<!-- Music -->
 <p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/85k34OehV1c" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
@@ -472,7 +500,7 @@ v5 以前のリスナで引数に取られていた <code>nodes</code> は <code
     
   
 </div>
-<!-- raw HTML omitted -->
+<!-- References -->
     </div>
 
     
@@ -497,20 +525,23 @@ v5 以前のリスナで引数に取られていた <code>nodes</code> は <code
 </div>
 
 
+
     
     
+
 
     <footer class="post-footer">
       <div class="post-tags">
           <a href="https://cieloazul310.github.io/tags/d3.js/">D3.js</a>
-          <a href="https://cieloazul310.github.io/tags/javascript/">JavaScript</a>
-          
+            <a href="https://cieloazul310.github.io/tags/javascript/">JavaScript</a>
+            
         </div>
+
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="https://cieloazul310.github.io/2021/01/canvasmap/">
+          <a class="prev" href="/2021/01/canvasmap/">
             
             <i class="iconfont">
               <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -524,7 +555,7 @@ v5 以前のリスナで引数に取られていた <code>nodes</code> は <code
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
-          <a class="next" href="https://cieloazul310.github.io/2020/08/jclub-financial-table/">
+          <a class="next" href="/2020/08/jclub-financial-table/">
             <span class="next-text nav-default">Jクラブ経営情報2005-2019を作りました</span>
             <span class="prev-text nav-mobile">Next</span>
             
@@ -544,14 +575,16 @@ v5 以前のリスナで引数に取られていた <code>nodes</code> は <code
   
   
 
-  
-  
-
-  
 
   
   
 
+  
+
+  
+  
+
+  
   
 
   
@@ -578,13 +611,17 @@ v5 以前のリスナで引数に取られていた <code>nodes</code> は <code
       $('#load_disqus').remove();
     };
   </script>
-  <noscript>Please enable JavaScript to view the
+  <noscript
+    >Please enable JavaScript to view the
     <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
   </noscript>
   
-  </div>
+</div>
+
 
     
+
+  
 
   
 
@@ -628,7 +665,7 @@ v5 以前のリスナで引数に取られていた <code>nodes</code> は <code
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
@@ -644,7 +681,7 @@ v5 以前のリスナで引数に取られていた <code>nodes</code> は <code
     &copy;
     
       2017 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -682,13 +719,13 @@ v5 以前のリスナで引数に取られていた <code>nodes</code> は <code
     </div>
   </div>
   
-<script type="text/javascript" src="https://cieloazul310.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
 
 
 
 
-<script type="text/javascript" src="https://cieloazul310.github.io/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.fe83e11b4fbc9193d67e2c9db78bad21f8dc59fca0cacd8c1c3bb071bb16a852.js" integrity="sha256-/oPhG0&#43;8kZPWfiydt4utIfjcWfygys2MHDuwcbsWqFI=" crossorigin="anonymous"></script>
 
 
 
@@ -702,10 +739,12 @@ v5 以前のリスナで引数に取られていた <code>nodes</code> は <code
 
 
   
-    <script type="text/javascript" src="https://cieloazul310.github.io/js/load-photoswipe.js"></script>
-    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.js"></script>
-    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
   
+
+
 
 
 

@@ -14,9 +14,11 @@
       <pubDate>Sun, 09 Feb 2020 17:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2020/02/gatsby-material-ui-darkmode/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 自分、Gatsby, Material-UI, React フックに一定の理解がある人
+- 目的: 自分向けの覚書 React Hooks の
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.gatsbyjs.org&#34; title=&#34;Gatsby&#34;&gt;Gatsby&lt;/a&gt; + &lt;a href=&#34;https://material-ui.com&#34; title=&#34;Material-UI&#34;&gt;Material-UI&lt;/a&gt; でダークモードを実装する方法です。&lt;br&gt;
 Gatsby, Material-UI 及び &lt;a href=&#34;https://ja.reactjs.org/docs/hooks-intro.html&#34; title=&#34;フックの導入 - React&#34;&gt;React フック&lt;/a&gt;に関するある程度の理解がある人向けの内容になります。&lt;/p&gt;</description>
     </item>

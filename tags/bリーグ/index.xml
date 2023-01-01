@@ -14,9 +14,11 @@
       <pubDate>Mon, 25 Feb 2019 23:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/02/gatsby-stadiums-population/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: リリース文と技術的な話の概要
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;昨年&lt;a href=&#34;https://cieloazul310.github.io/2018/04/stadium-and-population/&#34;&gt;国内のサッカースタジアム周辺の人口を求める&lt;/a&gt;という記事を書きました。&lt;br&gt;
 前回の記事で算出結果の表示のために作ったページを新たに作り直し、ついでに前回算出しなかった半径 10km 圏内の人口と Bリーグのアリーナを加えました。&lt;/p&gt;</description>
     </item>
@@ -27,7 +29,7 @@
       <pubDate>Fri, 01 Dec 2017 01:00:30 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2017/12/bleague-revenue/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;&lt;a href=&#34;//cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/&#34;&gt;前回作成したBリーグ決算情報のCSVデータ&lt;/a&gt;を使って、D3.jsでシンプルな棒グラフを作成しました。&lt;/p&gt;</description>
     </item>
     
@@ -37,7 +39,7 @@
       <pubDate>Thu, 30 Nov 2017 22:26:35 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;&lt;a href=&#34;//www.bleague.jp/news/36544.html&#34;&gt;B.LEAGUEが公開した各クラブの決算情報&lt;/a&gt;をCSV化して&lt;a href=&#34;//gist.github.com/cieloazul310/ae2da35266de8f0832ed3ebc431d807f&#34;&gt;gistで公開&lt;/a&gt;しました。&lt;/p&gt;</description>
     </item>
     

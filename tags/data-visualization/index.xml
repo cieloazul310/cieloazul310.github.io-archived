@@ -14,9 +14,11 @@
       <pubDate>Mon, 18 Jan 2021 21:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2021/01/canvasmap/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/cieloazul310/canvasmap&#34; title=&#34;Canvas マップ&#34;&gt;Canvas マップ&lt;/a&gt;という国土地理院のバイナリベクトルタイルを利用して、データビジュアライゼーションのためのベースマップを生成する Node.js 向けのモジュールを作成しました。&lt;/p&gt;</description>
     </item>
     
@@ -36,7 +38,7 @@
       <pubDate>Thu, 14 Dec 2017 23:32:15 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2017/12/d3-get-parent-node/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;D3.jsで階層構造のDOMの子要素から親要素のデータを取得する方法です。&lt;/p&gt;</description>
     </item>
     
@@ -46,7 +48,7 @@
       <pubDate>Fri, 01 Dec 2017 01:00:30 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2017/12/bleague-revenue/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;&lt;a href=&#34;//cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/&#34;&gt;前回作成したBリーグ決算情報のCSVデータ&lt;/a&gt;を使って、D3.jsでシンプルな棒グラフを作成しました。&lt;/p&gt;</description>
     </item>
     
@@ -56,7 +58,7 @@
       <pubDate>Sat, 25 Nov 2017 16:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2017/11/d3-grouping-elements/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;D3.jsでSVGを描写するときは&lt;code&gt;&amp;lt;g&amp;gt;&lt;/code&gt;要素を使って要素をグループ化すると便利です。&lt;/p&gt;</description>
     </item>
     

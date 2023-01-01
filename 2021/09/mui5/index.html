@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -36,7 +36,7 @@ MUI v5 のスタイリング方法を v4 の記法と比較しながら紹介し
 
 
 
-<meta name="generator" content="Hugo 0.106.0" />
+<meta name="generator" content="Hugo 0.109.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2021/09/mui5/" />
@@ -45,7 +45,7 @@ MUI v5 のスタイリング方法を v4 の記法と比較しながら紹介し
 
 
 
-<link rel="icon" href="https://cieloazul310.github.io/favicon.ico" />
+<link rel="icon" href="/favicon.ico" />
 
 
 
@@ -57,7 +57,9 @@ MUI v5 のスタイリング方法を v4 の記法と比較しながら紹介し
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.96618627414b80b49c5bcc3c7eb0bf291b1ac3313f1a54e7944fdbd571c109bc.css" integrity="sha256-lmGGJ0FLgLScW8w8frC/KRsawzE/GlTnlE/b1XHBCbw=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.53a61ff5f929838ea90da6a8209628ba026b336b363b70898efc84562ba4115b.css" integrity="sha256-U6Yf9fkpg46pDaaoIJYougJrM2s2O3CJjvyEViukEVs=" media="screen" crossorigin="anonymous">
+
+
 
 
 
@@ -65,7 +67,6 @@ MUI v5 のスタイリング方法を v4 の記法と比較しながら紹介し
 
 <meta property="og:title" content="MUI (Material-UI) v5 のスタイリング方法" />
 <meta property="og:description" content="
-
 
 2021年9月16日に MUI (Material-UI) v5 が正式にリリースされました。Material-UI v4 のリリースが 2019年3月なので、約2年半ぶりのメジャーアップデートです。正式名称が Material-UI から MUI に変更になり、パッケージ名も @material-ui/* から @mui/* になりました。
 MUI v5 ではコンポーネントのスタイリングの実装方法や記法が一新し、Material-UI v4 以前までの独特な記法から、Theme UI、chakra などで用いられている sx Prop によるスタイリングになりました。
@@ -75,10 +76,8 @@ MUI v5 のスタイリング方法を v4 の記法と比較しながら紹介し
 <meta property="og:url" content="https://cieloazul310.github.io/2021/09/mui5/" /><meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-09-20T20:30:00+09:00" />
 <meta property="article:modified_time" content="2021-09-20T20:30:00+09:00" />
-
 <meta itemprop="name" content="MUI (Material-UI) v5 のスタイリング方法">
 <meta itemprop="description" content="
-
 
 2021年9月16日に MUI (Material-UI) v5 が正式にリリースされました。Material-UI v4 のリリースが 2019年3月なので、約2年半ぶりのメジャーアップデートです。正式名称が Material-UI から MUI に変更になり、パッケージ名も @material-ui/* から @mui/* になりました。
 MUI v5 ではコンポーネントのスタイリングの実装方法や記法が一新し、Material-UI v4 以前までの独特な記法から、Theme UI、chakra などで用いられている sx Prop によるスタイリングになりました。
@@ -91,7 +90,6 @@ MUI v5 のスタイリング方法を v4 の記法と比較しながら紹介し
 
 <meta name="twitter:title" content="MUI (Material-UI) v5 のスタイリング方法"/>
 <meta name="twitter:description" content="
-
 
 2021年9月16日に MUI (Material-UI) v5 が正式にリリースされました。Material-UI v4 のリリースが 2019年3月なので、約2年半ぶりのメジャーアップデートです。正式名称が Material-UI から MUI に変更になり、パッケージ名も @material-ui/* から @mui/* になりました。
 MUI v5 ではコンポーネントのスタイリングの実装方法や記法が一新し、Material-UI v4 以前までの独特な記法から、Theme UI、chakra などで用いられている sx Prop によるスタイリングになりました。
@@ -108,16 +106,16 @@ MUI v5 のスタイリング方法を v4 の記法と比較しながら紹介し
 <![endif]-->
 
 
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VE0MVTCH7K"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-74683419-3', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-VE0MVTCH7K', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -125,7 +123,7 @@ if (!doNotTrack) {
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+    <a href="/" class="logo">水戸地図</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -186,8 +184,8 @@ if (!doNotTrack) {
 
 
 
-  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.css" />
-  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/default-skin/default-skin.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
 
 
 
@@ -244,7 +242,7 @@ if (!doNotTrack) {
 
   <header id="header" class="header container">
     <div class="logo-wrapper">
-  <a href="https://cieloazul310.github.io/" class="logo">
+  <a href="/" class="logo">
     
       水戸地図
     
@@ -321,7 +319,7 @@ if (!doNotTrack) {
   </header>
 
   <div id="mobile-panel">
-    <main id="main" class="main bg-llight">
+    <main id="main" class="main bg-llight wallpaper">
       <div class="content-wrapper">
         <div id="content" class="content container">
           <article class="post bg-white">
@@ -329,42 +327,64 @@ if (!doNotTrack) {
     <header class="post-header">
       <h1 class="post-title">MUI (Material-UI) v5 のスタイリング方法</h1>
       
+
       <div class="post-meta">
-        <time datetime="2021-09-20" class="post-time">
-          2021-09-20
-        </time>
-        <div class="post-category">
-            <a href="https://cieloazul310.github.io/categories/javascript/"> JavaScript </a>
-            
-          </div>
-        
+  <div class="post-meta-author">
+    by
+      cieloazul310
+    
+  </div>
 
-        
-        
+  <div class="post-meta-time">
+    <time datetime="2021-09-20">
+      2021-09-20
+    </time>
+  </div>
 
-        
-        
+  
+
+
+  <div class="post-meta__right">
+    
+
+    <div class="post-meta-category">
+        <a href="https://cieloazul310.github.io/categories/javascript/"> JavaScript </a>
+          
       </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
     </header>
 
     
     
 
+
     
     <div class="post-content">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <!--
+- 対象: 
+- 目的: 
+-->
+<!-- Lead Paragraph -->
 <p>2021年9月16日に <a href="https://mui.com/blog/mui-core-v5/" title="Introducing MUI Core v5.0">MUI (Material-UI) v5 が正式にリリースされました</a>。<a href="https://mui.com/blog/material-ui-v4-is-out/">Material-UI v4 のリリース</a>が 2019年3月なので、約2年半ぶりのメジャーアップデートです。<a href="https://mui.com/blog/material-ui-is-now-mui/" title="Material-UI is now MUI!">正式名称が Material-UI から MUI に変更になり</a>、パッケージ名も <code>@material-ui/*</code> から <code>@mui/*</code> になりました。</p>
 <p>MUI v5 ではコンポーネントのスタイリングの実装方法や記法が一新し、Material-UI v4 以前までの独特な記法から、<a href="https://theme-ui.com" title="Theme UI">Theme UI</a>、<a href="https://chakra-ui.com" title="chakra">chakra</a> などで用いられている <code>sx</code> Prop によるスタイリングになりました。<br>
 大幅な変更になるので、v4 からの移行コストは大きいですが、新たに MUI を学ぶ人には優しくなった印象です。</p>
 <p>MUI v5 のスタイリング方法を v4 の記法と比較しながら紹介していきます。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yarn add @mui/material @emotion/react @emotion/styled
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yarn add @mui/material @emotion/react @emotion/styled
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Introducing MUI Core v5.0<br>
@@ -375,74 +395,74 @@ if (!doNotTrack) {
 <h2 id="v4-と-v5-の記法の違い">v4 と v5 の記法の違い</h2>
 <h3 id="material-ui-v4-の記法">Material-UI v4 の記法</h3>
 <p><code>makeStyles</code> でスタイル用のフックを作成し、コンポーネント内で className を取得します。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-16">16</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-17">17</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-18">18</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-19">19</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-tsx" data-lang="tsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">makeStyles</span><span class="p">,</span> <span class="nx">createStyles</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@material-ui/core/styles&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// フックを作成
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">useStyles</span> <span class="o">=</span> <span class="nx">makeStyles</span><span class="p">((</span><span class="nx">theme</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">createStyles</span><span class="p">({</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">color</span>: <span class="kt">theme.palette.primary.main</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">padding</span>: <span class="kt">theme.spacing</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">  <span class="p">},</span>
-</span></span><span class="line"><span class="cl"><span class="p">}));</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Hoge() {</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// フックで className を取得
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">classes</span> <span class="o">=</span> <span class="nx">useStyles</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">}&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">Hoge</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> { makeStyles, createStyles } <span style="color:#000;font-weight:bold">from</span> <span style="color:#d14">&#39;@material-ui/core/styles&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// フックを作成
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">const</span> useStyles <span style="color:#000;font-weight:bold">=</span> makeStyles((theme) <span style="color:#000;font-weight:bold">=&gt;</span> createStyles({
+</span></span><span style="display:flex;"><span>  root<span style="color:#000;font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>    color: <span style="color:#458;font-weight:bold">theme.palette.primary.main</span>,
+</span></span><span style="display:flex;"><span>    padding: <span style="color:#458;font-weight:bold">theme.spacing</span>(<span style="color:#099">2</span>),
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>}));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">function</span> Hoge() {
+</span></span><span style="display:flex;"><span>  <span style="color:#998;font-style:italic">// フックで className を取得
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>  <span style="color:#000;font-weight:bold">const</span> classes <span style="color:#000;font-weight:bold">=</span> useStyles();
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#000080">div</span> <span style="color:#008080">className</span><span style="color:#000;font-weight:bold">=</span>{classes.root}&gt;
+</span></span><span style="display:flex;"><span>      Hoge
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#000080">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="mui-v5-の記法">MUI v5 の記法</h3>
 <p><code>sx</code> Prop にスタイルを直接記入します。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-7">7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-8">8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-9">9</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-tsx" data-lang="tsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Box</span> <span class="kr">from</span> <span class="s1">&#39;@mui/material/Box&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Hoge() {</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Box</span> <span class="na">sx</span><span class="o">=</span><span class="p">{{</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;primary.main&#39;</span><span class="p">,</span> <span class="nx">p</span>: <span class="kt">2</span> <span class="p">}}&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">Hoge</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">Box</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> Box <span style="color:#000;font-weight:bold">from</span> <span style="color:#d14">&#39;@mui/material/Box&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">function</span> Hoge() {
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#000080">Box</span> <span style="color:#008080">sx</span><span style="color:#000;font-weight:bold">=</span>{{ color<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#39;primary.main&#39;</span>, p: <span style="color:#458;font-weight:bold">2</span> }}&gt;
+</span></span><span style="display:flex;"><span>      Hoge
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#000080">Box</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>sx</code> Prop によって記述量がとても少なくなり、初心者にもわかりやすい記法になりました。<br>
@@ -470,38 +490,38 @@ color に指定した <code>primary.main</code> は、MUI テーマのパレッ�
 </div>
 <h4 id="sx-prop-について"><code>sx</code> Prop について</h4>
 <p>MUI v5 のすべてのコンポーネントは <code>sx</code> Prop でスタイリング可能です。<code>sx</code> Prop は従来の（React では非推奨ですが）<code>style</code> Prop に似ていますが、<a href="https://mui.com/system/the-sx-prop/#theme-aware-properties">MUI テーマに基づいたスタイリング</a>や、<a href="https://mui.com/system/basics/#responsive-values">レスポンシブで動的なスタイリング</a>が容易という特徴があります。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-14">14</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-tsx" data-lang="tsx"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">Box</span>
-</span></span><span class="line"><span class="cl">  <span class="na">sx</span><span class="o">=</span><span class="p">{{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">width</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">xs</span>: <span class="kt">100</span><span class="p">,</span> <span class="c1">// theme.breakpoints.up(&#39;xs&#39;)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">sm</span>: <span class="kt">200</span><span class="p">,</span> <span class="c1">// theme.breakpoints.up(&#39;sm&#39;)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">md</span>: <span class="kt">300</span><span class="p">,</span> <span class="c1">// theme.breakpoints.up(&#39;md&#39;)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">lg</span>: <span class="kt">400</span><span class="p">,</span> <span class="c1">// theme.breakpoints.up(&#39;lg&#39;)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">xl</span>: <span class="kt">500</span><span class="p">,</span> <span class="c1">// theme.breakpoints.up(&#39;xl&#39;)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">height</span><span class="o">:</span> <span class="p">(</span><span class="nx">theme</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">theme</span><span class="p">.</span><span class="nx">spacing</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1">// =&gt; 80px (8px * 10)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">}}</span>
-</span></span><span class="line"><span class="cl"><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">This</span> <span class="nx">box</span> <span class="nx">has</span> <span class="nx">a</span> <span class="nx">responsive</span> <span class="nx">width</span><span class="p">.</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">Box</span><span class="p">&gt;</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span>&lt;<span style="color:#000080">Box</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#008080">sx</span><span style="color:#000;font-weight:bold">=</span>{{
+</span></span><span style="display:flex;"><span>    width<span style="color:#000;font-weight:bold">:</span> {
+</span></span><span style="display:flex;"><span>      xs: <span style="color:#458;font-weight:bold">100</span>, <span style="color:#998;font-style:italic">// theme.breakpoints.up(&#39;xs&#39;)
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>      sm: <span style="color:#458;font-weight:bold">200</span>, <span style="color:#998;font-style:italic">// theme.breakpoints.up(&#39;sm&#39;)
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>      md: <span style="color:#458;font-weight:bold">300</span>, <span style="color:#998;font-style:italic">// theme.breakpoints.up(&#39;md&#39;)
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>      lg: <span style="color:#458;font-weight:bold">400</span>, <span style="color:#998;font-style:italic">// theme.breakpoints.up(&#39;lg&#39;)
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>      xl: <span style="color:#458;font-weight:bold">500</span>, <span style="color:#998;font-style:italic">// theme.breakpoints.up(&#39;xl&#39;)
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>    },
+</span></span><span style="display:flex;"><span>    height<span style="color:#000;font-weight:bold">:</span> (theme) <span style="color:#000;font-weight:bold">=&gt;</span> theme.spacing(<span style="color:#099">10</span>) <span style="color:#998;font-style:italic">// =&gt; 80px (8px * 10)
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>  }}
+</span></span><span style="display:flex;"><span>&gt;
+</span></span><span style="display:flex;"><span>  This box has a responsive width.
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#000080">Box</span>&gt;
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>sx</code> Prop では、v4 の <code>makeStyle</code> によるスタイリングと同様に、値に<code>theme</code> を引数にとった関数を指定することができます。</p>
@@ -509,24 +529,24 @@ color に指定した <code>primary.main</code> は、MUI テーマのパレッ�
 <a href="https://mui.com/system/the-sx-prop/">https://mui.com/system/the-sx-prop/</a></p>
 <h4 id="box-コンポーネントについて"><code>&lt;Box&gt;</code> コンポーネントについて</h4>
 <p><a href="https://mui.com/components/box/"><code>&lt;Box&gt;</code> コンポーネント</a>は、<code>sx</code> Prop のプロパティを Prop として直接記述できる基礎的なコンポーネントです。実は <a href="https://v4.mui.com/components/box/">v4 時代には既に導入されていました</a>が、パフォーマンスが低いという難点がありました。リリースノートによると、v5 では大幅にパフォーマンスが改善されたそうです。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-7">7</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-tsx" data-lang="tsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Box</span> <span class="kr">from</span> <span class="s1">&#39;@mui/material/Box&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// padding: 16px (spacing(8px) * 2)
-</span></span></span><span class="line"><span class="cl"><span class="c1">// background-color: theme.palette.primary.dark
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">&lt;</span><span class="nt">Box</span> <span class="na">p</span><span class="o">=</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span> <span class="na">bgcolor</span><span class="o">=</span><span class="s">&#34;primary.dark&#34;</span> <span class="na">width</span><span class="o">=</span><span class="p">{</span><span class="mi">100</span><span class="p">}</span> <span class="na">height</span><span class="o">=</span><span class="p">{</span><span class="mi">100</span><span class="p">}&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">hoge</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">Box</span><span class="p">&gt;</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> Box <span style="color:#000;font-weight:bold">from</span> <span style="color:#d14">&#39;@mui/material/Box&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// padding: 16px (spacing(8px) * 2)
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// background-color: theme.palette.primary.dark
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>&lt;<span style="color:#000080">Box</span> <span style="color:#008080">p</span><span style="color:#000;font-weight:bold">=</span>{<span style="color:#099">2</span>} <span style="color:#008080">bgcolor</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;primary.dark&#34;</span> <span style="color:#008080">width</span><span style="color:#000;font-weight:bold">=</span>{<span style="color:#099">100</span>} <span style="color:#008080">height</span><span style="color:#000;font-weight:bold">=</span>{<span style="color:#099">100</span>}&gt;
+</span></span><span style="display:flex;"><span>  hoge
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#000080">Box</span>&gt;
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>&lt;Box&gt;</code> コンポーネントと <code>&lt;Typography&gt;</code> コンポーネントではこの方法で、 <code>sx</code> Prop を使わずにスタイルを設定することができます。</p>
@@ -536,66 +556,66 @@ color に指定した <code>primary.main</code> は、MUI テーマのパレッ�
 <a href="https://mui.com/system/properties/">https://mui.com/system/properties/</a></p>
 <h4 id="一般の-html-要素のスタイリング">一般の HTML 要素のスタイリング</h4>
 <p><code>&lt;div&gt;</code> や <code>&lt;span&gt;</code> などの一般の HTML 要素は <code>sx</code> Prop を持ちません。これらをスタイリングするには、<code>&lt;Box&gt;</code> コンポーネント や <code>&lt;Typography&gt;</code> コンポーネントを使い、<code>component</code> Prop で HTML 要素を指定するといいでしょう。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-16">16</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-17">17</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-18">18</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-19">19</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-20">20</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-21">21</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-22">22</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-23">23</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-24">24</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-25">25</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-26">26</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-27"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-27">27</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-28"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-28">28</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-tsx" data-lang="tsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Box</span> <span class="kr">from</span> <span class="s1">&#39;@mui/material/Box&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Stack</span> <span class="kr">from</span> <span class="s1">&#39;@mui/material/Stack&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Typography</span> <span class="kr">from</span> <span class="s1">&#39;@mui/material/Typography&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">interface</span> <span class="nx">ItemProps</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">children</span>: <span class="kt">React.ReactNode</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Item</span><span class="p">({</span> <span class="nx">children</span> <span class="p">}</span><span class="o">:</span> <span class="nx">ItemProps</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Typography</span> <span class="na">variant</span><span class="o">=</span><span class="s">&#34;body2&#34;</span> <span class="na">component</span><span class="o">=</span><span class="s">&#34;span&#34;</span> <span class="na">sx</span><span class="o">=</span><span class="p">{{</span> <span class="nx">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;secondary.light&#39;</span><span class="p">,</span> <span class="nx">p</span>: <span class="kt">1</span> <span class="p">}}&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="nx">children</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">Typography</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Hoge() {</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// py (padding-top, padding-bottom): { xs: 16px, sm: 8px }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">&lt;</span><span class="nt">Box</span> <span class="na">component</span><span class="o">=</span><span class="s">&#34;nav&#34;</span> <span class="na">sx</span><span class="o">=</span><span class="p">{{</span> <span class="nx">py</span><span class="o">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="p">}}&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Stack</span> <span class="na">spacing</span><span class="o">=</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span> <span class="na">direction</span><span class="o">=</span><span class="p">{{</span> <span class="nx">xs</span><span class="o">:</span> <span class="s1">&#39;column&#39;</span><span class="p">,</span> <span class="nx">sm</span><span class="o">:</span> <span class="s1">&#39;row&#39;</span> <span class="p">}}&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">Item</span><span class="p">&gt;</span><span class="nx">Top</span><span class="p">&lt;/</span><span class="nt">Item</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">Item</span><span class="p">&gt;</span><span class="nx">News</span><span class="p">&lt;/</span><span class="nt">Item</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">Item</span><span class="p">&gt;</span><span class="nx">Site</span> <span class="nx">Map</span><span class="p">&lt;/</span><span class="nt">Item</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">Stack</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">Box</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> Box <span style="color:#000;font-weight:bold">from</span> <span style="color:#d14">&#39;@mui/material/Box&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> Stack <span style="color:#000;font-weight:bold">from</span> <span style="color:#d14">&#39;@mui/material/Stack&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> Typography <span style="color:#000;font-weight:bold">from</span> <span style="color:#d14">&#39;@mui/material/Typography&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">interface</span> ItemProps {
+</span></span><span style="display:flex;"><span>  children: <span style="color:#458;font-weight:bold">React.ReactNode</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">function</span> Item({ children }<span style="color:#000;font-weight:bold">:</span> ItemProps) {
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#000080">Typography</span> <span style="color:#008080">variant</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;body2&#34;</span> <span style="color:#008080">component</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;span&#34;</span> <span style="color:#008080">sx</span><span style="color:#000;font-weight:bold">=</span>{{ backgroundColor<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#39;secondary.light&#39;</span>, p: <span style="color:#458;font-weight:bold">1</span> }}&gt;
+</span></span><span style="display:flex;"><span>      {children}
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#000080">Typography</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">function</span> Hoge() {
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#998;font-style:italic">// py (padding-top, padding-bottom): { xs: 16px, sm: 8px }
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>    &lt;<span style="color:#000080">Box</span> <span style="color:#008080">component</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;nav&#34;</span> <span style="color:#008080">sx</span><span style="color:#000;font-weight:bold">=</span>{{ py<span style="color:#000;font-weight:bold">:</span> [<span style="color:#099">2</span>, <span style="color:#099">1</span>] }}&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#000080">Stack</span> <span style="color:#008080">spacing</span><span style="color:#000;font-weight:bold">=</span>{<span style="color:#099">2</span>} <span style="color:#008080">direction</span><span style="color:#000;font-weight:bold">=</span>{{ xs<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#39;column&#39;</span>, sm<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#39;row&#39;</span> }}&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#000080">Item</span>&gt;Top&lt;/<span style="color:#000080">Item</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#000080">Item</span>&gt;News&lt;/<span style="color:#000080">Item</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#000080">Item</span>&gt;Site Map&lt;/<span style="color:#000080">Item</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#000080">Stack</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#000080">Box</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>&lt;Box&gt;</code> Component<br>
@@ -605,55 +625,55 @@ color に指定した <code>primary.main</code> は、MUI テーマのパレッ�
 <h4 id="margin-padding-と-spacing-という単位">margin, padding と <code>spacing</code> という単位</h4>
 <p>MUI にはスタイリングの統一感を出すために、padding や margin に指定するための <code>spacing</code> という単位が存在します。<code>spacing</code> は MUI テーマ で規定されていて、デフォルトでは 8px に設定されています。</p>
 <p><code>sx</code> Prop や <code>&lt;Box&gt;</code> コンポーネントで設定する padding や margin には、<strong><code>spacing</code> が単位として使われています</strong>。v4 では <code>makeStyles</code> でフックを作る際に、<code>theme.spacing</code> を使うことで <code>spacing</code> の単位が明示的に使われていましたが、v5 になって <code>spacing</code> という単位が暗黙的に使われるようになったので注意が必要です。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-5">5</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-tsx" data-lang="tsx"><span class="line"><span class="cl"><span class="c1">// margin-right: 8px (8px * 1)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">&lt;</span><span class="nt">Typography</span> <span class="na">component</span><span class="o">=</span><span class="s">&#34;span&#34;</span> <span class="na">sx</span><span class="o">=</span><span class="p">{{</span> <span class="nx">mr</span>: <span class="kt">1</span> <span class="p">}}&gt;&lt;/</span><span class="nt">Typography</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// padding-top, paading-bottom: 16px (8px * 2)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">&lt;</span><span class="nt">Box</span> <span class="na">py</span><span class="o">=</span><span class="p">{</span><span class="mi">2</span><span class="p">}&gt;&lt;/</span><span class="nt">Box</span><span class="p">&gt;</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// margin-right: 8px (8px * 1)
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>&lt;<span style="color:#000080">Typography</span> <span style="color:#008080">component</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;span&#34;</span> <span style="color:#008080">sx</span><span style="color:#000;font-weight:bold">=</span>{{ mr: <span style="color:#458;font-weight:bold">1</span> }}&gt;&lt;/<span style="color:#000080">Typography</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// padding-top, paading-bottom: 16px (8px * 2)
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>&lt;<span style="color:#000080">Box</span> <span style="color:#008080">py</span><span style="color:#000;font-weight:bold">=</span>{<span style="color:#099">2</span>}&gt;&lt;/<span style="color:#000080">Box</span>&gt;
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>また、padding と margin だけは <code>spacing</code> を単位に取りますが、その他のプロパティは基本的に <code>px</code> を単位に取るので混同しないように注意が必要です。また、<code>borderRadius</code> は独自の <code>theme.shape.borderRadius</code> (デフォルトは <code>spacing</code> の半分である 4px)という単位を取るので注意しましょう。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-14">14</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-tsx" data-lang="tsx"><span class="line"><span class="cl"><span class="c1">// 正円になる
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">&lt;</span><span class="nt">Box</span> <span class="na">sx</span><span class="o">=</span><span class="p">{{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">display</span><span class="o">:</span> <span class="s1">&#39;flex&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">width</span>: <span class="kt">64</span><span class="p">,</span> <span class="c1">// =&gt; 64px
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">height</span>: <span class="kt">64</span><span class="p">,</span> <span class="c1">// =&gt; 64px
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">borderRadius</span>: <span class="kt">8</span><span class="p">,</span> <span class="c1">// =&gt; 32px (4px * 8)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}}</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">Box</span> <span class="na">sx</span><span class="o">=</span><span class="p">{{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">display</span><span class="o">:</span> <span class="s1">&#39;flex&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">width</span><span class="o">:</span> <span class="p">(</span><span class="nx">theme</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">theme</span><span class="p">.</span><span class="nx">spacing</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span> <span class="c1">// 64px
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">height</span><span class="o">:</span> <span class="p">(</span><span class="nx">theme</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">theme</span><span class="p">.</span><span class="nx">spacing</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span> <span class="c1">// 64px 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">borderRadius</span>: <span class="kt">8</span><span class="p">,</span> <span class="c1">// 32px (4px * 8)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}}&gt;</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// 正円になる
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>&lt;<span style="color:#000080">Box</span> <span style="color:#008080">sx</span><span style="color:#000;font-weight:bold">=</span>{{
+</span></span><span style="display:flex;"><span>  display<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#39;flex&#39;</span>,
+</span></span><span style="display:flex;"><span>  width: <span style="color:#458;font-weight:bold">64</span>, <span style="color:#998;font-style:italic">// =&gt; 64px
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>  height: <span style="color:#458;font-weight:bold">64</span>, <span style="color:#998;font-style:italic">// =&gt; 64px
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>  borderRadius: <span style="color:#458;font-weight:bold">8</span>, <span style="color:#998;font-style:italic">// =&gt; 32px (4px * 8)
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>}} /&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#000080">Box</span> <span style="color:#008080">sx</span><span style="color:#000;font-weight:bold">=</span>{{
+</span></span><span style="display:flex;"><span>  display<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#39;flex&#39;</span>,
+</span></span><span style="display:flex;"><span>  width<span style="color:#000;font-weight:bold">:</span> (theme) <span style="color:#000;font-weight:bold">=&gt;</span> theme.spacing(<span style="color:#099">8</span>), <span style="color:#998;font-style:italic">// 64px
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>  height<span style="color:#000;font-weight:bold">:</span> (theme) <span style="color:#000;font-weight:bold">=&gt;</span> theme.spacing(<span style="color:#099">8</span>), <span style="color:#998;font-style:italic">// 64px 
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>  borderRadius: <span style="color:#458;font-weight:bold">8</span>, <span style="color:#998;font-style:italic">// 32px (4px * 8)
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>}}&gt;
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Spacing<br>
@@ -670,7 +690,7 @@ v5 では <code>sx</code> Prop で記述する形になったので、初心者�
 <li><a href="https://mui.com/guides/migration-v4/" title="Migration from v4 to v5">Migration from v4 to v5</a></li>
 <li><a href="https://tech.techtouch.jp/entry/material-ui-v5_9">Material-UI v5を先取りする</a> - Techtouch Developers Blog</li>
 </ul>
-<!-- raw HTML omitted -->
+<!-- Music -->
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/AD-Plrrx5Yc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
@@ -694,7 +714,7 @@ v5 では <code>sx</code> Prop で記述する形になったので、初心者�
     
   
 </div>
-<!-- raw HTML omitted -->
+<!-- References -->
     </div>
 
     
@@ -719,21 +739,24 @@ v5 では <code>sx</code> Prop で記述する形になったので、初心者�
 </div>
 
 
+
     
     
+
 
     <footer class="post-footer">
       <div class="post-tags">
           <a href="https://cieloazul310.github.io/tags/material-ui/">Material-UI</a>
-          <a href="https://cieloazul310.github.io/tags/mui/">MUI</a>
-          <a href="https://cieloazul310.github.io/tags/react/">React</a>
-          
+            <a href="https://cieloazul310.github.io/tags/mui/">MUI</a>
+            <a href="https://cieloazul310.github.io/tags/react/">React</a>
+            
         </div>
+
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="https://cieloazul310.github.io/2022/09/ol-gsi-vt/">
+          <a class="prev" href="/2022/09/ol-gsi-vt/">
             
             <i class="iconfont">
               <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -747,7 +770,7 @@ v5 では <code>sx</code> Prop で記述する形になったので、初心者�
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
-          <a class="next" href="https://cieloazul310.github.io/2021/02/rockman/">
+          <a class="next" href="/2021/02/rockman/">
             <span class="next-text nav-default">ロック大陸漫遊記プレイリスト集を公開しました</span>
             <span class="prev-text nav-mobile">Next</span>
             
@@ -767,14 +790,16 @@ v5 では <code>sx</code> Prop で記述する形になったので、初心者�
   
   
 
-  
-  
-
-  
 
   
   
 
+  
+
+  
+  
+
+  
   
 
   
@@ -801,13 +826,17 @@ v5 では <code>sx</code> Prop で記述する形になったので、初心者�
       $('#load_disqus').remove();
     };
   </script>
-  <noscript>Please enable JavaScript to view the
+  <noscript
+    >Please enable JavaScript to view the
     <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
   </noscript>
   
-  </div>
+</div>
+
 
     
+
+  
 
   
 
@@ -851,7 +880,7 @@ v5 では <code>sx</code> Prop で記述する形になったので、初心者�
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
@@ -867,7 +896,7 @@ v5 では <code>sx</code> Prop で記述する形になったので、初心者�
     &copy;
     
       2017 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -905,13 +934,13 @@ v5 では <code>sx</code> Prop で記述する形になったので、初心者�
     </div>
   </div>
   
-<script type="text/javascript" src="https://cieloazul310.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
 
 
 
 
-<script type="text/javascript" src="https://cieloazul310.github.io/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.fe83e11b4fbc9193d67e2c9db78bad21f8dc59fca0cacd8c1c3bb071bb16a852.js" integrity="sha256-/oPhG0&#43;8kZPWfiydt4utIfjcWfygys2MHDuwcbsWqFI=" crossorigin="anonymous"></script>
 
 
 
@@ -925,10 +954,12 @@ v5 では <code>sx</code> Prop で記述する形になったので、初心者�
 
 
   
-    <script type="text/javascript" src="https://cieloazul310.github.io/js/load-photoswipe.js"></script>
-    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.js"></script>
-    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
   
+
+
 
 
 

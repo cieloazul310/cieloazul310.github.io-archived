@@ -14,9 +14,11 @@
       <pubDate>Tue, 22 Nov 2022 22:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2022/11/migration-from-react-swipeable-views-to-swiper/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;&lt;a href=&#34;https://reactjs.org/&#34; title=&#34;React&#34;&gt;React&lt;/a&gt; でスワイプによるスライドの操作を実装するライブラリ &lt;a href=&#34;https://react-swipeable-views.com/&#34; title=&#34;react-swipeable-views&#34;&gt;react-swipeable-views&lt;/a&gt; が非推奨になりました。この記事では、&lt;a href=&#34;https://mui.com&#34; title=&#34;MUI&#34;&gt;MUI&lt;/a&gt; (旧 Material-UI) のドキュメントに掲載されている &lt;a href=&#34;https://mui.com/material-ui/react-tabs/#full-width&#34;&gt;react-swipeable-views を使ったコード&lt;/a&gt;を代替するライブラリ &lt;a href=&#34;https://swiperjs.com/&#34; title=&#34;Swiper&#34;&gt;Swiper&lt;/a&gt; に置き換えていきます。&lt;/p&gt;</description>
     </item>
     
@@ -26,9 +28,11 @@
       <pubDate>Mon, 20 Sep 2021 20:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2021/09/mui5/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;2021年9月16日に &lt;a href=&#34;https://mui.com/blog/mui-core-v5/&#34; title=&#34;Introducing MUI Core v5.0&#34;&gt;MUI (Material-UI) v5 が正式にリリースされました&lt;/a&gt;。&lt;a href=&#34;https://mui.com/blog/material-ui-v4-is-out/&#34;&gt;Material-UI v4 のリリース&lt;/a&gt;が 2019年3月なので、約2年半ぶりのメジャーアップデートです。&lt;a href=&#34;https://mui.com/blog/material-ui-is-now-mui/&#34; title=&#34;Material-UI is now MUI!&#34;&gt;正式名称が Material-UI から MUI に変更になり&lt;/a&gt;、パッケージ名も &lt;code&gt;@material-ui/*&lt;/code&gt; から &lt;code&gt;@mui/*&lt;/code&gt; になりました。&lt;/p&gt;
 &lt;p&gt;MUI v5 ではコンポーネントのスタイリングの実装方法や記法が一新し、Material-UI v4 以前までの独特な記法から、&lt;a href=&#34;https://theme-ui.com&#34; title=&#34;Theme UI&#34;&gt;Theme UI&lt;/a&gt;、&lt;a href=&#34;https://chakra-ui.com&#34; title=&#34;chakra&#34;&gt;chakra&lt;/a&gt; などで用いられている &lt;code&gt;sx&lt;/code&gt; Prop によるスタイリングになりました。&lt;br&gt;
 大幅な変更になるので、v4 からの移行コストは大きいですが、新たに MUI を学ぶ人には優しくなった印象です。&lt;/p&gt;

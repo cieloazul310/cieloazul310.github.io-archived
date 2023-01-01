@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.106.0" />
+<meta name="generator" content="Hugo 0.109.0" />
 
 
 <link rel="canonical" href="https://cieloazul310.github.io/2022/09/ol-gsi-vt-tech/" />
@@ -42,7 +42,7 @@
 
 
 
-<link rel="icon" href="https://cieloazul310.github.io/favicon.ico" />
+<link rel="icon" href="/favicon.ico" />
 
 
 
@@ -54,7 +54,9 @@
 
 
 
-<link rel="stylesheet" href="https://cieloazul310.github.io/sass/jane.min.96618627414b80b49c5bcc3c7eb0bf291b1ac3313f1a54e7944fdbd571c109bc.css" integrity="sha256-lmGGJ0FLgLScW8w8frC/KRsawzE/GlTnlE/b1XHBCbw=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.53a61ff5f929838ea90da6a8209628ba026b336b363b70898efc84562ba4115b.css" integrity="sha256-U6Yf9fkpg46pDaaoIJYougJrM2s2O3CJjvyEViukEVs=" media="screen" crossorigin="anonymous">
+
+
 
 
 
@@ -63,16 +65,13 @@
 <meta property="og:title" content="ol-gsi-vt 技術面のメモ" />
 <meta property="og:description" content="
 
-
 OpenLayers で国土地理院のベクトルタイルを簡単に表示するパッケージ @cieloazul310/ol-gsi-vt の作成に関する技術面のメモです。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cieloazul310.github.io/2022/09/ol-gsi-vt-tech/" /><meta property="og:image" content="https://cieloazul310.github.io/img/ogp2.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-09-30T21:10:00+09:00" />
 <meta property="article:modified_time" content="2022-09-30T21:10:00+09:00" />
-
 <meta itemprop="name" content="ol-gsi-vt 技術面のメモ">
 <meta itemprop="description" content="
-
 
 OpenLayers で国土地理院のベクトルタイルを簡単に表示するパッケージ @cieloazul310/ol-gsi-vt の作成に関する技術面のメモです。"><meta itemprop="datePublished" content="2022-09-30T21:10:00+09:00" />
 <meta itemprop="dateModified" content="2022-09-30T21:10:00+09:00" />
@@ -82,7 +81,6 @@ OpenLayers で国土地理院のベクトルタイルを簡単に表示するパ
 
 <meta name="twitter:title" content="ol-gsi-vt 技術面のメモ"/>
 <meta name="twitter:description" content="
-
 
 OpenLayers で国土地理院のベクトルタイルを簡単に表示するパッケージ @cieloazul310/ol-gsi-vt の作成に関する技術面のメモです。"/>
 
@@ -96,16 +94,16 @@ OpenLayers で国土地理院のベクトルタイルを簡単に表示するパ
 <![endif]-->
 
 
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VE0MVTCH7K"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-74683419-3', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-VE0MVTCH7K', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -113,7 +111,7 @@ if (!doNotTrack) {
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="https://cieloazul310.github.io/" class="logo">水戸地図</a>
+    <a href="/" class="logo">水戸地図</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -174,8 +172,8 @@ if (!doNotTrack) {
 
 
 
-  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.css" />
-  <link rel="stylesheet" href="https://cieloazul310.github.io/lib/photoswipe/default-skin/default-skin.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
 
 
 
@@ -232,7 +230,7 @@ if (!doNotTrack) {
 
   <header id="header" class="header container">
     <div class="logo-wrapper">
-  <a href="https://cieloazul310.github.io/" class="logo">
+  <a href="/" class="logo">
     
       水戸地図
     
@@ -309,7 +307,7 @@ if (!doNotTrack) {
   </header>
 
   <div id="mobile-panel">
-    <main id="main" class="main bg-llight">
+    <main id="main" class="main bg-llight wallpaper">
       <div class="content-wrapper">
         <div id="content" class="content container">
           <article class="post bg-white">
@@ -317,32 +315,54 @@ if (!doNotTrack) {
     <header class="post-header">
       <h1 class="post-title">ol-gsi-vt 技術面のメモ</h1>
       
+
       <div class="post-meta">
-        <time datetime="2022-09-30" class="post-time">
-          2022-09-30
-        </time>
-        <div class="post-category">
-            <a href="https://cieloazul310.github.io/categories/javascript/"> JavaScript </a>
-            
-          </div>
-        
+  <div class="post-meta-author">
+    by
+      cieloazul310
+    
+  </div>
 
-        
-        
+  <div class="post-meta-time">
+    <time datetime="2022-09-30">
+      2022-09-30
+    </time>
+  </div>
 
-        
-        
+  
+
+
+  <div class="post-meta__right">
+    
+
+    <div class="post-meta-category">
+        <a href="https://cieloazul310.github.io/categories/javascript/"> JavaScript </a>
+          
       </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
     </header>
 
     
     
 
+
     
     <div class="post-content">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <!--
+- 対象: 
+- 目的: 
+-->
+<!-- Lead Paragraph -->
 <p><a href="http://openlayers.org/" title="OpenLayers">OpenLayers</a> で国土地理院のベクトルタイルを簡単に表示するパッケージ <code>@cieloazul310/ol-gsi-vt</code> の作成に関する技術面のメモです。</p>
 <p>ol-gsi-vt がどんなパッケージか知りたい方は、以下の実例集のページをご覧ください。<br>
 実例集<br>
@@ -376,24 +396,24 @@ if (!doNotTrack) {
 <p>パッケージは <a href="https://lerna.js.org/" title="Lerna">Lerna</a> を使った Monorepo で作成しました。</p>
 <p>Lerna は<a href="https://github.com/lerna/lerna/releases/tag/v4.0.0">2021年2月にv4.0.0</a>が出てから一年以上メンテナンスがされていない状態であったため、脱 Lerna の風潮がありましたが、<a href="https://github.com/lerna/lerna/releases/tag/v5.0.0">2022年5月にv5.0.0</a>がリリースされました。さらに v5.1.0からは <a href="https://nx.dev/">Nx</a> を開発する <a href="https://blog.nrwl.io/lerna-5-1-new-website-new-guides-new-lerna-example-repo-distributed-caching-support-and-speed-64d66410bec7">Nrwl がメンテナンスを引き受けることが発表され</a>、その後も継続的にリリースがされています。(2022年9月30日現在の最新版は v5.6.0)</p>
 <p>Monorepo の構成は以下のようになっています。<code>/app/gallery</code> では後述する実例集のサイトを構成しています。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-7">7</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">.
-</span></span><span class="line"><span class="cl">├── app
-</span></span><span class="line"><span class="cl">│   └── gallery
-</span></span><span class="line"><span class="cl">└── packages
-</span></span><span class="line"><span class="cl">    ├── ol-gsi-vt
-</span></span><span class="line"><span class="cl">    ├── ol-gsi-vt-style
-</span></span><span class="line"><span class="cl">    └── ol-gsi-vt-style-utils
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── app
+</span></span><span style="display:flex;"><span>│   └── gallery
+</span></span><span style="display:flex;"><span>└── packages
+</span></span><span style="display:flex;"><span>    ├── ol-gsi-vt
+</span></span><span style="display:flex;"><span>    ├── ol-gsi-vt-style
+</span></span><span style="display:flex;"><span>    └── ol-gsi-vt-style-utils
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="各パッケージ">各パッケージ</h4>
@@ -442,7 +462,7 @@ if (!doNotTrack) {
 <p>コンソールを確認したところ、SWC の minify に関連するバグとわかったので、<code>next.config.js</code> にデフォルトで設定されている <code>swcMinify: true</code> を削ることで解決しました。</p>
 <h2 id="今後">今後</h2>
 <p>CI/CD の概念や、<a href="https://docs.github.com/ja/actions">GitHub Actions</a> を使ったリリースまでのワークフロー自動化についてまだ詳しくない、というかようやくその意義について理解してきたので、習得していきたいです。</p>
-<!-- raw HTML omitted -->
+<!-- Music -->
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/4B214L6YxmA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
@@ -466,7 +486,7 @@ if (!doNotTrack) {
     
   
 </div>
-<!-- raw HTML omitted -->
+<!-- References -->
     </div>
 
     
@@ -491,16 +511,19 @@ if (!doNotTrack) {
 </div>
 
 
+
     
     
+
 
     <footer class="post-footer">
       
 
+
       
       <nav class="post-nav">
         
-          <a class="prev" href="https://cieloazul310.github.io/2022/11/migration-from-react-swipeable-views-to-swiper/">
+          <a class="prev" href="/2022/11/migration-from-react-swipeable-views-to-swiper/">
             
             <i class="iconfont">
               <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -514,7 +537,7 @@ if (!doNotTrack) {
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
-          <a class="next" href="https://cieloazul310.github.io/2022/09/ol-gsi-vt/">
+          <a class="next" href="/2022/09/ol-gsi-vt/">
             <span class="next-text nav-default">国土地理院のベクトルタイルを手軽にOpenLayersで表示するパッケージを作成しました</span>
             <span class="prev-text nav-mobile">Next</span>
             
@@ -534,14 +557,16 @@ if (!doNotTrack) {
   
   
 
-  
-  
-
-  
 
   
   
 
+  
+
+  
+  
+
+  
   
 
   
@@ -568,13 +593,17 @@ if (!doNotTrack) {
       $('#load_disqus').remove();
     };
   </script>
-  <noscript>Please enable JavaScript to view the
+  <noscript
+    >Please enable JavaScript to view the
     <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
   </noscript>
   
-  </div>
+</div>
+
 
     
+
+  
 
   
 
@@ -618,7 +647,7 @@ if (!doNotTrack) {
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
@@ -634,7 +663,7 @@ if (!doNotTrack) {
     &copy;
     
       2017 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -672,13 +701,13 @@ if (!doNotTrack) {
     </div>
   </div>
   
-<script type="text/javascript" src="https://cieloazul310.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="https://cieloazul310.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
 
 
 
 
-<script type="text/javascript" src="https://cieloazul310.github.io/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.fe83e11b4fbc9193d67e2c9db78bad21f8dc59fca0cacd8c1c3bb071bb16a852.js" integrity="sha256-/oPhG0&#43;8kZPWfiydt4utIfjcWfygys2MHDuwcbsWqFI=" crossorigin="anonymous"></script>
 
 
 
@@ -692,10 +721,12 @@ if (!doNotTrack) {
 
 
   
-    <script type="text/javascript" src="https://cieloazul310.github.io/js/load-photoswipe.js"></script>
-    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe.min.js"></script>
-    <script type="text/javascript" src="https://cieloazul310.github.io/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
   
+
+
 
 
 

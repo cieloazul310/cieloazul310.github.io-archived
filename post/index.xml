@@ -14,9 +14,11 @@
       <pubDate>Tue, 22 Nov 2022 22:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2022/11/migration-from-react-swipeable-views-to-swiper/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;&lt;a href=&#34;https://reactjs.org/&#34; title=&#34;React&#34;&gt;React&lt;/a&gt; でスワイプによるスライドの操作を実装するライブラリ &lt;a href=&#34;https://react-swipeable-views.com/&#34; title=&#34;react-swipeable-views&#34;&gt;react-swipeable-views&lt;/a&gt; が非推奨になりました。この記事では、&lt;a href=&#34;https://mui.com&#34; title=&#34;MUI&#34;&gt;MUI&lt;/a&gt; (旧 Material-UI) のドキュメントに掲載されている &lt;a href=&#34;https://mui.com/material-ui/react-tabs/#full-width&#34;&gt;react-swipeable-views を使ったコード&lt;/a&gt;を代替するライブラリ &lt;a href=&#34;https://swiperjs.com/&#34; title=&#34;Swiper&#34;&gt;Swiper&lt;/a&gt; に置き換えていきます。&lt;/p&gt;</description>
     </item>
     
@@ -26,9 +28,11 @@
       <pubDate>Fri, 30 Sep 2022 21:10:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2022/09/ol-gsi-vt-tech/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;&lt;a href=&#34;http://openlayers.org/&#34; title=&#34;OpenLayers&#34;&gt;OpenLayers&lt;/a&gt; で国土地理院のベクトルタイルを簡単に表示するパッケージ &lt;code&gt;@cieloazul310/ol-gsi-vt&lt;/code&gt; の作成に関する技術面のメモです。&lt;/p&gt;</description>
     </item>
     
@@ -38,9 +42,11 @@
       <pubDate>Mon, 19 Sep 2022 21:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2022/09/ol-gsi-vt/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;国土地理院のベクトルタイルを地図ライブラリ &lt;a href=&#34;http://openlayers.org/&#34; title=&#34;OpenLayers&#34;&gt;OpenLayers&lt;/a&gt; で手軽に表示するパッケージ &lt;strong&gt;@cieloazul310/ol-gsi-vt&lt;/strong&gt; をリリースしました。&lt;/p&gt;
 &lt;p&gt;GitHub リポジトリ&lt;br&gt;
 &lt;a href=&#34;https://github.com/cieloazul310/ol-gsi-vt&#34;&gt;https://github.com/cieloazul310/ol-gsi-vt&lt;/a&gt;&lt;/p&gt;
@@ -56,9 +62,11 @@
       <pubDate>Mon, 20 Sep 2021 20:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2021/09/mui5/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;2021年9月16日に &lt;a href=&#34;https://mui.com/blog/mui-core-v5/&#34; title=&#34;Introducing MUI Core v5.0&#34;&gt;MUI (Material-UI) v5 が正式にリリースされました&lt;/a&gt;。&lt;a href=&#34;https://mui.com/blog/material-ui-v4-is-out/&#34;&gt;Material-UI v4 のリリース&lt;/a&gt;が 2019年3月なので、約2年半ぶりのメジャーアップデートです。&lt;a href=&#34;https://mui.com/blog/material-ui-is-now-mui/&#34; title=&#34;Material-UI is now MUI!&#34;&gt;正式名称が Material-UI から MUI に変更になり&lt;/a&gt;、パッケージ名も &lt;code&gt;@material-ui/*&lt;/code&gt; から &lt;code&gt;@mui/*&lt;/code&gt; になりました。&lt;/p&gt;
 &lt;p&gt;MUI v5 ではコンポーネントのスタイリングの実装方法や記法が一新し、Material-UI v4 以前までの独特な記法から、&lt;a href=&#34;https://theme-ui.com&#34; title=&#34;Theme UI&#34;&gt;Theme UI&lt;/a&gt;、&lt;a href=&#34;https://chakra-ui.com&#34; title=&#34;chakra&#34;&gt;chakra&lt;/a&gt; などで用いられている &lt;code&gt;sx&lt;/code&gt; Prop によるスタイリングになりました。&lt;br&gt;
 大幅な変更になるので、v4 からの移行コストは大きいですが、新たに MUI を学ぶ人には優しくなった印象です。&lt;/p&gt;
@@ -71,9 +79,11 @@
       <pubDate>Wed, 17 Feb 2021 21:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2021/02/rockman/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象:
+- 目的:
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;TOKYO-FM で放送されているラジオ番組「SPITZ 草野マサムネのロック大陸漫遊記」でオンエアされた楽曲を放送回別、アーティスト別等で分類した「&lt;strong&gt;ロック大陸漫遊記プレイリスト集&lt;/strong&gt;」を公開しました。&lt;/p&gt;
 &lt;p&gt;ロック大陸漫遊記プレイリスト集&lt;br&gt;
 &lt;a href=&#34;https://cieloazul310.github.io/rockman/&#34;&gt;https://cieloazul310.github.io/rockman/&lt;/a&gt;&lt;/p&gt;</description>
@@ -85,9 +95,11 @@
       <pubDate>Mon, 01 Feb 2021 20:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2021/02/openlayers-v6-blend-and-filter/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;&lt;a href=&#34;http://openlayers.org/&#34; title=&#34;OpenLayers&#34;&gt;OpenLayers&lt;/a&gt; で地図をグレースケールにしたり、乗算合成する方法です。&lt;br&gt;
 この記事は &lt;a href=&#34;https://qiita.com/cieloazul310/items/473300534e4e506ec0b9&#34;&gt;OpenLayers v3 時代に一度書いていましたが&lt;/a&gt;、&lt;a href=&#34;https://github.com/openlayers/openlayers/releases/tag/v6.0.0&#34;&gt;2019年11月にリリースされた v6&lt;/a&gt; では CSS で実装可能になっていたので、メモとして残しておきます。&lt;/p&gt;</description>
     </item>
@@ -98,9 +110,11 @@
       <pubDate>Sun, 31 Jan 2021 16:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2021/01/stadiums-population/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;2年ほど前に&lt;a href=&#34;https://cieloazul310.github.io/2019/02/gatsby-stadiums-population/&#34;&gt;国内のサッカースタジアム・アリーナ周辺の人口を調べる&lt;/a&gt;というページを作成しましたが、メンテナンスできない状態になっていたので、根本からガッツリと作り直しました。&lt;/p&gt;</description>
     </item>
     
@@ -110,9 +124,11 @@
       <pubDate>Mon, 18 Jan 2021 21:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2021/01/canvasmap/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/cieloazul310/canvasmap&#34; title=&#34;Canvas マップ&#34;&gt;Canvas マップ&lt;/a&gt;という国土地理院のバイナリベクトルタイルを利用して、データビジュアライゼーションのためのベースマップを生成する Node.js 向けのモジュールを作成しました。&lt;/p&gt;</description>
     </item>
     
@@ -122,9 +138,11 @@
       <pubDate>Sat, 29 Aug 2020 10:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2020/08/d3-v6-event/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/d3/d3/releases/tag/v6.0.0&#34;&gt;D3 v6&lt;/a&gt; が2020年8月26日にリリースされました。D3 v6 では &lt;code&gt;selection.on&lt;/code&gt; によるイベント処理の方法が変わりました。この記事では&lt;strong&gt;公式の移行ガイドに載っていないアロー関数使用時&lt;/strong&gt;に限った移行の方法を記していきます。&lt;/p&gt;
 &lt;p&gt;移行ガイドというタイトルですが、実質的には以前書いた&lt;a href=&#34;https://cieloazul310.github.io/2017/08/d3-arrow-function/&#34;&gt;D3.jsでアロー関数を使う時の注意点&lt;/a&gt; の v6 版です。&lt;/p&gt;</description>
     </item>
@@ -135,9 +153,11 @@
       <pubDate>Thu, 13 Aug 2020 10:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2020/08/jclub-financial-table/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;&lt;a href=&#34;https://cieloazul310.github.io/jclub-financial-table/&#34;&gt;Jクラブ経営情報2005-2019&lt;/a&gt;というページを作りました。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://cieloazul310.github.io/jclub-financial-table/&#34;&gt;https://cieloazul310.github.io/jclub-financial-table/&lt;/a&gt;&lt;/p&gt;</description>
     </item>
@@ -148,9 +168,11 @@
       <pubDate>Sun, 09 Feb 2020 17:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2020/02/gatsby-material-ui-darkmode/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 自分、Gatsby, Material-UI, React フックに一定の理解がある人
+- 目的: 自分向けの覚書 React Hooks の
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.gatsbyjs.org&#34; title=&#34;Gatsby&#34;&gt;Gatsby&lt;/a&gt; + &lt;a href=&#34;https://material-ui.com&#34; title=&#34;Material-UI&#34;&gt;Material-UI&lt;/a&gt; でダークモードを実装する方法です。&lt;br&gt;
 Gatsby, Material-UI 及び &lt;a href=&#34;https://ja.reactjs.org/docs/hooks-intro.html&#34; title=&#34;フックの導入 - React&#34;&gt;React フック&lt;/a&gt;に関するある程度の理解がある人向けの内容になります。&lt;/p&gt;</description>
     </item>
@@ -161,9 +183,11 @@ Gatsby, Material-UI 及び &lt;a href=&#34;https://ja.reactjs.org/docs/hooks-int
       <pubDate>Tue, 06 Aug 2019 22:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/08/landuse-map/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;土地利用を文字で見る地図を作りました。&lt;/p&gt;</description>
     </item>
     
@@ -173,9 +197,11 @@ Gatsby, Material-UI 及び &lt;a href=&#34;https://ja.reactjs.org/docs/hooks-int
       <pubDate>Sat, 03 Aug 2019 22:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/08/openlayers-vt/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: ある程度 OpenLayers の知識がある人
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/gsi-cyberjapan/gsimaps-vector-experiment&#34; title=&#34;地理院地図Vector（仮称）提供実験のソース&#34;&gt;2019年7月29日に国土地理院が提供実験を開始したバイナリ形式のベクトルタイル&lt;/a&gt;を JavaScript の地図ライブラリである &lt;a href=&#34;http://openlayers.org/&#34; title=&#34;OpenLayers&#34;&gt;OpenLayers&lt;/a&gt; で表示する方法です。&lt;/p&gt;</description>
     </item>
     
@@ -185,9 +211,11 @@ Gatsby, Material-UI 及び &lt;a href=&#34;https://ja.reactjs.org/docs/hooks-int
       <pubDate>Fri, 26 Jul 2019 22:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/07/jclub-financial-table/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;Jリーグクラブの経営情報をクラブ別・年別に見ることができるページを作成しました。&lt;/p&gt;</description>
     </item>
     
@@ -197,9 +225,11 @@ Gatsby, Material-UI 及び &lt;a href=&#34;https://ja.reactjs.org/docs/hooks-int
       <pubDate>Tue, 04 Jun 2019 21:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/06/typescript-material-ui-v4/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;2019年5月下旬に &lt;a href=&#34;https://material-ui.com&#34;&gt;Material-UI v4&lt;/a&gt; が正式にリリースされました。スタイル付きコンポーネントの記法が v3 以前のものと変わったのでメモしておきます。&lt;/p&gt;</description>
     </item>
     
@@ -209,9 +239,11 @@ Gatsby, Material-UI 及び &lt;a href=&#34;https://ja.reactjs.org/docs/hooks-int
       <pubDate>Mon, 25 Feb 2019 23:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/02/gatsby-stadiums-population/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: リリース文と技術的な話の概要
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;昨年&lt;a href=&#34;https://cieloazul310.github.io/2018/04/stadium-and-population/&#34;&gt;国内のサッカースタジアム周辺の人口を求める&lt;/a&gt;という記事を書きました。&lt;br&gt;
 前回の記事で算出結果の表示のために作ったページを新たに作り直し、ついでに前回算出しなかった半径 10km 圏内の人口と Bリーグのアリーナを加えました。&lt;/p&gt;</description>
     </item>
@@ -222,9 +254,11 @@ Gatsby, Material-UI 及び &lt;a href=&#34;https://ja.reactjs.org/docs/hooks-int
       <pubDate>Sat, 12 Jan 2019 23:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/01/material-react-typescript-notation/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: React + TypeScript + Material-UI で書いてる人
+- 目的: React + TypeScript + Material-UI の Component の記法のガイド
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;React + &lt;a href=&#34;https://material-ui.com&#34;&gt;Material-UI v3&lt;/a&gt; では &lt;code&gt;withStyles(styles)(Component)&lt;/code&gt; という独自の記法で&lt;strong&gt;スタイル付き Components&lt;/strong&gt; を生成します。&lt;br&gt;
 TypeScript で Material-UI のスタイル付き Components を記述する場合は、従来の JavaScript での記法とは多少異なるのですが、 TypeScript を使った記法については情報が少ないと思ったので覚え書きとして残しておきます。&lt;/p&gt;</description>
     </item>
@@ -235,9 +269,11 @@ TypeScript で Material-UI のスタイル付き Components を記述する場�
       <pubDate>Fri, 11 Jan 2019 22:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/01/typescript-hajimemashita/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: TypeScriptを始めたことを宣言する
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.typescriptlang.org&#34;&gt;TypeScript&lt;/a&gt; を始めました。TypeScript を始めるに至った過程を紹介します。&lt;/p&gt;</description>
     </item>
     
@@ -247,9 +283,11 @@ TypeScript で Material-UI のスタイル付き Components を記述する場�
       <pubDate>Wed, 31 Oct 2018 21:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2018/10/mvt-tile-to-geojson/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: バイナリベクトルタイルを知っているWEB技術者
+- 目的: バイナリベクトルタイルのファイルに対する理解
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.mapbox.com/mapbox-gl-js/api/&#34;&gt;Mapbox GL JS&lt;/a&gt; や &lt;a href=&#34;https://leafletjs.com/&#34;&gt;Leaflet&lt;/a&gt; といった地図ライブラリを使わずに JavaScript でバイナリベクトルタイルを使う方法です。&lt;/p&gt;</description>
     </item>
     
@@ -259,159 +297,8 @@ TypeScript で Material-UI のスタイル付き Components を記述する場�
       <pubDate>Sun, 22 Jul 2018 20:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2018/07/traveling-on-the-rock-continent/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;TOKYO FMで放送されているラジオ番組&lt;a href=&#34;https://www.tfm.co.jp/manyuki/&#34;&gt;SPITZ 草野マサムネのロック大陸漫遊記&lt;/a&gt;のオンエア曲を年別・国別に分類しグラフ化してみました。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>GIMPで陸地を生成する</title>
-      <link>https://cieloazul310.github.io/2018/07/how-to-generate-mundial-with-gimp/</link>
-      <pubDate>Sat, 21 Jul 2018 16:30:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2018/07/how-to-generate-mundial-with-gimp/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;GIMPをいじっていたらたまたま架空の陸地のような画像が作れたので作り方を記録しておきます。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>国内のサッカースタジアム周辺の人口を求める</title>
-      <link>https://cieloazul310.github.io/2018/04/stadium-and-population/</link>
-      <pubDate>Mon, 23 Apr 2018 23:00:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2018/04/stadium-and-population/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;地域メッシュ統計のデータを用いて国内の主要サッカースタジアムの周辺人口を算出しました。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Wikipedia記事の座標を取得&amp;日本語記事の座標が取得できない問題</title>
-      <link>https://cieloazul310.github.io/2018/02/mediawiki-api-coodinates/</link>
-      <pubDate>Thu, 08 Feb 2018 22:30:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2018/02/mediawiki-api-coodinates/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;MediaWiki APIでWikipediaの記事から座標を取得する方法と、MediaWiki APIでWikipedia日本語記事の座標が取得できないことについての説明です。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>WikiLayersで使っているパッケージやライブラリ</title>
-      <link>https://cieloazul310.github.io/2018/02/wikilayers-note/</link>
-      <pubDate>Tue, 06 Feb 2018 21:00:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2018/02/wikilayers-note/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;&lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;WikiLayers&lt;/a&gt;で使っているパッケージやライブラリを自分のために覚書しておきます。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>WikiLayersをリリースしました</title>
-      <link>https://cieloazul310.github.io/2018/01/wikilayers/</link>
-      <pubDate>Mon, 29 Jan 2018 23:00:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2018/01/wikilayers/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;Wikipediaを地図で見るアプリWikiLayersを公開しました。&lt;br&gt;
-URL: &lt;a href=&#34;https://cieloazul310.github.io/wikilayers&#34;&gt;https://cieloazul310.github.io/wikilayers&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>城里町議会の会議録メモ No.1</title>
-      <link>https://cieloazul310.github.io/2017/12/shirosato-assembly-201706/</link>
-      <pubDate>Sun, 31 Dec 2017 22:30:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2017/12/shirosato-assembly-201706/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;平成29年度城里町一般会計予算が成立した、&lt;a href=&#34;http://www.town.shirosato.lg.jp/page/page003153.html&#34;&gt;城里町議会 第2回定例会会議録&lt;/a&gt;より七会町民センター関連の議論を抜粋しました。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>2017年明治安田生命Jリーグ全試合の観客数の可視化</title>
-      <link>https://cieloazul310.github.io/2017/12/jleague-attd-2017/</link>
-      <pubDate>Sat, 16 Dec 2017 23:35:47 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2017/12/jleague-attd-2017/</guid>
-      <description>&lt;p&gt;&lt;em&gt;J.League 2017 All Games Attendance Visualization&lt;/em&gt;&lt;br&gt;
-2017年の明治安田生命Jリーグ全試合の観客数を可視化したチャートです。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>D3.js &#43; jsdomでSVGファイルを作成</title>
-      <link>https://cieloazul310.github.io/2017/12/d3-to-svgfile-with-jsdom/</link>
-      <pubDate>Sat, 16 Dec 2017 18:50:55 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2017/12/d3-to-svgfile-with-jsdom/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;D3.jsとjsdomを使って、SVGファイルを作る方法です。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>D3.jsで子要素のDOMから親要素のデータを取得</title>
-      <link>https://cieloazul310.github.io/2017/12/d3-get-parent-node/</link>
-      <pubDate>Thu, 14 Dec 2017 23:32:15 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2017/12/d3-get-parent-node/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;D3.jsで階層構造のDOMの子要素から親要素のデータを取得する方法です。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Bリーグ クラブ別営業収入グラフ</title>
-      <link>https://cieloazul310.github.io/2017/12/bleague-revenue/</link>
-      <pubDate>Fri, 01 Dec 2017 01:00:30 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2017/12/bleague-revenue/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;&lt;a href=&#34;//cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/&#34;&gt;前回作成したBリーグ決算情報のCSVデータ&lt;/a&gt;を使って、D3.jsでシンプルな棒グラフを作成しました。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>B.LEAGUE クラブ決算情報をCSV化</title>
-      <link>https://cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/</link>
-      <pubDate>Thu, 30 Nov 2017 22:26:35 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2017/11/bleague-financial-report-2016-2017/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;&lt;a href=&#34;//www.bleague.jp/news/36544.html&#34;&gt;B.LEAGUEが公開した各クラブの決算情報&lt;/a&gt;をCSV化して&lt;a href=&#34;//gist.github.com/cieloazul310/ae2da35266de8f0832ed3ebc431d807f&#34;&gt;gistで公開&lt;/a&gt;しました。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>D3.jsで&lt;g&gt;要素を活用する</title>
-      <link>https://cieloazul310.github.io/2017/11/d3-grouping-elements/</link>
-      <pubDate>Sat, 25 Nov 2017 16:00:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2017/11/d3-grouping-elements/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;D3.jsでSVGを描写するときは&lt;code&gt;&amp;lt;g&amp;gt;&lt;/code&gt;要素を使って要素をグループ化すると便利です。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>日本鉄道時系列地図</title>
-      <link>https://cieloazul310.github.io/2017/11/railroad-timeline-map/</link>
-      <pubDate>Thu, 09 Nov 2017 22:00:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2017/11/railroad-timeline-map/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;1950年から2017年までの日本全国の鉄道路線を表示した地図を作成しました。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>D3.jsでアロー関数を使う時の注意点</title>
-      <link>https://cieloazul310.github.io/2017/08/d3-arrow-function/</link>
-      <pubDate>Tue, 29 Aug 2017 23:30:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2017/08/d3-arrow-function/</guid>
-      <description>&lt;p&gt;既存のD3.jsのコードを&lt;a href=&#34;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/arrow_functions&#34;&gt;アロー関数&lt;/a&gt;で置き換える際に変な動作を起こしてしまったのでメモしておきます。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>バイナリベクトルタイルを作ってみた</title>
-      <link>https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/</link>
-      <pubDate>Sat, 12 Aug 2017 13:00:00 +0900</pubDate>
-      
-      <guid>https://cieloazul310.github.io/2017/08/cook-binary-vector-tiles/</guid>
-      <description>&lt;p&gt;最近WEB地図界隈で話題になっているバイナリベクトルタイルを作ってみました。&lt;/p&gt;</description>
     </item>
     
   </channel>

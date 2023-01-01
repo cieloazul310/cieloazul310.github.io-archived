@@ -14,9 +14,11 @@
       <pubDate>Tue, 04 Jun 2019 21:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/06/typescript-material-ui-v4/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;2019年5月下旬に &lt;a href=&#34;https://material-ui.com&#34;&gt;Material-UI v4&lt;/a&gt; が正式にリリースされました。スタイル付きコンポーネントの記法が v3 以前のものと変わったのでメモしておきます。&lt;/p&gt;</description>
     </item>
     
@@ -26,9 +28,11 @@
       <pubDate>Mon, 25 Feb 2019 23:30:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/02/gatsby-stadiums-population/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: リリース文と技術的な話の概要
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;昨年&lt;a href=&#34;https://cieloazul310.github.io/2018/04/stadium-and-population/&#34;&gt;国内のサッカースタジアム周辺の人口を求める&lt;/a&gt;という記事を書きました。&lt;br&gt;
 前回の記事で算出結果の表示のために作ったページを新たに作り直し、ついでに前回算出しなかった半径 10km 圏内の人口と Bリーグのアリーナを加えました。&lt;/p&gt;</description>
     </item>
@@ -39,9 +43,11 @@
       <pubDate>Sat, 12 Jan 2019 23:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/01/material-react-typescript-notation/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: React + TypeScript + Material-UI で書いてる人
+- 目的: React + TypeScript + Material-UI の Component の記法のガイド
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;React + &lt;a href=&#34;https://material-ui.com&#34;&gt;Material-UI v3&lt;/a&gt; では &lt;code&gt;withStyles(styles)(Component)&lt;/code&gt; という独自の記法で&lt;strong&gt;スタイル付き Components&lt;/strong&gt; を生成します。&lt;br&gt;
 TypeScript で Material-UI のスタイル付き Components を記述する場合は、従来の JavaScript での記法とは多少異なるのですが、 TypeScript を使った記法については情報が少ないと思ったので覚え書きとして残しておきます。&lt;/p&gt;</description>
     </item>
@@ -52,9 +58,11 @@ TypeScript で Material-UI のスタイル付き Components を記述する場�
       <pubDate>Fri, 11 Jan 2019 22:00:00 +0900</pubDate>
       
       <guid>https://cieloazul310.github.io/2019/01/typescript-hajimemashita/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;!--
+- 対象: 
+- 目的: TypeScriptを始めたことを宣言する
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.typescriptlang.org&#34;&gt;TypeScript&lt;/a&gt; を始めました。TypeScript を始めるに至った過程を紹介します。&lt;/p&gt;</description>
     </item>
     
