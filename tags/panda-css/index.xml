@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Panda CSS on 水戸地図</title>
+    <link>https://cieloazul310.github.io/tags/panda-css/</link>
+    <description>Recent content in Panda CSS on 水戸地図</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>cieloazul310</copyright>
+    <lastBuildDate>Sun, 10 Sep 2023 16:58:07 +0900</lastBuildDate><atom:link href="https://cieloazul310.github.io/tags/panda-css/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Panda CSSでPrimaryカラーにデフォルトのパレットの色を設定する</title>
+      <link>https://cieloazul310.github.io/2023/09/panda-css-primary-color-token/</link>
+      <pubDate>Sun, 10 Sep 2023 16:58:07 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2023/09/panda-css-primary-color-token/</guid>
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
+&lt;p&gt;Panda CSSでPrimaryカラーにデフォルトのパレットの色を設定するコードの作成例です。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

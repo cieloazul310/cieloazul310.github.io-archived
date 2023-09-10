@@ -7,7 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>cieloazul310</copyright>
-    <lastBuildDate>Sun, 31 Dec 2017 22:30:00 +0900</lastBuildDate><atom:link href="https://cieloazul310.github.io/categories/memo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Sep 2023 16:58:07 +0900</lastBuildDate><atom:link href="https://cieloazul310.github.io/categories/memo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Panda CSSでPrimaryカラーにデフォルトのパレットの色を設定する</title>
+      <link>https://cieloazul310.github.io/2023/09/panda-css-primary-color-token/</link>
+      <pubDate>Sun, 10 Sep 2023 16:58:07 +0900</pubDate>
+      
+      <guid>https://cieloazul310.github.io/2023/09/panda-css-primary-color-token/</guid>
+      <description>&lt;!--
+- 対象: 
+- 目的: 
+--&gt;
+&lt;!-- Lead Paragraph --&gt;
+&lt;p&gt;Panda CSSでPrimaryカラーにデフォルトのパレットの色を設定するコードの作成例です。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>城里町議会の会議録メモ No.1</title>
       <link>https://cieloazul310.github.io/2017/12/shirosato-assembly-201706/</link>
